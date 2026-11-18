@@ -1,0 +1,937 @@
+{
+  "$schema": "../../schema/experiment.schema.json",
+  "id": "vtg-02-sft-timelens100k",
+  "title": "在高质量定位数据上 SFT",
+  "task": "vtg",
+  "status": "completed",
+  "date": "2026-09-15",
+  "series": "VTG · MLLM 定位研究线",
+  "parent": "vtg-01-zeroshot-baseline",
+  "tags": [
+    "SFT",
+    "数据规模"
+  ],
+  "author": "agent:claude",
+  "demo": true,
+  "tldr": "用约 10 万条重标注训练数据做 SFT，三个基准 R1@0.7 平均提升 12 个点，但通用视频问答略有下降。",
+  "brief": {
+    "question": "高质量定位数据能把通用 MLLM 的定位能力提升多少？代价是什么？",
+    "change": "在 TimeLens-100K 上全参数 SFT 1 个 epoch",
+    "conclusion": "R1@0.7 大幅提升；数据量-性能近似对数线性；MVBench 下降 2.1",
+    "verdict": "positive",
+    "pipeline": [
+      {
+        "label": "均匀抽 32 帧"
+      },
+      {
+        "label": "Qwen2.5-VL-7B"
+      },
+      {
+        "label": "SFT 定位数据",
+        "changed": true,
+        "note": "TimeLens-100K，1 epoch，lr 1e-5"
+      },
+      {
+        "label": "文本输出起止秒"
+      }
+    ]
+  },
+  "setup": {
+    "model": "Qwen2.5-VL-7B-Instruct",
+    "params": "7B",
+    "trainData": [
+      "timelens-100k"
+    ],
+    "evalData": [
+      "charades-timelens",
+      "activitynet-timelens",
+      "qvhighlights-timelens"
+    ],
+    "compute": "8×A100 · 9h",
+    "gpuHours": 72,
+    "frames": "32 帧 · 448px"
+  },
+  "results": {
+    "methods": [
+      {
+        "id": "sft",
+        "name": "SFT-100K",
+        "role": "ours"
+      },
+      {
+        "id": "zs",
+        "name": "零样本（上游）",
+        "role": "baseline"
+      }
+    ],
+    "main": [
+      {
+        "method": "sft",
+        "dataset": "charades-timelens",
+        "metrics": {
+          "R1@0.3": 70.6,
+          "R1@0.5": 52.8,
+          "R1@0.7": 28.4,
+          "mIoU": 49.0
+        }
+      },
+      {
+        "method": "zs",
+        "dataset": "charades-timelens",
+        "metrics": {
+          "R1@0.3": 58.4,
+          "R1@0.5": 38.0,
+          "R1@0.7": 17.6,
+          "mIoU": 40.3
+        }
+      },
+      {
+        "method": "sft",
+        "dataset": "activitynet-timelens",
+        "metrics": {
+          "R1@0.3": 56.9,
+          "R1@0.5": 39.2,
+          "R1@0.7": 22.7,
+          "mIoU": 41.4
+        }
+      },
+      {
+        "method": "zs",
+        "dataset": "activitynet-timelens",
+        "metrics": {
+          "R1@0.3": 43.0,
+          "R1@0.5": 26.5,
+          "R1@0.7": 12.8,
+          "mIoU": 32.9
+        }
+      },
+      {
+        "method": "sft",
+        "dataset": "qvhighlights-timelens",
+        "metrics": {
+          "R1@0.3": 64.8,
+          "R1@0.5": 50.1,
+          "R1@0.7": 32.0,
+          "mIoU": 47.9
+        }
+      },
+      {
+        "method": "zs",
+        "dataset": "qvhighlights-timelens",
+        "metrics": {
+          "R1@0.3": 52.3,
+          "R1@0.5": 36.0,
+          "R1@0.7": 20.4,
+          "mIoU": 39.0
+        }
+      }
+    ]
+  },
+  "curves": [
+    {
+      "id": "loss",
+      "title": "训练损失",
+      "xLabel": "step",
+      "yLabel": "loss",
+      "series": [
+        {
+          "name": "train loss",
+          "data": [
+            [
+              0,
+              1.9386
+            ],
+            [
+              25,
+              1.8261
+            ],
+            [
+              50,
+              1.6781
+            ],
+            [
+              75,
+              1.5563
+            ],
+            [
+              100,
+              1.4585
+            ],
+            [
+              125,
+              1.4124
+            ],
+            [
+              150,
+              1.3082
+            ],
+            [
+              175,
+              1.2299
+            ],
+            [
+              200,
+              1.2191
+            ],
+            [
+              225,
+              1.1627
+            ],
+            [
+              250,
+              1.1257
+            ],
+            [
+              275,
+              1.0371
+            ],
+            [
+              300,
+              1.0239
+            ],
+            [
+              325,
+              0.9848
+            ],
+            [
+              350,
+              0.9079
+            ],
+            [
+              375,
+              0.9387
+            ],
+            [
+              400,
+              0.9045
+            ],
+            [
+              425,
+              0.9413
+            ],
+            [
+              450,
+              0.8528
+            ],
+            [
+              475,
+              0.8216
+            ],
+            [
+              500,
+              0.8441
+            ],
+            [
+              525,
+              0.7959
+            ],
+            [
+              550,
+              0.8016
+            ],
+            [
+              575,
+              0.7492
+            ],
+            [
+              600,
+              0.7539
+            ],
+            [
+              625,
+              0.7664
+            ],
+            [
+              650,
+              0.746
+            ],
+            [
+              675,
+              0.7193
+            ],
+            [
+              700,
+              0.6742
+            ],
+            [
+              725,
+              0.7121
+            ],
+            [
+              750,
+              0.6938
+            ],
+            [
+              775,
+              0.7066
+            ],
+            [
+              800,
+              0.6855
+            ],
+            [
+              825,
+              0.7062
+            ],
+            [
+              850,
+              0.6671
+            ],
+            [
+              875,
+              0.6703
+            ],
+            [
+              900,
+              0.6802
+            ],
+            [
+              925,
+              0.6239
+            ],
+            [
+              950,
+              0.6411
+            ],
+            [
+              975,
+              0.6351
+            ],
+            [
+              1000,
+              0.7068
+            ],
+            [
+              1025,
+              0.6421
+            ],
+            [
+              1050,
+              0.6621
+            ],
+            [
+              1075,
+              0.6591
+            ],
+            [
+              1100,
+              0.6302
+            ],
+            [
+              1125,
+              0.5904
+            ],
+            [
+              1150,
+              0.6643
+            ],
+            [
+              1175,
+              0.6217
+            ],
+            [
+              1200,
+              0.6542
+            ],
+            [
+              1225,
+              0.5924
+            ],
+            [
+              1250,
+              0.6173
+            ],
+            [
+              1275,
+              0.6672
+            ],
+            [
+              1300,
+              0.6716
+            ],
+            [
+              1325,
+              0.5888
+            ],
+            [
+              1350,
+              0.5871
+            ],
+            [
+              1375,
+              0.6251
+            ],
+            [
+              1400,
+              0.6477
+            ],
+            [
+              1425,
+              0.6301
+            ],
+            [
+              1450,
+              0.634
+            ],
+            [
+              1475,
+              0.5947
+            ],
+            [
+              1500,
+              0.6416
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "val",
+      "title": "验证集 R1@0.5",
+      "xLabel": "step",
+      "yLabel": "R1@0.5",
+      "series": [
+        {
+          "name": "Charades-TimeLens val",
+          "data": [
+            [
+              0,
+              39.1691
+            ],
+            [
+              100,
+              40.9866
+            ],
+            [
+              200,
+              44.0995
+            ],
+            [
+              300,
+              45.9878
+            ],
+            [
+              400,
+              47.8994
+            ],
+            [
+              500,
+              48.0014
+            ],
+            [
+              600,
+              49.4457
+            ],
+            [
+              700,
+              50.0177
+            ],
+            [
+              800,
+              50.4327
+            ],
+            [
+              900,
+              50.9971
+            ],
+            [
+              1000,
+              51.5125
+            ],
+            [
+              1100,
+              51.8977
+            ],
+            [
+              1200,
+              51.7998
+            ],
+            [
+              1300,
+              52.6294
+            ],
+            [
+              1400,
+              52.2733
+            ],
+            [
+              1500,
+              51.0483
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "ablations": [
+    {
+      "id": "data-size",
+      "title": "训练数据量（对数间隔）",
+      "factor": "训练样本数",
+      "kind": "numeric",
+      "metrics": [
+        "R1@0.5",
+        "R1@0.7"
+      ],
+      "rows": [
+        {
+          "setting": "6k",
+          "metrics": {
+            "R1@0.5": 43.1,
+            "R1@0.7": 21.0
+          }
+        },
+        {
+          "setting": "12k",
+          "metrics": {
+            "R1@0.5": 45.9,
+            "R1@0.7": 22.8
+          }
+        },
+        {
+          "setting": "25k",
+          "metrics": {
+            "R1@0.5": 48.4,
+            "R1@0.7": 24.9
+          }
+        },
+        {
+          "setting": "50k",
+          "metrics": {
+            "R1@0.5": 50.9,
+            "R1@0.7": 26.7
+          }
+        },
+        {
+          "setting": "100k",
+          "metrics": {
+            "R1@0.5": 52.8,
+            "R1@0.7": 28.4
+          },
+          "isDefault": true
+        }
+      ],
+      "takeaway": "每翻一倍数据约 +2.4 R1@0.5，尚未饱和，但斜率在缓慢变小。"
+    },
+    {
+      "id": "replay",
+      "title": "混入通用视频问答数据（回放）",
+      "factor": "通用数据比例",
+      "kind": "categorical",
+      "metrics": [
+        "R1@0.7"
+      ],
+      "rows": [
+        {
+          "setting": "0%",
+          "metrics": {
+            "R1@0.7": 28.4
+          },
+          "isDefault": true
+        },
+        {
+          "setting": "10%",
+          "metrics": {
+            "R1@0.7": 28.1
+          }
+        },
+        {
+          "setting": "25%",
+          "metrics": {
+            "R1@0.7": 27.6
+          }
+        }
+      ],
+      "takeaway": "混入 10% 通用数据几乎不损失定位能力，同时把 MVBench 的下降从 −2.1 拉回到 −0.4。"
+    }
+  ],
+  "charts": [
+    {
+      "id": "general",
+      "title": "通用能力变化",
+      "type": "bar",
+      "categories": [
+        "MVBench",
+        "Video-MME",
+        "NExT-QA"
+      ],
+      "yLabel": "Acc",
+      "series": [
+        {
+          "name": "零样本",
+          "data": [
+            67.0,
+            63.2,
+            77.8
+          ]
+        },
+        {
+          "name": "SFT-100K",
+          "data": [
+            64.9,
+            62.5,
+            77.1
+          ]
+        },
+        {
+          "name": "SFT + 10% 回放",
+          "data": [
+            66.6,
+            63.0,
+            77.6
+          ]
+        }
+      ],
+      "takeaway": "遗忘集中在时序推理密集的 MVBench；少量回放即可基本止跌。"
+    }
+  ],
+  "cases": [
+    {
+      "id": "c1",
+      "type": "temporal",
+      "title": "开冰箱",
+      "outcome": "success",
+      "video": {
+        "src": "media/samples/kitchen.mp4",
+        "fps": 25,
+        "duration": 30
+      },
+      "query": "person opens the refrigerator door",
+      "gt": [
+        [
+          6.2,
+          11.4
+        ]
+      ],
+      "predictions": [
+        {
+          "method": "sft",
+          "segments": [
+            {
+              "start": 5.6,
+              "end": 11.2,
+              "score": 0.81
+            }
+          ]
+        },
+        {
+          "method": "zs",
+          "segments": [
+            {
+              "start": 3.5,
+              "end": 13.0,
+              "score": 0.62
+            }
+          ]
+        }
+      ],
+      "sampledFrames": [
+        0.469,
+        1.406,
+        2.344,
+        3.281,
+        4.219,
+        5.156,
+        6.094,
+        7.031,
+        7.969,
+        8.906,
+        9.844,
+        10.781,
+        11.719,
+        12.656,
+        13.594,
+        14.531,
+        15.469,
+        16.406,
+        17.344,
+        18.281,
+        19.219,
+        20.156,
+        21.094,
+        22.031,
+        22.969,
+        23.906,
+        24.844,
+        25.781,
+        26.719,
+        27.656,
+        28.594,
+        29.531
+      ]
+    }
+  ],
+  "insights": {
+    "oneLiner": "数据质量是当前最大的杠杆；论文里应报告数据规模曲线的斜率，而不是单点。",
+    "confidence": 0.68,
+    "phenomena": [
+      {
+        "id": "p1",
+        "title": "数据翻倍收益固定",
+        "detail": "6k→100k 每翻一倍 R1@0.5 约 +2.4，对数坐标下近似直线。",
+        "evidence": "ablation:data-size",
+        "symptoms": [
+          "diminishing-returns"
+        ],
+        "surprise": 2
+      },
+      {
+        "id": "p2",
+        "title": "通用问答能力下降",
+        "detail": "MVBench −2.1；混入 10% 通用数据后降到 −0.4。",
+        "evidence": "chart:general",
+        "symptoms": [
+          "forgetting"
+        ],
+        "surprise": 2
+      }
+    ],
+    "echoes": [
+      {
+        "id": "e1",
+        "phenomenon": "p1",
+        "lens": "learning-curve",
+        "correspondences": [
+          [
+            "累计产量翻倍",
+            "训练数据翻倍"
+          ],
+          [
+            "单位工时下降固定比例",
+            "R1@0.5 固定增量"
+          ]
+        ],
+        "borrowedMove": "工业界用经验曲线的斜率比较工厂；我们用“每翻倍增量”比较数据配方，而不是比较 100k 时的单点。",
+        "limit": "经验曲线描述成本下降，这里是性能上升，只借用“对数线性 + 比较斜率”这一结构。"
+      },
+      {
+        "id": "e2",
+        "phenomenon": "p2",
+        "lens": "interference",
+        "correspondences": [
+          [
+            "新学习干扰旧记忆",
+            "定位 SFT 覆盖通用能力"
+          ],
+          [
+            "海马回放",
+            "混入通用数据"
+          ]
+        ],
+        "borrowedMove": "互补学习系统的“交错回放”：在每个 batch 中按比例混入通用数据，而不是先定位后通用的顺序训练。"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "h1",
+        "title": "斜率由数据质量决定",
+        "statement": "在相同规模下，噪声训练集的对数斜率明显更小，而不只是截距更低。",
+        "from": [
+          "e1"
+        ],
+        "test": "用原始噪声标注重复 3 个规模点，比较斜率",
+        "falsifiedIf": "两条线平行（斜率差 < 20%）",
+        "impact": 4,
+        "effort": 3,
+        "status": "todo"
+      },
+      {
+        "id": "h2",
+        "title": "10% 回放足够",
+        "statement": "10% 通用数据回放即可把遗忘控制在 0.5 以内。",
+        "from": [
+          "e2"
+        ],
+        "test": "已在本实验中验证",
+        "impact": 2,
+        "effort": 1,
+        "status": "confirmed"
+      }
+    ],
+    "paperAngles": [
+      {
+        "id": "a1",
+        "title": "数据质量改变的是斜率而不是截距",
+        "type": "analysis",
+        "claim": "用多规模实验证明：重标注数据让定位能力随数据规模增长得更快。",
+        "from": [
+          "h1"
+        ],
+        "novelty": "把“质量 vs 数量”问题转化为可测的斜率差",
+        "risk": "需要较多算力跑多个规模点",
+        "venues": [
+          "NeurIPS",
+          "ICLR"
+        ],
+        "readiness": 0.25,
+        "checkRelated": [
+          "data quality scaling law video grounding",
+          "label noise scaling slope"
+        ]
+      }
+    ],
+    "provocations": [
+      {
+        "prompt": "extreme-up",
+        "answer": "数据 ×100 时如果仍是直线，说明瓶颈不在数据；需要同时检查帧数（最小因子定律）。"
+      }
+    ]
+  },
+  "claims": [
+    {
+      "id": "k1",
+      "paper": {
+        "title": "【虚构示例】CleanTime: Better Labels Beat Bigger Models for Temporal Grounding",
+        "venue": "虚构会议",
+        "year": 2025,
+        "code": "full",
+        "checkpoint": true,
+        "citations": 41
+      },
+      "claim": "仅替换为清洗后的训练标注，R1@0.5 提升约 14 个点",
+      "setting": "与我们基本一致：7B 模型、32 帧、同一评测脚本",
+      "reported": [
+        {
+          "method": "paper",
+          "dataset": "charades-timelens",
+          "metrics": {
+            "R1@0.3": 71.2,
+            "R1@0.5": 53.5,
+            "R1@0.7": 28.9,
+            "mIoU": 49.4
+          }
+        }
+      ],
+      "ours": [
+        {
+          "method": "sft",
+          "dataset": "charades-timelens",
+          "metrics": {
+            "R1@0.3": 70.6,
+            "R1@0.5": 52.8,
+            "R1@0.7": 28.4,
+            "mIoU": 49.0
+          }
+        }
+      ],
+      "gap": {
+        "dataset": "charades-timelens",
+        "metric": "R1@0.5",
+        "steps": [
+          {
+            "label": "随机种子差异",
+            "delta": -0.4,
+            "verified": true
+          }
+        ]
+      },
+      "checklist": [
+        {
+          "id": "code",
+          "status": "pass"
+        },
+        {
+          "id": "ckpt",
+          "status": "pass"
+        },
+        {
+          "id": "protocol",
+          "status": "pass"
+        },
+        {
+          "id": "hparams",
+          "status": "pass"
+        },
+        {
+          "id": "table-consistency",
+          "status": "pass"
+        },
+        {
+          "id": "variance",
+          "status": "pass",
+          "note": "报告了 3 个种子"
+        },
+        {
+          "id": "test-selection",
+          "status": "pass"
+        },
+        {
+          "id": "standard-split",
+          "status": "pass"
+        },
+        {
+          "id": "leakage",
+          "status": "pass"
+        },
+        {
+          "id": "fair-baseline",
+          "status": "pass"
+        },
+        {
+          "id": "gain-plausible",
+          "status": "pass"
+        },
+        {
+          "id": "independent",
+          "status": "pass",
+          "note": "已有两篇后续工作沿用"
+        },
+        {
+          "id": "our-protocol",
+          "status": "pass"
+        }
+      ],
+      "verdict": "reproduced",
+      "decision": "build-on",
+      "timebox": "0.5 天（已完成）",
+      "action": "作为数据配方的可信基线，后续实验在此基础上构建。"
+    }
+  ],
+  "reproduce": {
+    "repo": "git@your-host:lab/vtg-exp.git",
+    "commit": "b72d0e4",
+    "env": {
+      "python": "3.11",
+      "torch": "2.5.1",
+      "cuda": "12.4",
+      "transformers": "4.51"
+    },
+    "hardware": "8×A100-80G",
+    "commands": [
+      {
+        "label": "训练",
+        "cmd": "torchrun --nproc_per_node 8 train_sft.py \\\n  --model Qwen/Qwen2.5-VL-7B-Instruct \\\n  --data data/timelens-100k.jsonl \\\n  --num_frames 32 --lr 1e-5 --epochs 1 \\\n  --global_batch 128 --deepspeed zero2.json \\\n  --out ckpt/vtg-02"
+      },
+      {
+        "label": "评测",
+        "cmd": "python eval.py --model ckpt/vtg-02 --benchmarks charades-timelens,activitynet-timelens,qvhighlights-timelens --num_frames 32"
+      }
+    ],
+    "hyperparams": {
+      "lr": "1e-5",
+      "epochs": 1,
+      "global_batch": 128,
+      "warmup_ratio": 0.03,
+      "num_frames": 32,
+      "max_pixels": 200704,
+      "freeze_vision": false,
+      "prompt": "v1-plain-seconds",
+      "seed": 42
+    },
+    "configFile": {
+      "name": "configs/sft_100k.yaml",
+      "lang": "yaml",
+      "content": "model: Qwen/Qwen2.5-VL-7B-Instruct\ndata:\n  train: data/timelens-100k.jsonl\n  num_frames: 32\n  max_pixels: 200704\noptim:\n  lr: 1.0e-5\n  warmup_ratio: 0.03\n  epochs: 1\n  global_batch: 128\nseed: 42\n"
+    },
+    "artifacts": [
+      {
+        "label": "权重",
+        "path": "ckpt/vtg-02/"
+      },
+      {
+        "label": "训练日志",
+        "path": "logs/vtg-02/"
+      }
+    ]
+  }
+}

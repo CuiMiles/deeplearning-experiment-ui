@@ -1,0 +1,236 @@
+{
+  "$schema": "../../schema/experiment.schema.json",
+  "id": "tal-01-boundary-refine",
+  "title": "时序动作定位：边界细化模块",
+  "task": "tal",
+  "status": "completed",
+  "date": "2026-09-20",
+  "tags": [
+    "THUMOS14",
+    "边界"
+  ],
+  "author": "agent:claude",
+  "demo": true,
+  "tldr": "在检测器后加一个只看边界附近 ±1 秒的细化模块：高 tIoU 下 mAP 明显提升，低 tIoU 下持平。",
+  "brief": {
+    "question": "动作边界不准，是因为没看清边界附近的细节吗？",
+    "change": "对每个候选的起止点各取 ±1s 高帧率特征做回归修正",
+    "conclusion": "mAP@0.7 +4.1，平均 mAP +2.0",
+    "verdict": "positive",
+    "pipeline": [
+      {
+        "label": "特征提取"
+      },
+      {
+        "label": "候选生成"
+      },
+      {
+        "label": "边界细化",
+        "changed": true,
+        "note": "起止点 ±1s、8 fps 局部特征"
+      },
+      {
+        "label": "NMS"
+      }
+    ]
+  },
+  "setup": {
+    "model": "单阶段检测器 + 边界细化",
+    "evalData": [
+      "thumos14"
+    ],
+    "compute": "1×A100 · 5h",
+    "gpuHours": 5
+  },
+  "results": {
+    "methods": [
+      {
+        "id": "ref",
+        "name": "+ 边界细化",
+        "role": "ours"
+      },
+      {
+        "id": "base",
+        "name": "检测器基线",
+        "role": "baseline"
+      }
+    ],
+    "main": [
+      {
+        "method": "ref",
+        "dataset": "thumos14",
+        "metrics": {
+          "tmAP@0.3": 83.0,
+          "tmAP@0.5": 72.4,
+          "tmAP@0.7": 50.3,
+          "tmAP-avg": 69.1
+        }
+      },
+      {
+        "method": "base",
+        "dataset": "thumos14",
+        "metrics": {
+          "tmAP@0.3": 82.8,
+          "tmAP@0.5": 71.0,
+          "tmAP@0.7": 46.2,
+          "tmAP-avg": 67.1
+        }
+      }
+    ]
+  },
+  "charts": [
+    {
+      "id": "tiou",
+      "title": "mAP – tIoU 曲线",
+      "type": "line",
+      "xLabel": "tIoU",
+      "yLabel": "mAP",
+      "categories": [
+        "0.3",
+        "0.4",
+        "0.5",
+        "0.6",
+        "0.7"
+      ],
+      "series": [
+        {
+          "name": "+ 边界细化",
+          "data": [
+            83.0,
+            78.6,
+            72.4,
+            61.0,
+            50.3
+          ]
+        },
+        {
+          "name": "检测器基线",
+          "data": [
+            82.8,
+            78.0,
+            71.0,
+            58.4,
+            46.2
+          ]
+        }
+      ],
+      "takeaway": "差距随 tIoU 增大而拉开：细化解决的正是“精细边界”。"
+    }
+  ],
+  "cases": [
+    {
+      "id": "c1",
+      "type": "temporal",
+      "title": "行人过马路",
+      "outcome": "success",
+      "video": {
+        "src": "media/samples/street.mp4",
+        "fps": 25,
+        "duration": 24
+      },
+      "query": "动作类别：CrossingRoad",
+      "gt": [
+        [
+          9.0,
+          14.0
+        ]
+      ],
+      "predictions": [
+        {
+          "method": "ref",
+          "segments": [
+            {
+              "start": 9.1,
+              "end": 14.2,
+              "score": 0.91
+            }
+          ]
+        },
+        {
+          "method": "base",
+          "segments": [
+            {
+              "start": 8.2,
+              "end": 15.0,
+              "score": 0.88
+            }
+          ]
+        }
+      ],
+      "note": "基线的边界向两侧各外扩约 0.8 秒。"
+    }
+  ],
+  "insights": {
+    "oneLiner": "“只在需要的地方看得更细”在 TAL 上同样有效，可与 VTG 的粗到细搜索合并成一个跨任务的观点。",
+    "confidence": 0.55,
+    "phenomena": [
+      {
+        "id": "p1",
+        "title": "只改善高 tIoU",
+        "detail": "mAP@0.3 +0.2，mAP@0.7 +4.1。",
+        "evidence": "chart:tiou",
+        "symptoms": [
+          "metric-disagreement",
+          "sampling-miss"
+        ],
+        "surprise": 2
+      }
+    ],
+    "echoes": [
+      {
+        "id": "e1",
+        "phenomenon": "p1",
+        "lens": "coastline-paradox",
+        "correspondences": [
+          [
+            "尺子越短海岸线越长",
+            "帧率越高边界越精确"
+          ]
+        ],
+        "borrowedMove": "明确报告“测量尺度”：在论文中给出边界误差随局部帧率变化的曲线。"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "h1",
+        "title": "统一的局部高帧率",
+        "statement": "边界细化模块可以直接迁移到 VTG，提升 R1@0.7。",
+        "from": [
+          "e1"
+        ],
+        "test": "在 vtg-04 模型后接同样的细化模块",
+        "impact": 3,
+        "effort": 2,
+        "status": "todo"
+      }
+    ],
+    "paperAngles": [
+      {
+        "id": "a1",
+        "title": "跨任务的局部时间分辨率",
+        "type": "method",
+        "claim": "TAL 与 VTG 共享同一个“边界需要更高时间分辨率”的瓶颈。",
+        "from": [
+          "h1"
+        ],
+        "venues": [
+          "ECCV"
+        ],
+        "readiness": 0.15
+      }
+    ]
+  },
+  "reproduce": {
+    "commands": [
+      {
+        "label": "训练",
+        "cmd": "python train_tal.py --dataset thumos14 --refine_window 1.0 --refine_fps 8"
+      }
+    ],
+    "hyperparams": {
+      "refine_window": "1.0s",
+      "refine_fps": 8,
+      "epochs": 35
+    }
+  }
+}

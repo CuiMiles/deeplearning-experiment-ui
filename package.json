@@ -1,0 +1,35 @@
+{
+  "name": "deeplearning-experiment-ui",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "多模态深度学习实验结果展示模板：智能体填充数据，用户看图表即可理解实验与研究启发",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run validate && tsc -b && vite build",
+    "preview": "vite preview",
+    "validate": "node scripts/validate.mjs",
+    "new": "node scripts/new-experiment.mjs",
+    "typecheck": "tsc -b"
+  },
+  "dependencies": {
+    "echarts": "^5.5.1",
+    "lucide-react": "^0.460.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  }
+}

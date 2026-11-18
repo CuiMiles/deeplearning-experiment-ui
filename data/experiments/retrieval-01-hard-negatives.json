@@ -1,0 +1,214 @@
+{
+  "$schema": "../../schema/experiment.schema.json",
+  "id": "retrieval-01-hard-negatives",
+  "title": "文本-视频检索：同视频难负例",
+  "task": "retrieval",
+  "status": "completed",
+  "date": "2026-09-10",
+  "tags": [
+    "MSR-VTT",
+    "对比学习"
+  ],
+  "author": "agent:claude",
+  "demo": true,
+  "tldr": "在对比学习中加入“同一视频的其他片段”作为难负例：R@1 +2.7，主要改善细粒度动作区分。",
+  "brief": {
+    "question": "模型是否只学会了“场景”，没学会“动作”？",
+    "change": "每个 batch 加入同视频不同时刻的片段作为难负例",
+    "conclusion": "R@1 提升，场景相同、动作不同的查询改善最大",
+    "verdict": "positive",
+    "pipeline": [
+      {
+        "label": "文本编码"
+      },
+      {
+        "label": "视频编码"
+      },
+      {
+        "label": "对比损失"
+      },
+      {
+        "label": "同视频难负例",
+        "changed": true
+      }
+    ]
+  },
+  "setup": {
+    "model": "双塔检索模型",
+    "evalData": [
+      "msrvtt"
+    ],
+    "compute": "8×A100 · 8h"
+  },
+  "results": {
+    "methods": [
+      {
+        "id": "hn",
+        "name": "+ 难负例",
+        "role": "ours"
+      },
+      {
+        "id": "base",
+        "name": "基线",
+        "role": "baseline"
+      }
+    ],
+    "main": [
+      {
+        "method": "hn",
+        "dataset": "msrvtt",
+        "metrics": {
+          "R@1": 49.6,
+          "R@5": 75.1,
+          "R@10": 84.0,
+          "MdR": 2.0,
+          "MnR": 12.4
+        }
+      },
+      {
+        "method": "base",
+        "dataset": "msrvtt",
+        "metrics": {
+          "R@1": 46.9,
+          "R@5": 73.8,
+          "R@10": 83.2,
+          "MdR": 2.0,
+          "MnR": 13.1
+        }
+      }
+    ]
+  },
+  "cases": [
+    {
+      "id": "c1",
+      "type": "retrieval",
+      "title": "同一厨房，不同动作",
+      "outcome": "success",
+      "query": "a person drinking from a cup in a kitchen",
+      "candidates": [
+        {
+          "label": "kitchen · 喝水",
+          "image": "media/samples/thumb_kitchen_drink.jpg",
+          "isGT": true,
+          "scores": {
+            "hn": 0.82,
+            "base": 0.71
+          }
+        },
+        {
+          "label": "kitchen · 开冰箱",
+          "image": "media/samples/thumb_kitchen_fridge.jpg",
+          "scores": {
+            "hn": 0.55,
+            "base": 0.74
+          }
+        },
+        {
+          "label": "kitchen · 开灯",
+          "image": "media/samples/thumb_kitchen_light.jpg",
+          "scores": {
+            "hn": 0.48,
+            "base": 0.69
+          }
+        },
+        {
+          "label": "living · 看书",
+          "image": "media/samples/thumb_living_read.jpg",
+          "scores": {
+            "hn": 0.31,
+            "base": 0.35
+          }
+        },
+        {
+          "label": "living · 小狗",
+          "image": "media/samples/thumb_living_dog.jpg",
+          "scores": {
+            "hn": 0.12,
+            "base": 0.18
+          }
+        },
+        {
+          "label": "street · 公交",
+          "image": "media/samples/thumb_street_bus.jpg",
+          "scores": {
+            "hn": 0.05,
+            "base": 0.08
+          }
+        }
+      ],
+      "note": "基线把同一厨房的“开冰箱”排在第 1：它在匹配场景而不是动作。"
+    }
+  ],
+  "insights": {
+    "oneLiner": "检索模型的“场景捷径”是一个可以量化的偏置，可设计“同场景不同动作”的诊断集。",
+    "confidence": 0.55,
+    "phenomena": [
+      {
+        "id": "p1",
+        "title": "匹配场景而非动作",
+        "detail": "同场景干扰项排名上升是基线的主要错误。",
+        "evidence": "case:c1",
+        "symptoms": [
+          "shortcut"
+        ],
+        "surprise": 2
+      }
+    ],
+    "echoes": [
+      {
+        "id": "e1",
+        "phenomenon": "p1",
+        "lens": "clever-hans",
+        "correspondences": [
+          [
+            "身体语言线索",
+            "场景外观线索"
+          ]
+        ],
+        "borrowedMove": "构造“遮住线索”的对照：同场景不同动作的候选池。"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "h1",
+        "title": "场景无关诊断集",
+        "statement": "在同场景候选池上，基线 R@1 会下降 15 个点以上。",
+        "from": [
+          "e1"
+        ],
+        "test": "构造 1,000 条同场景候选池",
+        "impact": 3,
+        "effort": 2,
+        "status": "todo"
+      }
+    ],
+    "paperAngles": [
+      {
+        "id": "a1",
+        "title": "检索中的场景捷径",
+        "type": "benchmark",
+        "claim": "提出同场景候选池诊断集。",
+        "from": [
+          "h1"
+        ],
+        "venues": [
+          "ACM MM"
+        ],
+        "readiness": 0.2
+      }
+    ]
+  },
+  "reproduce": {
+    "commands": [
+      {
+        "label": "训练",
+        "cmd": "python train_retrieval.py --hard_negatives same_video --num_hn 3"
+      }
+    ],
+    "hyperparams": {
+      "num_hn": 3,
+      "temperature": 0.05,
+      "batch": 256
+    }
+  }
+}

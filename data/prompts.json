@@ -1,0 +1,26 @@
+{
+  "prompts": [
+    { "id": "inversion", "category": "反转", "title": "反过来想", "question": "把输入和输出反过来（片段 → 查询），或者反过来问'怎样让它彻底失败'，会得到什么？", "origin": "数学家 Jacobi：Invert, always invert（Munger 推广）", "hint": "反向任务常常可以成为免费的自监督信号或验证器" },
+    { "id": "extreme-up", "category": "极限", "title": "放大 100 倍", "question": "如果数据、帧数、视频长度或模型规模放大 100 倍，这个现象会更强、消失，还是反转？", "origin": "思想实验", "hint": "能外推的现象才值得写成规律" },
+    { "id": "extreme-down", "category": "极限", "title": "缩小到 1", "question": "如果只给 1 帧、1 个训练样本、1 个词，还剩下什么能力？", "origin": "思想实验", "hint": "极端条件下的残余能力暴露了模型真正依赖的东西" },
+    { "id": "reviewer2", "category": "反方", "title": "审稿人 2", "question": "最苛刻的审稿人会用哪一句话否掉它？需要补哪一个实验才能堵住这句话？", "origin": "Popper《科学发现的逻辑》1934：可证伪性", "hint": "提前写出 rebuttal，就知道缺什么实验" },
+    { "id": "mechanism", "category": "机制", "title": "因果链", "question": "它为什么有效？能否画出因果链，再设计一个只打断其中一环的实验？", "origin": "Polya《怎样解题》1945：你能把问题分解吗？", "hint": "能被'只打断一环'验证的机制才是机制" },
+    { "id": "related-problem", "category": "迁移", "title": "已解决的相关问题", "question": "有没有一个结构相同、但已经被解决的问题？它的解法能直接搬过来吗？", "origin": "Polya《怎样解题》1945", "hint": "透镜库就是为这个问题准备的" },
+    { "id": "transfer", "category": "迁移", "title": "跨模态迁移", "question": "这个现象在音频、3D、机器人、长文本中也会出现吗？如果会，是否存在一个统一的解释？", "origin": "Gentner 结构映射理论 1983", "hint": "跨任务成立的现象更容易写成分析型论文" },
+    { "id": "heilmeier", "category": "价值", "title": "Heilmeier 问题", "question": "你想做什么（不用术语）？现在的做法和局限是什么？你的新意是什么、为什么能成？谁会在乎？", "origin": "Heilmeier Catechism（DARPA，1970 年代）", "hint": "回答不出'谁会在乎'，就不急着写论文" },
+    { "id": "hamming", "category": "价值", "title": "最重要的问题", "question": "这个领域最重要的问题是什么？这个实验离它有多远？你为什么不直接做它？", "origin": "Richard Hamming, You and Your Research, 1986" },
+    { "id": "premortem", "category": "失败", "title": "失败预演", "question": "假设一年后这个方向彻底失败了，最可能的原因是什么？现在能先验证这一点吗？", "origin": "Gary Klein, 事前验尸法 (premortem), 2007", "hint": "先验证最可能杀死项目的假设" },
+    { "id": "simplest", "category": "失败", "title": "最简单的解释", "question": "能解释这个现象的最无聊的原因是什么（bug、数据泄漏、评测差异）？排除了吗？", "origin": "奥卡姆剃刀", "hint": "先排除无聊的解释，再相信有趣的解释" },
+    { "id": "triz-segmentation", "category": "TRIZ", "title": "#1 分割", "question": "能否把对象切成独立的部分来处理（视频切段、查询拆成子事件、边界单独预测）？", "origin": "TRIZ 发明原理 #1（Altshuller）" },
+    { "id": "triz-local-quality", "category": "TRIZ", "title": "#3 局部质量", "question": "能否让处理变得不均匀：关键时刻用高帧率、高分辨率，其余部分用低成本处理？", "origin": "TRIZ 发明原理 #3" },
+    { "id": "triz-nested", "category": "TRIZ", "title": "#7 嵌套", "question": "能否做成层层嵌套的结构：粗到细、全局到局部？", "origin": "TRIZ 发明原理 #7" },
+    { "id": "triz-prior-action", "category": "TRIZ", "title": "#10 预先作用", "question": "能否提前完成一部分工作（离线预计算特征、预建时间索引）？", "origin": "TRIZ 发明原理 #10" },
+    { "id": "triz-inverse", "category": "TRIZ", "title": "#13 反向作用", "question": "能否把动作反过来：不让模型找片段，而是让片段去'认领'查询？", "origin": "TRIZ 发明原理 #13" },
+    { "id": "triz-dynamics", "category": "TRIZ", "title": "#15 动态化", "question": "能否把固定参数改成自适应的（自适应帧率、动态 token 预算、按难度决定是否思考）？", "origin": "TRIZ 发明原理 #15" },
+    { "id": "triz-blessing", "category": "TRIZ", "title": "#22 变害为利", "question": "能否把失败和噪声变成资源（失败案例 → 新基准；标注分歧 → 不确定性监督）？", "origin": "TRIZ 发明原理 #22" },
+    { "id": "triz-feedback", "category": "TRIZ", "title": "#23 反馈", "question": "能否引入反馈回路（自我验证、看一眼再修正）？", "origin": "TRIZ 发明原理 #23" },
+    { "id": "triz-intermediary", "category": "TRIZ", "title": "#24 中介物", "question": "能否用一个中间表示把两端连起来（字幕、场景图、事件列表）？", "origin": "TRIZ 发明原理 #24" },
+    { "id": "triz-self-service", "category": "TRIZ", "title": "#25 自服务", "question": "能否让系统自己产出所需资源（自训练、自博弈、自动重标注）？", "origin": "TRIZ 发明原理 #25" },
+    { "id": "triz-copy", "category": "TRIZ", "title": "#26 复制", "question": "能否用廉价的复制品代替昂贵的原件（蒸馏、低分辨率代理模型）？", "origin": "TRIZ 发明原理 #26" }
+  ]
+}

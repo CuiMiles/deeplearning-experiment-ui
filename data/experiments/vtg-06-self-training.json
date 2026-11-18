@@ -1,0 +1,447 @@
+{
+  "$schema": "../../schema/experiment.schema.json",
+  "id": "vtg-06-self-training",
+  "title": "伪标签自训练三轮",
+  "task": "vtg",
+  "status": "completed",
+  "date": "2026-11-05",
+  "series": "VTG · MLLM 定位研究线",
+  "parent": "vtg-02-sft-timelens100k",
+  "tags": [
+    "自训练",
+    "负结果"
+  ],
+  "author": "agent:claude",
+  "demo": true,
+  "tldr": "用模型自己标注的 20 万条无标签视频继续训练：第 1 轮小涨，第 2、3 轮持续下降，罕见事件比例逐轮减少。",
+  "brief": {
+    "question": "用模型自己生成的伪标签扩充训练数据，能否持续提升？",
+    "change": "对无标签视频生成伪标签（置信度 > 0.7），与原数据 1:1 混合，迭代 3 轮",
+    "conclusion": "第 1 轮 +0.6，之后逐轮下降；伪标签分布逐渐向常见、长片段坍缩",
+    "verdict": "negative",
+    "pipeline": [
+      {
+        "label": "SFT-100K 模型"
+      },
+      {
+        "label": "无标签视频打伪标签",
+        "changed": true,
+        "note": "置信度阈值 0.7"
+      },
+      {
+        "label": "1:1 混合再训练",
+        "changed": true
+      },
+      {
+        "label": "迭代 3 轮",
+        "changed": true
+      }
+    ]
+  },
+  "setup": {
+    "model": "Qwen2.5-VL-7B + SFT",
+    "params": "7B",
+    "trainData": [
+      "timelens-100k",
+      "20 万无标签视频"
+    ],
+    "evalData": [
+      "charades-timelens"
+    ],
+    "compute": "8×A100 · 3 轮 × 12h",
+    "gpuHours": 288
+  },
+  "results": {
+    "methods": [
+      {
+        "id": "r3",
+        "name": "第 3 轮",
+        "role": "ours"
+      },
+      {
+        "id": "r0",
+        "name": "SFT-100K（第 0 轮）",
+        "role": "baseline"
+      },
+      {
+        "id": "r1",
+        "name": "第 1 轮",
+        "role": "ablation"
+      }
+    ],
+    "main": [
+      {
+        "method": "r3",
+        "dataset": "charades-timelens",
+        "metrics": {
+          "R1@0.3": 68.9,
+          "R1@0.5": 50.6,
+          "R1@0.7": 26.5,
+          "mIoU": 47.7
+        }
+      },
+      {
+        "method": "r0",
+        "dataset": "charades-timelens",
+        "metrics": {
+          "R1@0.3": 70.6,
+          "R1@0.5": 52.8,
+          "R1@0.7": 28.4,
+          "mIoU": 49.0
+        }
+      },
+      {
+        "method": "r1",
+        "dataset": "charades-timelens",
+        "metrics": {
+          "R1@0.3": 71.0,
+          "R1@0.5": 53.4,
+          "R1@0.7": 28.9,
+          "mIoU": 49.4
+        }
+      }
+    ]
+  },
+  "ablations": [
+    {
+      "id": "rounds",
+      "title": "迭代轮数",
+      "factor": "轮数",
+      "kind": "numeric",
+      "metrics": [
+        "R1@0.7",
+        "mIoU"
+      ],
+      "rows": [
+        {
+          "setting": 0,
+          "metrics": {
+            "R1@0.7": 28.4,
+            "mIoU": 48.0
+          }
+        },
+        {
+          "setting": 1,
+          "metrics": {
+            "R1@0.7": 28.9,
+            "mIoU": 48.4
+          }
+        },
+        {
+          "setting": 2,
+          "metrics": {
+            "R1@0.7": 27.6,
+            "mIoU": 47.5
+          }
+        },
+        {
+          "setting": 3,
+          "metrics": {
+            "R1@0.7": 26.5,
+            "mIoU": 46.6
+          },
+          "isDefault": true
+        }
+      ],
+      "takeaway": "只有第 1 轮有效，之后单调下降。"
+    }
+  ],
+  "charts": [
+    {
+      "id": "diversity",
+      "title": "伪标签分布逐轮变化",
+      "type": "line",
+      "xLabel": "轮数",
+      "yLabel": "占比 %",
+      "categories": [
+        "原始标注",
+        "第 1 轮",
+        "第 2 轮",
+        "第 3 轮"
+      ],
+      "series": [
+        {
+          "name": "<3s 短片段占比",
+          "data": [
+            14.2,
+            9.1,
+            5.8,
+            3.9
+          ]
+        },
+        {
+          "name": "罕见动词占比",
+          "data": [
+            21.5,
+            16.0,
+            11.2,
+            8.4
+          ]
+        }
+      ],
+      "takeaway": "短片段和罕见动作在伪标签中逐轮消失：模型只“确信”它本来就会的东西。"
+    }
+  ],
+  "insights": {
+    "oneLiner": "这是一个干净的负结果：可以作为“自训练为何在定位任务上失效”的分析素材，也提醒不要轻信同类论文。",
+    "confidence": 0.7,
+    "phenomena": [
+      {
+        "id": "p1",
+        "title": "分布逐轮坍缩",
+        "detail": "短片段占比 14.2% → 3.9%，罕见动词 21.5% → 8.4%。",
+        "evidence": "chart:diversity",
+        "symptoms": [
+          "self-collapse",
+          "selection-bias"
+        ],
+        "surprise": 2
+      },
+      {
+        "id": "p2",
+        "title": "与已发表结论相反",
+        "detail": "一篇论文声称三轮自训练 mIoU +5.2，我们得到 −1.4。",
+        "evidence": "claim:k1",
+        "symptoms": [
+          "claim-mismatch"
+        ],
+        "surprise": 3
+      }
+    ],
+    "echoes": [
+      {
+        "id": "e1",
+        "phenomenon": "p1",
+        "lens": "serial-reproduction",
+        "correspondences": [
+          [
+            "故事被逐人复述",
+            "伪标签被逐轮再训练"
+          ],
+          [
+            "奇怪细节消失",
+            "短片段、罕见动作消失"
+          ],
+          [
+            "向讲述者的常识靠拢",
+            "向模型先验靠拢"
+          ]
+        ],
+        "borrowedMove": "Bartlett 实验中保留原文可以阻止漂移：每轮固定保留 50% 人工标注，并对罕见类别做重采样。"
+      },
+      {
+        "id": "e2",
+        "phenomenon": "p1",
+        "lens": "literary-digest",
+        "correspondences": [
+          [
+            "电话簿用户",
+            "置信度 > 0.7 的样本"
+          ],
+          [
+            "富人样本",
+            "模型本来就会的样本"
+          ]
+        ],
+        "borrowedMove": "筛选规则依赖模型本身就是选择偏差：改用“与模型无关”的筛选（如多模型一致性）。"
+      },
+      {
+        "id": "e3",
+        "phenomenon": "p2",
+        "lens": "ioannidis",
+        "correspondences": [
+          [
+            "小样本、灵活设计、热门领域",
+            "单种子、无代码、热门方向"
+          ]
+        ],
+        "borrowedMove": "先估计先验：这类“免费午餐”式结论为真的概率本来就不高，复现失败后快速止损。"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "h1",
+        "title": "多模型一致性筛选",
+        "statement": "用 3 个不同模型都同意的伪标签，可避免分布坍缩并保持第 1 轮以后的增益。",
+        "from": [
+          "e2"
+        ],
+        "test": "对比置信度筛选与一致性筛选的分布与性能",
+        "falsifiedIf": "短片段占比仍逐轮下降",
+        "impact": 3,
+        "effort": 3,
+        "status": "todo"
+      },
+      {
+        "id": "h2",
+        "title": "罕见类重采样",
+        "statement": "对罕见动词重采样可以把自训练的有效轮数延长到 2 轮以上。",
+        "from": [
+          "e1"
+        ],
+        "test": "按动词频率反比采样",
+        "impact": 2,
+        "effort": 2,
+        "status": "todo"
+      }
+    ],
+    "paperAngles": [
+      {
+        "id": "a1",
+        "title": "时序定位中的自训练坍缩",
+        "type": "analysis",
+        "claim": "定位任务的伪标签会系统性丢失短事件与罕见动作，并给出简单的防坍缩配方。",
+        "from": [
+          "h1",
+          "h2"
+        ],
+        "risk": "模型坍缩已有大量研究，需要突出“时序”特有的现象",
+        "venues": [
+          "TMLR",
+          "Workshop"
+        ],
+        "readiness": 0.3,
+        "checkRelated": [
+          "model collapse self-training video",
+          "pseudo label temporal grounding"
+        ]
+      }
+    ],
+    "provocations": [
+      {
+        "prompt": "triz-blessing",
+        "answer": "把“被伪标签丢掉的样本”收集起来，正好是一个难样本子集，可以作为新的评测切片。"
+      }
+    ]
+  },
+  "claims": [
+    {
+      "id": "k1",
+      "paper": {
+        "title": "【虚构示例】SelfLoop-VTG: Iterative Self-Training for Free Gains",
+        "venue": "虚构会议",
+        "year": 2026,
+        "code": "none",
+        "checkpoint": false,
+        "citations": 1
+      },
+      "claim": "三轮自训练无需新增标注即可让 mIoU 提升 5.2",
+      "setting": "自建 2,000 条测试子集；未说明伪标签阈值",
+      "reported": [
+        {
+          "method": "paper",
+          "dataset": "charades-timelens",
+          "metrics": {
+            "R1@0.3": 70.2,
+            "R1@0.5": 52.0,
+            "R1@0.7": 30.1,
+            "mIoU": 66.0
+          }
+        }
+      ],
+      "ours": [
+        {
+          "method": "r3",
+          "dataset": "charades-timelens",
+          "metrics": {
+            "R1@0.3": 68.9,
+            "R1@0.5": 50.6,
+            "R1@0.7": 26.5,
+            "mIoU": 47.7
+          }
+        }
+      ],
+      "gap": {
+        "dataset": "charades-timelens",
+        "metric": "R1@0.7",
+        "steps": [
+          {
+            "label": "自建子集 vs 完整测试集",
+            "delta": -1.2,
+            "verified": false
+          },
+          {
+            "label": "伪标签阈值差异",
+            "delta": -0.6,
+            "verified": false
+          }
+        ]
+      },
+      "checklist": [
+        {
+          "id": "code",
+          "status": "fail"
+        },
+        {
+          "id": "ckpt",
+          "status": "fail"
+        },
+        {
+          "id": "protocol",
+          "status": "fail",
+          "note": "未说明阈值与子集构造"
+        },
+        {
+          "id": "variance",
+          "status": "fail"
+        },
+        {
+          "id": "standard-split",
+          "status": "fail",
+          "note": "自建测试子集"
+        },
+        {
+          "id": "gain-plausible",
+          "status": "fail"
+        },
+        {
+          "id": "independent",
+          "status": "fail"
+        },
+        {
+          "id": "our-protocol",
+          "status": "pass"
+        }
+      ],
+      "explanations": [
+        {
+          "text": "报告 mIoU 时可能误用了 R1@0.3 的分母或其他口径",
+          "likelihood": 4,
+          "test": "报告的 mIoU 超出由 R1 值推出的理论上限（见自动检查），数字本身不自洽"
+        },
+        {
+          "text": "自建测试子集偏向长片段",
+          "likelihood": 3,
+          "test": "我们的长片段子集上自训练也只 +0.3"
+        }
+      ],
+      "verdict": "contradicted",
+      "decision": "ignore",
+      "timebox": "0.5 天（数字不自洽，直接止损）",
+      "action": "不再投入。若要引用，只引用其想法而不引用数字。"
+    }
+  ],
+  "reproduce": {
+    "repo": "git@your-host:lab/vtg-exp.git",
+    "commit": "9be3d40",
+    "env": {
+      "python": "3.11",
+      "torch": "2.5.1",
+      "cuda": "12.4",
+      "transformers": "4.51"
+    },
+    "commands": [
+      {
+        "label": "自训练循环",
+        "cmd": "python self_train.py --init ckpt/vtg-02 --unlabeled data/unlabeled_200k.txt --rounds 3 --conf 0.7 --mix 1:1"
+      }
+    ],
+    "hyperparams": {
+      "rounds": 3,
+      "conf_threshold": 0.7,
+      "mix_ratio": "1:1",
+      "lr": "1e-5",
+      "epochs_per_round": 1
+    }
+  }
+}

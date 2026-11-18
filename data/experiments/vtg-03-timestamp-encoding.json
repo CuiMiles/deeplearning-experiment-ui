@@ -1,0 +1,364 @@
+{
+  "$schema": "../../schema/experiment.schema.json",
+  "id": "vtg-03-timestamp-encoding",
+  "title": "时间戳编码方式消融",
+  "task": "vtg",
+  "status": "completed",
+  "date": "2026-09-28",
+  "series": "VTG · MLLM 定位研究线",
+  "parent": "vtg-02-sft-timelens100k",
+  "tags": [
+    "表示",
+    "消融"
+  ],
+  "author": "agent:claude",
+  "demo": true,
+  "tldr": "把时间信息以文本形式与每帧交错放置，比在提示词末尾给绝对秒数 R1@0.7 高 2.6，且预测不再扎堆在整数秒。",
+  "brief": {
+    "question": "模型“看到”时间的方式，会影响定位精度吗？",
+    "change": "对比 4 种时间戳编码：绝对秒 / 相对百分比 / 特殊时间 token / 帧-时间交错文本",
+    "conclusion": "帧-时间交错文本最好，且无需新增词表",
+    "verdict": "positive",
+    "pipeline": [
+      {
+        "label": "均匀抽 32 帧"
+      },
+      {
+        "label": "时间编码",
+        "changed": true,
+        "note": "每帧前插入 \"<t=12.5s>\" 文本"
+      },
+      {
+        "label": "SFT-100K"
+      },
+      {
+        "label": "文本输出起止秒"
+      }
+    ]
+  },
+  "setup": {
+    "model": "Qwen2.5-VL-7B + SFT",
+    "params": "7B",
+    "trainData": [
+      "timelens-100k"
+    ],
+    "evalData": [
+      "charades-timelens",
+      "activitynet-timelens",
+      "qvhighlights-timelens"
+    ],
+    "compute": "8×A100 · 4 组 × 9h",
+    "gpuHours": 288,
+    "frames": "32 帧 · 448px"
+  },
+  "results": {
+    "methods": [
+      {
+        "id": "inter",
+        "name": "帧-时间交错文本",
+        "role": "ours"
+      },
+      {
+        "id": "abs",
+        "name": "绝对秒（上游）",
+        "role": "baseline"
+      }
+    ],
+    "main": [
+      {
+        "method": "inter",
+        "dataset": "charades-timelens",
+        "metrics": {
+          "R1@0.3": 72.0,
+          "R1@0.5": 55.3,
+          "R1@0.7": 31.0,
+          "mIoU": 50.5
+        }
+      },
+      {
+        "method": "abs",
+        "dataset": "charades-timelens",
+        "metrics": {
+          "R1@0.3": 70.6,
+          "R1@0.5": 52.8,
+          "R1@0.7": 28.4,
+          "mIoU": 49.0
+        }
+      },
+      {
+        "method": "inter",
+        "dataset": "activitynet-timelens",
+        "metrics": {
+          "R1@0.3": 58.2,
+          "R1@0.5": 41.0,
+          "R1@0.7": 24.6,
+          "mIoU": 42.6
+        }
+      },
+      {
+        "method": "abs",
+        "dataset": "activitynet-timelens",
+        "metrics": {
+          "R1@0.3": 56.9,
+          "R1@0.5": 39.2,
+          "R1@0.7": 22.7,
+          "mIoU": 41.4
+        }
+      },
+      {
+        "method": "inter",
+        "dataset": "qvhighlights-timelens",
+        "metrics": {
+          "R1@0.3": 66.0,
+          "R1@0.5": 52.2,
+          "R1@0.7": 34.1,
+          "mIoU": 49.1
+        }
+      },
+      {
+        "method": "abs",
+        "dataset": "qvhighlights-timelens",
+        "metrics": {
+          "R1@0.3": 64.8,
+          "R1@0.5": 50.1,
+          "R1@0.7": 32.0,
+          "mIoU": 47.9
+        }
+      }
+    ]
+  },
+  "ablations": [
+    {
+      "id": "encoding",
+      "title": "四种时间编码（Charades-TimeLens）",
+      "factor": "编码方式",
+      "kind": "categorical",
+      "metrics": [
+        "R1@0.5",
+        "R1@0.7"
+      ],
+      "rows": [
+        {
+          "setting": "绝对秒",
+          "metrics": {
+            "R1@0.5": 52.8,
+            "R1@0.7": 28.4
+          }
+        },
+        {
+          "setting": "相对百分比",
+          "metrics": {
+            "R1@0.5": 51.9,
+            "R1@0.7": 27.1
+          }
+        },
+        {
+          "setting": "时间 token",
+          "metrics": {
+            "R1@0.5": 54.0,
+            "R1@0.7": 29.9
+          }
+        },
+        {
+          "setting": "交错文本",
+          "metrics": {
+            "R1@0.5": 55.3,
+            "R1@0.7": 31.0
+          },
+          "isDefault": true
+        }
+      ],
+      "takeaway": "新增时间 token 需要额外学习嵌入；交错文本直接复用数字能力，效果最好。"
+    }
+  ],
+  "charts": [
+    {
+      "id": "decimal-hist",
+      "title": "预测起点的小数部分分布",
+      "type": "bar",
+      "xLabel": "小数部分",
+      "yLabel": "占比 %",
+      "categories": [
+        ".0",
+        ".1",
+        ".2",
+        ".3",
+        ".4",
+        ".5",
+        ".6",
+        ".7",
+        ".8",
+        ".9"
+      ],
+      "series": [
+        {
+          "name": "绝对秒",
+          "data": [
+            41.2,
+            3.1,
+            4.0,
+            3.6,
+            3.3,
+            27.5,
+            4.1,
+            4.4,
+            4.6,
+            4.2
+          ]
+        },
+        {
+          "name": "交错文本",
+          "data": [
+            13.0,
+            8.9,
+            9.4,
+            9.0,
+            8.6,
+            11.8,
+            9.5,
+            9.9,
+            10.1,
+            9.8
+          ]
+        }
+      ],
+      "takeaway": "绝对秒编码下 69% 的预测落在 .0 或 .5：模型在“凑整”，而不是对齐画面。"
+    }
+  ],
+  "insights": {
+    "oneLiner": "时间的“表示”本身就是一个被低估的设计维度，值得在论文中作为独立贡献系统比较。",
+    "confidence": 0.6,
+    "phenomena": [
+      {
+        "id": "p1",
+        "title": "预测扎堆在整数秒",
+        "detail": "绝对秒编码下 69% 的预测起点小数部分为 .0 或 .5。",
+        "evidence": "chart:decimal-hist",
+        "symptoms": [
+          "position-bias",
+          "representation"
+        ],
+        "surprise": 4
+      },
+      {
+        "id": "p2",
+        "title": "换表示涨 2.6 个点",
+        "detail": "不改模型、不改数据，仅改变时间表示，R1@0.7 +2.6。",
+        "evidence": "ablation:encoding",
+        "symptoms": [
+          "representation"
+        ],
+        "surprise": 3
+      }
+    ],
+    "echoes": [
+      {
+        "id": "e1",
+        "phenomenon": "p1",
+        "lens": "anchoring",
+        "correspondences": [
+          [
+            "幸运轮上的随机数",
+            "提示词中的示例时间戳 / 训练集常见值"
+          ],
+          [
+            "估计被拉向锚点",
+            "预测被拉向整数秒"
+          ]
+        ],
+        "borrowedMove": "锚定研究中，给出多个不同锚点会削弱单一锚点的影响：在每帧旁给出时间，让“锚”变得密集且与画面对齐。"
+      },
+      {
+        "id": "e2",
+        "phenomenon": "p2",
+        "lens": "numerals",
+        "correspondences": [
+          [
+            "罗马数字 → 位值制",
+            "末尾一串秒数 → 每帧旁的时间标签"
+          ],
+          [
+            "乘除变简单",
+            "对齐变简单"
+          ]
+        ],
+        "borrowedMove": "借用“让答案显而易见”的原则：让模型只需“读出”最近帧的时间标签，而不是做跨序列的计数。"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "h1",
+        "title": "更密的时间标签",
+        "statement": "在帧内 patch token 之间也插入时间信息，可进一步改善精细边界。",
+        "from": [
+          "e2"
+        ],
+        "test": "每帧前 + 帧中各插一次时间标签",
+        "falsifiedIf": "R1@0.7 无变化",
+        "impact": 2,
+        "effort": 2,
+        "status": "todo"
+      },
+      {
+        "id": "h2",
+        "title": "凑整来自锚定",
+        "statement": "把训练集标注随机抖动 ±0.2s，可以减少凑整且不损失精度。",
+        "from": [
+          "e1"
+        ],
+        "test": "标注抖动增强 + 小数分布统计",
+        "falsifiedIf": "凑整比例不下降",
+        "impact": 2,
+        "effort": 1,
+        "status": "todo"
+      }
+    ],
+    "paperAngles": [
+      {
+        "id": "a1",
+        "title": "时间表示的系统比较",
+        "type": "analysis",
+        "claim": "在统一协议下比较 MLLM 的时间表示方式，并用“凑整率”等诊断指标解释差异。",
+        "from": [
+          "h1",
+          "h2"
+        ],
+        "risk": "已有多篇工作比较过时间编码，需要诊断指标作为差异化",
+        "venues": [
+          "ECCV",
+          "ACM MM"
+        ],
+        "readiness": 0.4,
+        "checkRelated": [
+          "timestamp encoding multimodal LLM video grounding",
+          "interleaved timestamp tokens"
+        ]
+      }
+    ]
+  },
+  "reproduce": {
+    "repo": "git@your-host:lab/vtg-exp.git",
+    "commit": "c09ab11",
+    "env": {
+      "python": "3.11",
+      "torch": "2.5.1",
+      "cuda": "12.4",
+      "transformers": "4.51"
+    },
+    "commands": [
+      {
+        "label": "训练（交错文本编码）",
+        "cmd": "torchrun --nproc_per_node 8 train_sft.py --time_encoding interleaved_text --num_frames 32 --out ckpt/vtg-03"
+      }
+    ],
+    "hyperparams": {
+      "lr": "1e-5",
+      "epochs": 1,
+      "global_batch": 128,
+      "num_frames": 32,
+      "time_encoding": "interleaved_text",
+      "prompt": "v2-interleaved",
+      "seed": 42
+    }
+  }
+}

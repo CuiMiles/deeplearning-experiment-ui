@@ -1,0 +1,893 @@
+{
+  "$schema": "../../schema/experiment.schema.json",
+  "id": "vtg-01-zeroshot-baseline",
+  "title": "Qwen2.5-VL-7B 零样本定位基线",
+  "task": "vtg",
+  "status": "completed",
+  "date": "2026-09-02",
+  "series": "VTG · MLLM 定位研究线",
+  "tags": [
+    "基线",
+    "旧基准 vs 重标注"
+  ],
+  "author": "agent:claude",
+  "demo": true,
+  "tldr": "不做任何训练，测出通用 MLLM 的定位能力：粗定位尚可，精细定位很弱，且旧基准高估了它。",
+  "brief": {
+    "question": "通用多模态大模型不经训练能把事件定位到多准？",
+    "change": "无改动：建立后续所有实验共用的基线和评测协议",
+    "conclusion": "R1@0.7 仅 17.6；在重标注基准上比旧基准低 4–6 个点，排名也发生变化",
+    "verdict": "inconclusive",
+    "pipeline": [
+      {
+        "label": "均匀抽 32 帧"
+      },
+      {
+        "label": "Qwen2.5-VL-7B"
+      },
+      {
+        "label": "文本输出起止秒"
+      },
+      {
+        "label": "解析 + 评测",
+        "changed": true,
+        "note": "统一了解析规则与 IoU 计算脚本"
+      }
+    ]
+  },
+  "setup": {
+    "model": "Qwen2.5-VL-7B-Instruct",
+    "params": "7B",
+    "evalData": [
+      "charades-timelens",
+      "activitynet-timelens",
+      "qvhighlights-timelens",
+      "charades-sta"
+    ],
+    "compute": "1×A100 · 3h 推理",
+    "gpuHours": 3,
+    "frames": "32 帧 · 448px"
+  },
+  "results": {
+    "methods": [
+      {
+        "id": "zs",
+        "name": "Qwen2.5-VL-7B 零样本",
+        "role": "ours"
+      },
+      {
+        "id": "zs72",
+        "name": "Qwen2.5-VL-72B 零样本",
+        "role": "reference",
+        "note": "同协议重测"
+      }
+    ],
+    "main": [
+      {
+        "method": "zs",
+        "dataset": "charades-timelens",
+        "metrics": {
+          "R1@0.3": 58.4,
+          "R1@0.5": 38.0,
+          "R1@0.7": 17.6,
+          "mIoU": 40.3
+        }
+      },
+      {
+        "method": "zs72",
+        "dataset": "charades-timelens",
+        "metrics": {
+          "R1@0.3": 63.1,
+          "R1@0.5": 44.2,
+          "R1@0.7": 22.9,
+          "mIoU": 44.0
+        }
+      },
+      {
+        "method": "zs",
+        "dataset": "activitynet-timelens",
+        "metrics": {
+          "R1@0.3": 43.0,
+          "R1@0.5": 26.5,
+          "R1@0.7": 12.8,
+          "mIoU": 32.9
+        }
+      },
+      {
+        "method": "zs72",
+        "dataset": "activitynet-timelens",
+        "metrics": {
+          "R1@0.3": 49.6,
+          "R1@0.5": 31.8,
+          "R1@0.7": 16.0,
+          "mIoU": 36.4
+        }
+      },
+      {
+        "method": "zs",
+        "dataset": "qvhighlights-timelens",
+        "metrics": {
+          "R1@0.3": 52.3,
+          "R1@0.5": 36.0,
+          "R1@0.7": 20.4,
+          "mIoU": 39.0
+        }
+      },
+      {
+        "method": "zs72",
+        "dataset": "qvhighlights-timelens",
+        "metrics": {
+          "R1@0.3": 57.9,
+          "R1@0.5": 41.1,
+          "R1@0.7": 24.2,
+          "mIoU": 42.4
+        }
+      },
+      {
+        "method": "zs",
+        "dataset": "charades-sta",
+        "metrics": {
+          "R1@0.3": 62.9,
+          "R1@0.5": 43.1,
+          "R1@0.7": 21.8,
+          "mIoU": 43.5
+        }
+      },
+      {
+        "method": "zs72",
+        "dataset": "charades-sta",
+        "metrics": {
+          "R1@0.3": 65.0,
+          "R1@0.5": 46.3,
+          "R1@0.7": 24.0,
+          "mIoU": 45.2
+        }
+      }
+    ],
+    "headline": [
+      {
+        "dataset": "charades-timelens",
+        "metric": "R1@0.5"
+      },
+      {
+        "dataset": "charades-timelens",
+        "metric": "R1@0.7"
+      },
+      {
+        "dataset": "activitynet-timelens",
+        "metric": "mIoU"
+      },
+      {
+        "dataset": "charades-sta",
+        "metric": "R1@0.7"
+      }
+    ]
+  },
+  "breakdowns": [
+    {
+      "id": "position",
+      "title": "按 GT 在视频中的相对位置",
+      "dimension": "GT 中心相对位置",
+      "metric": "R1@0.5",
+      "methods": [
+        "zs",
+        "zs72"
+      ],
+      "buckets": [
+        {
+          "label": "0–20%",
+          "count": 812,
+          "values": {
+            "zs": 49.6,
+            "zs72": 53.0
+          }
+        },
+        {
+          "label": "20–40%",
+          "count": 903,
+          "values": {
+            "zs": 38.2,
+            "zs72": 44.1
+          }
+        },
+        {
+          "label": "40–60%",
+          "count": 761,
+          "values": {
+            "zs": 30.4,
+            "zs72": 38.5
+          }
+        },
+        {
+          "label": "60–80%",
+          "count": 702,
+          "values": {
+            "zs": 33.9,
+            "zs72": 41.6
+          }
+        },
+        {
+          "label": "80–100%",
+          "count": 542,
+          "values": {
+            "zs": 37.1,
+            "zs72": 42.8
+          }
+        }
+      ],
+      "takeaway": "中段最差、两端较好，呈 U 形；开头附近明显最好，疑似位置先验。"
+    }
+  ],
+  "charts": [
+    {
+      "id": "center-scatter",
+      "title": "预测中心 vs GT 中心（归一化，Charades-TimeLens 抽样 80 条）",
+      "type": "scatter",
+      "xLabel": "GT 中心",
+      "yLabel": "预测中心",
+      "diagonal": true,
+      "series": [
+        {
+          "name": "零样本 7B",
+          "data": [
+            [
+              0.15,
+              0.28
+            ],
+            [
+              0.58,
+              0.56
+            ],
+            [
+              0.15,
+              0.41
+            ],
+            [
+              0.98,
+              0.67
+            ],
+            [
+              0.96,
+              0.65
+            ],
+            [
+              0.88,
+              0.5
+            ],
+            [
+              0.71,
+              0.56
+            ],
+            [
+              0.25,
+              0.23
+            ],
+            [
+              0.13,
+              0.23
+            ],
+            [
+              0.28,
+              0.19
+            ],
+            [
+              0.93,
+              0.55
+            ],
+            [
+              0.83,
+              0.46
+            ],
+            [
+              0.48,
+              0.25
+            ],
+            [
+              0.03,
+              0.13
+            ],
+            [
+              0.24,
+              0.36
+            ],
+            [
+              0.9,
+              0.63
+            ],
+            [
+              0.82,
+              0.51
+            ],
+            [
+              0.24,
+              0.09
+            ],
+            [
+              0.71,
+              0.57
+            ],
+            [
+              0.93,
+              0.56
+            ],
+            [
+              0.51,
+              0.52
+            ],
+            [
+              0.09,
+              0.24
+            ],
+            [
+              0.51,
+              0.45
+            ],
+            [
+              0.05,
+              0.34
+            ],
+            [
+              0.96,
+              0.61
+            ],
+            [
+              0.9,
+              0.47
+            ],
+            [
+              0.57,
+              0.43
+            ],
+            [
+              0.04,
+              0.06
+            ],
+            [
+              0.94,
+              0.67
+            ],
+            [
+              0.59,
+              0.36
+            ],
+            [
+              0.52,
+              0.33
+            ],
+            [
+              0.32,
+              0.34
+            ],
+            [
+              0.41,
+              0.4
+            ],
+            [
+              0.49,
+              0.28
+            ],
+            [
+              0.48,
+              0.27
+            ],
+            [
+              0.67,
+              0.35
+            ],
+            [
+              0.58,
+              0.31
+            ],
+            [
+              0.07,
+              0.14
+            ],
+            [
+              0.19,
+              0.17
+            ],
+            [
+              0.0,
+              0.14
+            ],
+            [
+              0.77,
+              0.37
+            ],
+            [
+              0.52,
+              0.36
+            ],
+            [
+              0.58,
+              0.43
+            ],
+            [
+              0.91,
+              0.75
+            ],
+            [
+              0.45,
+              0.27
+            ],
+            [
+              0.87,
+              0.58
+            ],
+            [
+              0.13,
+              0.26
+            ],
+            [
+              0.61,
+              0.4
+            ],
+            [
+              0.4,
+              0.3
+            ],
+            [
+              0.07,
+              0.24
+            ],
+            [
+              0.82,
+              0.5
+            ],
+            [
+              0.71,
+              0.51
+            ],
+            [
+              0.98,
+              0.69
+            ],
+            [
+              0.99,
+              0.53
+            ],
+            [
+              0.2,
+              0.27
+            ],
+            [
+              0.58,
+              0.63
+            ],
+            [
+              0.49,
+              0.5
+            ],
+            [
+              0.61,
+              0.57
+            ],
+            [
+              0.68,
+              0.44
+            ],
+            [
+              0.39,
+              0.37
+            ],
+            [
+              0.12,
+              0.15
+            ],
+            [
+              0.52,
+              0.29
+            ],
+            [
+              0.05,
+              0.2
+            ],
+            [
+              0.54,
+              0.35
+            ],
+            [
+              0.1,
+              0.05
+            ],
+            [
+              0.02,
+              0.07
+            ],
+            [
+              0.18,
+              0.31
+            ],
+            [
+              0.23,
+              0.38
+            ],
+            [
+              0.75,
+              0.52
+            ],
+            [
+              0.26,
+              0.24
+            ],
+            [
+              0.79,
+              0.62
+            ],
+            [
+              0.78,
+              0.49
+            ],
+            [
+              0.35,
+              0.42
+            ],
+            [
+              0.32,
+              0.28
+            ],
+            [
+              0.8,
+              0.63
+            ],
+            [
+              0.44,
+              0.27
+            ],
+            [
+              0.03,
+              0
+            ],
+            [
+              0.97,
+              0.68
+            ],
+            [
+              0.95,
+              0.66
+            ],
+            [
+              0.9,
+              0.67
+            ]
+          ]
+        }
+      ],
+      "takeaway": "点整体落在对角线下方且斜率 < 1：预测被拉向视频前部。"
+    },
+    {
+      "id": "legacy-vs-refined",
+      "title": "旧基准 vs 重标注基准（R1@0.7）",
+      "type": "bar",
+      "categories": [
+        "Charades",
+        "ActivityNet"
+      ],
+      "yLabel": "R1@0.7",
+      "series": [
+        {
+          "name": "旧基准",
+          "data": [
+            21.8,
+            15.9
+          ]
+        },
+        {
+          "name": "重标注基准",
+          "data": [
+            17.6,
+            12.8
+          ]
+        }
+      ],
+      "takeaway": "同一模型在重标注基准上更低：旧基准的错误标注里有一部分恰好与模型的偏置吻合。"
+    }
+  ],
+  "cases": [
+    {
+      "id": "c1",
+      "type": "temporal",
+      "title": "开冰箱",
+      "outcome": "partial",
+      "video": {
+        "src": "media/samples/kitchen.mp4",
+        "fps": 25,
+        "duration": 30
+      },
+      "query": "person opens the refrigerator door",
+      "gt": [
+        [
+          6.2,
+          11.4
+        ]
+      ],
+      "predictions": [
+        {
+          "method": "zs",
+          "segments": [
+            {
+              "start": 3.5,
+              "end": 13.0,
+              "score": 0.62
+            }
+          ]
+        },
+        {
+          "method": "zs72",
+          "segments": [
+            {
+              "start": 5.0,
+              "end": 12.5,
+              "score": 0.7
+            }
+          ]
+        }
+      ],
+      "sampledFrames": [
+        0.469,
+        1.406,
+        2.344,
+        3.281,
+        4.219,
+        5.156,
+        6.094,
+        7.031,
+        7.969,
+        8.906,
+        9.844,
+        10.781,
+        11.719,
+        12.656,
+        13.594,
+        14.531,
+        15.469,
+        16.406,
+        17.344,
+        18.281,
+        19.219,
+        20.156,
+        21.094,
+        22.031,
+        22.969,
+        23.906,
+        24.844,
+        25.781,
+        26.719,
+        27.656,
+        28.594,
+        29.531
+      ],
+      "note": "方向正确但边界很宽：IoU 0.55，过了 0.5 但没过 0.7。"
+    },
+    {
+      "id": "c2",
+      "type": "temporal",
+      "title": "开灯",
+      "outcome": "failure",
+      "video": {
+        "src": "media/samples/kitchen.mp4",
+        "fps": 25,
+        "duration": 30
+      },
+      "query": "the person switches on the light",
+      "gt": [
+        [
+          22.8,
+          24.4
+        ]
+      ],
+      "predictions": [
+        {
+          "method": "zs",
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "score": 0.41
+            }
+          ]
+        },
+        {
+          "method": "zs72",
+          "segments": [
+            {
+              "start": 21.0,
+              "end": 26.0,
+              "score": 0.55
+            }
+          ]
+        }
+      ],
+      "sampledFrames": [
+        0.469,
+        1.406,
+        2.344,
+        3.281,
+        4.219,
+        5.156,
+        6.094,
+        7.031,
+        7.969,
+        8.906,
+        9.844,
+        10.781,
+        11.719,
+        12.656,
+        13.594,
+        14.531,
+        15.469,
+        16.406,
+        17.344,
+        18.281,
+        19.219,
+        20.156,
+        21.094,
+        22.031,
+        22.969,
+        23.906,
+        24.844,
+        25.781,
+        26.719,
+        27.656,
+        28.594,
+        29.531
+      ],
+      "note": "7B 直接预测在视频开头，是位置先验的典型表现。"
+    }
+  ],
+  "insights": {
+    "oneLiner": "旧基准会奖励模型的位置偏置；之后所有结论都应以重标注基准为准，并报告位置分桶结果。",
+    "confidence": 0.7,
+    "phenomena": [
+      {
+        "id": "p1",
+        "title": "预测被拉向视频开头",
+        "detail": "预测中心与 GT 中心的回归斜率仅 0.55，开头 20% 的片段 R1@0.5 最高。",
+        "evidence": "chart:center-scatter",
+        "symptoms": [
+          "position-bias"
+        ],
+        "surprise": 2
+      },
+      {
+        "id": "p2",
+        "title": "换成重标注基准就掉分",
+        "detail": "同一模型在重标注基准上 R1@0.7 低 4.2，7B 与 72B 的差距反而拉大。",
+        "evidence": "chart:legacy-vs-refined",
+        "symptoms": [
+          "label-noise",
+          "metric-disagreement"
+        ],
+        "surprise": 3
+      }
+    ],
+    "echoes": [
+      {
+        "id": "e1",
+        "phenomenon": "p1",
+        "lens": "serial-position",
+        "correspondences": [
+          [
+            "列表中的项目位置",
+            "事件在视频中的相对位置"
+          ],
+          [
+            "首因效应",
+            "开头片段定位最好"
+          ],
+          [
+            "中间项遗忘",
+            "中段事件最差"
+          ]
+        ],
+        "borrowedMove": "记忆研究用“打乱呈现顺序”分离位置效应与内容效应：把视频随机循环平移后重测，看偏差跟着位置还是跟着内容走。",
+        "limit": "人类的 U 形来自记忆机制，模型的偏置更可能来自训练数据分布。"
+      },
+      {
+        "id": "e2",
+        "phenomenon": "p2",
+        "lens": "personal-equation",
+        "correspondences": [
+          [
+            "不同天文学家的计时偏差",
+            "旧基准标注者的边界习惯"
+          ],
+          [
+            "把助手的偏差当成错误",
+            "把模型与标注习惯的不一致当成模型误差"
+          ]
+        ],
+        "borrowedMove": "像 Bessel 一样先测量“观察者偏差”：在 200 条样本上做双人重标，估计旧标注的系统偏移，再解释模型得分的变化。",
+        "limit": "重标注基准本身也有标注者偏差，只是更小。"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "h1",
+        "title": "平移去偏",
+        "statement": "训练时对视频做随机循环平移，可消除开头偏置并提升中段事件 R1@0.5。",
+        "from": [
+          "e1"
+        ],
+        "test": "在 SFT 中加入随机平移增强，按位置分桶对比",
+        "falsifiedIf": "中段分桶提升 < 2 个点",
+        "impact": 3,
+        "effort": 2,
+        "status": "todo"
+      },
+      {
+        "id": "h2",
+        "title": "旧基准奖励偏置",
+        "statement": "旧基准中被修正的样本，正好是位置偏置模型容易“蒙对”的样本。",
+        "from": [
+          "e2"
+        ],
+        "test": "对比被修正样本与未修正样本上的盲测基线得分",
+        "falsifiedIf": "两类样本上盲测得分无差异",
+        "impact": 4,
+        "effort": 1,
+        "status": "confirmed"
+      }
+    ],
+    "paperAngles": [
+      {
+        "id": "a1",
+        "title": "位置偏置如何让旧基准高估 MLLM 定位能力",
+        "type": "analysis",
+        "claim": "量化旧基准标注错误与模型位置偏置之间的“共谋”，并给出去偏评测协议。",
+        "from": [
+          "h2"
+        ],
+        "novelty": "把标注错误与模型偏置联系起来，而不是分别讨论",
+        "risk": "与已有的重标注基准工作重叠，需要聚焦“为何排名会变”",
+        "venues": [
+          "NeurIPS D&B",
+          "TMLR"
+        ],
+        "readiness": 0.35,
+        "checkRelated": [
+          "temporal grounding position bias",
+          "Charades-STA annotation bias"
+        ]
+      }
+    ],
+    "provocations": [
+      {
+        "prompt": "simplest",
+        "answer": "最无聊的解释是解析脚本把空输出当成 [0, 5]。已排查：空输出只占 0.3%。"
+      }
+    ],
+    "questionsForYou": [
+      "后续是否只在重标注基准上报告，旧基准仅放附录？"
+    ]
+  },
+  "reproduce": {
+    "repo": "git@your-host:lab/vtg-exp.git",
+    "commit": "a1f3c9e",
+    "env": {
+      "python": "3.11",
+      "torch": "2.5.1",
+      "cuda": "12.4",
+      "transformers": "4.51"
+    },
+    "hardware": "1×A100-80G",
+    "commands": [
+      {
+        "label": "评测（零样本）",
+        "cmd": "python eval.py \\\n  --model Qwen/Qwen2.5-VL-7B-Instruct \\\n  --benchmarks charades-timelens,activitynet-timelens,qvhighlights-timelens,charades-sta \\\n  --num_frames 32 --max_pixels 200704 \\\n  --out results/vtg-01"
+      }
+    ],
+    "hyperparams": {
+      "num_frames": 32,
+      "max_pixels": 200704,
+      "temperature": 0,
+      "prompt": "v1-plain-seconds"
+    },
+    "artifacts": [
+      {
+        "label": "逐样本预测",
+        "path": "results/vtg-01/predictions.jsonl"
+      }
+    ]
+  }
+}
