@@ -1,0 +1,221 @@
+{
+  "$schema": "../../schema/experiment.schema.json",
+  "id": "densecap-01-event-first",
+  "title": "密集描述：先定位事件再写描述",
+  "task": "dense-cap",
+  "status": "completed",
+  "date": "2026-09-25",
+  "tags": [
+    "YouCook2",
+    "两阶段"
+  ],
+  "author": "agent:claude",
+  "demo": true,
+  "tldr": "把“同时生成时间和描述”改成“先列出事件区间，再逐个描述”：定位 F1 +5.8，CIDEr +3.1。",
+  "brief": {
+    "question": "同时输出时间和文字，会不会互相干扰？",
+    "change": "两阶段：事件区间列表 → 每个区间单独描述",
+    "conclusion": "定位与描述都提升，推理时间增加 40%",
+    "verdict": "positive",
+    "pipeline": [
+      {
+        "label": "视频帧"
+      },
+      {
+        "label": "事件区间列表",
+        "changed": true
+      },
+      {
+        "label": "逐区间描述",
+        "changed": true
+      }
+    ]
+  },
+  "setup": {
+    "model": "Qwen2.5-VL-7B + SFT",
+    "evalData": [
+      "youcook2"
+    ],
+    "compute": "8×A100 · 7h"
+  },
+  "results": {
+    "methods": [
+      {
+        "id": "two",
+        "name": "两阶段",
+        "role": "ours"
+      },
+      {
+        "id": "one",
+        "name": "一阶段",
+        "role": "baseline"
+      }
+    ],
+    "main": [
+      {
+        "method": "two",
+        "dataset": "youcook2",
+        "metrics": {
+          "CIDEr": 42.6,
+          "METEOR": 10.9,
+          "SODA_c": 7.8,
+          "Loc-F1": 34.1
+        }
+      },
+      {
+        "method": "one",
+        "dataset": "youcook2",
+        "metrics": {
+          "CIDEr": 39.5,
+          "METEOR": 10.2,
+          "SODA_c": 6.9,
+          "Loc-F1": 28.3
+        }
+      }
+    ]
+  },
+  "cases": [
+    {
+      "id": "c1",
+      "type": "dense-caption",
+      "title": "厨房里的一系列动作",
+      "outcome": "partial",
+      "video": {
+        "src": "media/samples/kitchen.mp4",
+        "fps": 25,
+        "duration": 30
+      },
+      "gt": [
+        {
+          "start": 0.3,
+          "end": 5.6,
+          "text": "A person walks into the kitchen."
+        },
+        {
+          "start": 6.2,
+          "end": 11.4,
+          "text": "The person opens the fridge and takes out a bottle."
+        },
+        {
+          "start": 15.2,
+          "end": 19.6,
+          "text": "The person drinks from a cup at the counter."
+        },
+        {
+          "start": 22.8,
+          "end": 24.4,
+          "text": "The person switches on the light."
+        }
+      ],
+      "predictions": [
+        {
+          "method": "two",
+          "events": [
+            {
+              "start": 0.0,
+              "end": 5.5,
+              "text": "A man enters the kitchen."
+            },
+            {
+              "start": 6.0,
+              "end": 11.5,
+              "text": "He opens the refrigerator and grabs a drink."
+            },
+            {
+              "start": 14.8,
+              "end": 20.0,
+              "text": "He drinks from a cup."
+            }
+          ]
+        },
+        {
+          "method": "one",
+          "events": [
+            {
+              "start": 0.0,
+              "end": 12.0,
+              "text": "A man walks to the fridge and opens it."
+            },
+            {
+              "start": 13.0,
+              "end": 22.0,
+              "text": "He drinks water."
+            }
+          ]
+        }
+      ],
+      "note": "两阶段漏掉了 1.6 秒的“开灯”；一阶段把前两个事件合并了。"
+    }
+  ],
+  "insights": {
+    "oneLiner": "“时间”和“文字”分开生成更好，再次说明时间信息不宜和长文本混在一起（与 vtg-04 的发现一致）。",
+    "confidence": 0.55,
+    "phenomena": [
+      {
+        "id": "p1",
+        "title": "分开生成更准",
+        "detail": "两阶段 Loc-F1 +5.8，描述质量也提升。",
+        "symptoms": [
+          "reasoning-hurts",
+          "representation"
+        ],
+        "surprise": 3
+      }
+    ],
+    "echoes": [
+      {
+        "id": "e1",
+        "phenomenon": "p1",
+        "lens": "event-segmentation",
+        "correspondences": [
+          [
+            "先切分事件，再理解事件",
+            "先列区间，再写描述"
+          ]
+        ],
+        "borrowedMove": "人类先切分再编码：可以加一个“边界预测误差”辅助信号来帮助第一阶段。"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "h1",
+        "title": "与 VTG 共用第一阶段",
+        "statement": "密集描述的第一阶段与 VTG 的候选生成可以共享，并互相提升。",
+        "from": [
+          "e1"
+        ],
+        "test": "多任务训练第一阶段",
+        "impact": 3,
+        "effort": 3,
+        "status": "todo"
+      }
+    ],
+    "paperAngles": [
+      {
+        "id": "a1",
+        "title": "时间与语言的解耦生成",
+        "type": "method",
+        "claim": "在 VTG 与密集描述上统一验证“先时间、后语言”的解耦生成。",
+        "from": [
+          "h1"
+        ],
+        "venues": [
+          "CVPR"
+        ],
+        "readiness": 0.2
+      }
+    ]
+  },
+  "reproduce": {
+    "commands": [
+      {
+        "label": "训练",
+        "cmd": "python train_dvc.py --mode two_stage --dataset youcook2"
+      }
+    ],
+    "hyperparams": {
+      "mode": "two_stage",
+      "max_events": 12
+    }
+  }
+}

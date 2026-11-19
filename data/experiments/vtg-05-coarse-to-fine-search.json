@@ -1,0 +1,411 @@
+{
+  "$schema": "../../schema/experiment.schema.json",
+  "id": "vtg-05-coarse-to-fine-search",
+  "title": "贝叶斯搜索式粗到细定位",
+  "task": "vtg",
+  "status": "completed",
+  "date": "2026-10-26",
+  "series": "VTG · MLLM 定位研究线",
+  "parent": "vtg-04-rlvr-thinking",
+  "tags": [
+    "长视频",
+    "帧预算",
+    "来自假设 h4"
+  ],
+  "author": "agent:claude",
+  "demo": true,
+  "tldr": "验证 vtg-04 的假设 h4：在相同 32 帧预算下，两轮“粗看 + 候选区间加密”让短事件 R1@0.5 从 9.8 提升到 27.4。",
+  "brief": {
+    "question": "在不增加总帧数的前提下，能否救回短事件和长视频中段？",
+    "change": "第 1 轮用 16 帧粗定位得到时间分布，第 2 轮把剩下 16 帧集中在后验最高的区间",
+    "conclusion": "短事件和 ActivityNet 长视频显著提升；Charades 短视频上基本持平",
+    "verdict": "positive",
+    "pipeline": [
+      {
+        "label": "粗采样 16 帧",
+        "changed": true
+      },
+      {
+        "label": "输出时间分布",
+        "changed": true,
+        "note": "让模型输出 Top-5 候选及置信度，作为后验"
+      },
+      {
+        "label": "候选区间加密 16 帧",
+        "changed": true
+      },
+      {
+        "label": "RLVR 不思考模型"
+      },
+      {
+        "label": "输出起止秒"
+      }
+    ]
+  },
+  "setup": {
+    "model": "vtg-04 RLVR 不思考",
+    "params": "7B",
+    "evalData": [
+      "charades-timelens",
+      "activitynet-timelens"
+    ],
+    "compute": "2×A100 · 6h 推理",
+    "gpuHours": 12,
+    "frames": "16 + 16 帧（总预算不变）"
+  },
+  "results": {
+    "methods": [
+      {
+        "id": "c2f",
+        "name": "两轮搜索",
+        "role": "ours"
+      },
+      {
+        "id": "uni",
+        "name": "均匀 32 帧（上游）",
+        "role": "baseline"
+      }
+    ],
+    "main": [
+      {
+        "method": "c2f",
+        "dataset": "charades-timelens",
+        "metrics": {
+          "R1@0.3": 77.3,
+          "R1@0.5": 62.6,
+          "R1@0.7": 40.0,
+          "mIoU": 55.5
+        }
+      },
+      {
+        "method": "uni",
+        "dataset": "charades-timelens",
+        "metrics": {
+          "R1@0.3": 76.9,
+          "R1@0.5": 61.8,
+          "R1@0.7": 39.1,
+          "mIoU": 55.0
+        }
+      },
+      {
+        "method": "c2f",
+        "dataset": "activitynet-timelens",
+        "metrics": {
+          "R1@0.3": 66.0,
+          "R1@0.5": 51.2,
+          "R1@0.7": 34.6,
+          "mIoU": 49.0
+        }
+      },
+      {
+        "method": "uni",
+        "dataset": "activitynet-timelens",
+        "metrics": {
+          "R1@0.3": 62.4,
+          "R1@0.5": 46.9,
+          "R1@0.7": 30.2,
+          "mIoU": 46.2
+        }
+      }
+    ],
+    "headline": [
+      {
+        "dataset": "activitynet-timelens",
+        "metric": "R1@0.5"
+      },
+      {
+        "dataset": "activitynet-timelens",
+        "metric": "R1@0.7"
+      },
+      {
+        "dataset": "charades-timelens",
+        "metric": "R1@0.7"
+      }
+    ]
+  },
+  "breakdowns": [
+    {
+      "id": "len",
+      "title": "按 GT 片段时长（Charades-TimeLens）",
+      "dimension": "GT 时长",
+      "metric": "R1@0.5",
+      "methods": [
+        "c2f",
+        "uni"
+      ],
+      "buckets": [
+        {
+          "label": "<2s",
+          "count": 214,
+          "values": {
+            "c2f": 27.4,
+            "uni": 9.8
+          }
+        },
+        {
+          "label": "2–5s",
+          "count": 1105,
+          "values": {
+            "c2f": 46.0,
+            "uni": 41.5
+          }
+        },
+        {
+          "label": "5–10s",
+          "count": 1480,
+          "values": {
+            "c2f": 63.0,
+            "uni": 63.2
+          }
+        },
+        {
+          "label": ">10s",
+          "count": 921,
+          "values": {
+            "c2f": 66.1,
+            "uni": 66.6
+          }
+        }
+      ],
+      "takeaway": "收益几乎全部来自短事件，验证了假设 h4（目标 >25%）。"
+    }
+  ],
+  "charts": [
+    {
+      "id": "budget",
+      "title": "帧预算 – 性能（ActivityNet-TimeLens，R1@0.5）",
+      "type": "line",
+      "xLabel": "总帧数",
+      "yLabel": "R1@0.5",
+      "categories": [
+        "8",
+        "16",
+        "32",
+        "64"
+      ],
+      "series": [
+        {
+          "name": "两轮搜索",
+          "data": [
+            40.2,
+            46.8,
+            51.2,
+            53.0
+          ]
+        },
+        {
+          "name": "均匀采样",
+          "data": [
+            33.5,
+            41.0,
+            46.9,
+            50.8
+          ]
+        }
+      ],
+      "takeaway": "两轮搜索用 16 帧接近均匀 32 帧，用 32 帧超过均匀 64 帧。"
+    }
+  ],
+  "cases": [
+    {
+      "id": "c1",
+      "type": "temporal",
+      "title": "小狗跑过（救回）",
+      "outcome": "success",
+      "video": {
+        "src": "media/samples/living.mp4",
+        "fps": 25,
+        "duration": 40
+      },
+      "query": "a dog runs across the room",
+      "gt": [
+        [
+          21.0,
+          23.2
+        ]
+      ],
+      "predictions": [
+        {
+          "method": "c2f",
+          "segments": [
+            {
+              "start": 20.8,
+              "end": 23.0,
+              "score": 0.71
+            }
+          ]
+        },
+        {
+          "method": "uni",
+          "segments": [
+            {
+              "start": 24.0,
+              "end": 27.5,
+              "score": 0.38
+            }
+          ]
+        }
+      ],
+      "sampledFrames": [
+        1.25,
+        3.75,
+        6.25,
+        8.75,
+        11.25,
+        13.75,
+        16.25,
+        18.75,
+        19.5,
+        19.8,
+        20.1,
+        20.4,
+        20.7,
+        21.0,
+        21.25,
+        21.3,
+        21.6,
+        21.9,
+        22.2,
+        22.5,
+        22.8,
+        23.1,
+        23.4,
+        23.7,
+        23.75,
+        24.0,
+        26.25,
+        28.75,
+        31.25,
+        33.75,
+        36.25,
+        38.75
+      ],
+      "note": "第 2 轮把 16 帧集中在 19.5–24s，小狗出现在 8 个输入帧中。"
+    }
+  ],
+  "insights": {
+    "oneLiner": "假设 h4 成立：这是 a2“Search, Don’t Scan”最关键的一块证据，下一步需要与已有粗到细方法正面比较。",
+    "confidence": 0.66,
+    "phenomena": [
+      {
+        "id": "p1",
+        "title": "收益集中在短事件",
+        "detail": "<2s 片段 R1@0.5 从 9.8 到 27.4，长片段基本持平。",
+        "evidence": "breakdown:len",
+        "symptoms": [
+          "sampling-miss"
+        ],
+        "surprise": 2
+      },
+      {
+        "id": "p2",
+        "title": "置信度决定第二轮质量",
+        "detail": "第 1 轮 Top-1 置信度 < 0.4 的样本，第 2 轮的提升只有一半。",
+        "symptoms": [
+          "overconfidence"
+        ],
+        "surprise": 3
+      }
+    ],
+    "echoes": [
+      {
+        "id": "e1",
+        "phenomenon": "p1",
+        "lens": "bayesian-search",
+        "correspondences": [
+          [
+            "把搜索力量集中到高概率海域",
+            "把帧预算集中到候选区间"
+          ]
+        ],
+        "borrowedMove": "下一步加入“负信息更新”：第 2 轮在候选区间没找到时，降低该区间的后验并进行第 3 轮。"
+      },
+      {
+        "id": "e2",
+        "phenomenon": "p2",
+        "lens": "brier",
+        "correspondences": [
+          [
+            "预报员的概率",
+            "第 1 轮的候选置信度"
+          ],
+          [
+            "及时反馈带来校准",
+            "用第 2 轮结果反馈校准第 1 轮"
+          ]
+        ],
+        "borrowedMove": "用第 2 轮的结果作为第 1 轮置信度的标签，单独训练一个校准头。"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "h1",
+        "title": "第 3 轮负信息更新",
+        "statement": "允许在第 2 轮“未命中”时用负信息更新并进行第 3 轮，可再提升长视频 R1@0.5 2 个点以上。",
+        "from": [
+          "e1"
+        ],
+        "test": "固定 48 帧预算，比较 2 轮与 3 轮",
+        "falsifiedIf": "提升 < 1 个点",
+        "impact": 4,
+        "effort": 3,
+        "status": "todo"
+      },
+      {
+        "id": "h2",
+        "title": "校准头",
+        "statement": "校准后的第 1 轮置信度可以减少一半的第 2 轮无效采样。",
+        "from": [
+          "e2"
+        ],
+        "test": "可靠性图 + 无效采样比例",
+        "impact": 3,
+        "effort": 2,
+        "status": "todo"
+      }
+    ],
+    "paperAngles": [
+      {
+        "id": "a1",
+        "title": "Search, Don’t Scan（续）",
+        "type": "method",
+        "claim": "在 vtg-04 的分析基础上，提出带负信息更新的多轮搜索定位。",
+        "from": [
+          "h1",
+          "h2"
+        ],
+        "venues": [
+          "CVPR",
+          "ECCV"
+        ],
+        "readiness": 0.35,
+        "checkRelated": [
+          "coarse-to-fine temporal grounding frame budget"
+        ]
+      }
+    ]
+  },
+  "reproduce": {
+    "repo": "git@your-host:lab/vtg-exp.git",
+    "commit": "f0a19c2",
+    "env": {
+      "python": "3.11",
+      "torch": "2.5.1",
+      "cuda": "12.4",
+      "transformers": "4.51"
+    },
+    "commands": [
+      {
+        "label": "两轮搜索推理",
+        "cmd": "python eval_search.py --model ckpt/vtg-04-nothink --rounds 2 --frames_per_round 16 --topk 5 --benchmarks charades-timelens,activitynet-timelens"
+      }
+    ],
+    "hyperparams": {
+      "rounds": 2,
+      "frames_per_round": 16,
+      "topk": 5,
+      "zoom_margin": "0.5s",
+      "num_frames_total": 32
+    }
+  }
+}

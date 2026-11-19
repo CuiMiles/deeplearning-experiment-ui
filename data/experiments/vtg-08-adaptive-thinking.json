@@ -1,0 +1,253 @@
+{
+  "$schema": "../../schema/experiment.schema.json",
+  "id": "vtg-08-adaptive-thinking",
+  "title": "按查询类型自适应思考（进行中）",
+  "task": "vtg",
+  "status": "running",
+  "date": "2026-11-16",
+  "series": "VTG · MLLM 定位研究线",
+  "parent": "vtg-04-rlvr-thinking",
+  "tags": [
+    "来自假设 h1"
+  ],
+  "author": "agent:claude",
+  "demo": true,
+  "tldr": "验证 vtg-04 的假设 h1：用轻量分类器判断查询类型，只对推理型查询开启思考。目前训练到 400/1200 步。",
+  "brief": {
+    "question": "“何时思考”能否由查询类型自动决定，并超过两种固定策略？",
+    "change": "加入查询类型路由器：感知型直接输出，推理型先思考",
+    "conclusion": "进行中：400 步时验证集 R1@0.7 已与“不思考”持平，推理型子集领先 2.1",
+    "verdict": "inconclusive",
+    "pipeline": [
+      {
+        "label": "查询类型路由",
+        "changed": true,
+        "note": "0.5B 文本分类器，准确率 91%"
+      },
+      {
+        "label": "感知型：直接输出"
+      },
+      {
+        "label": "推理型：先思考",
+        "changed": true
+      }
+    ]
+  },
+  "setup": {
+    "model": "vtg-04 起点 + 路由器",
+    "params": "7B + 0.5B",
+    "evalData": [
+      "charades-timelens"
+    ],
+    "compute": "8×H100 · 预计 11h"
+  },
+  "results": {
+    "methods": [
+      {
+        "id": "route",
+        "name": "自适应（400 步）",
+        "role": "ours"
+      },
+      {
+        "id": "nothink",
+        "name": "不思考（vtg-04）",
+        "role": "baseline"
+      }
+    ],
+    "main": [
+      {
+        "method": "route",
+        "dataset": "charades-timelens",
+        "metrics": {
+          "R1@0.3": 77.0,
+          "R1@0.5": 61.9,
+          "R1@0.7": 39.0,
+          "mIoU": 55.1
+        }
+      },
+      {
+        "method": "nothink",
+        "dataset": "charades-timelens",
+        "metrics": {
+          "R1@0.3": 76.9,
+          "R1@0.5": 61.8,
+          "R1@0.7": 39.1,
+          "mIoU": 55.0
+        }
+      }
+    ]
+  },
+  "curves": [
+    {
+      "id": "val",
+      "title": "验证集 R1@0.7（实时）",
+      "xLabel": "step",
+      "yLabel": "R1@0.7",
+      "series": [
+        {
+          "name": "自适应",
+          "data": [
+            [
+              0,
+              31.1948
+            ],
+            [
+              25,
+              32.7415
+            ],
+            [
+              50,
+              33.4191
+            ],
+            [
+              75,
+              34.4057
+            ],
+            [
+              100,
+              35.5705
+            ],
+            [
+              125,
+              36.6351
+            ],
+            [
+              150,
+              36.9221
+            ],
+            [
+              175,
+              37.055
+            ],
+            [
+              200,
+              37.5915
+            ],
+            [
+              225,
+              38.1413
+            ],
+            [
+              250,
+              38.703
+            ],
+            [
+              275,
+              38.7339
+            ],
+            [
+              300,
+              38.8735
+            ],
+            [
+              325,
+              39.0977
+            ],
+            [
+              350,
+              39.3572
+            ],
+            [
+              375,
+              39.2699
+            ],
+            [
+              400,
+              39.5687
+            ]
+          ]
+        },
+        {
+          "name": "不思考（参照）",
+          "data": [
+            [
+              0,
+              30.9785
+            ],
+            [
+              25,
+              32.5946
+            ],
+            [
+              50,
+              33.0587
+            ],
+            [
+              75,
+              33.6981
+            ],
+            [
+              100,
+              34.9749
+            ],
+            [
+              125,
+              35.7206
+            ],
+            [
+              150,
+              36.218
+            ],
+            [
+              175,
+              36.7289
+            ],
+            [
+              200,
+              36.9801
+            ],
+            [
+              225,
+              37.2101
+            ],
+            [
+              250,
+              37.4692
+            ],
+            [
+              275,
+              37.8601
+            ],
+            [
+              300,
+              38.0382
+            ],
+            [
+              325,
+              38.5535
+            ],
+            [
+              350,
+              38.6367
+            ],
+            [
+              375,
+              38.3022
+            ],
+            [
+              400,
+              38.9105
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "reproduce": {
+    "repo": "git@your-host:lab/vtg-exp.git",
+    "branch": "adaptive-think",
+    "commit": "7aa01f3",
+    "commands": [
+      {
+        "label": "训练",
+        "cmd": "torchrun --nproc_per_node 8 train_grpo.py --init ckpt/vtg-03 --think router --router ckpt/qtype-0.5b --out ckpt/vtg-08"
+      }
+    ],
+    "hyperparams": {
+      "think": "router",
+      "router_threshold": 0.5,
+      "lr": "1e-6",
+      "num_rollouts": 8
+    }
+  }
+}

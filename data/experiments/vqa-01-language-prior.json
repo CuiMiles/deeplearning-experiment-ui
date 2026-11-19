@@ -1,0 +1,230 @@
+{
+  "$schema": "../../schema/experiment.schema.json",
+  "id": "vqa-01-language-prior",
+  "title": "视觉问答：语言先验去偏",
+  "task": "vqa",
+  "status": "completed",
+  "date": "2026-08-20",
+  "tags": [
+    "VQAv2",
+    "去偏"
+  ],
+  "author": "agent:claude",
+  "demo": true,
+  "tldr": "训练时随机遮挡图像并惩罚“遮挡后仍自信”的回答：计数类问题 +4.2，整体 +0.8。",
+  "brief": {
+    "question": "模型回答“有几个”时，是数出来的还是猜的？",
+    "change": "加入“遮图一致性”惩罚：遮挡图像后答案置信度应下降",
+    "conclusion": "计数与颜色类问题提升明显",
+    "verdict": "positive",
+    "pipeline": [
+      {
+        "label": "图像 + 问题"
+      },
+      {
+        "label": "随机遮挡分支",
+        "changed": true
+      },
+      {
+        "label": "置信度惩罚",
+        "changed": true
+      },
+      {
+        "label": "答案"
+      }
+    ]
+  },
+  "setup": {
+    "model": "Qwen2.5-VL-7B + SFT",
+    "evalData": [
+      "vqav2",
+      "gqa"
+    ],
+    "compute": "8×A100 · 6h"
+  },
+  "results": {
+    "methods": [
+      {
+        "id": "deb",
+        "name": "+ 遮图惩罚",
+        "role": "ours"
+      },
+      {
+        "id": "base",
+        "name": "基线",
+        "role": "baseline"
+      }
+    ],
+    "main": [
+      {
+        "method": "deb",
+        "dataset": "vqav2",
+        "metrics": {
+          "VQA-Acc": 83.4
+        }
+      },
+      {
+        "method": "base",
+        "dataset": "vqav2",
+        "metrics": {
+          "VQA-Acc": 82.6
+        }
+      },
+      {
+        "method": "deb",
+        "dataset": "gqa",
+        "metrics": {
+          "Acc": 63.0
+        }
+      },
+      {
+        "method": "base",
+        "dataset": "gqa",
+        "metrics": {
+          "Acc": 62.1
+        }
+      }
+    ]
+  },
+  "breakdowns": [
+    {
+      "id": "qtype",
+      "title": "按问题类型（VQAv2 val）",
+      "dimension": "问题类型",
+      "metric": "VQA-Acc",
+      "methods": [
+        "deb",
+        "base"
+      ],
+      "buckets": [
+        {
+          "label": "是/否",
+          "values": {
+            "deb": 93.1,
+            "base": 92.9
+          }
+        },
+        {
+          "label": "计数",
+          "values": {
+            "deb": 70.8,
+            "base": 66.6
+          }
+        },
+        {
+          "label": "颜色",
+          "values": {
+            "deb": 84.2,
+            "base": 82.0
+          }
+        },
+        {
+          "label": "其他",
+          "values": {
+            "deb": 77.0,
+            "base": 76.8
+          }
+        }
+      ],
+      "takeaway": "提升集中在最容易“靠常识猜”的计数和颜色问题。"
+    }
+  ],
+  "cases": [
+    {
+      "id": "c1",
+      "type": "image-qa",
+      "title": "数苹果",
+      "outcome": "success",
+      "image": {
+        "src": "media/samples/vqa_shelf.jpg",
+        "width": 640,
+        "height": 420
+      },
+      "question": "How many apples are on the shelf?",
+      "answer": "3",
+      "predictions": [
+        {
+          "method": "deb",
+          "answer": "3"
+        },
+        {
+          "method": "base",
+          "answer": "2"
+        }
+      ],
+      "note": "训练集中“How many apples”最常见的答案是 2。"
+    }
+  ],
+  "insights": {
+    "oneLiner": "计数类问题是检验“是否真的在看”的好探针，可迁移到视频计数（MVBench）。",
+    "confidence": 0.5,
+    "phenomena": [
+      {
+        "id": "p1",
+        "title": "计数靠猜",
+        "detail": "基线在计数问题上的答案分布与训练集先验高度一致。",
+        "evidence": "breakdown:qtype",
+        "symptoms": [
+          "shortcut",
+          "overconfidence"
+        ],
+        "surprise": 2
+      }
+    ],
+    "echoes": [
+      {
+        "id": "e1",
+        "phenomenon": "p1",
+        "lens": "anchoring",
+        "correspondences": [
+          [
+            "幸运轮数字",
+            "训练集中最常见的计数答案"
+          ]
+        ],
+        "borrowedMove": "先测锚点强度：统计基线答案与先验众数的重合率，作为去偏前后的诊断指标。"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "h1",
+        "title": "迁移到视频计数",
+        "statement": "同样的遮帧惩罚能提升 MVBench 动作计数子任务。",
+        "from": [
+          "e1"
+        ],
+        "test": "视频版遮帧一致性训练",
+        "impact": 3,
+        "effort": 2,
+        "status": "todo"
+      }
+    ],
+    "paperAngles": [
+      {
+        "id": "a1",
+        "title": "遮挡一致性去偏",
+        "type": "method",
+        "claim": "用遮挡后置信度下降约束模型使用视觉证据。",
+        "from": [
+          "h1"
+        ],
+        "venues": [
+          "Workshop"
+        ],
+        "readiness": 0.15
+      }
+    ]
+  },
+  "reproduce": {
+    "commands": [
+      {
+        "label": "训练",
+        "cmd": "python train_vqa.py --mask_consistency 0.3"
+      }
+    ],
+    "hyperparams": {
+      "mask_ratio": 0.5,
+      "mask_consistency_weight": 0.3
+    }
+  }
+}

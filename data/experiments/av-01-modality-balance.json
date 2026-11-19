@@ -1,0 +1,219 @@
+{
+  "$schema": "../../schema/experiment.schema.json",
+  "id": "av-01-modality-balance",
+  "title": "音视频事件定位：模态平衡",
+  "task": "av-event",
+  "status": "completed",
+  "date": "2026-09-05",
+  "tags": [
+    "AVE",
+    "模态不平衡"
+  ],
+  "author": "agent:claude",
+  "demo": true,
+  "tldr": "发现融合模型几乎只用视觉；对视觉分支做 dropout 后，音频真正被用起来，准确率 +2.3。",
+  "brief": {
+    "question": "融合模型真的同时用了声音和画面吗？",
+    "change": "训练时以 30% 概率丢弃视觉分支（模态 dropout）",
+    "conclusion": "单模态消融显示音频贡献从 0.8 提升到 6.1，总体 +2.3",
+    "verdict": "positive",
+    "pipeline": [
+      {
+        "label": "视觉分支"
+      },
+      {
+        "label": "音频分支"
+      },
+      {
+        "label": "模态 dropout",
+        "changed": true
+      },
+      {
+        "label": "融合 + 逐秒分类"
+      }
+    ]
+  },
+  "setup": {
+    "model": "双流融合模型",
+    "evalData": [
+      "ave"
+    ],
+    "compute": "1×A100 · 2h"
+  },
+  "results": {
+    "methods": [
+      {
+        "id": "drop",
+        "name": "+ 模态 dropout",
+        "role": "ours"
+      },
+      {
+        "id": "base",
+        "name": "融合基线",
+        "role": "baseline"
+      }
+    ],
+    "main": [
+      {
+        "method": "drop",
+        "dataset": "ave",
+        "metrics": {
+          "Seg-Acc": 81.6
+        }
+      },
+      {
+        "method": "base",
+        "dataset": "ave",
+        "metrics": {
+          "Seg-Acc": 79.3
+        }
+      }
+    ]
+  },
+  "charts": [
+    {
+      "id": "modal",
+      "title": "去掉单个模态后的准确率",
+      "type": "bar",
+      "categories": [
+        "完整",
+        "去掉音频",
+        "去掉视觉"
+      ],
+      "yLabel": "Seg Acc",
+      "series": [
+        {
+          "name": "融合基线",
+          "data": [
+            79.3,
+            78.5,
+            41.2
+          ]
+        },
+        {
+          "name": "+ 模态 dropout",
+          "data": [
+            81.6,
+            75.5,
+            63.0
+          ]
+        }
+      ],
+      "takeaway": "基线去掉音频只掉 0.8：音频几乎没被使用。"
+    }
+  ],
+  "cases": [
+    {
+      "id": "c1",
+      "type": "temporal",
+      "title": "公交进站（音频提示）",
+      "outcome": "success",
+      "video": {
+        "src": "media/samples/street.mp4",
+        "fps": 25,
+        "duration": 24
+      },
+      "query": "事件类别：Bus（可见且可听）",
+      "gt": [
+        [
+          18.0,
+          23.0
+        ]
+      ],
+      "predictions": [
+        {
+          "method": "drop",
+          "segments": [
+            {
+              "start": 18.0,
+              "end": 23.0,
+              "score": 0.88
+            }
+          ]
+        },
+        {
+          "method": "base",
+          "segments": [
+            {
+              "start": 19.0,
+              "end": 23.0,
+              "score": 0.8
+            }
+          ]
+        }
+      ],
+      "note": "示例视频无音轨，仅演示逐秒事件时间轴的展示方式。"
+    }
+  ],
+  "insights": {
+    "oneLiner": "模态不平衡在多模态定位中普遍存在，VTG 中“文本压过视觉”是同一现象。",
+    "confidence": 0.6,
+    "phenomena": [
+      {
+        "id": "p1",
+        "title": "音频几乎没被使用",
+        "detail": "基线去掉音频仅 −0.8，去掉视觉 −38.1。",
+        "evidence": "chart:modal",
+        "symptoms": [
+          "modality-imbalance"
+        ],
+        "surprise": 3
+      }
+    ],
+    "echoes": [
+      {
+        "id": "e1",
+        "phenomenon": "p1",
+        "lens": "colavita",
+        "correspondences": [
+          [
+            "光和声同时出现时只报告光",
+            "融合模型只依赖视觉"
+          ]
+        ],
+        "borrowedMove": "心理学用“只出现声音”的试次测量听觉通道：构造只有音频线索的测试样本，单独报告。"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "h1",
+        "title": "文本 dropout 用于 VTG",
+        "statement": "对 VTG 中的查询文本做部分遮挡，可以迫使模型更多依赖视觉。",
+        "from": [
+          "e1"
+        ],
+        "test": "查询词随机遮挡 15%",
+        "impact": 3,
+        "effort": 1,
+        "status": "todo"
+      }
+    ],
+    "paperAngles": [
+      {
+        "id": "a1",
+        "title": "多模态定位中的通道优势效应",
+        "type": "analysis",
+        "claim": "跨 AVE 与 VTG 量化模态优势，并给出统一的诊断协议。",
+        "from": [
+          "h1"
+        ],
+        "venues": [
+          "ACM MM"
+        ],
+        "readiness": 0.2
+      }
+    ]
+  },
+  "reproduce": {
+    "commands": [
+      {
+        "label": "训练",
+        "cmd": "python train_ave.py --modality_dropout visual:0.3"
+      }
+    ],
+    "hyperparams": {
+      "modality_dropout": "visual:0.3",
+      "epochs": 30
+    }
+  }
+}

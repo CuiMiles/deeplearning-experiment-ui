@@ -1,0 +1,239 @@
+{
+  "$schema": "../../schema/experiment.schema.json",
+  "id": "caption-01-cider-optimization",
+  "title": "图像描述：直接优化 CIDEr 的代价",
+  "task": "caption",
+  "status": "completed",
+  "date": "2026-08-15",
+  "tags": [
+    "COCO",
+    "强化学习",
+    "Goodhart"
+  ],
+  "author": "agent:claude",
+  "demo": true,
+  "tldr": "用 CIDEr 作为强化学习奖励：CIDEr +9.6，但人工评测更差，描述变得模板化、出现重复短语。",
+  "brief": {
+    "question": "直接优化评测指标，描述质量会同步变好吗？",
+    "change": "SCST 强化学习，奖励 = CIDEr",
+    "conclusion": "指标大涨、人工偏好下降：典型的指标被钻空子",
+    "verdict": "mixed",
+    "pipeline": [
+      {
+        "label": "SFT 描述模型"
+      },
+      {
+        "label": "CIDEr 奖励 RL",
+        "changed": true
+      }
+    ]
+  },
+  "setup": {
+    "model": "描述模型 + SCST",
+    "evalData": [
+      "coco",
+      "nocaps"
+    ],
+    "compute": "4×A100 · 4h"
+  },
+  "results": {
+    "methods": [
+      {
+        "id": "rl",
+        "name": "CIDEr-RL",
+        "role": "ours"
+      },
+      {
+        "id": "sft",
+        "name": "SFT",
+        "role": "baseline"
+      }
+    ],
+    "main": [
+      {
+        "method": "rl",
+        "dataset": "coco",
+        "metrics": {
+          "CIDEr": 138.2,
+          "BLEU-4": 40.1,
+          "METEOR": 29.6,
+          "SPICE": 23.1
+        }
+      },
+      {
+        "method": "sft",
+        "dataset": "coco",
+        "metrics": {
+          "CIDEr": 128.6,
+          "BLEU-4": 37.8,
+          "METEOR": 29.9,
+          "SPICE": 23.4
+        }
+      },
+      {
+        "method": "rl",
+        "dataset": "nocaps",
+        "metrics": {
+          "CIDEr": 104.5,
+          "SPICE": 13.9
+        }
+      },
+      {
+        "method": "sft",
+        "dataset": "nocaps",
+        "metrics": {
+          "CIDEr": 106.0,
+          "SPICE": 14.6
+        }
+      }
+    ]
+  },
+  "charts": [
+    {
+      "id": "human",
+      "title": "人工两两比较（200 张图）",
+      "type": "bar",
+      "categories": [
+        "CIDEr-RL 更好",
+        "差不多",
+        "SFT 更好"
+      ],
+      "yLabel": "%",
+      "series": [
+        {
+          "name": "占比",
+          "data": [
+            24,
+            31,
+            45
+          ]
+        }
+      ],
+      "takeaway": "近一半的情况下人类更喜欢 SFT 的描述。"
+    }
+  ],
+  "cases": [
+    {
+      "id": "c1",
+      "type": "image-caption",
+      "title": "公园遛狗",
+      "outcome": "failure",
+      "image": {
+        "src": "media/samples/caption_park.jpg",
+        "width": 640,
+        "height": 420
+      },
+      "references": [
+        "A woman walking a small dog in a sunny park.",
+        "A person walks her dog near a tree and a bench.",
+        "A lady with a brown dog on a leash in the park."
+      ],
+      "predictions": [
+        {
+          "method": "rl",
+          "text": "a woman walking a dog in a park with a dog in a park",
+          "scores": {
+            "CIDEr": 121.0
+          }
+        },
+        {
+          "method": "sft",
+          "text": "A woman walks a brown dog past a bench on a sunny day.",
+          "scores": {
+            "CIDEr": 96.4
+          }
+        }
+      ],
+      "note": "RL 版本重复了高频 n-gram，CIDEr 更高但读起来更差。"
+    }
+  ],
+  "insights": {
+    "oneLiner": "这是 Goodhart 定律的教科书案例：在 VTG 的 RL 奖励设计中也要保留不参与优化的留出指标。",
+    "confidence": 0.7,
+    "phenomena": [
+      {
+        "id": "p1",
+        "title": "指标涨、质量降",
+        "detail": "CIDEr +9.6，人工偏好 45% 选 SFT，域外 NoCaps 反而下降。",
+        "evidence": "chart:human",
+        "symptoms": [
+          "metric-gaming"
+        ],
+        "surprise": 2
+      }
+    ],
+    "echoes": [
+      {
+        "id": "e1",
+        "phenomenon": "p1",
+        "lens": "goodhart",
+        "correspondences": [
+          [
+            "按鼠尾发赏金",
+            "按 CIDEr 发奖励"
+          ],
+          [
+            "剪尾放生继续繁殖",
+            "重复高频 n-gram"
+          ]
+        ],
+        "borrowedMove": "河内后来改为“按整只老鼠”计赏也没完全解决：奖励里同时约束重复率，并保留人工抽检作为留出指标。"
+      },
+      {
+        "id": "e2",
+        "phenomenon": "p1",
+        "lens": "mcnamara",
+        "correspondences": [
+          [
+            "击毙人数",
+            "CIDEr"
+          ]
+        ],
+        "borrowedMove": "把“读起来自然”这种难量化的维度用小规模人工评测固定下来，写进每次实验的报告。"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "h1",
+        "title": "重复惩罚 + 留出指标",
+        "statement": "加入 n-gram 重复惩罚后，CIDEr 提升保留一半以上，人工偏好不再下降。",
+        "from": [
+          "e1",
+          "e2"
+        ],
+        "test": "同样设置 + 重复惩罚，再做 200 张人工评测",
+        "impact": 2,
+        "effort": 2,
+        "status": "todo"
+      }
+    ],
+    "paperAngles": [
+      {
+        "id": "a1",
+        "title": "奖励钻空子的诊断清单",
+        "type": "analysis",
+        "claim": "为多模态 RL 提供一份可操作的奖励作弊诊断清单（长度、重复、留出指标）。",
+        "from": [
+          "h1"
+        ],
+        "venues": [
+          "Workshop"
+        ],
+        "readiness": 0.25
+      }
+    ]
+  },
+  "reproduce": {
+    "commands": [
+      {
+        "label": "SCST",
+        "cmd": "python train_scst.py --reward cider --init ckpt/caption-sft"
+      }
+    ],
+    "hyperparams": {
+      "reward": "cider",
+      "lr": "5e-6",
+      "samples": 5
+    }
+  }
+}

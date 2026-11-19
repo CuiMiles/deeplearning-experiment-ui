@@ -1,0 +1,42 @@
+{
+  "principles": [
+    "复现不出 ≠ 造假。多数差距来自没写明的设置差异或无意的偏差；N 射线事件的教训是集体自我欺骗，而不是蓄意造假。",
+    "先穷举良性解释，再用最小实验逐一排除；把差距拆成'可解释'和'无法解释'两部分。",
+    "评价证据，不评价出处：顶会和名校不是证据，低影响力也不是罪证（默顿：有组织的怀疑）。",
+    "设置时间盒：继续核查的边际收益低于平均水平时就止损（边际价值定理），把时间留给自己的主线。",
+    "核查结论只用于内部调整信任权重；需要沟通时先礼貌联系作者，不做公开指控。",
+    "系统性的不可复现本身就是贡献：可以写成复现报告、负结果或新的评测协议。"
+  ],
+  "checks": [
+    { "id": "code", "category": "透明度", "name": "代码开源", "question": "是否公开了训练与评测代码？", "weight": 2, "why": "没有代码时，所有未写明的细节都只能猜" },
+    { "id": "ckpt", "category": "透明度", "name": "权重 / 逐样本预测", "question": "是否公开了权重或逐样本预测文件？", "weight": 2, "why": "有逐样本预测，就能独立重算指标并检查分布" },
+    { "id": "protocol", "category": "透明度", "name": "评测协议完整", "question": "数据划分、帧数、分辨率、后处理、提示词是否写清？", "weight": 2, "why": "VTG 中这些细节可以带来数个点的差异" },
+    { "id": "hparams", "category": "透明度", "name": "超参数完整", "question": "是否给出了足以复现的超参数？", "weight": 1, "why": "学习率、步数、奖励设计缺一项都可能复现失败" },
+    { "id": "monotonic", "category": "数值自洽", "name": "阈值单调", "question": "R1@0.3 ≥ R1@0.5 ≥ R1@0.7、R5 ≥ R1 是否成立？", "weight": 3, "why": "数学上必然成立，不成立说明数字有误（可自动检查）" },
+    { "id": "miou-bound", "category": "数值自洽", "name": "mIoU 上下界", "question": "mIoU 是否落在由各阈值召回率推出的区间内？", "weight": 3, "why": "类似 GRIM 检验，不需要原始数据就能发现不可能的数字（可自动检查）" },
+    { "id": "table-consistency", "category": "数值自洽", "name": "表格间一致", "question": "同一个数字在不同表格、正文中是否一致？", "weight": 2, "why": "不一致往往说明结果来自不同版本的实验" },
+    { "id": "ablation-sum", "category": "数值自洽", "name": "消融可加", "question": "各组件的增益与总增益是否大致吻合？", "weight": 1, "why": "总增益远大于各部分之和时，需要解释交互作用" },
+    { "id": "variance", "category": "实验设计", "name": "方差 / 多种子", "question": "是否报告了多种子结果或置信区间？", "weight": 1, "why": "提升与噪声同量级时，结论不稳" },
+    { "id": "test-selection", "category": "实验设计", "name": "未在测试集上选模型", "question": "是否可能在测试集上挑选 checkpoint 或提示词？", "weight": 2, "why": "分岔小径：多次尝试取最好会系统性高估" },
+    { "id": "standard-split", "category": "实验设计", "name": "标准评测集", "question": "是否在标准测试集而非自定义子集上评测？", "weight": 1, "why": "自定义子集可能无意中筛掉了难样本" },
+    { "id": "leakage", "category": "实验设计", "name": "无数据泄漏", "question": "训练数据是否可能与测试视频重叠？", "weight": 2, "why": "大规模混合训练集与公开基准经常有视频重叠" },
+    { "id": "fair-baseline", "category": "对比公平", "name": "基线公平", "question": "基线是否用了同等的数据、算力和调参？", "weight": 2, "why": "弱基线会夸大提升" },
+    { "id": "gain-plausible", "category": "对比公平", "name": "提升幅度合理", "question": "提升幅度与改动的复杂度是否相称？", "weight": 2, "why": "一个小技巧涨 10 个点，需要格外强的证据" },
+    { "id": "independent", "category": "独立验证", "name": "第三方复现", "question": "是否有其他团队复现，或在其基础上继续工作？", "weight": 2, "why": "独立复现是最强的可信信号" },
+    { "id": "our-protocol", "category": "独立验证", "name": "统一协议重测", "question": "在我们的统一协议下重测过吗？", "weight": 1, "why": "排除评测脚本差异" }
+  ],
+  "verdicts": {
+    "reproduced": { "name": "已复现", "desc": "在统一协议下复现了声称的结果（误差在噪声范围内）" },
+    "partial": { "name": "部分复现", "desc": "方向一致，但幅度明显缩水" },
+    "not-reproduced": { "name": "未能复现", "desc": "排除已知差异后，提升消失" },
+    "contradicted": { "name": "结论相反", "desc": "我们的实验给出了相反的结论" },
+    "pending": { "name": "待核查", "desc": "还在排除良性解释" }
+  },
+  "decisions": {
+    "build-on": { "name": "可以在其上构建", "desc": "可信，作为基线或组件使用" },
+    "unverified": { "name": "标为未验证", "desc": "不作为基线依据，引用时注明未复现" },
+    "ignore": { "name": "忽略并止损", "desc": "不再投入时间" },
+    "contact-authors": { "name": "联系作者", "desc": "礼貌询问未写明的细节或可能的笔误" },
+    "publish-negative": { "name": "写成负结果", "desc": "系统性不可复现，整理成复现报告 / 分析论文" }
+  }
+}

@@ -1,0 +1,297 @@
+{
+  "$schema": "../../schema/experiment.schema.json",
+  "id": "videoqa-01-frame-scaling",
+  "title": "视频问答：输入帧数缩放",
+  "task": "videoqa",
+  "status": "completed",
+  "date": "2026-10-08",
+  "tags": [
+    "Video-MME",
+    "帧数"
+  ],
+  "author": "agent:claude",
+  "demo": true,
+  "tldr": "帧数从 8 增加到 64：短视频几乎不变，长视频准确率持续上升；32 帧之后收益主要来自长视频。",
+  "brief": {
+    "question": "视频问答到底需要多少帧？",
+    "change": "固定模型，只改变输入帧数（8/16/32/64）",
+    "conclusion": "长视频受益明显，短视频 16 帧即饱和",
+    "verdict": "mixed",
+    "pipeline": [
+      {
+        "label": "均匀抽帧",
+        "changed": true,
+        "note": "8 / 16 / 32 / 64"
+      },
+      {
+        "label": "MLLM"
+      },
+      {
+        "label": "选择题答案"
+      }
+    ]
+  },
+  "setup": {
+    "model": "Qwen2.5-VL-7B-Instruct",
+    "params": "7B",
+    "evalData": [
+      "video-mme",
+      "mvbench"
+    ],
+    "compute": "4×A100 · 10h 推理"
+  },
+  "results": {
+    "methods": [
+      {
+        "id": "f64",
+        "name": "64 帧",
+        "role": "ours"
+      },
+      {
+        "id": "f16",
+        "name": "16 帧",
+        "role": "baseline"
+      }
+    ],
+    "main": [
+      {
+        "method": "f64",
+        "dataset": "video-mme",
+        "metrics": {
+          "Acc": 64.1
+        }
+      },
+      {
+        "method": "f16",
+        "dataset": "video-mme",
+        "metrics": {
+          "Acc": 59.3
+        }
+      },
+      {
+        "method": "f64",
+        "dataset": "mvbench",
+        "metrics": {
+          "Acc": 67.5
+        }
+      },
+      {
+        "method": "f16",
+        "dataset": "mvbench",
+        "metrics": {
+          "Acc": 66.2
+        }
+      }
+    ]
+  },
+  "ablations": [
+    {
+      "id": "frames",
+      "title": "帧数 – 准确率（Video-MME）",
+      "factor": "输入帧数",
+      "kind": "numeric",
+      "metrics": [
+        "Acc"
+      ],
+      "rows": [
+        {
+          "setting": 8,
+          "metrics": {
+            "Acc": 55.0
+          }
+        },
+        {
+          "setting": 16,
+          "metrics": {
+            "Acc": 59.3
+          }
+        },
+        {
+          "setting": 32,
+          "metrics": {
+            "Acc": 62.4
+          }
+        },
+        {
+          "setting": 64,
+          "metrics": {
+            "Acc": 64.1
+          },
+          "isDefault": true
+        }
+      ]
+    }
+  ],
+  "breakdowns": [
+    {
+      "id": "dur",
+      "title": "按视频时长分档（Video-MME）",
+      "dimension": "时长档",
+      "metric": "Acc",
+      "methods": [
+        "f64",
+        "f16"
+      ],
+      "buckets": [
+        {
+          "label": "短",
+          "count": 900,
+          "values": {
+            "f64": 75.2,
+            "f16": 74.6
+          }
+        },
+        {
+          "label": "中",
+          "count": 900,
+          "values": {
+            "f64": 62.7,
+            "f16": 58.0
+          }
+        },
+        {
+          "label": "长",
+          "count": 900,
+          "values": {
+            "f64": 54.4,
+            "f16": 45.3
+          }
+        }
+      ],
+      "takeaway": "长视频 +9.1，短视频仅 +0.6。"
+    }
+  ],
+  "cases": [
+    {
+      "id": "c1",
+      "type": "videoqa",
+      "title": "小狗之后发生了什么",
+      "outcome": "partial",
+      "video": {
+        "src": "media/samples/living.mp4",
+        "fps": 25,
+        "duration": 40
+      },
+      "question": "What does the person do right after the dog runs past?",
+      "options": [
+        "Turns on the lamp",
+        "Stands up from the sofa",
+        "Opens the window",
+        "Keeps reading the book"
+      ],
+      "answer": 1,
+      "evidence": [
+        [
+          21.0,
+          29.6
+        ]
+      ],
+      "predictions": [
+        {
+          "method": "f64",
+          "answer": 1,
+          "rationale": "The dog crosses around 22s, and shortly after the person stands up and walks to the window."
+        },
+        {
+          "method": "f16",
+          "answer": 3,
+          "rationale": "The person is reading on the sofa for most of the video."
+        }
+      ],
+      "sampledFrames": [
+        1.25,
+        3.75,
+        6.25,
+        8.75,
+        11.25,
+        13.75,
+        16.25,
+        18.75,
+        21.25,
+        23.75,
+        26.25,
+        28.75,
+        31.25,
+        33.75,
+        36.25,
+        38.75
+      ],
+      "note": "16 帧时小狗只出现在 1 帧中，模型退回到“最常见状态”的答案。"
+    }
+  ],
+  "insights": {
+    "oneLiner": "长视频问答的瓶颈更像“看漏”而非“想不明白”，与 VTG 的短事件问题是同一个现象。",
+    "confidence": 0.6,
+    "phenomena": [
+      {
+        "id": "p1",
+        "title": "短视频 16 帧就饱和",
+        "detail": "短视频 16→64 帧仅 +0.6，长视频 +9.1。",
+        "evidence": "breakdown:dur",
+        "symptoms": [
+          "long-context",
+          "diminishing-returns"
+        ],
+        "surprise": 1
+      }
+    ],
+    "echoes": [
+      {
+        "id": "e1",
+        "phenomenon": "p1",
+        "lens": "yarbus",
+        "correspondences": [
+          [
+            "不同问题 → 不同眼动",
+            "不同问题 → 应看不同的帧"
+          ]
+        ],
+        "borrowedMove": "按问题选帧：先用问题和低成本特征给帧打分，再把帧预算分配给高分区间。"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "h1",
+        "title": "问题驱动选帧",
+        "statement": "问题驱动选帧用 16 帧可以达到均匀 64 帧在长视频上的准确率。",
+        "from": [
+          "e1"
+        ],
+        "test": "CLIP 相似度选帧 vs 均匀采样",
+        "impact": 4,
+        "effort": 2,
+        "status": "todo"
+      }
+    ],
+    "paperAngles": [
+      {
+        "id": "a1",
+        "title": "看漏而非想不明白",
+        "type": "analysis",
+        "claim": "统一解释 VideoQA 与 VTG 在长视频上的失败：主要来自采样遗漏。",
+        "from": [
+          "h1"
+        ],
+        "venues": [
+          "NeurIPS"
+        ],
+        "readiness": 0.25,
+        "checkRelated": [
+          "query-aware frame selection video QA"
+        ]
+      }
+    ]
+  },
+  "reproduce": {
+    "commands": [
+      {
+        "label": "评测",
+        "cmd": "for n in 8 16 32 64; do python eval_qa.py --num_frames $n --benchmarks video-mme,mvbench; done"
+      }
+    ],
+    "hyperparams": {
+      "num_frames": "8/16/32/64",
+      "max_pixels": 200704
+    }
+  }
+}

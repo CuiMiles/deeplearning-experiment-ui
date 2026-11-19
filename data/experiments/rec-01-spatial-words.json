@@ -1,0 +1,214 @@
+{
+  "$schema": "../../schema/experiment.schema.json",
+  "id": "rec-01-spatial-words",
+  "title": "指代表达：方位词数据增强",
+  "task": "rec",
+  "status": "completed",
+  "date": "2026-08-28",
+  "tags": [
+    "RefCOCO",
+    "空间关系"
+  ],
+  "author": "agent:claude",
+  "demo": true,
+  "tldr": "对图像水平翻转并同步交换“左/右”：RefCOCO testA +1.9，RefCOCO+（无方位词）几乎不变。",
+  "brief": {
+    "question": "模型真的理解“左边/右边”吗？",
+    "change": "翻转图像并同步改写方位词的数据增强",
+    "conclusion": "含方位词的表达显著提升，说明之前存在方位偏置",
+    "verdict": "positive",
+    "pipeline": [
+      {
+        "label": "图像 + 表达"
+      },
+      {
+        "label": "翻转 + 改写方位词",
+        "changed": true
+      },
+      {
+        "label": "MLLM 输出框"
+      }
+    ]
+  },
+  "setup": {
+    "model": "Qwen2.5-VL-7B + SFT",
+    "evalData": [
+      "refcoco",
+      "refcoco+",
+      "refcocog"
+    ],
+    "compute": "8×A100 · 5h"
+  },
+  "results": {
+    "methods": [
+      {
+        "id": "aug",
+        "name": "+ 翻转增强",
+        "role": "ours"
+      },
+      {
+        "id": "base",
+        "name": "基线",
+        "role": "baseline"
+      }
+    ],
+    "main": [
+      {
+        "method": "aug",
+        "dataset": "refcoco",
+        "metrics": {
+          "Acc@0.5": 91.8
+        }
+      },
+      {
+        "method": "base",
+        "dataset": "refcoco",
+        "metrics": {
+          "Acc@0.5": 89.9
+        }
+      },
+      {
+        "method": "aug",
+        "dataset": "refcoco+",
+        "metrics": {
+          "Acc@0.5": 85.1
+        }
+      },
+      {
+        "method": "base",
+        "dataset": "refcoco+",
+        "metrics": {
+          "Acc@0.5": 84.9
+        }
+      },
+      {
+        "method": "aug",
+        "dataset": "refcocog",
+        "metrics": {
+          "Acc@0.5": 87.6
+        }
+      },
+      {
+        "method": "base",
+        "dataset": "refcocog",
+        "metrics": {
+          "Acc@0.5": 86.8
+        }
+      }
+    ]
+  },
+  "cases": [
+    {
+      "id": "c1",
+      "type": "image-grounding",
+      "title": "右边的蓝杯子",
+      "outcome": "success",
+      "image": {
+        "src": "media/samples/rec_table.jpg",
+        "width": 640,
+        "height": 420
+      },
+      "expression": "the blue cup to the right of the bottle",
+      "gt": [
+        0.672,
+        0.452,
+        0.078,
+        0.148
+      ],
+      "predictions": [
+        {
+          "method": "aug",
+          "box": [
+            0.668,
+            0.448,
+            0.084,
+            0.152
+          ],
+          "score": 0.93
+        },
+        {
+          "method": "base",
+          "box": [
+            0.172,
+            0.452,
+            0.078,
+            0.148
+          ],
+          "score": 0.71
+        }
+      ],
+      "note": "基线框中了左边的红杯子：它抓住了“cup”却忽略了“right”。"
+    }
+  ],
+  "insights": {
+    "oneLiner": "方位词是低成本、可解释的增强点；结果本身偏工程，适合并入更大的工作。",
+    "confidence": 0.5,
+    "phenomena": [
+      {
+        "id": "p1",
+        "title": "只看名词不看方位",
+        "detail": "错误案例中 63% 框中了同类别但方位错误的物体。",
+        "evidence": "case:c1",
+        "symptoms": [
+          "shortcut"
+        ],
+        "surprise": 2
+      }
+    ],
+    "echoes": [
+      {
+        "id": "e1",
+        "phenomenon": "p1",
+        "lens": "clever-hans",
+        "correspondences": [
+          [
+            "只看提问者表情",
+            "只看类别名词"
+          ]
+        ],
+        "borrowedMove": "反事实改写：保持名词不变、只改方位词，检查预测是否跟着改变。"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "h1",
+        "title": "反事实一致性",
+        "statement": "改写方位词后预测框跟随正确变化的比例可作为“空间理解”指标。",
+        "from": [
+          "e1"
+        ],
+        "test": "对 500 条表达做方位改写",
+        "impact": 2,
+        "effort": 1,
+        "status": "todo"
+      }
+    ],
+    "paperAngles": [
+      {
+        "id": "a1",
+        "title": "空间理解的反事实一致性指标",
+        "type": "benchmark",
+        "claim": "用反事实改写衡量指代理解是否真的使用了方位信息。",
+        "from": [
+          "h1"
+        ],
+        "venues": [
+          "Workshop"
+        ],
+        "readiness": 0.2
+      }
+    ]
+  },
+  "reproduce": {
+    "commands": [
+      {
+        "label": "训练",
+        "cmd": "python train_rec.py --aug hflip_swap_lr"
+      }
+    ],
+    "hyperparams": {
+      "aug": "hflip_swap_lr",
+      "lr": "1e-5"
+    }
+  }
+}

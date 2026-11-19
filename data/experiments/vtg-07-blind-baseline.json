@@ -1,0 +1,248 @@
+{
+  "$schema": "../../schema/experiment.schema.json",
+  "id": "vtg-07-blind-baseline",
+  "title": "盲测：不看视频能拿多少分",
+  "task": "vtg",
+  "status": "completed",
+  "date": "2026-11-12",
+  "series": "VTG · MLLM 定位研究线",
+  "parent": "vtg-01-zeroshot-baseline",
+  "tags": [
+    "偏置分析",
+    "盲测"
+  ],
+  "author": "agent:claude",
+  "demo": true,
+  "tldr": "只给查询文本和视频时长训练一个模型：在旧版 Charades-STA 上 R1@0.5 达 31.0，在重标注版上只有 18.2。",
+  "brief": {
+    "question": "基准里有多少分是“不看视频”就能拿到的？",
+    "change": "训练纯文本模型（输入查询 + 视频时长），以及黑屏 / 打乱帧两种视觉对照",
+    "conclusion": "旧基准存在大量可被语言先验利用的样本；重标注基准明显更“需要看视频”",
+    "verdict": "positive",
+    "pipeline": [
+      {
+        "label": "查询文本 + 时长",
+        "changed": true
+      },
+      {
+        "label": "不输入视频帧",
+        "changed": true
+      },
+      {
+        "label": "同样的 SFT 配方"
+      }
+    ]
+  },
+  "setup": {
+    "model": "Qwen2.5-7B（纯文本）",
+    "params": "7B",
+    "evalData": [
+      "charades-sta",
+      "charades-timelens"
+    ],
+    "compute": "4×A100 · 3h",
+    "gpuHours": 12
+  },
+  "results": {
+    "methods": [
+      {
+        "id": "blind",
+        "name": "纯文本盲测",
+        "role": "ours"
+      },
+      {
+        "id": "black",
+        "name": "黑屏输入",
+        "role": "ablation"
+      },
+      {
+        "id": "full",
+        "name": "正常看视频（vtg-02）",
+        "role": "reference"
+      }
+    ],
+    "main": [
+      {
+        "method": "blind",
+        "dataset": "charades-sta",
+        "metrics": {
+          "R1@0.3": 52.5,
+          "R1@0.5": 31.0,
+          "R1@0.7": 12.6,
+          "mIoU": 36.2
+        }
+      },
+      {
+        "method": "black",
+        "dataset": "charades-sta",
+        "metrics": {
+          "R1@0.3": 50.8,
+          "R1@0.5": 29.4,
+          "R1@0.7": 11.9,
+          "mIoU": 35.2
+        }
+      },
+      {
+        "method": "full",
+        "dataset": "charades-sta",
+        "metrics": {
+          "R1@0.3": 74.0,
+          "R1@0.5": 56.1,
+          "R1@0.7": 31.5,
+          "mIoU": 51.3
+        }
+      },
+      {
+        "method": "blind",
+        "dataset": "charades-timelens",
+        "metrics": {
+          "R1@0.3": 38.0,
+          "R1@0.5": 18.2,
+          "R1@0.7": 6.1,
+          "mIoU": 28.3
+        }
+      },
+      {
+        "method": "black",
+        "dataset": "charades-timelens",
+        "metrics": {
+          "R1@0.3": 36.2,
+          "R1@0.5": 17.0,
+          "R1@0.7": 5.8,
+          "mIoU": 27.6
+        }
+      },
+      {
+        "method": "full",
+        "dataset": "charades-timelens",
+        "metrics": {
+          "R1@0.3": 70.6,
+          "R1@0.5": 52.8,
+          "R1@0.7": 28.4,
+          "mIoU": 49.0
+        }
+      }
+    ],
+    "headline": [
+      {
+        "dataset": "charades-sta",
+        "metric": "R1@0.5"
+      },
+      {
+        "dataset": "charades-timelens",
+        "metric": "R1@0.5"
+      }
+    ]
+  },
+  "charts": [
+    {
+      "id": "share",
+      "title": "“不看视频就能拿到”的分数占比（R1@0.5）",
+      "type": "bar",
+      "categories": [
+        "Charades-STA（旧）",
+        "Charades-TimeLens"
+      ],
+      "yLabel": "盲测 / 正常 %",
+      "series": [
+        {
+          "name": "盲测得分占比",
+          "data": [
+            55.3,
+            34.5
+          ]
+        }
+      ],
+      "takeaway": "旧基准一半以上的分数可被语言先验解释。"
+    }
+  ],
+  "insights": {
+    "oneLiner": "这是 vtg-01 中“旧基准奖励偏置”假设的直接证据，适合作为分析论文的核心实验之一。",
+    "confidence": 0.75,
+    "phenomena": [
+      {
+        "id": "p1",
+        "title": "不看视频也有 31 分",
+        "detail": "旧基准 R1@0.5 盲测 31.0，占正常模型的 55%。",
+        "evidence": "chart:share",
+        "symptoms": [
+          "shortcut",
+          "label-noise"
+        ],
+        "surprise": 4
+      }
+    ],
+    "echoes": [
+      {
+        "id": "e1",
+        "phenomenon": "p1",
+        "lens": "clever-hans",
+        "correspondences": [
+          [
+            "提问者的身体语言",
+            "查询措辞与时长先验"
+          ],
+          [
+            "遮住提问者",
+            "不给视频帧"
+          ]
+        ],
+        "borrowedMove": "Pfungst 的关键是“提问者也不知道答案”的对照：构造同一查询配不同视频的反事实测试集，彻底切断文本线索。"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "h1",
+        "title": "反事实测试集",
+        "statement": "在“同查询不同视频”的反事实测试集上，盲测得分会降到接近随机。",
+        "from": [
+          "e1"
+        ],
+        "test": "从重标注集中构造 500 条反事实样本",
+        "impact": 4,
+        "effort": 2,
+        "status": "todo"
+      }
+    ],
+    "paperAngles": [
+      {
+        "id": "a1",
+        "title": "时序定位基准中的聪明汉斯",
+        "type": "benchmark",
+        "claim": "提出“需要看视频才能答对”的诊断子集与反事实测试协议。",
+        "from": [
+          "h1"
+        ],
+        "venues": [
+          "NeurIPS D&B"
+        ],
+        "readiness": 0.4,
+        "checkRelated": [
+          "blind baseline temporal grounding",
+          "language bias moment retrieval"
+        ]
+      }
+    ]
+  },
+  "reproduce": {
+    "repo": "git@your-host:lab/vtg-exp.git",
+    "commit": "2c7e8d1",
+    "env": {
+      "python": "3.11",
+      "torch": "2.5.1",
+      "cuda": "12.4",
+      "transformers": "4.51"
+    },
+    "commands": [
+      {
+        "label": "盲测训练",
+        "cmd": "python train_blind.py --model Qwen/Qwen2.5-7B-Instruct --inputs query,duration --data data/timelens-100k.jsonl"
+      }
+    ],
+    "hyperparams": {
+      "inputs": "query,duration",
+      "lr": "1e-5",
+      "epochs": 1
+    }
+  }
+}
