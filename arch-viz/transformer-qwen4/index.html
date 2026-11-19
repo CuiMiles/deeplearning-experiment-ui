@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transformer 与 Qwen 4 架构动画</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+<style>
+/* 布局思路：左侧结构图标出「你在哪」，中间舞台播放数据变化，讲解紧跟其后；每个 token 固定一种颜色，全程追踪 */
+:root{
+  --bg:#f2f4f6; --surface:#ffffff; --soft:#e8edf2; --ink:#16202b; --muted:#5a6774; --line:#d6dde4;
+  --accent:#1b5fbf; --grid:#dfe5eb;
+  --pos-rgb:214 110 32; --neg-rgb:38 108 196; --prob-rgb:27 95 191;
+  --t1:#0e8a8c; --t2:#cf8510; --t3:#c03d68; --t4:#5752c6; --t5:#3b8a3b; --t6:#6d7a86; --t7:#9a6a2c; --t8:#2f86b8;
+  --c-emb:#7b5aa6; --c-attn:#1f6bcf; --c-ffn:#d9792b; --c-norm:#7f8e9c; --c-gdn:#0e8a8c; --c-qsa:#1f6bcf; --c-moe:#d9792b; --c-out:#c03d68; --c-res:#5752c6;
+  --on-strong:#ffffff;
+  --font-display:"Noto Serif SC","Songti SC","STSong",serif;
+  --font-body:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --cell:clamp(33px,2.55vw,40px); --cellh:30px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1319; --surface:#151c24; --soft:#1d2631; --ink:#e4ebf2; --muted:#93a1af; --line:#2a3542;
+    --accent:#6fa7ff; --grid:#1c252f;
+    --pos-rgb:238 146 66; --neg-rgb:84 152 245; --prob-rgb:96 156 255;
+    --t1:#2fb8b9; --t2:#e9a53a; --t3:#e8638e; --t4:#8b87f0; --t5:#62b862; --t6:#97a5b2; --t7:#c99652; --t8:#56addf;
+    --c-emb:#a585d4; --c-attn:#5c9bf0; --c-ffn:#ec9a52; --c-norm:#8e9dab; --c-gdn:#2fb8b9; --c-qsa:#5c9bf0; --c-moe:#ec9a52; --c-out:#e8638e; --c-res:#8b87f0;
+    --on-strong:#0e1319;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1319; --surface:#151c24; --soft:#1d2631; --ink:#e4ebf2; --muted:#93a1af; --line:#2a3542;
+  --accent:#6fa7ff; --grid:#1c252f;
+  --pos-rgb:238 146 66; --neg-rgb:84 152 245; --prob-rgb:96 156 255;
+  --t1:#2fb8b9; --t2:#e9a53a; --t3:#e8638e; --t4:#8b87f0; --t5:#62b862; --t6:#97a5b2; --t7:#c99652; --t8:#56addf;
+  --c-emb:#a585d4; --c-attn:#5c9bf0; --c-ffn:#ec9a52; --c-norm:#8e9dab; --c-gdn:#2fb8b9; --c-qsa:#5c9bf0; --c-moe:#ec9a52; --c-out:#e8638e; --c-res:#8b87f0;
+  --on-strong:#0e1319;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+button,select,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+
+.top{max-width:1500px;margin:0 auto;padding:22px 20px 10px;display:flex;flex-wrap:wrap;gap:14px 28px;align-items:flex-end;justify-content:space-between}
+.top h1{font-family:var(--font-display);font-size:27px;line-height:1.25;margin:0;text-wrap:balance;letter-spacing:.01em}
+.top p{margin:4px 0 0;color:var(--muted);max-width:62ch}
+.tabs{display:flex;gap:4px;background:var(--soft);padding:4px;border-radius:10px}
+.tabs button{border:0;background:transparent;padding:8px 16px;border-radius:7px;cursor:pointer;font-weight:500;color:var(--muted)}
+.tabs button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgb(0 0 0 / .12)}
+
+.layout{max-width:1500px;margin:0 auto;padding:6px 20px 28px;display:grid;gap:16px;grid-template-columns:292px minmax(0,1fr);grid-template-areas:"map stage" "map explain";align-items:start}
+@media (min-width:1400px){.layout{grid-template-columns:282px minmax(0,1fr) 330px;grid-template-areas:"map stage explain"}}
+@media (max-width:900px){.layout{grid-template-columns:minmax(0,1fr);grid-template-areas:"stage" "explain" "map"}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.mapcol{grid-area:map;padding:12px 12px 8px;position:sticky;top:12px}
+@media (max-width:900px){.mapcol{position:static}}
+.maphead{display:flex;justify-content:space-between;align-items:baseline;font-weight:700;font-size:14px}
+.maphead span{font-weight:400;color:var(--muted);font-size:12px}
+.mapsvg{width:100%;height:auto;display:block;color:var(--muted);margin-top:6px}
+.maphint{font-size:12px;color:var(--muted);margin:4px 0 0}
+
+.stagecol{grid-area:stage;min-width:0;display:flex;flex-direction:column;gap:10px}
+.stephead{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.stepno{font-family:var(--font-mono);font-size:12px;color:var(--muted);background:var(--soft);padding:2px 8px;border-radius:999px}
+.stephead h2{font-family:var(--font-display);font-size:21px;margin:0;line-height:1.3;text-wrap:balance;flex:1 1 auto}
+.shape{font-family:var(--font-mono);font-size:12.5px;padding:3px 10px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);white-space:nowrap}
+.shape b{color:var(--accent);font-weight:600}
+.stage{position:relative;min-height:440px;padding:22px 18px;overflow-x:auto;overflow-y:hidden;
+  background-color:var(--surface);background-image:radial-gradient(var(--grid) 1px,transparent 1.2px);background-size:18px 18px}
+.scene{display:flex;flex-direction:column;gap:18px;align-items:center;min-width:min-content;margin:0 auto}
+.caption{min-height:46px;padding:10px 14px;border-left:3px solid var(--accent);background:var(--surface);border-radius:0 10px 10px 0;font-size:14.5px;transition:opacity .25s}
+.caption:empty::before{content:"\00a0"}
+.caption .tok{height:22px;font-size:12.5px;padding:0 6px;margin:0 2px;vertical-align:1px}
+
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--surface);padding:7px 13px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:500}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.btn svg{width:15px;height:15px}
+.btn:disabled{opacity:.4;cursor:default}
+.speed{margin-left:auto;display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}
+.speed select{border:1px solid var(--line);background:var(--surface);border-radius:7px;padding:5px 8px}
+.kbd{font-size:12px;color:var(--muted)}
+.steps{list-style:none;margin:0;padding:2px 0 4px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin}
+.steps button{white-space:nowrap;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 11px;font-size:12.5px;cursor:pointer;color:var(--muted)}
+.steps button .n{font-family:var(--font-mono);margin-right:4px}
+.steps button.seen{color:var(--ink)}
+.steps button[aria-current="step"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+
+.explain{grid-area:explain;padding:16px 18px}
+.explain .lead{font-size:16px;font-weight:500;margin:0 0 10px;line-height:1.65}
+.explain ul{margin:0 0 12px;padding-left:1.2em}
+.explain li{margin:4px 0}
+.explain .box{border-radius:9px;padding:10px 12px;margin-top:10px;font-size:14px}
+.explain .analogy{background:color-mix(in srgb,var(--t2) 12%,var(--surface));border:1px solid color-mix(in srgb,var(--t2) 35%,var(--surface))}
+.explain .real{background:var(--soft);border:1px solid var(--line)}
+.explain .box b{display:block;font-size:12px;letter-spacing:.06em;color:var(--muted);margin-bottom:2px}
+.explain code{font-family:var(--font-mono);font-size:13px;background:var(--soft);padding:0 4px;border-radius:4px}
+
+/* map */
+.mapsvg .box{cursor:pointer}
+.mapsvg .box rect,.mapsvg .box circle.shape{fill:color-mix(in srgb,var(--kc) 11%,var(--surface));stroke:var(--kc);stroke-width:1.2;transition:fill .3s,stroke-width .3s,opacity .3s}
+.mapsvg .box text{fill:var(--ink);font-size:11.5px;font-family:var(--font-body);pointer-events:none}
+.mapsvg .box text.sub{fill:var(--muted);font-size:9.5px}
+.mapsvg.focus .box:not(.on){opacity:.42}
+.mapsvg .box.on rect,.mapsvg .box.on circle.shape{fill:color-mix(in srgb,var(--kc) 30%,var(--surface));stroke-width:2.4}
+.mapsvg .box.cursor rect,.mapsvg .box.cursor circle.shape{stroke-width:3.2;fill:color-mix(in srgb,var(--kc) 45%,var(--surface))}
+.mapsvg.focus .box.cursor{opacity:1}
+.mapsvg .box:hover rect{stroke-width:2.2}
+.mapsvg .frame{fill:none;stroke:var(--line);stroke-width:1.2;stroke-dasharray:4 3}
+.mapsvg .ftext{fill:var(--muted);font-size:10.5px}
+.mapsvg .t{fill:var(--ink);font-size:11px}
+.mapsvg .tm{fill:var(--muted);font-size:10px}
+.mapsvg .tb{fill:var(--ink);font-size:12px;font-weight:700}
+.mapsvg .ar{fill:none;stroke:currentColor;stroke-width:1.3}
+.mapsvg .ar.res{stroke-dasharray:2 2;opacity:.8}
+.mapsvg .ar.flow{stroke:var(--accent);stroke-width:2;stroke-dasharray:5 4;animation:dash .9s linear infinite}
+.mapsvg .lane{stroke:var(--c-res);stroke-width:2.2;opacity:.55}
+.mapsvg .box.on .lane{opacity:1}
+@keyframes dash{to{stroke-dashoffset:-18}}
+.fl{stroke-dasharray:6 8;animation:dash 1.2s linear infinite}
+
+/* tokens & matrices */
+.tok{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:27px;padding:0 8px;border-radius:6px;font-size:13.5px;font-weight:700;background:color-mix(in srgb,var(--tc) 17%,var(--surface));color:var(--ink);border:1.6px solid var(--tc);white-space:nowrap;transition:opacity .3s,transform .3s,box-shadow .25s}
+.tok.hl{box-shadow:0 0 0 3px color-mix(in srgb,var(--tc) 45%,transparent);transform:translateY(-2px)}
+.tok.dim{opacity:.3}
+.lab{font-family:var(--font-mono);font-size:11.5px;color:var(--muted);white-space:nowrap;display:flex;align-items:center;justify-content:center}
+.mwrap{display:flex;flex-direction:column;align-items:center;gap:6px;transition:opacity .3s}
+.mwrap.off{opacity:0}
+.mwrap.faint{opacity:.35}
+.mtitle{font-size:13.5px;font-weight:700;text-align:center;line-height:1.3}
+.mtitle .sub{display:block;font-weight:400;color:var(--muted);font-size:12px}
+.mat{display:grid;gap:3px;grid-auto-rows:var(--cellh);align-items:center}
+.mat > .tok{height:var(--cellh);justify-self:end;margin-right:4px}
+.mat > .clab{font-family:var(--font-mono);font-size:10.5px;color:var(--muted);text-align:center;align-self:end;line-height:1.1;white-space:nowrap}
+.mat > .clab .tok{height:22px;font-size:12px;padding:0 5px}
+.cell{width:var(--cell);height:var(--cellh);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-variant-numeric:tabular-nums;font-size:11px;border-radius:4px;border:1px solid color-mix(in srgb,var(--line) 70%,transparent);transition:background .4s,opacity .35s,transform .35s,box-shadow .2s,color .3s}
+.cell.strong{color:var(--on-strong)}
+.cell.off{opacity:0;transform:scale(.55)}
+.cell.hl{box-shadow:0 0 0 2.5px var(--hc,var(--accent));position:relative;z-index:1}
+.cell.dim{opacity:.22}
+.cell.zero{background:var(--soft)!important;color:var(--muted)}
+.cell.ninf{background:repeating-linear-gradient(45deg,var(--soft) 0 4px,var(--line) 4px 7px)!important;color:var(--muted)}
+.cell.gap{background:transparent!important;border-color:transparent;color:var(--muted)}
+.cell.pop{animation:pop .45s}
+@keyframes pop{40%{transform:scale(1.25)}}
+.mat.mini{gap:2px;grid-auto-rows:14px}
+.mat.mini .cell{width:14px;height:14px;font-size:0;border-radius:2px}
+.mat.mini > .tok{height:14px;font-size:0;min-width:10px;padding:0;width:10px;border-radius:3px}
+.mshape{font-family:var(--font-mono);font-size:12px;color:var(--muted)}
+.note{font-size:13px;color:var(--muted);text-align:center;max-width:60ch}
+.formula{font-family:var(--font-mono);font-size:13px;background:var(--soft);border-radius:8px;padding:8px 12px;min-height:38px;text-align:center;max-width:100%;transition:opacity .25s}
+.row{display:flex;align-items:center;justify-content:center;gap:11px;flex-wrap:wrap}
+.row.nowrap{flex-wrap:nowrap}
+.row.top{align-items:flex-start}
+.col{display:flex;flex-direction:column;align-items:center;gap:8px}
+.op{font-size:22px;color:var(--muted);font-family:var(--font-mono);padding:0 2px;line-height:1}
+.op small{display:block;font-size:11px;text-align:center;font-family:var(--font-body)}
+.arrowtxt{display:flex;flex-direction:column;align-items:center;color:var(--muted);font-size:12px;gap:2px}
+.arrowtxt .a{font-size:22px;line-height:1}
+.badge{font-size:12px;border-radius:999px;padding:1px 9px;background:var(--soft);color:var(--muted);font-family:var(--font-mono);white-space:nowrap;transition:opacity .3s}
+.badge.good{background:color-mix(in srgb,var(--t5) 18%,var(--surface));color:var(--ink)}
+.off{opacity:0}
+.fade{transition:opacity .35s,transform .35s}
+.flyer{position:absolute;margin:0;z-index:20;pointer-events:none;transform-origin:0 0}
+.blk{border:2px solid var(--kc);background:color-mix(in srgb,var(--kc) 12%,var(--surface));border-radius:12px;padding:14px 18px;text-align:center;min-width:120px;transition:box-shadow .3s}
+.blk b{display:block;font-size:15px}
+.blk span{font-size:12px;color:var(--muted)}
+.blk.hot{box-shadow:0 0 0 5px color-mix(in srgb,var(--kc) 30%,transparent)}
+.card{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--surface);max-width:280px;font-size:13.5px;line-height:1.55}
+.card h4{margin:0 0 4px;font-size:14.5px}
+.card .meta{font-size:12px;color:var(--muted)}
+.card.key{border:2px solid var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.stat{border:1px solid var(--line);border-radius:9px;padding:6px 12px;text-align:center;background:var(--surface);transition:opacity .35s,transform .35s}
+.stat b{display:block;font-family:var(--font-mono);font-size:17px}
+.stat span{font-size:11.5px;color:var(--muted)}
+.strip{display:grid;grid-auto-flow:column;grid-auto-columns:6px;height:18px;gap:0;border-radius:3px;overflow:hidden;border:1.5px solid var(--tc,var(--line))}
+.strip i{display:block;transition:opacity .2s}
+.strip.glow{box-shadow:0 0 0 3px color-mix(in srgb,var(--t2) 55%,transparent)}
+.sentence{font-size:30px;font-weight:700;letter-spacing:.18em;padding:10px 24px;border:2px dashed var(--line);border-radius:12px;transition:opacity .4s,letter-spacing .5s}
+.idbox{font-family:var(--font-mono);font-size:14px;border:1px solid var(--line);border-radius:6px;padding:2px 10px;background:var(--surface);transition:opacity .35s,transform .35s}
+.vtable{border-collapse:collapse;font-size:13px}
+.vtable td{padding:2px 10px;border-bottom:1px solid var(--line);transition:background .3s}
+.vtable td:first-child{font-family:var(--font-mono);color:var(--muted);text-align:right}
+.vtable tr.hl td{background:color-mix(in srgb,var(--tc) 20%,var(--surface))}
+.bars{display:grid;grid-template-columns:auto 220px 52px;gap:6px 10px;align-items:center;font-size:13px}
+.bars .bar{height:16px;border-radius:4px;background:rgb(var(--prob-rgb) / .85);width:0;transition:width .6s cubic-bezier(.3,0,.2,1)}
+.bars .bar.win{background:var(--t3)}
+.bars .v{font-family:var(--font-mono);font-size:12px;color:var(--muted)}
+.cmp{border-collapse:collapse;font-size:13.5px;min-width:620px}
+.cmp th,.cmp td{padding:7px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.cmp th{font-size:12px;color:var(--muted);font-weight:500}
+.cmp td:first-child{font-weight:700;white-space:nowrap}
+.cmp td.new{background:color-mix(in srgb,var(--accent) 10%,var(--surface))}
+.cmp tr{transition:opacity .4s}
+.cmp tr.off{opacity:0}
+.layers{display:grid;grid-template-columns:repeat(6,auto);gap:10px 12px}
+.lgroup{display:flex;gap:3px;padding:5px;border:1px dashed var(--line);border-radius:8px;position:relative}
+.lgroup .gl{position:absolute;top:-9px;left:6px;font-size:10px;background:var(--surface);padding:0 3px;color:var(--muted);font-family:var(--font-mono)}
+.layer{width:22px;display:flex;flex-direction:column;gap:2px;cursor:pointer;border:0;padding:0;background:transparent}
+.layer .mx{height:26px;border-radius:4px;background:color-mix(in srgb,var(--kc) 35%,var(--surface));border:1.5px solid var(--kc);transition:background .2s,transform .2s}
+.layer .me{height:8px;border-radius:3px;background:color-mix(in srgb,var(--c-moe) 45%,var(--surface))}
+.layer.gdn{--kc:var(--c-gdn)}
+.layer.qsa{--kc:var(--c-qsa)}
+.layer.cur .mx{background:var(--kc);transform:scaleY(1.15)}
+.layer.past .mx{background:color-mix(in srgb,var(--kc) 70%,var(--surface))}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);justify-content:center}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:5px;border:1.5px solid var(--kc);background:color-mix(in srgb,var(--kc) 35%,var(--surface))}
+.blocks{display:grid;grid-template-columns:repeat(8,auto);gap:16px 8px}
+.qb{display:flex;flex-direction:column;align-items:center;gap:4px;transition:opacity .4s}
+.qb .bt{display:flex;gap:2px;padding:3px;border-radius:5px;border:1.5px solid transparent;transition:border-color .3s,background .3s}
+.qb .bt i{width:11px;height:16px;border-radius:2px;background:color-mix(in srgb,var(--t6) 40%,var(--surface));transition:background .3s,box-shadow .3s}
+.qb.cut .bt{border-color:var(--line)}
+.qb.sel .bt{border-color:var(--c-qsa);background:color-mix(in srgb,var(--c-qsa) 12%,var(--surface))}
+.qb.sel .bt i{background:color-mix(in srgb,var(--c-qsa) 55%,var(--surface))}
+.qb .bt i.q{background:var(--t3)!important;box-shadow:0 0 0 2px color-mix(in srgb,var(--t3) 40%,transparent)}
+.qb.dimmed{opacity:.28}
+.qb .sc{width:44px;height:34px;display:flex;align-items:flex-end;justify-content:center}
+.qb .sc span{width:20px;border-radius:3px 3px 0 0;background:color-mix(in srgb,var(--c-qsa) 60%,var(--surface));height:0;transition:height .5s}
+.qb .sv{font-family:var(--font-mono);font-size:10.5px;color:var(--muted);height:14px}
+.experts{display:grid;grid-template-columns:repeat(32,var(--ex,10px));grid-auto-rows:var(--ex,10px);gap:2px;padding:6px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.experts i{border-radius:2px;background:var(--soft);transition:background .25s,transform .25s}
+.experts i.on{transform:scale(1.25)}
+.wbars{display:grid;grid-template-columns:auto 120px auto;gap:3px 8px;font-size:11.5px;align-items:center;font-family:var(--font-mono);color:var(--muted)}
+.wbars span.b{height:9px;border-radius:2px;width:0;transition:width .4s}
+.shared{border:2px solid var(--c-moe);border-radius:10px;padding:10px 12px;text-align:center;font-size:13px;background:color-mix(in srgb,var(--c-moe) 8%,var(--surface));transition:background .3s}
+.shared.on{background:color-mix(in srgb,var(--c-moe) 30%,var(--surface))}
+.ngt{border:1px solid var(--line);border-radius:10px;overflow:hidden;min-width:200px;background:var(--surface)}
+.ngt .hd{padding:6px 10px;font-size:12.5px;background:var(--soft);font-weight:700}
+.ngt .hd span{display:block;font-weight:400;color:var(--muted);font-size:11.5px}
+.ngt .r{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:3px 10px;font-size:13px;border-top:1px solid var(--line);transition:background .3s}
+.ngt .r .k{font-family:var(--font-mono);font-size:10.5px;color:var(--muted)}
+.ngt .r.hl{background:color-mix(in srgb,var(--t2) 28%,var(--surface))}
+.ngt .r.gapr{justify-content:center;color:var(--muted)}
+.bracket{display:flex;gap:6px;position:relative}
+.cache{display:flex;gap:4px;flex-wrap:wrap;min-height:30px;align-items:center;max-width:420px}
+.slider{width:min(520px,100%)}
+.mbar{display:grid;grid-template-columns:200px 1fr 92px;gap:8px;align-items:center;font-size:13px;width:min(700px,100%)}
+.mbar .tr{height:20px;background:var(--soft);border-radius:5px;overflow:hidden}
+.mbar .fl{height:100%;border-radius:5px;transition:width .15s}
+.mbar .vv{font-family:var(--font-mono);font-size:12.5px;text-align:right}
+.mbar .nm small{display:block;color:var(--muted);font-size:11.5px}
+footer{max-width:1500px;margin:0 auto;padding:0 20px 36px;font-size:13px;color:var(--muted)}
+footer .panel{padding:14px 18px}
+footer h3{margin:0 0 6px;font-size:14px;color:var(--ink)}
+footer ul{margin:6px 0 0;padding-left:1.2em}
+footer a{color:var(--accent)}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important}
+}
+@media (max-width:600px){
+  :root{--ex:7px}
+  .top h1{font-size:22px}
+  .stage{padding:16px 10px;min-height:380px}
+  :root{--cell:34px;--cellh:28px}
+  .speed{margin-left:0}
+  .bars{grid-template-columns:auto 140px 46px}
+  .mbar{grid-template-columns:120px 1fr 80px}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>看懂大模型的骨架：Transformer 与 Qwen 4</h1>
+    <p>按「下一步」或「播放」，一步一步看数据怎么流过每个模块、矩阵形状怎么变。每个词固定一种颜色，方便你一路跟踪它。</p>
+  </div>
+  <nav class="tabs" role="tablist" aria-label="选择架构">
+    <button role="tab" id="tab-transformer" data-model="transformer" aria-selected="true">经典 Transformer · 2017</button>
+    <button role="tab" id="tab-qwen4" data-model="qwen4" aria-selected="false">Qwen 4 架构</button>
+  </nav>
+</header>
+
+<main class="layout">
+  <aside class="mapcol panel" aria-label="结构图">
+    <div class="maphead">结构图 <span>点模块可跳到对应步骤</span></div>
+    <div id="map"></div>
+    <p class="maphint" id="mapHint">数据从下往上流，和论文原图方向一致。高亮的是当前这一步。</p>
+  </aside>
+
+  <section class="stagecol" aria-label="动画">
+    <div class="stephead">
+      <span class="stepno" id="stepNo">1 / 15</span>
+      <h2 id="stepTitle">…</h2>
+      <span class="shape" id="stepShape"></span>
+    </div>
+    <div class="stage panel" id="stage"></div>
+    <div class="caption" id="caption" aria-live="polite"></div>
+    <div class="controls">
+      <button class="btn" id="prevBtn" type="button"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M10.5 3 5 8l5.5 5z"/></svg>上一步</button>
+      <button class="btn primary" id="playBtn" type="button"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg><span>自动播放</span></button>
+      <button class="btn" id="nextBtn" type="button">下一步<svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M5.5 3 11 8l-5.5 5z"/></svg></button>
+      <button class="btn" id="replayBtn" type="button"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8a5 5 0 1 0 1.6-3.7"/><path d="M3 2.5v3h3"/></svg>重播本步</button>
+      <span class="kbd">键盘：← → 切换，空格播放</span>
+      <label class="speed" for="speedSel">速度
+        <select id="speedSel">
+          <option value="0.5">0.5×</option>
+          <option value="1" selected>1×</option>
+          <option value="1.5">1.5×</option>
+          <option value="2">2×</option>
+        </select>
+      </label>
+    </div>
+    <ol class="steps" id="stepList" aria-label="全部步骤"></ol>
+  </section>
+
+  <section class="explain panel" id="explain" aria-live="polite"></section>
+</main>
+
+<footer>
+  <div class="panel">
+    <h3>数据从哪来</h3>
+    <div>经典 Transformer 部分按论文结构画，矩阵缩小到 4 维；权重是固定随机种子生成的演示数字，交叉注意力和最后的输出概率是示意值。Qwen 4 部分的结构和尺寸来自官方「Qwen4 架构预览」Qwen3.8-Flash-Next 的模型卡（model_type 为 qwen4_exp）；Qwen4-Max-Preview 已于 2026-11-11 开放预览，但阿里尚未公布它的结构细节，正式版尺寸可能不同。动画里的具体数值都是演示用的。</div>
+    <ul>
+      <li><a href="https://arxiv.org/abs/1706.03762">Vaswani 等，Attention Is All You Need（2017）</a></li>
+      <li><a href="https://huggingface.co/Qwen/Qwen3.8-Flash-Next">Qwen3.8-Flash-Next 模型卡（Hugging Face）</a></li>
+      <li><a href="https://www.orcarouter.ai/blog/qwen3-8-flash-next-release">Qwen3.8-Flash-Next 技术报告解读（门控残差、N-gram 嵌入等机制）</a></li>
+      <li><a href="https://ai-tldr.dev/releases/qwen-qwen4-max-preview/">Qwen4-Max-Preview 发布信息</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+(() => {
+"use strict";
+/* ---------------- 基础工具 ---------------- */
+const reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+let speed = 1, gen = 0, playing = false, model = 'transformer', idx = 0;
+const ABORT = { abort: true };
+const stage = document.getElementById('stage');
+const capEl = document.getElementById('caption');
+window.__setSpeed = v => { speed = v; };
+
+function wait(ms){
+  const g = gen;
+  return new Promise((res, rej) => {
+    if (reduced) { g === gen ? res() : rej(ABORT); return; }
+    setTimeout(() => (g === gen ? res() : rej(ABORT)), ms / speed);
+  });
+}
+function el(tag, cls, html){ const e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
+function row(...k){ const r = el('div','row'); r.append(...k); return r; }
+function col(...k){ const c = el('div','col'); c.append(...k); return c; }
+function op(s, small){ return el('div','op', s + (small ? `<small>${small}</small>` : '')); }
+function note(h){ return el('div','note',h); }
+function say(h){ capEl.innerHTML = h; }
+const T = (t, c) => ({ t, c });
+function tokEl(tok, extra){
+  if (typeof tok === 'string'){ const l = el('span','lab' + (extra ? ' ' + extra : '')); l.textContent = tok; return l; }
+  const s = el('span','tok' + (extra ? ' ' + extra : ''));
+  s.textContent = tok.t; s.style.setProperty('--tc', `var(--t${tok.c})`); return s;
+}
+function chipHTML(tok){ const d = tokEl(tok); return d.outerHTML; }
+const fmt = (v, dp = 2) => { if (Number.isNaN(v)) return '⋮'; const s = Math.abs(v).toFixed(dp); return (v < 0 && +s !== 0 ? '−' : '') + s; };
+
+/* 矩阵运算 */
+function rng(a){ return function(){ a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+function gauss(r){ let u = 0, v = 0; while (!u) u = r(); while (!v) v = r(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); }
+const M = (r, c, f) => Array.from({ length: r }, (_, i) => Array.from({ length: c }, (_, j) => f(i, j)));
+const mul = (A, B) => M(A.length, B[0].length, (i, j) => A[i].reduce((s, _, k) => s + A[i][k] * B[k][j], 0));
+const tr = A => M(A[0].length, A.length, (i, j) => A[j][i]);
+const add = (A, B) => A.map((r, i) => r.map((x, j) => x + B[i][j]));
+const scale = (A, s) => A.map(r => r.map(x => x * s));
+const softmax = r => { const m = Math.max(...r.filter(x => x > -Infinity)); const e = r.map(x => x === -Infinity ? 0 : Math.exp(x - m)); const s = e.reduce((a, b) => a + b, 0); return e.map(x => x / s); };
+const layerNorm = r => { const m = r.reduce((a, b) => a + b, 0) / r.length; const v = r.reduce((a, b) => a + (b - m) ** 2, 0) / r.length; return r.map(x => (x - m) / Math.sqrt(v + 1e-5)); };
+const meanStd = r => { const m = r.reduce((a, b) => a + b, 0) / r.length; const v = r.reduce((a, b) => a + (b - m) ** 2, 0) / r.length; return [m, Math.sqrt(v)]; };
+const maxAbs = A => Math.max(0.5, ...A.flat().filter(x => Number.isFinite(x)).map(Math.abs));
+
+/* 矩阵组件 */
+function setCell(d, v, o){
+  d.classList.remove('ninf','gap','zero','strong');
+  if (v === -Infinity){ d.textContent = '−∞'; d.classList.add('ninf'); d.style.background = ''; return; }
+  if (Number.isNaN(v)){ d.textContent = '⋮'; d.classList.add('gap'); return; }
+  let a, rgb;
+  if (o.kind === 'prob'){ a = Math.min(1, v) * 0.92; rgb = 'var(--prob-rgb)'; }
+  else { a = Math.min(1, Math.abs(v) / (o.max || 2)) * 0.86; rgb = v >= 0 ? 'var(--pos-rgb)' : 'var(--neg-rgb)'; }
+  d.style.background = `rgb(${rgb} / ${a.toFixed(3)})`;
+  if (a > 0.58) d.classList.add('strong');
+  d.textContent = o.mini ? '' : fmt(v, o.dp ?? 2);
+}
+function mat(data, o = {}){
+  o = Object.assign({}, o); if (o.max == null && o.kind !== 'prob') o.max = maxAbs(data);
+  const R = data.length, C = data[0].length;
+  const w = el('div','mwrap' + (o.cls ? ' ' + o.cls : ''));
+  if (o.title) w.append(el('div','mtitle', o.title));
+  const g = el('div','mat' + (o.mini ? ' mini' : ''));
+  const hasR = !!o.rows, hasN = !!o.notes;
+  g.style.gridTemplateColumns = `${hasR ? 'auto ' : ''}repeat(${C}, ${o.mini ? '14px' : 'var(--cell)'})${hasN ? ' auto' : ''}`;
+  if (o.cols){
+    if (hasR) g.append(el('div',''));
+    o.cols.forEach(c => { const d = el('div','clab'); if (typeof c === 'string') d.textContent = c; else d.append(tokEl(c)); g.append(d); });
+    if (hasN) g.append(el('div',''));
+  }
+  const cells = [], notes = [];
+  for (let r = 0; r < R; r++){
+    if (hasR) g.append(tokEl(o.rows[r]));
+    cells[r] = [];
+    for (let c = 0; c < C; c++){
+      const d = el('div','cell'); setCell(d, data[r][c], o);
+      if (!o.shown) d.classList.add('off');
+      g.append(d); cells[r][c] = d;
+    }
+    if (hasN){ const n = el('div','badge off', o.notes[r] || ''); n.style.marginLeft = '6px'; g.append(n); notes[r] = n; }
+  }
+  w.append(g);
+  if (o.shape) w.append(el('div','mshape', o.shape));
+  w.cells = cells; w.notes = notes; w.o = o; w.data = data;
+  w.set = (r, c, v) => { w.data[r][c] = v; setCell(cells[r][c], v, o); };
+  return w;
+}
+const cellsOf = (m, r) => m.cells[r];
+const colOf = (m, c) => m.cells.map(r => r[c]);
+async function showRow(m, r, d = 55){ for (const c of m.cells[r]){ c.classList.remove('off'); if (d) await wait(d); } }
+async function showAll(m, d = 18){ for (const rr of m.cells) for (const c of rr){ c.classList.remove('off'); if (d) await wait(d); } }
+function showNow(m){ m.cells.flat().forEach(c => c.classList.remove('off')); }
+function hl(list, color){ list.forEach(c => { c.classList.add('hl'); if (color) c.style.setProperty('--hc', color); }); }
+function unhl(root){ (root || stage).querySelectorAll('.hl').forEach(c => c.classList.remove('hl')); }
+function tc(tok){ return `var(--t${tok.c})`; }
+
+async function fly(from, to, dur = 650){
+  if (reduced || !from || !to) return;
+  const sr = stage.getBoundingClientRect(), a = from.getBoundingClientRect(), b = to.getBoundingClientRect();
+  const c = from.cloneNode(true); c.classList.remove('off','dim'); c.classList.add('flyer');
+  c.style.left = (a.left - sr.left - stage.clientLeft + stage.scrollLeft) + 'px';
+  c.style.top = (a.top - sr.top - stage.clientTop + stage.scrollTop) + 'px';
+  c.style.width = a.width + 'px'; c.style.height = a.height + 'px';
+  stage.append(c); c.getBoundingClientRect();
+  c.style.transition = `transform ${dur / speed}ms cubic-bezier(.55,0,.2,1), opacity ${dur / speed}ms`;
+  c.style.transform = `translate(${b.left - a.left}px, ${b.top - a.top}px) scale(${b.width / a.width}, ${b.height / a.height})`;
+  try { await wait(dur); } finally { c.remove(); }
+}
+const flyAll = (fs, ts, dur) => Promise.all(fs.map((f, i) => fly(f, ts[i], dur)));
+function stripEl(n, values, color, maxv = 1.6){
+  const s = el('div','strip'); if (color) s.style.setProperty('--tc', color);
+  for (let i = 0; i < n; i++){ const v = values[i]; const a = Math.min(1, Math.abs(v) / maxv) * 0.85; const b = el('i'); b.style.background = `rgb(${v >= 0 ? 'var(--pos-rgb)' : 'var(--neg-rgb)'} / ${a.toFixed(3)})`; s.append(b); }
+  return s;
+}
+
+/* ---------------- 经典 Transformer 的演示数据（固定种子，可复现） ---------------- */
+const R0 = rng(5), g0 = () => gauss(R0);
+const SRC = [T('我',1), T('爱',2), T('猫',3)];
+const TGT = [T('<s>',6), T('I',4), T('love',5)];
+const SRC_ID = [2769, 4263, 4344];
+const E3 = M(3,4,() => g0() * 0.9);
+const WQ = M(4,4,() => g0() * 0.8), WK = M(4,4,() => g0() * 0.8), WV = M(4,4,() => g0() * 0.8);
+const WO = M(4,4,() => g0() * 0.6);
+const W1 = M(4,8,() => g0() * 0.7), B1 = Array.from({ length: 8 }, () => g0() * 0.2), W2 = M(8,4,() => g0() * 0.5);
+const EMB_OTHER = M(5,4,() => g0() * 0.9);
+const PE = M(3,4,(p, j) => { const i = Math.floor(j / 2); const ang = p / Math.pow(10000, 2 * i / 4); return j % 2 ? Math.cos(ang) : Math.sin(ang); });
+const X = add(E3, PE);
+const Q = mul(X, WQ), K = mul(X, WK), V = mul(X, WV);
+const S = scale(mul(Q, tr(K)), 1 / 2), A = S.map(softmax), Z = mul(A, V);
+function heads2(Q_, K_, V_){
+  return [0,1].map(h => { const sl = m => m.map(r => r.slice(2 * h, 2 * h + 2)); const s = scale(mul(sl(Q_), tr(sl(K_))), 1 / Math.SQRT2); const a = s.map(softmax); return { a, z: mul(a, sl(V_)) }; });
+}
+const HD = heads2(Q, K, V);
+const ZC = HD[0].z.map((r, i) => r.concat(HD[1].z[i]));
+const MHA = mul(ZC, WO);
+const R1 = add(X, MHA), N1 = R1.map(layerNorm);
+const H = mul(N1, W1).map(r => r.map((x, j) => x + B1[j])), HR = H.map(r => r.map(x => Math.max(0, x)));
+const F = mul(HR, W2), R2 = add(N1, F), L1 = R2.map(layerNorm);
+function encLayer(x){
+  const wq = M(4,4,() => g0() * 0.8), wk = M(4,4,() => g0() * 0.8), wv = M(4,4,() => g0() * 0.8), wo = M(4,4,() => g0() * 0.6);
+  const w1 = M(4,8,() => g0() * 0.7), b1 = Array.from({ length: 8 }, () => g0() * 0.2), w2 = M(8,4,() => g0() * 0.5);
+  const hd = heads2(mul(x, wq), mul(x, wk), mul(x, wv));
+  const zc = hd[0].z.map((r, i) => r.concat(hd[1].z[i]));
+  const n1 = add(x, mul(zc, wo)).map(layerNorm);
+  const f = mul(mul(n1, w1).map(r => r.map((v, j) => Math.max(0, v + b1[j]))), w2);
+  return add(n1, f).map(layerNorm);
+}
+const LAYERS = [L1]; for (let l = 2; l <= 6; l++) LAYERS.push(encLayer(LAYERS[l - 2]));
+const ED = M(3,4,() => g0() * 0.9), XD = add(ED, PE);
+const WQd = M(4,4,() => g0() * 0.8), WKd = M(4,4,() => g0() * 0.8);
+const SD = scale(mul(mul(XD, WQd), tr(mul(XD, WKd))), 1 / 2);
+const SDm = SD.map((r, i) => r.map((x, j) => (j > i ? -Infinity : x)));
+const AD = SDm.map(softmax);
+const CA = [[0.78,0.15,0.07],[0.10,0.80,0.10],[0.06,0.14,0.80]];
+const VOCAB = ['I','love','cats','dogs','you','</s>'];
+const LOGITS = [0.2,-0.4,3.1,1.6,0.9,0.5];
+const HLAST = [Array.from({ length: 4 }, () => g0() * 0.9)];
+const WVOC = (() => { const v = HLAST[0], vv = v.reduce((s, x) => s + x * x, 0); const cols = LOGITS.map(l => { const r = Array.from({ length: 4 }, () => g0() * 0.6); const d = r.reduce((s, x, i) => s + x * v[i], 0); return r.map((x, i) => x + (l - d) / vv * v[i]); }); return tr(cols); })();
+const PROBS = softmax(LOGITS);
+
+/* 注意力弧线视图 */
+function arcView(toks, W, o = {}){
+  const n = toks.length, gap = o.gap || 96, w = n * gap, hgt = 120;
+  const wrap = el('div','col');
+  const svgNS = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(svgNS,'svg');
+  svg.setAttribute('viewBox', `0 0 ${w} ${hgt}`); svg.setAttribute('width', w); svg.setAttribute('height', hgt);
+  svg.setAttribute('role','img'); svg.setAttribute('aria-label', o.aria || '注意力权重弧线');
+  svg.style.maxWidth = '100%'; svg.style.overflow = 'visible';
+  const g = document.createElementNS(svgNS,'g'); svg.append(g);
+  const tokRow = el('div','row nowrap'); tokRow.style.gap = '0';
+  const tokEls = toks.map((t, i) => { const d = el('div',''); d.style.width = gap + 'px'; d.style.display = 'flex'; d.style.justifyContent = 'center'; const c = tokEl(t); c.style.cursor = 'pointer'; c.title = '看它的注意力分配'; c.addEventListener('click', () => show(i)); d.append(c); tokRow.append(d); return c; });
+  function show(i){
+    g.innerHTML = ''; tokEls.forEach((c, j) => c.classList.toggle('hl', j === i));
+    const x0 = gap / 2 + i * gap;
+    W[i].forEach((wt, j) => {
+      if (o.mask && j > i) return;
+      const x1 = gap / 2 + j * gap; const p = document.createElementNS(svgNS,'path');
+      let d;
+      if (i === j) d = `M ${x0 - 12} ${hgt - 4} C ${x0 - 30} ${hgt - 60}, ${x0 + 30} ${hgt - 60}, ${x0 + 12} ${hgt - 4}`;
+      else { const top = hgt - 30 - 26 * Math.abs(i - j); d = `M ${x0} ${hgt - 4} Q ${(x0 + x1) / 2} ${top - 20} ${x1} ${hgt - 4}`; }
+      p.setAttribute('d', d); p.setAttribute('fill','none'); p.setAttribute('stroke', tc(toks[i]));
+      p.setAttribute('stroke-width', (1 + wt * 11).toFixed(2)); p.setAttribute('stroke-linecap','round'); p.setAttribute('opacity', (0.25 + 0.75 * wt).toFixed(2));
+      g.append(p);
+      const tx = document.createElementNS(svgNS,'text');
+      const lx = i === j ? x0 : (x0 + x1) / 2, ly = i === j ? hgt - 50 : hgt - 30 - 26 * Math.abs(i - j) - 6;
+      tx.setAttribute('x', lx); tx.setAttribute('y', ly); tx.setAttribute('text-anchor','middle');
+      tx.setAttribute('font-size','12'); tx.setAttribute('font-family','JetBrains Mono, monospace'); tx.setAttribute('fill','currentColor');
+      tx.textContent = wt.toFixed(2); g.append(tx);
+    });
+  }
+  wrap.append(svg, tokRow); if (o.hint) wrap.append(note(o.hint));
+  wrap.show = show; return wrap;
+}
+
+/* ---------------- 结构图 ---------------- */
+const MAPS = {
+  transformer: {
+    vb: '0 0 320 580', aria: '经典 Transformer 结构图：左侧编码器，右侧解码器',
+    frames: [ { x: 26, y: 262, w: 130, h: 180 }, { x: 172, y: 192, w: 130, h: 250 } ],
+    texts: [
+      { x: 91, y: 568, t: '编码器（读原文）', c: 'tb' }, { x: 237, y: 568, t: '解码器（写译文）', c: 'tb' },
+      { x: 91, y: 549, t: '我 爱 猫', c: 'tm' }, { x: 237, y: 549, t: '<s> I love（已写出的）', c: 'tm' },
+      { x: 13, y: 356, t: '6×', c: 't' }, { x: 311, y: 321, t: '6×', c: 't' },
+      { x: 128, y: 230, t: '编码结果→K,V', c: 'tm' }, { x: 237, y: 86, t: '概率最高的词 → 下一个词', c: 'tm' }
+    ],
+    boxes: [
+      { id: 'enc-emb', x: 34, y: 498, w: 114, h: 28, label: '词嵌入', k: 'emb' },
+      { id: 'enc-pe', cx: 91, cy: 470, r: 9, label: '位置编码', side: 'left', k: 'emb', group: 'pe' },
+      { id: 'enc-mha', x: 34, y: 398, w: 114, h: 32, label: '多头自注意力', k: 'attn' },
+      { id: 'enc-an1', x: 34, y: 366, w: 114, h: 22, label: '相加 & 归一化', k: 'norm', group: 'an' },
+      { id: 'enc-ffn', x: 34, y: 312, w: 114, h: 32, label: '前馈网络 FFN', k: 'ffn', group: 'ffn' },
+      { id: 'enc-an2', x: 34, y: 280, w: 114, h: 22, label: '相加 & 归一化', k: 'norm', group: 'an' },
+      { id: 'dec-emb', x: 180, y: 498, w: 114, h: 28, label: '词嵌入', k: 'emb' },
+      { id: 'dec-pe', cx: 237, cy: 470, r: 9, label: '位置编码', side: 'right', k: 'emb', group: 'pe' },
+      { id: 'dec-mmha', x: 180, y: 400, w: 114, h: 30, label: '掩码自注意力', k: 'attn' },
+      { id: 'dec-an1', x: 180, y: 370, w: 114, h: 20, label: '相加 & 归一化', k: 'norm', group: 'an' },
+      { id: 'dec-cross', x: 180, y: 316, w: 114, h: 30, label: '交叉注意力', k: 'attn' },
+      { id: 'dec-an2', x: 180, y: 286, w: 114, h: 20, label: '相加 & 归一化', k: 'norm', group: 'an' },
+      { id: 'dec-ffn', x: 180, y: 234, w: 114, h: 30, label: '前馈网络 FFN', k: 'ffn', group: 'ffn' },
+      { id: 'dec-an3', x: 180, y: 204, w: 114, h: 20, label: '相加 & 归一化', k: 'norm', group: 'an' },
+      { id: 'dec-linear', x: 180, y: 140, w: 114, h: 26, label: '线性层', k: 'out', group: 'out' },
+      { id: 'dec-softmax', x: 180, y: 100, w: 114, h: 26, label: 'Softmax', k: 'out', group: 'out' }
+    ],
+    arrows: [
+      { p: [[91,538],[91,527]], to: 'enc-emb' }, { p: [[91,498],[91,480]], to: 'enc-pe' }, { p: [[91,461],[91,431]], to: 'enc-mha' },
+      { p: [[91,398],[91,389]], to: 'enc-an1' }, { p: [[91,366],[91,345]], to: 'enc-ffn' }, { p: [[91,312],[91,303]], to: 'enc-an2' },
+      { p: [[91,446],[30,446],[30,377],[33,377]], to: 'enc-an1', res: 1 }, { p: [[91,356],[30,356],[30,291],[33,291]], to: 'enc-an2', res: 1 },
+      { p: [[91,280],[91,236],[164,236],[164,331],[179,331]], to: 'dec-cross' },
+      { p: [[237,538],[237,527]], to: 'dec-emb' }, { p: [[237,498],[237,480]], to: 'dec-pe' }, { p: [[237,461],[237,431]], to: 'dec-mmha' },
+      { p: [[237,400],[237,391]], to: 'dec-an1' }, { p: [[237,370],[237,347]], to: 'dec-cross' }, { p: [[237,316],[237,307]], to: 'dec-an2' },
+      { p: [[237,286],[237,265]], to: 'dec-ffn' }, { p: [[237,234],[237,225]], to: 'dec-an3' }, { p: [[237,204],[237,167]], to: 'dec-linear' },
+      { p: [[237,140],[237,127]], to: 'dec-softmax' }, { p: [[237,100],[237,92]], to: 'dec-softmax' },
+      { p: [[237,446],[298,446],[298,380],[295,380]], to: 'dec-an1', res: 1 }, { p: [[237,360],[298,360],[298,296],[295,296]], to: 'dec-an2', res: 1 }, { p: [[237,278],[298,278],[298,214],[295,214]], to: 'dec-an3', res: 1 }
+    ]
+  },
+  qwen4: {
+    vb: '0 0 320 610', aria: 'Qwen 4 架构结构图：只有解码器，48 层分成 12 组',
+    frames: [ { x: 46, y: 262, w: 260, h: 214 } ],
+    texts: [
+      { x: 160, y: 598, t: '输入：文本 / 图片', c: 'tb' },
+      { x: 176, y: 284, t: '× 12 组 = 48 层', c: 't' },
+      { x: 277, y: 486, t: '注入第 2 层', c: 'tm' },
+      { x: 135, y: 150, t: '下一个 token', c: 'tm' }, { x: 263, y: 150, t: '再下一个（草稿）', c: 'tm' },
+      { x: 12, y: 370, t: '4 路残差', c: 'tm', rot: 1 }
+    ],
+    boxes: [
+      { id: 'q-tok', x: 60, y: 548, w: 200, h: 28, label: '分词 · 视觉编码器', k: 'emb' },
+      { id: 'q-emb', x: 46, y: 500, w: 126, h: 30, label: '词嵌入 2560 维', k: 'emb' },
+      { id: 'q-ngram', x: 182, y: 500, w: 124, h: 30, label: 'N-gram 嵌入', k: 'emb' },
+      { id: 'q-res', lanes: [22, 27, 32, 37], y1: 498, y2: 232, k: 'res', label: '' },
+      { id: 'q-gdn-1', x: 56, y: 430, w: 132, h: 32, label: 'Gated DeltaNet', k: 'gdn', group: 'q-gdn' },
+      { id: 'q-moe-1', x: 196, y: 430, w: 100, h: 32, label: 'MoE', k: 'moe', group: 'q-moe' },
+      { id: 'q-gdn-2', x: 56, y: 388, w: 132, h: 32, label: 'Gated DeltaNet', k: 'gdn', group: 'q-gdn' },
+      { id: 'q-moe-2', x: 196, y: 388, w: 100, h: 32, label: 'MoE', k: 'moe', group: 'q-moe' },
+      { id: 'q-gdn-3', x: 56, y: 346, w: 132, h: 32, label: 'Gated DeltaNet', k: 'gdn', group: 'q-gdn' },
+      { id: 'q-moe-3', x: 196, y: 346, w: 100, h: 32, label: 'MoE', k: 'moe', group: 'q-moe' },
+      { id: 'q-qsa', x: 56, y: 300, w: 132, h: 32, label: 'QSA 稀疏注意力', k: 'qsa', group: 'q-qsa' },
+      { id: 'q-moe-4', x: 196, y: 300, w: 100, h: 32, label: 'MoE', k: 'moe', group: 'q-moe' },
+      { id: 'q-norm', x: 80, y: 212, w: 180, h: 26, label: '最终归一化', k: 'norm' },
+      { id: 'q-head', x: 56, y: 162, w: 158, h: 30, label: '输出层 LM Head', k: 'out' },
+      { id: 'q-mtp', x: 222, y: 162, w: 84, h: 30, label: 'MTP 头', k: 'out' }
+    ],
+    arrows: [
+      { p: [[100,548],[100,531]], to: 'q-emb' }, { p: [[244,548],[244,531]], to: 'q-ngram' },
+      { p: [[110,500],[110,463]], to: 'q-gdn-1' },
+      { p: [[244,500],[244,490],[314,490],[314,404],[307,404]], to: 'q-ngram' },
+      { p: [[188,446],[195,446]], to: 'q-moe-1' }, { p: [[188,404],[195,404]], to: 'q-moe-2' }, { p: [[188,362],[195,362]], to: 'q-moe-3' }, { p: [[188,316],[195,316]], to: 'q-moe-4' },
+      { p: [[246,430],[246,424],[122,424],[122,421]], to: 'q-gdn-2' }, { p: [[246,388],[246,382],[122,382],[122,379]], to: 'q-gdn-3' }, { p: [[246,346],[246,338],[122,338],[122,333]], to: 'q-qsa' },
+      { p: [[176,262],[176,239]], to: 'q-norm' }, { p: [[135,212],[135,193]], to: 'q-head' }, { p: [[262,212],[262,193]], to: 'q-mtp' },
+      { p: [[135,162],[135,156]], to: 'q-head' }, { p: [[263,162],[263,156]], to: 'q-mtp' }
+    ]
+  }
+};
+const mapEl = document.getElementById('map');
+function drawMap(key){
+  const d = MAPS[key];
+  const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  let s = `<svg class="mapsvg" viewBox="${d.vb}" role="img" aria-label="${d.aria}"><defs>
+    <marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" fill="currentColor"/></marker>
+    <marker id="ahOn" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" fill="var(--accent)"/></marker></defs>`;
+  d.frames.forEach(f => { s += `<rect class="frame" x="${f.x}" y="${f.y}" width="${f.w}" height="${f.h}" rx="10"/>`; });
+  d.arrows.forEach((a, i) => { s += `<polyline class="ar${a.res ? ' res' : ''}" data-to="${a.to}" data-i="${i}" points="${a.p.map(p => p.join(',')).join(' ')}" marker-end="url(#ah)"/>`; });
+  d.boxes.forEach(b => {
+    s += `<g class="box k-${b.k}" data-id="${b.id}" data-group="${b.group || ''}" tabindex="0" role="button" aria-label="${esc(b.label || '4 路残差流')}" style="--kc:var(--c-${b.k})">`;
+    if (b.lanes){
+      s += `<rect x="${b.lanes[0] - 5}" y="${b.y2}" width="${b.lanes[b.lanes.length - 1] - b.lanes[0] + 10}" height="${b.y1 - b.y2}" rx="4" style="fill:transparent;stroke:transparent"/>`;
+      b.lanes.forEach(x => { s += `<line class="lane" x1="${x}" y1="${b.y1}" x2="${x}" y2="${b.y2}"/>`; });
+    } else if (b.r){
+      s += `<circle class="shape" cx="${b.cx}" cy="${b.cy}" r="${b.r}"/><text x="${b.cx}" y="${b.cy + 4}" text-anchor="middle" style="font-size:13px">+</text>`;
+      s += `<text x="${b.side === 'left' ? b.cx - 15 : b.cx + 15}" y="${b.cy + 4}" text-anchor="${b.side === 'left' ? 'end' : 'start'}">${esc(b.label)}</text>`;
+    } else {
+      s += `<rect x="${b.x}" y="${b.y}" width="${b.w}" height="${b.h}" rx="6"/><text x="${b.x + b.w / 2}" y="${b.y + b.h / 2 + 4}" text-anchor="middle">${esc(b.label)}</text>`;
+    }
+    s += `</g>`;
+  });
+  d.texts.forEach(t => { s += t.rot ? `<text class="${t.c}" x="${t.x}" y="${t.y}" text-anchor="middle" transform="rotate(-90 ${t.x} ${t.y})">${esc(t.t)}</text>` : `<text class="${t.c}" x="${t.x}" y="${t.y}" text-anchor="middle">${esc(t.t)}</text>`; });
+  s += `</svg>`;
+  mapEl.innerHTML = s;
+  mapEl.querySelectorAll('.box').forEach(g => {
+    const jump = () => { const id = g.dataset.id, gr = g.dataset.group; let i = -1, best = 99; STEPS[model].forEach((st, k) => { if (st.map.some(m => m === id || (gr && m === gr)) && st.map.length < best){ best = st.map.length; i = k; } }); if (i >= 0){ setPlaying(false); go(i); } };
+    g.addEventListener('click', jump); g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); jump(); } });
+  });
+  document.getElementById('mapHint').textContent = key === 'transformer'
+    ? '数据从下往上流，和论文原图方向一致。高亮的是当前这一步。'
+    : '数据从下往上流。紫色竖线是 4 路残差流，贯穿所有层。';
+}
+function matchBox(g, ids){ return ids.includes('all') || ids.includes(g.dataset.id) || (g.dataset.group && ids.includes(g.dataset.group)); }
+function highlightMap(ids){
+  const svg = mapEl.querySelector('svg'); if (!svg) return;
+  svg.classList.toggle('focus', !ids.includes('all'));
+  svg.querySelectorAll('.box').forEach(g => g.classList.toggle('on', !ids.includes('all') && matchBox(g, ids)));
+  const onIds = [...svg.querySelectorAll('.box.on')].map(g => g.dataset.id);
+  svg.querySelectorAll('.ar').forEach(a => { const f = !ids.includes('all') && onIds.includes(a.dataset.to); a.classList.toggle('flow', f); a.setAttribute('marker-end', f ? 'url(#ahOn)' : 'url(#ah)'); });
+}
+function mapCursor(ids){
+  const svg = mapEl.querySelector('svg'); if (!svg) return;
+  svg.querySelectorAll('.box').forEach(g => g.classList.toggle('cursor', ids.length > 0 && matchBox(g, ids)));
+}
+
+/* ---------------- 经典 Transformer 步骤 ---------------- */
+const STEPS = {};
+STEPS.transformer = [
+{
+  short: '全景', title: '全景：一句中文怎么变成英文', map: ['all'], shape: '文本 → 文本',
+  lead: 'Transformer 最初是为翻译设计的：左边的<b>编码器</b>把原文读懂，右边的<b>解码器</b>一个词一个词写出译文。',
+  points: ['编码器一次看完整句「我 爱 猫」，给每个字输出一个「理解向量」。','解码器每次拿「已经写出的英文」加上编码器的结果，预测下一个英文词。','左右两边都用同样的积木：注意力 + 前馈网络 + 残差 + 归一化，各叠 6 层。'],
+  analogy: '编码器像先把中文读透的译者，解码器像一边看笔记一边写英文的同一个人。',
+  real: '论文 base 模型：编码器、解码器各 6 层，向量 512 维，约 6500 万参数。',
+  async run(sc){
+    const srcRow = el('div','row'); SRC.forEach(t => srcRow.append(tokEl(t)));
+    const tgtRow = el('div','row'); TGT.forEach(t => tgtRow.append(tokEl(t)));
+    const enc = el('div','blk','<b>编码器</b><span>× 6 层</span>'); enc.style.setProperty('--kc','var(--c-attn)');
+    const dec = el('div','blk','<b>解码器</b><span>× 6 层</span>'); dec.style.setProperty('--kc','var(--c-ffn)');
+    const mem = el('div','col fade off'); mem.style.gap = '4px';
+    SRC.forEach((t, i) => mem.append(stripEl(12, LAYERS[5][i].concat(LAYERS[5][i], LAYERS[5][i]), tc(t))));
+    const memL = el('div','note','memory<br>每个字一个向量');
+    const outBox = el('div','col'); outBox.style.minWidth = '90px';
+    const outLab = el('div','note','下一个词'); const outTok = el('div','fade off'); outTok.append(tokEl(T('cats',7)));
+    outBox.append(outLab, outTok);
+    const gridEl = el('div',''); gridEl.style.display = 'grid'; gridEl.style.gridTemplateColumns = 'auto auto auto auto auto'; gridEl.style.gap = '18px 16px'; gridEl.style.alignItems = 'center'; gridEl.style.justifyItems = 'center';
+    const ar = t => el('div','arrowtxt',`<span class="a">→</span>${t || ''}`);
+    const down = el('div','arrowtxt fade off','<span class="a">↙</span>memory 交给解码器（交叉注意力）');
+    down.style.gridColumn = '3 / 6';
+    gridEl.append(col(el('div','note','中文原句'), srcRow), ar('读入'), enc, ar(), col(mem, memL), down,
+                  col(el('div','note','已写出的英文'), tgtRow), ar('读入'), dec, ar(), outBox);
+    sc.append(gridEl, note('下面每一步，都会把这张图里的一个零件放大来看。'));
+    say('① 中文原句切成 3 个 token，送进编码器。');
+    const encSeq = ['enc-emb','enc-pe','enc-mha','enc-an1','enc-ffn','enc-an2'];
+    await wait(500);
+    await flyAll([...srcRow.children], [enc.firstChild, enc.firstChild, enc.firstChild], 700);
+    enc.classList.add('hot');
+    for (const id of encSeq){ mapCursor([id]); await wait(260); }
+    mapCursor([]); enc.classList.remove('hot');
+    mem.classList.remove('off');
+    say('② 编码器为每个字输出一个向量，合起来叫 <b>memory</b>，形状仍是「3 个字 × 每字一个向量」。');
+    await wait(1300);
+    down.classList.remove('off');
+    say('③ 解码器读入已经写出的英文 <span class="mono">&lt;s&gt; I love</span>，同时通过交叉注意力查看 memory。');
+    await flyAll([...tgtRow.children], [dec.firstChild, dec.firstChild, dec.firstChild], 700);
+    dec.classList.add('hot');
+    for (const id of ['dec-emb','dec-pe','dec-mmha','dec-an1','dec-cross','dec-an2','dec-ffn','dec-an3','dec-linear','dec-softmax']){ mapCursor([id]); await wait(220); }
+    mapCursor([]); dec.classList.remove('hot');
+    outTok.classList.remove('off');
+    say('④ 解码器输出概率最高的下一个词 <b>cats</b>。接到末尾再跑一遍，直到输出结束符，这叫「自回归生成」。');
+    await wait(800);
+    const c = tokEl(T('cats',7)); c.classList.add('fade'); tgtRow.append(c);
+    await fly(outTok.firstChild, c, 600);
+  }
+},
+{
+  short: '分词', title: '分词：把句子切成 token', map: ['enc-emb'], shape: '「我爱猫」→ <b>[3]</b>',
+  lead: '模型不认识文字，只认识数字。第一步把句子切成小块（token），每块在词表里查一个编号。',
+  points: ['这里切成 我 / 爱 / 猫 三个 token，得到 3 个整数。','从这里开始，每个 token 固定一种颜色，后面所有矩阵的「行」都用这个颜色标出来。'],
+  analogy: '像查字典：每个字对应字典里的一个页码。',
+  real: '论文用 BPE 子词切分，英德翻译共享约 37,000 个 token 的词表；英文单词常被切成几段，例如 playing → play + ing。本页编号是示意。',
+  async run(sc){
+    const sent = el('div','sentence','我爱猫');
+    const gridEl = el('div',''); gridEl.style.display = 'grid'; gridEl.style.gridTemplateColumns = 'repeat(3, 96px)'; gridEl.style.justifyItems = 'center'; gridEl.style.rowGap = '8px';
+    const chips = SRC.map(t => { const c = tokEl(t, 'fade off'); c.style.fontSize = '18px'; c.style.height = '36px'; c.style.padding = '0 14px'; return c; });
+    const arrows = SRC.map(() => el('div','arrowtxt fade off','<span class="a">↓</span>查词表'));
+    const ids = SRC_ID.map(n => el('div','idbox fade off', String(n)));
+    chips.forEach(c => gridEl.append(c)); arrows.forEach(a => gridEl.append(a)); ids.forEach(d => gridEl.append(d));
+    const vt = el('table','vtable');
+    const vrows = [['0','&lt;pad&gt;'],['⋮','⋮'],['872','你'],['2769','我'],['4263','爱'],['4318','狗'],['4344','猫'],['⋮','⋮'],['36999','…']];
+    const trs = vrows.map(r => { const t = el('tr','',`<td>${r[0]}</td><td>${r[1]}</td>`); vt.append(t); return t; });
+    const tmap = { 0: 3, 1: 4, 2: 6 };
+    sc.append(row(col(note('原始文本'), sent, gridEl), col(el('div','mtitle','词表（片段）<span class="sub">编号 → token</span>'), vt)));
+    say('① 原始句子是一串文字。');
+    await wait(900);
+    sent.style.letterSpacing = '.9em';
+    say('② 分词器把它切成 3 个 token。');
+    for (const c of chips){ c.classList.remove('off'); await wait(260); }
+    await wait(400);
+    for (let i = 0; i < 3; i++){
+      say(`③ 在词表里找到 ${chipHTML(SRC[i])}，它的编号是 <b class="mono">${SRC_ID[i]}</b>。`);
+      trs.forEach(t => t.classList.remove('hl')); trs[tmap[i]].classList.add('hl'); trs[tmap[i]].style.setProperty('--tc', tc(SRC[i]));
+      chips.forEach((c, j) => c.classList.toggle('hl', j === i));
+      arrows[i].classList.remove('off'); ids[i].classList.remove('off');
+      await wait(900);
+    }
+    chips.forEach(c => c.classList.remove('hl')); trs.forEach(t => t.classList.remove('hl'));
+    say('结果：一句话变成 3 个整数 <span class="mono">[2769, 4263, 4344]</span>，形状 <b class="mono">[3]</b>。');
+  }
+},
+{
+  short: '词嵌入', title: '词嵌入：编号 → 向量', map: ['enc-emb'], shape: '[3] → <b>[3 × 4]</b>',
+  lead: '嵌入表是一张大表格，每一行是一个 token 的向量。拿编号去取出对应的那一行。',
+  points: ['3 个编号 → 取出 3 行 → 得到 3 × 4 的矩阵 X，每行代表一个字。','格子越橙表示数值越大（正），越蓝表示越负。','这些数字一开始是随机的，训练中不断被调整，意思相近的词，向量会越来越接近。'],
+  analogy: '编号只是页码，向量才是这一页上写的「含义描述」。',
+  real: '论文里每个向量 512 维，这里缩成 4 维，方便看清每个数字。',
+  async run(sc){
+    const rowsLab = ['0 &lt;pad&gt;','⋮','872 你','2769 我','4263 爱','4318 狗','4344 猫','⋮'].map(s => { const d = document.createElement('span'); d.innerHTML = s; return d.textContent; });
+    const nan = [NaN, NaN, NaN, NaN];
+    const tbl = [EMB_OTHER[0], nan, EMB_OTHER[1], E3[0], E3[1], EMB_OTHER[2], E3[2], nan];
+    const tm = mat(tbl.map(r => r.slice()), { rows: rowsLab, cols: ['d1','d2','d3','d4'], title: '嵌入表<span class="sub">每行一个 token（共约 37,000 行）</span>', shown: true, max: 2 });
+    const xm = mat(E3.map(r => r.slice()), { rows: SRC, cols: ['d1','d2','d3','d4'], title: 'X<span class="sub">这句话的嵌入矩阵</span>', shape: '[3 × 4]', max: 2 });
+    const idCol = el('div','col'); SRC.forEach((t, i) => { const r = el('div','row'); r.style.gap = '6px'; r.append(tokEl(t), el('span','idbox', String(SRC_ID[i]))); idCol.append(r); });
+    sc.append(row(col(note('编号'), idCol), el('div','op','→'), tm, el('div','op','→'), xm));
+    const map = [3, 4, 6];
+    await wait(400);
+    for (let i = 0; i < 3; i++){
+      unhl(); say(`取出第 ${i + 1} 个：编号 <b class="mono">${SRC_ID[i]}</b> ${chipHTML(SRC[i])} → 嵌入表里对应的那一行（4 个数）。`);
+      idCol.children[i].firstChild.classList.add('hl');
+      hl(cellsOf(tm, map[i]), tc(SRC[i]));
+      await wait(700);
+      await flyAll(cellsOf(tm, map[i]), cellsOf(xm, i), 700);
+      cellsOf(xm, i).forEach(c => c.classList.remove('off'));
+      await wait(500);
+      idCol.children[i].firstChild.classList.remove('hl');
+    }
+    unhl();
+    say('完成：3 个字变成一个 <b class="mono">3 × 4</b> 的矩阵。<b>行 = 字，列 = 特征维度</b>，这个约定后面一直不变。');
+  }
+},
+{
+  short: '位置编码', title: '位置编码：告诉模型谁在前谁在后', map: ['pe'], shape: '[3 × 4] + [3 × 4] → <b>[3 × 4]</b>',
+  lead: '注意力本身不看顺序：「我爱猫」和「猫爱我」在它眼里是同一袋字。所以给每个位置加上一组独特的波形数字。',
+  points: ['第 pos 个位置：偶数维用 <code>sin(pos / 10000^(2i/d))</code>，奇数维用 <code>cos(…)</code>。','不同维度波长不同，像钟表的秒针、分针、时针，组合起来每个位置都独一无二。','直接逐元素相加，形状不变。'],
+  analogy: '像给排队的人贴号码牌：人还是那个人，但多了「我排第几」的信息。',
+  real: '论文 512 维全部用正弦/余弦编码。后来的大模型（包括 Qwen）大多改用 RoPE 旋转位置编码，后面 Qwen 4 部分会看到。',
+  async run(sc){
+    const mx = 2;
+    const xm = mat(E3, { rows: SRC, title: 'X<span class="sub">词嵌入</span>', shown: true, max: mx });
+    const pm = mat(PE, { rows: ['pos 0','pos 1','pos 2'], cols: ['sin','cos','sin′','cos′'], title: 'PE<span class="sub">位置编码</span>', shape: 'sin/cos 用 p，sin′/cos′ 用 p/100', max: mx });
+    const om = mat(X, { rows: SRC, title: 'X′<span class="sub">带位置的输入</span>', shape: '[3 × 4]', max: mx });
+    sc.append(row(xm, op('+'), pm, op('='), om));
+    const w = 420, h = 104; const svgNS = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(svgNS,'svg'); svg.setAttribute('viewBox',`0 0 ${w} ${h}`); svg.setAttribute('width', w); svg.setAttribute('height', h); svg.style.maxWidth = '100%';
+    svg.setAttribute('role','img'); svg.setAttribute('aria-label','两条不同波长的正弦波：第 1 维变化快，第 3 维变化慢');
+    const pts = f => Array.from({ length: 61 }, (_, k) => { const p = k / 3; return `${20 + k * 6.4},${58 - 28 * f(p)}`; }).join(' ');
+    svg.innerHTML = `<line x1="20" y1="58" x2="410" y2="58" stroke="var(--line)"/>
+      <polyline points="${pts(p => Math.sin(p))}" fill="none" stroke="rgb(var(--pos-rgb))" stroke-width="2"/>
+      <polyline points="${pts(p => Math.sin(p / 100) * 6)}" fill="none" stroke="rgb(var(--neg-rgb))" stroke-width="2" stroke-dasharray="5 3"/>
+      ${[0,1,2].map(p => `<circle cx="${20 + p * 19.2}" cy="${58 - 28 * Math.sin(p)}" r="4" fill="var(--t${p + 1})"/>`).join('')}
+      <text x="20" y="13" font-size="11.5" fill="currentColor">实线 sin(pos)：变化快　虚线 sin(pos/100)：变化慢（放大 6 倍）</text>
+      <text x="20" y="101" font-size="11" fill="currentColor">pos →（0 到 20；彩色圆点是本句的 3 个位置）</text>`;
+    sc.append(svg);
+    await wait(400);
+    say('① 先算出每个位置的编码：第 0、1、2 个位置各一行。');
+    for (let r = 0; r < 3; r++) await showRow(pm, r, 70);
+    await wait(500);
+    for (let r = 0; r < 3; r++){
+      unhl(); hl(cellsOf(xm, r), tc(SRC[r])); hl(cellsOf(pm, r), tc(SRC[r]));
+      say(`② ${chipHTML(SRC[r])} 在第 ${r} 位：它的嵌入 + 第 ${r} 行位置编码，逐个格子相加。`);
+      await showRow(om, r, 90); await wait(650);
+    }
+    unhl();
+    say('现在每个字的向量 = 「字的含义」+「它的位置」。形状还是 <b class="mono">3 × 4</b>。');
+  }
+},
+{
+  short: 'Q K V', title: '生成 Q、K、V：每个字准备三样东西', map: ['enc-mha'], shape: '[3 × 4] × [4 × 4] → <b>3 个 [3 × 4]</b>',
+  lead: '同一个输入 X′ 分别乘以三个权重矩阵，得到 Query（查询）、Key（键）、Value（值）。',
+  points: ['<b>Q</b>：我想找什么样的信息？','<b>K</b>：我身上有什么标签，可以被别人找到？','<b>V</b>：如果别人找到我，我能提供的内容。','W_Q、W_K、W_V 是训练学出来的参数，所有位置共用。'],
+  analogy: '像图书检索：Q 是你输入的搜索词，K 是每本书的标签，V 是书的内容。',
+  real: '论文里每个头的 W_Q 是 512 × 64，这里是 4 × 4。',
+  async run(sc){
+    const xm = mat(X, { rows: SRC, title: 'X′', shown: true, max: 2 });
+    const lines = [['W_Q', WQ, Q, 'Q'], ['W_K', WK, K, 'K'], ['W_V', WV, V, 'V']].map(([wn, w, out, on]) => {
+      const wm = mat(w, { mini: true, title: wn + '<span class="sub">4 × 4</span>', cls: 'off' });
+      const om = mat(out, { rows: SRC, title: on, max: 2.5 });
+      const r = row(op('×'), wm, op('='), om); r.style.justifyContent = 'flex-start'; return { r, wm, om, on };
+    });
+    const right = el('div','col'); right.style.alignItems = 'flex-start'; lines.forEach(l => right.append(l.r));
+    sc.append(row(xm, right));
+    const desc = { Q: '我想找什么', K: '我有什么标签', V: '我能提供的内容' };
+    await wait(300);
+    for (const l of lines){
+      l.wm.classList.remove('off'); showNow(l.wm);
+      say(`X′ × ${l.on === 'Q' ? 'W_Q' : l.on === 'K' ? 'W_K' : 'W_V'} → <b>${l.on}</b>（${desc[l.on]}）。每个字的一行，乘同一个矩阵。`);
+      for (let r = 0; r < 3; r++){ unhl(); hl(cellsOf(xm, r), tc(SRC[r])); await showRow(l.om, r, 45); await wait(180); }
+      unhl(); await wait(300);
+    }
+    say('三份矩阵形状都是 <b class="mono">3 × 4</b>：每个字各有一个 Q、一个 K、一个 V。');
+  }
+},
+{
+  short: '注意力分数', title: '注意力分数：Q 和 K 两两做点积', map: ['enc-mha'], shape: '[3 × 4] · [4 × 3] → <b>[3 × 3]</b>',
+  lead: '每个字的 Q 和每个字的 K 做点积，得到 3 × 3 的分数表：第 i 行第 j 列 = 字 i 对字 j 有多「感兴趣」。',
+  points: ['点积：对应位置相乘再相加，方向越一致分数越高。','再除以 √d（这里 √4 = 2），防止维度大时分数过大，让后面的 softmax 不至于太尖锐。'],
+  analogy: '拿搜索词和每本书的标签逐一比对，算匹配度。',
+  real: '句子有 n 个 token，分数表就是 n × n。这就是全注意力的计算量随长度平方增长的原因，也是 Qwen 4 要改造它的动机。',
+  async run(sc){
+    const qm = mat(Q, { rows: SRC, title: 'Q', shown: true, max: 2.5 });
+    const km = mat(tr(K), { rows: ['d1','d2','d3','d4'], cols: SRC, title: 'Kᵀ<span class="sub">K 转置：每列一个字</span>', shown: true, max: 2.5 });
+    const sm = mat(S, { rows: SRC, cols: SRC, title: '分数 S<span class="sub">QKᵀ ÷ √4</span>', shape: '[3 × 3]' });
+    const fm = el('div','formula'); fm.style.width = 'min(640px,100%)';
+    sc.append(row(qm, op('·'), km, op('='), sm), fm);
+    await wait(300);
+    for (let i = 0; i < 3; i++) for (let j = 0; j < 3; j++){
+      unhl(); hl(cellsOf(qm, i), tc(SRC[i])); hl(colOf(km, j), tc(SRC[j]));
+      const terms = Q[i].map((q, k) => `${fmt(q)}×${fmt(K[j][k])}`).join(' + ');
+      const dot = Q[i].reduce((s, q, k) => s + q * K[j][k], 0);
+      fm.innerHTML = `${SRC[i].t} 的 q · ${SRC[j].t} 的 k = ${terms} = <b>${fmt(dot)}</b>　÷ 2 = <b>${fmt(dot / 2)}</b>`;
+      say(`${chipHTML(SRC[i])} 对 ${chipHTML(SRC[j])} 的分数：两个向量的点积，再除以 2。`);
+      sm.cells[i][j].classList.remove('off'); sm.cells[i][j].classList.add('pop');
+      await wait(i === 0 ? 1000 : 520);
+    }
+    unhl();
+    say('9 个分数算完。注意这还不是「比例」：有正有负，每行加起来也不是 1。下一步 softmax 处理它。');
+  }
+},
+{
+  short: 'Softmax', title: 'Softmax：分数变成注意力比例', map: ['enc-mha'], shape: '[3 × 3] → <b>[3 × 3]</b>（每行和为 1）',
+  lead: '对每一行做 softmax：先取 e 的指数（全部变成正数），再除以这一行的总和。',
+  points: ['结果叫注意力权重：每行加起来正好是 1，可以理解为「注意力的分配比例」。','下方弧线越粗，代表这个字越关注那个字。点下方的字，可以切换看它的分配。'],
+  analogy: '一个人有 100% 的注意力，分给句子里每个字各多少。',
+  real: '这里的权重来自随机初始化的演示参数。训练好的模型里，这些模式会对应语法、指代等真实关系。',
+  async run(sc){
+    const sm = mat(S, { rows: SRC, cols: SRC, title: '分数 S', shown: true });
+    const am = mat(A, { rows: SRC, cols: SRC, title: '注意力权重 A', kind: 'prob', notes: A.map(r => '和 = ' + r.reduce((a, b) => a + b, 0).toFixed(2)) });
+    const arcs = arcView(SRC, A, { hint: '弧线粗细 = 注意力权重（点上面的字切换）', aria: '注意力权重弧线图' });
+    sc.append(row(sm, el('div','arrowtxt','<span class="a">→</span>每行 softmax'), am), arcs);
+    await wait(300);
+    for (let i = 0; i < 3; i++){
+      unhl(); hl(cellsOf(sm, i), tc(SRC[i]));
+      const ex = S[i].map(x => Math.exp(x)); const tot = ex.reduce((a, b) => a + b, 0);
+      say(`${chipHTML(SRC[i])} 这一行：e^分数 = [${ex.map(v => fmt(v)).join(', ')}]，总和 ${fmt(tot)}，各自除以总和。`);
+      await showRow(am, i, 120); am.notes[i].classList.remove('off'); am.notes[i].classList.add('good');
+      arcs.show(i); await wait(1500);
+    }
+    unhl();
+    const big = A[2].indexOf(Math.max(...A[2]));
+    say(`每行都加起来等于 1。比如 ${chipHTML(SRC[2])} 把 ${(A[2][big] * 100).toFixed(0)}% 的注意力给了 ${chipHTML(SRC[big])}。`);
+  }
+},
+{
+  short: '加权求和', title: '加权求和：把关注到的信息混进来', map: ['enc-mha'], shape: '[3 × 3] × [3 × 4] → <b>[3 × 4]</b>',
+  lead: '用刚才的权重，把所有字的 V 按比例加起来，得到每个字的新向量 Z。',
+  points: ['例如「猫」的新向量 = 它这一行的 3 个权重，分别乘以 3 个字的 V，再相加。','从这一步开始，每个字的向量里都带上了上下文的信息。','整个过程写成公式：<code>softmax(QKᵀ/√d)·V</code>，叫「缩放点积注意力」。'],
+  analogy: '开会时，每个人按自己分配的注意力，把别人的发言记进自己的笔记。',
+  real: '论文里所有位置并行计算，用的就是这一次矩阵乘法。',
+  async run(sc){
+    const am = mat(A, { rows: SRC, cols: SRC, title: 'A', kind: 'prob', shown: true });
+    const vm = mat(V, { rows: SRC, title: 'V', shown: true, max: 2.5 });
+    const zm = mat(Z, { rows: SRC, title: 'Z<span class="sub">注意力输出</span>', shape: '[3 × 4]', max: 2.5 });
+    const fm = el('div','formula'); fm.style.width = 'min(640px,100%)';
+    sc.append(row(am, op('×'), vm, op('='), zm), fm);
+    await wait(300);
+    for (let i = 0; i < 3; i++){
+      unhl(); hl(cellsOf(am, i), tc(SRC[i]));
+      for (let j = 0; j < 3; j++) cellsOf(vm, j).forEach(c => { c.style.opacity = (0.15 + 0.85 * A[i][j]).toFixed(2); });
+      fm.innerHTML = `${SRC[i].t} 的新向量 = ` + A[i].map((w, j) => `<b>${w.toFixed(2)}</b> × V(${SRC[j].t})`).join(' + ');
+      say(`${chipHTML(SRC[i])}：V 的每一行按权重变淡或变亮，越亮的贡献越大，加起来就是它的新向量。`);
+      await wait(500); await showRow(zm, i, 110); await wait(1300);
+    }
+    vm.cells.flat().forEach(c => { c.style.opacity = ''; }); unhl();
+    say('每个字都得到一个新的 4 维向量，里面混入了它关注的那些字的信息。');
+  }
+},
+{
+  short: '多头', title: '多头注意力：分几组同时看', map: ['enc-mha'], shape: '[3 × 4] → 2 × [3 × 2] → <b>[3 × 4]</b>',
+  lead: '把 4 维切成 2 个头，每头 2 维，各自独立做一遍注意力，最后拼回来再乘一个 W_O。',
+  points: ['不同的头会学出不同的关注模式，对比两个头的热力图。','拼接后形状又回到 [3 × 4]，和输入一样，所以可以和输入相加（下一步的残差）。'],
+  analogy: '几个人分别从语法、语义、指代的角度读同一句话，最后汇总意见。',
+  real: '论文 base 模型：8 个头 × 每头 64 维 = 512。本页前三步演示的是单头版本，这一步才是 Transformer 实际用的做法。',
+  async run(sc){
+    const hm = HD.map((h, k) => ({
+      a: mat(h.a, { rows: SRC, cols: SRC, title: `头 ${k + 1} 的注意力`, kind: 'prob' }),
+      z: mat(h.z, { rows: SRC, title: `头 ${k + 1} 输出`, max: 2, shape: '[3 × 2]' })
+    }));
+    const cm = mat(ZC, { rows: SRC, title: '拼接', max: 2, shape: '[3 × 4]' });
+    const wom = mat(WO, { mini: true, title: 'W_O', cls: 'off' });
+    const om = mat(MHA, { rows: SRC, title: '多头注意力输出', shape: '[3 × 4]' });
+    const l1 = row(el('div','badge','用 Q、K、V 的第 1–2 维'), hm[0].a, op('→'), hm[0].z);
+    const l2 = row(el('div','badge','用 Q、K、V 的第 3–4 维'), hm[1].a, op('→'), hm[1].z);
+    sc.append(l1, l2, row(cm, op('×'), wom, op('='), om));
+    await wait(300);
+    for (let k = 0; k < 2; k++){
+      say(`头 ${k + 1}：只用 Q、K、V 中第 ${2 * k + 1}–${2 * k + 2} 维，自己算一套注意力（除以 √2）。`);
+      await showAll(hm[k].a, 40); await wait(400); await showAll(hm[k].z, 40); await wait(700);
+    }
+    say('两个头的注意力模式不一样：它们关注了不同的关系。现在把两个头的输出左右拼起来。');
+    for (let r = 0; r < 3; r++){
+      await Promise.all([flyAll(cellsOf(hm[0].z, r), cellsOf(cm, r).slice(0, 2), 550), flyAll(cellsOf(hm[1].z, r), cellsOf(cm, r).slice(2), 550)]);
+      cellsOf(cm, r).forEach(c => c.classList.remove('off'));
+    }
+    await wait(300);
+    wom.classList.remove('off'); showNow(wom);
+    say('再乘 W_O 把两个头的信息融合，得到多头注意力的最终输出，形状回到 <b class="mono">3 × 4</b>。');
+    await showAll(om, 30);
+  }
+},
+{
+  short: '残差+归一化', title: '残差连接 + 层归一化', map: ['an'], shape: '[3 × 4] + [3 × 4] → <b>[3 × 4]</b>',
+  lead: '把注意力的输出和它的输入相加（残差连接），再把每一行调成均值 0、标准差 1（LayerNorm）。',
+  points: ['残差：保留原始信息，注意力只需要学「要补充什么」，几十上百层也能训练。','LayerNorm：防止数值一层层越变越大或越变越小。看右侧每行的均值和标准差。'],
+  analogy: '残差像在原稿上用红笔修改，而不是每次从头重写。',
+  real: '论文把归一化放在相加之后（Post-LN）。现代大模型大多改成先归一化再进子层（Pre-Norm），训练更稳。',
+  async run(sc){
+    const xm = mat(X, { rows: SRC, title: 'X′<span class="sub">注意力的输入</span>', shown: true, max: 2.5 });
+    const mm = mat(MHA, { rows: SRC, title: '注意力输出', shown: true, max: 2.5 });
+    const rm = mat(R1, { rows: SRC, title: '相加结果', max: 2.5, notes: R1.map(r => { const [m, s] = meanStd(r); return `均值 ${fmt(m)} 标准差 ${fmt(s)}`; }) });
+    const nm = mat(N1, { rows: SRC, title: 'LayerNorm 后', max: 2.5, shape: '[3 × 4]', notes: N1.map(r => { const [m, s] = meanStd(r); return `均值 ${fmt(m)} 标准差 ${fmt(s)}`; }) });
+    sc.append(row(xm, op('+'), mm, op('='), rm), row(el('div','arrowtxt','<span class="a">↓</span>每行归一化'), nm));
+    await wait(300);
+    for (let r = 0; r < 3; r++){
+      unhl(); hl(cellsOf(xm, r), tc(SRC[r])); hl(cellsOf(mm, r), tc(SRC[r]));
+      say(`${chipHTML(SRC[r])}：原输入 + 注意力的补充 = 新向量（逐格相加）。`);
+      await showRow(rm, r, 70); rm.notes[r].classList.remove('off'); await wait(500);
+    }
+    unhl(); await wait(300);
+    say('每行的均值和标准差各不相同。LayerNorm：每行减去自己的均值，再除以自己的标准差。');
+    for (let r = 0; r < 3; r++){ await showRow(nm, r, 60); nm.notes[r].classList.remove('off'); nm.notes[r].classList.add('good'); await wait(400); }
+    say('归一化后每行均值都是 0、标准差都是 1。数值范围稳定了，可以放心交给下一个模块。');
+  }
+},
+{
+  short: '前馈网络', title: '前馈网络：每个字自己「想一想」', map: ['ffn'], shape: '[3 × 4] → [3 × 8] → <b>[3 × 4]</b>',
+  lead: '每个字的向量各自通过同一个两层小网络：先放大到 8 维，ReLU 把负数变成 0，再压回 4 维。',
+  points: ['注意力负责字与字之间交流，FFN 负责每个字内部加工，字与字之间互不干扰。','变灰的格子就是被 ReLU 置零的。','FFN 之后同样有残差 + 归一化，到这里，一层编码器就完成了。'],
+  analogy: '开完会（注意力）后，每个人回到工位独自消化（FFN）。',
+  real: '论文里是 512 → 2048 → 512。模型的大部分参数都在 FFN 里，后面 Qwen 4 会把它换成「专家混合」。',
+  async run(sc){
+    const nm = mat(N1, { rows: SRC, title: '输入', shown: true, max: 2.5 });
+    const hm = mat(H, { rows: SRC, title: '× W₁ + b<span class="sub">放大到 8 维</span>', max: 2.5, shape: '[3 × 8]' });
+    const rm = mat(HR, { rows: SRC, title: 'ReLU<span class="sub">负数 → 0</span>', max: 2.5 });
+    const fm = mat(F, { rows: SRC, title: '× W₂<span class="sub">压回 4 维</span>', max: 2.5, shape: '[3 × 4]' });
+    const om = mat(L1, { rows: SRC, title: '+ 残差 → LayerNorm<span class="sub">第 1 层编码器输出</span>', max: 2.5, shape: '[3 × 4]' });
+    sc.append(row(nm, op('→'), hm), row(op('→'), rm), row(op('→'), fm, op('→'), om));
+    await wait(300);
+    for (let r = 0; r < 3; r++){
+      unhl(); hl(cellsOf(nm, r), tc(SRC[r]));
+      say(`${chipHTML(SRC[r])} 单独走一遍：4 维 → 8 维。三个字用的是同一套 W₁，但互相不看对方。`);
+      await showRow(hm, r, 35); await wait(300);
+    }
+    unhl();
+    say('ReLU：小于 0 的值全部变成 0（灰色），只保留「被激活」的特征。');
+    for (let r = 0; r < 3; r++){ for (let c = 0; c < 8; c++){ const d = rm.cells[r][c]; d.classList.remove('off'); if (H[r][c] <= 0) d.classList.add('zero'); } await wait(350); }
+    await wait(500);
+    say('再乘 W₂ 压回 4 维。');
+    await showAll(fm, 30); await wait(500);
+    say('最后：和 FFN 的输入相加，再做 LayerNorm。<b>第 1 层编码器完成</b>，形状仍是 <b class="mono">3 × 4</b>。');
+    await showAll(om, 30);
+  }
+},
+{
+  short: '叠 6 层', title: '叠 6 层：反复加工，形状不变', map: ['enc-mha','enc-an1','enc-ffn','enc-an2'], shape: '[3 × 4] → … → <b>[3 × 4]</b>',
+  lead: '同样结构、但参数各不相同的编码器层叠 6 次。最后的输出叫 memory，交给解码器使用。',
+  points: ['每过一层，数值都在变，形状始终是 [3 × 4]：3 个字，每个 4 维。','越往上，每个字的向量包含的上下文越丰富。'],
+  analogy: '一篇稿子改了 6 遍，字数不变，内容越来越到位。',
+  real: '论文编码器、解码器各 6 层。今天的大模型动辄几十层，Qwen 4 架构预览是 48 层。',
+  async run(sc){
+    const lane = el('div','row top'); lane.style.gap = '10px';
+    const items = [];
+    const start = col(mat(X, { rows: SRC, mini: true, shown: true, max: 2.5 }), el('div','mshape','输入'));
+    lane.append(start);
+    for (let l = 0; l < 6; l++){
+      const b = el('div','blk'); b.style.setProperty('--kc','var(--c-attn)'); b.style.minWidth = '64px'; b.style.padding = '8px 6px'; b.innerHTML = `<b style="font-size:13px">第 ${l + 1} 层</b><span>注意力 + FFN</span>`;
+      const m = mat(LAYERS[l], { rows: SRC, mini: true, max: 2.5 }); m.classList.add('off');
+      const c = col(b, m, el('div','mshape','[3 × 4]')); lane.append(c); items.push({ b, m });
+    }
+    const final = mat(LAYERS[5], { rows: SRC, title: 'memory<span class="sub">编码器最终输出</span>', shape: '[3 × 4]', max: 2.5 });
+    sc.append(lane, row(el('div','arrowtxt','<span class="a">↓</span>'), final));
+    await wait(300);
+    for (let l = 0; l < 6; l++){
+      items.forEach(it => it.b.classList.remove('hot')); items[l].b.classList.add('hot');
+      say(`第 ${l + 1} 层：多头注意力 → 残差+归一化 → FFN → 残差+归一化。颜色变了，形状没变。`);
+      mapCursor(['enc-mha','enc-ffn']); await wait(250); mapCursor([]);
+      items[l].m.classList.remove('off'); showNow(items[l].m); await wait(650);
+    }
+    items.forEach(it => it.b.classList.remove('hot'));
+    say('6 层后得到 memory：3 个字各一个向量。它会被解码器的「交叉注意力」反复查看。');
+    await showAll(final, 25);
+  }
+},
+{
+  short: '掩码', title: '解码器：掩码自注意力', map: ['dec-emb','dec-pe','dec-mmha'], shape: '[3 × 3]，右上角被遮住',
+  lead: '解码器读的是已经写出的英文「&lt;s&gt; I love」。预测时不能偷看后面的词，所以把右上角的分数设为 −∞。',
+  points: ['e^(−∞) = 0，所以 softmax 之后被遮住的位置权重正好是 0。','第 1 个位置只能看自己，第 2 个能看前 2 个，以此类推。','训练时整句一次算完，靠这个掩码保证「不剧透」。'],
+  analogy: '做填空题时，用手遮住后面的答案。',
+  real: '今天的 GPT、Qwen 这类「只有解码器」的模型，每一层都用这种因果掩码。',
+  async run(sc){
+    const s0 = mat(SD, { rows: TGT, cols: TGT, title: '分数（未遮挡）', shown: true });
+    const s1 = mat(SD.map(r => r.slice()), { rows: TGT, cols: TGT, title: '加上掩码', shown: true, max: s0.o.max });
+    const am = mat(AD, { rows: TGT, cols: TGT, title: '注意力权重', kind: 'prob' });
+    const arcs = arcView(TGT, AD, { mask: true, hint: '只会连向自己和左边的词（点上面的词切换）', aria: '掩码注意力弧线图' });
+    sc.append(row(s0, op('→'), s1, op('→'), am), arcs);
+    await wait(500);
+    say('前面的步骤和编码器一样：嵌入 + 位置编码 → Q、K → 分数。区别在下一步。');
+    await wait(1200);
+    for (let i = 0; i < 3; i++) for (let j = i + 1; j < 3; j++){
+      s1.set(i, j, -Infinity); s1.cells[i][j].classList.add('pop');
+      say(`${chipHTML(TGT[i])} 不能看到它后面的 ${chipHTML(TGT[j])}：分数改成 −∞。`);
+      await wait(900);
+    }
+    say('softmax 之后，被遮住的格子权重全是 0。');
+    for (let i = 0; i < 3; i++){ await showRow(am, i, 90); arcs.show(i); await wait(900); }
+    say(`${chipHTML(TGT[2])} 能看 3 个词，${chipHTML(TGT[0])} 只能看自己。之后的加权求和、多头、残差都和编码器一样。`);
+  }
+},
+{
+  short: '交叉注意力', title: '交叉注意力：解码器回头查原文', map: ['dec-cross'], shape: 'Q [3 × 4]，K/V [3 × 4] → <b>[3 × 3]</b>',
+  lead: 'Q 来自解码器（英文），K 和 V 来自编码器的 memory（中文）。每个英文位置去原文里找最相关的字。',
+  points: ['热力图的行是英文位置，列是中文字。','训练好的模型通常会形成类似「对齐」的模式：要写 love 的时候重点看「爱」。本步权重是示意值。','这是编码器和解码器之间唯一的连接点。'],
+  analogy: '译者写每个英文词时，回头瞄一眼中文原文的对应位置。',
+  real: '后来只有解码器的大模型（GPT、Qwen）没有这一层，因为它们没有单独的编码器。',
+  async run(sc){
+    const svgNS = 'http://www.w3.org/2000/svg', w = 420, hh = 190, gx = 140;
+    const svg = document.createElementNS(svgNS,'svg'); svg.setAttribute('viewBox',`0 0 ${w} ${hh}`); svg.setAttribute('width', w); svg.setAttribute('height', hh); svg.style.maxWidth = '100%';
+    svg.setAttribute('role','img'); svg.setAttribute('aria-label','英文位置到中文字的交叉注意力连线');
+    const xs = i => 70 + i * gx;
+    let inner = `<text x="10" y="22" font-size="12" fill="currentColor">Q：解码器</text><text x="10" y="182" font-size="12" fill="currentColor">K、V：编码器 memory</text><g id="ln"></g>`;
+    TGT.forEach((t, i) => { inner += `<rect x="${xs(i) - 30}" y="30" width="60" height="28" rx="6" fill="color-mix(in srgb, var(--t${t.c}) 17%, var(--surface))" stroke="var(--t${t.c})" stroke-width="1.6"/><text x="${xs(i)}" y="49" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--ink)">${t.t.replace('<','&lt;').replace('>','&gt;')}</text>`; });
+    SRC.forEach((t, i) => { inner += `<rect x="${xs(i) - 22}" y="132" width="44" height="28" rx="6" fill="color-mix(in srgb, var(--t${t.c}) 17%, var(--surface))" stroke="var(--t${t.c})" stroke-width="1.6"/><text x="${xs(i)}" y="151" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--ink)">${t.t}</text>`; });
+    svg.innerHTML = inner;
+    const ln = svg.querySelector('#ln');
+    const cm = mat(CA, { rows: TGT, cols: SRC, title: '交叉注意力权重<span class="sub">行：英文　列：中文</span>', kind: 'prob' });
+    const nxt = ['I','love','cats'];
+    sc.append(row(svg, cm));
+    await wait(400);
+    for (let i = 0; i < 3; i++){
+      ln.innerHTML = CA[i].map((wt, j) => `<line x1="${xs(i)}" y1="58" x2="${xs(j)}" y2="132" stroke="var(--t${TGT[i].c})" stroke-width="${(1 + wt * 10).toFixed(1)}" stroke-linecap="round" opacity="${(0.2 + 0.8 * wt).toFixed(2)}"/>`).join('');
+      say(`${chipHTML(TGT[i])} 这个位置要预测下一个词「${nxt[i]}」，它的 Q 去和中文的 K 匹配：最关注 ${chipHTML(SRC[CA[i].indexOf(Math.max(...CA[i]))])}。`);
+      await showRow(cm, i, 110); await wait(1400);
+    }
+    ln.innerHTML = CA.map((r, i) => r.map((wt, j) => `<line x1="${xs(i)}" y1="58" x2="${xs(j)}" y2="132" stroke="var(--t${TGT[i].c})" stroke-width="${(1 + wt * 10).toFixed(1)}" stroke-linecap="round" opacity="${(0.15 + 0.7 * wt).toFixed(2)}"/>`).join('')).join('');
+    say('权重 × 中文的 V 再求和，中文的信息就流进了英文这一侧。之后接 FFN 和残差+归一化，一层解码器完成。');
+  }
+},
+{
+  short: '输出', title: '输出：选出下一个词', map: ['out'], shape: '[4] → [6] → <b>1 个词</b>',
+  lead: '取解码器最后一个位置的向量，乘一个线性层，变成「词表里每个词一个分数」（logits），再用 softmax 变成概率。',
+  points: ['这里选概率最高的 cats。','把 cats 接到输入末尾再跑一遍，直到输出结束符 &lt;/s&gt;。这叫「自回归生成」。'],
+  analogy: '每次只写一个词，写完再从头读一遍，接着写下一个。',
+  real: '论文词表约 37,000，所以这一层输出 37,000 个分数。本步概率是示意值，假设模型已经训练好。',
+  async run(sc){
+    const hm = mat(HLAST, { rows: [TGT[2]], title: '最后位置的向量<span class="sub">「love」这个位置</span>', shown: true, shape: '[1 × 4]' });
+    const wm = mat(WVOC, { mini: true, title: '线性层<span class="sub">4 × 6</span>', shown: true });
+    const lm = mat([LOGITS], { cols: VOCAB, title: 'logits<span class="sub">每个词一个分数</span>', shape: '[1 × 6]' });
+    const bars = el('div','bars');
+    const order = PROBS.map((p, i) => [p, i]).sort((a, b) => b[0] - a[0]);
+    const barEls = order.map(([p, i]) => { const lab = el('span','mono', VOCAB[i].replace('<','&lt;').replace('>','&gt;')); const tr_ = el('div',''); const b = el('div','bar'); tr_.append(b); const v = el('span','v', (p * 100).toFixed(1) + '%'); bars.append(lab, tr_, v); return { b, p, i }; });
+    const gen_ = el('div','row'); gen_.style.gap = '6px'; TGT.forEach(t => gen_.append(tokEl(t)));
+    sc.append(row(hm, op('×'), wm, op('='), lm), row(el('div','arrowtxt','<span class="a">→</span>softmax'), bars), col(note('解码器的输入（已生成的内容）'), gen_));
+    await wait(300);
+    say('最后位置的向量 × 线性层 → 6 个分数，词表里每个词一个。');
+    await showAll(lm, 80); await wait(500);
+    say('softmax 把分数变成概率，加起来等于 100%。');
+    barEls.forEach(x => { x.b.style.width = (x.p * 100) + '%'; });
+    await wait(900);
+    barEls[0].b.classList.add('win');
+    say('选概率最高的 <b>cats</b>（这叫贪心解码；也可以按概率随机抽样）。');
+    await wait(900);
+    const c = tokEl(T('cats',7)); c.classList.add('fade'); gen_.append(c);
+    await fly(barEls[0].b.parentElement.previousSibling, c, 600);
+    say('把 cats 接到输入末尾，整个解码器再跑一遍……');
+    await wait(1200);
+    const e = tokEl(T('</s>',8)); gen_.append(e);
+    say('这一次概率最高的是结束符 <span class="mono">&lt;/s&gt;</span>，生成停止。翻译结果：<b>I love cats</b>。');
+  }
+}
+];
+
+/* ---------------- Qwen 4 演示数据 ---------------- */
+const R1q = rng(11), g1 = () => gauss(R1q);
+const QT = [T('我',1), T('喜欢',2), T('机器',3), T('学习',4)];
+const QID = [35946, 99729, 102182, 100134];
+const QSTRIP = QT.map(() => Array.from({ length: 64 }, () => g1()));
+const IMG = T('图',6);
+const IMGSTRIP = [0,1].map(() => Array.from({ length: 64 }, () => g1()));
+
+/* GDN 演示：单头 4 维 */
+const GT = [T('我',1), T('喜欢',2), T('机器',3), T('学习',4), T('很',5), T('有趣',7)];
+const normv = v => { const n = Math.sqrt(v.reduce((s, x) => s + x * x, 0)); return v.map(x => x / n); };
+const GDN = GT.map((_, i) => ({ k: normv([0,1,2,3].map(() => g1())), v: [0,1,2,3].map(() => g1() * 0.9), q: normv([0,1,2,3].map(() => g1())), a: [0.92,0.85,0.9,0.8,0.88,0.86][i], b: [0.8,0.6,0.75,0.55,0.7,0.65][i] }));
+
+/* ---------------- Qwen 4 步骤 ---------------- */
+STEPS.qwen4 = [
+{
+  short: '是什么', title: 'Qwen 4 是什么，本页用的是哪份数据', map: ['all'], shape: '文本/图片 → 文本',
+  lead: 'Qwen 4 家族的第一个模型 Qwen4-Max-Preview 于 2026 年 11 月 11 日开放预览，但只提供 API，没有公布结构细节。',
+  points: ['阿里 8 月开源的 Qwen3.8-Flash-Next，被官方称为「Qwen4 将采用的架构」的实验性预览，模型卡里有完整参数。','本页 Qwen 4 部分的结构和数字都来自这份模型卡，正式版 Qwen 4 的具体尺寸可能不同。','整体仍是 Transformer 的骨架：嵌入 → 很多层（混合器 + 前馈）→ 输出，但几乎每个零件都换了新版本。'],
+  analogy: '同一套房子的框架，水电、门窗、承重结构都升级了。',
+  real: '总参数 1250 亿，另有 510 亿参数的 N-gram 表和 40 亿参数的 MTP 模块；每个 token 只激活约 60 亿。',
+  async run(sc){
+    const c1 = el('div','card','<h4>Qwen4-Max-Preview</h4><div class="meta">2026-11-11 开放预览 · 仅 API</div>Qwen 4 家族第一个可用的模型。参数量、层数等结构细节<b>尚未公布</b>。');
+    const c2 = el('div','card key','<h4>Qwen3.8-Flash-Next</h4><div class="meta">2026-08 开源 · model_type: qwen4_exp</div>官方称为「Qwen4 将采用的架构」的实验性预览，模型卡给出了完整结构。<b>本页数字来自这里。</b>');
+    const pipe = el('div','row'); pipe.style.gap = '8px';
+    const parts = [['文本 / 图片','emb'],['token','emb'],['嵌入 2560 维','emb'],['48 层','gdn'],['输出层','out'],['下一个 token','out']];
+    const pEls = parts.map(([t, k], i) => { const b = el('div','blk fade', `<b style="font-size:13.5px">${t}</b>`); b.style.setProperty('--kc', `var(--c-${k})`); b.style.minWidth = '0'; b.style.padding = '8px 12px'; if (i === 3){ const lg = el('div',''); lg.style.display = 'flex'; lg.style.gap = '2px'; lg.style.marginTop = '4px'; for (let k2 = 0; k2 < 12; k2++){ ['gdn','gdn','gdn','qsa'].forEach(tp => { const s = el('i',''); s.style.width = '4px'; s.style.height = '14px'; s.style.borderRadius = '1px'; s.style.background = `var(--c-${tp})`; lg.append(s); }); } b.append(lg); } pipe.append(b); if (i < parts.length - 1) pipe.append(el('div','op','→')); return b; });
+    const stats = el('div','chips');
+    const sv = [['1250 亿','总参数（主模型）'],['60 亿','每个 token 激活'],['48','层数'],['2560','隐藏维度'],['248,320','词表大小'],['262,144','原生上下文（可扩到 100 万）']];
+    const stEls = sv.map(([b, s]) => { const d = el('div','stat fade off', `<b>${b}</b><span>${s}</span>`); stats.append(d); return d; });
+    sc.append(row(c1, el('div','arrowtxt','<span class="a">⇠</span>同一套架构'), c2), pipe, stats);
+    await wait(400);
+    say('① 正式的 Qwen 4 还没公开结构，但官方提前开源了它的架构预览模型。');
+    await wait(1600);
+    say('② 数据流和原版一样从输入到输出，只是中间换成了 48 层新结构（蓝绿色 = Gated DeltaNet，蓝色 = 稀疏注意力 QSA）。');
+    for (const b of pEls){ b.classList.add('hot'); await wait(380); b.classList.remove('hot'); }
+    say('③ 关键数字：参数很多，但每个 token 只用到其中一小部分。');
+    for (const s of stEls){ s.classList.remove('off'); await wait(200); }
+    say('接下来逐个拆开看。结构图左边的紫色竖线是贯穿全程的 4 路残差流。');
+  }
+},
+{
+  short: '改了什么', title: '从 2017 年到 Qwen 4：改了什么', map: ['all'], shape: '逐行对比',
+  lead: '左列是你在第一部分看过的原版，右列是 Qwen 4 架构预览。蓝色底的格子是变化最大的地方。',
+  points: ['最大的两个变化：① 只保留解码器；② 大部分层不再用全注意力，前馈网络换成专家混合（MoE）。','目的基本一致：在超长上下文和超大参数量下，把计算量和显存控制住。','没变的部分：token → 向量 → 逐层加工（形状不变）→ 预测下一个 token。'],
+  analogy: '从一辆手工打造的车，到一条为大规模生产优化过的流水线。',
+  real: 'Transformer base 约 6500 万参数；Qwen 4 架构预览主模型 1250 亿参数，是它的约 1900 倍。',
+  async run(sc){
+    const rows = [
+      ['整体结构','编码器 + 解码器','只有解码器（逐个 token 往后写）',1],
+      ['层数','6 + 6','48（12 组，每组 4 层）',0],
+      ['隐藏维度','512','2560',0],
+      ['注意力','每层都是全注意力','36 层 Gated DeltaNet（线性）+ 12 层 QSA（稀疏）',1],
+      ['前馈网络','1 个 FFN：512 → 2048 → 512','MoE：512 个小专家里选 10 个，再加 1 个共享专家',1],
+      ['位置信息','正弦位置编码，加在输入上','RoPE 旋转位置编码，只用在 QSA 每个头的 64 维',0],
+      ['残差','1 条：x ← x + f(x)','4 路并行通道，用门控读写',1],
+      ['词表','约 37,000（BPE）','248,320，外加 2000 万条 N-gram 嵌入',1],
+      ['上下文长度','句子级，几百个 token','262,144 原生，可扩到 1,000,000',0],
+      ['输入','文本','文本 + 图片（视觉编码器）',0],
+      ['参数量','约 6500 万','1250 亿存储，每个 token 激活约 60 亿',0]
+    ];
+    const t = el('table','cmp'); t.innerHTML = '<thead><tr><th></th><th>Transformer（2017，base）</th><th>Qwen 4 架构预览</th></tr></thead>';
+    const tb = el('tbody'); t.append(tb);
+    const trs = rows.map(r => { const tr_ = el('tr','off', `<td>${r[0]}</td><td>${r[1]}</td><td class="${r[3] ? 'new' : ''}">${r[2]}</td>`); tb.append(tr_); return tr_; });
+    sc.append(t);
+    await wait(300);
+    for (let i = 0; i < trs.length; i++){ trs[i].classList.remove('off'); say(`<b>${rows[i][0]}</b>：${rows[i][1]} → ${rows[i][2]}`); await wait(rows[i][3] ? 1300 : 800); }
+    say('后面的步骤会把蓝色底的几项逐个动画演示。');
+  }
+},
+{
+  short: '分词+嵌入', title: '分词 + 嵌入：每个 token 变成 2560 维向量', map: ['q-tok','q-emb'], shape: '[4] → <b>[4 × 2560]</b>',
+  lead: '流程和原版一样：切 token → 查编号 → 取嵌入向量。只是词表大得多、向量长得多。',
+  points: ['词表 248,320 个 token，覆盖多种语言和代码。本页的切分方式和编号是示意。','每个向量 2560 维。下面每条色带有 64 小格，每格代表 40 维。','图片先经过视觉编码器，变成同样 2560 维的向量，和文字 token 排在一起送进后面的层。'],
+  analogy: '原版是 512 个特征描述一个词，这里用 2560 个。',
+  real: '嵌入表大小：248,320 × 2560 ≈ 6.4 亿个数。',
+  async run(sc){
+    const sent = el('div','sentence','我喜欢机器学习'); sent.style.fontSize = '24px';
+    const lines = el('div',''); lines.style.display = 'grid'; lines.style.gridTemplateColumns = 'auto auto auto auto'; lines.style.gap = '8px 12px'; lines.style.alignItems = 'center';
+    const items = QT.map((t, i) => { const c = tokEl(t, 'fade off'); const id = el('span','idbox fade off', String(QID[i])); const s = stripEl(64, QSTRIP[i], tc(t)); s.classList.add('fade','off'); const sh = el('span','mshape fade off','[2560]'); lines.append(c, id, s, sh); return { c, id, s, sh }; });
+    const imgSvg = el('div','fade off', `<svg viewBox="0 0 66 66" width="56" height="56" role="img" aria-label="一张图片被切成小块"><rect x="1" y="1" width="64" height="64" rx="6" fill="var(--soft)" stroke="var(--line)"/>${[0,1,2].map(r => [0,1,2].map(c => `<rect x="${5 + c * 19}" y="${5 + r * 19}" width="17" height="17" rx="2" fill="rgb(var(--pos-rgb) / ${(0.15 + ((r * 3 + c) % 4) * 0.18).toFixed(2)})"/>`).join('')).join('')}</svg>`);
+    const vis = el('div','blk fade off','<b style="font-size:13px">视觉编码器</b><span>图像块 → 向量</span>'); vis.style.setProperty('--kc','var(--c-emb)'); vis.style.padding = '8px 10px';
+    const imgRows = el('div','col fade off'); imgRows.style.gap = '6px'; IMGSTRIP.forEach(v => { const r = row(tokEl(IMG), stripEl(64, v, tc(IMG)), el('span','mshape','[2560]')); r.style.gap = '10px'; imgRows.append(r); });
+    sc.append(sent, lines, row(imgSvg, el('div','op','→'), vis, el('div','op','→'), imgRows));
+    await wait(500);
+    say('① 分词：同一句话被切成 4 个 token（中文常见词会是一个 token）。');
+    sent.style.opacity = '.35';
+    for (const it of items){ it.c.classList.remove('off'); await wait(220); }
+    await wait(400);
+    say('② 查词表得到编号（这里的编号是示意）。');
+    for (const it of items){ it.id.classList.remove('off'); await wait(200); }
+    await wait(400);
+    say('③ 嵌入：每个编号取出一行 2560 维的向量。色带越长，信息容量越大。');
+    for (const it of items){ it.s.classList.remove('off'); it.sh.classList.remove('off'); [...it.s.children].forEach(c => { c.style.opacity = '0'; }); for (let k = 0; k < 64; k += 8){ [...it.s.children].slice(k, k + 8).forEach(c => { c.style.opacity = '1'; }); await wait(25); } }
+    await wait(400);
+    say('④ 如果输入里有图片：先切成小块，经过视觉编码器，也变成 2560 维的向量，和文字 token 排在一起。');
+    imgSvg.classList.remove('off'); await wait(300); vis.classList.remove('off'); await wait(400); imgRows.classList.remove('off');
+    await wait(600);
+    say('得到形状 <b class="mono">[token 数 × 2560]</b> 的矩阵，和原版的 [3 × 4] 是同一个意思：行 = token，列 = 特征。');
+  }
+},
+{
+  short: 'N-gram', title: 'N-gram 嵌入：给常见词组单独记一笔', map: ['q-ngram'], shape: '[4 × 2560] + 查表结果 → <b>[4 × 2560]</b>',
+  lead: '除了每个 token 自己的向量，模型还把「相邻 2 个、3 个 token 组成的片段」拿去另一张大表里查向量，在第 2 层加进来。',
+  points: ['这张表有 2000 万条，约 510 亿参数，比主模型里所有专家加起来还多一半以上，但每个 token 只读其中几行。','查哪一行只取决于输入文字本身，提前就能算出来，所以整张表可以放在 CPU 内存里，提前预取到 GPU。','模型卡没写怎么合并进隐藏状态，这里画成相加。'],
+  analogy: '背单词时除了单字，还把「机器学习」这种固定搭配整体记住。',
+  real: '模型卡：N-gram Embedding 20,000,000（bigrams/trigrams at layer 2）。',
+  async run(sc){
+    const toks = QT.map(t => tokEl(t)); const trow = el('div','row'); trow.style.gap = '10px'; toks.forEach(t => trow.append(t));
+    const gpu = el('div','col'); gpu.style.alignItems = 'flex-start';
+    const strips = QT.map((t, i) => { const s = stripEl(48, QSTRIP[i], tc(t)); const r = row(tokEl(t), s); r.style.gap = '8px'; gpu.append(r); return s; });
+    const entries = [['我 喜欢',2],['喜欢 机器',2],['机器 学习',2],['我 喜欢 机器',3],['喜欢 机器 学习',3]];
+    const tbl = el('div','ngt'); tbl.innerHTML = '<div class="hd">N-gram 表<span>放在主机内存 · 2000 万条 · 约 510 亿参数</span></div>';
+    const filler = [['深度 学习',2],['学习 方法',2],['机器 人',2]];
+    const all = [entries[0], filler[0], entries[1], entries[3], filler[1], entries[2], filler[2], entries[4]];
+    const rEls = new Map();
+    all.forEach(([k, n]) => { const r = el('div','r', `<span>${k}</span><span class="k">${n} 元组</span>`); tbl.append(r); rEls.set(k, r); });
+    tbl.append(el('div','r gapr','⋮'));
+    const arrow = el('div','arrowtxt','<span class="a">⇠</span>提前预取');
+    sc.append(trow, row(col(el('div','mtitle','GPU 上的隐藏状态<span class="sub">每个 token 2560 维（缩略）</span>'), gpu), arrow, tbl));
+    const look = [[], ['我 喜欢'], ['喜欢 机器','我 喜欢 机器'], ['机器 学习','喜欢 机器 学习']];
+    await wait(400);
+    say('第 1 个 token「我」前面没有别的 token，组不成 2 元组，跳过。');
+    toks[0].classList.add('hl'); await wait(1200); toks[0].classList.remove('hl');
+    for (let t = 1; t < 4; t++){
+      toks.forEach((c, j) => c.classList.toggle('hl', j <= t && j >= t - 2 && (j >= t - 1 || look[t].length > 1)));
+      rEls.forEach(r => r.classList.remove('hl'));
+      say(`位置 ${t + 1}「${QT[t].t}」：查 ${look[t].map(k => `「${k}」`).join(' 和 ')}，取出对应的向量。`);
+      for (const k of look[t]){ rEls.get(k).classList.add('hl'); await wait(500); }
+      await Promise.all(look[t].map(k => fly(rEls.get(k), strips[t], 650)));
+      strips[t].classList.add('glow');
+      await wait(700);
+    }
+    toks.forEach(c => c.classList.remove('hl')); rEls.forEach(r => r.classList.remove('hl'));
+    say('在第 2 层，查到的片段向量被加进这些 token 的隐藏状态。查哪几行由输入文字决定，提前就知道，所以能边算边从内存搬运。');
+  }
+},
+{
+  short: '门控残差', title: '4 路门控残差流', map: ['q-res'], shape: '[T × 2560] → <b>4 × [T × 2560]</b>',
+  lead: '原版只有一条残差通道：x ← x + f(x)。这里把它加宽成 4 条并行通道，每层用「门」决定从哪条读、往哪条写。',
+  points: ['读门：逐元素、随输入数据变化，决定从 4 条通道各取多少，混合成本层的输入。','写门：每条通道一个数，决定本层结果写回各通道的比例。','技术报告称这样能压住激活异常值，残差可以用 FP8 存储。门值由一个 320 维的小瓶颈网络算出（模型卡：bottleneck rank 320）。'],
+  analogy: '原来是一条车道，现在是 4 条车道，每个路口都有红绿灯调度车流。',
+  real: '模型卡：Gated residual 4 branches，bottleneck rank 320。具体公式以技术报告为准，这里只画思路。',
+  async run(sc){
+    const svgNS = 'http://www.w3.org/2000/svg', W = 700, Hh = 330;
+    const svg = document.createElementNS(svgNS,'svg'); svg.setAttribute('viewBox',`0 0 ${W} ${Hh}`); svg.setAttribute('width', W); svg.setAttribute('height', Hh); svg.style.maxWidth = '100%';
+    svg.setAttribute('role','img'); svg.setAttribute('aria-label','上：原版一条残差；下：4 条残差通道通过读门和写门与本层相连');
+    const ly = [148, 194, 240, 286], lc = ['var(--t4)','var(--t1)','var(--t2)','var(--t3)'];
+    let s = `<text x="16" y="24" font-size="13" font-weight="700" fill="var(--ink)">2017：一条残差</text>
+      <line x1="16" y1="62" x2="684" y2="62" stroke="var(--muted)" stroke-width="3" class="fl"/>
+      <path d="M 240 62 C 260 62, 270 40, 300 40" fill="none" stroke="var(--muted)" stroke-width="1.5"/>
+      <rect x="300" y="26" width="90" height="28" rx="6" fill="color-mix(in srgb, var(--c-attn) 14%, var(--surface))" stroke="var(--c-attn)"/><text x="345" y="45" text-anchor="middle" font-size="12" fill="var(--ink)">本层 f(x)</text>
+      <path d="M 390 40 C 420 40, 430 62, 450 62" fill="none" stroke="var(--muted)" stroke-width="1.5"/><circle cx="450" cy="62" r="9" fill="var(--surface)" stroke="var(--muted)"/><text x="450" y="66" text-anchor="middle" font-size="13" fill="var(--ink)">+</text>
+      <text x="520" y="92" font-size="12" fill="currentColor">x ← x + f(x)</text>
+      <text x="16" y="110" font-size="13" font-weight="700" fill="var(--ink)">Qwen 4：4 路门控残差</text>`;
+    ly.forEach((y, i) => { s += `<line id="lane${i}" x1="16" y1="${y}" x2="684" y2="${y}" stroke="${lc[i]}" stroke-width="4" opacity=".75" class="fl"/><text x="16" y="${y - 7}" font-size="10.5" fill="currentColor">通道 ${i + 1}</text>`; });
+    s += `<text id="rgl" x="157" y="128" text-anchor="middle" font-size="11" fill="currentColor" opacity="0">读门（逐元素）</text>`;
+    ly.forEach((y, i) => { s += `<line id="rd${i}" x1="186" y1="${y}" x2="262" y2="217" stroke="${lc[i]}" stroke-width="2" opacity="0"/><g id="rg${i}" opacity="0">${[0,1,2,3,4,5].map(k => `<rect x="${136 + k * 7}" y="${y - 15}" width="6" height="9" rx="1" fill="${lc[i]}"/>`).join('')}</g>`; });
+    s += `<circle id="mix" cx="272" cy="217" r="13" fill="var(--surface)" stroke="var(--ink)" opacity="0"/><text id="mixT" x="272" y="222" text-anchor="middle" font-size="14" fill="var(--ink)" opacity="0">Σ</text>
+      <line id="toL" x1="285" y1="217" x2="312" y2="217" stroke="var(--ink)" stroke-width="1.5" opacity="0"/>
+      <rect id="layer" x="312" y="182" width="120" height="70" rx="8" fill="color-mix(in srgb, var(--c-gdn) 14%, var(--surface))" stroke="var(--c-gdn)" stroke-width="2"/>
+      <text x="372" y="212" text-anchor="middle" font-size="13" font-weight="700" fill="var(--ink)">本层</text><text id="layerT" x="372" y="230" text-anchor="middle" font-size="11" fill="currentColor">GDN/QSA + MoE</text>`;
+    ly.forEach((y, i) => { s += `<line id="wr${i}" x1="432" y1="217" x2="520" y2="${y}" stroke="${lc[i]}" opacity="0"/><text id="wt${i}" x="536" y="${y - 8}" font-size="11.5" font-family="JetBrains Mono, monospace" fill="var(--ink)" opacity="0"></text><circle id="wp${i}" cx="520" cy="${y}" r="8" fill="var(--surface)" stroke="${lc[i]}" opacity="0"/><text id="wpt${i}" x="520" y="${y + 4}" text-anchor="middle" font-size="12" fill="var(--ink)" opacity="0">+</text>`; });
+    svg.innerHTML = s;
+    const $s = id => svg.querySelector('#' + id);
+    const formula = el('div','formula','读：x = Σᵢ gᵢ ⊙ hᵢ　　写：hᵢ ← hᵢ + wᵢ · f(x)');
+    sc.append(svg, formula);
+    const sets = [{ r: [[.9,.7,.8,.6,.9,.7],[.3,.5,.2,.4,.3,.2],[.6,.4,.7,.5,.3,.6],[.1,.2,.1,.3,.2,.1]], w: [0.9,0.2,0.6,0.4], name: 'GDN + MoE' },
+                  { r: [[.4,.3,.5,.2,.3,.4],[.8,.9,.7,.8,.6,.9],[.2,.1,.3,.2,.4,.2],[.7,.5,.6,.8,.7,.6]], w: [0.3,0.8,0.1,0.7], name: 'QSA + MoE' }];
+    await wait(400);
+    say('上面是原版：一条通道，本层的结果直接加回去。下面是 Qwen 4：同一个隐藏状态被加宽成 4 份，并行往后流。');
+    await wait(2000);
+    for (let L = 0; L < 2; L++){
+      const st = sets[L]; $s('layerT').textContent = st.name;
+      $s('layer').setAttribute('stroke', L ? 'var(--c-qsa)' : 'var(--c-gdn)');
+      say(`${L ? '下一层' : '① 读门'}：每条通道的每个元素各有一个门值（小方块越亮门开得越大），按门值取出后加总成本层输入。`);
+      $s('rgl').setAttribute('opacity','1');
+      ly.forEach((_, i) => { $s('rd' + i).setAttribute('opacity','.8'); const gEl = $s('rg' + i); gEl.setAttribute('opacity','1'); [...gEl.children].forEach((r, k) => r.setAttribute('opacity', st.r[i][k])); });
+      await wait(1600);
+      ['mix','mixT','toL'].forEach(id => $s(id).setAttribute('opacity','1'));
+      say('② 本层计算：混合后的输入进入注意力类模块和 MoE。');
+      $s('layer').setAttribute('stroke-width','4'); await wait(1100); $s('layer').setAttribute('stroke-width','2');
+      say(`③ 写门：结果按每条通道一个比例写回：${st.w.map((w, i) => `通道${i + 1} ×${w}`).join('，')}。`);
+      ly.forEach((_, i) => { const w = st.w[i]; $s('wr' + i).setAttribute('opacity', (0.25 + 0.75 * w).toFixed(2)); $s('wr' + i).setAttribute('stroke-width', (1 + w * 5).toFixed(1)); $s('wt' + i).textContent = '写 ×' + w; $s('wt' + i).setAttribute('opacity','1'); $s('wp' + i).setAttribute('opacity','1'); $s('wpt' + i).setAttribute('opacity','1'); $s('lane' + i).setAttribute('stroke-width', (3 + w * 3).toFixed(1)); });
+      await wait(2000);
+      if (L === 0){
+        say('到了下一层，读门、写门都会重新计算：取值随数据变化。');
+        await wait(1200);
+        ly.forEach((_, i) => ['rd','rg','wr','wt','wp','wpt'].forEach(p => $s(p + i).setAttribute('opacity','0'))); $s('rgl').setAttribute('opacity','0');
+        await wait(400);
+      }
+    }
+    say('4 条通道一直流到最后一层，再合并成一个向量交给输出层。每层能「挑着读、按比例写」，信息可以更干净地传到深处。');
+  }
+},
+{
+  short: '48 层', title: '48 层的排列：3 层线性 + 1 层稀疏，重复 12 次', map: ['q-gdn','q-qsa','q-moe'], shape: '[T × 2560] 穿过 48 层，<b>形状不变</b>',
+  lead: '48 层分成 12 组，每组 3 层 Gated DeltaNet + 1 层 Qwen Sparse Attention（QSA），每层后面都接一个 MoE。',
+  points: ['Gated DeltaNet（36 层）：线性注意力，记忆大小固定，便宜。','QSA（12 层）：稀疏的全注意力，能精确回看很久之前的内容。','和原版一样，每层输出的形状不变，只是内容被不断加工。点下面的格子可以跳到对应讲解。'],
+  analogy: '大部分时候靠速记笔记（GDN），每隔几层翻一次原文（QSA）。',
+  real: '模型卡：Hidden Layout = 12 × (3 × (Gated DeltaNet → MoE) → 1 × (QSA → MoE))。',
+  async run(sc){
+    const grid = el('div','layers'); const cells = [];
+    for (let gi = 0; gi < 12; gi++){
+      const g = el('div','lgroup'); g.append(el('span','gl', `组 ${gi + 1}`));
+      for (let k = 0; k < 4; k++){
+        const n = gi * 4 + k + 1, type = k === 3 ? 'qsa' : 'gdn';
+        const b = el('button','layer ' + type, '<span class="mx"></span><span class="me"></span>'); b.type = 'button';
+        b.title = `第 ${n} 层：${type === 'qsa' ? 'QSA' : 'Gated DeltaNet'} → MoE`; b.setAttribute('aria-label', b.title);
+        b.addEventListener('click', () => { setPlaying(false); go(STEPS.qwen4.findIndex(s => s.key === type)); });
+        g.append(b); cells.push({ b, type, n });
+      }
+      grid.append(g);
+    }
+    const leg = el('div','legend', '<span><i style="--kc:var(--c-gdn)"></i>Gated DeltaNet（36 层）</span><span><i style="--kc:var(--c-qsa)"></i>QSA 稀疏注意力（12 层）</span><span><i style="--kc:var(--c-moe)"></i>每层下方：MoE</span>');
+    const counter = el('div','chips');
+    const cl = el('div','stat','<b>0</b><span>当前层</span>'), cg = el('div','stat','<b>0 / 36</b><span>已过 GDN</span>'), cq = el('div','stat','<b>0 / 12</b><span>已过 QSA</span>'), csh = el('div','stat','<b class="mono">[4 × 2560]</b><span>隐藏状态形状</span>');
+    counter.append(cl, cg, cq, csh);
+    sc.append(grid, leg, counter);
+    await wait(500);
+    say('一个 token 的向量从第 1 层开始往上走。注意第 2 层会注入 N-gram 嵌入。');
+    let ng = 0, nq = 0;
+    for (const c of cells){
+      cells.forEach(x => x.b.classList.remove('cur')); c.b.classList.add('cur','past');
+      if (c.type === 'qsa') nq++; else ng++;
+      cl.firstChild.textContent = c.n; cg.firstChild.textContent = `${ng} / 36`; cq.firstChild.textContent = `${nq} / 12`;
+      mapCursor([c.type === 'qsa' ? 'q-qsa' : 'q-gdn']);
+      if (c.n === 2) say('第 2 层：N-gram 嵌入在这里加入。');
+      if (c.n === 4) say('第 4 层：每组的第 4 层是 QSA，回看全文找关键内容。');
+      if (c.n === 9) say('后面就是同样的 4 层一组，重复下去……');
+      await wait(c.n <= 8 ? 420 : 110);
+    }
+    mapCursor([]); cells.forEach(x => x.b.classList.remove('cur'));
+    say('48 层走完，形状始终是 <b class="mono">[token 数 × 2560]</b>。线性层和稀疏层是 3 : 1。');
+  }
+},
+{
+  key: 'gdn', short: 'Gated DeltaNet', title: 'Gated DeltaNet：固定大小的记忆', map: ['q-gdn'], shape: '记忆 S 每头 <b>[128 × 128]</b>，不随长度增长',
+  lead: '全注意力要把每个旧 token 的 K、V 都存着；Gated DeltaNet 只维护一个固定大小的记忆矩阵 S，每来一个 token 更新一次。',
+  points: ['① 遗忘：S 整体乘以 α（0~1 之间），旧信息慢慢变淡。','② 读取：用当前 token 的 k 去 S 里读出「记忆中的答案」S·k。','③ 纠错写入：真实的 v 减去读出值得到误差，按 β 写回 S。这就是 delta 规则：错多少改多少。','④ 输出：用 q 从更新后的 S 里读出结果。'],
+  analogy: '一块固定大小的白板：先把旧字擦淡一点，再只修改「和预期不符」的地方。',
+  real: '模型卡：48 个 V 头、16 个 QK 头，头维度 128。动画缩成 4 × 4 单头示意，数值是演示用的。公式：S ← α·S + β·(v − α·S·k)·kᵀ。',
+  async run(sc){
+    let Sm = M(4,4,() => 0);
+    const sMat = mat(Sm.map(r => r.slice()), { rows: ['v1','v2','v3','v4'], cols: ['k1','k2','k3','k4'], title: '记忆 S<span class="sub">固定 4 × 4（真实：每头 128 × 128）</span>', shown: true, max: 1 });
+    const vec = (title) => mat([[0,0,0,0]], { title, shown: true, max: 1 });
+    const kM = vec('k'), vM = vec('v'), pM = vec('S·k 读出'), eM = vec('误差 v − S·k'), oM = vec('输出 S·q');
+    const seq = el('div','col'); seq.style.alignItems = 'flex-start'; const tEls = GT.map(t => { const c = tokEl(t); c.classList.add('dim'); seq.append(c); return c; });
+    const gates = el('div','chips'); const ga = el('div','stat','<b>α = –</b><span>遗忘门</span>'), gb = el('div','stat','<b>β = –</b><span>写入强度</span>'); gates.append(ga, gb);
+    const right = el('div','col'); right.style.alignItems = 'flex-start'; right.append(row(kM, vM), row(pM, eM), oM, gates);
+    const cmpWrap = el('div','row top'); cmpWrap.style.gap = '24px';
+    const cache = el('div','cache'); const cacheC = el('div','badge','0 条');
+    const fixedS = mat(M(4,4,() => 0), { mini: true, shown: true, max: 1 }); const fixedC = el('div','badge good','16 个数，不变');
+    cmpWrap.append(col(el('div','mtitle','全注意力：KV 缓存<span class="sub">每个旧 token 都要存</span>'), cache, cacheC), col(el('div','mtitle','Gated DeltaNet：记忆<span class="sub">大小固定</span>'), fixedS, fixedC));
+    sc.append(row(col(note('输入流'), seq), sMat, right), cmpWrap);
+    const setVec = (m, v) => v.forEach((x, i) => m.set(0, i, x));
+    const setS = () => { for (let i = 0; i < 4; i++) for (let j = 0; j < 4; j++){ sMat.set(i, j, Sm[i][j]); fixedS.set(i, j, Sm[i][j]); } };
+    await wait(400);
+    for (let t = 0; t < GT.length; t++){
+      const d = GDN[t], slow = t < 2, w = ms => wait(slow ? ms : ms * 0.45);
+      tEls.forEach((c, j) => { c.classList.toggle('dim', j > t); c.classList.toggle('hl', j === t); });
+      setVec(kM, d.k); setVec(vM, d.v); setVec(pM, [0,0,0,0]); setVec(eM, [0,0,0,0]); setVec(oM, [0,0,0,0]);
+      ga.firstChild.textContent = `α = ${d.a}`; gb.firstChild.textContent = `β = ${d.b}`;
+      say(`第 ${t + 1} 个 token ${chipHTML(GT[t])} 到来，算出它的 k、v、q 和两个门 α、β。`);
+      await w(1000);
+      Sm = Sm.map(r => r.map(x => x * d.a)); setS();
+      say(`① 遗忘：S 里的每个数 × α = ${d.a}，旧记忆整体变淡一点。`); await w(1100);
+      const pred = Sm.map(r => r.reduce((s, x, j) => s + x * d.k[j], 0)); setVec(pM, pred);
+      say('② 读取：用 k 从记忆里读出「按以往经验，这里应该是什么」。'); await w(1100);
+      const err = d.v.map((x, i) => x - pred[i]); setVec(eM, err);
+      say('③ 误差 = 真实的 v − 读出值。读得越准，误差越小，要改的越少。'); await w(1100);
+      Sm = Sm.map((r, i) => r.map((x, j) => x + d.b * err[i] * d.k[j])); setS();
+      sMat.cells.flat().forEach(c => c.classList.add('pop')); setTimeout(() => sMat.cells.flat().forEach(c => c.classList.remove('pop')), 500);
+      say(`④ 写入：S += β × 误差 × kᵀ（β = ${d.b}）。只修正「记错的部分」。`); await w(1100);
+      const o = Sm.map(r => r.reduce((s, x, j) => s + x * d.q[j], 0)); setVec(oM, o);
+      const c = tokEl(GT[t]); c.style.height = '24px'; c.style.fontSize = '12px'; cache.append(c); cacheC.textContent = `${t + 1} 条（K 和 V 各一份）`;
+      say('⑤ 输出：用 q 从新记忆里读出本层结果。同时看下方：KV 缓存多了一条，记忆大小没变。'); await w(1000);
+    }
+    tEls.forEach(c => c.classList.remove('hl','dim'));
+    say('处理 6 个 token：KV 缓存涨到 6 条，记忆始终 4 × 4。到 100 万个 token 也是一样大，这就是线性注意力省显存、省计算的原因。');
+  }
+},
+{
+  key: 'qsa', short: 'QSA 选块', title: 'QSA 稀疏注意力：先挑块，再细看', map: ['q-qsa'], shape: '从 T 个 token 中最多选 <b>2048</b> 个',
+  lead: 'GDN 的记忆是压缩过的，会丢细节。所以每 4 层安排 1 层 QSA：把序列切成微块，用便宜的「索引器」给每块打分，只在分数最高的几块上做完整注意力。',
+  points: ['① 切块：相邻几个 token 组成一个微块。','② 打分：索引器只有 4 个查询头 + 1 个共享键头（维度 128），算起来很轻。','③ 选块：真实预算最多 512 块或 2048 个 token（由此推算每块约 4 个 token）。','④ 细看：只在选中的 token 上做标准注意力，其余跳过。'],
+  analogy: '复习时先看目录挑出相关章节，再精读那几章。',
+  real: '被跳过的 token 的 K、V 通常仍要保存（下一步可能被选中），省下的主要是每一步的计算和读取量。',
+  async run(sc){
+    const NB = 16, scores = [0.12,0.31,0.08,0.66,0.15,0.22,0.09,0.18,0.41,0.11,0.83,0.14,0.27,0.07,0.35,0.92];
+    const top = scores.map((s, i) => [s, i]).sort((a, b) => b[0] - a[0]).slice(0, 4).map(x => x[1]);
+    const wrap = el('div','blocks'); const bs = [];
+    for (let b = 0; b < NB; b++){
+      const q = el('div','qb'); const sc_ = el('div','sc'); const bar = el('span'); sc_.append(bar); const bt = el('div','bt');
+      for (let k = 0; k < 4; k++){ const ii = el('i'); if (b === NB - 1 && k === 3) ii.classList.add('q'); bt.append(ii); }
+      const sv = el('div','sv'); q.append(sc_, bt, sv); wrap.append(q); bs.push({ q, bar, sv });
+    }
+    const info = el('div','chips');
+    const i1 = el('div','stat','<b>64</b><span>序列中的 token</span>'), i2 = el('div','stat fade off','<b>16</b><span>微块（每块 4 个）</span>'), i3 = el('div','stat fade off','<b>16 / 64</b><span>真正做注意力的 token</span>');
+    info.append(i1, i2, i3);
+    sc.append(note('红色小格 = 当前要计算的 token（最后一个）。它要从前面 64 个 token 里找有用的信息。'), wrap, info);
+    await wait(700);
+    say('① 切块：每 4 个相邻 token 组成一个微块。');
+    for (const b of bs){ b.q.classList.add('cut'); await wait(40); }
+    i2.classList.remove('off'); await wait(800);
+    say('② 索引器：用当前 token 的轻量查询，和每个微块的轻量键做点积，给每块打分。');
+    for (let b = 0; b < NB; b++){ bs[b].bar.style.height = (scores[b] * 32 + 2) + 'px'; bs[b].sv.textContent = scores[b].toFixed(2); await wait(70); }
+    await wait(1000);
+    say('③ 选块：留下分数最高的 4 块，其余暂时不看。（真实模型的预算是 512 块 / 2048 个 token。）');
+    bs.forEach((b, i) => { if (top.includes(i)) b.q.classList.add('sel'); else b.q.classList.add('dimmed'); });
+    await wait(1400);
+    i3.classList.remove('off');
+    say('④ 细看：只在选中的 16 个 token 上做完整的注意力（softmax(QKᵀ/√d)·V，和原版一样）。');
+    await wait(800);
+    say('结果：计算量只和预算有关。序列从 6 万涨到 100 万，每步要细看的 token 依然最多 2048 个。');
+  }
+},
+{
+  short: 'GQA + RoPE', title: 'QSA 内部：24 个查询头共用 2 个 KV 头，部分维度做 RoPE', map: ['q-qsa'], shape: 'Q：24 头 × 256 维；K/V：<b>2 头</b> × 256 维',
+  lead: '在选中的 token 上做的是分组查询注意力（GQA）：24 个查询头分成 2 组，每组 12 个头共用一份 K、V。',
+  points: ['KV 头越少，要缓存的数据就越少。原版每个头都有自己的 K、V，这里只有 2 份。','位置用 RoPE：把向量里成对的数字按位置旋转一个角度，两个 token 的相对距离就体现为角度差。','每个头 256 维里只有 64 维做旋转，其余维度不带位置信息（本页把这 64 维画在最前面，只是示意）。'],
+  analogy: '24 个学生分两组，每组共用一本参考书。',
+  real: '模型卡：24 Q heads，2 KV heads，head dim 256，RoPE dim 64。',
+  async run(sc){
+    const svgNS = 'http://www.w3.org/2000/svg', W = 640, Hh = 170;
+    const svg = document.createElementNS(svgNS,'svg'); svg.setAttribute('viewBox',`0 0 ${W} ${Hh}`); svg.setAttribute('width', W); svg.setAttribute('height', Hh); svg.style.maxWidth = '100%';
+    svg.setAttribute('role','img'); svg.setAttribute('aria-label','24 个查询头分两组，各自连向一个共享的 KV 头');
+    const qx = i => i < 12 ? 30 + i * 22 : 30 + 12 * 22 + 46 + (i - 12) * 22;
+    const kvx = [30 + 5.5 * 22, 30 + 12 * 22 + 46 + 5.5 * 22];
+    let s = '<g id="lns"></g>';
+    for (let i = 0; i < 24; i++) s += `<circle cx="${qx(i)}" cy="34" r="8" fill="color-mix(in srgb, var(--c-qsa) ${i < 12 ? 40 : 20}%, var(--surface))" stroke="var(--c-qsa)"/>`;
+    s += `<text x="${W / 2}" y="14" text-anchor="middle" font-size="12" fill="currentColor">24 个查询头（Q）</text>`;
+    kvx.forEach((x, k) => { s += `<rect x="${x - 50}" y="118" width="100" height="32" rx="7" fill="color-mix(in srgb, var(--c-moe) 18%, var(--surface))" stroke="var(--c-moe)" stroke-width="1.6"/><text x="${x}" y="139" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ink)">K/V 头 ${k + 1}</text>`; });
+    svg.innerHTML = s;
+    const lns = svg.querySelector('#lns');
+    const rot = el('div','row top'); rot.style.gap = '26px';
+    const dial = document.createElementNS(svgNS,'svg'); dial.setAttribute('viewBox','0 0 220 200'); dial.setAttribute('width','220'); dial.setAttribute('height','200');
+    dial.setAttribute('role','img'); dial.setAttribute('aria-label','RoPE：每个位置的向量旋转不同角度');
+    dial.innerHTML = '<circle cx="110" cy="100" r="78" fill="none" stroke="var(--line)"/><line x1="20" y1="100" x2="200" y2="100" stroke="var(--line)"/><line x1="110" y1="12" x2="110" y2="188" stroke="var(--line)"/><g id="vecs"></g>';
+    const vecs = dial.querySelector('#vecs');
+    const RT = [T('我',1), T('喜欢',2), T('机器',3), T('学习',4), T('很',5), T('有趣',7)];
+    const strip = el('div','col'); const st = el('div',''); st.style.display = 'grid'; st.style.gridTemplateColumns = 'repeat(32, 9px)'; st.style.gap = '1px';
+    for (let i = 0; i < 32; i++){ const c = el('i'); c.style.height = '18px'; c.style.borderRadius = '2px'; c.style.background = i < 8 ? 'var(--c-qsa)' : 'color-mix(in srgb, var(--c-qsa) 18%, var(--surface))'; st.append(c); }
+    strip.append(el('div','mtitle','一个头的 256 维<span class="sub">每格 8 维；深色 64 维做 RoPE 旋转</span>'), st);
+    const rl = el('div','col'); rl.style.alignItems = 'flex-start';
+    rot.append(dial, col(strip, rl));
+    sc.append(svg, rot);
+    await wait(400);
+    say('① 24 个查询头各自独立算注意力分数……');
+    await wait(1100);
+    for (let k = 0; k < 2; k++){
+      say(`② ……但第 ${k * 12 + 1}–${k * 12 + 12} 个查询头共用 <b>K/V 头 ${k + 1}</b>。要缓存的 K、V 只有 2 份，而不是 24 份。`);
+      for (let i = k * 12; i < k * 12 + 12; i++){ const l = document.createElementNS(svgNS,'line'); l.setAttribute('x1', qx(i)); l.setAttribute('y1', 42); l.setAttribute('x2', kvx[k]); l.setAttribute('y2', 118); l.setAttribute('stroke','var(--c-qsa)'); l.setAttribute('opacity','.55'); lns.append(l); await wait(70); }
+      await wait(900);
+    }
+    say('③ RoPE：每个位置把向量旋转一个角度，位置越靠后转得越多。');
+    const th = 0.5;
+    for (let p = 0; p < RT.length; p++){
+      const a = p * th, x = 110 + 70 * Math.cos(a), y = 100 - 70 * Math.sin(a);
+      const l = document.createElementNS(svgNS,'line'); l.setAttribute('x1', 110); l.setAttribute('y1', 100); l.setAttribute('x2', x); l.setAttribute('y2', y); l.setAttribute('stroke', tc(RT[p])); l.setAttribute('stroke-width','3'); l.setAttribute('stroke-linecap','round');
+      const t = document.createElementNS(svgNS,'text'); t.setAttribute('x', 110 + 86 * Math.cos(a)); t.setAttribute('y', 104 - 86 * Math.sin(a)); t.setAttribute('text-anchor','middle'); t.setAttribute('font-size','11'); t.setAttribute('fill','var(--ink)'); t.textContent = RT[p].t;
+      vecs.append(l, t);
+      const r = row(tokEl(RT[p]), el('span','mono', `位置 ${p}：旋转 ${(a * 180 / Math.PI).toFixed(0)}°`)); r.style.gap = '8px'; r.style.justifyContent = 'flex-start'; rl.append(r);
+      await wait(650);
+    }
+    say('④ 两个 token 的 q·k 只取决于它们的<b>角度差</b>，也就是相对距离。「喜欢」和「学习」相距 2，差 57°，在句子的任何位置都一样。');
+  }
+},
+{
+  short: 'MoE', title: 'MoE：512 个专家，每个 token 只叫 11 个', map: ['q-moe'], shape: '[2560] → 路由 → 10 + 1 个专家 → <b>[2560]</b>',
+  lead: '原版的一个大 FFN 被换成 512 个小 FFN（专家）。路由器为每个 token 给所有专家打分，只挑 10 个，再加 1 个所有 token 共用的共享专家。',
+  points: ['每个专家：2560 → 640 → 2560，很小。','不同 token 会选到不同专家，看网格里亮起的格子和颜色。','最后按路由分数加权求和。这就是存了 1250 亿参数、每个 token 却只算 60 亿的原因。'],
+  analogy: '医院有 512 位专科医生，每个病人只挂最相关的 10 个号，外加一位全科医生。',
+  real: '模型卡：512 experts，10 routed + 1 shared，expert intermediate dim 640。',
+  async run(sc){
+    const R2q = rng(23);
+    const grid = el('div','experts'); const cells = []; for (let i = 0; i < 512; i++){ const c = el('i'); grid.append(c); cells.push(c); }
+    const picks = QT.map(() => { const s = new Set(); while (s.size < 10) s.add(Math.floor(R2q() * 512)); return [...s]; });
+    picks[3][0] = picks[2][1]; picks[1][2] = picks[0][4];
+    const tokCol = el('div','col'); const tEls = QT.map(t => { const c = tokEl(t); c.classList.add('dim'); tokCol.append(c); return c; });
+    const router = el('div','blk','<b style="font-size:13px">路由器</b><span>给 512 个专家打分</span>'); router.style.setProperty('--kc','var(--c-moe)'); router.style.padding = '8px 10px';
+    const shared = el('div','shared','<b>共享专家</b><br><span class="mono" style="font-size:11.5px">每个 token 都用</span>');
+    const wb = el('div','wbars');
+    const out = el('div','col'); const outS = el('div','fade off'); out.append(el('div','mtitle','加权求和'), outS);
+    const stats = el('div','chips'); const s1 = el('div','stat','<b>10 + 1 / 512</b><span>本 token 用到的专家</span>'), s2 = el('div','stat','<b>≈ 4.8%</b><span>激活参数占比（60 亿 / 1250 亿）</span>'), s3 = el('div','stat','<b>0</b><span>到目前为止用到的不同专家</span>');
+    stats.append(s1, s2, s3);
+    const wbWrap = col(el('div','mtitle','被选中的 10 个专家<span class="sub">编号 · 路由权重</span>'), wb);
+    sc.append(row(tokCol, op('→'), router, op('→'), col(el('div','mtitle','512 个专家<span class="sub">32 × 16 网格，每格一个专家</span>'), grid)),
+              row(wbWrap, op('+'), shared, op('→'), out), stats);
+    const used = new Set();
+    await wait(400);
+    for (let t = 0; t < 4; t++){
+      const tok = QT[t], slow = t < 2;
+      tEls.forEach((c, j) => { c.classList.toggle('dim', j !== t && j > t); c.classList.toggle('hl', j === t); });
+      say(`${chipHTML(tok)} 进入 MoE：路由器给 512 个专家都打一个分。`);
+      for (let k = 0; k < (slow ? 3 : 1); k++){ cells.forEach(c => { c.style.background = `rgb(var(--pos-rgb) / ${(R2q() * 0.45).toFixed(2)})`; }); await wait(220); }
+      cells.forEach(c => { c.style.background = ''; c.classList.remove('on'); });
+      used.forEach(i => { cells[i].style.background = 'color-mix(in srgb, var(--muted) 30%, var(--surface))'; });
+      const ws = softmax(picks[t].map(() => R2q() * 2)).sort((a, b) => b - a);
+      say(`只留分数最高的 10 个专家（亮起的格子），再加上共享专家。其余 ${512 - 10} 个专家这次不计算。`);
+      picks[t].forEach(i => { cells[i].style.background = tc(tok); cells[i].classList.add('on'); used.add(i); });
+      shared.classList.add('on');
+      wb.innerHTML = ''; picks[t].slice(0, 10).forEach((ei, k) => { wb.append(el('span','', '#' + ei)); const b = el('span','b'); b.style.background = tc(tok); wb.append(b); wb.append(el('span','', ws[k].toFixed(2))); setTimeout(() => { b.style.width = Math.min(120, ws[k] * 300) + 'px'; }, 30); });
+      s3.firstChild.textContent = used.size;
+      await wait(slow ? 1600 : 900);
+      outS.innerHTML = ''; outS.append(stripEl(32, QSTRIP[t].slice(0, 32), tc(tok))); outS.classList.remove('off');
+      say(`10 个专家的输出按权重（右边的条）加权求和，再加上共享专家的输出，得到 ${chipHTML(tok)} 的 MoE 结果，仍是 2560 维。`);
+      await wait(slow ? 1500 : 800);
+      shared.classList.remove('on');
+    }
+    tEls.forEach(c => c.classList.remove('hl','dim'));
+    say(`4 个 token 一共用到了 ${used.size} 个不同的专家：每个 token 走不同的「专科」，但每次计算量都只有 11 个小专家。`);
+  }
+},
+{
+  short: '输出+MTP', title: '输出层 + MTP：一次多猜一步', map: ['q-norm','q-head','q-mtp'], shape: '[2560] → [248,320] → <b>1 个 token</b>',
+  lead: '最后一层的输出经过归一化，乘输出矩阵得到 248,320 个分数（每个词一个），softmax 后选出下一个 token。',
+  points: ['和原版一样是自回归：选出的 token 接到末尾，再算下一步。','MTP（多 token 预测）头额外预测「再下一个」token。常见用法是推测解码：先当草稿，下一步由主模型验证，猜对就省一步。','模型卡只写了 MTP 有 1 层、用多步训练，没写推理时怎么用，上面的用法是业界常见做法。'],
+  analogy: '下棋时不光想下一步，还顺便想好对方大概率怎么应。',
+  real: '输出层大小 2560 × 248,320，和嵌入表一样大。本步候选词和概率是示意值。',
+  async run(sc){
+    const sent = el('div','row'); sent.style.gap = '6px'; QT.forEach(t => sent.append(tokEl(t)));
+    const hidden = stripEl(48, QSTRIP[3], tc(QT[3]));
+    const norm = el('div','blk','<b style="font-size:13px">归一化</b>'); norm.style.setProperty('--kc','var(--c-norm)'); norm.style.padding = '8px 12px'; norm.style.minWidth = '0';
+    const head = el('div','blk','<b style="font-size:13px">输出层</b><span>2560 → 248,320</span>'); head.style.setProperty('--kc','var(--c-out)'); head.style.padding = '8px 12px';
+    const bars = el('div','bars');
+    const cand = [['，',0.31],['和',0.22],['。',0.15],['的',0.09],['因为',0.06]];
+    const bEls = cand.map(([w, p]) => { bars.append(el('span','', w)); const tr_ = el('div',''); const b = el('div','bar'); tr_.append(b); bars.append(tr_); bars.append(el('span','v', (p * 100).toFixed(0) + '%')); return b; });
+    const mtp = el('div','blk fade off','<b style="font-size:13px">MTP 头</b><span>猜「再下一个」</span>'); mtp.style.setProperty('--kc','var(--c-out)'); mtp.style.padding = '8px 12px'; mtp.style.borderStyle = 'dashed';
+    const draft = el('div','fade off'); const dt = tokEl(T('因为',8)); dt.style.borderStyle = 'dashed'; draft.append(dt);
+    const verdict = el('div','badge good fade off','✓ 下一步主模型也选了「因为」：一次前进 2 个 token');
+    sc.append(col(note('当前文本'), sent), row(col(el('div','mtitle','最后位置的隐藏状态'), hidden, el('div','mshape','[2560]')), op('→'), norm, op('→'), head, op('→'), bars), row(mtp, op('→'), draft), verdict);
+    await wait(400);
+    say('取最后一个 token「学习」位置的隐藏状态，先归一化。');
+    norm.classList.add('hot'); await wait(900); norm.classList.remove('hot');
+    say('乘输出矩阵：得到 248,320 个分数，softmax 成概率。这里只画前 5 名。');
+    head.classList.add('hot'); await wait(700); head.classList.remove('hot');
+    bEls.forEach((b, i) => { b.style.width = (cand[i][1] * 300) + 'px'; });
+    await wait(900); bEls[0].classList.add('win');
+    const c = tokEl(T('，',6)); sent.append(c);
+    say('选出「，」，接到文本末尾。这一步和 2017 年的原版完全一样。');
+    await wait(1200);
+    mtp.classList.remove('off');
+    say('MTP 头：利用同一个隐藏状态，再往后多猜一个 token「因为」，作为草稿。');
+    await wait(1000); draft.classList.remove('off'); await wait(1200);
+    verdict.classList.remove('off');
+    const d2 = tokEl(T('因为',8)); sent.append(d2);
+    say('下一步主模型验证草稿：猜对了就直接采用，一次前进 2 个 token；猜错就丢掉草稿，照常生成。');
+  }
+},
+{
+  short: '显存账', title: '为什么撑得住 100 万 token：算一笔显存账', map: ['q-qsa','q-gdn'], shape: '拖动滑块看变化',
+  lead: '拖动滑块改变上下文长度，看「要缓存的东西」怎么增长。这是只有 12 层全注意力、其余用线性注意力带来的最直接好处。',
+  points: ['QSA 层：每个 token 每层存 K 和 V，2 个头 × 256 维 × 2（K、V）× 2 字节（BF16）= 2 KB。','只有 12 层是 QSA，所以每个 token 约 24 KB；如果 48 层都用同样配置的全注意力，就是 96 KB。','Gated DeltaNet 层的记忆固定：36 层 × 48 头 × 128 × 128 × 2 字节 ≈ 57 MB，上下文多长都一样。'],
+  analogy: '每多读一页书，全注意力要多存一页复印件；线性注意力只是在同一本笔记上改写。',
+  real: '按模型卡尺寸做的粗略估算，没有计入索引器缓存、激活值和模型权重本身。',
+  async run(sc){
+    const lab = el('div','mtitle',''); lab.style.fontSize = '18px';
+    const sl = el('input','slider'); sl.type = 'range'; sl.min = '0'; sl.max = '100'; sl.step = '1'; sl.value = '0'; sl.id = 'ctxSlider'; sl.setAttribute('aria-label','上下文长度');
+    const LO = Math.log(4096), HI = Math.log(1000000);
+    const ticks = el('div',''); ticks.style.position = 'relative'; ticks.style.height = '18px'; ticks.style.width = 'min(520px,100%)'; ticks.style.fontSize = '11.5px'; ticks.style.color = 'var(--muted)';
+    [[4096,'4K'],[32768,'32K'],[262144,'262K（原生）'],[1000000,'1M']].forEach(([n, t], k) => { const sp = el('span'); sp.textContent = t; sp.style.position = 'absolute'; sp.style.whiteSpace = 'nowrap'; const pct = (Math.log(n) - LO) / (HI - LO) * 100; sp.style.left = pct + '%'; sp.style.transform = k === 0 ? 'none' : k === 3 ? 'translateX(-100%)' : 'translateX(-50%)'; ticks.append(sp); });
+    const bars = el('div','col'); bars.style.gap = '12px'; bars.style.width = '100%'; bars.style.alignItems = 'center';
+    const mk = (name, sub, color) => { const r = el('div','mbar'); const nm = el('div','nm', `${name}<small>${sub}</small>`); const tr_ = el('div','tr'); const fl = el('div','fl'); fl.style.background = color; tr_.append(fl); const vv = el('div','vv',''); r.append(nm, tr_, vv); bars.append(r); return { fl, vv }; };
+    const b1 = mk('48 层都用全注意力','假设：每 token 96 KB','color-mix(in srgb, var(--c-norm) 70%, var(--surface))');
+    const b2 = mk('Qwen 4：12 层 QSA','KV 缓存：每 token 24 KB','var(--c-qsa)');
+    const b3 = mk('Qwen 4：36 层 GDN','记忆：固定 ≈ 57 MB','var(--c-gdn)');
+    const read = el('div','chips'); const r1 = el('div','stat','<b></b><span>全注意力：每生成 1 个 token 每层要读的旧 token</span>'), r2 = el('div','stat','<b></b><span>QSA：每层最多细看的 token</span>');
+    read.append(r1, r2);
+    sc.append(lab, sl, ticks, bars, read);
+    const toT = v => Math.round(Math.exp(LO + (HI - LO) * v / 100));
+    const fb = b => b >= 1e9 ? (b / 1e9).toFixed(1) + ' GB' : (b / 1e6).toFixed(0) + ' MB';
+    const fT = n => n >= 1e6 ? (n / 1e6).toFixed(1) + 'M' : n >= 1e3 ? Math.round(n / 1e3) + 'K' : String(n);
+    const maxB = 98304 * 1000000;
+    function upd(){
+      const Tn = toT(+sl.value); const a = 98304 * Tn, b = 24576 * Tn, c = 36 * 48 * 128 * 128 * 2;
+      lab.innerHTML = `上下文：<span class="mono">${Tn.toLocaleString('zh-CN')}</span> 个 token`;
+      b1.fl.style.width = (a / maxB * 100) + '%'; b1.vv.textContent = fb(a);
+      b2.fl.style.width = (b / maxB * 100) + '%'; b2.vv.textContent = fb(b);
+      b3.fl.style.width = Math.max(0.6, c / maxB * 100) + '%'; b3.vv.textContent = fb(c);
+      r1.firstChild.textContent = fT(Tn); r2.firstChild.textContent = fT(Math.min(Tn, 2048));
+    }
+    sl.addEventListener('input', () => { upd(); say(`${toT(+sl.value).toLocaleString('zh-CN')} 个 token：Qwen 4 布局的缓存是「全用全注意力」的 1/4，而且每步只细看最多 2048 个 token。`); });
+    upd();
+    await wait(400);
+    say('上下文从 4K 慢慢增加到 100 万……');
+    for (let v = 0; v <= 100; v += 2){ sl.value = String(v); upd(); await wait(55); }
+    say('到 100 万 token：全注意力假设要约 98 GB 缓存，Qwen 4 布局约 25 GB，GDN 记忆始终 57 MB。你可以自己拖动滑块试试。');
+  }
+}
+];
+
+/* ---------------- 控制逻辑 ---------------- */
+const stepNo = document.getElementById('stepNo'), stepTitle = document.getElementById('stepTitle'), stepShape = document.getElementById('stepShape');
+const explainEl = document.getElementById('explain'), stepList = document.getElementById('stepList');
+const playBtn = document.getElementById('playBtn'), prevBtn = document.getElementById('prevBtn'), nextBtn = document.getElementById('nextBtn');
+const seen = { transformer: new Set(), qwen4: new Set() };
+function renderList(){
+  stepList.innerHTML = '';
+  STEPS[model].forEach((s, i) => { const li = el('li'); const b = el('button', seen[model].has(i) ? 'seen' : '', `<span class="n">${i + 1}</span>${s.short}`); b.type = 'button'; if (i === idx) b.setAttribute('aria-current','step'); b.addEventListener('click', () => { setPlaying(false); go(i); }); li.append(b); stepList.append(li); });
+  const cur = stepList.children[idx]; if (cur) cur.firstChild.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+}
+function renderExplain(s){
+  explainEl.innerHTML = `<p class="lead">${s.lead}</p><ul>${s.points.map(p => `<li>${p}</li>`).join('')}</ul>` +
+    (s.analogy ? `<div class="box analogy"><b>打个比方</b>${s.analogy}</div>` : '') +
+    (s.real ? `<div class="box real"><b>真实模型里</b>${s.real}</div>` : '');
+}
+async function go(i){
+  gen++; const my = gen;
+  const list = STEPS[model]; idx = Math.max(0, Math.min(list.length - 1, i));
+  const s = list[idx]; seen[model].add(idx);
+  stepNo.textContent = `${idx + 1} / ${list.length}`; stepTitle.innerHTML = s.title; stepShape.innerHTML = '形状：' + s.shape;
+  prevBtn.disabled = idx === 0; nextBtn.disabled = idx === list.length - 1;
+  highlightMap(s.map); mapCursor([]); renderExplain(s); renderList();
+  stage.innerHTML = ''; stage.scrollLeft = 0; stage.dataset.done = '0'; say('');
+  const sc = el('div','scene'); stage.append(sc);
+  try {
+    await s.run(sc);
+    if (my !== gen) return;
+    stage.dataset.done = '1';
+    if (playing){ await wait(2600); if (idx < list.length - 1) go(idx + 1); else setPlaying(false); }
+  } catch (e){ if (e !== ABORT) { console.error(e); stage.dataset.done = 'error'; } }
+}
+function setPlaying(p){
+  playing = p;
+  playBtn.querySelector('span').textContent = p ? '暂停' : '自动播放';
+  playBtn.querySelector('svg').innerHTML = p ? '<path d="M4 2.5h3v11H4zM9 2.5h3v11H9z"/>' : '<path d="M4 2.5v11l9-5.5z"/>';
+  if (p && stage.dataset.done === '1'){ if (idx < STEPS[model].length - 1) go(idx + 1); else go(0); }
+}
+function setModel(m, fromHash){
+  if (!STEPS[m]) m = 'transformer';
+  model = m; setPlaying(false);
+  document.querySelectorAll('.tabs button').forEach(b => b.setAttribute('aria-selected', String(b.dataset.model === m)));
+  drawMap(m);
+  if (!fromHash){ try { history.replaceState(null, '', '#' + m); } catch (e) { try { location.hash = m; } catch (e2) {} } }
+  go(0);
+}
+document.querySelectorAll('.tabs button').forEach(b => b.addEventListener('click', () => { if (b.dataset.model !== model) setModel(b.dataset.model); }));
+prevBtn.addEventListener('click', () => { setPlaying(false); go(idx - 1); });
+nextBtn.addEventListener('click', () => { setPlaying(false); go(idx + 1); });
+document.getElementById('replayBtn').addEventListener('click', () => { setPlaying(false); go(idx); });
+playBtn.addEventListener('click', () => setPlaying(!playing));
+document.getElementById('speedSel').addEventListener('change', e => { speed = +e.target.value; });
+document.addEventListener('keydown', e => {
+  const tag = (e.target.tagName || '').toLowerCase(); if (tag === 'input' || tag === 'select' || tag === 'textarea') return;
+  if (e.key === 'ArrowRight'){ e.preventDefault(); setPlaying(false); go(idx + 1); }
+  else if (e.key === 'ArrowLeft'){ e.preventDefault(); setPlaying(false); go(idx - 1); }
+  else if (e.key === ' ' && tag !== 'button'){ e.preventDefault(); setPlaying(!playing); }
+});
+window.addEventListener('hashchange', () => { const m = location.hash.slice(1); if (STEPS[m] && m !== model) setModel(m, true); });
+window.__go = (m, i) => { if (m !== model) { model = m; drawMap(m); document.querySelectorAll('.tabs button').forEach(b => b.setAttribute('aria-selected', String(b.dataset.model === m))); } setPlaying(false); go(i); };
+window.__count = m => STEPS[m].length;
+const startHash = (location.hash || '').slice(1);
+setModel(STEPS[startHash] ? startHash : 'transformer', true);
+})();
+</script>
+</body>
+</html>
