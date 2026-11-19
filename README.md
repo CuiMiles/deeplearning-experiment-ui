@@ -11,13 +11,31 @@
 
 > 仓库自带的 17 个实验、所有数字、所有“【虚构示例】”论文和合成视频**均为编造**，仅用于展示模板。数据集名称、指标定义和透镜库中的历史事实是真实的。
 
-| 总览 | 实验详情 |
-|---|---|
-| ![总览](docs/images/overview.jpg) | ![详情](docs/images/detail.jpg) |
-| **视频定位播放器**（逐帧、时间轴、边界 ±4 帧、模型输入帧） | **研究启发**（启发链路、历史回声、假设、论文方向） |
-| ![播放器](docs/images/player.jpg) | ![研究启发](docs/images/insights.jpg) |
+## 预览
 
-![文献核查](docs/images/claims.jpg)
+> 下面的截图来自仓库自带的示例数据，全部图片在 [`docs/preview/`](docs/preview/)。
+
+| 实验总览 | 实验详情：30 秒看懂 |
+|---|---|
+| ![实验总览](docs/preview/01-overview.jpg) | ![实验详情](docs/preview/02-detail.jpg) |
+| **主结果与训练过程** | **消融（相对默认设置的 Δ）** |
+| ![主结果](docs/preview/03-results.jpg) | ![消融](docs/preview/04-ablations.jpg) |
+| **研究启发：启发链路** | **历史回声：结构映射与可借用的解法** |
+| ![研究启发](docs/preview/06-insights.jpg) | ![历史回声](docs/preview/07-echoes.jpg) |
+| **文献核查：差距分解与可信度清单** | **文献核查总览：声称 vs 实测** |
+| ![文献核查](docs/preview/08-claims.jpg) | ![文献核查总览](docs/preview/11-claims-board.jpg) |
+| **想法板：假设影响 × 成本** | **透镜库：按现象匹配历史先例** |
+| ![想法板](docs/preview/09-ideas.jpg) | ![透镜库](docs/preview/10-lenses.jpg) |
+| **实验对比** | **任务模板** |
+| ![实验对比](docs/preview/12-compare.jpg) | ![任务模板](docs/preview/13-templates.jpg) |
+
+**视频定位播放器**：逐帧步进、GT / 预测 / 模型输入帧时间轴、悬停缩略图、边界 ±4 帧
+
+![视频定位播放器](docs/preview/05-player.jpg)
+
+| 暗色模式 | 手机：详情 | 手机：列表 |
+|---|---|---|
+| ![暗色模式](docs/preview/14-dark.jpg) | ![手机详情](docs/preview/15-mobile-detail.jpg) | ![手机列表](docs/preview/16-mobile-list.jpg) |
 
 ---
 
