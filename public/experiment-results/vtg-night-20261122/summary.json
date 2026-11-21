@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22 03:20:14 CST",
+  "updated": "2026-11-22 03:30:15 CST",
   "complete": false,
   "audit": {
     "width": {
@@ -170,100 +170,100 @@
     "variance_definition": "Population variance of eight official twass1+tiou+parse_penalty rewards > 1e-12. Frame coverage is at least one original selected frame inside the inclusive GT."
   },
   "high": {
-    "total_records": 35,
-    "paired": 17,
+    "total_records": 55,
+    "paired": 26,
     "expected_pairs": 320,
-    "official": 37.647058823529406,
-    "A1": 48.72549019607843,
+    "official": 42.94871794871795,
+    "A1": 52.11538461538461,
     "difference": {
-      "n": 17,
-      "source_count": 17,
-      "mean_pp": 11.078431372549021,
+      "n": 26,
+      "source_count": 24,
+      "mean_pp": 9.166666666666668,
       "ci95_pp": [
-        -3.921568627450979,
-        24.90196078431373
+        -1.7859432234432238,
+        20.321180555555557
       ]
     },
-    "low_budget_same_queries_pp": 8.66013071895425,
+    "low_budget_same_queries_pp": 5.021367521367522,
     "difference_in_advantage": {
-      "n": 17,
-      "source_count": 17,
-      "mean_pp": 2.4183006535947724,
+      "n": 26,
+      "source_count": 24,
+      "mean_pp": 4.145299145299145,
       "ci95_pp": [
-        -15.032679738562091,
-        19.673202614379086
+        -11.620370370370367,
+        20.771825396825406
       ]
     }
   },
   "probe": {
-    "completions": 2160,
+    "completions": 2496,
     "expected_completions": 2552,
     "eligible": 85,
     "by_arm": {
       "plain": {
-        "events": 72,
-        "found": 13,
-        "pass8": 0.18055555555555555,
-        "pass1": 0.04513888888888889,
-        "pass8_one_to_one": 0.18055555555555555,
-        "mean_output_spans": 1.265625
-      },
-      "count": {
-        "events": 72,
-        "found": 27,
-        "pass8": 0.375,
-        "pass1": 0.1388888888888889,
-        "pass8_one_to_one": 0.375,
-        "mean_output_spans": 1.6788194444444444,
-        "vs_plain": {
-          "n": 72,
-          "source_count": 61,
-          "mean_pp": 19.444444444444443,
-          "ci95_pp": [
-            9.090909090909092,
-            30.0
-          ]
-        },
-        "only_arm": 16,
-        "only_plain": 2
+        "events": 84,
+        "found": 16,
+        "pass8": 0.19047619047619047,
+        "pass1": 0.049107142857142856,
+        "pass8_one_to_one": 0.19047619047619047,
+        "mean_output_spans": 1.2291666666666667
       },
       "exclude": {
-        "events": 70,
-        "found": 24,
-        "pass8": 0.34285714285714286,
-        "pass1": 0.15357142857142858,
-        "pass8_one_to_one": 0.34285714285714286,
-        "mean_output_spans": 0.7446428571428572,
+        "events": 83,
+        "found": 25,
+        "pass8": 0.30120481927710846,
+        "pass1": 0.13102409638554216,
+        "pass8_one_to_one": 0.30120481927710846,
+        "mean_output_spans": 0.6867469879518072,
         "vs_plain": {
-          "n": 70,
-          "source_count": 60,
-          "mean_pp": 15.714285714285714,
+          "n": 83,
+          "source_count": 69,
+          "mean_pp": 10.843373493975903,
           "ci95_pp": [
-            2.7777777777777777,
-            28.0
+            -1.1114232209737827,
+            21.951219512195124
+          ]
+        },
+        "only_arm": 18,
+        "only_plain": 9
+      },
+      "count": {
+        "events": 83,
+        "found": 31,
+        "pass8": 0.37349397590361444,
+        "pass1": 0.12951807228915663,
+        "pass8_one_to_one": 0.37349397590361444,
+        "mean_output_spans": 1.6039156626506024,
+        "vs_plain": {
+          "n": 83,
+          "source_count": 69,
+          "mean_pp": 18.072289156626507,
+          "ci95_pp": [
+            8.75,
+            27.63157894736842
           ]
         },
         "only_arm": 17,
-        "only_plain": 6
+        "only_plain": 2
       },
       "local": {
-        "events": 70,
-        "found": 22,
-        "pass8": 0.3142857142857143,
-        "pass1": 0.08392857142857142,
-        "pass8_one_to_one": 0.3142857142857143,
-        "mean_output_spans": 1.3035714285714286,
+        "events": 83,
+        "found": 26,
+        "pass8": 0.3132530120481928,
+        "pass1": 0.09186746987951808,
+        "pass8_one_to_one": 0.3132530120481928,
+        "mean_output_spans": 1.319277108433735,
         "vs_plain": {
-          "n": 70,
-          "source_count": 60,
-          "mean_pp": 12.857142857142858,
+          "n": 83,
+          "source_count": 69,
+          "mean_pp": 12.048192771084338,
           "ci95_pp": [
-            2.985074626865672,
-            22.7866184448463
+            2.5,
+            21.25
           ]
         },
-        "only_arm": 11,
-        "only_plain": 2
+        "only_arm": 13,
+        "only_plain": 3
       }
     }
   },
