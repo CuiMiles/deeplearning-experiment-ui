@@ -1,0 +1,79 @@
+{
+  "methods": {
+    "boundary": [
+      "strong_4fps",
+      "pred_interior",
+      "bp_shift_left",
+      "bp_shift_right"
+    ],
+    "compression": [
+      "native",
+      "sparse",
+      "flexi",
+      "flexi_no_norm"
+    ],
+    "semvid": [
+      "semvid_matched"
+    ]
+  },
+  "boundary_samples": 24,
+  "compression_samples": 48,
+  "expected": {
+    "boundary": 96,
+    "compression": 192,
+    "semvid": 48
+  },
+  "started_unix": 1794987777.0385108,
+  "deadline_unix": 1795029177.0385108,
+  "seed": 202611182,
+  "input_files": {
+    "activity_inputs.json": "898daebdac4bcb721be1e1ad774d57bd66a129af10469511c75ba5cb90886f78",
+    "charades_inputs.json": "3760721ab9b6f0e95eb5a79cb328829f213464cf62a73a8ed01ab3af88412c1d",
+    "frozen_previous.json": "9b8bbc025a4eb28d3f1894089ed56310e3113ddd5689d5170dede44aff74a5fe"
+  },
+  "source_hashes": {
+    "scripts/idea_round2/worker.py": "26ccae4a18d7e2856024c4a6a5ebe31631cb780af16c83723dc6432de8f240c3",
+    "scripts/idea_round2/prepare.py": "cb039cba08a270898617a447784bcd2f3b476e3ccab2f9db43369148489c5a64",
+    "scripts/idea_round2/score.py": "02528ca6c9f720aede2bcc07b8672794ab5ef5e099937a9d78976bdac16c7869",
+    "scripts/idea_round2/supervise.py": "880b5b7981e6ac0655e10092a479d8a16c4caaedb83783318c4a19cf3760538f",
+    "scripts/boundary_pair/common.py": "ff3e6143d3fb872aaedb88a382672c9b4c9aa58676dce1cec1adf6f2bee5cf63",
+    "scripts/bounded_compute.py": "51f4d1bd9f48c02bd9abce54ef035a9cf445c0433d42c55da61bfd8037a38652",
+    "scripts/eval_qwen3_flexi.py": "d89b9f8325d6e8c6783a3ec13b8e18d6522613cc14446713fd3e38df009b1f9c",
+    "scripts/eval_flexi_oracle_subset.py": "0f1e185a436acf955796974a2c812191b5f282a7bdb3f50f02d0f513d508f4f5",
+    "repos/SemVID/src/models/models/modeling_qwen3_vl_semvid.py": "9fe95b323e0e5375a6af44ed737667c6f714864815992a50c2865e51d2b71ff6",
+    "repos/SemVID/configs/_base_/methods/semvid_qwen3.py": "c5964ba431c4b0450d8cbdd68a90ab622eddbd17f1f7c9e3fbb4b50304e6123b"
+  },
+  "models": {
+    "boundary": "[local-path]/models/multimodal/model_reproduction/vtg/models/TimeLens2-4B",
+    "compression": "[local-path]/models/cvpr2027-autoresearch/Qwen--Qwen3-VL-4B-Instruct",
+    "semvid": "[local-path]/models/cvpr2027-autoresearch/Qwen--Qwen3-VL-4B-Instruct"
+  },
+  "source_revision": "432a76928817cdfba7d04c460ac475482cd7c3a4",
+  "strong_reference": {
+    "fps": 4,
+    "max_frames": 384,
+    "max_visual_tokens": 16384,
+    "max_pixels": 230400
+  },
+  "flexi_resolution": "Qwen2.5 diagnostic 2 FPS pixel policy, remapped to same spatial grid on Qwen3",
+  "confirmation": "Original ActivityNet confirmation split untouched",
+  "cap_mib": 8704,
+  "reserve_mib": 2560,
+  "amendments": [
+    {
+      "unix": 1794988661.554791,
+      "previous_worker_sha256": "a1b89047512c71ed7c4f3c13192ead49e227728bc743a9ece853f577d0f02b81",
+      "reason": "SemVID input IDs colocated with embeddings after first multi-GPU dry run failed; strong_4fps uses bounded sequential FFmpeg RGB decode; no existing predictions for these two methods. Other conditions and deadline unchanged."
+    },
+    {
+      "unix": 1794988752.7599106,
+      "previous_worker_sha256": "188dfadf5942d14d5ded1582c0e47ba5ef9e931d4afba39f630a4210261abd8e",
+      "reason": "Initial 24576-token strong path exceeded owned torch cap, so freeze all strong samples at 16384 and use chunked q/k norm. Native visual chunking now bypasses the Flexi port that already chunks in two groups. Keep prior complete records with unchanged frame/group/token semantics."
+    },
+    {
+      "unix": 1794989098.01483,
+      "previous_supervisor_sha256": "fa26c883276c79d8d5a3b02f1e0132450944d33e2025d18256767a7a323fef40",
+      "reason": "SemVID retained-token audit passed on first video, then 2+7 reached owned allocator cap on longer input. Resume on first released high-headroom pair 0+3 or 4+5, same weights and input."
+    }
+  ]
+}

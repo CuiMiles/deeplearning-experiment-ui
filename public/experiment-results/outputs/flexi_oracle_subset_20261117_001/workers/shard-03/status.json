@@ -1,0 +1,7 @@
+{
+  "stage": "evaluating",
+  "completed": 409,
+  "expected": 2626,
+  "last_job": "fps2:charades/99B6U/1:oracle_split_same_tokens",
+  "unix": 1794889049.6512527
+}

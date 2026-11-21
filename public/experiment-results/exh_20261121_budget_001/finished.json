@@ -1,0 +1,9 @@
+{
+  "phase": "finished",
+  "deadline_unix": 1795243607.2140791,
+  "unix": 1795200422.2527893,
+  "completed": 5730,
+  "expected": 5730,
+  "compression_complete": true,
+  "deadline_reached": false
+}

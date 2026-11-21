@@ -1,0 +1,75 @@
+{
+  "created_unix": 1795114408.5632691,
+  "inputs_sha256": "84486b97e33201ecfa659155f0be48df0e96caef84c5b443c464e4effa34c7b7",
+  "labels_sha256": "e187fd60d855bfa3067ccf5a1b0d42656881a096bacfbc9d0e05be954003dffd",
+  "counts": {
+    "omtg": 320,
+    "hold_multi": 301,
+    "hold_single": 150,
+    "charades": 300
+  },
+  "input": "identical to E2 oneshot: ~1 unit/s pool (<=512), 32 centred units (64 frames), max_pixels 256*256, TimeLens2 VUE-TR JSON prompt, greedy, max_new_tokens 256",
+  "models": {
+    "A1_s2@100": {
+      "base": "[local-path]/models/multimodal/model_reproduction/vtg/models/TimeLens2-4B-SFT",
+      "adapter": "[local-path]/models/multimodal/model_reproduction/vtg/exh_20261120/e3_rl/A1_s2/ckpt-100",
+      "added_unix": 1795184539.7515328
+    },
+    "A0_s2@100": {
+      "base": "[local-path]/models/multimodal/model_reproduction/vtg/models/TimeLens2-4B-SFT",
+      "adapter": "[local-path]/models/multimodal/model_reproduction/vtg/exh_20261120/e3_rl/A0_s2/ckpt-100",
+      "added_unix": 1795185590.591864
+    },
+    "A1_s2@200": {
+      "base": "[local-path]/models/multimodal/model_reproduction/vtg/models/TimeLens2-4B-SFT",
+      "adapter": "[local-path]/models/multimodal/model_reproduction/vtg/exh_20261121_budget_001/seed2/A1/ckpt-200",
+      "added_unix": 1795184539.7515328
+    },
+    "A0_s2@200": {
+      "base": "[local-path]/models/multimodal/model_reproduction/vtg/models/TimeLens2-4B-SFT",
+      "adapter": "[local-path]/models/multimodal/model_reproduction/vtg/exh_20261121_budget_001/seed2/A0/ckpt-200",
+      "added_unix": 1795185590.591864
+    }
+  },
+  "primary": "Seed-2 A1 minus A0 at step 200 with the unchanged E3 evaluation protocol; compare 100-step results on the same inputs.",
+  "code_sha256": {
+    "scripts/exh/common.py": "3bf5cc8dfadd3b944eb21403a592c02c592ebfa183506529fa672add1154fe37",
+    "scripts/exh/e2_worker.py": "67201972cb0532807ec531aaec2eed3e2432da1defe066e99114c19fcf3c1b1c",
+    "scripts/exh/e3_eval_worker.py": "5b422f628f060ace432341122976ab706d58e2f43eb5ca104ac4a0b90f9aa569",
+    "scripts/exh/pool_cache.py": "328dfc52ebfea9f217cf939e426eb8feaab227389a8bf7439cdb7b89ce9fc0e9"
+  },
+  "amendments": [
+    {
+      "unix": 1795164575.8236516,
+      "what": "execution-only: optional reverse item order (EXH_REVERSE) and skip items already written, so two workers can share one model; DONE only when all items exist",
+      "old_sha": "314b7145c308b466fbc3d29a638d7d95954981f6a4dc9ff2ec72d658b5ab9db3",
+      "new_sha": "a2308bc7152b769860abdface54f58470628080f190225203bbd45b1555c2c1c"
+    },
+    {
+      "unix": 1795164575.8236568,
+      "what": "seed-2 replicates trained for 100 steps (not 200) to fit the one-day budget; replicate comparison is A1_s2@100 - A0_s2@100 against A1_s1@100 - A0_s1@100"
+    },
+    {
+      "unix": 1795166005.1885862,
+      "what": "execution-only: cache the decoded unit pool across consecutive queries of the same video (pool content unchanged; pool_sha256 recorded per item)",
+      "old_sha": "a2308bc7152b769860abdface54f58470628080f190225203bbd45b1555c2c1c",
+      "new_sha": "44e3ba918da9d82ee76ea69711c09bc8f89d44074fa35c8e242521d2140bcf7a"
+    },
+    {
+      "unix": 1795166765.8286085,
+      "what": "CPU decode of 720p TimeLens2-93K holdout videos is ~60 s per pool under load 36/32 cores; seed-2 replicates (100 steps) are evaluated on OMTG and Charades only; A1_s2 trains on GPUs 3+4 sharing with eval workers (2 GB guard unchanged)"
+    },
+    {
+      "unix": 1795171117.1735134,
+      "what": "execution-only: shared on-disk cache of E2.build_pool outputs (exh_20261120/pool_cache), filled by a CPU-only pre-decode pass; per-item pool_sha256 still recorded",
+      "old_sha": "44e3ba918da9d82ee76ea69711c09bc8f89d44074fa35c8e242521d2140bcf7a",
+      "new_sha": "5b422f628f060ace432341122976ab706d58e2f43eb5ca104ac4a0b90f9aa569"
+    },
+    {
+      "unix": 1795173326.515142,
+      "what": "pool_cache.py: added the sequential-read pre-decode used only to fill the cache; a pre-decoded pool is cached only if its sha equals a pool_sha256 recorded by earlier models for that video (48 videos mismatched and were left to the original decoder)",
+      "old_sha": "d82d9ad2c40b70bb921271a6124a850ff22e805e459e9ded1f31e49b6056c9f7",
+      "new_sha": "328dfc52ebfea9f217cf939e426eb8feaab227389a8bf7439cdb7b89ce9fc0e9"
+    }
+  ]
+}

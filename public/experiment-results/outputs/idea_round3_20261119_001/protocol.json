@@ -1,0 +1,116 @@
+{
+  "seed": 20261119,
+  "methods": [
+    "flexi",
+    "flexi_no_norm",
+    "endpoints",
+    "sparse",
+    "native"
+  ],
+  "started_unix": 1795024173.2263672,
+  "deadline_unix": 1795065573.2263672,
+  "source_hashes": {
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/flexi_timelens_common.py": "47513ca2c8fc873c14b05f13da6762eda5392aca174d976804a22db78df4904a",
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/eval_flexi_oracle_subset.py": "0f1e185a436acf955796974a2c812191b5f282a7bdb3f50f02d0f513d508f4f5",
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/flexi_bounded_pixels.py": "d8edf60c498513221da2c384ea2b88a73b8fb4a531f392fd8fc8bb16e0334e8b",
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/eval_qwen3_flexi.py": "d89b9f8325d6e8c6783a3ec13b8e18d6522613cc14446713fd3e38df009b1f9c",
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/bounded_compute.py": "51f4d1bd9f48c02bd9abce54ef035a9cf445c0433d42c55da61bfd8037a38652",
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/idea_round2/worker.py": "26ccae4a18d7e2856024c4a6a5ebe31631cb780af16c83723dc6432de8f240c3",
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/idea_round2/supervise.py": "880b5b7981e6ac0655e10092a479d8a16c4caaedb83783318c4a19cf3760538f",
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/idea_round2/score.py": "02528ca6c9f720aede2bcc07b8672794ab5ef5e099937a9d78976bdac16c7869",
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/boundary_pair/common.py": "ff3e6143d3fb872aaedb88a382672c9b4c9aa58676dce1cec1adf6f2bee5cf63",
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/supervise_flexi_rapid_diagnostic.py": "fd5451458845bb5eb716bddb4a11861cc0e3bbcae1a4d90c893c6c95888e4419",
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/audit_flexi_boundary_survival.py": "1a2c5a055f698c9760ef87cf2ad354d86217228e93778918b54cae09b4f2fffc",
+    "[local-path]/models/multimodal/model_reproduction/vtg/repos/TimeLens2/evaluation/vlmeval/dataset/timelens.py": "226e1bb617b66168a56a926dd5ed91d366d3b168356edd8004cb551dc269e2ca",
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/idea_round3/prepare.py": "247b61777676bbf629e1f063c6bbcf132d394cd9038aa3532f65afefd7eb18f0",
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/idea_round3/score.py": "f0abd3064cdbed0f982fcf9d4665acfc6efa3ce47a9a7a81c203c3c935049e14",
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/idea_round3/supervise.py": "ab7f111cf3a895d49ea730a9f7ef75b76f2b2a8e00f7813281dad700f8bb9d4c",
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/idea_round3/worker.py": "9ee71f780f10a3d3ea18276cc08217b748e2ad397c86478f4e926614b70315e3",
+    "[local-path]/models/multimodal/model_reproduction/FlexiVideo/source/transformers-flexi/src/transformers/models/qwen2_5_vl/modeling_qwen2_5_vl.py": "6af93410a897cfb7cb16aa11abc69b89eb4a8e804e9b6abd62f295d36710dbae",
+    "[local-path]/models/multimodal/model_reproduction/FlexiVideo/validation_20261018/scripts/validation_core.py": "0fe995f72ba4bbf0c515f0cc553125a01c7b9154d93ff37cba4bb8c956d53976",
+    "[local-path]/models/multimodal/model_reproduction/FlexiVideo/full_benchmark_20261018/scripts/memory_adapters.py": "f3ea92b7d2c706bd3faa35f14834d9d16ded29a134314f161484e5bc8cc0a850"
+  },
+  "frozen_files": {
+    "inputs.json": "529b1b9b0a0df3d6b99dc0047fa8407f829ba7ae842c82091f5189ecb715245b",
+    "labels.json": "721a0b0b1553ed967b094c4a7bc01132e7f4b915a169c878873e6b392ce82e38",
+    "selection_audit.json": "8a5418364da8be288d4872b0d30681d789ac1ab67975057f95e4a004f9304e59",
+    "candidate_shapes.json": "f25a90bc133005827e1a2f4510c8a199dd0f0c4c71fd77b04d28c2763fab622e"
+  },
+  "models": {
+    "q25": "[local-path]/models/cvpr2027-autoresearch/Qwen--Qwen2.5-VL-3B-Instruct",
+    "q3": "[local-path]/models/cvpr2027-autoresearch/Qwen--Qwen3-VL-4B-Instruct"
+  },
+  "workers": {
+    "q25a": {
+      "model": "q25",
+      "partition": 0,
+      "parts": 2,
+      "gpus": [
+        0
+      ],
+      "cap": 9728
+    },
+    "q25b": {
+      "model": "q25",
+      "partition": 1,
+      "parts": 2,
+      "gpus": [
+        3
+      ],
+      "cap": 9728
+    },
+    "q3": {
+      "model": "q3",
+      "partition": 0,
+      "parts": 1,
+      "gpus": [
+        4,
+        5
+      ],
+      "cap": 9728
+    }
+  },
+  "expected": 800,
+  "reserve_mib": 2560,
+  "primary": "flexi_no_norm minus flexi, paired videos, reported separately by dataset and model; main replication is new Qwen3 Charades",
+  "secondary": [
+    "flexi_no_norm minus endpoints",
+    "endpoints minus sparse",
+    "flexi_no_norm minus sparse",
+    "flexi_no_norm minus native"
+  ],
+  "decision": "Call the main replication supported if its paired 95% interval is above zero. Call transfer supported only for tested cells individually clearing zero. Secondary comparisons exploratory; intervals unadjusted. No tuning after looking.",
+  "scoring": "Same official parser for all; primary round predicted endpoints to whole seconds as in previous Charades, report continuous sensitivity, invalid/degenerate IoU=0. 10k paired stratified video bootstrap, leave one out; 0-100 points.",
+  "mechanism": "Identical first+last frame positions of each ATS group in endpoints; original two-frame kernel. Native all adjacent pairs. Four compressed methods have equal tokens per video. Model-specific timestamps fixed within the two Flexi arms and endpoints.",
+  "amendments": [
+    {
+      "unix": 1795056534.6615188,
+      "prior_rows": 53,
+      "old_grid_mismatches": [
+        "records/q25/native/charades__U5RYN__0.json",
+        "records/q25/native/charades__C6C7Q__1.json",
+        "records/q25/native/activitynet__v_e9AsyRGUzTc__0.json",
+        "records/q25/native/activitynet__v_aIXUWoP-L-E__1.json",
+        "records/q25/flexi_no_norm/charades__U5RYN__0.json",
+        "records/q25/flexi_no_norm/charades__C6C7Q__1.json",
+        "records/q25/flexi_no_norm/activitynet__v_e9AsyRGUzTc__0.json",
+        "records/q25/flexi_no_norm/activitynet__v_aIXUWoP-L-E__1.json",
+        "records/q25/endpoints/charades__U5RYN__0.json",
+        "records/q25/endpoints/charades__C6C7Q__1.json",
+        "records/q25/endpoints/activitynet__v_e9AsyRGUzTc__0.json",
+        "records/q25/endpoints/activitynet__v_aIXUWoP-L-E__1.json",
+        "records/q25/sparse/charades__U5RYN__0.json",
+        "records/q25/sparse/charades__C6C7Q__1.json",
+        "records/q25/sparse/activitynet__v_e9AsyRGUzTc__0.json",
+        "records/q25/sparse/activitynet__v_aIXUWoP-L-E__1.json",
+        "records/q25/flexi/charades__U5RYN__0.json",
+        "records/q25/flexi/charades__C6C7Q__1.json",
+        "records/q25/flexi/activitynet__v_e9AsyRGUzTc__0.json",
+        "records/q25/flexi/activitynet__v_aIXUWoP-L-E__1.json"
+      ],
+      "reason": "The Flexi fork floors dimensions where the round-two Qwen3 preprocessing rounds to nearest. Verified 700x392 vs 728x392 for U5RYN. Freeze the previous Qwen3 reference geometry for all 80 clips and serve a single locked SHA-verified decoded pool to both model workers.",
+      "checkpoint": "Only readmit identical source pixel hash, frame indices, ATS groups, source rate and grid. Other predictions are regenerated. The complete prior evidence and scripts are retained in before_pool_fix/.",
+      "order": "Both models use the original frozen cohort order. First pass flexi, flexi_no_norm and endpoints; second pass sparse and native. The five conditions and original deadline are preserved."
+    }
+  ]
+}

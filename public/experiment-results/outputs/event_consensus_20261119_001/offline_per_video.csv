@@ -1,0 +1,801 @@
+task,source,query,ground truth,whole answer,event rescue,extra events and votes,F1 difference pp
+multi,4L79njrBuMQ/,Toyota,"[[907, 1017], [1079, 1088]]","[(949.0, 1072.0), (1077.0, 1152.0)]","[(949.0, 1072.0), (1077.0, 1152.0)]",[],0.0
+multi,ub8aKniQSrk/,Text appears on screen reading BACK TO THE DRAWING BOARD with Portuguese translation,"[[129, 134], [211, 216]]","[(210.0, 218.0)]","[(210.0, 218.0)]",[],0.0
+multi,No5rI2dDb04/,The presentation explains Bioelectronic Medicine using electricity ultrasound and magnetic resonance,"[[891, 984], [996, 1174]]","[(874.0, 994.0)]","[(874.0, 994.0)]",[],0.0
+multi,Cs-gp5Msf6k/,Trading cards,"[[109, 167], [212, 227], [287, 305], [306, 317]]","[(98.0, 120.0), (121.0, 154.0)]","[(98.0, 120.0), (121.0, 154.0), (292.0, 317.0)]","[{'span': (292.0, 317.0), 'votes': 3}]",-4.761904761904762
+multi,1yO2JTks2iQ/,wooden guillotine structure,"[[108, 184], [389, 485]]","[(26.0, 85.0), (89.0, 176.0), (412.0, 582.0)]","[(26.0, 85.0), (89.0, 176.0), (412.0, 582.0)]",[],0.0
+multi,nhoImzouhME/,black eyeliner pencil,"[[512, 549], [550, 559]]","[(477.0, 561.0), (574.0, 582.0)]","[(477.0, 561.0), (574.0, 582.0)]",[],0.0
+multi,4SnSSLvk0Hc/,throwing the gun,"[[176, 180], [217, 220], [234, 237], [241, 243]]","[(165.0, 173.0)]","[(165.0, 173.0)]",[],0.0
+multi,QnAJ1JtcSNg/,Three women are seated in the back of a moving vehicle talking and gesturing,"[[0, 2], [12, 38]]","[(18.0, 33.0), (303.0, 329.0)]","[(18.0, 33.0), (303.0, 329.0)]",[],0.0
+multi,DbceOUc9uDw/,The instructor draws a three item numbered list on a blank screen,"[[232, 282], [529, 589], [819, 872], [1082, 1130]]","[(275.0, 313.0)]","[(275.0, 313.0)]",[],0.0
+multi,x9uoLuiZoX0/,Vulpix,"[[882, 897], [899, 906]]","[(782.0, 785.0)]","[(782.0, 785.0)]",[],0.0
+multi,9TnL1lm_HkQ/,Happy Cruising face mask,"[[162, 182], [222, 224], [343, 369], [399, 424]]","[(155.0, 158.0), (159.0, 174.0), (175.0, 182.0)]","[(155.0, 158.0), (159.0, 174.0), (175.0, 182.0)]",[],0.0
+multi,EgSCMT2_tQE/,elderly man in wheelchair,"[[0, 16], [23, 49], [153, 318], [325, 435]]","[(175.0, 482.0)]","[(0.0, 49.0), (175.0, 482.0)]","[{'span': (0.0, 49.0), 'votes': 3}]",33.33333333333333
+multi,n1tfFgPR3NQ/,Tweet from PFTCommenter,"[[452, 477], [479, 485]]","[(444.0, 453.0)]","[(444.0, 453.0)]",[],0.0
+multi,UMKJJZ0x0OA/,Battery and solenoid,"[[413, 416], [419, 423], [480, 483]]","[(112.0, 157.0)]","[(112.0, 157.0)]",[],0.0
+multi,0hs20Q2A69c/,PetSmart,"[[663, 859], [861, 879]]","[(717.0, 865.0)]","[(717.0, 865.0)]",[],0.0
+multi,AhthMbpNQ24/,A young boy with a bow and arrow walks through the forest accompanied by dogs,"[[161, 190], [200, 212]]","[(35.0, 39.0)]","[(35.0, 39.0)]",[],0.0
+multi,CUXSBaeQllk/,The bear wears a gas mask and sprays green smoke from a canister,"[[870, 876], [1028, 1035]]","[(1002.0, 1006.0)]","[(875.0, 878.0), (1002.0, 1006.0)]","[{'span': (875.0, 878.0), 'votes': 3}]",0.0
+multi,0heaeehqSy8/,Kharkiv,"[[36, 78], [81, 92]]","[(82.0, 92.0)]","[(82.0, 92.0)]",[],0.0
+multi,FmzWlooIpPM/,Millennium Falcon,"[[173, 188], [191, 203]]","[(155.0, 179.0)]","[(155.0, 179.0)]",[],0.0
+multi,M2Rlrmw3_Pk/,A small white dog sits on the man's shoulders in the kitchen,"[[1014, 1033], [1044, 1046]]","[(1014.0, 1034.0)]","[(1014.0, 1034.0)]",[],0.0
+multi,AQ-r5uk7Vb0/,AMD Athlon 200GE held in hand,"[[174, 185], [291, 307]]","[(171.0, 185.0)]","[(171.0, 185.0)]",[],0.0
+multi,C-TA7x-nwBo/,The plants behind the speaker have long fan-shaped leaves,"[[0, 83], [950, 1093]]","[(0.0, 152.0)]","[(0.0, 152.0)]",[],0.0
+multi,7qd-kOa7PLU/,An aerial shot shows the black SUV driving along a winding road through arid terrain,"[[307, 318], [918, 927]]","[(916.0, 927.0)]","[(916.0, 927.0)]",[],0.0
+multi,FLZtljVoRjI/,A woman is explaining the intricate artwork on a painted door,"[[243, 268], [274, 280]]","[(238.0, 280.0)]","[(238.0, 280.0)]",[],0.0
+multi,9kIkMgJQXTA/,The speaker shows a photograph of Regina from Tharaka Valley Kenya who speaks Swahili,"[[227, 239], [240, 261]]","[(230.0, 259.0)]","[(230.0, 259.0)]",[],0.0
+multi,voXCBeJTuH4/,vacuum cleaner,"[[940, 944], [945, 950]]","[(942.0, 952.0)]","[(942.0, 952.0)]",[],0.0
+multi,vk1kWCqQ3lA/,egg donation,"[[10, 69], [70, 78]]","[(13.0, 55.0)]","[(13.0, 55.0)]",[],0.0
+multi,q7q2Zu_UpT4/,IBA Number text overlay,"[[78, 83], [92, 193]]","[(75.0, 82.0)]","[(75.0, 82.0)]",[],0.0
+multi,nRr0D1SwN1c/,A silver station wagon with Alizes Automobiles S.A. written on the back window is parked on a rural road,"[[64, 73], [82, 92]]","[(59.0, 73.0)]","[(59.0, 73.0)]",[],0.0
+multi,o4ixLEWtE0E/,Bionic Dues title screen,"[[1, 7], [991, 992]]","[(830.0, 839.0)]","[(1.5, 5.5), (830.0, 839.0)]","[{'span': (1.5, 5.5), 'votes': 4}]",50.0
+multi,B_akYZxwN3s/,The solution recommends separating document data from SAP systems using Content Server or BTP DMS,"[[250, 342], [914, 943]]","[(151.0, 250.0)]","[(151.0, 250.0)]",[],0.0
+multi,sM0flzYWjcs/,footswitch,"[[220, 243], [245, 252]]","[(201.0, 219.0)]","[(201.0, 219.0)]",[],0.0
+multi,vWzcmpu0ySA/,A soldier stands alone scanning the area with yellow-tinted goggles,"[[176, 184], [198, 204]]","[(61.0, 133.0)]","[(61.0, 133.0)]",[],0.0
+multi,8Cn-lsWTZdw/,split-screen reaction,"[[359, 363], [369, 371]]","[(359.0, 392.2), (415.0, 439.1)]","[(359.0, 392.2), (415.0, 439.1)]",[],0.0
+multi,FSLIH5asc2Y/,Team Deathmatch,"[[496, 539], [555, 596]]","[(130.0, 586.0)]","[(130.0, 586.0), (687.0, 947.0)]","[{'span': (687.0, 947.0), 'votes': 3}]",0.0
+multi,I8B8CLokO4A/,The video displays the YouTube channel MR VYAS with 80.8K subscribers,"[[61, 93], [177, 192]]","[(60.0, 81.0), (180.0, 193.0)]","[(60.0, 81.0), (180.0, 193.0)]",[],0.0
+multi,r4_43oyQSPw/,The speaker wears a blue and white checkered shirt and a TEDx name tag,"[[18, 25], [31, 138], [386, 399], [404, 479]]","[(7.0, 137.0)]","[(7.0, 137.0)]",[],0.0
+multi,pQLEptBxPlE/,A man wearing a black hat with ear flaps sits inside a car and speaks to the camera,"[[111, 149], [154, 169], [597, 603]]","[(107.0, 153.0)]","[(107.0, 153.0)]",[],0.0
+multi,pqjcmZlh6tE/,Rachel E. Gross is identified as a Science Journalist and Author speaking about Vagina Obscura,"[[123, 129], [136, 143]]","[(121.0, 141.0)]","[(121.0, 141.0)]",[],0.0
+multi,IY055ptxD2Y/,safety goggles and hammer,"[[318, 340], [420, 435]]","[(317.0, 341.0)]","[(317.0, 341.0)]",[],0.0
+multi,FRn3SdzBTUo/,Two girls in yellow and black shirts walk together on a gravel path,"[[171, 174], [192, 201]]","[(140.0, 155.0)]","[(140.0, 155.0)]",[],0.0
+multi,qY7NDD2bFOY/,cluttered workbench,"[[240, 243], [249, 265], [603, 643], [667, 672]]","[(595.0, 602.0), (615.0, 648.0)]","[(595.0, 602.0), (615.0, 648.0)]",[],0.0
+multi,ACsDae19bSo/,Koenigsegg Agera,"[[49, 53], [54, 57], [229, 321]]","[(232.0, 288.0)]","[(232.0, 288.0)]",[],0.0
+multi,9-FXU9Kl8qg/,Spotted pufferfish swimming,"[[297, 301], [309, 316], [326, 337], [345, 357], [363, 441]]","[(355.0, 435.0)]","[(355.0, 435.0)]",[],0.0
+multi,P8A4ivmCCk4/,audio waveform visualization,"[[721, 732], [744, 747]]","[(686.0, 691.0), (719.0, 733.0)]","[(686.0, 691.0), (719.0, 733.0), (744.0, 750.0)]","[{'span': (744.0, 750.0), 'votes': 4}]",30.000000000000004
+multi,ohNIBtuxDqA/,Gucci the sinaloan milk snake,"[[543, 583], [644, 654]]","[(539.0, 588.0)]","[(539.0, 588.0)]",[],0.0
+multi,xd3gCLLadJM/,MACD指标,"[[0, 56], [57, 228]]","[(38.0, 249.0)]","[(38.0, 249.0)]",[],0.0
+multi,9wvXFZZuQtw/,The player navigates through Style and Accessory tabs to optimize equipment,"[[129, 137], [160, 169]]","[(9.0, 115.0)]","[(9.0, 115.0)]",[],0.0
+multi,IZ6krgbGUDU/,Ronaldo Nazário shown celebrating in Real Madrid and AC Milan jerseys,"[[310, 339], [343, 345]]","[(158.0, 177.0)]","[(158.0, 177.0)]",[],0.0
+multi,qu-gdSMyqjo/,White string with colorful tassels,"[[0, 1], [310, 379]]","[(309.0, 379.0)]","[(309.0, 379.0)]",[],0.0
+multi,FMY4XcKtDjk/,Hon-Kawagoe Station,"[[0, 28], [30, 34]]","[(0.0, 36.0)]","[(0.0, 36.0)]",[],0.0
+multi,Hz5STDWfl-Y/,Pit stop,"[[196, 222], [274, 302], [634, 642], [644, 681]]","[(633.0, 644.0)]","[(633.0, 644.0)]",[],0.0
+multi,G3DdAizFkus/,NASA finds a nearby star system with seven Earth-like planets orbiting a dim star,"[[8, 25], [29, 98]]","[(9.0, 42.0)]","[(9.0, 42.0)]",[],0.0
+multi,9ccKcSwrl-o/,Jim Himes,"[[797, 826], [827, 889]]","[(773.0, 889.0)]","[(773.0, 889.0)]",[],0.0
+multi,FZ8cHTLDNI8/,Three bare tree trunks are arranged in a rectangular container filled with pebbles,"[[746, 848], [885, 892]]","[(650.0, 812.0)]","[(650.0, 812.0)]",[],0.0
+multi,FtipRBz5Q0w/,The speaker maintains a composed posture while delivering the lecture,"[[0, 145], [269, 382], [565, 678]]","[(0.0, 238.0)]","[(0.0, 238.0)]",[],0.0
+multi,9aF56NzykLc/,black rabbit-shaped sex toy,"[[484, 499], [533, 671]]","[(492.0, 501.0), (533.0, 569.0), (571.0, 596.0)]","[(492.0, 501.0), (533.0, 569.0), (571.0, 596.0)]",[],0.0
+multi,uy1TwvWvy_8/,red sports car,"[[118, 131], [133, 140]]","[(531.0, 570.0)]","[(41.0, 141.0), (531.0, 570.0)]","[{'span': (41.0, 141.0), 'votes': 3}]",0.0
+multi,AaR22gTVoas/,Muddy dirt road,"[[95, 198], [272, 375], [803, 884]]","[(0.0, 75.0), (96.0, 198.0), (374.0, 413.0), (481.0, 783.0)]","[(0.0, 75.0), (96.0, 198.0), (374.0, 413.0), (481.0, 783.0)]",[],0.0
+multi,BacpwNJWVP4/,seated straddle stretch,"[[213, 261], [263, 315]]","[(277.0, 317.0), (403.0, 458.0)]","[(277.0, 317.0), (403.0, 458.0)]",[],0.0
+multi,Qmr9LbNPkdI/,Man cooking in kitchen,"[[756, 766], [778, 802]]","[(748.0, 803.0)]","[(748.0, 803.0)]",[],0.0
+multi,ICtpsk4PdGU/,The man examines various Nike shorts priced at $19.99,"[[74, 96], [115, 131]]","[(73.0, 93.0)]","[(73.0, 93.0)]",[],0.0
+multi,6xGFe-B4c3s/,digital menu screen,"[[54, 74], [276, 282], [632, 638]]","[(53.0, 83.0), (275.0, 287.0)]","[(53.0, 83.0), (275.0, 287.0)]",[],0.0
+multi,IU3RY3fqGec/,volume slider,"[[599, 607], [609, 694]]","[(332.0, 367.0)]","[(332.0, 367.0)]",[],0.0
+multi,ALXx_GofSds/,Two men are seated inside a car with red racing harnesses engaged in conversation while driving,"[[392, 417], [599, 623], [648, 667]]","[(373.0, 377.0), (391.0, 416.0), (497.0, 532.0), (558.0, 568.0), (649.0, 665.0)]","[(373.0, 377.0), (391.0, 416.0), (497.0, 532.0), (558.0, 568.0), (649.0, 665.0)]",[],0.0
+multi,ICCEHiSyVeM/,XRP market cap 20 billion dollars,"[[0, 11], [527, 531]]","[(0.0, 10.0)]","[(0.0, 10.0)]",[],0.0
+multi,5PlhyUJGtzQ/,The camera zooms in on the speaker during her presentation,"[[71, 83], [228, 259]]","[(73.0, 84.0)]","[(73.0, 84.0)]",[],0.0
+multi,BtpP5AK33E0/,shirtless skier,"[[731, 776], [781, 834]]","[(687.0, 833.0)]","[(687.0, 833.0)]",[],0.0
+multi,raFqtle2llw/,penguins proposing,"[[214, 219], [225, 230], [235, 245]]","[(208.0, 249.0)]","[(208.0, 249.0)]",[],0.0
+multi,oiApOzxjlas/,stat streaming,"[[112, 205], [749, 829]]","[(376.0, 518.0), (524.0, 528.0)]","[(376.0, 518.0), (524.0, 528.0)]",[],0.0
+multi,B4NM-UAL1po/,Fractal Design Celsius S36,"[[30, 38], [50, 54], [74, 87]]","[(27.0, 62.0), (78.0, 101.0)]","[(27.0, 62.0), (78.0, 101.0)]",[],0.0
+multi,Cf6uYhLXXek/,Workers assemble ramps in a time-lapse sequence of skatepark construction,"[[599, 608], [618, 624]]","[(687.0, 732.0)]","[(687.0, 732.0)]",[],0.0
+multi,8lARtQf93Lk/,blue and gold striped headdress,"[[25, 63], [158, 163]]","[(109.0, 159.0)]","[(109.0, 159.0)]",[],0.0
+multi,IAb9b3Hrea0/,The gloved hand rotates a used spark plug to show wear deposits and discoloration,"[[562, 619], [627, 652]]","[(526.0, 612.0)]","[(526.0, 612.0)]",[],0.0
+multi,v-HtS4Gq0vc/,GUNTALK LIVE,"[[0, 55], [57, 115]]","[(0.0, 53.0), (759.0, 808.0)]","[(0.0, 53.0), (759.0, 808.0)]",[],0.0
+multi,IQ3fk4MnZzs/,A white tuk-tuk with a black canopy drives ahead of the motorcycle,"[[114, 159], [174, 177]]","[(114.0, 158.0)]","[(114.0, 158.0)]",[],0.0
+multi,WiTP0cPWdzU/,The player traverses across multiple rooftops using parkour-style movements,"[[433, 515], [516, 576]]","[(0.0, 95.0)]","[(0.0, 95.0)]",[],0.0
+multi,82KNzkjHY5w/,The camera pans around the exterior of the yellow muscle car,"[[497, 593], [608, 673], [716, 766]]","[(14.0, 26.0)]","[(14.0, 26.0), (552.0, 669.0)]","[{'span': (552.0, 669.0), 'votes': 3}]",40.0
+multi,G7IW4GdmwHM/,The stir-fried filling is placed onto flattened dough and sealed,"[[448, 474], [492, 530], [536, 566]]","[(458.0, 569.0), (593.0, 630.0)]","[(10.0, 26.0), (458.0, 569.0), (593.0, 630.0)]","[{'span': (10.0, 26.0), 'votes': 3}]",0.0
+multi,BwB-hXyk2-w/,glowing red sphere breaking apart,"[[327, 359], [381, 387]]","[(326.0, 359.0)]","[(326.0, 359.0)]",[],0.0
+multi,LVhzftD-QSA/,Call to action to subscribe to the YouTube channel DolphinsNews,"[[30, 51], [137, 174], [539, 593], [759, 773]]","[(29.0, 53.0)]","[(29.0, 53.0)]",[],0.0
+multi,1svBO6wLqtc/,A person uses a blue net to scoop shrimp from murky water near concrete blocks,"[[51, 59], [85, 102]]","[(50.0, 58.0)]","[(50.0, 58.0)]",[],0.0
+multi,nrFYoDeesE0/,The woman stands beside tall plants bearing clusters of red flowers with thorny stems,"[[729, 737], [748, 756]]","[(729.0, 736.0)]","[(729.0, 736.0)]",[],0.0
+multi,CfuY98d6RjY/,ロマノフ王朝,"[[293, 330], [339, 345]]","[(290.0, 339.0)]","[(290.0, 339.0)]",[],0.0
+multi,vaGZapAGvwM/,instruction set,"[[83, 108], [109, 111]]","[(192.0, 252.0)]","[(192.0, 252.0)]",[],0.0
+multi,P0dPcDXEMzE/,The camera pans around a silver Honda CR-V showing different angles,"[[196, 239], [755, 767]]","[(190.0, 239.0)]","[(190.0, 239.0)]",[],0.0
+multi,941CJySAOX8/,spine model,"[[10, 85], [88, 195], [197, 230]]","[(89.0, 197.0)]","[(89.0, 197.0)]",[],0.0
+multi,9FcsleXW-RI/,The presenter climbs a ladder to apply brown painter's tape along the ceiling corner,"[[285, 303], [349, 365]]","[(257.0, 278.0)]","[(257.0, 278.0)]",[],0.0
+multi,8B55WgN0ZHk/,man wearing a black puffer jacket,"[[0, 146], [449, 562]]","[(0.0, 115.0), (251.0, 343.0)]","[(0.0, 115.0), (251.0, 343.0)]",[],0.0
+multi,D9KMc0X5Geo/,A person uses a drill press to create holes in a metal plate,"[[268, 280], [298, 305]]","[(268.0, 280.0)]","[(268.0, 280.0), (296.5, 302.5)]","[{'span': (296.5, 302.5), 'votes': 4}]",33.333333333333336
+multi,7KcB0nJtb3I/,PREVAIL hoodie,"[[330, 337], [368, 375]]","[(328.0, 337.0)]","[(328.0, 337.0), (370.0, 373.0)]","[{'span': (370.0, 373.0), 'votes': 3}]",-16.666666666666664
+multi,3kRFyhohQuo/,FORGED STEELE shirt,"[[0, 60], [209, 265], [268, 269], [683, 769]]","[(0.0, 63.0)]","[(0.0, 63.0)]",[],0.0
+multi,86_aREd-ydE/,man standing and speaking,"[[321, 490], [553, 664], [671, 747]]","[(0.0, 71.0)]","[(0.0, 71.0)]",[],0.0
+multi,5emWEGFdAb0/,lion wearing hat,"[[369, 375], [400, 526]]","[(406.0, 472.0), (474.0, 482.0)]","[(406.0, 472.0), (474.0, 482.0)]",[],0.0
+multi,7AF3zBnkelY/,Gaurav Chaudhary,"[[7, 32], [38, 83]]","[(11.0, 94.0)]","[(11.0, 94.0)]",[],0.0
+multi,ocJz4ev-mFs/,A man in a white t-shirt feeds an emu from a gumball-style dispenser mounted on a wooden fence,"[[133, 187], [189, 223]]","[(131.0, 204.0)]","[(131.0, 204.0)]",[],0.0
+multi,P68MmRSrRGQ/,ballot box,"[[229, 236], [243, 246]]","[(228.0, 236.0)]","[(228.0, 236.0)]",[],0.0
+multi,AdQbLMyufcE/,The man points both index fingers downward,"[[702, 704], [716, 719]]","[(701.0, 704.0)]","[(701.0, 704.0)]",[],0.0
+multi,7zJ9rexwMcg/,heart shape with hands,"[[10, 12], [727, 728]]","[(718.0, 726.0)]","[(718.0, 726.0)]",[],0.0
+multi,FhzleIozvTY/,The video presents a series of multiple-choice questions related to road markings displayed over images of various road scenarios,"[[592, 673], [674, 727]]","[(527.0, 732.0)]","[(527.0, 732.0)]",[],0.0
+multi,F2dgLx9dZVw/,A saucepan on a stovetop contains a bubbling red-orange liquid with white beans and a metal spoon,"[[622, 636], [667, 684]]","[(621.0, 638.0), (667.0, 687.0)]","[(621.0, 638.0), (667.0, 687.0)]",[],0.0
+multi,n_-Yuaw06sE/,miniature switch with wooden parts,"[[314, 365], [378, 415]]","[(13.0, 14.0)]","[(13.0, 14.0)]",[],0.0
+multi,ITxXKt2gx2g/,digital battery tester,"[[426, 479], [484, 492], [497, 582], [650, 728]]","[(601.0, 726.0)]","[(601.0, 726.0)]",[],0.0
+multi,mmzCr-GKzoA/,Side-by-side comparison of Earth and Kepler-452b,"[[56, 61], [129, 133]]","[(56.0, 61.0)]","[(56.0, 61.0)]",[],0.0
+multi,BCyANym2Ncc/,The presenters discuss the Honda CBR 1000RR Repsol with Hangar Motos logo,"[[111, 136], [152, 182]]","[(110.0, 183.0)]","[(110.0, 183.0)]",[],0.0
+multi,GyC0YFei-AQ/,A man performs bicep curls with dumbbells while standing on a rocky shoreline,"[[174, 188], [209, 226]]","[(236.0, 251.0)]","[(236.0, 251.0)]",[],0.0
+multi,AUIXU4QMB70/,Exposed ductwork and electrical wiring are visible in the ceiling,"[[138, 143], [264, 291]]","[(262.0, 291.0)]","[(262.0, 291.0)]",[],0.0
+multi,FG76n_fopjg/,flashlight,"[[585, 656], [676, 682]]","[(606.0, 663.0)]","[(606.0, 663.0)]",[],0.0
+multi,nSu7OwbnoeA/,Spray bottle,"[[37, 98], [381, 387]]","[(37.5, 107.4)]","[(37.5, 107.4)]",[],0.0
+multi,AkHWbULVigA/,Split-screen view of DAW and hardware,"[[414, 419], [466, 493]]","[(294.0, 320.0), (434.0, 448.0), (466.0, 498.0), (506.0, 509.0), (554.0, 594.0)]","[(294.0, 320.0), (434.0, 448.0), (466.0, 498.0), (506.0, 509.0), (554.0, 594.0)]",[],0.0
+multi,5ejkpGT71MI/,Man wearing a white Red Bull cap,"[[45, 155], [188, 221]]","[(43.0, 74.0)]","[(43.0, 74.0)]",[],0.0
+multi,Ozq8ANWYgrk/,A vendor explains olive oil products at the Burgh Pusht Olive tent,"[[184, 297], [303, 381]]","[(200.0, 296.0)]","[(200.0, 296.0)]",[],0.0
+multi,n235Rl0Z5xk/,confrontation in hallway,"[[387, 398], [453, 461]]","[(646.0, 655.0)]","[(646.0, 655.0)]",[],0.0
+multi,o0fWGyA5v2A/,Christian McCaffrey,"[[115, 163], [214, 276]]","[(72.0, 164.0), (216.0, 259.0)]","[(72.0, 164.0), (216.0, 259.0)]",[],0.0
+multi,A2T96U4mwHw/,airplane,"[[620, 642], [652, 709]]","[(668.0, 685.0)]","[(668.0, 685.0)]",[],0.0
+multi,HHU9PnvEHwg/,Pluto,"[[341, 351], [354, 365]]","[(347.0, 372.0)]","[(347.0, 372.0)]",[],0.0
+multi,6nlN2pFC_Cs/,A man wearing a helmet feeds monkeys from a plastic bag,"[[0, 4], [327, 431]]","[(0.0, 3.0)]","[(0.0, 3.0)]",[],0.0
+multi,GtAEibVtQe8/,dog lying on garage floor,"[[385, 500], [523, 527]]","[(413.0, 486.0)]","[(413.0, 486.0)]",[],0.0
+multi,GrqyOwbtWCU/,man clutching stomach,"[[128, 148], [151, 168]]","[(129.0, 169.0)]","[(129.0, 169.0)]",[],0.0
+multi,qoBwmR8bdoA/,load between $50 and $74.99,"[[120, 128], [143, 157]]","[(120.0, 138.0)]","[(120.0, 138.0), (172.0, 185.0)]","[{'span': (172.0, 185.0), 'votes': 3}]",0.0
+multi,LUQTsb2N-HI/,compact charging case,"[[188, 219], [320, 340], [346, 389]]","[(310.0, 380.0)]","[(310.0, 380.0)]",[],0.0
+multi,pHVuZkDGL6M/,A woman lifts a young girl onto her shoulders to adjust the top of a Christmas tree,"[[153, 159], [160, 165]]","[(147.0, 156.0)]","[(147.0, 156.0)]",[],0.0
+multi,7tFiOCiVZJg/,Target groups include the scientific community policy makers and financial actors,"[[511, 540], [544, 596]]","[(514.0, 601.0)]","[(514.0, 601.0)]",[],0.0
+multi,8fuSKlQULcg/,Ursa Major,"[[31, 38], [261, 275]]","[(33.0, 39.0)]","[(33.0, 39.0), (262.0, 275.0)]","[{'span': (262.0, 275.0), 'votes': 3}]",33.333333333333336
+multi,mSFOcF2Bi9M/,A man stands beside a light blue Fiat 500 Hybrid in a showroom with THE HYBRID ACCORDING TO FIAT displayed on a screen behind him,"[[0, 46], [64, 71], [78, 80]]","[(0.0, 44.0)]","[(0.0, 44.0)]",[],0.0
+multi,mlFdXN-i7Y8/,Three men take turns stacking boxes to build a tall tower,"[[42, 135], [142, 252], [473, 521]]","[(95.0, 175.0)]","[(95.0, 175.0)]",[],0.0
+multi,EFwAVlVgCrg/,man drinking orange beverage,"[[165, 185], [187, 190]]","[(164.0, 184.0), (342.0, 360.0)]","[(164.0, 184.0), (342.0, 360.0)]",[],0.0
+multi,5a1W6nOnlRE/,A dog rolls over onto its back exposing its belly,"[[158, 165], [187, 191]]","[(270.0, 273.0)]","[(270.0, 273.0)]",[],0.0
+multi,Bx28OcjT7Yc/,roundabout,"[[163, 169], [180, 187]]","[(161.0, 168.0), (370.0, 383.0)]","[(161.0, 168.0), (370.0, 383.0)]",[],0.0
+multi,m2E-ruG3a7k/,A woman with dreadlocks styles her hair into a bun,"[[369, 375], [654, 658]]","[(309.0, 313.0), (369.0, 376.0)]","[(309.0, 313.0), (369.0, 376.0)]",[],0.0
+multi,9oY181iUl-A/,city riding,"[[383, 395], [492, 506], [632, 667]]","[(644.0, 666.0)]","[(493.0, 506.0), (644.0, 666.0)]","[{'span': (493.0, 506.0), 'votes': 3}]",30.000000000000004
+multi,pY1eXoTrTk8/,A man wearing a gray SEDONA AZ t-shirt speaks to the camera indoors,"[[6, 59], [202, 228], [252, 265]]","[(4.0, 52.0)]","[(4.0, 52.0)]",[],0.0
+multi,AGpyCVOVP_8/,A large white and tan guinea pig sits upright on its hind legs facing forward before exiting the frame,"[[285, 311], [316, 320]]","[(281.0, 305.0)]","[(281.0, 305.0)]",[],0.0
+multi,BDXC0OWtEXY/,The man speaks to the camera using expressive hand gestures,"[[17, 64], [603, 633]]","[(22.0, 76.0)]","[(22.0, 76.0), (601.0, 633.0)]","[{'span': (601.0, 633.0), 'votes': 3}]",33.333333333333336
+multi,DQFydT2f8As/,A shirtless man with tattoos on his chest gestures while talking to another man in a forested area near a waterfall,"[[309, 317], [321, 325]]","[(306.0, 315.0)]","[(306.0, 315.0)]",[],0.0
+multi,BnXJ2XJfq3k/,A businessman stands at a crossroads formed by three large white arrows,"[[75, 99], [409, 417], [456, 466]]","[(72.0, 100.0)]","[(72.0, 100.0), (459.0, 465.0)]","[{'span': (459.0, 465.0), 'votes': 3}]",30.000000000000004
+multi,9ukPgN95ZZ0/,Conductor flipping page,"[[131, 132], [259, 264]]","[(262.0, 263.7)]","[(262.0, 263.7)]",[],0.0
+multi,xtRQrSKBQng/,Aira Check,"[[389, 396], [466, 472]]","[(389.0, 397.0), (468.0, 475.0)]","[(389.0, 397.0), (468.0, 475.0)]",[],0.0
+multi,NpTY7Pb5PVs/,shark,"[[0, 66], [68, 80], [82, 101]]","[(1.0, 146.0)]","[(1.0, 146.0)]",[],0.0
+multi,pgQ39X8JLA8/,Three men stand near a concrete wall with one man standing on the wall holding a whisk-like object above another man's head,"[[0, 4], [208, 269]]","[(178.0, 271.0)]","[(178.0, 271.0)]",[],0.0
+multi,lwZvdtZaz_8/,man in red shirt,"[[15, 50], [54, 60], [75, 96], [100, 107], [116, 150], [176, 208]]","[(15.0, 50.0)]","[(15.0, 50.0), (175.0, 208.0)]","[{'span': (175.0, 208.0), 'votes': 3}]",21.42857142857143
+multi,BGq22oGO8rU/,Gloved hand holding knife,"[[172, 178], [200, 205]]","[(164.0, 175.0)]","[(164.0, 175.0)]",[],0.0
+multi,GrFkLyT2u0E/,motorcycle helmet,"[[187, 193], [200, 208]]","[(186.0, 195.0)]","[(186.0, 195.0)]",[],0.0
+multi,Pgsao3taMUI/,Text appears on screen explaining toe drilling technique,"[[488, 492], [499, 504]]","[(395.0, 399.0)]","[(395.0, 399.0)]",[],0.0
+multi,wrxA9Qwvis8/,People dressed in white are playing lawn bowling behind a fence,"[[235, 240], [283, 286]]","[(222.0, 225.0)]","[(222.0, 225.0)]",[],0.0
+multi,5UxZtm9IvCM/,Two individuals appear in a live streaming interface with viewer comments,"[[4, 21], [24, 25]]","[(4.0, 15.0)]","[(4.0, 15.0)]",[],0.0
+multi,3donEhrGjyE/,The video shows raw beef chuck ribs arranged on a metal wire rack inside a baking tray,"[[37, 46], [51, 55], [87, 180]]","[(37.0, 73.0)]","[(37.0, 73.0)]",[],0.0
+multi,pBfkVKvQrcU/,A controller attachment is connected to the smartphone for gaming,"[[511, 519], [527, 542]]","[(512.0, 520.0)]","[(512.0, 520.0)]",[],0.0
+multi,9mb9mlQEHQU/,A woman in a black turtleneck applies makeup to a seated woman with blonde hair,"[[52, 121], [122, 134], [145, 152]]","[(52.0, 109.0)]","[(52.0, 109.0)]",[],0.0
+multi,o4gYx3khEws/,Waves crashing against rocks,"[[90, 101], [171, 186]]","[(89.0, 104.0)]","[(89.0, 104.0)]",[],0.0
+multi,A0uj2Erfjlc/,workers wearing hard hats,"[[97, 132], [166, 173], [216, 231], [271, 283], [330, 420]]","[(97.0, 134.0)]","[(97.0, 134.0)]",[],0.0
+multi,Z7m6FrCLpng/,stack of pancakes,"[[430, 508], [510, 548]]","[(470.0, 548.0)]","[(470.0, 548.0)]",[],0.0
+multi,p_KLuJ60n7U/,A soldier lies injured on the ground while another rushes to provide aid,"[[34, 37], [42, 44]]","[(36.0, 42.0)]","[(36.0, 42.0)]",[],0.0
+multi,QH3Pp-6BcQk/,A headline at the bottom of the screen reads Korean farmers caught dumping discarded melons into the river,"[[11, 80], [153, 245]]","[(12.0, 80.0)]","[(12.0, 80.0)]",[],0.0
+multi,4TRQPinF--E/,orange sunglasses,"[[84, 140], [158, 160]]","[(85.0, 140.0)]","[(85.0, 140.0)]",[],0.0
+multi,92tpVKUvDk4/,nurse costume,"[[181, 185], [288, 334]]","[(281.0, 339.0)]","[(281.0, 339.0)]",[],0.0
+multi,vbZQcP_bWmI/,The player battles demons of the 7th Corps in a desolate reddish-brown battlefield,"[[248, 274], [275, 305], [306, 330]]","[(236.0, 305.0)]","[(236.0, 305.0)]",[],0.0
+multi,EgI_KAkSyCw/,Senator Markey,"[[490, 506], [520, 562]]","[(490.0, 554.0)]","[(490.0, 554.0)]",[],0.0
+multi,LSbE-CRaJ2A/,The man speaks animatedly while gesturing toward the blue BMW with its hood open,"[[150, 177], [183, 195]]","[(149.0, 180.0)]","[(149.0, 180.0), (183.0, 196.0)]","[{'span': (183.0, 196.0), 'votes': 3}]",33.333333333333336
+multi,8Tz9ycScRRo/,peeling mangoes,"[[249, 310], [316, 350], [356, 388]]","[(258.0, 309.0), (312.0, 350.0)]","[(258.0, 309.0), (312.0, 350.0)]",[],0.0
+multi,x_WD1p3IP9E/,"The app provides three main functions: sexual knowledge, community, and mood tracker","[[29, 36], [37, 45]]","[(31.0, 38.0)]","[(31.0, 38.0)]",[],0.0
+multi,rCWY0Upy1Ao.mp4,soil,"[[300, 462], [524, 599]]","[(0.0, 46.0), (85.0, 162.0), (305.0, 446.0)]","[(0.0, 46.0), (85.0, 162.0), (305.0, 446.0)]",[],0.0
+multi,nzDimLknG84.mp4,A man in a red bucket hat gestures while speaking on a grassy hillside,"[[114, 132], [239, 267]]","[(114.0, 131.0)]","[(114.0, 131.0)]",[],0.0
+multi,AA0zENVqvkk.mp4,The woman laughs at a chat confusing a moon emoji with a banana,"[[453, 474], [477, 487]]","[(43.0, 45.0)]","[(43.0, 45.0)]",[],0.0
+multi,6xVFXzdKUZ0.mp4,A millipede curls into a tight spiral shape,"[[323, 352], [383, 441]]","[(321.0, 341.0), (383.0, 437.0), (438.0, 482.0)]","[(321.0, 341.0), (383.0, 437.0), (438.0, 482.0)]",[],0.0
+multi,Bbvl5WzmgCQ.mp4,"발표자가 리테인, 리플레이스, 리호스트, 리플랫폼, 리팩터 5가지 클라우드 전환 모델을 소개한다","[[78, 95], [97, 192]]","[(96.0, 241.0)]","[(96.0, 241.0)]",[],0.0
+multi,FCU2TPAjVZ4.mp4,The man holds a remote control connected to the dog's leash,"[[141, 169], [186, 206], [304, 412], [430, 469]]","[(104.0, 195.0), (247.0, 294.0)]","[(104.0, 195.0), (247.0, 294.0)]",[],0.0
+multi,ULMPaMRmyZs.mp4,men wearing red fez hats,"[[18, 35], [52, 70]]","[(17.0, 35.0)]","[(17.0, 35.0)]",[],0.0
+multi,qIn6m9eY1N4.mp4,The woman cuts large green leaves with scissors and places them into a light-colored bowl,"[[226, 236], [238, 297]]","[(275.0, 313.0)]","[(275.0, 313.0)]",[],0.0
+multi,1zmRmjYiBEU.mp4,The presenter discusses Hyundai AutoEver's merger with Mobilgene,"[[408, 429], [438, 498]]","[(451.0, 537.0)]","[(451.0, 537.0)]",[],0.0
+multi,P4Joae-2cdQ.mp4,Two individuals are seated inside a van with wooden cabinets and a bed in the back,"[[5, 16], [20, 85]]","[(1.0, 94.0)]","[(1.0, 94.0)]",[],0.0
+multi,DBEPGzRJAN8.mp4,laptop,"[[0, 91], [93, 98]]","[(0.0, 91.0)]","[(0.0, 91.0)]",[],0.0
+multi,FyTNsFV_a9U.mp4,Harley-Davidson logo,"[[59, 125], [230, 303]]","[(71.0, 127.0)]","[(71.0, 127.0)]",[],0.0
+multi,pGUnBz3H2tE.mp4,riding over logs,"[[46, 71], [77, 83], [127, 134], [140, 145]]","[(55.0, 72.0), (139.0, 144.0)]","[(55.0, 72.0), (139.0, 144.0), (357.0, 381.0)]","[{'span': (357.0, 381.0), 'votes': 3}]",-9.523809523809524
+multi,DSz913nsC1k.mp4,beach,"[[105, 114], [141, 156]]","[(142.0, 154.0), (395.0, 455.0)]","[(142.0, 154.0), (395.0, 455.0)]",[],0.0
+multi,DKN3jAQh36o.mp4,A close-up view shows the turbocharged engine with the word TURBO prominently displayed on the cover,"[[240, 253], [401, 405]]","[(239.0, 253.0), (401.0, 407.0)]","[(239.0, 253.0), (401.0, 407.0)]",[],0.0
+multi,x9RuTAhB8bs.mp4,A title card introduces the segment as Cricket with Akhtar Abbasi,"[[48, 50], [89, 91]]","[(48.0, 50.0)]","[(48.0, 50.0)]",[],0.0
+multi,YZ4_GJ2sRd0.mp4,tourist viewpoint,"[[341, 428], [459, 464], [474, 509]]","[(414.0, 512.0)]","[(414.0, 512.0)]",[],0.0
+multi,pRGXqG1y4gc.mp4,closed book under hands,"[[0, 84], [372, 483]]","[(0.0, 115.0)]","[(0.0, 115.0)]",[],0.0
+multi,B2h-Of4QvSk.mp4,text overlay about Sandy Hook hoax,"[[97, 107], [149, 163]]","[(97.0, 109.0)]","[(97.0, 109.0)]",[],0.0
+multi,IS0dM8e-i1s.mp4,instrument cluster,"[[332, 349], [377, 380]]","[(299.0, 315.0)]","[(299.0, 315.0)]",[],0.0
+multi,7gJmLpC8NYY.mp4,driving at dusk,"[[172, 190], [209, 218], [266, 278], [330, 346], [365, 379]]","[(173.0, 190.0), (199.0, 218.0), (330.0, 346.0), (365.0, 377.0)]","[(173.0, 190.0), (199.0, 218.0), (330.0, 346.0), (365.0, 377.0)]",[],0.0
+multi,x4CgZAXXtUM.mp4,storage compartment,"[[236, 247], [380, 386]]","[(377.0, 387.0)]","[(235.0, 245.0), (377.0, 387.0)]","[{'span': (235.0, 245.0), 'votes': 3}]",33.333333333333336
+multi,BbiBvHLie-o.mp4,tranquil pond with clear reflections,"[[0, 80], [317, 444]]","[(0.0, 83.0), (318.0, 407.0)]","[(0.0, 83.0), (318.0, 407.0)]",[],0.0
+multi,qGvHJ1ILfp4.mp4,a cow falling into a muddy puddle,"[[370, 372], [376, 377]]","[(375.0, 393.0)]","[(375.0, 393.0)]",[],0.0
+multi,ob8jURQKKng.mp4,emotional reaction,"[[345, 396], [435, 444], [476, 487]]","[(344.0, 379.0)]","[(344.0, 379.0)]",[],0.0
+multi,7rKM44mBbiQ.mp4,Man driving,"[[24, 36], [43, 151]]","[(22.0, 141.0)]","[(22.0, 141.0)]",[],0.0
+multi,PeCrd6kqfdk.mp4,conical fermenter,"[[32, 131], [249, 333]]","[(6.0, 101.0)]","[(6.0, 101.0)]",[],0.0
+multi,Gn__Yg6SJrE.mp4,scoreboard showing 2-0,"[[165, 176], [191, 197]]","[(166.0, 168.0)]","[(166.0, 168.0)]",[],0.0
+multi,EnOwTVk_vdI.mp4,frames per second comparison,"[[223, 336], [339, 357]]","[(339.0, 383.0)]","[(339.0, 383.0)]",[],0.0
+multi,I01cntc-TEg.mp4,The woman speaks directly to the camera while gesturing with her hands,"[[0, 35], [41, 49], [353, 355]]","[(0.0, 69.0)]","[(0.0, 69.0)]",[],0.0
+multi,qZRMN8mAS_w.mp4,Mississippi State Bulldogs,"[[49, 59], [173, 182]]","[(51.0, 58.0)]","[(51.0, 58.0)]",[],0.0
+multi,DuvuTXBl-is.mp4,A man wearing a red jacket covered with white text patterns sits before dark purple curtains,"[[103, 193], [202, 206], [210, 215], [224, 240], [273, 311], [321, 337]]","[(14.0, 55.0), (97.0, 166.0)]","[(14.0, 55.0), (97.0, 166.0)]",[],0.0
+multi,7n9rFr3KTus.mp4,HUMOR MULTI SHOW,"[[0, 80], [155, 258], [332, 435]]","[(0.0, 92.0)]","[(0.0, 92.0)]",[],0.0
+multi,7QOVDBxD-MU.mp4,A man wearing a gray hoodie stands in front of a black car with its hood open near a large waterfall,"[[61, 74], [79, 83]]","[(63.0, 72.0)]","[(63.0, 72.0)]",[],0.0
+multi,uwy_dPI2fZc.mp4,olive green armored vehicle,"[[0, 55], [171, 173], [182, 248], [249, 342]]","[(0.0, 80.0)]","[(0.0, 80.0), (181.0, 297.0)]","[{'span': (181.0, 297.0), 'votes': 3}]",26.66666666666666
+multi,9x4DXlOPk50.mp4,wooden blinds,"[[247, 264], [274, 280]]","[(248.0, 270.0), (304.0, 309.0)]","[(248.0, 270.0), (304.0, 309.0)]",[],0.0
+multi,8TSHl0LoGuY.mp4,woman speaking to camera,"[[0, 5], [15, 28]]","[(0.0, 32.0)]","[(0.0, 32.0)]",[],0.0
+multi,w9hcJlOZ0DA.mp4,strainer,"[[185, 253], [257, 308]]","[(187.0, 279.0)]","[(187.0, 279.0)]",[],0.0
+multi,7aBg3kWey_k.mp4,A hand holds a knife with a green handle to slice a cucumber,"[[143, 191], [198, 242]]","[(91.0, 177.0)]","[(91.0, 177.0)]",[],0.0
+multi,4PcsJzc6Ts8.mp4,Off-road capabilities,"[[34, 42], [49, 53], [117, 170], [428, 441]]","[(131.0, 171.0)]","[(131.0, 171.0)]",[],0.0
+multi,SYKSbZSK8LA.mp4,vole investigating apple,"[[47, 58], [67, 79]]","[(52.0, 77.0), (81.0, 140.0)]","[(52.0, 77.0), (81.0, 140.0)]",[],0.0
+multi,5ZDg6lH3axc.mp4,mixing meat filling with seasonings,"[[182, 199], [201, 218], [225, 250]]","[(214.0, 246.0)]","[(214.0, 246.0)]",[],0.0
+multi,6wiyoRu2jbg.mp4,The player constructs a rectangular structure using stone blocks and fills it with lava,"[[115, 147], [152, 168]]","[(114.0, 169.0)]","[(114.0, 169.0)]",[],0.0
+multi,EU4qssIqGYw.mp4,TIMESHEET,"[[27, 33], [39, 131]]","[(0.0, 286.0)]","[(0.0, 286.0)]",[],0.0
+multi,FXZpD_Jkd9o.mp4,A male news anchor speaks from a studio with the Brandenburg Gate visible through the window behind him,"[[54, 59], [93, 113], [334, 338], [361, 378]]","[(46.0, 56.0), (92.0, 109.0), (333.0, 338.0)]","[(46.0, 56.0), (92.0, 109.0), (333.0, 338.0)]",[],0.0
+multi,oqdG0X9Y_XY.mp4,An artist signs autographs at a table covered with comic books and illustrations,"[[97, 103], [256, 259]]","[(97.0, 115.0)]","[(97.0, 115.0), (195.0, 200.0)]","[{'span': (195.0, 200.0), 'votes': 3}]",0.0
+multi,DnUmbBMRVec.mp4,hamster running on wheel,"[[190, 200], [253, 265]]","[(190.0, 198.0), (253.0, 261.0)]","[(190.0, 198.0), (253.0, 261.0)]",[],0.0
+multi,w57t52_EUr8.mp4,The camera shows a close-up of the jar containing the greenish mixture,"[[186, 207], [338, 342]]","[(187.0, 198.0)]","[(187.0, 198.0)]",[],0.0
+multi,FIIKq3MBCg0.mp4,VEG IT UP logo,"[[0, 3], [415, 422]]","[(0.0, 6.0)]","[(0.0, 6.0)]",[],0.0
+multi,DqFm_9Fx1s0.mp4,lily pads,"[[348, 351], [363, 371]]","[(348.0, 350.0)]","[(348.0, 350.0)]",[],0.0
+multi,D9Drf8dLixE.mp4,hot rod,"[[0, 79], [289, 422]]","[(0.0, 98.0), (195.0, 422.0)]","[(0.0, 98.0), (195.0, 422.0)]",[],0.0
+multi,6ewCLxqZYqQ.mp4,Installing console cover assembly,"[[383, 392], [396, 408]]","[(383.0, 408.0)]","[(383.0, 408.0)]",[],0.0
+multi,x_eWqJ_1eAY.mp4,A woman drives a car while speaking to the camera with a child seated behind her,"[[52, 80], [157, 161]]","[(34.0, 80.0), (131.0, 161.0)]","[(34.0, 80.0), (131.0, 161.0)]",[],0.0
+multi,COKCTyi7R90.mp4,AMD,"[[357, 385], [387, 398]]","[(322.0, 399.0)]","[(322.0, 399.0)]",[],0.0
+multi,BS-8qMUejdo.mp4,A man gives a tour of the trampoline park facilities,"[[184, 197], [222, 228]]","[(144.0, 267.0)]","[(144.0, 267.0)]",[],0.0
+multi,9hJ8dGlxtc0.mp4,David White,"[[59, 68], [167, 176]]","[(59.0, 67.0), (167.0, 175.0)]","[(59.0, 67.0), (167.0, 175.0)]",[],0.0
+multi,5ZNtl7EQPXo.mp4,Rachel Reeves,"[[40, 54], [76, 89]]","[(39.0, 54.0), (77.0, 89.0)]","[(39.0, 54.0), (77.0, 89.0)]",[],0.0
+multi,ET0lwswVaqg.mp4,The woman demonstrates the gear selector and center console controls,"[[47, 53], [57, 61]]","[(47.0, 53.0)]","[(47.0, 53.0)]",[],0.0
+multi,FL237Vf8Qhw.mp4,A blue circular cookie cutter cuts shapes from the dough,"[[50, 61], [116, 128]]","[(46.0, 62.0)]","[(46.0, 62.0)]",[],0.0
+multi,4Tas5KjHQGA.mp4,The man refers to papers on his desk,"[[31, 128], [258, 265]]","[(5.0, 25.0)]","[(5.0, 25.0)]",[],0.0
+multi,nkssVIReuPQ.mp4,A woman displays a yellow bag of Pedigree Tasty Bites dog treats,"[[112, 138], [150, 152]]","[(124.0, 144.0)]","[(124.0, 144.0)]",[],0.0
+multi,IJRvbET-0aY.mp4,The man in the black polo shirt speaks directly to the camera while seated at the table,"[[0, 10], [14, 61]]","[(0.0, 42.0), (326.0, 365.9656)]","[(0.0, 42.0), (326.0, 365.9656)]",[],0.0
+multi,nlXmgEtFOxA.mp4,Rep. Ted Lieu speaking at outdoor podium,"[[7, 8], [17, 18]]","[(7.0, 17.0)]","[(7.0, 17.0)]",[],0.0
+multi,IEjW4lWoL7U.mp4,Frank Automotive,"[[64, 85], [349, 354]]","[(63.0, 71.0)]","[(63.0, 71.0)]",[],0.0
+multi,LV7VNtbbhks.mp4,Mixing cleaning solution,"[[112, 188], [190, 205]]","[(179.0, 191.0)]","[(179.0, 191.0)]",[],0.0
+multi,A3OKGV67w5E.mp4,construction workers,"[[132, 138], [142, 199]]","[(131.0, 145.0)]","[(131.0, 145.0)]",[],0.0
+multi,GmjvjVM3aBI.mp4,optical distortion,"[[36, 87], [88, 102]]","[(19.0, 122.0)]","[(19.0, 122.0)]",[],0.0
+multi,8r_-c4iOgQg.mp4,The bearded man prepares a marinade by mixing ingredients in a metal bowl,"[[50, 103], [123, 132], [141, 148]]","[(50.0, 132.0)]","[(50.0, 132.0)]",[],0.0
+multi,AXXIGLMvbPE.mp4,turning the ignition key,"[[68, 70], [273, 281]]","[(273.0, 281.0)]","[(273.0, 281.0)]",[],0.0
+multi,4rzE3uvOMJA.mp4,female news anchor,"[[62, 72], [207, 252]]","[(61.0, 78.0), (203.0, 247.0)]","[(61.0, 78.0), (203.0, 247.0)]",[],0.0
+multi,sWZ4dIPj7Qg.mp4,circular projection room,"[[109, 127], [155, 237]]","[(108.0, 131.0)]","[(108.0, 131.0)]",[],0.0
+multi,4sblEu4x5ug.mp4,color correction,"[[56, 99], [110, 119], [153, 200], [213, 263]]","[(54.0, 99.0), (153.0, 199.0), (213.0, 260.0)]","[(54.0, 99.0), (153.0, 199.0), (213.0, 260.0)]",[],0.0
+multi,92xqiH-oh28.mp4,fighting Twisted Jesters,"[[0, 152], [164, 166]]","[(0.0, 149.0)]","[(0.0, 149.0)]",[],0.0
+multi,yq7v_DiJMvk.mp4,The man kneels beside the vehicle while cleaning the front bumper,"[[0, 111], [145, 163]]","[(27.0, 87.0)]","[(27.0, 87.0)]",[],0.0
+multi,8zbD0-IhOu8.mp4,glowing green eyes,"[[0, 136], [193, 330]]","[(0.0, 330.0)]","[(0.0, 330.0)]",[],0.0
+multi,FCSCJt8qy_M.mp4,A man with a beard puts on the headphones,"[[290, 295], [297, 300]]","[(292.0, 300.0)]","[(292.0, 300.0)]",[],0.0
+multi,QmtkjbQ-bgw.mp4,An astronaut in a white spacesuit floats near the black hole,"[[58, 61], [70, 79]]","[(70.0, 76.0)]","[(70.0, 76.0)]",[],0.0
+multi,yZk6JzURY9o.mp4,boxing ring,"[[67, 94], [105, 126], [192, 216]]","[(66.0, 117.0), (192.0, 214.0)]","[(66.0, 117.0), (192.0, 214.0), (262.0, 284.0)]","[{'span': (262.0, 284.0), 'votes': 3}]",-13.333333333333341
+multi,8nnOl3yMSYw.mp4,The man demonstrates incorrect bench press form with flared elbows marked by a red X,"[[71, 77], [93, 100]]","[(68.0, 85.0), (94.0, 100.0)]","[(68.0, 85.0), (94.0, 100.0)]",[],0.0
+multi,vxdvxM1uDj4.mp4,extremely frugal spending,"[[108, 119], [244, 250]]","[(243.0, 251.0)]","[(243.0, 251.0)]",[],0.0
+multi,2TKU2jilUTU.mp4,The man presents the Breezy Breath Water Additive box to the camera,"[[80, 97], [229, 239], [290, 306]]","[(81.0, 98.0)]","[(81.0, 98.0)]",[],0.0
+multi,CY0fRjvzZlw.mp4,The camera focuses on the pinning tray showing the organized arrangement of pins and springs,"[[245, 271], [299, 317]]","[(246.0, 271.0)]","[(246.0, 271.0)]",[],0.0
+multi,vHPwtT4hGW0.mp4,Cows are eating from feeding troughs in the covered pen,"[[106, 155], [260, 313]]","[(34.0, 100.0)]","[(34.0, 100.0)]",[],0.0
+multi,FXTRcH2rcVo.mp4,A young man speaks directly to the camera while gesturing,"[[10, 21], [104, 155], [245, 294]]","[(10.0, 31.0), (104.0, 155.0), (245.0, 294.0)]","[(10.0, 31.0), (104.0, 155.0), (245.0, 294.0)]",[],0.0
+multi,QE1lup5oL5A.mp4,The gray cat walks toward the man and begins to be groomed with the same tool,"[[181, 191], [196, 224]]","[(200.0, 238.0)]","[(200.0, 238.0)]",[],0.0
+multi,v9qu2GOvmuQ.mp4,The guitarist demonstrates Part A and Part B slowly while seated on a wooden stool,"[[237, 256], [257, 300]]","[(237.0, 299.0)]","[(237.0, 299.0)]",[],0.0
+multi,EqFrjPUbI1Q.mp4,empty station platform,"[[1, 69], [79, 113]]","[(9.0, 62.0)]","[(9.0, 62.0)]",[],0.0
+multi,EJqvUzbzN_w.mp4,Three men are engaged in a lively conversation on the talk show set,"[[32, 146], [152, 287]]","[(0.0, 83.0), (88.0, 247.0)]","[(0.0, 83.0), (88.0, 247.0)]",[],0.0
+multi,D9kjjTW6iHc.mp4,The conductor leads the orchestra from a wooden podium,"[[12, 31], [42, 55], [58, 62], [199, 218]]","[(10.0, 61.0)]","[(10.0, 61.0)]",[],0.0
+multi,lpo3Vmk6jcc.mp4,Andrew Hopkins,"[[8, 40], [47, 60], [89, 106], [117, 131], [148, 188]]","[(8.0, 39.0), (47.0, 59.0), (88.0, 130.0)]","[(8.0, 39.0), (47.0, 59.0), (88.0, 130.0)]",[],0.0
+multi,8U-f28bahPg.mp4,KTM 1290 Super Adventure S,"[[7, 78], [93, 195]]","[(5.0, 82.0)]","[(5.0, 82.0)]",[],0.0
+multi,ryKvTX92gPY.mp4,Musicians on stairs,"[[62, 253], [263, 265]]","[(61.0, 184.0)]","[(61.0, 184.0)]",[],0.0
+multi,m8UhtekdQmQ.mp4,Taylor Hoffman speaks to the camera while wearing a brown jacket,"[[77, 88], [114, 132]]","[(77.0, 87.0), (115.0, 132.0)]","[(77.0, 87.0), (115.0, 132.0)]",[],0.0
+multi,LbmzqAFCAA0.mp4,man speaking to camera,"[[99, 105], [230, 245], [272, 275]]","[(98.0, 105.0), (206.0, 215.0), (230.0, 245.0), (271.0, 276.0)]","[(98.0, 105.0), (206.0, 215.0), (230.0, 245.0), (271.0, 276.0)]",[],0.0
+multi,EZ8T2C9ysy4.mp4,split screen,"[[40, 50], [268, 279]]","[(32.0, 50.0)]","[(32.0, 50.0)]",[],0.0
+multi,NBnq9oI-2vA.mp4,A split-screen comparison shows stabilized versus unstabilized footage,"[[172, 227], [228, 271]]","[(209.0, 269.0)]","[(209.0, 269.0)]",[],0.0
+multi,AgAUrxqBky0.mp4,The man crouches beside the front wheel of the van,"[[143, 173], [174, 180], [182, 265]]","[(117.0, 270.2)]","[(117.0, 270.2)]",[],0.0
+multi,FWtyxCIlCU0.mp4,The green-skinned character with sharp teeth confronts the blue-clad ninja leader,"[[196, 198], [202, 212]]","[(195.0, 215.0)]","[(195.0, 215.0)]",[],0.0
+multi,ETb1AxaCd8o.mp4,holding a long flat object,"[[162, 168], [175, 184]]","[(162.0, 183.0)]","[(162.0, 183.0)]",[],0.0
+multi,CYg25PuY_j4.mp4,A Japanese white-eye with a white eye-ring feeds on nectar among cherry blossoms,"[[9, 76], [77, 124]]","[(7.0, 115.0)]","[(7.0, 115.0)]",[],0.0
+multi,7WhCyHwFqno.mp4,conversation in vehicle,"[[87, 201], [202, 245]]","[(86.0, 192.0)]","[(86.0, 192.0)]",[],0.0
+multi,5PAPbm8Ez3E.mp4,gold and black wheels,"[[57, 63], [69, 74]]","[(27.0, 31.0), (56.0, 63.0)]","[(27.0, 31.0), (56.0, 63.0)]",[],0.0
+multi,GG79wAV0HvU.mp4,news studio,"[[1, 13], [174, 251]]","[(1.0, 13.0), (174.0, 251.48456666666667)]","[(1.0, 13.0), (174.0, 251.48456666666667)]",[],0.0
+multi,CoWzkpBAtQc.mp4,Autoglym Fabric Hood Cleaner,"[[21, 67], [94, 172]]","[(21.0, 43.0)]","[(21.0, 43.0)]",[],0.0
+multi,BxCkfx4aWPw.mp4,tetras,"[[23, 177], [182, 250]]","[(75.0, 100.0)]","[(75.0, 100.0)]",[],0.0
+multi,A7JFHGqp2ds.mp4,river view from balcony,"[[11, 15], [194, 234]]","[(11.0, 14.0)]","[(11.0, 14.0)]",[],0.0
+multi,7F7OzaSlNiM.mp4,Hollywood Life title card,"[[0, 5], [240, 245]]","[(1.0, 5.0)]","[(1.0, 5.0)]",[],0.0
+multi,7yYAOYxC3XA.mp4,camera on tripod,"[[25, 33], [34, 36]]","[(27.0, 50.0)]","[(27.0, 50.0)]",[],0.0
+multi,EGHqMHMVHeg.mp4,Kneeling beside the appliance,"[[17, 72], [125, 142]]","[(8.0, 94.0)]","[(8.0, 94.0)]",[],0.0
+multi,4CUBHN3Ir6c.mp4,The mechanic uses a jack to lift the fuel tank but it does not rise significantly due to poor balance,"[[59, 96], [105, 119]]","[(51.0, 72.0)]","[(51.0, 72.0)]",[],0.0
+multi,FtN2Jz9jsLg.mp4,A man wearing a white cap speaks to the camera while sitting by a pond,"[[10, 67], [123, 157]]","[(10.0, 66.0), (123.0, 157.0)]","[(10.0, 66.0), (123.0, 157.0)]",[],0.0
+multi,DObp-vAZEEA.mp4,A tattoo artist wearing a green cap and gloves applies ink to a client's arm,"[[184, 186], [204, 205]]","[(184.0, 185.0)]","[(184.0, 185.0)]",[],0.0
+multi,r_pENKgQQy4.mp4,Huawei,"[[50, 79], [182, 205]]","[(48.0, 79.0), (182.0, 206.0)]","[(48.0, 79.0), (182.0, 206.0)]",[],0.0
+multi,FzncFJn6bdI.mp4,handling a snake,"[[86, 179], [180, 206]]","[(70.0, 211.0)]","[(70.0, 211.0)]",[],0.0
+multi,DN1J66t6qj8.mp4,petting a tabby cat,"[[4, 14], [24, 28]]","[(3.0, 13.0)]","[(3.0, 13.0)]",[],0.0
+multi,6SJFXVbLfmU.mp4,The hands manipulate the green coil and examine the wooden circuit board,"[[44, 84], [89, 131]]","[(30.0, 86.0), (95.0, 138.0)]","[(30.0, 86.0), (95.0, 138.0)]",[],0.0
+multi,mph6Ou0CcpA.mp4,Tokyo Metropolitan Theatre,"[[0, 72], [169, 224]]","[(0.0, 55.0)]","[(0.0, 55.0)]",[],0.0
+multi,rN48zyket5s.mp4,A man with braided hair and a beard speaks directly to the camera in a forest setting,"[[1, 50], [51, 138], [144, 201]]","[(1.0, 88.0), (90.0, 203.0)]","[(1.0, 88.0), (90.0, 203.0)]",[],0.0
+multi,QsDd-AgsGAU.mp4,urban landscape,"[[0, 54], [55, 223]]","[(0.0, 54.0), (80.0, 223.0)]","[(0.0, 54.0), (80.0, 223.0)]",[],0.0
+multi,COJ4vzPjoss.mp4,Giant Bomb,"[[76, 78], [100, 101]]","[(45.0, 55.0)]","[(45.0, 55.0)]",[],0.0
+multi,VWwzHnFx1Hg.mp4,A man in a dark sweatshirt featuring the Australian flag speaks directly to the camera against a plain white background,"[[51, 59], [62, 80], [83, 88], [102, 106], [110, 119], [123, 133], [141, 147], [151, 155]]","[(5.0, 77.0)]","[(5.0, 77.0)]",[],0.0
+multi,naKkrAQHgBA.mp4,text about low income families,"[[42, 49], [181, 198]]","[(42.0, 49.0), (75.0, 79.0)]","[(42.0, 49.0), (75.0, 79.0)]",[],0.0
+multi,7b1gZw1Ighk.mp4,Reds versus Fiji match,"[[25, 39], [48, 63], [81, 114]]","[(24.0, 48.0)]","[(24.0, 48.0)]",[],0.0
+multi,CgyShaSFmjo.mp4,first-person perspective from inside a car,"[[15, 21], [51, 108]]","[(15.0, 108.0)]","[(15.0, 108.0)]",[],0.0
+multi,84pnLAL7hyo.mp4,Man speaking to camera,"[[122, 166], [200, 204]]","[(125.0, 166.0)]","[(125.0, 166.0)]",[],0.0
+multi,AIzEf5Z7saw.mp4,tightening screws on electrical box,"[[127, 142], [151, 176]]","[(128.0, 175.0)]","[(128.0, 175.0)]",[],0.0
+multi,5fLH07359ss.mp4,child flips over another,"[[160, 162], [170, 176]]","[(49.0, 51.0), (54.0, 56.0)]","[(49.0, 51.0), (54.0, 56.0)]",[],0.0
+multi,87FFKgHQ4RA.mp4,The man stands on a hillside overlooking the mountainous terrain,"[[19, 33], [117, 126]]","[(20.0, 33.0)]","[(20.0, 33.0)]",[],0.0
+multi,HsvyW9hI3q0.mp4,强颜欢笑,"[[34, 37], [38, 40]]","[(34.0, 37.0)]","[(34.0, 37.0)]",[],0.0
+multi,I6R65l9HIdU.mp4,Company logo and contact information,"[[1, 6], [182, 188]]","[(1.0, 6.0), (181.0, 188.0)]","[(1.0, 6.0), (181.0, 188.0)]",[],0.0
+multi,LVhAFky1J8U.mp4,mosque with turquoise domes,"[[58, 61], [129, 134]]","[(58.0, 61.0), (129.0, 132.0)]","[(58.0, 61.0), (129.0, 132.0)]",[],0.0
+multi,qcRw3B4hrzE.mp4,blue spherical filter media,"[[34, 87], [88, 100]]","[(47.0, 85.0)]","[(47.0, 85.0), (87.0, 102.0)]","[{'span': (87.0, 102.0), 'votes': 3}]",33.333333333333336
+multi,ANgUKCzD6lY.mp4,The camera reveals a green building with signage for Famous Nasi Dalcha Kassim Mustafa,"[[2, 8], [11, 13]]","[(4.0, 8.0)]","[(4.0, 8.0)]",[],0.0
+multi,M2Y9g3SPXIg.mp4,Another skater ollies over a concrete ledge while the first man watches,"[[66, 69], [84, 91]]","[(148.0, 151.0)]","[(148.0, 151.0)]",[],0.0
+multi,5YFe3vAy5fM.mp4,The team is arranged in multiple rows for the photograph,"[[0, 82], [89, 174]]","[(0.0, 89.0)]","[(0.0, 89.0)]",[],0.0
+multi,EpXylX5iAcU.mp4,A large round mound of rice is topped with dark brown sauce and green onions,"[[0, 81], [88, 163]]","[(0.0, 163.0)]","[(0.0, 163.0)]",[],0.0
+multi,CXRuGheVAfM.mp4,Disney logo,"[[1, 19], [29, 85]]","[(162.0, 164.0)]","[(162.0, 164.0)]",[],0.0
+multi,F8hUwQm2epk.mp4,A man in a dark hoodie is speaking into microphones at a press conference,"[[37, 41], [50, 58], [128, 137]]","[(37.0, 41.0), (49.0, 54.0)]","[(37.0, 41.0), (49.0, 54.0)]",[],0.0
+multi,FYwDx74296Q.mp4,panel discussion,"[[35, 45], [47, 64]]","[(26.0, 49.0)]","[(26.0, 49.0)]",[],0.0
+multi,oukVmFDsMl4.mp4,ブルガリアンスクワット,"[[40, 67], [72, 89], [122, 136]]","[(39.0, 137.0)]","[(39.0, 137.0)]",[],0.0
+multi,03aF4GOHEIM.mp4,The blindfolded man explores the kitchen,"[[33, 45], [79, 85], [86, 102]]","[(32.0, 85.0)]","[(32.0, 85.0)]",[],0.0
+multi,Arr8kVoTXns.mp4,FAM,"[[1, 6], [143, 149]]","[(3.0, 7.0)]","[(3.0, 7.0)]",[],0.0
+multi,CEBfE1yUsh4.mp4,cork yoga block,"[[31, 70], [73, 115]]","[(49.0, 69.0), (73.0, 125.0)]","[(49.0, 69.0), (73.0, 125.0)]",[],0.0
+multi,vHJ-B1j87to.mp4,chickpeas,"[[49, 57], [73, 83]]","[(42.0, 56.0), (72.0, 83.0)]","[(42.0, 56.0), (72.0, 83.0)]",[],0.0
+multi,Sct3Q7WBsy8.mp4,retaining wall,"[[8, 14], [17, 24], [28, 32], [35, 38]]","[(18.0, 24.0), (27.0, 37.0), (93.0, 102.0)]","[(18.0, 24.0), (27.0, 37.0), (93.0, 102.0)]",[],0.0
+multi,1KRlVld2l0Q.mp4,driver's perspective,"[[0, 14], [42, 53]]","[(0.0, 12.0), (41.0, 53.0)]","[(0.0, 12.0), (41.0, 53.0), (67.0, 78.0)]","[{'span': (67.0, 78.0), 'votes': 3}]",-19.999999999999996
+multi,pYKEXzmPTck.mp4,aluminum parts,"[[7, 24], [26, 138]]","[(0.0, 138.0)]","[(0.0, 138.0)]",[],0.0
+multi,vuiF3vv_epY.mp4,Japanese text appears on screen indicating the steps to set up the feeder,"[[44, 60], [61, 73]]","[(38.0, 59.0)]","[(38.0, 59.0)]",[],0.0
+multi,KIRZ_9YnzSI.mp4,news anchor,"[[0, 17], [114, 132]]","[(0.0, 18.0)]","[(0.0, 18.0), (114.0, 132.0)]","[{'span': (114.0, 132.0), 'votes': 4}]",33.333333333333336
+multi,BVe0tziHRus.mp4,The video captures a view of houses and parked cars through a large window,"[[84, 91], [104, 110]]","[(84.0, 91.0), (104.0, 111.0)]","[(84.0, 91.0), (104.0, 111.0)]",[],0.0
+multi,W7kmwiJrQnA.mp4,The hosts stand in front of large illuminated letters spelling Este es el Show,"[[0, 70], [80, 131]]","[(0.0, 14.0), (24.0, 100.0)]","[(0.0, 14.0), (24.0, 100.0)]",[],0.0
+multi,ucsEfSxi8j8.mp4,rise in traffic deaths in Kansas City,"[[2, 77], [78, 131]]","[(2.0, 130.0)]","[(2.0, 130.0)]",[],0.0
+multi,F-zR1_-sOF4.mp4,The car is shown driving at speed on a highway surrounded by trees and a guardrail,"[[7, 15], [26, 32]]","[(7.0, 15.0), (25.0, 31.0), (113.0, 118.0)]","[(7.0, 15.0), (25.0, 31.0), (113.0, 118.0)]",[],0.0
+multi,B4H5t7gOmg4.mp4,hitting the bullseye,"[[54, 56], [72, 73]]","[(52.0, 56.0)]","[(52.0, 56.0)]",[],0.0
+multi,9oAk31vkAH8.mp4,dark vehicle moving quickly,"[[10, 36], [88, 91], [98, 104], [116, 122]]","[(9.0, 34.0)]","[(9.0, 34.0)]",[],0.0
+multi,BaRCvIng-Jk.mp4,real-time traffic information,"[[55, 93], [101, 121]]","[(15.0, 121.0)]","[(15.0, 121.0)]",[],0.0
+multi,nzDlTLiy4w4.mp4,Charlevoix,"[[10, 26], [31, 51], [57, 78], [79, 93]]","[(5.0, 19.0)]","[(5.0, 19.0)]",[],0.0
+multi,7wpQ9k3L3Ew.mp4,An individual operates camera equipment on the rocky shore with the icy landscape in the background,"[[47, 84], [111, 116]]","[(45.0, 65.0)]","[(45.0, 65.0)]",[],0.0
+multi,xHVZuFmKnOM.mp4,A male news anchor delivers a report from a television studio,"[[1, 9], [10, 16]]","[(1.0, 17.0)]","[(1.0, 17.0)]",[],0.0
+multi,I3cJx0V0RhU.mp4,green plastic seat,"[[10, 17], [28, 108]]","[(9.0, 106.0)]","[(9.0, 106.0)]",[],0.0
+multi,yfujfW1MYLY.mp4,MV-22 Osprey,"[[79, 82], [95, 98]]","[(28.0, 33.0)]","[(28.0, 33.0)]",[],0.0
+multi,ExyL0ph4RfQ.mp4,lower third graphic,"[[1, 7], [107, 111]]","[(1.0, 5.0), (107.0, 110.0)]","[(1.0, 5.0), (107.0, 110.0)]",[],0.0
+multi,P2FhW9mBpZg.mp4,A man wearing a light blue shirt and glasses speaks to the camera against a white background,"[[7, 35], [61, 86]]","[(7.0, 35.0), (62.0, 87.0)]","[(7.0, 35.0), (62.0, 87.0)]",[],0.0
+multi,2UD4AM-RkpA.mp4,3 truss frame,"[[22, 29], [47, 54]]","[(22.0, 28.0)]","[(22.0, 28.0)]",[],0.0
+multi,vxBGk1fWClA.mp4,A gravel driveway leads into a grassy area with trees in the background,"[[3, 6], [32, 35]]","[(3.0, 6.0)]","[(3.0, 6.0)]",[],0.0
+multi,EDMrAhBqsdk.mp4,English and Japanese subtitles explain that Go No.2 means to defecate,"[[48, 57], [58, 63]]","[(48.0, 62.0)]","[(48.0, 62.0)]",[],0.0
+multi,FDfSX0-ATb0.mp4,man in a light blue shirt,"[[25, 52], [71, 84]]","[(25.0, 51.0), (71.0, 84.0)]","[(25.0, 51.0), (71.0, 84.0)]",[],0.0
+multi,1HVpHCp52qs.mp4,post-race interview,"[[24, 33], [48, 61]]","[(24.0, 34.0), (47.0, 60.0)]","[(24.0, 34.0), (47.0, 60.0)]",[],0.0
+multi,AaGHNNsYpes.mp4,The player selects Battle Royale Solo mode,"[[8, 10], [54, 56], [66, 69]]","[(67.0, 69.0)]","[(67.0, 69.0)]",[],0.0
+multi,PlfFZ4YFLP8.mp4,A replay of the goal is shown from different angles,"[[17, 23], [32, 41]]","[(18.0, 34.0)]","[(18.0, 34.0)]",[],0.0
+multi,RxzRo9LdMjM.mp4,Workers dismantle the machine following her breakthrough in July,"[[10, 15], [16, 22]]","[(9.0, 13.0)]","[(9.0, 13.0)]",[],0.0
+multi,neIj7suVQgw.mp4,sloth,"[[8, 12], [38, 64]]","[(37.0, 64.68)]","[(37.0, 64.68)]",[],0.0
+multi,5NtK5CVeEQs.mp4,scope,"[[0, 3], [5, 32]]","[(0.0, 5.0), (12.0, 26.0), (31.0, 42.0)]","[(0.0, 5.0), (12.0, 26.0), (31.0, 42.0)]",[],0.0
+multi,06Ai26jNLic.mp4,municipal workers in bright orange uniforms,"[[22, 31], [43, 59]]","[(25.0, 59.0)]","[(25.0, 59.0)]",[],0.0
+multi,FcHM6MBa6zQ.mp4,m LIVE,"[[3, 4], [22, 55]]","[(22.0, 55.0)]","[(22.0, 55.0)]",[],0.0
+multi,uC2Xfc0wWo0.mp4,Desert with pyramids,"[[2, 7], [30, 35]]","[(4.0, 7.0)]","[(4.0, 7.0)]",[],0.0
+multi,6KxUll8Q6E0.mp4,green eHow logo on white background,"[[1, 3], [52, 53]]","[(0.0, 3.0)]","[(0.0, 3.0)]",[],0.0
+multi,rSZapaqrJ7I.mp4,waist-deep water,"[[13, 47], [49, 50]]","[(13.0, 47.0)]","[(13.0, 47.0)]",[],0.0
+multi,vyv8OeZlXrI.mp4,CPRF flags,"[[9, 48], [51, 53]]","[(7.0, 47.0)]","[(7.0, 47.0)]",[],0.0
+multi,nQgelTCMNVM.mp4,holding a microphone,"[[13, 35], [36, 47]]","[(13.0, 41.0)]","[(13.0, 41.0)]",[],0.0
+multi,qerUlrhLbp0.mp4,crouching near the edge,"[[0, 32], [35, 57]]","[(0.0, 42.0)]","[(0.0, 42.0)]",[],0.0
+multi,mj77dyIje3A.mp4,egg yolk,"[[0, 10], [12, 13], [16, 44], [46, 51]]","[(1.0, 56.222833333333334)]","[(1.0, 56.222833333333334)]",[],0.0
+multi,AdcioanqSfg.mp4,interview,"[[3, 7], [43, 46]]","[(3.0, 6.0), (42.0, 47.0)]","[(3.0, 6.0), (42.0, 47.0)]",[],0.0
+multi,9V_OarS770w.mp4,driving on highway,"[[17, 29], [42, 52]]","[(17.0, 23.0), (26.0, 30.0), (43.0, 50.0)]","[(17.0, 23.0), (26.0, 30.0), (43.0, 50.0)]",[],0.0
+multi,A9E3scYNvS8.mp4,orange buildings,"[[13, 15], [19, 21]]","[(13.0, 17.0)]","[(13.0, 17.0)]",[],0.0
+multi,CggcjfFotlU.mp4,SMART PACHISLOT sign,"[[7, 23], [44, 54]]","[(11.0, 18.0), (44.0, 55.0)]","[(11.0, 18.0), (44.0, 55.0)]",[],0.0
+multi,qKkR2CVOFFc.mp4,smartphone,"[[9, 11], [21, 22]]","[(20.0, 22.0)]","[(11.0, 13.0), (20.0, 22.0)]","[{'span': (11.0, 13.0), 'votes': 3}]",-16.666666666666664
+multi,9-VtfFU8Xvs.mp4,Taillight,"[[18, 21], [35, 37]]","[(17.0, 21.0), (35.0, 37.0)]","[(17.0, 21.0), (35.0, 37.0)]",[],0.0
+multi,uJo0TTqSNYM.mp4,laughing,"[[0, 3], [40, 49]]","[(0.0, 3.0), (41.0, 49.0)]","[(0.0, 3.0), (41.0, 49.0)]",[],0.0
+multi,C50IKia4nHE.mp4,glowing yellow creature,"[[10, 12], [32, 34]]","[(10.0, 12.0), (30.0, 34.0)]","[(10.0, 12.0), (30.0, 34.0)]",[],0.0
+multi,AwMLUuTwdTM.mp4,Wave pool,"[[12, 34], [39, 53]]","[(12.0, 52.0)]","[(12.0, 52.0)]",[],0.0
+multi,vZJgQNzedhI.mp4,Clowns in orange and purple shirts guide the bull away from the rider,"[[10, 20], [34, 48]]","[(12.0, 19.0), (31.0, 48.0)]","[(12.0, 19.0), (31.0, 48.0)]",[],0.0
+multi,DNVjSCJCzjE.mp4,The lobby screen shows NKS NUKUS selecting a team with a scenic mountain and water background,"[[8, 10], [46, 48]]","[(7.0, 9.0)]","[(7.0, 9.0)]",[],0.0
+multi,84lP9YQMOOI.mp4,wooden bridge,"[[18, 30], [32, 39]]","[(17.0, 36.0)]","[(17.0, 36.0)]",[],0.0
+multi,6ydiVVNAKd8.mp4,paying cash for houses,"[[0, 20], [22, 39]]","[(0.0, 35.0)]","[(0.0, 35.0)]",[],0.0
+multi,XISPeJUFE84.mp4,A woman with blonde hair wearing a light-colored shirt speaks directly to the camera with a lower-third graphic identifying her as Katherine Biek,"[[8, 17], [39, 47]]","[(8.0, 17.0), (39.0, 47.0)]","[(8.0, 17.0), (39.0, 47.0)]",[],0.0
+multi,IQMuTELEG6A.mp4,yellow jerseys with blue accents,"[[6, 10], [22, 35]]","[(6.0, 10.0), (22.0, 29.0)]","[(6.0, 10.0), (22.0, 29.0)]",[],0.0
+multi,7zT3ZTu5tZw.mp4,The man raises his right index finger while maintaining eye contact with the camera,"[[0, 2], [39, 48]]","[(0.0, 2.0)]","[(0.0, 2.0)]",[],0.0
+multi,sPehgaw9OS0.mp4,A woman wearing a pink short-sleeved top speaks directly to the camera while gesturing with her hands,"[[0, 7], [9, 14]]","[(0.0, 7.0), (12.0, 13.0)]","[(0.0, 7.0), (12.0, 13.0)]",[],0.0
+multi,ujCpIbTEBVY.mp4,The bobcat lies on the ground while receiving laser treatment on its shoulder,"[[5, 10], [41, 48]]","[(40.0, 48.0)]","[(40.0, 48.0)]",[],0.0
+multi,6-b_T7aLWoY.mp4,Military uniform,"[[4, 10], [16, 27]]","[(4.0, 11.0)]","[(4.0, 11.0)]",[],0.0
+multi,01LwuHv-dyA.mp4,Crowd waving flags,"[[15, 17], [28, 30], [37, 43]]","[(13.0, 17.0)]","[(13.0, 17.0), (27.0, 29.0)]","[{'span': (27.0, 29.0), 'votes': 3}]",-9.999999999999998
+multi,8azHr8ylBqY.mp4,busy city intersection,"[[4, 12], [43, 46]]","[(4.0, 8.0)]","[(4.0, 8.0)]",[],0.0
+multi,xUux6FmN3GA.mp4,volleyball,"[[0, 36], [40, 43]]","[(0.0, 45.0)]","[(0.0, 45.0)]",[],0.0
+multi,ENDdh2wyaMs.mp4,Matt Mott,"[[5, 12], [40, 42]]","[(5.0, 12.0), (40.0, 43.0)]","[(5.0, 12.0), (40.0, 43.0)]",[],0.0
+multi,mLZwxGyXdvg.mp4,shallots,"[[0, 13], [22, 32]]","[(0.0, 36.0)]","[(0.0, 36.0)]",[],0.0
+multi,7LT4E5SST58.mp4,A woman with short dark hair looks terrified while being held back by another figure,"[[8, 10], [28, 31]]","[(7.0, 10.0)]","[(7.0, 10.0)]",[],0.0
+multi,s0GfyBaspdE.mp4,A female veterinary technician gently holds the dog while a male veterinarian uses a stethoscope to examine it on an examination table,"[[9, 12], [32, 41]]","[(8.0, 12.0)]","[(8.0, 12.0)]",[],0.0
+multi,BDd3PgrAeBM.mp4,A young man wearing a checkered shirt and glasses stands with his arms crossed,"[[21, 25], [31, 36]]","[(20.0, 26.0)]","[(20.0, 26.0)]",[],0.0
+multi,o5SHBFFbZu4.mp4,lemon wedges,"[[10, 12], [31, 35]]","[(9.0, 12.0)]","[(9.0, 12.0)]",[],0.0
+multi,ERrE9EjhYtw.mp4,phone button,"[[12, 14], [21, 23]]","[(11.0, 25.0)]","[(11.0, 25.0)]",[],0.0
+multi,qmOO_s81aB8.mp4,Eid El-Maulud graphic,"[[11, 19], [34, 37]]","[(12.0, 19.0)]","[(12.0, 19.0), (34.0, 37.0)]","[{'span': (34.0, 37.0), 'votes': 3}]",33.333333333333336
+multi,LaJMt5tu7QE.mp4,A rider executes a high jump against a clear sky,"[[6, 9], [11, 13]]","[(5.0, 8.0)]","[(5.0, 8.0)]",[],0.0
+multi,1svWA36LlFY.mp4,casting fishing line,"[[21, 25], [26, 34]]","[(22.0, 32.0)]","[(22.0, 32.0)]",[],0.0
+multi,6-63a8RN4zs.mp4,The pitcher is wearing jersey number 32,"[[3, 5], [18, 29]]","[(0.0, 5.0)]","[(0.0, 5.0)]",[],0.0
+multi,vQdHnhvwOrE.mp4,sprawling cityscape,"[[0, 2], [31, 34]]","[(0.0, 2.0), (31.0, 34.0)]","[(0.0, 2.0), (31.0, 34.0)]",[],0.0
+multi,T8qsRqxS-dk.mp4,Missed field goal,"[[13, 21], [26, 32]]","[(4.0, 38.0)]","[(4.0, 38.0)]",[],0.0
+multi,FZUL8CO0l1U.mp4,The screen displays the Mystery Rewards section of the Battle Pass,"[[1, 3], [5, 10]]","[(0.0, 5.0)]","[(0.0, 5.0)]",[],0.0
+multi,ppwmvhZVAjQ.mp4,helicopter evacuation,"[[2, 15], [24, 34]]","[(5.0, 15.0), (24.0, 30.0)]","[(5.0, 15.0), (24.0, 30.0)]",[],0.0
+multi,TiolQ3L6_zs.mp4,The camera reveals a large indoor hall filled with approximately 300 staff members,"[[14, 18], [34, 37]]","[(14.0, 18.0)]","[(14.0, 18.0)]",[],0.0
+multi,F-wei-oNhTA.mp4,man wearing formal suit and tie,"[[3, 15], [16, 37]]","[(3.0, 37.0)]","[(3.0, 37.0)]",[],0.0
+multi,5ZGeatc1WYM.mp4,word Regarder in bold black font,"[[0, 10], [13, 37]]","[(1.0, 9.0), (13.0, 37.0)]","[(1.0, 9.0), (13.0, 37.0)]",[],0.0
+multi,EVcmTjmTQrI.mp4,Noticias logo,"[[0, 3], [26, 28]]","[(0.0, 3.0)]","[(0.0, 3.0), (28.0, 36.0)]","[{'span': (28.0, 36.0), 'votes': 3}]",-16.666666666666664
+multi,x2-f_KgcMFI.mp4,A group of people in formal attire pose together for a photo,"[[13, 17], [18, 24]]","[(13.0, 17.0)]","[(13.0, 17.0)]",[],0.0
+multi,pAcQx13zuhU.mp4,pitcher on mound,"[[1, 4], [15, 20]]","[(0.0, 6.0)]","[(0.0, 6.0), (19.0, 21.0)]","[{'span': (19.0, 21.0), 'votes': 3}]",-16.666666666666664
+multi,6RoOTenSQx0.mp4,man sitting behind wooden desk,"[[1, 10], [12, 21]]","[(0.0, 10.0)]","[(0.0, 10.0), (12.0, 20.0)]","[{'span': (12.0, 20.0), 'votes': 4}]",33.333333333333336
+multi,ALe0yjxJJrE.mp4,A male teacher in a blue shirt observes students working at desks,"[[1, 2], [6, 7]]","[(0.0, 2.0)]","[(0.0, 2.0)]",[],0.0
+multi,CUHmpnygZpk.mp4,High Court building,"[[5, 6], [14, 15]]","[(5.0, 7.0)]","[(5.0, 7.0)]",[],0.0
+multi,xMLcI17tmFQ.mp4,Two men put on black nitrile gloves at a wooden table,"[[0, 14], [17, 27]]","[(0.0, 9.0)]","[(0.0, 9.0)]",[],0.0
+multi,pPpr67rKlwE.mp4,Two girls stand in an urban alley while a large red dinosaur appears behind them,"[[2, 8], [13, 18]]","[(3.0, 7.0)]","[(3.0, 7.0)]",[],0.0
+multi,7zt5eps5Rw0.mp4,A man wearing a brown beanie and dark jacket is shown in close-up,"[[7, 10], [18, 20]]","[(7.0, 10.0), (18.0, 20.0)]","[(7.0, 10.0), (18.0, 20.0)]",[],0.0
+multi,xD8FjJvGOaE.mp4,shading,"[[3, 10], [22, 25]]","[(1.0, 17.0)]","[(1.0, 17.0)]",[],0.0
+multi,mvP1DjEsNis.mp4,The view through the scope reveals details such as scaffolding and cranes,"[[2, 4], [13, 22]]","[(14.0, 20.0)]","[(2.0, 5.0), (14.0, 20.0)]","[{'span': (2.0, 5.0), 'votes': 3}]",33.333333333333336
+multi,EBkisjjxZsI.mp4,Mostly black and white kittens huddle together with one white kitten,"[[0, 19], [22, 23]]","[(0.0, 20.0)]","[(0.0, 20.0)]",[],0.0
+multi,SZjYt4AKAzg.mp4,dirt road,"[[3, 8], [12, 21]]","[(3.0, 21.0)]","[(3.0, 21.0)]",[],0.0
+multi,6AstSz_wDlY.mp4,A man wearing a dark jacket over a white shirt is seated at a table speaking into a microphone,"[[6, 9], [15, 21]]","[(6.0, 10.0), (15.0, 21.0)]","[(6.0, 10.0), (15.0, 21.0)]",[],0.0
+multi,q_bnX6Jgo3w.mp4,The woman bends at the waist and knees to place her hands on the ground,"[[1, 2], [6, 8], [12, 13], [17, 19]]","[(1.0, 3.0), (7.0, 9.0)]","[(1.0, 3.0), (7.0, 9.0), (17.0, 18.0)]","[{'span': (17.0, 18.0), 'votes': 3}]",23.809523809523807
+multi,CWmbOIPw8Fo.mp4,Yellow rectangular banner with Korean text,"[[0, 2], [14, 16]]","[(0.0, 2.0), (14.0, 16.0)]","[(0.0, 2.0), (14.0, 16.0)]",[],0.0
+multi,FhRupbWopXM.mp4,A close-up shot of a green fruit hanging from a vine,"[[0, 2], [4, 14]]","[(0.0, 8.0)]","[(0.0, 8.0)]",[],0.0
+single,hirest/rtaJ_2G1qTE.mp4,When is the woman trimming the bottom of the finished tutu?,"[[131.0, 137.0]]","[(131.0, 137.0)]","[(131.0, 137.0)]",[],0.0
+single,hirest/BYZcEXxdTjU.mp4,Show the part where the person is using the canned air to blow dust off the helmet,"[[93.0, 102.0]]","[(93.0, 102.0)]","[(93.0, 102.0)]",[],0.0
+single,queryd/dxvFck5LBkU.mp4,Show the process of mixing all the ingredients in a pink bowl,"[[91.0, 103.0]]","[(100.0, 105.0)]","[(100.0, 105.0)]",[],0.0
+single,internvid_vtime/ONTZtLluUiQ.mp4,Show me the process of folding the rectangular paper into a triangle for the first time,"[[6.0, 11.0]]","[(6.0, 32.0)]","[(6.0, 32.0)]",[],0.0
+single,hirest/-17SPG-3Jis.mp4,"Find the part where the paper is folded into a triangle and then the two side corners are brought to the middle, forming a square","[[99.0, 103.0]]","[(87.0, 114.0)]","[(87.0, 114.0)]",[],0.0
+single,hirest/leIZjIDM03c.mp4,Show the moment the woman puts on and adjusts the resistor knit hat on her head,"[[80.0, 87.0]]","[(77.0, 92.0), (98.0, 110.0)]","[(77.0, 92.0), (98.0, 110.0)]",[],0.0
+single,queryd/wWVppdfYOx8.mp4,When are the eyes and nose drawn on the dog?,"[[245.0, 261.0]]","[(248.0, 262.0)]","[(248.0, 262.0)]",[],0.0
+single,queryd/7QORMPFSzpc.mp4,When is the chicken being cut into pieces?,"[[13.0, 19.0]]","[(14.0, 19.0)]","[(14.0, 19.0)]",[],0.0
+single,queryd/j8waYyUSSxg.mp4,At what point does the red Teletubby attack the blonde doll?,"[[227.0, 244.0]]","[(240.0, 244.0)]","[(240.0, 244.0)]",[],0.0
+single,queryd/6US4AyvEO_A.mp4,When does the man in the blue shirt get angry after seeing his dead cat?,"[[133.0, 143.0]]","[(132.0, 152.0)]","[(132.0, 152.0)]",[],0.0
+single,internvid_vtime/9jlHkfSGRPM.mp4,Pinpoint the moment the man inserts his hand into the pocket of the woman's apron,"[[99.0, 102.0]]","[(101.0, 107.0)]","[(101.0, 107.0)]",[],0.0
+single,queryd/gsYL4PC0hyk.mp4,At what point does the video display an hourglass?,"[[20.0, 23.0]]","[(20.0, 22.0)]","[(20.0, 22.0)]",[],0.0
+single,hirest/aFsTGjGVzcE.mp4,"Show the moment the artist wipes the surface with a green cloth, revealing the sissing effect","[[89.0, 98.0]]","[(92.0, 114.0)]","[(92.0, 114.0)]",[],0.0
+single,hirest/sKQnLV_6Lbw.mp4,Point to the part where the man is showing the wildflowers,"[[27.0, 31.0]]","[(75.0, 79.0)]","[(75.0, 79.0)]",[],0.0
+single,hirest/uZTkJoM9nRM.mp4,At what point is the iPad being placed into the pillow holder?,"[[89.0, 101.0]]","[(86.0, 97.0)]","[(86.0, 97.0)]",[],0.0
+single,queryd/CtP83CWOMwc.mp4,"Show the moment where the three little pigs, in different colored overalls, are introduced","[[4.0, 11.0]]","[(4.0, 12.0)]","[(4.0, 12.0)]",[],0.0
+single,hirest/pL9Pssr9NE0.mp4,When is the finished ice cream being scooped into a serving glass?,"[[124.0, 135.0]]","[(124.0, 136.0)]","[(124.0, 136.0)]",[],0.0
+single,internvid_vtime/N9mH2jhQk80.mp4,At what point is a long white strap being fed through the sewing machine?,"[[67.0, 138.0]]","[(71.0, 135.0)]","[(71.0, 135.0)]",[],0.0
+single,cosmo_cap/oE7D1B3p0iY.mp4,Show me the moment the device is folded flat to demonstrate its portability,"[[58.0, 64.0]]","[(24.0, 29.0)]","[(24.0, 29.0)]",[],0.0
+single,cosmo_cap/jCVEk1faYcw.mp4,At what moment does the person pour water into the pan?,"[[22.0, 25.0]]","[(21.0, 25.0)]","[(21.0, 25.0)]",[],0.0
+single,didemo/77987497@N00_12899661204_3b3ecce1bc.mp4,When does the presenter write on the whiteboard with a marker?,"[[30.0, 32.0]]","[(30.0, 36.0), (47.0, 51.0)]","[(30.0, 36.0), (47.0, 51.0)]",[],0.0
+single,cosmo_cap/2h0GcgXp0F8.mp4,When does the video show a close-up of the backup camera?,"[[30.0, 33.0]]","[(100.0, 102.0)]","[(100.0, 102.0)]",[],0.0
+single,cosmo_cap/M2U1Qm87bP0.mp4,Locate the segment where the elastic band is being threaded through the waistband,"[[108.0, 132.0]]","[(104.0, 131.0)]","[(104.0, 131.0)]",[],0.0
+single,cosmo_cap/SxOl5r0kV0M.mp4,Find the moment the entire door panel is pried off the door frame,"[[83.0, 121.0]]","[(70.0, 176.0)]","[(70.0, 176.0)]",[],0.0
+single,cosmo_cap/A_6YHTqMRmU.mp4,Find the moment the man gives his final rating of the burger,"[[132.0, 135.0]]","[(58.0, 66.0)]","[(58.0, 66.0)]",[],0.0
+single,hirest/IvZm04LxrbQ.mp4,At what point does the man melt the wax dressing by placing it in hot water?,"[[77.0, 81.0]]","[(76.0, 80.0)]","[(76.0, 80.0)]",[],0.0
+single,cosmo_cap/mf6CKV9FjtQ.mp4,Pinpoint the time when the blue light on the toaster is turned on,"[[106.0, 108.0]]","[(106.0, 109.0)]","[(106.0, 109.0)]",[],0.0
+single,cosmo_cap/2CrUMRVtMjU.mp4,At what point are they peeling the protective tape off the monkey's face?,"[[67.0, 84.0]]","[(68.0, 84.0)]","[(68.0, 84.0), (106.0, 122.0)]","[{'span': (106.0, 122.0), 'votes': 3}]",-33.333333333333336
+single,cosmo_cap/-eHFAlIKjlk.mp4,When is the finished dish being served into a bowl?,"[[113.0, 124.0]]","[(113.0, 128.0)]","[(113.0, 128.0)]",[],0.0
+single,cosmo_cap/Vvadh6YM-RQ.mp4,"Locate the segment where the man smiles broadly, showing his teeth, right after saying 'in the back of your throat'","[[59.0, 61.0]]","[(1.0, 2.0)]","[(1.0, 2.0)]",[],0.0
+single,cosmo_cap/72_FfgMJw18.mp4,Locate the part where the person uses a screwdriver to disassemble the carburetor on the workbench,"[[165.0, 168.0]]","[(16.0, 105.0)]","[(16.0, 105.0)]",[],0.0
+single,cosmo_cap/Mgb9dFj0PPs.mp4,When does the woman put the potatoes into the pot?,"[[59.0, 63.0]]","[(54.0, 74.0)]","[(54.0, 74.0)]",[],0.0
+single,hirest/CDcHRohWny8.mp4,When does the woman start applying the base coat?,"[[54.0, 58.0]]","[(54.0, 58.0)]","[(54.0, 58.0)]",[],0.0
+single,queryd/qOZNzVcq2IY.mp4,Find the segment explaining tactile ground surface indicators on the pavement,"[[77.0, 90.0]]","[(77.0, 90.0)]","[(77.0, 90.0)]",[],0.0
+single,cosmo_cap/uXd0C3Zma1g.mp4,Show the time when various sliced vegetables are added to the pot from the chopping board,"[[87.0, 112.0]]","[(85.0, 96.0)]","[(85.0, 96.0)]",[],0.0
+single,cosmo_cap/NHg6FlQR_XU.mp4,Show me when the person is displaying the pansies that were transferred this morning,"[[46.0, 54.0]]","[(68.0, 83.0)]","[(68.0, 83.0)]",[],0.0
+single,cosmo_cap/KqnPeKD_X-o.mp4,Identify the moment when a toothpick is used to cut the sliced cheese,"[[110.0, 118.0]]","[(110.0, 119.0)]","[(110.0, 119.0)]",[],0.0
+single,cosmo_cap/ALRY17ytL74.mp4,When is a hairdryer used to dry the printed fabric?,"[[140.0, 145.0]]","[(140.0, 146.0)]","[(140.0, 146.0)]",[],0.0
+single,cosmo_cap/2-WJ9QZCMr8.mp4,At what point is the chef scooping ice cream into the glass?,"[[97.0, 103.0]]","[(98.0, 103.0)]","[(98.0, 103.0)]",[],0.0
+single,cosmo_cap/0IDQQDijT7Q.mp4,When are the raw kidneys displayed on the white plate at the beginning of the video?,"[[5.0, 9.0]]","[(6.0, 8.0)]","[(6.0, 8.0)]",[],0.0
+single,cosmo_cap/Zz3K-7wN3c0.mp4,"Show the time range where a woman is lying down holding a blue, heart-shaped object to her stomach","[[67.0, 98.0]]","[(67.0, 98.0)]","[(67.0, 98.0)]",[],0.0
+single,cosmo_cap/6Bzndpb4-7c.mp4,At what point does she list all the ingredients for the recipe?,"[[25.0, 50.0]]","[(5.0, 55.0)]","[(5.0, 55.0)]",[],0.0
+single,cosmo_cap/9P4CfkBsZTA.mp4,Show the part where the wood is being cut by the band saw,"[[22.0, 28.0]]","[(21.0, 28.0)]","[(21.0, 28.0)]",[],0.0
+single,cosmo_cap/tX0lKqguw7s.mp4,Find the segment where the text 'So much YouTube' is displayed,"[[19.0, 169.0]]","[(16.0, 168.0)]","[(16.0, 168.0)]",[],0.0
+single,internvid_vtime/d8hTZS0vpmM.mp4,"When does the player scroll through the equipment crafting menu, passing by 'Elysia' and 'Ana Schariac' items?","[[67.0, 70.0]]","[(66.0, 70.0)]","[(66.0, 70.0)]",[],0.0
+single,cosmo_cap/1bQ36AM2PPY.mp4,Find the moment where a pen is used to mark the center of the red felt circle,"[[33.0, 36.0]]","[(32.0, 37.0)]","[(32.0, 37.0)]",[],0.0
+single,didemo/24135011@N08_9726069905_04a6f23592.mp4,When does the camera show a butterfly with blue wings?,"[[85.0, 88.0]]","[(85.0, 88.0), (111.0, 114.0)]","[(85.0, 88.0), (111.0, 114.0)]",[],0.0
+single,cosmo_cap/zRHziDhSvxQ.mp4,When does the bartender announce the name of the drink he is about to make?,"[[24.0, 26.0]]","[(22.0, 24.0)]","[(22.0, 24.0)]",[],0.0
+single,cosmo_cap/cg5Agu-JiZw.mp4,When are the ingredients for the smoothie shown up close?,"[[57.0, 62.0]]","[(57.0, 62.0)]","[(57.0, 62.0)]",[],0.0
+single,cosmo_cap/IVk4latyzhw.mp4,When does she pour the finished drink into a glass?,"[[111.0, 118.0]]","[(112.0, 119.0)]","[(112.0, 119.0)]",[],0.0
+single,cosmo_cap/ndgkgq7fZ40.mp4,At what point is the bead threaded onto the leather cord?,"[[35.0, 38.0]]","[(33.0, 38.0)]","[(33.0, 38.0)]",[],0.0
+single,cosmo_cap/cCEJWJ0ucsg.mp4,When does the speaker mention the previous work of scraping and priming the ceiling?,"[[7.0, 17.0]]","[(11.0, 14.0)]","[(11.0, 14.0)]",[],0.0
+single,cosmo_cap/XcGOuvxdoKM.mp4,Locate the scene where the final tempering is poured onto the chutney,"[[150.0, 154.0]]","[(148.0, 155.0)]","[(148.0, 155.0)]",[],0.0
+single,cosmo_cap/SKzASJV5-a8.mp4,Find the part where cilantro and lime are added to the rice,"[[55.0, 70.0]]","[(55.0, 63.0)]","[(55.0, 63.0)]",[],0.0
+single,didemo/52900873@N07_10233344605_a53c5801ba.mp4,When does the train release a massive cloud of white steam?,"[[96.0, 106.0]]","[(69.0, 159.0)]","[(69.0, 159.0)]",[],0.0
+single,cosmo_cap/O25aLKqD7C8.mp4,At what point does the chef pour chicken stock into the pot with the laksa paste?,"[[68.0, 71.0]]","[(68.0, 71.0)]","[(68.0, 71.0)]",[],0.0
+single,cosmo_cap/bIzsdxJ-r60.mp4,Locate the segment where the sandwich is being cooked in the skillet,"[[92.0, 103.0]]","[(90.0, 115.0)]","[(90.0, 115.0)]",[],0.0
+single,cosmo_cap/_0WLg5BP9oE.mp4,When are the large purple gerbera daisies added to the bouquet?,"[[70.0, 90.0]]","[(71.0, 79.0)]","[(71.0, 79.0)]",[],0.0
+single,cosmo_cap/VwVMgW76KD8.mp4,When can we see the complete logo with the text 'BEFORE YOU BUY'?,"[[7.0, 13.0]]","[(7.0, 14.0)]","[(7.0, 14.0)]",[],0.0
+single,cosmo_cap/rPpqsroDG5E.mp4,Show the final result where both fruit salads are displayed side by side,"[[139.0, 146.0]]","[(139.0, 146.0)]","[(139.0, 146.0)]",[],0.0
+single,cosmo_cap/fJvrUoSc9Pk.mp4,Show the moment when the boy talks to the man,"[[11.0, 16.0]]","[(11.0, 17.0)]","[(11.0, 17.0)]",[],0.0
+single,cosmo_cap/U3DCtFo4ANU.mp4,When does the chef pour olive oil into the salad?,"[[88.0, 92.0]]","[(87.0, 93.0)]","[(87.0, 93.0)]",[],0.0
+single,cosmo_cap/uEHWNu9GEMk.mp4,Show a general view of the cluttered garage before cleaning,"[[16.0, 24.0]]","[(0.0, 79.0)]","[(0.0, 79.0)]",[],0.0
+single,cosmo_cap/NN-5piWTpmg.mp4,When is the first cooked pappadom placed into the white bowl?,"[[117.0, 119.0]]","[(117.0, 120.0)]","[(117.0, 120.0)]",[],0.0
+single,cosmo_cap/uyFGlcM8QTE.mp4,At what point does the man in the black coat open the box?,"[[90.0, 94.0]]","[(102.0, 107.0)]","[(102.0, 107.0)]",[],0.0
+single,cosmo_cap/TioSsfXaqXM.mp4,When is the bartender adding the Van Gogh Double Espresso Vodka?,"[[31.0, 38.0]]","[(9.0, 13.0)]","[(9.0, 13.0)]",[],0.0
+single,cosmo_cap/XbQjviVVxOE.mp4,When are the rusty parts poured into the machine?,"[[23.0, 26.0]]","[(23.0, 26.0)]","[(23.0, 26.0)]",[],0.0
+single,cosmo_cap/F-2YQkczTAQ.mp4,When is the dirty water poured into the sink?,"[[144.0, 150.0]]","[(145.0, 152.0)]","[(145.0, 152.0)]",[],0.0
+single,cosmo_cap/GbhjyRrLEzY.mp4,At what point are two women presenting the product together?,"[[2.0, 7.0]]","[(3.0, 7.0)]","[(3.0, 7.0)]",[],0.0
+single,cosmo_cap/Mx8G34Nforo.mp4,At what point does the woman explain the 'golden rule' for planting depth?,"[[45.0, 56.0]]","[(50.0, 66.0)]","[(50.0, 66.0)]",[],0.0
+single,cosmo_cap/z4IutEiMLfo.mp4,When does the woman pour white vinegar into the spray bottle?,"[[30.0, 33.0]]","[(28.0, 34.0)]","[(28.0, 34.0)]",[],0.0
+single,cosmo_cap/PzVLwWhzgNA.mp4,"Find the moment the top burr set is lifted out, revealing the coffee grounds inside","[[84.0, 87.0]]","[(84.0, 91.0)]","[(84.0, 91.0)]",[],0.0
+single,cosmo_cap/57XhGy8VncI.mp4,Find the moment the red ring and black ring are being compared,"[[68.0, 72.0]]","[(67.0, 72.0)]","[(67.0, 72.0)]",[],0.0
+single,cosmo_cap/_jYOxl6ReAQ.mp4,Where can I see the woman displaying the completed customized cardigan?,"[[139.0, 147.0]]","[(138.8, 148.8)]","[(138.8, 148.8)]",[],0.0
+single,cosmo_cap/XrLbPuubTlE.mp4,When is the person scraping the old caulk with a utility knife?,"[[62.0, 66.0]]","[(60.0, 90.0)]","[(60.0, 90.0)]",[],0.0
+single,cosmo_cap/T_WxjYH2zkY.mp4,"When do you see the finished dessert with banana slices, chocolate chips, and cocoa powder?","[[122.0, 133.0]]","[(10.0, 23.0), (135.0, 140.0)]","[(10.0, 23.0), (108.0, 133.0), (135.0, 140.0)]","[{'span': (108.0, 133.0), 'votes': 3}]",0.0
+single,cosmo_cap/SRVecPr_ano.mp4,When does the girl in red give a thumbs-up to the camera?,"[[147.0, 149.0]]","[(147.0, 150.0)]","[(147.0, 150.0)]",[],0.0
+single,cosmo_cap/oAYNmfMmqiM.mp4,When is the female host introducing the topic by herself?,"[[0.0, 8.0]]","[(0.0, 19.0)]","[(0.0, 19.0)]",[],0.0
+single,cosmo_cap/X6K-q3Vv_xc.mp4,At what point does the man start spraying the fence for the first time?,"[[51.0, 73.0]]","[(52.0, 64.0)]","[(52.0, 64.0)]",[],0.0
+single,cosmo_cap/pN_rUR9NFmo.mp4,Show me when the person is mashing bananas,"[[57.0, 60.0]]","[(57.0, 60.0)]","[(57.0, 60.0)]",[],0.0
+single,cosmo_cap/_AXB2zI-isw.mp4,When does the man pick up a piece of the Table Mesa Brown rock to show it?,"[[16.0, 19.0]]","[(17.0, 20.0)]","[(17.0, 20.0)]",[],0.0
+single,cosmo_cap/TWoaFf7miU4.mp4,Show the moment the woman adds cream to the saucepan,"[[59.0, 62.0]]","[(57.0, 61.0)]","[(57.0, 61.0)]",[],0.0
+single,cosmo_cap/pG2GViSmNOY.mp4,When is the person adjusting the alignment of the glued blocks?,"[[120.0, 135.0]]","[(64.0, 67.0)]","[(64.0, 67.0)]",[],0.0
+single,cosmo_cap/WbbijlB4K04.mp4,When are all the ingredients for the coffee shown together on the table?,"[[7.0, 15.0]]","[(7.0, 23.0)]","[(7.0, 23.0)]",[],0.0
+single,cosmo_cap/1cKAg1fkLV8.mp4,Show the moment when the chef pours oil into the pan,"[[58.0, 60.0]]","[(59.0, 61.0)]","[(59.0, 61.0)]",[],0.0
+single,queryd/0JboM-STb4E.mp4,Locate the moment when two women are surprised by the appearance of a puppy,"[[27.0, 29.0]]","[(26.0, 39.0)]","[(26.0, 39.0)]",[],0.0
+single,cosmo_cap/rDG6yS7o5xM.mp4,Show me when a person's hand scoops up and displays the finished granules,"[[55.0, 62.0]]","[(55.0, 60.0)]","[(55.0, 60.0), (87.5, 90.0)]","[{'span': (87.5, 90.0), 'votes': 4}]",-33.333333333333336
+single,cosmo_cap/DzDVgmIAARQ.mp4,Find the part where glue is being applied to the inside of the fabric,"[[50.0, 68.0]]","[(49.0, 71.0)]","[(49.0, 71.0)]",[],0.0
+single,cosmo_cap/brD-wrh8wO0.mp4,Pinpoint the scene where a woman is washing another person's hair in a sink,"[[9.0, 11.0]]","[(7.0, 11.0)]","[(7.0, 11.0)]",[],0.0
+single,cosmo_cap/10eU7X0d4wk.mp4,Show the part where the cage trap is being assembled and set up on the grass,"[[21.0, 48.0]]","[(21.0, 49.0)]","[(21.0, 49.0)]",[],0.0
+single,cosmo_cap/Rn4UC_WW-UU.mp4,When is the person showing a CD case with a curved slot for the disc?,"[[129.0, 139.0]]","[(24.0, 32.0)]","[(24.0, 32.0)]",[],0.0
+single,cosmo_cap/8w8wSICdX3A.mp4,At what point is a hole being cut into the side of the bottle with a utility knife?,"[[58.0, 63.0]]","[(58.0, 63.0)]","[(58.0, 63.0)]",[],0.0
+single,cosmo_cap/U2kEsg84F40.mp4,Pinpoint the time when an animation illustrates the relationship between a franchisor and its franchisees,"[[22.0, 25.0]]","[(22.0, 25.0)]","[(22.0, 25.0)]",[],0.0
+single,queryd/FkTybqcX-Yo.mp4,When does the man jump off the building?,"[[34.0, 35.0]]","[(33.0, 35.0)]","[(33.0, 35.0)]",[],0.0
+single,cosmo_cap/aLROmAKAUyo.mp4,Show me the process of knotting individual hairs into a wig base,"[[63.0, 65.0]]","[(123.0, 129.0)]","[(123.0, 129.0)]",[],0.0
+single,queryd/pU0GSbe6r_4.mp4,At what point does the fly drink the milk and fall to the ground?,"[[18.0, 21.0]]","[(19.0, 22.0)]","[(19.0, 22.0)]",[],0.0
+single,cosmo_cap/SrT2qRibxf0.mp4,At what point is she tying the orange ribbon?,"[[48.0, 73.0]]","[(46.0, 62.0)]","[(46.0, 62.0)]",[],0.0
+single,internvid_vtime/PlFiv-1dD8c.mp4,Find the rally where the player in the blue shirt falls over while attempting a shot,"[[75.0, 77.0]]","[(24.0, 27.0)]","[(24.0, 27.0)]",[],0.0
+single,cosmo_cap/jlQ03K9363c.mp4,At what point does he take the burnt cookies out of the oven?,"[[103.0, 106.0]]","[(103.0, 107.0)]","[(103.0, 107.0)]",[],0.0
+single,cosmo_cap/2pm-kBryQz0.mp4,Find the moment when the speaker explicitly states that you should stamp first before embossing,"[[52.0, 61.0]]","[(50.0, 54.0)]","[(50.0, 54.0)]",[],0.0
+single,cosmo_cap/hz_OPv4jENg.mp4,Find the part where the chicken is coated with the crushed chip mixture,"[[71.0, 81.0]]","[(71.0, 80.0)]","[(71.0, 80.0)]",[],0.0
+single,cosmo_cap/F8pONgqExTs.mp4,At what point is water poured into the white powder in the bowl?,"[[73.0, 75.0]]","[(73.0, 75.0)]","[(73.0, 75.0)]",[],0.0
+single,cosmo_cap/kfUDG5b0lNg.mp4,At what point does she add the potato starch to the bowl?,"[[54.0, 58.0]]","[(54.0, 68.0)]","[(54.0, 68.0)]",[],0.0
+single,queryd/ajzArdLK6tE.mp4,When are all the ingredients for the spicy pickles being boiled together?,"[[98.0, 100.0]]","[(90.0, 100.0)]","[(90.0, 100.0)]",[],0.0
+single,cosmo_cap/Od58fHNW9-Q.mp4,During which time interval are mint leaves inserted into the napkin?,"[[90.0, 94.0]]","[(90.0, 96.0)]","[(90.0, 96.0)]",[],0.0
+single,cosmo_cap/wzDJN8QcnW0.mp4,When does the person start flipping the takoyaki balls?,"[[71.0, 86.0]]","[(83.0, 94.0)]","[(83.0, 94.0)]",[],0.0
+single,cosmo_cap/d25eUzHIasM.mp4,Locate the moment the man displays a slice of cheese for the first time,"[[61.0, 66.0]]","[(60.0, 67.0)]","[(60.0, 67.0)]",[],0.0
+single,cosmo_cap/KCUYkTlj188.mp4,"When is the dirty, uncleaned section of the pool primarily shown?","[[13.0, 29.0]]","[(29.0, 111.0)]","[(29.0, 111.0)]",[],0.0
+single,cosmo_cap/3Kv9x8bAWVM.mp4,Show me the process of applying glue to the pipe fittings,"[[14.0, 36.0]]","[(19.0, 34.0)]","[(19.0, 34.0)]",[],0.0
+single,cosmo_cap/HfwZ16zAsr4.mp4,Locate the scene where a salt shaker and a piece of meat are boxing,"[[110.0, 112.0]]","[(109.0, 113.0)]","[(109.0, 113.0)]",[],0.0
+single,cosmo_cap/cSJSGR9yHiM.mp4,When can we see the screen printing press with a white T-shirt on it?,"[[89.0, 91.0]]","[(89.0, 119.0)]","[(89.0, 119.0)]",[],0.0
+single,cosmo_cap/HnhQcdAR9MY.mp4,Find the moment when the reporter asks about the peak season for berries,"[[88.0, 92.0]]","[(35.0, 41.0)]","[(35.0, 41.0)]",[],0.0
+single,cosmo_cap/U5IGhafDQow.mp4,Locate the segment where the man is demonstrating the correct punching stance,"[[92.0, 98.0]]","[(114.0, 136.0)]","[(114.0, 136.0)]",[],0.0
+single,cosmo_cap/UgCcxBFfUaI.mp4,Locate the moment the person picks up the cut piece of mirror to show the clean break,"[[84.0, 86.0]]","[(86.0, 95.0)]","[(86.0, 95.0)]",[],0.0
+single,cosmo_cap/Nlfuf0OsDAM.mp4,Locate the moment the woman lays out all the snowflake decorations on the table,"[[31.0, 41.0]]","[(28.0, 41.0)]","[(28.0, 41.0)]",[],0.0
+single,cosmo_cap/sMoBxY1hno8.mp4,Find the moment the bride smiles at the camera through some foliage,"[[24.0, 26.0]]","[(23.0, 27.0)]","[(23.0, 27.0)]",[],0.0
+single,cosmo_cap/EfhAJoYMrvg.mp4,When is the contact information for the investigator displayed on screen?,"[[129.0, 134.0]]","[(129.0, 134.0)]","[(129.0, 134.0)]",[],0.0
+single,cosmo_cap/Rk1vQJWntKU.mp4,When is a person holding a white hamster in their hands?,"[[32.0, 37.0]]","[(27.0, 37.0), (39.0, 53.0)]","[(27.0, 37.0), (39.0, 53.0), (114.0, 123.0)]","[{'span': (114.0, 123.0), 'votes': 3}]",-16.666666666666664
+single,cosmo_cap/mgihKcw2J1M.mp4,Show the part where the chicken is placed into the oven to bake,"[[123.0, 125.0]]","[(124.0, 126.0)]","[(124.0, 126.0)]",[],0.0
+single,queryd/3Qp1uk9zSo8.mp4,Find the time range where one man is putting handcuffs on another,"[[104.0, 114.0]]","[(105.0, 109.0)]","[(105.0, 109.0)]",[],0.0
+single,cosmo_cap/8iWedSO8BTk.mp4,At what point does the video explain where to place the dinner plate?,"[[61.0, 65.0]]","[(31.0, 37.0)]","[(31.0, 37.0)]",[],0.0
+single,cosmo_cap/vs3r5Nnc5-s.mp4,At what point is the red food coloring added to the syrup?,"[[73.0, 76.0]]","[(73.0, 76.0)]","[(73.0, 76.0)]",[],0.0
+single,cosmo_cap/a5D4dm8KTP8.mp4,At what point are the white flowers of the pepper plant being pollinated?,"[[46.0, 54.0]]","[(47.0, 64.0)]","[(47.0, 64.0)]",[],0.0
+single,cosmo_cap/I5VUKJ2IvvU.mp4,Pinpoint the time when the speaker says 'it boggles my mind',"[[55.0, 57.0]]","[(34.0, 38.0)]","[(34.0, 38.0)]",[],0.0
+single,cosmo_cap/9aqjomLn76Y.mp4,When does the person stir the crab mix?,"[[8.0, 17.0]]","[(7.0, 14.0)]","[(7.0, 14.0)]",[],0.0
+single,cosmo_cap/M6zmRSmpGaQ.mp4,Locate the moment when the camera focuses on a detailed close-up of a single large purple flower,"[[59.0, 64.0]]","[(58.0, 65.0)]","[(58.0, 65.0)]",[],0.0
+single,cosmo_cap/EQQSxxNMbHk.mp4,"Locate the segment where the person displays the finished, modified can","[[119.0, 128.0]]","[(119.0, 131.0)]","[(119.0, 131.0)]",[],0.0
+single,cosmo_cap/hmYvBZhUkrI.mp4,When is the second method of creating the stitch demonstrated?,"[[39.0, 62.0]]","[(31.0, 67.0)]","[(31.0, 67.0)]",[],0.0
+single,cosmo_cap/fAwxiOSY2oU.mp4,Find the part where the person uses a spatula to break up the frozen cream in the tray,"[[96.0, 100.0]]","[(95.0, 122.0)]","[(95.0, 122.0)]",[],0.0
+single,cosmo_cap/l4H41hakATM.mp4,When is the man unfolding the wagon?,"[[7.0, 17.0]]","[(8.0, 29.0)]","[(8.0, 29.0)]",[],0.0
+single,internvid_vtime/9V_cgAk9gI0.mp4,When does the woman open the kitchen cabinets?,"[[0.0, 2.0]]","[(0.0, 5.0)]","[(0.0, 5.0)]",[],0.0
+single,cosmo_cap/SxMEkRUmUmg.mp4,Identify the time range when the camera is panning across the wooded area from left to right,"[[19.0, 27.0]]","[(0.0, 24.0), (56.0, 71.0)]","[(0.0, 24.0), (56.0, 71.0)]",[],0.0
+single,cosmo_cap/gWnLWYGABU0.mp4,When does the woman playfully put kiwi slices on her eyes?,"[[110.0, 112.0]]","[(110.0, 112.0)]","[(110.0, 112.0)]",[],0.0
+single,cosmo_cap/HDv6Mel2fLQ.mp4,Locate the scene where the woman is stirring the pot with a wooden spoon,"[[100.0, 107.0]]","[(99.0, 118.0)]","[(99.0, 118.0)]",[],0.0
+single,cosmo_cap/lanBRg7TLJc.mp4,At what point are the eyes of the pufferfish added?,"[[40.0, 57.0]]","[(41.0, 58.0)]","[(41.0, 58.0)]",[],0.0
+single,cosmo_cap/r_KE2T7AiUY.mp4,Show the part where a person demonstrates how a knife can scratch the laminate surface,"[[64.0, 65.0]]","[(61.0, 65.0)]","[(61.0, 65.0)]",[],0.0
+single,cosmo_cap/8AKl3rK3GKg.mp4,At what point is slivered ginger placed on top of the fish?,"[[49.0, 57.0]]","[(48.0, 76.0)]","[(48.0, 76.0)]",[],0.0
+single,cosmo_cap/YENg78brSvA.mp4,Find the segment where the speaker says 'best known as an antispasmodic' while a dense patch of dark blue flowers is displayed,"[[4.0, 6.0]]","[(3.0, 9.0)]","[(3.0, 9.0)]",[],0.0
+single,cosmo_cap/OSTekzegyQ8.mp4,At what point is the man measuring the distance on the wooden plank with a tape measure?,"[[37.0, 56.0]]","[(36.0, 71.0)]","[(36.0, 71.0)]",[],0.0
+single,cosmo_cap/Fv1E8WQalaI.mp4,Show me the part where a diagram of the tube's cross-section is displayed,"[[31.0, 43.0]]","[(32.0, 43.0)]","[(32.0, 43.0)]",[],0.0
+single,cosmo_cap/8ohVvXTvYdA.mp4,When does the speaker mention boiling the mixture for 50 minutes?,"[[94.0, 97.0]]","[(48.0, 51.0)]","[(48.0, 51.0)]",[],0.0
+single,cosmo_cap/dW5OBrB4MRM.mp4,"When does the video show the temperature scale for incandescence, ranging from 800°F to 2400°F?","[[21.0, 24.0]]","[(21.0, 24.0)]","[(21.0, 24.0)]",[],0.0
+single,cosmo_cap/EA_JRK47hPM.mp4,When does the chef introduce himself?,"[[1.0, 3.0]]","[(0.0, 6.0)]","[(0.0, 6.0)]",[],0.0
+single,cosmo_cap/AXX_grOeSp8.mp4,At what time does the man start applying the product onto the board on the door?,"[[98.0, 106.0]]","[(98.0, 114.0)]","[(98.0, 114.0)]",[],0.0
+single,cosmo_cap/aEeLdxf0I_0.mp4,Show me the moment when the camera pans to reveal the blue houses behind the fence,"[[43.0, 46.0]]","[(43.0, 46.0)]","[(43.0, 46.0)]",[],0.0
+single,cosmo_cap/E0SEyLGUp7c.mp4,At what point is the woman turning the crank to grind the ice?,"[[63.0, 81.0]]","[(53.0, 81.0)]","[(53.0, 81.0)]",[],0.0
+single,internvid_vtime/aEPJLJ6ABGM.mp4,Show me when a person is walking a white dog on a path,"[[89.0, 92.0]]","[(88.0, 92.0)]","[(88.0, 92.0)]",[],0.0
+single,hirest/MLisyNXAi_I.mp4,Show the part where a horse head figure appears on the counter,"[[41.0, 44.0]]","[(42.0, 55.0)]","[(42.0, 55.0)]",[],0.0
+single,cosmo_cap/AIT-SsWHRyU.mp4,When does the woman talk about making a solution with detergent?,"[[18.0, 32.0]]","[(24.0, 49.0)]","[(24.0, 49.0)]",[],0.0
+single,cosmo_cap/ChNka_NFKes.mp4,Show the moment the two monster trucks are presented in their original packaging,"[[10.0, 24.0]]","[(9.0, 24.0)]","[(9.0, 24.0)]",[],0.0
+single,cosmo_cap/xHKb9iZsNBY.mp4,When are various types of daffodils displayed?,"[[7.0, 27.0]]","[(7.0, 32.0)]","[(7.0, 32.0)]",[],0.0
+single,cosmo_cap/wXvi4X3tMgU.mp4,When are two people walking through the nursery?,"[[12.0, 14.0]]","[(12.0, 14.0)]","[(12.0, 14.0)]",[],0.0
+single,hirest/ZImbyWnk_5E.mp4,When does the man re-install the glove box?,"[[81.0, 87.0]]","[(77.0, 87.0)]","[(77.0, 87.0)]",[],0.0
+single,cosmo_cap/i0qzVgZVWDM.mp4,When can we see three whole carrots on the table?,"[[20.0, 26.0]]","[(20.0, 27.0)]","[(20.0, 27.0)]",[],0.0
+single,cosmo_cap/jBgOUrJjWhI.mp4,Where does the camera show the view from underneath the tree's canopy?,"[[49.0, 53.0]]","[(50.0, 55.0)]","[(50.0, 55.0)]",[],0.0
+single,cosmo_cap/2zrff7zsD1s.mp4,Find the segment where the woman is mowing the lawn,"[[61.0, 63.0]]","[(61.0, 75.0)]","[(61.0, 75.0)]",[],0.0
+single,cosmo_cap/dEpG4Oe5AlQ.mp4,When does the woman wave to the audience at the start of the video?,"[[0.0, 1.0]]","[(0.0, 1.0)]","[(0.0, 1.0)]",[],0.0
+single,internvid_vtime/gXS9JkvrsBw.mp4,Locate the segment that displays a social media comment with a timestamp of '22-2-5 01:00',"[[30.0, 60.0]]","[(31.0, 60.0)]","[(31.0, 60.0)]",[],0.0
+single,cosmo_cap/RO6dgkL5A5A.mp4,When is a 'no baby bottle' sign shown on screen?,"[[71.0, 73.0]]","[(71.0, 73.0)]","[(71.0, 73.0)]",[],0.0
+single,queryd/Hf_2ilitep0.mp4,Pinpoint the moment the instructor uses his hand to demonstrate an up-and-down strumming motion,"[[106.0, 109.0]]","[(14.0, 19.0)]","[(14.0, 19.0)]",[],0.0
+single,internvid_vtime/QYbUkCC6N0I.mp4,When does the girl make a surprised expression with her hands on her cheeks?,"[[6.0, 9.0]]","[(7.0, 11.0)]","[(7.0, 11.0)]",[],0.0
+single,internvid_vtime/xT3ggQgSupM.mp4,Find the moment where a black and white portrait of an elderly man with glasses is displayed,"[[62.0, 86.0]]","[(62.0, 86.0)]","[(62.0, 86.0)]",[],0.0
+single,queryd/aI51UWF8_9Y.mp4,When can we see a woman doing a lower body workout in a hallway?,"[[30.0, 34.0]]","[(31.0, 34.0)]","[(31.0, 34.0)]",[],0.0
+single,cosmo_cap/VuSzBIAGaXw.mp4,Show the person using a needle to poke holes through the paper into the canvas,"[[33.0, 41.0]]","[(29.0, 53.0)]","[(29.0, 53.0)]",[],0.0
+single,cosmo_cap/NCItaGQJaDA.mp4,When are the pork chops placed in the marinade bag?,"[[55.0, 58.0]]","[(54.0, 62.0)]","[(54.0, 62.0)]",[],0.0
+single,internvid_vtime/7BysIGSCx-c.mp4,"Find the time when the woman demonstrates a single, complete backstroke arm movement with her right arm","[[14.0, 21.0]]","[(14.0, 18.0)]","[(14.0, 18.0)]",[],0.0
+single,cosmo_cap/ZSO7iADhmZ8.mp4,At what point does the man use scissors to trim the leaves on the cutting?,"[[72.0, 78.0]]","[(69.0, 79.0)]","[(69.0, 79.0)]",[],0.0
+single,cosmo_cap/rUrJNApqGpk.mp4,When does the man introduce himself as a celebrity chef?,"[[5.0, 9.0]]","[(10.0, 12.0)]","[(10.0, 12.0)]",[],0.0
+single,queryd/T0rrS51ry2s.mp4,When are the parents pointing their fingers towards the camera?,"[[20.0, 23.0]]","[(20.0, 23.0)]","[(20.0, 23.0)]",[],0.0
+single,internvid_vtime/UdTyFJHsMXI.mp4,"Show the headline 'Elon Musk keeps the layoff axe swinging, cuts more Twitter workers'","[[1.0, 4.0]]","[(0.0, 8.0)]","[(0.0, 8.0)]",[],0.0
+single,internvid_vtime/OlXYm8hSvyo.mp4,When does the man briefly touch the back of his head while talking?,"[[44.0, 45.0]]","[(44.0, 46.0)]","[(44.0, 46.0)]",[],0.0
+single,cosmo_cap/1ozCR3DdwQQ.mp4,Show me the process of soaking the brown terracotta disk in a bowl of water,"[[36.0, 38.0]]","[(35.0, 38.0)]","[(35.0, 38.0)]",[],0.0
+single,queryd/gLax3zOBN40.mp4,Show me when a presenter with curly hair is speaking to the camera,"[[51.0, 83.0]]","[(51.0, 83.0)]","[(51.0, 83.0)]",[],0.0
+single,cosmo_cap/ikx0ko9kwiI.mp4,At what point does the woman explain that the shirt has an 'active fit'?,"[[62.0, 67.0]]","[(1.0, 11.0)]","[(1.0, 11.0)]",[],0.0
+single,internvid_vtime/hG4u-Zcl4LQ.mp4,Find the moment where the lantern is rotating in the dark,"[[33.0, 37.0]]","[(29.0, 82.0)]","[(29.0, 82.0)]",[],0.0
+single,internvid_vtime/EvOP7War6Jw.mp4,Show the first instance of a bald man speaking to the camera,"[[11.0, 19.0]]","[(10.0, 19.0)]","[(10.0, 19.0)]",[],0.0
+single,cosmo_cap/I8Pdv-bN3cM.mp4,Locate the scene where a woman tests the water with a strip,"[[80.0, 83.0]]","[(78.0, 85.0)]","[(78.0, 85.0)]",[],0.0
+single,internvid_vtime/r-fF1aLPWcQ.mp4,When are the four steps for the gift service illustrated?,"[[0.0, 23.0]]","[(0.0, 22.0)]","[(0.0, 22.0)]",[],0.0
+single,cosmo_cap/C_LZuq4j2SU.mp4,Show me where the cleaning product and tools are displayed next to a yellow car,"[[75.0, 88.0]]","[(75.0, 88.0)]","[(75.0, 88.0)]",[],0.0
+single,internvid_vtime/s5WN0K5QpUc.mp4,When can we see people in black attending a memorial service?,"[[1.0, 8.0]]","[(1.0, 15.0), (39.0, 47.0)]","[(1.0, 15.0), (39.0, 47.0)]",[],0.0
+single,internvid_vtime/xIYaMBuNuJU.mp4,Show the process of automatic processing being executed,"[[22.0, 26.0]]","[(17.0, 25.0), (36.0, 51.0)]","[(17.0, 25.0), (36.0, 51.0)]",[],0.0
+single,internvid_vtime/oZkPWy3tigQ.mp4,Show me the moment when a red and yellow dragon is dancing in a town square,"[[21.0, 35.0]]","[(76.0, 87.0)]","[(76.0, 87.0)]",[],0.0
+single,queryd/kvt41MIelDE.mp4,When are fireworks shooting over the Disney castle?,"[[1.0, 4.0]]","[(1.0, 5.0)]","[(1.0, 5.0)]",[],0.0
+single,cosmo_cap/YXlHQXDWdIc.mp4,When does the woman in the white top kneel down to demonstrate how to view the shrubs?,"[[13.0, 22.0]]","[(32.0, 44.0)]","[(32.0, 44.0)]",[],0.0
+single,internvid_vtime/vwSuhuQGR_0.mp4,At what point does an animated document icon with a checkmark appear?,"[[40.0, 50.0]]","[(39.0, 42.0)]","[(39.0, 42.0)]",[],0.0
+single,cosmo_cap/MRFsJ0cy6rI.mp4,At what point does the woman add olive oil to the fish?,"[[90.0, 101.0]]","[(89.0, 96.0)]","[(89.0, 96.0)]",[],0.0
+single,internvid_vtime/NDJeMqQja78.mp4,When can we see the side replay of the swing in the golf simulator?,"[[79.0, 89.0]]","[(9.0, 22.0)]","[(9.0, 22.0)]",[],0.0
+single,internvid_vtime/4nJQXxfrL_s.mp4,At what point does the camera zoom out to reveal a wide shot of the two men in the field?,"[[13.0, 19.0]]","[(13.0, 18.0)]","[(13.0, 18.0)]",[],0.0
+single,cosmo_cap/61Ps5dPgmtE.mp4,What is the time frame for applying the cleaner with the pump sprayer?,"[[18.0, 48.0]]","[(15.0, 47.0)]","[(15.0, 47.0)]",[],0.0
+single,cosmo_cap/6WJNbKbB82U.mp4,At what point is the blade lid screwed onto the cup?,"[[48.0, 51.0]]","[(45.0, 51.0)]","[(45.0, 51.0)]",[],0.0
+single,internvid_vtime/SQdz2h4bzZQ.mp4,When does the video show someone collecting coins from a pile?,"[[99.0, 103.0]]","[(98.0, 103.0)]","[(98.0, 103.0)]",[],0.0
+single,internvid_vtime/Mnl5Cd38JYU.mp4,Show me the part where the task is to count triangles,"[[31.0, 46.0]]","[(31.0, 59.0)]","[(31.0, 59.0)]",[],0.0
+single,internvid_vtime/-WkYl-drLME.mp4,Find the clip where the man is drawing a horizontal arrow with a red pen,"[[37.0, 39.0]]","[(8.0, 11.0)]","[(8.0, 11.0)]",[],0.0
+single,cosmo_cap/I56iwEwd85M.mp4,Find the clip where the person displays the water quality test results,"[[52.0, 58.0]]","[(45.0, 48.0), (53.0, 58.0)]","[(45.0, 48.0), (53.0, 58.0)]",[],0.0
+single,internvid_vtime/FGVns2ivzcE.mp4,Show me the part where the user is scrolling through the search results for 'frame cute',"[[40.0, 57.0]]","[(35.0, 56.0)]","[(35.0, 56.0)]",[],0.0
+single,cosmo_cap/l0ikrRGfGuo.mp4,When are the plants being sprayed with water?,"[[73.0, 75.0]]","[(64.0, 76.0)]","[(64.0, 76.0)]",[],0.0
+single,cosmo_cap/kf3-f2_DRys.mp4,Show the moment wood chips are being put into a bowl of water,"[[23.0, 31.0]]","[(19.0, 36.0)]","[(19.0, 36.0)]",[],0.0
+single,cosmo_cap/yK3jDvXbCaQ.mp4,At what point is the woman using a vacuum cleaner on the sofa cushions?,"[[71.0, 73.0]]","[(71.0, 74.0)]","[(71.0, 74.0)]",[],0.0
+single,internvid_vtime/6w1RHKc9WWY.mp4,Find the time range when the command to run the Python script is being executed in the terminal,"[[96.0, 98.0]]","[(95.0, 99.0)]","[(95.0, 99.0)]",[],0.0
+single,cosmo_cap/ywg-FHmX6Cg.mp4,When does the man use a black pen to draw on the silver sheet?,"[[24.0, 50.0]]","[(25.0, 39.0)]","[(25.0, 39.0)]",[],0.0
+single,internvid_vtime/YNlL5bAMBu0.mp4,When is the man in the white headdress giving a speech?,"[[76.0, 92.0]]","[(76.0, 93.0)]","[(76.0, 93.0)]",[],0.0
+single,internvid_vtime/SCuGVQdbnwo.mp4,Locate the segment where a man with white hair is shown holding a drink,"[[0.0, 16.0]]","[(0.0, 28.0), (60.0, 82.0)]","[(0.0, 28.0), (60.0, 82.0)]",[],0.0
+single,internvid_vtime/lSyIlxcIN7A.mp4,Show me the moment when three women are sitting and listening to the speaker,"[[8.0, 13.0]]","[(8.0, 12.0), (29.0, 34.0), (43.0, 48.0), (51.0, 55.0), (62.0, 67.0)]","[(8.0, 12.0), (29.0, 34.0), (43.0, 48.0), (51.0, 55.0), (62.0, 67.0)]",[],0.0
+single,internvid_vtime/ykbCzY23vrQ.mp4,Show me when various types of nuts are displayed in a wooden bowl on a wooden surface,"[[2.0, 9.0]]","[(2.0, 9.0)]","[(2.0, 9.0)]",[],0.0
+single,cosmo_cap/ras3E7nCo9k.mp4,Show the part where the grease collection channel is being removed from the baffle filter,"[[59.0, 64.0]]","[(43.0, 54.0)]","[(43.0, 54.0)]",[],0.0
+single,queryd/oTuTdMMPfvc.mp4,At what time is someone pouring spiced turmeric honey sauce onto the ice cream?,"[[42.0, 44.0]]","[(42.0, 44.0)]","[(42.0, 44.0)]",[],0.0
+single,internvid_vtime/IND_FMzBLzk.mp4,Pinpoint the time when a camouflaged prototype car is shown parked on a street,"[[27.0, 33.0]]","[(27.0, 38.0)]","[(27.0, 38.0)]",[],0.0
+single,internvid_vtime/bHvP5imkkcg.mp4,Pinpoint the interval when the expression '6840 / (52π)' is being entered into the calculator,"[[52.0, 65.0]]","[(53.0, 69.0)]","[(53.0, 69.0)]",[],0.0
+single,internvid_vtime/u-JXZiXFM-o.mp4,"When does a family, including a small child, walk towards the camera pulling luggage?","[[21.0, 25.0]]","[(21.0, 26.0)]","[(21.0, 26.0)]",[],0.0
+single,internvid_vtime/yc-BlsOTNu0.mp4,"When does the first train, which is white, pass by the initial single-light crossing sign?","[[2.0, 5.0]]","[(2.0, 5.0)]","[(2.0, 5.0)]",[],0.0
+single,cosmo_cap/InMsxQAzQjA.mp4,Show the demonstration of how to cut meat using a knife and fork,"[[27.0, 40.0]]","[(24.0, 41.0)]","[(24.0, 41.0)]",[],0.0
+single,internvid_vtime/jAaSqGPBUpc.mp4,Locate the clip where an elephant cartoon is dragged and dropped for background removal,"[[72.0, 75.0]]","[(73.0, 77.0)]","[(73.0, 77.0)]",[],0.0
+single,didemo/61774325@N00_10412600975_85816b74c8.mp4,Locate the segment where the speaker mentions the multifunction instrument panel,"[[47.0, 50.0]]","[(0.0, 7.0)]","[(0.0, 7.0)]",[],0.0
+single,cosmo_cap/SHKeyr1s7fA.mp4,At what point is the yellow thermostat shown plugged into the outlet?,"[[12.0, 16.0]]","[(12.0, 39.0)]","[(12.0, 39.0)]",[],0.0
+single,didemo/22314020@N07_3697544627_461c3d619a.mp4,When can we see the man hitting the two upper tom drums with both sticks?,"[[3.0, 4.0]]","[(8.0, 19.0)]","[(8.0, 19.0)]",[],0.0
+single,didemo/40825163@N02_6219717649_59e0551e48.mp4,Pinpoint the time when a road sign indicating 'Pedestrians Crossing' and a '70' speed limit is visible,"[[84.0, 86.0]]","[(83.0, 86.0)]","[(83.0, 86.0)]",[],0.0
+single,didemo/57329804@N00_2554055167_c8016d0302.mp4,When can we see a man pulling a rolling suitcase?,"[[1.0, 3.0]]","[(42.0, 48.0)]","[(42.0, 48.0)]",[],0.0
+single,didemo/40614660@N00_3128667836_2d39cce3cc.mp4,Show the moment when the man playing the keyboard smiles at the camera,"[[5.0, 7.0]]","[(6.0, 8.0)]","[(6.0, 8.0)]",[],0.0
+single,didemo/57862612@N00_2575920074_5e74e61ca1.mp4,Locate the time when the boy in the blue jersey on the right falls to the ground,"[[61.0, 63.0]]","[(7.0, 11.0)]","[(7.0, 11.0)]",[],0.0
+single,didemo/36422308@N03_6732203443_1698cd6438.mp4,At what point does the person holding the camera briefly turn it towards themselves?,"[[18.0, 21.0]]","[(18.0, 20.0)]","[(18.0, 20.0)]",[],0.0
+single,didemo/89741918@N00_5042385641_881d3fae4d.mp4,At what time does the person in the wheelchair raise their arms up?,"[[74.0, 79.0]]","[(75.0, 80.0)]","[(75.0, 80.0)]",[],0.0
+single,didemo/16074683@N00_5818226848_9c339c0bd1.mp4,When can we see the woman in the light blue apron taking a photo with her camera?,"[[76.0, 81.0]]","[(75.0, 79.0)]","[(75.0, 79.0)]",[],0.0
+single,didemo/45153470@N00_2402280929_b0c99f52e0.mp4,Show when a staff member in a black dress and hat is gesturing with her hands,"[[59.0, 61.0]]","[(38.0, 42.0)]","[(38.0, 42.0)]",[],0.0
+single,didemo/8263143@N07_5217892610_166e32dd2c.mp4,Pinpoint the scene where a worker in a red shirt is removing the wooden formwork,"[[76.0, 82.0]]","[(31.0, 36.0)]","[(31.0, 36.0)]",[],0.0
+single,cosmo_cap/URsw5qdqEpM.mp4,When does she pull on the fringe strips to make them roll up?,"[[78.0, 81.0]]","[(31.0, 36.0)]","[(31.0, 36.0)]",[],0.0
+single,internvid_vtime/7jxuqLfv_Jk.mp4,When is the tow truck with the flashing red and blue lights visible?,"[[0.0, 6.0]]","[(0.0, 7.0)]","[(0.0, 7.0)]",[],0.0
+single,internvid_vtime/FjKww88BNeA.mp4,Show the clip where a hand is cleaning the soil around the base of the lettuce,"[[56.0, 60.0]]","[(59.0, 73.0)]","[(59.0, 73.0)]",[],0.0
+single,cosmo_cap/rqKHTUB_p38.mp4,At what point does a man in glasses start a conversation with four women?,"[[21.0, 27.0]]","[(19.0, 26.0)]","[(19.0, 26.0)]",[],0.0
+single,cosmo_cap/nZsC1RiKYVc.mp4,When is the seed packet being held and displayed?,"[[6.0, 14.0]]","[(7.0, 15.0)]","[(7.0, 15.0)]",[],0.0
+single,didemo/35029562@N00_3653342445_29f3c8a483.mp4,Identify the time range when yellow tour boats are docked at the pier,"[[33.0, 43.0]]","[(38.0, 82.0)]","[(38.0, 82.0)]",[],0.0
+single,cosmo_cap/2XidZwjJIR4.mp4,At what point are chopped green onions added to the raw chicken in the glass bowl?,"[[23.0, 27.0]]","[(23.0, 25.0)]","[(23.0, 25.0)]",[],0.0
+single,internvid_vtime/Sck97LlEgP4.mp4,When is the stunt plane flying low over the water with a smoke trail?,"[[74.0, 81.0]]","[(73.0, 84.0)]","[(73.0, 84.0)]",[],0.0
+single,cosmo_cap/7B_ktedCJDY.mp4,Find the clip where water starts to come out of the radiator valve,"[[56.0, 60.0]]","[(43.0, 47.0)]","[(43.0, 47.0)]",[],0.0
+single,internvid_vtime/KDtXgupH--I.mp4,When can we see a close-up of a clock face?,"[[53.0, 61.0]]","[(53.0, 61.0)]","[(53.0, 61.0)]",[],0.0
+single,internvid_vtime/0AzqxhHvTt0.mp4,Locate the segment where a doctor is examining a young girl's abdomen,"[[35.0, 62.0]]","[(34.0, 62.0)]","[(34.0, 62.0)]",[],0.0
+single,didemo/52032288@N02_8212373377_95dc87f1d0.mp4,"Show me when a cuttlefish is clearly visible, hovering above the coral","[[23.0, 30.0]]","[(50.0, 84.0)]","[(50.0, 84.0)]",[],0.0
+single,cosmo_cap/FJnAy1s-geA.mp4,At what point does the man list other vegetables you can grow?,"[[59.0, 63.0]]","[(38.0, 69.0)]","[(38.0, 69.0)]",[],0.0
+single,cosmo_cap/aogP4aQsYN8.mp4,At what point does the video advise against picking up furniture from the side of the road?,"[[42.0, 50.0]]","[(42.0, 47.0)]","[(42.0, 47.0)]",[],0.0
+single,internvid_vtime/lSF7xEUQQcA.mp4,What is the time range for the shot of a park with a lake and buildings in the distance?,"[[27.0, 54.0]]","[(28.0, 55.0)]","[(28.0, 55.0)]",[],0.0
+single,internvid_vtime/sX5HnsXvV9A.mp4,When is the man in the red shirt talking on the phone?,"[[1.0, 8.0]]","[(1.0, 11.0)]","[(1.0, 11.0)]",[],0.0
+single,didemo/35776264@N08_4778872041_7e8fd8d447.mp4,"Show me the moment when the figures are flying in a circle, leaving a trail of light","[[45.0, 50.0]]","[(34.0, 76.0)]","[(34.0, 76.0)]",[],0.0
+single,cosmo_cap/IzH23pUzfsA.mp4,When is the phone number for the company displayed on screen?,"[[72.0, 76.0]]","[(72.0, 77.0)]","[(72.0, 77.0)]",[],0.0
+single,cosmo_cap/w-oyczs15e8.mp4,Show me when salt is being sprinkled on a windowsill,"[[22.0, 25.0]]","[(22.0, 26.0)]","[(22.0, 26.0)]",[],0.0
+single,cosmo_cap/fkE8-VuvSKM.mp4,When does the man in the grey hoodie react excitedly after catching a fish?,"[[59.0, 61.0]]","[(58.0, 60.0)]","[(58.0, 60.0)]",[],0.0
+single,cosmo_cap/ubJ5MsIJVLE.mp4,When can we see the food host standing in the kitchen and talking to the camera at the beginning of the video?,"[[0.0, 17.0]]","[(0.0, 12.0)]","[(0.0, 12.0)]",[],0.0
+single,cosmo_cap/aM1PHp-oLRY.mp4,"When are the fully assembled burgers with buns, cheese, and toppings displayed?","[[63.0, 71.0]]","[(62.0, 68.0)]","[(62.0, 68.0)]",[],0.0
+single,cosmo_cap/9XiQLXOpX9Y.mp4,Find the moment the woman is wiping the exfoliant off her face,"[[56.0, 66.0]]","[(27.0, 65.0)]","[(27.0, 65.0)]",[],0.0
+single,didemo/53007003@N00_2751408510_2da6966743.mp4,Identify the segment where the dog is chewing on the cork on the grass,"[[74.0, 80.0]]","[(17.0, 42.0)]","[(17.0, 42.0)]",[],0.0
+single,queryd/GRi80V8ire8.mp4,Show the moment the woman is hugging her black dog,"[[8.0, 10.0]]","[(8.0, 12.0)]","[(8.0, 12.0)]",[],0.0
+single,cosmo_cap/EBaqutjM72I.mp4,When is the man in the lime green shirt opening the mirrored door?,"[[28.0, 30.0]]","[(29.0, 38.0)]","[(29.0, 38.0)]",[],0.0
+single,didemo/19251296@N00_6040182805_8617b048ce.mp4,"Show me when the man stands up and turns, revealing a large tattoo on his back","[[37.0, 40.0]]","[(5.0, 8.0), (20.0, 24.0)]","[(5.0, 8.0), (20.0, 24.0)]",[],0.0
+single,didemo/50905015@N00_2970821152_69a24145e2.mp4,When does the man sitting at the drum set laugh at the end?,"[[75.0, 76.0]]","[(74.0, 77.0)]","[(74.0, 77.0)]",[],0.0
+single,cosmo_cap/jlo7WZeCOeg.mp4,When does the woman perform the 'magic trick' of quickly forming a bow?,"[[7.0, 10.0]]","[(6.0, 11.0)]","[(6.0, 11.0)]",[],0.0
+single,cosmo_cap/ppYdYVMEoXA.mp4,Find the segment demonstrating how to get off the seat and straddle the top tube when stopping,"[[59.0, 63.0]]","[(17.0, 26.0)]","[(17.0, 26.0)]",[],0.0
+single,hirest/NdbrFlJlfbQ.mp4,At what point is the heat gun used on the card?,"[[49.0, 51.0]]","[(49.0, 52.0)]","[(49.0, 52.0)]",[],0.0
+single,didemo/26105073@N03_5738719040_6410ba6b77.mp4,Show the moment when a person on the ground waves at the airplane,"[[19.0, 26.0]]","[(19.0, 25.0)]","[(19.0, 25.0)]",[],0.0
+single,internvid_vtime/jwqL5-iGTG4.mp4,Find the part where the developer is working in a dark-themed code editor,"[[66.0, 74.0]]","[(66.0, 74.0)]","[(66.0, 74.0)]",[],0.0
+single,internvid_vtime/VcrY4ZANco8.mp4,Locate the segment where a silver spoon is used to level the seeds in the blue scoop,"[[54.0, 57.0]]","[(55.0, 57.0)]","[(55.0, 57.0)]",[],0.0
+single,cosmo_cap/uFWfadPFOBA.mp4,At what point does a girl with glasses eat noodles from a fork?,"[[9.0, 11.0]]","[(9.0, 12.0)]","[(9.0, 12.0)]",[],0.0
+single,internvid_vtime/w2h7KKtHReo.mp4,At what point is the effect of moving the gas slide to the right position shown?,"[[41.0, 45.0]]","[(42.0, 45.0)]","[(42.0, 45.0)]",[],0.0
+single,cosmo_cap/zslrtOk3Ld0.mp4,At what point is the dipstick being wiped with a blue cloth?,"[[19.0, 21.0]]","[(28.0, 30.0)]","[(28.0, 30.0)]",[],0.0
+single,didemo/38712296@N07_6270354354_dcffe32d4c.mp4,When can we see the final printed result being held up?,"[[66.0, 72.0]]","[(65.0, 72.0)]","[(65.0, 72.0)]",[],0.0
+single,didemo/92431035@N00_6706087159_db566da998.mp4,Show me the moment the baby drops something and starts crawling,"[[37.0, 40.0]]","[(35.0, 42.0)]","[(35.0, 42.0)]",[],0.0
+single,internvid_vtime/qE5VuYpU4eo.mp4,Show the clip where the man is filleting the fish on a stone wall,"[[17.0, 33.0]]","[(17.0, 34.0)]","[(17.0, 34.0)]",[],0.0
+single,internvid_vtime/npuDkRXeID4.mp4,At what point is the user entering their login information on the Facebook page?,"[[32.0, 43.0]]","[(32.0, 51.0)]","[(32.0, 51.0)]",[],0.0
+single,cosmo_cap/wRYh6ZidXJk.mp4,When can we see a woman talking about the dangers of food temperature?,"[[48.0, 65.0]]","[(43.0, 68.81004444444444)]","[(43.0, 68.81004444444444)]",[],0.0
+single,cosmo_cap/RtV99msy37E.mp4,When does the man advise against sending a birthday text message right away?,"[[4.0, 8.0]]","[(11.0, 14.0)]","[(11.0, 14.0)]",[],0.0
+single,cosmo_cap/QCV9URTRV28.mp4,Show me when the man is putting the knife back in the knife holder,"[[15.0, 17.0]]","[(15.0, 19.0)]","[(15.0, 19.0)]",[],0.0
+single,internvid_vtime/kcVVu5vXCQk.mp4,At what point in the video is a police officer seen tasing a man?,"[[46.0, 48.0]]","[(35.0, 41.0)]","[(35.0, 41.0)]",[],0.0
+single,internvid_vtime/wY0BTyuNPzs.mp4,Show the result of cleaning the pliers after they are lifted from the green solution,"[[9.0, 15.0]]","[(9.0, 14.0)]","[(9.0, 14.0)]",[],0.0
+single,didemo/27028730@N00_5777733461_f3b2ae4bb2.mp4,When does the speaker check his watch?,"[[57.0, 59.0]]","[(57.0, 59.0)]","[(57.0, 59.0)]",[],0.0
+single,cosmo_cap/KlzJuDK3_iQ.mp4,At what point does the man explain that the sweet peas will be tipping over the edge by the end of summer?,"[[56.0, 61.0]]","[(15.0, 18.0)]","[(15.0, 18.0)]",[],0.0
+single,didemo/7504554@N04_3347369632_b2c6dcea45.mp4,Identify the segment where the background turns brownish-orange and is filled with multiple blurry pentagons,"[[19.0, 39.0]]","[(19.0, 40.0)]","[(19.0, 40.0)]",[],0.0
+single,internvid_vtime/wmn_tKUAzq0.mp4,At what point does an animated bar chart appear on screen comparing data from 2017 and 2022?,"[[15.0, 19.0]]","[(15.0, 28.0)]","[(15.0, 28.0)]",[],0.0
+single,internvid_vtime/NJhglNZOS3c.mp4,Locate the runner wearing bib number 3579 in a green and red outfit,"[[24.0, 33.0]]","[(0.0, 3.0), (24.0, 34.0)]","[(0.0, 3.0), (24.0, 34.0)]",[],0.0
+single,cosmo_cap/Uk3wkR6ieVE.mp4,When does the man introduce the required utensils?,"[[10.0, 13.0]]","[(24.0, 38.0)]","[(24.0, 38.0)]",[],0.0
+single,internvid_vtime/ZhZVZF6n-n0.mp4,Show me the moment when the person is wiping the dipstick with a cloth,"[[29.0, 31.0]]","[(29.0, 32.0), (39.0, 41.0)]","[(29.0, 32.0), (39.0, 41.0)]",[],0.0
+single,internvid_vtime/xo5xtSKyU4M.mp4,At what point does the player in the red shirt swing his paddle for a forehand shot?,"[[19.0, 21.0]]","[(35.0, 38.0)]","[(35.0, 38.0)]",[],0.0
+single,cosmo_cap/h3OrPzQ43b8.mp4,When does the person start cutting the first sleeve of the t-shirt?,"[[17.0, 32.0]]","[(15.0, 42.0)]","[(15.0, 42.0)]",[],0.0
+single,internvid_vtime/QJM11wTwuDE.mp4,When can we see the worms dancing at the school dance?,"[[0.0, 19.0]]","[(0.0, 19.0)]","[(0.0, 19.0)]",[],0.0
+single,cosmo_cap/VUohsqHGM4s.mp4,When does the video display the website for ordering oil and edibles?,"[[55.0, 62.0]]","[(55.0, 62.0)]","[(55.0, 62.0)]",[],0.0
+single,didemo/13596902@N02_4741908827_1da692a8fd.mp4,"Locate the start of the second musical section, played with the capo","[[28.0, 34.0]]","[(25.0, 62.0)]","[(25.0, 62.0)]",[],0.0
+single,internvid_vtime/TS_mV6p_o7o.mp4,At what point are the chili peppers being chopped on the cutting board?,"[[45.0, 51.0]]","[(45.0, 51.0)]","[(45.0, 51.0)]",[],0.0
+single,queryd/Y4baNTo5q4A.mp4,When is the woman looking up with a worried expression?,"[[7.0, 10.0]]","[(6.0, 18.0)]","[(6.0, 18.0)]",[],0.0
+single,didemo/82516073@N00_7504610128_3fb0da4cf2.mp4,When can we see the lead singer with long hair wearing a pink top and a scarf?,"[[41.0, 45.0]]","[(0.0, 7.0)]","[(0.0, 7.0)]",[],0.0
+single,didemo/91155524@N00_3307712416_76a76ff9c1.mp4,When does the man have a full beard?,"[[0.0, 25.0]]","[(0.0, 32.0)]","[(0.0, 32.0)]",[],0.0
+single,cosmo_cap/73XRNF0176o.mp4,Show the moment the boy is driving his toy car at night,"[[23.0, 26.0]]","[(22.0, 26.0)]","[(22.0, 26.0)]",[],0.0
+single,cosmo_cap/i4NXeda22CQ.mp4,What is the time range where the woman introduces the recipe?,"[[3.0, 27.0]]","[(4.0, 32.0)]","[(4.0, 32.0)]",[],0.0
+single,internvid_vtime/bxtPyJqVrmk.mp4,"Locate the moment the robot fails to flip the pancake after 10 trials, causing it to fall off the pan","[[43.0, 45.0]]","[(42.0, 45.0)]","[(42.0, 45.0)]",[],0.0
+single,internvid_vtime/cHCzarCy7PA.mp4,Find the clip where people are casting votes into a white box,"[[42.0, 49.0]]","[(42.0, 49.0)]","[(42.0, 49.0)]",[],0.0
+single,cosmo_cap/FEwupQMOkx0.mp4,When can we observe a hand feeding the puppy a treat?,"[[3.0, 15.0]]","[(2.0, 13.0)]","[(2.0, 13.0)]",[],0.0
+single,didemo/26719171@N05_5720365240_4ed5b68bdd.mp4,When are the performers at the front of the stage jumping up and down?,"[[12.0, 15.0]]","[(4.0, 12.0)]","[(4.0, 12.0)]",[],0.0
+single,didemo/35771474@N00_4289215378_e971ce5a83.mp4,Pinpoint the moment when the girl finishes her song and smiles at the camera,"[[56.0, 58.0]]","[(53.0, 57.0)]","[(53.0, 57.0)]",[],0.0
+single,didemo/48013827@N00_3730115565_2560e577fd.mp4,When does the musician in the hat gesture to the audience at the start of the song?,"[[0.0, 5.0]]","[(0.0, 5.0)]","[(0.0, 5.0)]",[],0.0
+single,queryd/ZHlfQSL7dJ8.mp4,Show the moment when a man with tattoos on his arm is speaking to a group of people,"[[17.0, 21.0]]","[(17.0, 21.0)]","[(17.0, 21.0)]",[],0.0
+single,cosmo_cap/nR9ALxT152k.mp4,Identify the time range when two smaller video clips are displayed on the screen,"[[47.0, 57.0]]","[(47.0, 57.0)]","[(47.0, 57.0)]",[],0.0
+single,internvid_vtime/VfGY5NlwCRw.mp4,Show the clip of a man kneeling while holding two wooden boards,"[[51.0, 55.0]]","[(51.0, 55.0)]","[(51.0, 55.0)]",[],0.0
+single,cosmo_cap/6-Hsk0qxGzE.mp4,Show me the example from Emily Dickinson's poem,"[[10.0, 27.0]]","[(10.0, 25.0)]","[(10.0, 25.0)]",[],0.0
+single,internvid_vtime/PXAqVLxafK0.mp4,When is butter being spread on the slices of bread?,"[[0.0, 3.0]]","[(0.0, 7.0)]","[(0.0, 7.0)]",[],0.0
+single,didemo/23141008@N06_5084980758_1454b612a1.mp4,Show the process of the person holding the wood steady while sawing,"[[0.0, 49.0]]","[(0.0, 56.890166666666666)]","[(0.0, 56.890166666666666)]",[],0.0
+single,internvid_vtime/x2QvLDb8APM.mp4,Pinpoint the moment the person's finger touches the young bird's feet to check its injury,"[[10.0, 12.0]]","[(9.0, 12.0)]","[(9.0, 12.0)]",[],0.0
+single,internvid_vtime/B2ddLMoQDT4.mp4,Locate the scene where Steven Mnuchin is visible in focus behind a blurred-out Donald Trump,"[[11.0, 20.0]]","[(9.0, 20.0)]","[(9.0, 20.0)]",[],0.0
+single,internvid_vtime/cynQ5RvaJ2s.mp4,Find the moment when a person is browsing the WeRead app on a smartphone,"[[31.0, 46.0]]","[(31.0, 47.0)]","[(31.0, 47.0)]",[],0.0
+single,didemo/21322937@N00_5810288868_24daa3f431.mp4,What is the time interval when the players in blue are lined up together before they start moving?,"[[0.0, 3.0]]","[(0.0, 17.0)]","[(0.0, 17.0)]",[],0.0
+single,cosmo_cap/A8hSR0xvTio.mp4,At what point is the mushroom being grilled before any toppings are added?,"[[14.0, 23.0]]","[(15.0, 23.0)]","[(15.0, 23.0)]",[],0.0
+single,didemo/8503402@N08_3368296308_e61fbbdc9c.mp4,Show me the moment the forklift is moving the machinery towards the loading platform,"[[10.0, 28.0]]","[(11.0, 34.0)]","[(11.0, 34.0)]",[],0.0
+single,cosmo_cap/dPmt358Je7c.mp4,Find the segment where she holds up the completely peeled orange,"[[41.0, 44.0]]","[(42.0, 45.0)]","[(42.0, 45.0)]",[],0.0
+single,didemo/50262439@N00_3427847773_2592c9296e.mp4,Show the clip where the woman feeds the girl with a spoon for the second time,"[[22.0, 26.0]]","[(22.0, 32.0)]","[(22.0, 32.0)]",[],0.0
+single,internvid_vtime/X7_Os2td1Io.mp4,Show the moment when a person in the foreground bends down in front of the panel,"[[8.0, 10.0]]","[(8.0, 11.0)]","[(8.0, 11.0)]",[],0.0
+single,cosmo_cap/QK0-txcfrIQ.mp4,Show me the moment when a woman in black leggings is doing footwork training with a ladder on the floor,"[[15.0, 18.0]]","[(15.0, 17.0)]","[(15.0, 17.0)]",[],0.0
+single,cosmo_cap/OMUHnHHss2w.mp4,At what point does she use two cans to hold the toasting device?,"[[27.0, 32.0]]","[(27.0, 32.0)]","[(27.0, 32.0)]",[],0.0
+single,internvid_vtime/ikp9jXiVoko.mp4,At what point are the two pieces of wood being held together and examined?,"[[24.0, 27.0]]","[(22.0, 27.0)]","[(22.0, 27.0)]",[],0.0
+single,cosmo_cap/q_vSCPetxiE.mp4,When are two people carrying a wooden table?,"[[11.0, 12.0]]","[(10.0, 12.0)]","[(10.0, 12.0)]",[],0.0
+single,cosmo_cap/82_Kb44Y7yM.mp4,At what point is the camera focused solely on the sign hanging on the door?,"[[38.0, 42.0]]","[(35.0, 42.0)]","[(35.0, 42.0)]",[],0.0
+single,cosmo_cap/JMWnDknYOAk.mp4,Pinpoint the time when peanuts are being mixed into the melted chocolate,"[[32.0, 39.0]]","[(34.0, 39.0)]","[(34.0, 39.0)]",[],0.0
+single,didemo/39033598@N00_3524872964_a8c908e0b9.mp4,Show the stationary silver train with a red stripe,"[[0.0, 3.0]]","[(0.0, 4.0)]","[(0.0, 4.0)]",[],0.0
+single,internvid_vtime/5tn23Z8jF60.mp4,"Show the moment a goat is climbing a very steep, almost vertical, man-made stone wall","[[35.0, 42.0]]","[(27.0, 40.0)]","[(27.0, 40.0)]",[],0.0
+single,cosmo_cap/6WYGrNZsMWc.mp4,When does the magician present the props needed for the trick?,"[[3.0, 6.0]]","[(2.0, 6.0)]","[(2.0, 6.0)]",[],0.0
+single,cosmo_cap/x6j9L7GwJOI.mp4,Find the image of a person with a paper bag over their head,"[[13.0, 15.0]]","[(14.0, 15.0)]","[(14.0, 15.0)]",[],0.0
+single,cosmo_cap/Sgbo0LnJOCc.mp4,Show the process of clipping the cookbook onto the hanger,"[[13.0, 16.0]]","[(12.0, 18.0)]","[(12.0, 18.0)]",[],0.0
+single,didemo/12132295@N00_2454677780_5746003ec1.mp4,When are both musicians actively performing their music together?,"[[0.0, 38.0]]","[(0.0, 42.0)]","[(0.0, 42.0)]",[],0.0
+single,didemo/42728243@N00_5565279751_77034e0001.mp4,When is the train moving from left to right?,"[[1.0, 42.0]]","[(0.0, 44.0)]","[(0.0, 44.0)]",[],0.0
+single,cosmo_cap/-8Kh9hsMF1I.mp4,What is the time interval when the man explains that geodesic domes are the strongest structures you can build?,"[[21.0, 24.0]]","[(13.0, 23.0)]","[(13.0, 23.0)]",[],0.0
+single,cosmo_cap/b8CojTvBWAk.mp4,Locate the moment when the video's title appears on screen,"[[33.0, 38.0]]","[(34.0, 45.0)]","[(34.0, 45.0)]",[],0.0
+single,cosmo_cap/iFlp3E-mq2w.mp4,When does the man explain the security features of the skin?,"[[23.0, 29.0]]","[(11.0, 15.0)]","[(11.0, 15.0)]",[],0.0
+single,internvid_vtime/Y6S13aRqKlA.mp4,When is the person's right hand seen plucking the guitar strings?,"[[0.0, 3.0]]","[(0.0, 43.0)]","[(0.0, 43.0)]",[],0.0
+single,didemo/51773066@N00_5205110657_8fbe424b6f.mp4,Locate the time when the camera tilts down from the balloons to reveal the pool of water,"[[9.0, 13.0]]","[(9.0, 12.0)]","[(9.0, 12.0)]",[],0.0
+single,didemo/22651740@N00_3531699193_d4632d1d78.mp4,Identify the time frame where the musician is playing the instrument while wearing sunglasses,"[[0.0, 43.0]]","[(0.0, 43.0)]","[(0.0, 43.0)]",[],0.0
+single,queryd/ALXYLq5STlM.mp4,Pinpoint the time the child shouts excitedly,"[[23.0, 25.0]]","[(24.0, 27.0)]","[(24.0, 27.0)]",[],0.0
+single,cosmo_cap/xWVipVvlLo4.mp4,When can we see a close-up of the flower-shaped wood inlay on the table?,"[[0.0, 27.0]]","[(0.0, 22.0)]","[(0.0, 22.0)]",[],0.0
+single,didemo/28373452@N00_4653847165_c3360967fe.mp4,Show the man in the white T-shirt opening the refrigerator,"[[12.0, 15.0]]","[(13.0, 16.0)]","[(13.0, 16.0)]",[],0.0
+single,didemo/21395617@N03_4845474028_08d045424c.mp4,Show me the puppies moving around in the bed before their mother arrives,"[[0.0, 4.0]]","[(0.0, 4.0)]","[(0.0, 4.0)]",[],0.0
+single,cosmo_cap/sH_zhMB9YxM.mp4,Show the time range where boxes of Shake 'n Bake are visible on the shelf,"[[1.0, 40.0]]","[(3.0, 39.0)]","[(3.0, 39.0)]",[],0.0
+single,internvid_vtime/P_bEZ3z2sAo.mp4,At what point is the assembled transparent structure shown installed against a wall?,"[[23.0, 28.0]]","[(23.0, 29.0)]","[(23.0, 29.0)]",[],0.0
+single,internvid_vtime/3QdSTyVmucA.mp4,Show the close-up view of the hand demonstrating the grip on the discus,"[[23.0, 31.0]]","[(25.0, 38.0)]","[(25.0, 38.0)]",[],0.0
+single,internvid_vtime/FVcws1UFUks.mp4,At what time is there a close-up view of the microphone?,"[[21.0, 28.0]]","[(6.0, 14.0)]","[(6.0, 14.0)]",[],0.0
+single,internvid_vtime/IV6CSzVQTMM.mp4,Show the close-up of the blue pills being sorted by the rotating mechanism,"[[2.0, 12.0]]","[(1.0, 12.0)]","[(1.0, 12.0)]",[],0.0
+single,didemo/55806130@N00_4820496265_2ff891c0e2.mp4,When is the man in a yellow shirt standing on the left side of the road?,"[[12.0, 14.0]]","[(0.0, 2.0)]","[(0.0, 2.0)]",[],0.0
+single,cosmo_cap/ComCeaZf9yk.mp4,Identify the moment a cartoon serviceman in a blue t-shirt appears,"[[13.0, 16.0]]","[(13.0, 17.0)]","[(13.0, 17.0)]",[],0.0
+single,internvid_vtime/d0qFBHVT0qU.mp4,Find the segment where a person takes a tissue out of the box,"[[29.0, 31.0]]","[(25.0, 31.0)]","[(25.0, 31.0)]",[],0.0
+single,internvid_vtime/RISPVV0xrsc.mp4,When is the player wearing the black and pink jersey with the number 5 posing for the camera?,"[[30.0, 32.0]]","[(29.0, 32.0)]","[(29.0, 32.0)]",[],0.0
+single,cosmo_cap/bNsjlFEcAJI.mp4,When is the fork placed on the paper towel?,"[[21.0, 24.0]]","[(21.0, 26.0)]","[(21.0, 26.0)]",[],0.0
+single,internvid_vtime/wrVyt2F5JjQ.mp4,At what time is there a close-up of the front of the dress at the waist?,"[[26.0, 30.0]]","[(25.0, 29.0)]","[(25.0, 29.0)]",[],0.0
+single,internvid_vtime/5tLW2RSmT_c.mp4,Show the moment when a person raises a camera to record the scene,"[[1.0, 3.0]]","[(1.0, 3.0)]","[(1.0, 3.0)]",[],0.0
+single,internvid_vtime/eFBKKdnJzP8.mp4,When does the man explain and demonstrate the second point of the exercise?,"[[28.0, 35.0]]","[(29.0, 35.0)]","[(29.0, 35.0)]",[],0.0
+single,didemo/88589827@N00_4197795445_8da0d3b163.mp4,When does the person in the black coat slide down the hill using an orange and white barrel?,"[[0.0, 5.0]]","[(0.0, 5.0)]","[(0.0, 5.0)]",[],0.0
+single,cosmo_cap/FfC-gXDf9ew.mp4,At what point does a woman holding a pink umbrella walk by the flooded river?,"[[5.0, 8.0]]","[(4.0, 8.0)]","[(4.0, 8.0)]",[],0.0
+single,didemo/63122283@N06_9978694646_e72011157f.mp4,When can we see the aircraft taking off from the platform?,"[[24.0, 26.0]]","[(22.0, 27.0)]","[(22.0, 27.0)]",[],0.0
+single,cosmo_cap/wBBHuRAFmFU.mp4,Find the segment where the raw pizza is being held up before it is put in the oven,"[[3.0, 5.0]]","[(3.0, 6.0)]","[(3.0, 6.0)]",[],0.0
+single,didemo/41014717@N07_5905710139_0c62d4e4e8.mp4,Locate the part where an elephant is rolling around on its back in the water,"[[24.0, 29.0]]","[(8.0, 15.0)]","[(8.0, 15.0), (25.0, 31.0)]","[{'span': (25.0, 31.0), 'votes': 3}]",66.66666666666666
+single,didemo/61635869@N00_9519029907_91e7f9e01f.mp4,Show me when a black dog jumps into the water,"[[1.0, 3.0]]","[(5.0, 8.0)]","[(5.0, 8.0)]",[],0.0
+single,cosmo_cap/RpiFPyuj5eE.mp4,When is the man wearing an empty magnetic wristband before placing any items on it?,"[[4.0, 8.0]]","[(3.0, 8.0)]","[(3.0, 8.0)]",[],0.0
+single,queryd/Dev6T3ZCrY8.mp4,Show me the shot of a man and a dog looking out over a vast green valley at sunrise,"[[21.0, 25.0]]","[(17.0, 19.0), (22.0, 26.0)]","[(17.0, 19.0), (22.0, 26.0)]",[],0.0
+single,queryd/JCOqo88eW1E.mp4,Show the moment when the girl raises the spoon high into the air,"[[21.0, 23.0]]","[(22.0, 27.0)]","[(22.0, 27.0)]",[],0.0
+single,didemo/36633288@N08_3387705660_9bf416cbde.mp4,When does the person introduce themself for the first time?,"[[3.0, 8.0]]","[(3.0, 7.0)]","[(3.0, 7.0)]",[],0.0
+single,internvid_vtime/ly1_njamKjk.mp4,"Find the clip where a green tractor is tilling a large, dark field","[[15.0, 18.0]]","[(14.0, 18.0)]","[(14.0, 18.0)]",[],0.0
+single,internvid_vtime/1yfDhdhxq9g.mp4,At what point is there a graphic of a soldier's silhouette with a quote?,"[[12.0, 20.0]]","[(11.0, 21.0)]","[(11.0, 21.0)]",[],0.0
+single,internvid_vtime/GDzZOSoQCTw.mp4,Show me when a woman in a black dress approaches and stands at the podium,"[[7.0, 9.0]]","[(6.0, 10.0)]","[(6.0, 10.0), (22.0, 25.0)]","[{'span': (22.0, 25.0), 'votes': 3}]",-33.333333333333336
+single,didemo/25958034@N03_4108325785_1c477d83de.mp4,What is the time range when a child's face gets very close to the camera?,"[[28.0, 30.0]]","[(29.0, 31.0)]","[(29.0, 31.0)]",[],0.0
+single,didemo/51035608404@N01_3447461495_ded21322f9.mp4,When can we see the man skiing towards the camera with a big smile?,"[[1.0, 6.0]]","[(1.0, 25.0)]","[(1.0, 25.0)]",[],0.0
+single,internvid_vtime/WZE52fHHL7o.mp4,What is the time range for the long shot of the train carrying tanks?,"[[15.0, 21.0]]","[(15.0, 20.0)]","[(15.0, 20.0)]",[],0.0
+single,queryd/r-8Th1fNuXA.mp4,Find the segment where 'LENGTH of PROGRAM' is displayed on screen,"[[16.0, 21.0]]","[(16.0, 22.0)]","[(16.0, 22.0)]",[],0.0
+single,queryd/SHR0GuIf5eM.mp4,When can we observe two men working on an engine together?,"[[0.0, 7.0]]","[(0.0, 7.0)]","[(0.0, 7.0)]",[],0.0
+single,internvid_vtime/hv4n0XX_Zg0.mp4,Show the interval where the player adjusts the cue ball's spin,"[[8.0, 13.0]]","[(16.0, 20.0)]","[(16.0, 20.0)]",[],0.0
+single,didemo/48719521@N08_4475115139_cd3391b42d.mp4,When can we see a man sitting on the couch?,"[[0.0, 18.0]]","[(0.0, 18.0)]","[(0.0, 18.0)]",[],0.0
+single,didemo/48422767@N00_4448224067_1275a86b05.mp4,Pinpoint the time when the girl is holding onto one ring and talking,"[[21.0, 26.0]]","[(1.0, 28.0)]","[(1.0, 28.0)]",[],0.0
+single,internvid_vtime/0rHqN9R5C9k.mp4,At what point does the woman in the yellow top give her interview?,"[[24.0, 26.0]]","[(23.0, 27.0)]","[(23.0, 27.0)]",[],0.0
+single,cosmo_cap/gU96T42fpWc.mp4,Show me the part where a red gift box with a ribbon flower on top is visible,"[[7.0, 9.0]]","[(7.0, 9.0)]","[(7.0, 9.0)]",[],0.0
+single,didemo/53244831@N00_2504763032_ae7beff07c.mp4,At what point is a large truck visible on the right side of the road?,"[[8.0, 29.0]]","[(8.0, 20.0)]","[(8.0, 20.0)]",[],0.0
+single,didemo/51636307@N00_3671062184_cfcb87a692.mp4,Find the moment when a man with long dreadlocks and a white robe is seen,"[[13.0, 16.0]]","[(13.0, 15.0)]","[(13.0, 15.0)]",[],0.0
+single,didemo/61022450@N00_4778262630_46ba1057a6.mp4,At what point does the dog vigorously shake the plush toy from side to side?,"[[3.0, 5.0]]","[(0.0, 3.0)]","[(0.0, 3.0)]",[],0.0
+single,internvid_vtime/qhYE8o68_Ak.mp4,When can we see the female anchor alone in the studio?,"[[0.0, 5.0]]","[(0.0, 5.0)]","[(0.0, 5.0)]",[],0.0
+single,didemo/25349068@N04_10825812915_9714f84f3e.mp4,When does a man in a striped shirt and dark pants walk towards the camera?,"[[1.0, 5.0]]","[(0.0, 3.0)]","[(0.0, 3.0)]",[],0.0
+single,internvid_vtime/pSHYhy8RST4.mp4,Identify the time range where the characters are standing in front of a school building,"[[7.0, 11.0]]","[(6.0, 11.0)]","[(6.0, 11.0)]",[],0.0
+single,internvid_vtime/M4HqRXbCjog.mp4,When does the player in the yellow jersey dribble the ball from inside the arc to the outside?,"[[9.0, 12.0]]","[(0.0, 4.0)]","[(0.0, 4.0)]",[],0.0
+single,didemo/90274648@N00_5471061637_492024d22b.mp4,When does the person open the refrigerator door?,"[[7.0, 9.0]]","[(6.0, 9.0)]","[(6.0, 9.0)]",[],0.0
+single,didemo/44124376668@N01_10391760205_64cba033e6.mp4,Identify the moment a person in a red shirt is visible,"[[12.0, 16.0]]","[(11.0, 17.0)]","[(11.0, 17.0)]",[],0.0
+single,didemo/24458636@N00_2628465513_4ae03041f2.mp4,When are an adult and a child speaking to each other?,"[[7.0, 12.0]]","[(0.0, 5.0)]","[(0.0, 5.0)]",[],0.0
+single,didemo/44124371264@N01_2991064667_289712b05d.mp4,When does the video show a powerful cascade of water creating a thick cloud of mist?,"[[0.0, 5.0]]","[(0.0, 24.0)]","[(0.0, 24.0)]",[],0.0
+single,didemo/47618092@N00_2849503124_51bcf4a1f1.mp4,Identify the time when the dancers are moving in a circular formation,"[[7.0, 11.0]]","[(0.0, 17.0)]","[(0.0, 17.0)]",[],0.0
+single,internvid_vtime/3tzhdCWKHz0.mp4,Show the moment where there is a close-up of the mower's front as it moves through the grass,"[[20.0, 24.0]]","[(10.0, 15.0)]","[(10.0, 15.0)]",[],0.0
+single,didemo/88929378@N00_5176660982_e9f2e6d8cf.mp4,Show me when some small white lights are visible at the bottom of the screen,"[[2.0, 4.0]]","[(2.0, 7.0)]","[(2.0, 7.0)]",[],0.0
+single,didemo/84533614@N00_4200077862_e556e6d2f1.mp4,At what point does the camera pan left to reveal a person in a white puffer jacket?,"[[12.0, 15.0]]","[(13.0, 18.0)]","[(13.0, 18.0)]",[],0.0
+single,didemo/59569311@N00_3323709582_ed76965f45.mp4,Pinpoint the moment the bike's front wheel enters the puddle,"[[17.0, 19.0]]","[(15.0, 19.0)]","[(15.0, 19.0)]",[],0.0
+single,internvid_vtime/fl3_c8mNg2U.mp4,At what point does the video switch to an aerial view of the farmland?,"[[10.0, 13.0]]","[(9.0, 20.0)]","[(9.0, 20.0)]",[],0.0
+single,internvid_vtime/2hD4Uv1kBQA.mp4,Show the moment where two men are shaking hands,"[[5.0, 10.0]]","[(5.0, 10.0)]","[(5.0, 10.0)]",[],0.0
+single,internvid_vtime/1V6aaCyGQA0.mp4,Find the segment where the dancers are twisting their torsos from side to side,"[[13.0, 16.0]]","[(0.0, 19.0)]","[(0.0, 19.0)]",[],0.0
+single,internvid_vtime/EokeAhvf7tc.mp4,When is a woman in a yellow shirt taking a photo for another woman?,"[[0.0, 2.0]]","[(0.0, 2.0)]","[(0.0, 2.0)]",[],0.0
+single,internvid_vtime/3ing09_BrQc.mp4,At what point can we see both characters through the train windows from the outside?,"[[6.0, 12.0]]","[(5.0, 10.0)]","[(5.0, 10.0)]",[],0.0
+single,internvid_vtime/Rx07OJR2APY.mp4,At what time does the cursor click the yellow 'participate' button?,"[[9.0, 10.0]]","[(8.0, 9.0)]","[(8.0, 9.0)]",[],0.0
+single,internvid_vtime/SviCR2h_5Vw.mp4,At what point does a swimmer celebrate with his mouth open in excitement?,"[[0.0, 1.0]]","[(0.0, 1.0)]","[(0.0, 1.0)]",[],0.0
+single,internvid_vtime/gtm-BHVsFtI.mp4,"Find the clip with a close-up on a group of kangaroos, with one lying on the wood chips","[[6.0, 10.0]]","[(7.0, 11.0)]","[(7.0, 11.0)]",[],0.0
+single,internvid_vtime/EUl7woAc2C0.mp4,When can we observe a helicopter flying over a smoking area?,"[[0.0, 1.0]]","[(0.0, 1.0)]","[(0.0, 1.0)]",[],0.0
+single,queryd/Ddh13c7Hdo8.mp4,Locate the moment when a message about unauthorized distribution is shown,"[[0.0, 10.0]]","[(1.0, 11.0)]","[(1.0, 11.0)]",[],0.0
+single,queryd/-_kGBuX1Qy0.mp4,At what time is the girl in the wheelchair seen with a white bib on?,"[[0.0, 10.0]]","[(0.0, 11.0)]","[(0.0, 11.0)]",[],0.0
+single,internvid_vtime/lxbKoGA6v8k.mp4,Find the segment where the four skull drawings are visible and being detailed,"[[3.0, 10.0]]","[(3.0, 9.0)]","[(3.0, 9.0)]",[],0.0
+single,internvid_vtime/LAcVlCNepW0.mp4,Identify the time frame where the artboard background is white,"[[4.0, 10.0]]","[(3.0, 10.0)]","[(3.0, 10.0)]",[],0.0
+single,internvid_vtime/reanRhAbL04.mp4,Find the clip showing a close-up of two men in blue caps looking upwards,"[[0.0, 3.0]]","[(0.0, 3.0)]","[(0.0, 3.0)]",[],0.0
+single,internvid_vtime/XpPqbpYLd6M.mp4,When are the fingers poking the white slime?,"[[0.0, 2.0]]","[(0.0, 2.0)]","[(0.0, 2.0)]",[],0.0
+single,queryd/hc1hzSvynVY.mp4,Pinpoint the interval when a child is interacting with an adult,"[[0.0, 5.0]]","[(0.0, 5.0)]","[(0.0, 5.0)]",[],0.0

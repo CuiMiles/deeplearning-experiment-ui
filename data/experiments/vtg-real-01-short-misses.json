@@ -1,0 +1,212 @@
+{
+  "id": "vtg-real-01-short-misses",
+  "title": "同一动作反复出现，短的一次最容易漏",
+  "date": "2026-11-15",
+  "status": "completed",
+  "task": "vtg",
+  "series": "多事件定位与遗漏",
+  "tags": [],
+  "tldr": "OMTG 的 320 条查询里，<2 秒事件召回 7.6%，≥20 秒为 51.1%；两端都至少采到 1 帧时仍有差距。",
+  "brief": {
+    "question": "定位重复动作时，短的那次更容易丢吗？",
+    "change": "先按真实事件长度统计，再在同一查询里比较最长和最短，最后控制事件内被抽到的帧数。",
+    "conclusion": "OMTG 的 320 条查询里，<2 秒事件召回 7.6%，≥20 秒为 51.1%；两端都至少采到 1 帧时仍有差距。",
+    "verdict": "mixed",
+    "pipeline": [
+      {
+        "label": "定位所有出现",
+        "changed": false
+      },
+      {
+        "label": "按时长分层",
+        "changed": false
+      },
+      {
+        "label": "同查询内配对",
+        "changed": true
+      },
+      {
+        "label": "分析漏检",
+        "changed": false
+      }
+    ]
+  },
+  "setup": {
+    "model": "TimeLens2-4B",
+    "evalData": [
+      "omtg"
+    ],
+    "notes": "320 条查询，1171 个合并后标注事件。图表为本项目诊断口径。"
+  },
+  "results": {
+    "methods": [
+      {
+        "id": "observed",
+        "name": "真实模型输出",
+        "role": "ours"
+      }
+    ],
+    "main": [
+      {
+        "method": "observed",
+        "dataset": "omtg",
+        "metrics": {
+          "Event-Recall@0.5": 28.77882
+        }
+      }
+    ],
+    "headline": [
+      {
+        "dataset": "omtg",
+        "metric": "Event-Recall@0.5"
+      }
+    ]
+  },
+  "charts": [
+    {
+      "id": "length",
+      "title": "事件召回随持续时间变化",
+      "type": "bar",
+      "categories": [
+        "<2 秒",
+        "2–6 秒",
+        "6–20 秒",
+        "≥20 秒"
+      ],
+      "yLabel": "百分点 / %",
+      "series": [
+        {
+          "name": "事件召回",
+          "data": [
+            7.5758,
+            21.8605,
+            29.4118,
+            51.0989
+          ]
+        }
+      ],
+      "takeaway": "统计单位是事件，同一查询可含多个事件。"
+    },
+    {
+      "id": "same-query",
+      "title": "同一查询中最长减最短",
+      "type": "bar",
+      "categories": [
+        "全部可配对",
+        "两端各至少采到 1 帧"
+      ],
+      "yLabel": "百分点 / %",
+      "series": [
+        {
+          "name": "召回差",
+          "data": [
+            22.4756,
+            23.0216
+          ]
+        }
+      ]
+    }
+  ],
+  "insights": {
+    "oneLiner": "短事件漏检是我们实际量到的研究问题，下一步要定位它发生在哪一环。",
+    "confidence": 0.55,
+    "phenomena": [
+      {
+        "id": "p1",
+        "title": "短实例更易漏",
+        "detail": "同一视频内比较可以减少题目或场景不同带来的影响。",
+        "evidence": "chart:same-query",
+        "symptoms": [
+          "sampling-miss"
+        ],
+        "surprise": 4
+      },
+      {
+        "id": "p2",
+        "title": "采到帧后仍漏检",
+        "detail": "有采样帧的筛选后仍有召回差距，采样数解释不了全部结果。",
+        "evidence": "chart:same-query",
+        "symptoms": [
+          "representation"
+        ],
+        "surprise": 3
+      }
+    ],
+    "echoes": [
+      {
+        "id": "echo",
+        "phenomenon": "p1",
+        "lens": "signal-detection",
+        "correspondences": [
+          [
+            "弱信号",
+            "短事件"
+          ],
+          [
+            "漏检",
+            "没有与任一预测配对"
+          ]
+        ],
+        "borrowedMove": "固定误报率，分别比较短、中、长事件召回。",
+        "limit": "相同帧数的动作仍有画面质量、可见度和标注歧义差别。"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "hyp",
+        "title": "用同预算对照检验",
+        "statement": "两端采样覆盖相近后仍有明显召回差。",
+        "test": "逐查询成对比较并按视频重采样。",
+        "falsifiedIf": "覆盖控制后差值接近零。",
+        "impact": 4,
+        "effort": 3,
+        "status": "confirmed",
+        "from": [
+          "echo"
+        ]
+      }
+    ],
+    "paperAngles": [
+      {
+        "id": "direction",
+        "title": "可能的研究贡献",
+        "type": "analysis",
+        "claim": "把短事件失败按采样覆盖、候选生成和输出汇总拆解。",
+        "novelty": "把短事件失败按采样覆盖、候选生成和输出汇总拆解。",
+        "risk": "长度本身也会让固定 IoU 阈值对短段更严。",
+        "readiness": 0.28,
+        "from": [
+          "hyp"
+        ]
+      }
+    ],
+    "provocations": [
+      {
+        "prompt": "reviewer2",
+        "answer": "同一查询的对比和采到帧的切片均已报告，后续仍要控制动作类型与长度。"
+      },
+      {
+        "prompt": "mechanism",
+        "answer": "相同帧数的动作仍有画面质量、可见度和标注歧义差别。"
+      }
+    ]
+  },
+  "reproduce": {
+    "commands": [
+      {
+        "label": "在 VTG 工作目录查看原报告",
+        "cmd": "cat outputs/timelens_coverage_actual_20261115_001/findings.txt"
+      }
+    ],
+    "artifacts": [
+      {
+        "label": "机制分析",
+        "path": "evidence/vtg-real-01-short-misses/timelens_coverage_actual_20261115_001-findings.txt"
+      },
+      {
+        "label": "逐事件",
+        "path": "evidence/vtg-real-01-short-misses/timelens_coverage_actual_20261115_001-actual_model_event_rows.csv"
+      }
+    ]
+  }
+}

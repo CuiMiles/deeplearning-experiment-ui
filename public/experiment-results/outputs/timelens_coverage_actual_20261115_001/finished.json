@@ -1,0 +1,16 @@
+{
+  "elapsed_seconds": 7.367316722869873,
+  "input_sha256": {
+    "timelens2-93k": "6c49ed93dd661cc1c1ace62eb4b8955548ac8d9454ab03b57bfd4e7f9c56c8f9",
+    "timelens-100k": "57eefda0a63283c6011a89fb297ad986512f7ad08ece6b88a24d721fc1ff0181"
+  },
+  "numeric_checks": "80 random official-equivalence, identity and affine-invariance cases; duplicate matching guard passed",
+  "split_video_overlap": 0,
+  "new_gpu_inferences": 0,
+  "new_training_steps": 0,
+  "limitations": [
+    "GT-dependent selection cannot be used at inference",
+    "Saved SFT rollouts are off-policy for any new training",
+    "Merged-component event metrics are diagnostics; official benchmark metrics remain authoritative"
+  ]
+}

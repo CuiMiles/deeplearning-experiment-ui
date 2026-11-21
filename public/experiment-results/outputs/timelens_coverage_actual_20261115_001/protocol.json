@@ -1,0 +1,18 @@
+{
+  "created_utc": "2026-11-14T17:49:35Z",
+  "purpose": "Actual-output diagnostic and GT-dependent reward study, no model training or deployable reranker",
+  "groups_per_split": 600,
+  "split": "sha256(video_path) parity; videos do not cross splits",
+  "selected_rows": "First eligible groups in saved file per split, each has 8 candidates and 3<=duration<=3600",
+  "main_variant": "occupancy/event-balanced support mixture alpha=0.5, same GT duration normalization",
+  "controls": [
+    "alpha=0.25",
+    "alpha=1",
+    "original + 0.25 event F1",
+    "original + 0.25 count accuracy"
+  ],
+  "selection": "Maximum GT-dependent reward, first candidate breaks exact ties",
+  "metrics": "Merged positive finite intervals, maximum-cardinality one-to-one IoU>=0.5 matching",
+  "boundary": "Train-source diagnostic splits only; model SFT may have seen both; not independent model generalization",
+  "script_sha256": "7cf958106841ef271e63471c232d195a861b177463576765aa75d4d0029fd3d2"
+}

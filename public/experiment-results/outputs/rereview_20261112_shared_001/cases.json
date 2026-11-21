@@ -1,0 +1,1468 @@
+{
+  "D_improves_over_C": [
+    {
+      "sample_id": "022_ME4YL_q3",
+      "video_id": "ME4YL",
+      "query": "person put a book on top of the laptop.",
+      "gt": [
+        21,
+        23
+      ],
+      "A_status": "ok",
+      "A_intervals": [
+        [
+          19.0,
+          23.0
+        ]
+      ],
+      "A_iou": 0.5,
+      "A_union_iou": 0.5,
+      "A_start_error": 2.0,
+      "A_end_error": 0.0,
+      "A_seconds": 8.711983980610967,
+      "A_visual_tokens": 5280,
+      "A_GT_sampled_frames": 4,
+      "A_unique_frames": 48,
+      "A_official_iou": 0.5,
+      "B_status": "ok",
+      "B_intervals": [
+        [
+          19.0,
+          23.0
+        ]
+      ],
+      "B_iou": 0.5,
+      "B_union_iou": 0.5,
+      "B_start_error": 2.0,
+      "B_end_error": 0.0,
+      "B_seconds": 6.49833339266479,
+      "B_visual_tokens": 5280,
+      "B_GT_sampled_frames": 3,
+      "B_unique_frames": 48,
+      "B_official_iou": 0.5,
+      "C_status": "ok",
+      "C_intervals": [
+        [
+          11.0,
+          15.0
+        ]
+      ],
+      "C_iou": 0.0,
+      "C_union_iou": 0.0,
+      "C_start_error": 10.0,
+      "C_end_error": 8.0,
+      "C_seconds": 26.699393004179,
+      "C_visual_tokens": 5280,
+      "C_GT_sampled_frames": 4,
+      "C_unique_frames": 48,
+      "C_official_iou": 0.0,
+      "D_status": "ok",
+      "D_intervals": [
+        [
+          20.971246006389777,
+          22.971246006389777
+        ]
+      ],
+      "D_iou": 0.9716535433070868,
+      "D_union_iou": 0.9716535433070868,
+      "D_start_error": 0.02875399361022346,
+      "D_end_error": 0.02875399361022346,
+      "D_seconds": 10.938544884324074,
+      "D_visual_tokens": 5280,
+      "D_GT_sampled_frames": 16,
+      "D_unique_frames": 48,
+      "D_official_iou": 0.9716535433070868,
+      "u": 0.0,
+      "u_union": 0.0,
+      "D_minus_C": 0.9716535433070868,
+      "D_minus_A": 0.47165354330708675,
+      "A_error": 0.5,
+      "D_change_type": "overlapping_boundary_improved",
+      "D_minus_C_boundary_error": -8.971246006389777,
+      "four_pass_seconds": 52.84825526177883
+    },
+    {
+      "sample_id": "014_LQ0FJ_q1",
+      "video_id": "LQ0FJ",
+      "query": "person they start undressing.",
+      "gt": [
+        5,
+        20
+      ],
+      "A_status": "ok",
+      "A_intervals": [
+        [
+          4.0,
+          16.0
+        ]
+      ],
+      "A_iou": 0.6875,
+      "A_union_iou": 0.6875,
+      "A_start_error": 1.0,
+      "A_end_error": 4.0,
+      "A_seconds": 13.91866764985025,
+      "A_visual_tokens": 7260,
+      "A_GT_sampled_frames": 30,
+      "A_unique_frames": 66,
+      "A_official_iou": 0.6875,
+      "B_status": "ok",
+      "B_intervals": [
+        [
+          7.0,
+          19.0
+        ]
+      ],
+      "B_iou": 0.8,
+      "B_union_iou": 0.8,
+      "B_start_error": 2.0,
+      "B_end_error": 1.0,
+      "B_seconds": 26.343534922227263,
+      "B_visual_tokens": 7260,
+      "B_GT_sampled_frames": 30,
+      "B_unique_frames": 66,
+      "B_official_iou": 0.8,
+      "C_status": "ok",
+      "C_intervals": [
+        [
+          15.0,
+          32.0
+        ]
+      ],
+      "C_iou": 0.18518518518518517,
+      "C_union_iou": 0.18518518518518517,
+      "C_start_error": 10.0,
+      "C_end_error": 12.0,
+      "C_seconds": 15.288539834320545,
+      "C_visual_tokens": 7260,
+      "C_GT_sampled_frames": 30,
+      "C_unique_frames": 66,
+      "C_official_iou": 0.18518518518518517,
+      "D_status": "ok",
+      "D_intervals": [
+        [
+          5.0,
+          19.0
+        ]
+      ],
+      "D_iou": 0.9333333333333333,
+      "D_union_iou": 0.9333333333333333,
+      "D_start_error": 0.0,
+      "D_end_error": 1.0,
+      "D_seconds": 20.23875469341874,
+      "D_visual_tokens": 7260,
+      "D_GT_sampled_frames": 51,
+      "D_unique_frames": 66,
+      "D_official_iou": 0.9333333333333333,
+      "u": 0.4,
+      "u_union": 0.4,
+      "D_minus_C": 0.7481481481481482,
+      "D_minus_A": 0.24583333333333335,
+      "A_error": 0.3125,
+      "D_change_type": "overlapping_boundary_improved",
+      "D_minus_C_boundary_error": -10.5,
+      "four_pass_seconds": 75.7894970998168
+    },
+    {
+      "sample_id": "062_Q0IHP_q2",
+      "video_id": "Q0IHP",
+      "query": "person adjusts the heat.",
+      "gt": [
+        10,
+        13
+      ],
+      "A_status": "ok",
+      "A_intervals": [
+        [
+          10.0,
+          13.0
+        ]
+      ],
+      "A_iou": 1.0,
+      "A_union_iou": 1.0,
+      "A_start_error": 0.0,
+      "A_end_error": 0.0,
+      "A_seconds": 4.81647021882236,
+      "A_visual_tokens": 7700,
+      "A_GT_sampled_frames": 6,
+      "A_unique_frames": 70,
+      "A_official_iou": 1.0,
+      "B_status": "ok",
+      "B_intervals": [
+        [
+          1.0,
+          10.0
+        ]
+      ],
+      "B_iou": 0.0,
+      "B_union_iou": 0.0,
+      "B_start_error": 9.0,
+      "B_end_error": 3.0,
+      "B_seconds": 4.348555564880371,
+      "B_visual_tokens": 7700,
+      "B_GT_sampled_frames": 6,
+      "B_unique_frames": 70,
+      "B_official_iou": 0.0,
+      "C_status": "ok",
+      "C_intervals": [
+        [
+          10.0,
+          22.0
+        ]
+      ],
+      "C_iou": 0.25,
+      "C_union_iou": 0.25,
+      "C_start_error": 0.0,
+      "C_end_error": 9.0,
+      "C_seconds": 5.406599882990122,
+      "C_visual_tokens": 7700,
+      "C_GT_sampled_frames": 6,
+      "C_unique_frames": 70,
+      "C_official_iou": 0.25,
+      "D_status": "ok",
+      "D_intervals": [
+        [
+          10.185936015204307,
+          13.185936015204307
+        ]
+      ],
+      "D_iou": 0.8832769934380598,
+      "D_union_iou": 0.8832769934380598,
+      "D_start_error": 0.18593601520430703,
+      "D_end_error": 0.18593601520430703,
+      "D_seconds": 7.385970855131745,
+      "D_visual_tokens": 7700,
+      "D_GT_sampled_frames": 46,
+      "D_unique_frames": 44,
+      "D_official_iou": 0.8832769934380598,
+      "u": 1.0,
+      "u_union": 1.0,
+      "D_minus_C": 0.6332769934380598,
+      "D_minus_A": -0.11672300656194023,
+      "A_error": 0.0,
+      "D_change_type": "overlapping_boundary_worsened",
+      "D_minus_C_boundary_error": -4.314063984795693,
+      "four_pass_seconds": 21.9575965218246
+    },
+    {
+      "sample_id": "026_XJE7I_q4",
+      "video_id": "XJE7I",
+      "query": "person close the door.",
+      "gt": [
+        26,
+        28
+      ],
+      "A_status": "ok",
+      "A_intervals": [
+        [
+          26.0,
+          28.0
+        ]
+      ],
+      "A_iou": 1.0,
+      "A_union_iou": 1.0,
+      "A_start_error": 0.0,
+      "A_end_error": 0.0,
+      "A_seconds": 8.560089575126767,
+      "A_visual_tokens": 6061,
+      "A_GT_sampled_frames": 4,
+      "A_unique_frames": 58,
+      "A_official_iou": 1.0,
+      "B_status": "ok",
+      "B_intervals": [
+        [
+          25.0,
+          28.0
+        ]
+      ],
+      "B_iou": 0.6666666666666666,
+      "B_union_iou": 0.6666666666666666,
+      "B_start_error": 1.0,
+      "B_end_error": 0.0,
+      "B_seconds": 10.715059032663703,
+      "B_visual_tokens": 6061,
+      "B_GT_sampled_frames": 4,
+      "B_unique_frames": 58,
+      "B_official_iou": 0.6666666666666666,
+      "C_status": "ok",
+      "C_intervals": [
+        [
+          5.0,
+          7.0
+        ]
+      ],
+      "C_iou": 0.0,
+      "C_union_iou": 0.0,
+      "C_start_error": 21.0,
+      "C_end_error": 21.0,
+      "C_seconds": 10.61801447533071,
+      "C_visual_tokens": 6061,
+      "C_GT_sampled_frames": 4,
+      "C_unique_frames": 58,
+      "C_official_iou": 0.0,
+      "D_status": "ok",
+      "D_intervals": [
+        [
+          26.49544072948328,
+          27.49544072948328
+        ]
+      ],
+      "D_iou": 0.5,
+      "D_union_iou": 0.5,
+      "D_start_error": 0.4954407294832812,
+      "D_end_error": 0.5045592705167188,
+      "D_seconds": 10.492052469402552,
+      "D_visual_tokens": 6061,
+      "D_GT_sampled_frames": 38,
+      "D_unique_frames": 58,
+      "D_official_iou": 0.5,
+      "u": 0.33333333333333337,
+      "u_union": 0.33333333333333337,
+      "D_minus_C": 0.5,
+      "D_minus_A": -0.5,
+      "A_error": 0.0,
+      "D_change_type": "overlapping_boundary_worsened",
+      "D_minus_C_boundary_error": -20.5,
+      "four_pass_seconds": 40.38521555252373
+    },
+    {
+      "sample_id": "017_9HG4Z_q0",
+      "video_id": "9HG4Z",
+      "query": "a person is closing a door.",
+      "gt": [
+        0,
+        5
+      ],
+      "A_status": "ok",
+      "A_intervals": [
+        [
+          0.0,
+          5.0
+        ]
+      ],
+      "A_iou": 1.0,
+      "A_union_iou": 1.0,
+      "A_start_error": 0.0,
+      "A_end_error": 0.0,
+      "A_seconds": 6.450584260746837,
+      "A_visual_tokens": 3740,
+      "A_GT_sampled_frames": 10,
+      "A_unique_frames": 34,
+      "A_official_iou": 1.0,
+      "B_status": "ok",
+      "B_intervals": [
+        [
+          0.0,
+          5.0
+        ]
+      ],
+      "B_iou": 1.0,
+      "B_union_iou": 1.0,
+      "B_start_error": 0.0,
+      "B_end_error": 0.0,
+      "B_seconds": 7.388255786150694,
+      "B_visual_tokens": 3740,
+      "B_GT_sampled_frames": 10,
+      "B_unique_frames": 34,
+      "B_official_iou": 1.0,
+      "C_status": "ok",
+      "C_intervals": [
+        [
+          0.0,
+          2.0
+        ]
+      ],
+      "C_iou": 0.4,
+      "C_union_iou": 0.4,
+      "C_start_error": 0.0,
+      "C_end_error": 3.0,
+      "C_seconds": 3.825167177245021,
+      "C_visual_tokens": 3740,
+      "C_GT_sampled_frames": 10,
+      "C_unique_frames": 34,
+      "C_official_iou": 0.4,
+      "D_status": "ok",
+      "D_intervals": [
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "D_iou": 0.8333333333333334,
+      "D_union_iou": 0.8333333333333334,
+      "D_start_error": 0.0,
+      "D_end_error": 1.0,
+      "D_seconds": 3.482653148472309,
+      "D_visual_tokens": 3740,
+      "D_GT_sampled_frames": 27,
+      "D_unique_frames": 34,
+      "D_official_iou": 0.8333333333333334,
+      "u": 0.0,
+      "u_union": 0.0,
+      "D_minus_C": 0.43333333333333335,
+      "D_minus_A": -0.16666666666666663,
+      "A_error": 0.0,
+      "D_change_type": "overlapping_boundary_worsened",
+      "D_minus_C_boundary_error": -1.0,
+      "four_pass_seconds": 21.14666037261486
+    }
+  ],
+  "D_worsens_vs_C": [
+    {
+      "sample_id": "055_HS14N_q1",
+      "video_id": "HS14N",
+      "query": "a person runs into the kitchen.",
+      "gt": [
+        4,
+        6
+      ],
+      "A_status": "ok",
+      "A_intervals": [
+        [
+          4.0,
+          6.0
+        ]
+      ],
+      "A_iou": 1.0,
+      "A_union_iou": 1.0,
+      "A_start_error": 0.0,
+      "A_end_error": 0.0,
+      "A_seconds": 7.513750961050391,
+      "A_visual_tokens": 6820,
+      "A_GT_sampled_frames": 4,
+      "A_unique_frames": 62,
+      "A_official_iou": 1.0,
+      "B_status": "ok",
+      "B_intervals": [
+        [
+          3.0,
+          5.0
+        ]
+      ],
+      "B_iou": 0.3333333333333333,
+      "B_union_iou": 0.3333333333333333,
+      "B_start_error": 1.0,
+      "B_end_error": 1.0,
+      "B_seconds": 7.949807332828641,
+      "B_visual_tokens": 6820,
+      "B_GT_sampled_frames": 4,
+      "B_unique_frames": 62,
+      "B_official_iou": 0.3333333333333333,
+      "C_status": "ok",
+      "C_intervals": [
+        [
+          4.0,
+          6.0
+        ]
+      ],
+      "C_iou": 1.0,
+      "C_union_iou": 1.0,
+      "C_start_error": 0.0,
+      "C_end_error": 0.0,
+      "C_seconds": 7.444923937320709,
+      "C_visual_tokens": 6820,
+      "C_GT_sampled_frames": 4,
+      "C_unique_frames": 62,
+      "C_official_iou": 1.0,
+      "D_status": "ok",
+      "D_intervals": [
+        [
+          4.470133333333333,
+          5.470133333333333
+        ]
+      ],
+      "D_iou": 0.5,
+      "D_union_iou": 0.5,
+      "D_start_error": 0.47013333333333307,
+      "D_end_error": 0.5298666666666669,
+      "D_seconds": 4.748712496832013,
+      "D_visual_tokens": 6820,
+      "D_GT_sampled_frames": 41,
+      "D_unique_frames": 62,
+      "D_official_iou": 0.5,
+      "u": 0.6666666666666667,
+      "u_union": 0.6666666666666667,
+      "D_minus_C": -0.5,
+      "D_minus_A": -0.5,
+      "A_error": 0.0,
+      "D_change_type": "overlapping_boundary_worsened",
+      "D_minus_C_boundary_error": 0.5,
+      "four_pass_seconds": 27.657194728031754
+    },
+    {
+      "sample_id": "028_0WYBK_q0",
+      "video_id": "0WYBK",
+      "query": "person eating a sandwich.",
+      "gt": [
+        3,
+        6
+      ],
+      "A_status": "ok",
+      "A_intervals": [
+        [
+          3.0,
+          6.0
+        ]
+      ],
+      "A_iou": 1.0,
+      "A_union_iou": 1.0,
+      "A_start_error": 0.0,
+      "A_end_error": 0.0,
+      "A_seconds": 5.53687247633934,
+      "A_visual_tokens": 3520,
+      "A_GT_sampled_frames": 6,
+      "A_unique_frames": 32,
+      "A_official_iou": 1.0,
+      "B_status": "ok",
+      "B_intervals": [
+        [
+          3.0,
+          6.0
+        ]
+      ],
+      "B_iou": 1.0,
+      "B_union_iou": 1.0,
+      "B_start_error": 0.0,
+      "B_end_error": 0.0,
+      "B_seconds": 6.251151353120804,
+      "B_visual_tokens": 3520,
+      "B_GT_sampled_frames": 6,
+      "B_unique_frames": 32,
+      "B_official_iou": 1.0,
+      "C_status": "ok",
+      "C_intervals": [
+        [
+          3.0,
+          6.0
+        ]
+      ],
+      "C_iou": 1.0,
+      "C_union_iou": 1.0,
+      "C_start_error": 0.0,
+      "C_end_error": 0.0,
+      "C_seconds": 5.636092979460955,
+      "C_visual_tokens": 3520,
+      "C_GT_sampled_frames": 6,
+      "C_unique_frames": 32,
+      "C_official_iou": 1.0,
+      "D_status": "ok",
+      "D_intervals": [
+        [
+          4.195170624625823,
+          6.195170624625823
+        ]
+      ],
+      "D_iou": 0.5648616576103929,
+      "D_union_iou": 0.5648616576103929,
+      "D_start_error": 1.1951706246258231,
+      "D_end_error": 0.19517062462582313,
+      "D_seconds": 3.3531710021197796,
+      "D_visual_tokens": 3520,
+      "D_GT_sampled_frames": 21,
+      "D_unique_frames": 32,
+      "D_official_iou": 0.5648616576103929,
+      "u": 0.0,
+      "u_union": 0.0,
+      "D_minus_C": -0.43513834238960714,
+      "D_minus_A": -0.43513834238960714,
+      "A_error": 0.0,
+      "D_change_type": "overlapping_boundary_worsened",
+      "D_minus_C_boundary_error": 0.6951706246258231,
+      "four_pass_seconds": 20.77728781104088
+    },
+    {
+      "sample_id": "035_ZXHCH_q0",
+      "video_id": "ZXHCH",
+      "query": "person sits down in a chair.",
+      "gt": [
+        22,
+        25
+      ],
+      "A_status": "ok",
+      "A_intervals": [
+        [
+          21.0,
+          24.0
+        ]
+      ],
+      "A_iou": 0.5,
+      "A_union_iou": 0.5,
+      "A_start_error": 1.0,
+      "A_end_error": 1.0,
+      "A_seconds": 3.8819182962179184,
+      "A_visual_tokens": 5225,
+      "A_GT_sampled_frames": 6,
+      "A_unique_frames": 50,
+      "A_official_iou": 0.5,
+      "B_status": "ok",
+      "B_intervals": [
+        [
+          20.0,
+          24.0
+        ]
+      ],
+      "B_iou": 0.4,
+      "B_union_iou": 0.4,
+      "B_start_error": 2.0,
+      "B_end_error": 1.0,
+      "B_seconds": 4.753808857873082,
+      "B_visual_tokens": 5225,
+      "B_GT_sampled_frames": 6,
+      "B_unique_frames": 50,
+      "B_official_iou": 0.4,
+      "C_status": "ok",
+      "C_intervals": [
+        [
+          21.0,
+          24.0
+        ]
+      ],
+      "C_iou": 0.5,
+      "C_union_iou": 0.5,
+      "C_start_error": 1.0,
+      "C_end_error": 1.0,
+      "C_seconds": 6.167862318456173,
+      "C_visual_tokens": 5225,
+      "C_GT_sampled_frames": 6,
+      "C_unique_frames": 50,
+      "C_official_iou": 0.5,
+      "D_status": "ok",
+      "D_intervals": [
+        [
+          21.24996995553419,
+          22.24996995553419
+        ]
+      ],
+      "D_iou": 0.06665812075374951,
+      "D_union_iou": 0.06665812075374951,
+      "D_start_error": 0.7500300444658095,
+      "D_end_error": 2.7500300444658095,
+      "D_seconds": 5.9524393863976,
+      "D_visual_tokens": 5225,
+      "D_GT_sampled_frames": 30,
+      "D_unique_frames": 50,
+      "D_official_iou": 0.06665812075374951,
+      "u": 0.25,
+      "u_union": 0.25,
+      "D_minus_C": -0.4333418792462505,
+      "D_minus_A": -0.4333418792462505,
+      "A_error": 0.5,
+      "D_change_type": "overlapping_boundary_worsened",
+      "D_minus_C_boundary_error": 0.7500300444658095,
+      "four_pass_seconds": 20.756028858944774
+    },
+    {
+      "sample_id": "040_YW5QQ_q0",
+      "video_id": "YW5QQ",
+      "query": "person closes the door.",
+      "gt": [
+        24,
+        27
+      ],
+      "A_status": "ok",
+      "A_intervals": [
+        [
+          23.0,
+          28.0
+        ]
+      ],
+      "A_iou": 0.6,
+      "A_union_iou": 0.6,
+      "A_start_error": 1.0,
+      "A_end_error": 1.0,
+      "A_seconds": 18.10526104643941,
+      "A_visual_tokens": 7040,
+      "A_GT_sampled_frames": 6,
+      "A_unique_frames": 64,
+      "A_official_iou": 0.6,
+      "B_status": "ok",
+      "B_intervals": [
+        [
+          24.0,
+          28.0
+        ]
+      ],
+      "B_iou": 0.75,
+      "B_union_iou": 0.75,
+      "B_start_error": 0.0,
+      "B_end_error": 1.0,
+      "B_seconds": 13.024195820093155,
+      "B_visual_tokens": 7040,
+      "B_GT_sampled_frames": 6,
+      "B_unique_frames": 64,
+      "B_official_iou": 0.75,
+      "C_status": "ok",
+      "C_intervals": [
+        [
+          23.0,
+          27.0
+        ]
+      ],
+      "C_iou": 0.75,
+      "C_union_iou": 0.75,
+      "C_start_error": 1.0,
+      "C_end_error": 0.0,
+      "C_seconds": 17.798544231802225,
+      "C_visual_tokens": 7040,
+      "C_GT_sampled_frames": 6,
+      "C_unique_frames": 64,
+      "C_official_iou": 0.75,
+      "D_status": "ok",
+      "D_intervals": [
+        [
+          24.733333333333334,
+          25.733333333333334
+        ]
+      ],
+      "D_iou": 0.3333333333333333,
+      "D_union_iou": 0.3333333333333333,
+      "D_start_error": 0.7333333333333343,
+      "D_end_error": 1.2666666666666657,
+      "D_seconds": 16.76352377049625,
+      "D_visual_tokens": 7040,
+      "D_GT_sampled_frames": 26,
+      "D_unique_frames": 64,
+      "D_official_iou": 0.3333333333333333,
+      "u": 0.19999999999999996,
+      "u_union": 0.19999999999999996,
+      "D_minus_C": -0.4166666666666667,
+      "D_minus_A": -0.26666666666666666,
+      "A_error": 0.4,
+      "D_change_type": "overlapping_boundary_worsened",
+      "D_minus_C_boundary_error": 0.5,
+      "four_pass_seconds": 65.69152486883104
+    },
+    {
+      "sample_id": "013_LPKPO_q0",
+      "video_id": "LPKPO",
+      "query": "person grabs a plate that is sitting on the table.",
+      "gt": [
+        15,
+        20
+      ],
+      "A_status": "ok",
+      "A_intervals": [
+        [
+          15.0,
+          17.0
+        ]
+      ],
+      "A_iou": 0.4,
+      "A_union_iou": 0.4,
+      "A_start_error": 0.0,
+      "A_end_error": 3.0,
+      "A_seconds": 12.688265511766076,
+      "A_visual_tokens": 7480,
+      "A_GT_sampled_frames": 10,
+      "A_unique_frames": 68,
+      "A_official_iou": 0.4,
+      "B_status": "ok",
+      "B_intervals": [
+        [
+          15.0,
+          18.0
+        ]
+      ],
+      "B_iou": 0.6,
+      "B_union_iou": 0.6,
+      "B_start_error": 0.0,
+      "B_end_error": 2.0,
+      "B_seconds": 9.739959616214037,
+      "B_visual_tokens": 7480,
+      "B_GT_sampled_frames": 10,
+      "B_unique_frames": 68,
+      "B_official_iou": 0.6,
+      "C_status": "ok",
+      "C_intervals": [
+        [
+          15.0,
+          18.0
+        ]
+      ],
+      "C_iou": 0.6,
+      "C_union_iou": 0.6,
+      "C_start_error": 0.0,
+      "C_end_error": 2.0,
+      "C_seconds": 17.157059460878372,
+      "C_visual_tokens": 7480,
+      "C_GT_sampled_frames": 10,
+      "C_unique_frames": 68,
+      "C_official_iou": 0.6,
+      "D_status": "ok",
+      "D_intervals": [
+        [
+          15.5,
+          16.5
+        ]
+      ],
+      "D_iou": 0.2,
+      "D_union_iou": 0.2,
+      "D_start_error": 0.5,
+      "D_end_error": 3.5,
+      "D_seconds": 11.333512777462602,
+      "D_visual_tokens": 7480,
+      "D_GT_sampled_frames": 57,
+      "D_unique_frames": 68,
+      "D_official_iou": 0.2,
+      "u": 0.33333333333333337,
+      "u_union": 0.33333333333333337,
+      "D_minus_C": -0.39999999999999997,
+      "D_minus_A": -0.2,
+      "A_error": 0.6,
+      "D_change_type": "overlapping_boundary_worsened",
+      "D_minus_C_boundary_error": 1.0,
+      "four_pass_seconds": 50.91879736632109
+    }
+  ],
+  "unstable_no_gain": [
+    {
+      "sample_id": "019_J3RD3_q0",
+      "video_id": "J3RD3",
+      "query": "person closes the door.",
+      "gt": [
+        7,
+        9
+      ],
+      "A_status": "ok",
+      "A_intervals": [
+        [
+          7.0,
+          9.0
+        ]
+      ],
+      "A_iou": 1.0,
+      "A_union_iou": 1.0,
+      "A_start_error": 0.0,
+      "A_end_error": 0.0,
+      "A_seconds": 3.6734103318303823,
+      "A_visual_tokens": 5115,
+      "A_GT_sampled_frames": 4,
+      "A_unique_frames": 62,
+      "A_official_iou": 1.0,
+      "B_status": "ok",
+      "B_intervals": [
+        [
+          4.0,
+          8.0
+        ]
+      ],
+      "B_iou": 0.2,
+      "B_union_iou": 0.2,
+      "B_start_error": 3.0,
+      "B_end_error": 1.0,
+      "B_seconds": 7.187854383140802,
+      "B_visual_tokens": 5115,
+      "B_GT_sampled_frames": 4,
+      "B_unique_frames": 62,
+      "B_official_iou": 0.2,
+      "C_status": "ok",
+      "C_intervals": [
+        [
+          7.0,
+          9.0
+        ]
+      ],
+      "C_iou": 1.0,
+      "C_union_iou": 1.0,
+      "C_start_error": 0.0,
+      "C_end_error": 0.0,
+      "C_seconds": 5.386612586677074,
+      "C_visual_tokens": 5115,
+      "C_GT_sampled_frames": 4,
+      "C_unique_frames": 62,
+      "C_official_iou": 1.0,
+      "D_status": "ok",
+      "D_intervals": [
+        [
+          7.5,
+          9.3
+        ]
+      ],
+      "D_iou": 0.652173913043478,
+      "D_union_iou": 0.652173913043478,
+      "D_start_error": 0.5,
+      "D_end_error": 0.3000000000000007,
+      "D_seconds": 5.354800146073103,
+      "D_visual_tokens": 5115,
+      "D_GT_sampled_frames": 42,
+      "D_unique_frames": 62,
+      "D_official_iou": 0.652173913043478,
+      "u": 0.8,
+      "u_union": 0.8,
+      "D_minus_C": -0.34782608695652195,
+      "D_minus_A": -0.34782608695652195,
+      "A_error": 0.0,
+      "D_change_type": "overlapping_boundary_worsened",
+      "D_minus_C_boundary_error": 0.40000000000000036,
+      "four_pass_seconds": 21.602677447721362
+    },
+    {
+      "sample_id": "055_HS14N_q1",
+      "video_id": "HS14N",
+      "query": "a person runs into the kitchen.",
+      "gt": [
+        4,
+        6
+      ],
+      "A_status": "ok",
+      "A_intervals": [
+        [
+          4.0,
+          6.0
+        ]
+      ],
+      "A_iou": 1.0,
+      "A_union_iou": 1.0,
+      "A_start_error": 0.0,
+      "A_end_error": 0.0,
+      "A_seconds": 7.513750961050391,
+      "A_visual_tokens": 6820,
+      "A_GT_sampled_frames": 4,
+      "A_unique_frames": 62,
+      "A_official_iou": 1.0,
+      "B_status": "ok",
+      "B_intervals": [
+        [
+          3.0,
+          5.0
+        ]
+      ],
+      "B_iou": 0.3333333333333333,
+      "B_union_iou": 0.3333333333333333,
+      "B_start_error": 1.0,
+      "B_end_error": 1.0,
+      "B_seconds": 7.949807332828641,
+      "B_visual_tokens": 6820,
+      "B_GT_sampled_frames": 4,
+      "B_unique_frames": 62,
+      "B_official_iou": 0.3333333333333333,
+      "C_status": "ok",
+      "C_intervals": [
+        [
+          4.0,
+          6.0
+        ]
+      ],
+      "C_iou": 1.0,
+      "C_union_iou": 1.0,
+      "C_start_error": 0.0,
+      "C_end_error": 0.0,
+      "C_seconds": 7.444923937320709,
+      "C_visual_tokens": 6820,
+      "C_GT_sampled_frames": 4,
+      "C_unique_frames": 62,
+      "C_official_iou": 1.0,
+      "D_status": "ok",
+      "D_intervals": [
+        [
+          4.470133333333333,
+          5.470133333333333
+        ]
+      ],
+      "D_iou": 0.5,
+      "D_union_iou": 0.5,
+      "D_start_error": 0.47013333333333307,
+      "D_end_error": 0.5298666666666669,
+      "D_seconds": 4.748712496832013,
+      "D_visual_tokens": 6820,
+      "D_GT_sampled_frames": 41,
+      "D_unique_frames": 62,
+      "D_official_iou": 0.5,
+      "u": 0.6666666666666667,
+      "u_union": 0.6666666666666667,
+      "D_minus_C": -0.5,
+      "D_minus_A": -0.5,
+      "A_error": 0.0,
+      "D_change_type": "overlapping_boundary_worsened",
+      "D_minus_C_boundary_error": 0.5,
+      "four_pass_seconds": 27.657194728031754
+    },
+    {
+      "sample_id": "012_FLLUJ_q0",
+      "video_id": "FLLUJ",
+      "query": "person closes a window.",
+      "gt": [
+        15,
+        18
+      ],
+      "A_status": "ok",
+      "A_intervals": [
+        [
+          19.0,
+          24.0
+        ]
+      ],
+      "A_iou": 0.0,
+      "A_union_iou": 0.0,
+      "A_start_error": 4.0,
+      "A_end_error": 6.0,
+      "A_seconds": 3.7680660504847765,
+      "A_visual_tokens": 5115,
+      "A_GT_sampled_frames": 6,
+      "A_unique_frames": 62,
+      "A_official_iou": 0.0,
+      "B_status": "ok",
+      "B_intervals": [
+        [
+          15.0,
+          25.0
+        ]
+      ],
+      "B_iou": 0.3,
+      "B_union_iou": 0.3,
+      "B_start_error": 0.0,
+      "B_end_error": 7.0,
+      "B_seconds": 5.029170293360949,
+      "B_visual_tokens": 5115,
+      "B_GT_sampled_frames": 6,
+      "B_unique_frames": 62,
+      "B_official_iou": 0.3,
+      "C_status": "ok",
+      "C_intervals": [
+        [
+          14.0,
+          25.0
+        ]
+      ],
+      "C_iou": 0.2727272727272727,
+      "C_union_iou": 0.2727272727272727,
+      "C_start_error": 1.0,
+      "C_end_error": 7.0,
+      "C_seconds": 6.258383937180042,
+      "C_visual_tokens": 5115,
+      "C_GT_sampled_frames": 6,
+      "C_unique_frames": 62,
+      "C_official_iou": 0.2727272727272727,
+      "D_status": "ok",
+      "D_intervals": [
+        [
+          20.733333333333334,
+          24.733333333333334
+        ]
+      ],
+      "D_iou": 0.0,
+      "D_union_iou": 0.0,
+      "D_start_error": 5.733333333333334,
+      "D_end_error": 6.733333333333334,
+      "D_seconds": 5.145903140306473,
+      "D_visual_tokens": 5115,
+      "D_GT_sampled_frames": 3,
+      "D_unique_frames": 62,
+      "D_official_iou": 0.0,
+      "u": 0.5,
+      "u_union": 0.5,
+      "D_minus_C": -0.2727272727272727,
+      "D_minus_A": 0.0,
+      "A_error": 1.0,
+      "D_change_type": "unchanged",
+      "D_minus_C_boundary_error": 2.2333333333333343,
+      "four_pass_seconds": 20.20152342133224
+    },
+    {
+      "sample_id": "025_TCJCJ_q0",
+      "video_id": "TCJCJ",
+      "query": "a person throws a book on the sofa.",
+      "gt": [
+        6,
+        8
+      ],
+      "A_status": "ok",
+      "A_intervals": [
+        [
+          5.0,
+          8.0
+        ]
+      ],
+      "A_iou": 0.6666666666666666,
+      "A_union_iou": 0.6666666666666666,
+      "A_start_error": 1.0,
+      "A_end_error": 0.0,
+      "A_seconds": 12.648158336058259,
+      "A_visual_tokens": 6696,
+      "A_GT_sampled_frames": 4,
+      "A_unique_frames": 62,
+      "A_official_iou": 0.6666666666666666,
+      "B_status": "ok",
+      "B_intervals": [
+        [
+          4.0,
+          7.0
+        ]
+      ],
+      "B_iou": 0.25,
+      "B_union_iou": 0.25,
+      "B_start_error": 2.0,
+      "B_end_error": 1.0,
+      "B_seconds": 4.6895779855549335,
+      "B_visual_tokens": 6696,
+      "B_GT_sampled_frames": 4,
+      "B_unique_frames": 62,
+      "B_official_iou": 0.25,
+      "C_status": "ok",
+      "C_intervals": [
+        [
+          5.0,
+          8.0
+        ]
+      ],
+      "C_iou": 0.6666666666666666,
+      "C_union_iou": 0.6666666666666666,
+      "C_start_error": 1.0,
+      "C_end_error": 0.0,
+      "C_seconds": 6.159099662676454,
+      "C_visual_tokens": 6696,
+      "C_GT_sampled_frames": 4,
+      "C_unique_frames": 62,
+      "C_official_iou": 0.6666666666666666,
+      "D_status": "ok",
+      "D_intervals": [
+        [
+          6.926434426229508,
+          7.526434426229508
+        ]
+      ],
+      "D_iou": 0.2999999999999998,
+      "D_union_iou": 0.2999999999999998,
+      "D_start_error": 0.9264344262295081,
+      "D_end_error": 0.47356557377049224,
+      "D_seconds": 4.110465966165066,
+      "D_visual_tokens": 6696,
+      "D_GT_sampled_frames": 28,
+      "D_unique_frames": 36,
+      "D_official_iou": 0.2999999999999998,
+      "u": 0.5,
+      "u_union": 0.5,
+      "D_minus_C": -0.3666666666666668,
+      "D_minus_A": -0.3666666666666668,
+      "A_error": 0.33333333333333337,
+      "D_change_type": "overlapping_boundary_worsened",
+      "D_minus_C_boundary_error": 0.20000000000000018,
+      "four_pass_seconds": 27.607301950454712
+    },
+    {
+      "sample_id": "013_LPKPO_q0",
+      "video_id": "LPKPO",
+      "query": "person grabs a plate that is sitting on the table.",
+      "gt": [
+        15,
+        20
+      ],
+      "A_status": "ok",
+      "A_intervals": [
+        [
+          15.0,
+          17.0
+        ]
+      ],
+      "A_iou": 0.4,
+      "A_union_iou": 0.4,
+      "A_start_error": 0.0,
+      "A_end_error": 3.0,
+      "A_seconds": 12.688265511766076,
+      "A_visual_tokens": 7480,
+      "A_GT_sampled_frames": 10,
+      "A_unique_frames": 68,
+      "A_official_iou": 0.4,
+      "B_status": "ok",
+      "B_intervals": [
+        [
+          15.0,
+          18.0
+        ]
+      ],
+      "B_iou": 0.6,
+      "B_union_iou": 0.6,
+      "B_start_error": 0.0,
+      "B_end_error": 2.0,
+      "B_seconds": 9.739959616214037,
+      "B_visual_tokens": 7480,
+      "B_GT_sampled_frames": 10,
+      "B_unique_frames": 68,
+      "B_official_iou": 0.6,
+      "C_status": "ok",
+      "C_intervals": [
+        [
+          15.0,
+          18.0
+        ]
+      ],
+      "C_iou": 0.6,
+      "C_union_iou": 0.6,
+      "C_start_error": 0.0,
+      "C_end_error": 2.0,
+      "C_seconds": 17.157059460878372,
+      "C_visual_tokens": 7480,
+      "C_GT_sampled_frames": 10,
+      "C_unique_frames": 68,
+      "C_official_iou": 0.6,
+      "D_status": "ok",
+      "D_intervals": [
+        [
+          15.5,
+          16.5
+        ]
+      ],
+      "D_iou": 0.2,
+      "D_union_iou": 0.2,
+      "D_start_error": 0.5,
+      "D_end_error": 3.5,
+      "D_seconds": 11.333512777462602,
+      "D_visual_tokens": 7480,
+      "D_GT_sampled_frames": 57,
+      "D_unique_frames": 68,
+      "D_official_iou": 0.2,
+      "u": 0.33333333333333337,
+      "u_union": 0.33333333333333337,
+      "D_minus_C": -0.39999999999999997,
+      "D_minus_A": -0.2,
+      "A_error": 0.6,
+      "D_change_type": "overlapping_boundary_worsened",
+      "D_minus_C_boundary_error": 1.0,
+      "four_pass_seconds": 50.91879736632109
+    }
+  ],
+  "stable_but_wrong": [
+    {
+      "sample_id": "045_P3CLM_q0",
+      "video_id": "P3CLM",
+      "query": "person close the book.",
+      "gt": [
+        34,
+        36
+      ],
+      "A_status": "ok",
+      "A_intervals": [
+        [
+          6.0,
+          11.0
+        ]
+      ],
+      "A_iou": 0.0,
+      "A_union_iou": 0.0,
+      "A_start_error": 28.0,
+      "A_end_error": 25.0,
+      "A_seconds": 21.30657083541155,
+      "A_visual_tokens": 9240,
+      "A_GT_sampled_frames": 4,
+      "A_unique_frames": 84,
+      "A_official_iou": 0.0,
+      "B_status": "ok",
+      "B_intervals": [
+        [
+          6.0,
+          11.0
+        ]
+      ],
+      "B_iou": 0.0,
+      "B_union_iou": 0.0,
+      "B_start_error": 28.0,
+      "B_end_error": 25.0,
+      "B_seconds": 16.617727993056178,
+      "B_visual_tokens": 9240,
+      "B_GT_sampled_frames": 4,
+      "B_unique_frames": 84,
+      "B_official_iou": 0.0,
+      "C_status": "ok",
+      "C_intervals": [
+        [
+          6.0,
+          36.0
+        ]
+      ],
+      "C_iou": 0.06666666666666667,
+      "C_union_iou": 0.06666666666666667,
+      "C_start_error": 28.0,
+      "C_end_error": 0.0,
+      "C_seconds": 14.867672814056277,
+      "C_visual_tokens": 9240,
+      "C_GT_sampled_frames": 4,
+      "C_unique_frames": 84,
+      "C_official_iou": 0.06666666666666667,
+      "D_status": "ok",
+      "D_intervals": [
+        [
+          6.733333333333333,
+          10.733333333333334
+        ]
+      ],
+      "D_iou": 0.0,
+      "D_union_iou": 0.0,
+      "D_start_error": 27.266666666666666,
+      "D_end_error": 25.266666666666666,
+      "D_seconds": 13.430254789069295,
+      "D_visual_tokens": 9240,
+      "D_GT_sampled_frames": 0,
+      "D_unique_frames": 84,
+      "D_official_iou": 0.0,
+      "u": 0.0,
+      "u_union": 0.0,
+      "D_minus_C": -0.06666666666666667,
+      "D_minus_A": 0.0,
+      "A_error": 1.0,
+      "D_change_type": "unchanged",
+      "D_minus_C_boundary_error": 12.266666666666666,
+      "four_pass_seconds": 66.2222264315933
+    },
+    {
+      "sample_id": "037_XGS3K_q0",
+      "video_id": "XGS3K",
+      "query": "person opens a sliding glass door.",
+      "gt": [
+        15,
+        17
+      ],
+      "A_status": "ok",
+      "A_intervals": [
+        [
+          9.0,
+          18.0
+        ]
+      ],
+      "A_iou": 0.2222222222222222,
+      "A_union_iou": 0.2222222222222222,
+      "A_start_error": 6.0,
+      "A_end_error": 1.0,
+      "A_seconds": 1.803080489858985,
+      "A_visual_tokens": 1452,
+      "A_GT_sampled_frames": 4,
+      "A_unique_frames": 44,
+      "A_official_iou": 0.2222222222222222,
+      "B_status": "ok",
+      "B_intervals": [
+        [
+          9.0,
+          18.0
+        ]
+      ],
+      "B_iou": 0.2222222222222222,
+      "B_union_iou": 0.2222222222222222,
+      "B_start_error": 6.0,
+      "B_end_error": 1.0,
+      "B_seconds": 1.7020998373627663,
+      "B_visual_tokens": 1452,
+      "B_GT_sampled_frames": 4,
+      "B_unique_frames": 44,
+      "B_official_iou": 0.2222222222222222,
+      "C_status": "ok",
+      "C_intervals": [
+        [
+          9.0,
+          18.0
+        ]
+      ],
+      "C_iou": 0.2222222222222222,
+      "C_union_iou": 0.2222222222222222,
+      "C_start_error": 6.0,
+      "C_end_error": 1.0,
+      "C_seconds": 1.9218413457274437,
+      "C_visual_tokens": 1452,
+      "C_GT_sampled_frames": 4,
+      "C_unique_frames": 44,
+      "C_official_iou": 0.2222222222222222,
+      "D_status": "ok",
+      "D_intervals": [
+        [
+          9.716303630363036,
+          17.716303630363036
+        ]
+      ],
+      "D_iou": 0.25,
+      "D_union_iou": 0.25,
+      "D_start_error": 5.283696369636964,
+      "D_end_error": 0.7163036303630363,
+      "D_seconds": 2.0043995901942253,
+      "D_visual_tokens": 1452,
+      "D_GT_sampled_frames": 6,
+      "D_unique_frames": 44,
+      "D_official_iou": 0.25,
+      "u": 0.0,
+      "u_union": 0.0,
+      "D_minus_C": 0.02777777777777779,
+      "D_minus_A": 0.02777777777777779,
+      "A_error": 0.7777777777777778,
+      "D_change_type": "overlapping_boundary_improved",
+      "D_minus_C_boundary_error": -0.5,
+      "four_pass_seconds": 7.43142126314342
+    },
+    {
+      "sample_id": "018_S5KQ1_q0",
+      "video_id": "S5KQ1",
+      "query": "a person opens a box.",
+      "gt": [
+        5,
+        6
+      ],
+      "A_status": "ok",
+      "A_intervals": [
+        [
+          3.0,
+          7.0
+        ]
+      ],
+      "A_iou": 0.25,
+      "A_union_iou": 0.25,
+      "A_start_error": 2.0,
+      "A_end_error": 1.0,
+      "A_seconds": 9.601819416508079,
+      "A_visual_tokens": 6480,
+      "A_GT_sampled_frames": 2,
+      "A_unique_frames": 60,
+      "A_official_iou": 0.25,
+      "B_status": "ok",
+      "B_intervals": [
+        [
+          3.0,
+          7.0
+        ]
+      ],
+      "B_iou": 0.25,
+      "B_union_iou": 0.25,
+      "B_start_error": 2.0,
+      "B_end_error": 1.0,
+      "B_seconds": 7.009149208664894,
+      "B_visual_tokens": 6480,
+      "B_GT_sampled_frames": 2,
+      "B_unique_frames": 60,
+      "B_official_iou": 0.25,
+      "C_status": "ok",
+      "C_intervals": [
+        [
+          3.0,
+          6.0
+        ]
+      ],
+      "C_iou": 0.3333333333333333,
+      "C_union_iou": 0.3333333333333333,
+      "C_start_error": 2.0,
+      "C_end_error": 0.0,
+      "C_seconds": 7.860169712454081,
+      "C_visual_tokens": 6480,
+      "C_GT_sampled_frames": 2,
+      "C_unique_frames": 60,
+      "C_official_iou": 0.3333333333333333,
+      "D_status": "ok",
+      "D_intervals": [
+        [
+          3.9602916666666665,
+          6.9602916666666665
+        ]
+      ],
+      "D_iou": 0.3333333333333333,
+      "D_union_iou": 0.3333333333333333,
+      "D_start_error": 1.0397083333333335,
+      "D_end_error": 0.9602916666666665,
+      "D_seconds": 13.536108557134867,
+      "D_visual_tokens": 6480,
+      "D_GT_sampled_frames": 10,
+      "D_unique_frames": 60,
+      "D_official_iou": 0.3333333333333333,
+      "u": 0.0,
+      "u_union": 0.0,
+      "D_minus_C": 0.0,
+      "D_minus_A": 0.08333333333333331,
+      "A_error": 0.75,
+      "D_change_type": "overlapping_boundary_improved",
+      "D_minus_C_boundary_error": 0.0,
+      "four_pass_seconds": 38.00724689476192
+    }
+  ]
+}

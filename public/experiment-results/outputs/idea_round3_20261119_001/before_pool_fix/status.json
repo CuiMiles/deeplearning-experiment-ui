@@ -1,0 +1,13 @@
+{
+  "stage": "needs_inspection",
+  "completed": 53,
+  "expected": 800,
+  "workers": {},
+  "failures": {
+    "scorer": {
+      "code": 1
+    }
+  },
+  "deadline_unix": 1795065573.2263672,
+  "unix": 1795025007.552094
+}

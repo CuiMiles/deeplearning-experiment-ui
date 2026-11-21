@@ -1,0 +1,383 @@
+{
+  "id": "videoqa-real-08-motion-expanded",
+  "title": "MotionBench 扩样后，编码胜负随模型和帧率改变",
+  "date": "2026-11-18",
+  "status": "completed",
+  "task": "videoqa",
+  "series": "采样、编码与定位",
+  "tags": [],
+  "tldr": "512 次完成。Qwen3 的 Sparse 在 8 FPS 胜 5 题，在 2 FPS 负 4 题；Qwen2.5 的 8 FPS 结果反向。",
+  "brief": {
+    "question": "短动作定位上的 Sparse 优势能否推广到视频问答？",
+    "change": "另抽 32 个源视频，四类题各 8 条。各视频运行 2/8 FPS、两模型、四方法。",
+    "conclusion": "512 次完成。Qwen3 的 Sparse 在 8 FPS 胜 5 题，在 2 FPS 负 4 题；Qwen2.5 的 8 FPS 结果反向。",
+    "verdict": "mixed",
+    "pipeline": [
+      {
+        "label": "四题型平衡选样",
+        "changed": false
+      },
+      {
+        "label": "固定同视频",
+        "changed": false
+      },
+      {
+        "label": "两模型两帧率",
+        "changed": true
+      },
+      {
+        "label": "同预算比较",
+        "changed": false
+      }
+    ]
+  },
+  "setup": {
+    "model": "Qwen2.5-VL-3B / Qwen3-VL-4B",
+    "evalData": [
+      "motion-q25-8",
+      "motion-q25-2",
+      "motion-q3-8",
+      "motion-q3-2"
+    ],
+    "notes": "新增 32 个独立 DEV 视频，先导 8 条另列。"
+  },
+  "results": {
+    "methods": [
+      {
+        "id": "flexi_released",
+        "name": "动态合帧",
+        "role": "baseline"
+      },
+      {
+        "id": "sparse_same_tokens",
+        "name": "Sparse",
+        "role": "ours"
+      },
+      {
+        "id": "native2",
+        "name": "原生两帧",
+        "role": "reference"
+      },
+      {
+        "id": "fixed6_released",
+        "name": "固定六帧",
+        "role": "ablation"
+      }
+    ],
+    "main": [
+      {
+        "method": "flexi_released",
+        "dataset": "motion-q25-8",
+        "metrics": {
+          "Acc": 62.5
+        }
+      },
+      {
+        "method": "sparse_same_tokens",
+        "dataset": "motion-q25-8",
+        "metrics": {
+          "Acc": 50.0
+        }
+      },
+      {
+        "method": "native2",
+        "dataset": "motion-q25-8",
+        "metrics": {
+          "Acc": 59.375
+        }
+      },
+      {
+        "method": "fixed6_released",
+        "dataset": "motion-q25-8",
+        "metrics": {
+          "Acc": 56.25
+        }
+      },
+      {
+        "method": "flexi_released",
+        "dataset": "motion-q25-2",
+        "metrics": {
+          "Acc": 59.375
+        }
+      },
+      {
+        "method": "sparse_same_tokens",
+        "dataset": "motion-q25-2",
+        "metrics": {
+          "Acc": 53.125
+        }
+      },
+      {
+        "method": "native2",
+        "dataset": "motion-q25-2",
+        "metrics": {
+          "Acc": 53.125
+        }
+      },
+      {
+        "method": "fixed6_released",
+        "dataset": "motion-q25-2",
+        "metrics": {
+          "Acc": 56.25
+        }
+      },
+      {
+        "method": "flexi_released",
+        "dataset": "motion-q3-8",
+        "metrics": {
+          "Acc": 50.0
+        }
+      },
+      {
+        "method": "sparse_same_tokens",
+        "dataset": "motion-q3-8",
+        "metrics": {
+          "Acc": 65.625
+        }
+      },
+      {
+        "method": "native2",
+        "dataset": "motion-q3-8",
+        "metrics": {
+          "Acc": 59.375
+        }
+      },
+      {
+        "method": "fixed6_released",
+        "dataset": "motion-q3-8",
+        "metrics": {
+          "Acc": 46.875
+        }
+      },
+      {
+        "method": "flexi_released",
+        "dataset": "motion-q3-2",
+        "metrics": {
+          "Acc": 59.375
+        }
+      },
+      {
+        "method": "sparse_same_tokens",
+        "dataset": "motion-q3-2",
+        "metrics": {
+          "Acc": 46.875
+        }
+      },
+      {
+        "method": "native2",
+        "dataset": "motion-q3-2",
+        "metrics": {
+          "Acc": 50.0
+        }
+      },
+      {
+        "method": "fixed6_released",
+        "dataset": "motion-q3-2",
+        "metrics": {
+          "Acc": 56.25
+        }
+      }
+    ],
+    "headline": [
+      {
+        "dataset": "motion-q3-8",
+        "metric": "Acc"
+      },
+      {
+        "dataset": "motion-q3-2",
+        "metric": "Acc"
+      },
+      {
+        "dataset": "motion-q25-8",
+        "metric": "Acc"
+      }
+    ]
+  },
+  "charts": [
+    {
+      "id": "fps-flip",
+      "title": "Sparse 减 Flexi 的准确率百分点",
+      "type": "bar",
+      "categories": [
+        "Qwen2.5 8 FPS",
+        "Qwen2.5 2 FPS",
+        "Qwen3 8 FPS",
+        "Qwen3 2 FPS"
+      ],
+      "yLabel": "百分点 / %",
+      "series": [
+        {
+          "name": "配对差值",
+          "data": [
+            -12.5,
+            -6.25,
+            15.625,
+            -12.5
+          ]
+        }
+      ],
+      "takeaway": "胜负会随模型和候选帧率变化。"
+    }
+  ],
+  "insights": {
+    "oneLiner": "同一批视频的帧率变化已能反转胜负，无法把差异只归因于数据集难易。",
+    "confidence": 0.55,
+    "phenomena": [
+      {
+        "id": "p1",
+        "title": "帧率反转结果",
+        "detail": "Qwen3 8 FPS 21/32 对 16/32；降到 2 FPS 后 15/32 对 19/32。",
+        "evidence": "chart:fps-flip",
+        "symptoms": [
+          "distribution-shift"
+        ],
+        "surprise": 4
+      }
+    ],
+    "echoes": [
+      {
+        "id": "echo",
+        "phenomenon": "p1",
+        "lens": "simpson",
+        "correspondences": [
+          [
+            "分组变量",
+            "模型和 FPS"
+          ],
+          [
+            "汇总指标",
+            "选择题准确率"
+          ]
+        ],
+        "borrowedMove": "先分别报告交叉条件，再讨论机制和外推。",
+        "limit": "帧率同时改变可见候选画面和分组统计。"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "hyp",
+        "title": "用同预算对照检验",
+        "statement": "同视频换帧率会改变相对排名。",
+        "test": "两个帧率逐视频配对，固定题目与空间条件。",
+        "falsifiedIf": "两个帧率组保持同方向。",
+        "impact": 4,
+        "effort": 3,
+        "status": "confirmed",
+        "from": [
+          "echo"
+        ]
+      }
+    ],
+    "paperAngles": [
+      {
+        "id": "direction",
+        "title": "可能的研究贡献",
+        "type": "analysis",
+        "claim": "用成对条件识别时间压缩的适用范围。",
+        "novelty": "用成对条件识别时间压缩的适用范围。",
+        "risk": "官方说明表与这个 DEV 小子集的候选帧和采样预算不同。",
+        "readiness": 0.28,
+        "from": [
+          "hyp"
+        ]
+      }
+    ],
+    "provocations": [
+      {
+        "prompt": "reviewer2",
+        "answer": "这轮显示跨条件差异，不能把 DEV 小样本与论文报告数值直接作精确复现。"
+      },
+      {
+        "prompt": "mechanism",
+        "answer": "帧率同时改变可见候选画面和分组统计。"
+      }
+    ]
+  },
+  "reproduce": {
+    "commands": [
+      {
+        "label": "在 VTG 工作目录查看原报告",
+        "cmd": "cat outputs/motionbench_expansion_20261118_001/report.md"
+      }
+    ],
+    "artifacts": [
+      {
+        "label": "扩展报告",
+        "path": "evidence/videoqa-real-08-motion-expanded/motionbench_expansion_20261118_001-report.md"
+      },
+      {
+        "label": "512 次原始输出与抽帧",
+        "path": "evidence/videoqa-real-08-motion-expanded/motionbench_expansion_20261118_001-per_video.csv"
+      },
+      {
+        "label": "四题型统计和核验",
+        "path": "evidence/videoqa-real-08-motion-expanded/motionbench_expansion_20261118_001-summary.json"
+      }
+    ]
+  },
+  "parent": "videoqa-real-07-motion-pilot",
+  "cases": [
+    {
+      "id": "2750",
+      "type": "videoqa",
+      "title": "Sparse 正确，Flexi 错误",
+      "outcome": "success",
+      "video": {
+        "fps": 30.0,
+        "duration": 6.0
+      },
+      "question": "What is on her head?\nA. Helmet\nB. Cotton cap\nC. Headband\nD. Headphones",
+      "answer": "B",
+      "predictions": [
+        {
+          "method": "flexi_released",
+          "answer": "A"
+        },
+        {
+          "method": "sparse_same_tokens",
+          "answer": "B"
+        },
+        {
+          "method": "native2",
+          "answer": "B"
+        },
+        {
+          "method": "fixed6_released",
+          "answer": "A"
+        }
+      ],
+      "note": "同一视频和 8 FPS 候选池，Sparse 与 Flexi 的视觉 token 逐条对齐。"
+    },
+    {
+      "id": "469",
+      "type": "videoqa",
+      "title": "两组同判的案例",
+      "outcome": "partial",
+      "video": {
+        "fps": 30.0,
+        "duration": 10.0
+      },
+      "question": "Please describe the detailed breakdown of the action in the video.\nA. Toss the rugby ball leap with both feet right hand backward for power积累力量\nB. Toss the rugby ball right hand backward for power gather feet jump\nC. Both feet jump off the ground right hand pulls back for power throwing the football\nD. Right hand backward to gather strength, both feet jump, throw the rugby ball.",
+      "answer": "D",
+      "predictions": [
+        {
+          "method": "flexi_released",
+          "answer": "D"
+        },
+        {
+          "method": "sparse_same_tokens",
+          "answer": "D"
+        },
+        {
+          "method": "native2",
+          "answer": "D"
+        },
+        {
+          "method": "fixed6_released",
+          "answer": "D"
+        }
+      ],
+      "note": "同一视频和 8 FPS 候选池，Sparse 与 Flexi 的视觉 token 逐条对齐。"
+    }
+  ]
+}

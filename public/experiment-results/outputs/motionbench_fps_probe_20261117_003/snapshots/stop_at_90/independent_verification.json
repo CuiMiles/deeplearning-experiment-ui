@@ -1,0 +1,28 @@
+{
+  "status": "passed_for_completed_predictions",
+  "completed": 90,
+  "planned": 128,
+  "all_planned_complete": false,
+  "official_parser_agreement": true,
+  "invalid_option_outputs": 0,
+  "fixed6_control_pairs_verified": 22,
+  "cohorts_8fps": {
+    "q25": [
+      4955,
+      7089,
+      1021,
+      5636,
+      307,
+      6039,
+      1623,
+      5093
+    ],
+    "q3": [
+      4955,
+      7089,
+      1021
+    ]
+  },
+  "peak_reserved_mib": 8158.0,
+  "unix": 1794915801.8665528
+}

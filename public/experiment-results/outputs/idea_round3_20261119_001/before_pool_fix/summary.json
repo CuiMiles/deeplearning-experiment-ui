@@ -1,0 +1,370 @@
+{
+  "completed": 49,
+  "expected": 800,
+  "complete": false,
+  "matched_input_checks": 20,
+  "metrics": {
+    "q25/charades": {
+      "flexi": {
+        "n": 5,
+        "miou": 20.076923076923077,
+        "r05": 0.2,
+        "r07": 0.0,
+        "invalid": 0,
+        "mean_visual_tokens": 6340.0
+      },
+      "flexi_no_norm": {
+        "n": 5,
+        "miou": 11.739130434782608,
+        "r05": 0.0,
+        "r07": 0.0,
+        "invalid": 0,
+        "mean_visual_tokens": 6340.0
+      },
+      "endpoints": {
+        "n": 5,
+        "miou": 22.395604395604394,
+        "r05": 0.2,
+        "r07": 0.0,
+        "invalid": 0,
+        "mean_visual_tokens": 6340.0
+      },
+      "sparse": {
+        "n": 5,
+        "miou": 22.523809523809526,
+        "r05": 0.2,
+        "r07": 0.0,
+        "invalid": 0,
+        "mean_visual_tokens": 6340.0
+      },
+      "native": {
+        "n": 4,
+        "miou": 28.173076923076923,
+        "r05": 0.25,
+        "r07": 0.0,
+        "invalid": 0,
+        "mean_visual_tokens": 11714.0
+      }
+    },
+    "q25/activitynet": {
+      "flexi": {
+        "n": 4,
+        "miou": 39.84838497033619,
+        "r05": 0.5,
+        "r07": 0.5,
+        "invalid": 0,
+        "mean_visual_tokens": 7488.0
+      },
+      "flexi_no_norm": {
+        "n": 4,
+        "miou": 39.84838497033619,
+        "r05": 0.5,
+        "r07": 0.5,
+        "invalid": 0,
+        "mean_visual_tokens": 7488.0
+      },
+      "endpoints": {
+        "n": 4,
+        "miou": 39.84838497033619,
+        "r05": 0.5,
+        "r07": 0.5,
+        "invalid": 0,
+        "mean_visual_tokens": 7488.0
+      },
+      "sparse": {
+        "n": 4,
+        "miou": 41.87541199736322,
+        "r05": 0.5,
+        "r07": 0.5,
+        "invalid": 0,
+        "mean_visual_tokens": 7488.0
+      },
+      "native": {
+        "n": 4,
+        "miou": 47.97297297297297,
+        "r05": 0.5,
+        "r07": 0.5,
+        "invalid": 0,
+        "mean_visual_tokens": 12520.5
+      }
+    },
+    "q3/charades": {
+      "flexi": {
+        "n": 1,
+        "miou": 10.526315789473683,
+        "r05": 0.0,
+        "r07": 0.0,
+        "invalid": 0,
+        "mean_visual_tokens": 10500.0
+      },
+      "flexi_no_norm": {
+        "n": 1,
+        "miou": 0.0,
+        "r05": 0.0,
+        "r07": 0.0,
+        "invalid": 0,
+        "mean_visual_tokens": 10500.0
+      },
+      "endpoints": {
+        "n": 1,
+        "miou": 0.0,
+        "r05": 0.0,
+        "r07": 0.0,
+        "invalid": 0,
+        "mean_visual_tokens": 10500.0
+      },
+      "sparse": {
+        "n": 1,
+        "miou": 10.0,
+        "r05": 0.0,
+        "r07": 0.0,
+        "invalid": 0,
+        "mean_visual_tokens": 10500.0
+      },
+      "native": {
+        "n": 1,
+        "miou": 10.0,
+        "r05": 0.0,
+        "r07": 0.0,
+        "invalid": 0,
+        "mean_visual_tokens": 14000.0
+      }
+    },
+    "q3/activitynet": {}
+  },
+  "paired": {
+    "q25/charades": {
+      "flexi_no_norm - flexi": {
+        "n": 5,
+        "delta": -8.337792642140467,
+        "ci95": [
+          -26.67558528428094,
+          10.0
+        ],
+        "continuous_delta": -8.448243291858788,
+        "wins": 2,
+        "losses": 2,
+        "ties": 1,
+        "leave_one_out": [
+          -15.422240802675585,
+          4.577759197324415
+        ]
+      },
+      "flexi_no_norm - endpoints": {
+        "n": 5,
+        "delta": -10.656473960821787,
+        "ci95": [
+          -28.0,
+          6.687052078356426
+        ],
+        "continuous_delta": -11.604317251376076,
+        "wins": 2,
+        "losses": 2,
+        "ties": 1,
+        "leave_one_out": [
+          -17.24916387959866,
+          1.6794075489727671
+        ]
+      },
+      "endpoints - sparse": {
+        "n": 5,
+        "delta": -0.12820512820512803,
+        "ci95": [
+          -0.384615384615384,
+          0.0
+        ],
+        "continuous_delta": 0.34024896265560295,
+        "wins": 0,
+        "losses": 1,
+        "ties": 4,
+        "leave_one_out": [
+          -0.16025641025641002,
+          0.0
+        ]
+      },
+      "flexi_no_norm - sparse": {
+        "n": 5,
+        "delta": -10.784679089026913,
+        "ci95": [
+          -28.0,
+          6.430641821946169
+        ],
+        "continuous_delta": -11.26406828872047,
+        "wins": 2,
+        "losses": 2,
+        "ties": 1,
+        "leave_one_out": [
+          -17.40942028985507,
+          1.5191511387163583
+        ]
+      },
+      "flexi_no_norm - native": {
+        "n": 4,
+        "delta": -13.499163879598662,
+        "ci95": [
+          -30.0,
+          3.001672240802675
+        ],
+        "continuous_delta": -14.174386111258421,
+        "wins": 2,
+        "losses": 1,
+        "ties": 1,
+        "leave_one_out": [
+          -19.665551839464882,
+          2.0011148272017842
+        ]
+      }
+    },
+    "q25/activitynet": {
+      "flexi_no_norm - flexi": {
+        "n": 4,
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "continuous_delta": 0.0,
+        "wins": 0,
+        "losses": 0,
+        "ties": 4,
+        "leave_one_out": [
+          0.0,
+          0.0
+        ]
+      },
+      "flexi_no_norm - endpoints": {
+        "n": 4,
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "continuous_delta": 0.0,
+        "wins": 0,
+        "losses": 0,
+        "ties": 4,
+        "leave_one_out": [
+          0.0,
+          0.0
+        ]
+      },
+      "endpoints - sparse": {
+        "n": 4,
+        "delta": -2.0270270270270285,
+        "ci95": [
+          -4.054054054054057,
+          0.0
+        ],
+        "continuous_delta": -1.9594594594594616,
+        "wins": 0,
+        "losses": 1,
+        "ties": 3,
+        "leave_one_out": [
+          -2.702702702702705,
+          0.0
+        ]
+      },
+      "flexi_no_norm - sparse": {
+        "n": 4,
+        "delta": -2.0270270270270285,
+        "ci95": [
+          -4.054054054054057,
+          0.0
+        ],
+        "continuous_delta": -1.9594594594594616,
+        "wins": 0,
+        "losses": 1,
+        "ties": 3,
+        "leave_one_out": [
+          -2.702702702702705,
+          0.0
+        ]
+      },
+      "flexi_no_norm - native": {
+        "n": 4,
+        "delta": -8.124588002636784,
+        "ci95": [
+          -12.195121951219512,
+          -4.054054054054057
+        ],
+        "continuous_delta": -7.813709992256048,
+        "wins": 0,
+        "losses": 2,
+        "ties": 2,
+        "leave_one_out": [
+          -10.832784003515712,
+          -2.702702702702704
+        ]
+      }
+    },
+    "q3/charades": {
+      "flexi_no_norm - flexi": {
+        "n": 1,
+        "delta": -10.526315789473683,
+        "ci95": [
+          -10.526315789473683,
+          -10.526315789473683
+        ],
+        "continuous_delta": -10.526315789473683,
+        "wins": 0,
+        "losses": 1,
+        "ties": 0,
+        "leave_one_out": null
+      },
+      "flexi_no_norm - endpoints": {
+        "n": 1,
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "continuous_delta": 0.0,
+        "wins": 0,
+        "losses": 0,
+        "ties": 1,
+        "leave_one_out": null
+      },
+      "endpoints - sparse": {
+        "n": 1,
+        "delta": -10.0,
+        "ci95": [
+          -10.0,
+          -10.0
+        ],
+        "continuous_delta": -10.0,
+        "wins": 0,
+        "losses": 1,
+        "ties": 0,
+        "leave_one_out": null
+      },
+      "flexi_no_norm - sparse": {
+        "n": 1,
+        "delta": -10.0,
+        "ci95": [
+          -10.0,
+          -10.0
+        ],
+        "continuous_delta": -10.0,
+        "wins": 0,
+        "losses": 1,
+        "ties": 0,
+        "leave_one_out": null
+      },
+      "flexi_no_norm - native": {
+        "n": 1,
+        "delta": -10.0,
+        "ci95": [
+          -10.0,
+          -10.0
+        ],
+        "continuous_delta": -10.0,
+        "wins": 0,
+        "losses": 1,
+        "ties": 0,
+        "leave_one_out": null
+      }
+    },
+    "q3/activitynet": {}
+  },
+  "unix": 1795024910.4620497
+}

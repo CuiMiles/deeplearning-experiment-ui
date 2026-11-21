@@ -1,0 +1,499 @@
+{
+  "id": "vtg-real-04-sparse",
+  "title": "少取帧和多看再合并，哪个更适合定位",
+  "date": "2026-11-17",
+  "status": "completed",
+  "task": "vtg",
+  "series": "采样、编码与定位",
+  "tags": [],
+  "tldr": "同 32 条 Charades，Sparse 分别领先 6.41、9.15 点；Qwen2.5 边界辅助只回升 1.24 点且区间跨零。",
+  "brief": {
+    "question": "同样的视觉 token 下，原生两帧编码是否比动态合帧更准？如果只修分组边界能追回多少？",
+    "change": "Sparse 先读取 Flexi 的组数 K，再从同一时间轴均匀取 2K 原帧。真实边界辅助另做同预算机制对照。",
+    "conclusion": "同 32 条 Charades，Sparse 分别领先 6.41、9.15 点；Qwen2.5 边界辅助只回升 1.24 点且区间跨零。",
+    "verdict": "mixed",
+    "pipeline": [
+      {
+        "label": "抽取候选帧",
+        "changed": false
+      },
+      {
+        "label": "固定每条预算",
+        "changed": false
+      },
+      {
+        "label": "改变编码方式",
+        "changed": true
+      },
+      {
+        "label": "比较定位",
+        "changed": false
+      }
+    ]
+  },
+  "setup": {
+    "model": "Qwen2.5-VL-3B / Qwen3-VL-4B",
+    "evalData": [
+      "charades-q25",
+      "charades-q3"
+    ],
+    "notes": "2 FPS。论文训练后的权重与本训练免费适配的对照协议不同。原生组预算更高。"
+  },
+  "results": {
+    "methods": [
+      {
+        "id": "flexi_time",
+        "name": "动态合帧",
+        "role": "baseline"
+      },
+      {
+        "id": "sparse_same_tokens",
+        "name": "Sparse 均匀抽帧",
+        "role": "ours"
+      },
+      {
+        "id": "native_time",
+        "name": "原生高预算",
+        "role": "reference"
+      },
+      {
+        "id": "oracle_split_same_tokens",
+        "name": "真实边界辅助分组",
+        "role": "ablation"
+      },
+      {
+        "id": "uniform_same_tokens",
+        "name": "等预算均匀分组",
+        "role": "ablation"
+      }
+    ],
+    "main": [
+      {
+        "method": "flexi_time",
+        "dataset": "charades-q25",
+        "metrics": {
+          "mIoU": 21.27604,
+          "R1@0.5": 12.5
+        }
+      },
+      {
+        "method": "sparse_same_tokens",
+        "dataset": "charades-q25",
+        "metrics": {
+          "mIoU": 27.6877,
+          "R1@0.5": 21.875
+        }
+      },
+      {
+        "method": "native_time",
+        "dataset": "charades-q25",
+        "metrics": {
+          "mIoU": 29.2316,
+          "R1@0.5": 25.0
+        }
+      },
+      {
+        "method": "oracle_split_same_tokens",
+        "dataset": "charades-q25",
+        "metrics": {
+          "mIoU": 22.51488,
+          "R1@0.5": 12.5
+        }
+      },
+      {
+        "method": "uniform_same_tokens",
+        "dataset": "charades-q25",
+        "metrics": {
+          "mIoU": 21.16613,
+          "R1@0.5": 12.5
+        }
+      },
+      {
+        "method": "flexi_time",
+        "dataset": "charades-q3",
+        "metrics": {
+          "mIoU": 33.97321
+        }
+      },
+      {
+        "method": "sparse_same_tokens",
+        "dataset": "charades-q3",
+        "metrics": {
+          "mIoU": 43.12252
+        }
+      },
+      {
+        "method": "native_time",
+        "dataset": "charades-q3",
+        "metrics": {
+          "mIoU": 46.29013
+        }
+      },
+      {
+        "method": "oracle_split_same_tokens",
+        "dataset": "charades-q3",
+        "metrics": {
+          "mIoU": 37.73562
+        }
+      },
+      {
+        "method": "uniform_same_tokens",
+        "dataset": "charades-q3",
+        "metrics": {
+          "mIoU": 32.67609
+        }
+      }
+    ],
+    "headline": [
+      {
+        "dataset": "charades-q25",
+        "metric": "mIoU"
+      },
+      {
+        "dataset": "charades-q3",
+        "metric": "mIoU"
+      }
+    ]
+  },
+  "charts": [
+    {
+      "id": "boundaries",
+      "title": "Qwen2.5 机制对照",
+      "type": "bar",
+      "categories": [
+        "原合帧",
+        "改分组边界"
+      ],
+      "yLabel": "百分点 / %",
+      "series": [
+        {
+          "name": "跨界比例 %",
+          "data": [
+            34.375,
+            15.625
+          ]
+        },
+        {
+          "name": "mIoU %",
+          "data": [
+            21.276,
+            22.5149
+          ]
+        }
+      ],
+      "takeaway": "边界结构明显改变，定位准确率只小幅移动。"
+    }
+  ],
+  "insights": {
+    "oneLiner": "简单抽帧是强对照，先查为什么无训练的合帧会退化。",
+    "confidence": 0.55,
+    "phenomena": [
+      {
+        "id": "p1",
+        "title": "同预算 Sparse 领先",
+        "detail": "保持各视频预算，改变视觉 token 的来源即可改分。",
+        "evidence": "results",
+        "symptoms": [
+          "simple-wins"
+        ],
+        "surprise": 4
+      },
+      {
+        "id": "p2",
+        "title": "边界改善没有对应到分数",
+        "detail": "标注引导下跨界比例从 34.4% 降到 15.6%。",
+        "evidence": "chart:boundaries",
+        "symptoms": [
+          "metric-disagreement"
+        ],
+        "surprise": 4
+      }
+    ],
+    "echoes": [
+      {
+        "id": "echo",
+        "phenomenon": "p1",
+        "lens": "mcnamara",
+        "correspondences": [
+          [
+            "易量化的代理",
+            "输入组的跨界比例"
+          ],
+          [
+            "目标表现",
+            "定位 IoU"
+          ]
+        ],
+        "borrowedMove": "固定分组，只改动态卷积的一个数值因素，排除重新选帧的影响。",
+        "limit": "Sparse 同时改变时间分布和编码形式，胜负本身给不出单一原因。"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "hyp",
+        "title": "用同预算对照检验",
+        "statement": "只修分组边界即可明显追回精度。",
+        "test": "保持视觉 token，真实边界辅助与原合帧逐视频比较。",
+        "falsifiedIf": "置信区间跨零且仍落后 Sparse。",
+        "impact": 4,
+        "effort": 3,
+        "status": "refuted",
+        "from": [
+          "echo"
+        ]
+      }
+    ],
+    "paperAngles": [
+      {
+        "id": "direction",
+        "title": "可能的研究贡献",
+        "type": "analysis",
+        "claim": "在无训练的适配中分解帧选择、分组和视觉编码的影响。",
+        "novelty": "在无训练的适配中分解帧选择、分组和视觉编码的影响。",
+        "risk": "结论依赖 2 FPS 和当前模型适配，MotionBench 另有对照。",
+        "readiness": 0.28,
+        "from": [
+          "hyp"
+        ]
+      }
+    ],
+    "provocations": [
+      {
+        "prompt": "reviewer2",
+        "answer": "把原生高预算、同预算 Sparse、同预算辅助分组都保留。"
+      },
+      {
+        "prompt": "mechanism",
+        "answer": "Sparse 同时改变时间分布和编码形式，胜负本身给不出单一原因。"
+      }
+    ]
+  },
+  "reproduce": {
+    "commands": [
+      {
+        "label": "在 VTG 工作目录查看原报告",
+        "cmd": "cat outputs/flexi_rapid_diagnostic_20261117_001/report.md"
+      }
+    ],
+    "artifacts": [
+      {
+        "label": "Qwen2.5 报告",
+        "path": "evidence/vtg-real-04-sparse/flexi_rapid_diagnostic_20261117_001-report.md"
+      },
+      {
+        "label": "逐样本结果",
+        "path": "evidence/vtg-real-04-sparse/flexi_rapid_diagnostic_20261117_001-scored.csv"
+      },
+      {
+        "label": "Qwen3 报告",
+        "path": "evidence/vtg-real-04-sparse/qwen3_flexi_20261117_001-report.md"
+      },
+      {
+        "label": "双模型逐视频",
+        "path": "evidence/vtg-real-04-sparse/qwen3_flexi_20261117_001-per_video.csv"
+      }
+    ]
+  },
+  "parent": "vtg-real-03-boundary-audit",
+  "cases": [
+    {
+      "id": "clip-1",
+      "type": "temporal",
+      "title": "稀疏取帧赢的案例",
+      "outcome": "success",
+      "video": {
+        "duration": 24.516
+      },
+      "query": "A man has his left hand in his pocket.",
+      "gt": [
+        [
+          11,
+          16
+        ]
+      ],
+      "predictions": [
+        {
+          "method": "flexi_time",
+          "segments": [
+            {
+              "start": 6,
+              "end": 10
+            }
+          ]
+        },
+        {
+          "method": "sparse_same_tokens",
+          "segments": [
+            {
+              "start": 10,
+              "end": 14
+            }
+          ]
+        },
+        {
+          "method": "native_time",
+          "segments": [
+            {
+              "start": 10,
+              "end": 13
+            }
+          ]
+        }
+      ],
+      "note": "Sparse 与合帧的定位差值为 +50.00 点。时间轴点为 Sparse 的两帧组时间戳。",
+      "sampledFrames": [
+        0.5,
+        2.0,
+        3.5,
+        5.0,
+        6.7,
+        8.2,
+        10.0,
+        11.5,
+        13.0,
+        14.5,
+        16.2,
+        17.7,
+        19.5,
+        21.0,
+        22.4,
+        23.9
+      ]
+    },
+    {
+      "id": "clip-2",
+      "type": "temporal",
+      "title": "合帧赢的反例",
+      "outcome": "failure",
+      "video": {
+        "duration": 15.708
+      },
+      "query": "A person put down a glass.",
+      "gt": [
+        [
+          4,
+          5
+        ]
+      ],
+      "predictions": [
+        {
+          "method": "flexi_time",
+          "segments": [
+            {
+              "start": 0,
+              "end": 6
+            }
+          ]
+        },
+        {
+          "method": "sparse_same_tokens",
+          "segments": [
+            {
+              "start": 0,
+              "end": 4
+            }
+          ]
+        },
+        {
+          "method": "native_time",
+          "segments": [
+            {
+              "start": 0,
+              "end": 4
+            }
+          ]
+        }
+      ],
+      "note": "Sparse 与合帧的定位差值为 -16.67 点。时间轴点为 Sparse 的两帧组时间戳。",
+      "sampledFrames": [
+        0.3,
+        1.8,
+        3.0,
+        4.3,
+        5.8,
+        7.1,
+        8.6,
+        9.9,
+        11.3,
+        12.6,
+        13.9,
+        15.4
+      ]
+    },
+    {
+      "id": "clip-3",
+      "type": "temporal",
+      "title": "同分的案例",
+      "outcome": "partial",
+      "video": {
+        "duration": 30.459
+      },
+      "query": "a person opens a door.",
+      "gt": [
+        [
+          1,
+          6
+        ]
+      ],
+      "predictions": [
+        {
+          "method": "flexi_time",
+          "segments": [
+            {
+              "start": 0,
+              "end": 6
+            }
+          ]
+        },
+        {
+          "method": "sparse_same_tokens",
+          "segments": [
+            {
+              "start": 0,
+              "end": 6
+            }
+          ]
+        },
+        {
+          "method": "native_time",
+          "segments": [
+            {
+              "start": 0,
+              "end": 5
+            }
+          ]
+        }
+      ],
+      "note": "Sparse 与合帧的定位差值为 +0.00 点。时间轴点为 Sparse 的两帧组时间戳。",
+      "sampledFrames": [
+        0.3,
+        1.3,
+        2.6,
+        3.9,
+        4.9,
+        5.9,
+        6.9,
+        8.5,
+        9.5,
+        10.6,
+        11.6,
+        12.9,
+        14.2,
+        15.2,
+        16.2,
+        17.5,
+        18.8,
+        19.8,
+        20.9,
+        21.9,
+        23.5,
+        24.5,
+        25.5,
+        26.5,
+        27.8,
+        29.1,
+        30.1
+      ]
+    }
+  ]
+}

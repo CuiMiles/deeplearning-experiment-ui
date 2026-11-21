@@ -1,0 +1,420 @@
+{
+  "metrics": {
+    "A": {
+      "n": 10,
+      "successful": 10,
+      "failures": 0,
+      "mIoU": 0.735,
+      "R1_at_05": 1.0,
+      "R1_at_07": 0.5,
+      "official_permissive_raw_mIoU": 0.735,
+      "multi_span_union_mIoU": 0.735,
+      "start_error_seconds_including_failures": {
+        "n": 10,
+        "mean": 0.7,
+        "p50": 1.0,
+        "p90": 1.0999999999999996,
+        "max": 2.0
+      },
+      "end_error_seconds_including_failures": {
+        "n": 10,
+        "mean": 0.7,
+        "p50": 0.5,
+        "p90": 2.0,
+        "max": 2.0
+      },
+      "start_error_valid_only": {
+        "n": 10,
+        "mean": 0.7,
+        "p50": 1.0,
+        "p90": 1.0999999999999996,
+        "max": 2.0
+      },
+      "end_error_valid_only": {
+        "n": 10,
+        "mean": 0.7,
+        "p50": 0.5,
+        "p90": 2.0,
+        "max": 2.0
+      },
+      "inference_seconds": {
+        "n": 10,
+        "mean": 8.716415956430136,
+        "p50": 6.835386138409376,
+        "p90": 15.680983649194237,
+        "max": 21.961495546624064
+      },
+      "visual_tokens": {
+        "n": 10,
+        "mean": 5905.6,
+        "p50": 5581.5,
+        "p90": 9046.8,
+        "max": 9288.0
+      },
+      "peak_reserved_mib": {
+        "n": 10,
+        "mean": 1895.8,
+        "p50": 1924.0,
+        "p90": 2004.0,
+        "max": 2004.0
+      },
+      "calls_per_query": 1
+    },
+    "B": {
+      "n": 10,
+      "successful": 10,
+      "failures": 0,
+      "mIoU": 0.6991176470588234,
+      "R1_at_05": 0.9,
+      "R1_at_07": 0.5,
+      "official_permissive_raw_mIoU": 0.6991176470588234,
+      "multi_span_union_mIoU": 0.6991176470588234,
+      "start_error_seconds_including_failures": {
+        "n": 10,
+        "mean": 1.1,
+        "p50": 1.0,
+        "p90": 2.1999999999999993,
+        "max": 4.0
+      },
+      "end_error_seconds_including_failures": {
+        "n": 10,
+        "mean": 0.8,
+        "p50": 1.0,
+        "p90": 2.0,
+        "max": 2.0
+      },
+      "start_error_valid_only": {
+        "n": 10,
+        "mean": 1.1,
+        "p50": 1.0,
+        "p90": 2.1999999999999993,
+        "max": 4.0
+      },
+      "end_error_valid_only": {
+        "n": 10,
+        "mean": 0.8,
+        "p50": 1.0,
+        "p90": 2.0,
+        "max": 2.0
+      },
+      "inference_seconds": {
+        "n": 10,
+        "mean": 7.905675424262881,
+        "p50": 6.224006220698357,
+        "p90": 14.723421351611613,
+        "max": 16.134699987247586
+      },
+      "visual_tokens": {
+        "n": 10,
+        "mean": 5905.6,
+        "p50": 5581.5,
+        "p90": 9046.8,
+        "max": 9288.0
+      },
+      "peak_reserved_mib": {
+        "n": 10,
+        "mean": 1895.8,
+        "p50": 1924.0,
+        "p90": 2004.0,
+        "max": 2004.0
+      },
+      "calls_per_query": 1
+    },
+    "C": {
+      "n": 10,
+      "successful": 10,
+      "failures": 0,
+      "mIoU": 0.586969696969697,
+      "R1_at_05": 0.7,
+      "R1_at_07": 0.4,
+      "official_permissive_raw_mIoU": 0.586969696969697,
+      "multi_span_union_mIoU": 0.586969696969697,
+      "start_error_seconds_including_failures": {
+        "n": 10,
+        "mean": 1.9,
+        "p50": 1.0,
+        "p90": 5.0,
+        "max": 5.0
+      },
+      "end_error_seconds_including_failures": {
+        "n": 10,
+        "mean": 1.3,
+        "p50": 1.0,
+        "p90": 2.3999999999999986,
+        "max": 6.0
+      },
+      "start_error_valid_only": {
+        "n": 10,
+        "mean": 1.9,
+        "p50": 1.0,
+        "p90": 5.0,
+        "max": 5.0
+      },
+      "end_error_valid_only": {
+        "n": 10,
+        "mean": 1.3,
+        "p50": 1.0,
+        "p90": 2.3999999999999986,
+        "max": 6.0
+      },
+      "inference_seconds": {
+        "n": 10,
+        "mean": 15.255025112442672,
+        "p50": 12.260702967643738,
+        "p90": 25.040989798121153,
+        "max": 32.386655267328024
+      },
+      "visual_tokens": {
+        "n": 10,
+        "mean": 11811.2,
+        "p50": 11163.0,
+        "p90": 18093.6,
+        "max": 18576.0
+      },
+      "peak_reserved_mib": {
+        "n": 10,
+        "mean": 1895.8,
+        "p50": 1924.0,
+        "p90": 2004.0,
+        "max": 2004.0
+      },
+      "calls_per_query": 2
+    },
+    "D": {
+      "n": 10,
+      "successful": 10,
+      "failures": 0,
+      "mIoU": 0.5775636950980134,
+      "R1_at_05": 0.7,
+      "R1_at_07": 0.3,
+      "official_permissive_raw_mIoU": 0.5775636950980134,
+      "multi_span_union_mIoU": 0.5775636950980134,
+      "start_error_seconds_including_failures": {
+        "n": 10,
+        "mean": 0.7555691573964317,
+        "p50": 0.75,
+        "p90": 1.5474144091834376,
+        "max": 1.5578656411489002
+      },
+      "end_error_seconds_including_failures": {
+        "n": 10,
+        "mean": 1.0483992760001315,
+        "p50": 0.6,
+        "p90": 2.5975907512077763,
+        "max": 3.178985152553434
+      },
+      "start_error_valid_only": {
+        "n": 10,
+        "mean": 0.7555691573964317,
+        "p50": 0.75,
+        "p90": 1.5474144091834376,
+        "max": 1.5578656411489002
+      },
+      "end_error_valid_only": {
+        "n": 10,
+        "mean": 1.0483992760001315,
+        "p50": 0.6,
+        "p90": 2.5975907512077763,
+        "max": 3.178985152553434
+      },
+      "inference_seconds": {
+        "n": 10,
+        "mean": 14.571548635885119,
+        "p50": 11.019935292191803,
+        "p90": 27.424947902746496,
+        "max": 31.150289814919233
+      },
+      "visual_tokens": {
+        "n": 10,
+        "mean": 11811.2,
+        "p50": 11163.0,
+        "p90": 18093.6,
+        "max": 18576.0
+      },
+      "peak_reserved_mib": {
+        "n": 10,
+        "mean": 1895.8,
+        "p50": 1924.0,
+        "p90": 2004.0,
+        "max": 2004.0
+      },
+      "calls_per_query": 2
+    }
+  },
+  "association": {
+    "unknown_u": 0,
+    "u_vs_D_minus_C": {
+      "n": 10,
+      "spearman": 0.35572912430182496,
+      "pearson": 0.19904607295226617
+    },
+    "u_vs_D_minus_A": {
+      "n": 10,
+      "spearman": 0.05254069374927338,
+      "pearson": 0.00811938907610626
+    },
+    "u_vs_A_error": {
+      "n": 10,
+      "spearman": 0.11014605357196448,
+      "pearson": 0.3470507021374037
+    },
+    "gain_threshold": 0.01,
+    "auc_for_D_minus_C_gt_001": 0.75,
+    "u_quartiles": [
+      {
+        "n": 3,
+        "u_mean": 0.0,
+        "D_minus_C_mean": 0.06781926962252427,
+        "A_iou_mean": 0.8095238095238094
+      },
+      {
+        "n": 3,
+        "u_mean": 0.0,
+        "D_minus_C_mean": -0.1823252065974005,
+        "A_iou_mean": 0.7000000000000001
+      },
+      {
+        "n": 2,
+        "u_mean": 0.0,
+        "D_minus_C_mean": 0.06791071428571438,
+        "A_iou_mean": 0.6607142857142857
+      },
+      {
+        "n": 2,
+        "u_mean": 0.32941176470588235,
+        "D_minus_C_mean": 0.056818181818181795,
+        "A_iou_mean": 0.75
+      }
+    ]
+  },
+  "contrasts": {
+    "D_minus_C_mean": -0.009406001871683634,
+    "video_cluster_bootstrap_95CI": [
+      -0.11579372775935036,
+      0.09286180125381317
+    ],
+    "video_count": 10,
+    "bootstrap_replicates": 2000,
+    "improved": 4,
+    "worsened": 4,
+    "unchanged": 2
+  },
+  "selection_diagnostic": [
+    {
+      "fraction": 0.25,
+      "selected": 3,
+      "n": 10,
+      "instability_mIoU": 0.7183333333333333,
+      "random_mean": 0.6885138278083481,
+      "random_95_range": [
+        0.6083333333333333,
+        0.7485821428571429
+      ],
+      "calls_per_query": 2.3,
+      "actual_visual_tokens": 132296,
+      "actual_inference_seconds": 187.4351924546063
+    },
+    {
+      "fraction": 0.5,
+      "selected": 5,
+      "n": 10,
+      "instability_mIoU": 0.6386791142200906,
+      "random_mean": 0.6546372422055676,
+      "random_95_range": [
+        0.5806482189075372,
+        0.7319154761904761
+      ],
+      "calls_per_query": 2.5,
+      "actual_visual_tokens": 141217,
+      "actual_inference_seconds": 193.8304948657751
+    },
+    {
+      "fraction": 0.75,
+      "selected": 8,
+      "n": 10,
+      "instability_mIoU": 0.5639815522408704,
+      "random_mean": 0.6099028381165361,
+      "random_95_range": [
+        0.5600636950980133,
+        0.6875636950980133
+      ],
+      "calls_per_query": 2.8,
+      "actual_visual_tokens": 166005,
+      "actual_inference_seconds": 216.28613293729722
+    }
+  ],
+  "per_query_four_pass_seconds": {
+    "n": 10,
+    "mean": 29.015833216160537,
+    "p50": 22.012702520005405,
+    "p90": 51.50837540328502,
+    "max": 57.71014952287078
+  },
+  "budget_checks": [
+    {
+      "sample_id": "000_F7TG5_q0",
+      "equal_N": true,
+      "equal_resolution": true,
+      "equal_visual_tokens": true
+    },
+    {
+      "sample_id": "001_O8T6G_q0",
+      "equal_N": true,
+      "equal_resolution": true,
+      "equal_visual_tokens": true
+    },
+    {
+      "sample_id": "002_QN7Y2_q0",
+      "equal_N": true,
+      "equal_resolution": true,
+      "equal_visual_tokens": true
+    },
+    {
+      "sample_id": "003_RAGOI_q0",
+      "equal_N": true,
+      "equal_resolution": true,
+      "equal_visual_tokens": true
+    },
+    {
+      "sample_id": "004_87Y64_q0",
+      "equal_N": true,
+      "equal_resolution": true,
+      "equal_visual_tokens": true
+    },
+    {
+      "sample_id": "005_120YL_q3",
+      "equal_N": true,
+      "equal_resolution": true,
+      "equal_visual_tokens": true
+    },
+    {
+      "sample_id": "006_BQZ52_q0",
+      "equal_N": true,
+      "equal_resolution": true,
+      "equal_visual_tokens": true
+    },
+    {
+      "sample_id": "007_43CCM_q1",
+      "equal_N": true,
+      "equal_resolution": true,
+      "equal_visual_tokens": true
+    },
+    {
+      "sample_id": "008_ZPRJH_q0",
+      "equal_N": true,
+      "equal_resolution": true,
+      "equal_visual_tokens": true
+    },
+    {
+      "sample_id": "009_AGGSE_q0",
+      "equal_N": true,
+      "equal_resolution": true,
+      "equal_visual_tokens": true
+    }
+  ],
+  "metric_policy": "Primary: first parsed interval, raw float, no clipping. Failures score zero with full denominator.",
+  "boundary_failure_policy": "Failure start/end error = full source video duration; valid-only errors also reported.",
+  "official_evaluator_sha256": "226e1bb617b66168a56a926dd5ed91d366d3b168356edd8004cb551dc269e2ca",
+  "labels_sha256": "b07b7835612f5c3f50e56c846a8be51b0d3498319c3ce83a6736bbae51751cb7",
+  "scope": "Pilot/exploratory fixed subset, no held-out confirmation. Video cluster bootstrap. No training claim."
+}

@@ -1,0 +1,63 @@
+{
+  "created_unix": 1795199944.6454945,
+  "baselines": "[local-path]/models/multimodal/model_reproduction/vtg/exh_20261120/e3_eval",
+  "models": {
+    "tl2_4b": {
+      "base": "[local-path]/models/multimodal/model_reproduction/vtg/models/TimeLens2-4B",
+      "adapter": null,
+      "added_unix": 1795114409.0739746,
+      "base_manifest_sha256": "3e2cf4c2cf72b3f833f13ae30da52aa68f3bb0c4cf495f1ed0eb79016857c68a"
+    },
+    "A0_s1@200": {
+      "base": "[local-path]/models/multimodal/model_reproduction/vtg/models/TimeLens2-4B-SFT",
+      "adapter": "[local-path]/models/multimodal/model_reproduction/vtg/exh_20261120/e3_rl/A0_s1/ckpt-200",
+      "added_unix": 1795159092.3047361,
+      "base_manifest_sha256": "e0434d7501ab2fadd98f7bce173f24e9d8ca5007ac39fa3964b6d1f424b0a797",
+      "adapter_sha256": {
+        "adapter_config.json": "7e157912229917d4e33a991a75009f95bb0b56740504d9ac8272236e0093d852",
+        "adapter_model.safetensors": "d3af2334f26a490fe6693ea6c8012e0294c2b5b0f51c94e81b4a9d5b10cfbcd8"
+      }
+    },
+    "A1_s1@200": {
+      "base": "[local-path]/models/multimodal/model_reproduction/vtg/models/TimeLens2-4B-SFT",
+      "adapter": "[local-path]/models/multimodal/model_reproduction/vtg/exh_20261120/e3_rl/A1_s1/ckpt-200",
+      "added_unix": 1795159092.3177204,
+      "base_manifest_sha256": "e0434d7501ab2fadd98f7bce173f24e9d8ca5007ac39fa3964b6d1f424b0a797",
+      "adapter_sha256": {
+        "adapter_config.json": "cd9d2ef8095fd00cc37293ad2979513920a41547c431e01798a5de83461afa12",
+        "adapter_model.safetensors": "031ef6a2da379ae081bdadedbfd195cd5da567a0a0b3b95449a3260bebc9051b"
+      }
+    }
+  },
+  "counts": {
+    "omtg": {
+      "queries": 320,
+      "videos": 287,
+      "new_queries_per_model": 295
+    },
+    "hold_multi": {
+      "queries": 301,
+      "videos": 193,
+      "new_queries_per_model": 278
+    }
+  },
+  "videos": 480,
+  "queries": 621,
+  "new_predictions": 1719,
+  "denser_videos": 439,
+  "inputs_sha256": "acb1410eed03aca7eea769e6daa3eaf1d6262c98d6f578e325c8f36d994b1a24",
+  "labels_sha256": "44eda2c8ef5a18914e63ebb9f63454d5be3a1846d567635ecfcddc217c1fed1f",
+  "code_sha256": {
+    "scripts/exh/e4_density.py": "b2d7573cc4fce8977d23aed7a45e666e84e2d42a4323c1052f6fca2bd779dda0",
+    "scripts/exh/e3_eval_worker.py": "5b422f628f060ace432341122976ab706d58e2f43eb5ca104ac4a0b90f9aa569",
+    "scripts/exh/e2_worker.py": "67201972cb0532807ec531aaec2eed3e2432da1defe066e99114c19fcf3c1b1c",
+    "scripts/exh/common.py": "3bf5cc8dfadd3b944eb21403a592c02c592ebfa183506529fa672add1154fe37",
+    "scripts/exh/pool_cache.py": "328dfc52ebfea9f217cf939e426eb8feaab227389a8bf7439cdb7b89ce9fc0e9",
+    "scripts/exh/gpu_supervisor.py": "56fdb4c13d483b3888cdb8d2488523d58e7df806cc2d16d3e434b29c76b8605d"
+  },
+  "primary": "A1 minus A0 at up to 128 frames and each model 128 minus 64, by dataset, using tF1@0.5",
+  "secondary": "EtF1, count accuracy, precision, recall, union IoU, counts, visual tokens, observed inference latency, GT frame coverage change and per-event hit rates conditioned on that change",
+  "frames": "Keep E3 full two-frame units. Uniformly add from their complement in the same pool, up to 64 units.",
+  "other_inputs": "E3 prompt, greedy decoder with 256 new tokens, resolution, pool, original timestamps and weights",
+  "stats": "Paired source-video bootstrap. Live scores use the common completed-query subset. Intervals are unadjusted."
+}

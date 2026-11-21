@@ -1,0 +1,105 @@
+{
+  "omtg": {
+    "n": 16,
+    "methods": {
+      "first": {
+        "f1": 23.363095238095237,
+        "recall": 18.75,
+        "shortest_recall": 6.25,
+        "tiou": 35.56588985664294,
+        "count_acc": 12.5
+      },
+      "medoid": {
+        "f1": 23.363095238095237,
+        "recall": 18.75,
+        "shortest_recall": 6.25,
+        "tiou": 33.758069808333765,
+        "count_acc": 12.5
+      },
+      "majority": {
+        "f1": 24.751984126984127,
+        "recall": 19.791666666666668,
+        "shortest_recall": 6.25,
+        "tiou": 34.244478549991854,
+        "count_acc": 12.5
+      },
+      "rescue": {
+        "f1": 23.363095238095237,
+        "recall": 18.75,
+        "shortest_recall": 6.25,
+        "tiou": 33.758069808333765,
+        "count_acc": 12.5
+      },
+      "placebo": {
+        "f1": 23.363095238095237,
+        "recall": 18.75,
+        "shortest_recall": 6.25,
+        "tiou": 33.758069808333765,
+        "count_acc": 12.5
+      },
+      "greedy": {
+        "f1": 23.363095238095237,
+        "recall": 18.75,
+        "shortest_recall": 6.25,
+        "tiou": 35.07469195046674,
+        "count_acc": 18.75
+      }
+    },
+    "paired": {
+      "medoid": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "wins": 0,
+        "losses": 0,
+        "ties": 16
+      },
+      "majority": {
+        "delta": -1.3888888888888888,
+        "ci95": [
+          -4.166666666666666,
+          0.0
+        ],
+        "wins": 0,
+        "losses": 1,
+        "ties": 15
+      },
+      "placebo": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "wins": 0,
+        "losses": 0,
+        "ties": 16
+      },
+      "first": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "wins": 0,
+        "losses": 0,
+        "ties": 16
+      },
+      "greedy": {
+        "delta": 4.440892098500626e-16,
+        "ci95": [
+          -11.458333333333332,
+          9.375
+        ],
+        "wins": 2,
+        "losses": 1,
+        "ties": 13
+      }
+    },
+    "invalid_or_empty": 0,
+    "changed_queries": 0,
+    "added_spans": 0,
+    "extra_true_positives": 0
+  }
+}

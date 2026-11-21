@@ -1,0 +1,50 @@
+{
+  "models": {
+    "q25": "[local-path]/models/cvpr2027-autoresearch/Qwen--Qwen2.5-VL-3B-Instruct",
+    "q3": "[local-path]/models/cvpr2027-autoresearch/Qwen--Qwen3-VL-4B-Instruct"
+  },
+  "workers": [
+    {
+      "model": "q25",
+      "partition": 0,
+      "partitions": 2
+    },
+    {
+      "model": "q25",
+      "partition": 1,
+      "partitions": 2
+    },
+    {
+      "model": "q3",
+      "partition": 0,
+      "partitions": 1
+    }
+  ],
+  "pairs": [
+    [
+      0
+    ],
+    [
+      3
+    ],
+    [
+      4,
+      5
+    ]
+  ],
+  "primary_methods": [
+    "native2",
+    "fixed6_tei",
+    "flexi_tei"
+  ],
+  "sensitivity_methods": [
+    "fixed6_released",
+    "flexi_released"
+  ],
+  "prompt_suffix": "\nAnswer with ONLY the single uppercase letter of the best option.",
+  "process_cap_mib": 9728,
+  "whole_gpu_reserve_mib": 2560,
+  "deadline_unix": 1794913065.0,
+  "expected": 160,
+  "notes": "Primary follows paper temporal extension initialization repeat2to6/divide3. Released PI2toT is a separate sensitivity. Fixed6 pads only its last group by repeating final frame; recorded. Same source indices, questions and spatial token grid across models. Two nominal FPS: n8=4*n2; n2 nested in n8. Effective FPS logged."
+}

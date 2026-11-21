@@ -1,0 +1,127 @@
+{
+  "stage": "partial_not_final",
+  "completed": 0,
+  "expected": 103444,
+  "coverage": 0.0,
+  "aggregates": {},
+  "paired": {
+    "charades/fps2/flexi_official_vs_native_time": {
+      "n": 0
+    },
+    "charades/fps2/flexi_time_vs_native_time": {
+      "n": 0
+    },
+    "charades/fps2/flexi_budget_time_vs_native_time": {
+      "n": 0
+    },
+    "charades/fps2/flexi_time_vs_sparse_same_tokens": {
+      "n": 0
+    },
+    "charades/fps2/flexi_time_vs_uniform_same_tokens": {
+      "n": 0
+    },
+    "charades/fps2/flexi_budget_time_vs_flexi_official": {
+      "n": 0
+    },
+    "charades/fps6/flexi_official_vs_native_time": {
+      "n": 0
+    },
+    "charades/fps6/flexi_time_vs_native_time": {
+      "n": 0
+    },
+    "charades/fps6/flexi_budget_time_vs_native_time": {
+      "n": 0
+    },
+    "charades/fps6/flexi_time_vs_sparse_same_tokens": {
+      "n": 0
+    },
+    "charades/fps6/flexi_time_vs_uniform_same_tokens": {
+      "n": 0
+    },
+    "charades/fps6/flexi_budget_time_vs_flexi_official": {
+      "n": 0
+    },
+    "activitynet/fps2/flexi_official_vs_native_time": {
+      "n": 0
+    },
+    "activitynet/fps2/flexi_time_vs_native_time": {
+      "n": 0
+    },
+    "activitynet/fps2/flexi_budget_time_vs_native_time": {
+      "n": 0
+    },
+    "activitynet/fps2/flexi_time_vs_sparse_same_tokens": {
+      "n": 0
+    },
+    "activitynet/fps2/flexi_time_vs_uniform_same_tokens": {
+      "n": 0
+    },
+    "activitynet/fps2/flexi_budget_time_vs_flexi_official": {
+      "n": 0
+    },
+    "activitynet/fps6/flexi_official_vs_native_time": {
+      "n": 0
+    },
+    "activitynet/fps6/flexi_time_vs_native_time": {
+      "n": 0
+    },
+    "activitynet/fps6/flexi_budget_time_vs_native_time": {
+      "n": 0
+    },
+    "activitynet/fps6/flexi_time_vs_sparse_same_tokens": {
+      "n": 0
+    },
+    "activitynet/fps6/flexi_time_vs_uniform_same_tokens": {
+      "n": 0
+    },
+    "activitynet/fps6/flexi_budget_time_vs_flexi_official": {
+      "n": 0
+    },
+    "qvhighlights/fps2/flexi_official_vs_native_time": {
+      "n": 0
+    },
+    "qvhighlights/fps2/flexi_time_vs_native_time": {
+      "n": 0
+    },
+    "qvhighlights/fps2/flexi_budget_time_vs_native_time": {
+      "n": 0
+    },
+    "qvhighlights/fps2/flexi_time_vs_sparse_same_tokens": {
+      "n": 0
+    },
+    "qvhighlights/fps2/flexi_time_vs_uniform_same_tokens": {
+      "n": 0
+    },
+    "qvhighlights/fps2/flexi_budget_time_vs_flexi_official": {
+      "n": 0
+    },
+    "qvhighlights/fps6/flexi_official_vs_native_time": {
+      "n": 0
+    },
+    "qvhighlights/fps6/flexi_time_vs_native_time": {
+      "n": 0
+    },
+    "qvhighlights/fps6/flexi_budget_time_vs_native_time": {
+      "n": 0
+    },
+    "qvhighlights/fps6/flexi_time_vs_sparse_same_tokens": {
+      "n": 0
+    },
+    "qvhighlights/fps6/flexi_time_vs_uniform_same_tokens": {
+      "n": 0
+    },
+    "qvhighlights/fps6/flexi_budget_time_vs_flexi_official": {
+      "n": 0
+    }
+  },
+  "strata": {},
+  "unix": 1794838209.2994113,
+  "caveats": [
+    "All 9404 official refined queries are frozen before inference. Partial means are not final benchmark results.",
+    "Released training-free mechanism only; no claim to reproduce the 140k-trained FlexiVideo model.",
+    "Full generated answers parsed with official first-pair and integer-rounding conventions.",
+    "Shared-GPU timings are paired but noisy. Cold pipeline is reconstructed from measured shared preprocessing passes; budget reallocation includes its extra resize/decode pass.",
+    "fps6 uses a smaller per-frame spatial floor; compare methods within each setting.",
+    "Original flexi_official retains the released hard-coded 6 FPS time interface; flexi_time and flexi_budget_time use actual timestamps."
+  ]
+}

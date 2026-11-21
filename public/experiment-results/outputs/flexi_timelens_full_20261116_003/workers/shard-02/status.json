@@ -1,0 +1,10 @@
+{
+  "stage": "decoding_base",
+  "completed": 22,
+  "expected": 17017,
+  "unix": 1794839792.157872,
+  "video": "activitynet/v_3AsQjx1lxLU",
+  "setting": "fps2",
+  "frames_done": 17,
+  "frames_total": 468
+}

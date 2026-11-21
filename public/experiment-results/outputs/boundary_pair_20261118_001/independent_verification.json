@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "errors": [],
+  "checked_predictions": 120,
+  "cpu_input_gate": true,
+  "gpu_no_compression_gate": true,
+  "all_main_predictions_present": true
+}

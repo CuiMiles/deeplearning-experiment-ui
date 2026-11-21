@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "queries": 9404,
+  "expected_predictions": 103444,
+  "shard_predictions": {
+    "5": 17347,
+    "3": 16500,
+    "2": 17017,
+    "1": 18766,
+    "4": 16467,
+    "0": 17347
+  },
+  "checks": [
+    "Complete official query denominator",
+    "Unique sample IDs",
+    "No labels in worker inputs",
+    "All queries for each annotated video clip kept within one worker",
+    "All query-method jobs assigned once"
+  ],
+  "unix": 1794838017.2909741
+}

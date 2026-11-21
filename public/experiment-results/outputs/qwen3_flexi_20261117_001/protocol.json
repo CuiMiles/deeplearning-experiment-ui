@@ -1,0 +1,53 @@
+{
+  "model": "[local-path]/models/cvpr2027-autoresearch/Qwen--Qwen3-VL-4B-Instruct",
+  "model_name": "Qwen/Qwen3-VL-4B-Instruct",
+  "methods": [
+    "native_time",
+    "flexi_time",
+    "oracle_split_same_tokens",
+    "uniform_same_tokens",
+    "sparse_same_tokens"
+  ],
+  "expected": 160,
+  "queries": 32,
+  "source_run": "flexi_rapid_diagnostic_20261117_001",
+  "inputs_sha256": "68f97b3742127fa1a72a310aa88e2adf9c9f614fd01b491d6e9ec53c9ad59f29",
+  "labels_sha256": "1eb088e25a835ddcd5b34ff5ad970b5a2bdc19eee86cef16712e7ffbbf0826b7",
+  "prompt": "Please find the visual event described by the sentence '{}', determining its starting and ending times. The format should be: 'The event happens in <start time> - <end time> seconds'.",
+  "native_timestamps": true,
+  "timestamp_rule": "Official processor; group representative endpoints produce center-of-group textual timestamps; each timestamp checked against group endpoints.",
+  "frames": "Exactly the previous candidate frame indices, ATS groups and sparse selected indices.",
+  "resolution": "Choose 32-pixel-grid aspect ratio with exactly the previous spatial tokens per group (Qwen2.5 patch14 -> Qwen3 patch16); resizing differs across architectures.",
+  "flexi_port": "Port released training-free pseudo-inverse temporal-kernel resizing plus norm scaling to Qwen3 patch Conv3d; retain Qwen3 bias, DeepStack, position embeddings and textual timestamps. Not an official Qwen3 FlexiVideo checkpoint.",
+  "visual_chunk_groups": 2,
+  "mlp_chunk_tokens": 1024,
+  "dtype": "bfloat16",
+  "attention": "sdpa",
+  "max_new_tokens": 512,
+  "do_sample": false,
+  "pairs": [
+    [
+      3,
+      0
+    ],
+    [
+      4,
+      5
+    ]
+  ],
+  "allocator_cap_mib": 9216,
+  "process_cap_mib": 9728,
+  "whole_gpu_reserve_mib": 2560,
+  "created_unix": 1794900235.442903,
+  "deadline_unix": 1794907135.4429255,
+  "scope": "Within-model comparisons; architecture, model size and image resize differ, so model-to-model changes are not a timestamp-only causal test.",
+  "group_plan_sha256": "8a7d6f515094e06c54149e8c869577bea958262bcf161db5876768353b0d826c",
+  "native_visual_execution": "Official unsplit native vision forward; variable-group path tested separately with native two-frame input. Earlier chunked-native preflight rejected before any prediction.",
+  "executed_code_sha256": {
+    "eval_qwen3_flexi.py": "d89b9f8325d6e8c6783a3ec13b8e18d6522613cc14446713fd3e38df009b1f9c",
+    "supervise_qwen3_flexi.py": "7c4bdb8e577b1dc95c98725107d6a816c35097dc9251c957d4688641f5beaf33",
+    "score_qwen3_flexi.py": "3e716db81a705f1adf8595ad4abad69fe8de9a407524b6c75e35e13d8d4b63e8",
+    "bounded_compute.py": "51f4d1bd9f48c02bd9abce54ef035a9cf445c0433d42c55da61bfd8037a38652",
+    "flexi_timelens_common.py": "47513ca2c8fc873c14b05f13da6762eda5392aca174d976804a22db78df4904a"
+  }
+}

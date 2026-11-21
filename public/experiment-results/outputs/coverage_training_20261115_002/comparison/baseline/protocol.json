@@ -1,0 +1,22 @@
+{
+  "inputs_sha256": "5b619c181d9959757a36d27c2144dad6f6580dfa70aefa9d4a708e05f5920d72",
+  "seed": 42,
+  "steps": 200,
+  "bonus": 0.0,
+  "checkpoint": "[local-path]/models/multimodal/model_reproduction/vtg/models/TimeLens2-4B-SFT",
+  "checkpoint_manifest_sha256": "e0434d7501ab2fadd98f7bce173f24e9d8ca5007ac39fa3964b6d1f424b0a797",
+  "trainable": "LoRA r8 alpha16 decoder q_proj,v_proj; visual and all base weights frozen",
+  "fps": 2,
+  "max_frames": 32,
+  "video_pixel_budget": 1048576,
+  "max_pixels": 50176,
+  "num_generations": 4,
+  "max_completion_length": 128,
+  "scale_rewards": false,
+  "beta": 0.0,
+  "lr": 1e-06,
+  "scope": "Small-data training feasibility and paired reward baseline; not paper-level evidence",
+  "gpu": "GPU-7db38f3c-673e-c2d6-decc-ddc80d9249fa",
+  "allocator_cap_mib": 17920,
+  "source_sha256": "cf7874aab949cb29a11ee173c231d8c2ae665a84479693170bfd8342956bf48d"
+}

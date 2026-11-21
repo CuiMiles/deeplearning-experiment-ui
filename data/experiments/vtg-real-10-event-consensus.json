@@ -1,0 +1,482 @@
+{
+  "id": "vtg-real-10-event-consensus",
+  "title": "整份投票漏掉的事件，能从其他回答补回来吗",
+  "date": "2026-11-19",
+  "status": "completed",
+  "task": "vtg",
+  "series": "多事件定位与遗漏",
+  "tags": [],
+  "tldr": "400 个多事件视频 F1 从 46.37 升到 47.61，净多找对 19 段，低于预设 +2 点门槛。",
+  "brief": {
+    "question": "模型其他回答里已找对的片段，会不会在整份投票时被丢掉？",
+    "change": "两种方法用相同 8 次回答。保留最有代表性的一份，再补至少 3 份支持且时间分离的片段。",
+    "conclusion": "400 个多事件视频 F1 从 46.37 升到 47.61，净多找对 19 段，低于预设 +2 点门槛。",
+    "verdict": "mixed",
+    "pipeline": [
+      {
+        "label": "读取八份回答",
+        "changed": false
+      },
+      {
+        "label": "选出整份答案",
+        "changed": false
+      },
+      {
+        "label": "补有支持的事件",
+        "changed": true
+      },
+      {
+        "label": "逐事件匹配",
+        "changed": false
+      }
+    ]
+  },
+  "setup": {
+    "model": "官方 TimeLens2-4B-SFT 已保存的生成记录",
+    "evalData": [
+      "rollout-multi",
+      "rollout-single"
+    ],
+    "notes": "训练来源的已保存答案。400 多段与 400 单段源视频互斥，并排除上次奖励诊断已用源视频。"
+  },
+  "results": {
+    "methods": [
+      {
+        "id": "medoid",
+        "name": "整份答案投票",
+        "role": "baseline"
+      },
+      {
+        "id": "rescue",
+        "name": "按事件补漏",
+        "role": "ours"
+      },
+      {
+        "id": "majority",
+        "name": "按时间多数票",
+        "role": "ablation"
+      },
+      {
+        "id": "placebo",
+        "name": "同数量随机补段",
+        "role": "ablation"
+      },
+      {
+        "id": "first",
+        "name": "第一份回答",
+        "role": "reference"
+      }
+    ],
+    "main": [
+      {
+        "method": "medoid",
+        "dataset": "rollout-multi",
+        "metrics": {
+          "Event-F1@0.5": 46.3744,
+          "Event-Recall@0.5": 38.45417,
+          "Shortest-Recall@0.5": 29.5,
+          "Set-tIoU": 47.26925
+        }
+      },
+      {
+        "method": "rescue",
+        "dataset": "rollout-multi",
+        "metrics": {
+          "Event-F1@0.5": 47.61012,
+          "Event-Recall@0.5": 40.43333,
+          "Shortest-Recall@0.5": 31.25,
+          "Set-tIoU": 48.43726
+        }
+      },
+      {
+        "method": "majority",
+        "dataset": "rollout-multi",
+        "metrics": {
+          "Event-F1@0.5": 44.71502,
+          "Event-Recall@0.5": 38.55,
+          "Shortest-Recall@0.5": 30.75,
+          "Set-tIoU": 47.01478
+        }
+      },
+      {
+        "method": "placebo",
+        "dataset": "rollout-multi",
+        "metrics": {
+          "Event-F1@0.5": 46.85179,
+          "Event-Recall@0.5": 39.70417,
+          "Shortest-Recall@0.5": 30.75,
+          "Set-tIoU": 48.14569
+        }
+      },
+      {
+        "method": "first",
+        "dataset": "rollout-multi",
+        "metrics": {
+          "Event-F1@0.5": 37.13155,
+          "Event-Recall@0.5": 30.95,
+          "Shortest-Recall@0.5": 26.75,
+          "Set-tIoU": 39.26111
+        }
+      },
+      {
+        "method": "medoid",
+        "dataset": "rollout-single",
+        "metrics": {
+          "Event-F1@0.5": 61.16667,
+          "Event-Recall@0.5": 62.0,
+          "Shortest-Recall@0.5": 62.0,
+          "Set-tIoU": 53.26096
+        }
+      },
+      {
+        "method": "rescue",
+        "dataset": "rollout-single",
+        "metrics": {
+          "Event-F1@0.5": 61.04167,
+          "Event-Recall@0.5": 62.25,
+          "Shortest-Recall@0.5": 62.25,
+          "Set-tIoU": 53.16749
+        }
+      },
+      {
+        "method": "majority",
+        "dataset": "rollout-single",
+        "metrics": {
+          "Event-F1@0.5": 60.66667,
+          "Event-Recall@0.5": 61.75,
+          "Shortest-Recall@0.5": 61.75,
+          "Set-tIoU": 54.92328
+        }
+      },
+      {
+        "method": "placebo",
+        "dataset": "rollout-single",
+        "metrics": {
+          "Event-F1@0.5": 61.04167,
+          "Event-Recall@0.5": 62.25,
+          "Shortest-Recall@0.5": 62.25,
+          "Set-tIoU": 53.16574
+        }
+      },
+      {
+        "method": "first",
+        "dataset": "rollout-single",
+        "metrics": {
+          "Event-F1@0.5": 53.6,
+          "Event-Recall@0.5": 54.25,
+          "Shortest-Recall@0.5": 54.25,
+          "Set-tIoU": 48.79376
+        }
+      }
+    ],
+    "headline": [
+      {
+        "dataset": "rollout-multi",
+        "metric": "Event-F1@0.5"
+      },
+      {
+        "dataset": "rollout-single",
+        "metric": "Event-F1@0.5"
+      },
+      {
+        "dataset": "rollout-multi",
+        "metric": "Shortest-Recall@0.5"
+      }
+    ]
+  },
+  "charts": [
+    {
+      "id": "support",
+      "title": "整份投票漏掉的标注事件",
+      "type": "bar",
+      "categories": [
+        "8 份全没正确定位",
+        "只有 1–2 份",
+        "至少 3 份"
+      ],
+      "yLabel": "事件数",
+      "series": [
+        {
+          "name": "标注事件数",
+          "data": [
+            304,
+            218,
+            56
+          ]
+        }
+      ],
+      "takeaway": "578 个漏检中有 304 个完全缺候选，单靠重新组合回答无法补回这些事件。"
+    },
+    {
+      "id": "additions",
+      "title": "增加 34 段带来多少正确匹配",
+      "type": "bar",
+      "categories": [
+        "增加的预测段",
+        "净增正确匹配"
+      ],
+      "yLabel": "段数",
+      "series": [
+        {
+          "name": "事件数",
+          "data": [
+            34,
+            19
+          ]
+        }
+      ]
+    }
+  ],
+  "insights": {
+    "oneLiner": "同样的回答中确有被汇总丢掉的事件，但超过半数漏检在八份回答中从未正确定位。",
+    "confidence": 0.55,
+    "phenomena": [
+      {
+        "id": "p1",
+        "title": "候选间存在互补",
+        "detail": "同一幅画面上不同生成结果可以各找对不同事件。",
+        "evidence": "case:case-1",
+        "symptoms": [
+          "ensemble-gain"
+        ],
+        "surprise": 4
+      },
+      {
+        "id": "p2",
+        "title": "许多漏检没有候选",
+        "detail": "304/578 个事件在八份里都没有正确定位。",
+        "evidence": "chart:support",
+        "symptoms": [
+          "diminishing-returns"
+        ],
+        "surprise": 4
+      }
+    ],
+    "echoes": [
+      {
+        "id": "echo",
+        "phenomenon": "p1",
+        "lens": "wisdom-of-crowds",
+        "correspondences": [
+          [
+            "多个估计",
+            "同模型八份回答"
+          ],
+          [
+            "汇总单位",
+            "每个出现区间"
+          ]
+        ],
+        "borrowedMove": "给每个发现独立统计支持数，同时测量共同漏检。",
+        "limit": "同一模型和相同视频帧带来相关错误，不能假设八份独立取证。"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "hyp",
+        "title": "用同预算对照检验",
+        "statement": "同 8 份回答下，按事件汇总至少提高 2 点 F1。",
+        "test": "400 多段与 400 单段，加入同数量随机补段。",
+        "falsifiedIf": "增益低于 2 点或单段退化超过 1 点。",
+        "impact": 4,
+        "effort": 3,
+        "status": "refuted",
+        "from": [
+          "echo"
+        ]
+      }
+    ],
+    "paperAngles": [
+      {
+        "id": "direction",
+        "title": "可能的研究贡献",
+        "type": "analysis",
+        "claim": "把重复动作的漏检区分为候选缺失和汇总丢失。",
+        "novelty": "把重复动作的漏检区分为候选缺失和汇总丢失。",
+        "risk": "训练来源的已保存回答与 OMTG 独立实片设置存在差异。",
+        "readiness": 0.28,
+        "from": [
+          "hyp"
+        ]
+      }
+    ],
+    "provocations": [
+      {
+        "prompt": "reviewer2",
+        "answer": "同样补的段数下，随机补段的对照为 46.85，方法达到 47.61。"
+      },
+      {
+        "prompt": "mechanism",
+        "answer": "同一模型和相同视频帧带来相关错误，不能假设八份独立取证。"
+      }
+    ]
+  },
+  "reproduce": {
+    "commands": [
+      {
+        "label": "复算或查看原始结果",
+        "cmd": "PYTHONPATH=scripts env/runtime/bin/python outputs/event_consensus_20261119_001/code/evaluate.py outputs/event_consensus_20261119_001 offline"
+      }
+    ],
+    "artifacts": [
+      {
+        "label": "完整报告",
+        "path": "evidence/vtg-real-10-event-consensus/event_consensus_20261119_001-offline_report.md"
+      },
+      {
+        "label": "800 条逐视频",
+        "path": "evidence/vtg-real-10-event-consensus/event_consensus_20261119_001-offline_per_video.csv"
+      },
+      {
+        "label": "独立核验",
+        "path": "evidence/vtg-real-10-event-consensus/event_consensus_20261119_001-offline_audit.json"
+      }
+    ]
+  },
+  "parent": "vtg-real-02-event-reward",
+  "cases": [
+    {
+      "id": "case-1",
+      "type": "temporal",
+      "title": "台钻打孔",
+      "outcome": "success",
+      "video": {
+        "duration": 772.038
+      },
+      "query": "A person uses a drill press to create holes in a metal plate",
+      "gt": [
+        [
+          268,
+          280
+        ],
+        [
+          298,
+          305
+        ]
+      ],
+      "predictions": [
+        {
+          "method": "medoid",
+          "segments": [
+            {
+              "start": 268.0,
+              "end": 280.0
+            }
+          ]
+        },
+        {
+          "method": "rescue",
+          "segments": [
+            {
+              "start": 268.0,
+              "end": 280.0
+            },
+            {
+              "start": 296.5,
+              "end": 302.5
+            }
+          ]
+        }
+      ],
+      "note": "整份投票只留下第一次，另有 4 份回答支持第二次，补入 296.5–302.5 秒。"
+    },
+    {
+      "id": "case-2",
+      "type": "temporal",
+      "title": "驾驶视角",
+      "outcome": "failure",
+      "video": {
+        "duration": 144.733
+      },
+      "query": "driver's perspective",
+      "gt": [
+        [
+          0,
+          14
+        ],
+        [
+          42,
+          53
+        ]
+      ],
+      "predictions": [
+        {
+          "method": "medoid",
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 12.0
+            },
+            {
+              "start": 41.0,
+              "end": 53.0
+            }
+          ]
+        },
+        {
+          "method": "rescue",
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 12.0
+            },
+            {
+              "start": 41.0,
+              "end": 53.0
+            },
+            {
+              "start": 67.0,
+              "end": 78.0
+            }
+          ]
+        }
+      ],
+      "note": "整份投票已经找全，新增 67–78 秒是误报。"
+    },
+    {
+      "id": "case-3",
+      "type": "temporal",
+      "title": "游戏标题画面",
+      "outcome": "partial",
+      "video": {
+        "duration": 999.332
+      },
+      "query": "Bionic Dues title screen",
+      "gt": [
+        [
+          1,
+          7
+        ],
+        [
+          991,
+          992
+        ]
+      ],
+      "predictions": [
+        {
+          "method": "medoid",
+          "segments": [
+            {
+              "start": 830.0,
+              "end": 839.0
+            }
+          ]
+        },
+        {
+          "method": "rescue",
+          "segments": [
+            {
+              "start": 1.5,
+              "end": 5.5
+            },
+            {
+              "start": 830.0,
+              "end": 839.0
+            }
+          ]
+        }
+      ],
+      "note": "补入第一段后找到一次，极短的第二次仍然漏报。"
+    }
+  ]
+}

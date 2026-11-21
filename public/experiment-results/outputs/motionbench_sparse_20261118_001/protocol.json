@@ -1,0 +1,54 @@
+{
+  "models": {
+    "q25": "[local-path]/models/cvpr2027-autoresearch/Qwen--Qwen2.5-VL-3B-Instruct",
+    "q3": "[local-path]/models/cvpr2027-autoresearch/Qwen--Qwen3-VL-4B-Instruct"
+  },
+  "workers": [
+    {
+      "model": "q25",
+      "partition": 0,
+      "partitions": 2
+    },
+    {
+      "model": "q25",
+      "partition": 1,
+      "partitions": 2
+    },
+    {
+      "model": "q3",
+      "partition": 0,
+      "partitions": 1
+    }
+  ],
+  "pairs": [
+    [
+      0
+    ],
+    [
+      3
+    ],
+    [
+      4,
+      5
+    ]
+  ],
+  "primary_methods": [
+    "sparse_same_tokens"
+  ],
+  "sensitivity_methods": [],
+  "prompt_suffix": "\nAnswer with ONLY the single uppercase letter of the best option.",
+  "process_cap_mib": 9728,
+  "whole_gpu_reserve_mib": 2560,
+  "deadline_unix": null,
+  "expected": 32,
+  "notes": "New32-prediction supplement, parent128 unchanged; same inputs, weights, question and generation settings.",
+  "decoder": "Frozen FFmpeg sequential source-frame selection; shared RGB cache across all conditions and models; no predictions inherited",
+  "preprocess": "Torchvision GPU bicubic antialias, same spatial token grid across models",
+  "resume_optimization": "Reuse validated ATS cache and skip resize for the other model; no inference math change; prior raw rows retained",
+  "background_resume_authorized_unix": 1794923411.9830723,
+  "completion_policy": "Resume existing90 records and finish128 planned predictions; no time cutoff; run final audit, previews and report automatically.",
+  "parent_run": "outputs/motionbench_fps_probe_20261117_003",
+  "selection": "round(linspace(0,N-1,2*K)); native pairs; K=parent Flexi group count; real source times retained",
+  "pause_gpu_services": true,
+  "created_unix": 1794933976.8567674
+}

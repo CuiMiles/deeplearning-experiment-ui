@@ -1,0 +1,27 @@
+{
+  "inputs_sha256": "95db5ed4561b6ae1d94c74a233ab8719d50a85830d0e5a0eca7a68a16b903e60",
+  "queries": 43,
+  "arms": [
+    "sft",
+    "baseline",
+    "event_f1"
+  ],
+  "model": "[local-path]/models/multimodal/model_reproduction/vtg/models/TimeLens2-4B-SFT",
+  "checkpoint_manifest_sha256": "e0434d7501ab2fadd98f7bce173f24e9d8ca5007ac39fa3964b6d1f424b0a797",
+  "adapters": {
+    "baseline": "a62eb823c6d8f86c625a08564f248458cb8629dbe1dd9378ef4de6db84efd86f",
+    "event_f1": "9b9e11724e7ee6194583150c777fe9dfc3404bc52cdaa6dee7b7cf7ff8374095"
+  },
+  "fps": 2,
+  "max_frames": 32,
+  "total_pixels": 1048576,
+  "max_pixels": 50176,
+  "max_new_tokens": 128,
+  "do_sample": false,
+  "seed": 42,
+  "dtype": "bfloat16",
+  "attention": "sdpa",
+  "source_sha256": "0c6f4efeea237ddb975b65265595083e1df529f772bbf5f487a2b7ad37a8e6a3",
+  "labels": "Frozen train-source validation by video; 43 queries/12 videos, only 8 multi-span queries; not final benchmark",
+  "scoring": "Merged-support tIoU and maximum-cardinality event matching at IoU>=0.5"
+}

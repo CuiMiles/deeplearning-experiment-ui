@@ -1,0 +1,181 @@
+{
+  "results": {
+    "sft": {
+      "all": {
+        "tiou": 0.7602655164854369,
+        "f1": 0.7868217054263564,
+        "recall": 0.7790697674418605,
+        "shortest_recall": 0.7674418604651163,
+        "count_acc": 0.9302325581395349,
+        "n": 43,
+        "parse_rate": 1.0
+      },
+      "single": {
+        "tiou": 0.7561974813387438,
+        "f1": 0.7714285714285715,
+        "recall": 0.7714285714285715,
+        "shortest_recall": 0.7714285714285715,
+        "count_acc": 0.9714285714285714,
+        "n": 35,
+        "parse_rate": 1.0
+      },
+      "multi": {
+        "tiou": 0.7780631702522202,
+        "f1": 0.8541666666666666,
+        "recall": 0.8125,
+        "shortest_recall": 0.75,
+        "count_acc": 0.75,
+        "n": 8,
+        "parse_rate": 1.0
+      }
+    },
+    "baseline": {
+      "all": {
+        "tiou": 0.7633268930933252,
+        "f1": 0.8100775193798448,
+        "recall": 0.8023255813953488,
+        "shortest_recall": 0.7906976744186046,
+        "count_acc": 0.9302325581395349,
+        "n": 43,
+        "parse_rate": 1.0
+      },
+      "single": {
+        "tiou": 0.7599586011712921,
+        "f1": 0.8,
+        "recall": 0.8,
+        "shortest_recall": 0.8,
+        "count_acc": 0.9714285714285714,
+        "n": 35,
+        "parse_rate": 1.0
+      },
+      "multi": {
+        "tiou": 0.7780631702522202,
+        "f1": 0.8541666666666666,
+        "recall": 0.8125,
+        "shortest_recall": 0.75,
+        "count_acc": 0.75,
+        "n": 8,
+        "parse_rate": 1.0
+      }
+    },
+    "event_f1": {
+      "all": {
+        "tiou": 0.7614862687001561,
+        "f1": 0.8100775193798448,
+        "recall": 0.8023255813953488,
+        "shortest_recall": 0.7906976744186046,
+        "count_acc": 0.9302325581395349,
+        "n": 43,
+        "parse_rate": 1.0
+      },
+      "single": {
+        "tiou": 0.7572963824376449,
+        "f1": 0.8,
+        "recall": 0.8,
+        "shortest_recall": 0.8,
+        "count_acc": 0.9714285714285714,
+        "n": 35,
+        "parse_rate": 1.0
+      },
+      "multi": {
+        "tiou": 0.7798170210986438,
+        "f1": 0.8541666666666666,
+        "recall": 0.8125,
+        "shortest_recall": 0.75,
+        "count_acc": 0.75,
+        "n": 8,
+        "parse_rate": 1.0
+      }
+    }
+  },
+  "paired": {
+    "baseline_vs_sft": {
+      "delta_tiou": {
+        "n": 43,
+        "groups": 12,
+        "mean": 0.0030613766078882365,
+        "source_group_bootstrap_95ci": [
+          0.0,
+          0.00880349866541726
+        ]
+      },
+      "delta_f1": {
+        "n": 43,
+        "groups": 12,
+        "mean": 0.023255813953488372,
+        "source_group_bootstrap_95ci": [
+          0.0,
+          0.07142857142857142
+        ]
+      }
+    },
+    "event_f1_vs_sft": {
+      "delta_tiou": {
+        "n": 43,
+        "groups": 12,
+        "mean": 0.0012207522147192507,
+        "source_group_bootstrap_95ci": [
+          0.0,
+          0.003156473711122065
+        ]
+      },
+      "delta_f1": {
+        "n": 43,
+        "groups": 12,
+        "mean": 0.023255813953488372,
+        "source_group_bootstrap_95ci": [
+          0.0,
+          0.07142857142857142
+        ]
+      }
+    },
+    "event_f1_vs_baseline": {
+      "delta_tiou": {
+        "n": 43,
+        "groups": 12,
+        "mean": -0.0018406243931689858,
+        "source_group_bootstrap_95ci": [
+          -0.005739795918367351,
+          8.644956791975125e-05
+        ]
+      },
+      "delta_f1": {
+        "n": 43,
+        "groups": 12,
+        "mean": 0.0,
+        "source_group_bootstrap_95ci": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "protocol": {
+    "inputs_sha256": "95db5ed4561b6ae1d94c74a233ab8719d50a85830d0e5a0eca7a68a16b903e60",
+    "queries": 43,
+    "arms": [
+      "sft",
+      "baseline",
+      "event_f1"
+    ],
+    "model": "[local-path]/models/multimodal/model_reproduction/vtg/models/TimeLens2-4B-SFT",
+    "checkpoint_manifest_sha256": "e0434d7501ab2fadd98f7bce173f24e9d8ca5007ac39fa3964b6d1f424b0a797",
+    "adapters": {
+      "baseline": "a62eb823c6d8f86c625a08564f248458cb8629dbe1dd9378ef4de6db84efd86f",
+      "event_f1": "9b9e11724e7ee6194583150c777fe9dfc3404bc52cdaa6dee7b7cf7ff8374095"
+    },
+    "fps": 2,
+    "max_frames": 32,
+    "total_pixels": 1048576,
+    "max_pixels": 50176,
+    "max_new_tokens": 128,
+    "do_sample": false,
+    "seed": 42,
+    "dtype": "bfloat16",
+    "attention": "sdpa",
+    "source_sha256": "0c6f4efeea237ddb975b65265595083e1df529f772bbf5f487a2b7ad37a8e6a3",
+    "labels": "Frozen train-source validation by video; 43 queries/12 videos, only 8 multi-span queries; not final benchmark",
+    "scoring": "Merged-support tIoU and maximum-cardinality event matching at IoU>=0.5"
+  },
+  "note": "Small train-source diagnostic validation; no claim of benchmark generalization"
+}

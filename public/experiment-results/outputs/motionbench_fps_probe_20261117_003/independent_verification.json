@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "videos": 8,
+  "questions": 8,
+  "predictions": 128,
+  "official_parser_disagreements": [],
+  "matched_source_frames": true,
+  "matched_spatial_tokens_between_models": true,
+  "fps2_is_subset_of_fps8": true,
+  "fixed6_initialization_pairs_match_pixels_groups_time_and_tokens": true,
+  "peak_reserved_mib": 8158.0,
+  "source_hashes": {
+    "protocol.json": "bcfaaaf88402f63d0c6e3107c74c8562c4a224aa5bd205fc25fb481e5730c656",
+    "inputs.json": "16a1511808c85b978f3089ec21d9cf1ddbf72b135b424f0753b092c09f345136",
+    "labels.json": "e1c33cd9fa33ab211deb4a23d9b1d08f51f4be339561b2cfba398ac72a1724cb"
+  },
+  "unix": 1794924109.8318558
+}

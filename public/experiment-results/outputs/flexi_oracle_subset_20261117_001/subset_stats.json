@@ -1,0 +1,46 @@
+{
+  "seed": 20261117,
+  "per_dataset_target": 500,
+  "total_queries": 1825,
+  "total_unique_videos": 1140,
+  "datasets": {
+    "charades": {
+      "queries": 502,
+      "videos": 207,
+      "source_videos": 207,
+      "duration_buckets": {
+        "2-6s": 163,
+        "6-20s": 102,
+        "<=2s": 180,
+        ">20s": 57
+      }
+    },
+    "activitynet": {
+      "queries": 500,
+      "videos": 154,
+      "source_videos": 154,
+      "duration_buckets": {
+        "2-6s": 139,
+        "6-20s": 114,
+        "<=2s": 119,
+        ">20s": 128
+      }
+    },
+    "qvhighlights": {
+      "queries": 503,
+      "videos": 492,
+      "source_videos": 158,
+      "duration_buckets": {
+        "2-6s": 83,
+        "6-20s": 144,
+        "<=2s": 77,
+        ">20s": 199
+      }
+    },
+    "omtg": {
+      "queries": 320,
+      "videos": 287,
+      "source_videos": 287
+    }
+  }
+}

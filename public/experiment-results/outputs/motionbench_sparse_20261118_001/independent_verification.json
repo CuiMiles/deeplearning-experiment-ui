@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "parent_predictions": 128,
+  "new_predictions": 32,
+  "total_predictions": 160,
+  "parent_files_unchanged": true,
+  "exact_visual_token_matches": 32,
+  "uniform_selection_verified": 32,
+  "native_two_frame_groups": true,
+  "real_timestamps_verified": 32,
+  "official_metric_recomputed": 160,
+  "peak_reserved_mib": 8118.0,
+  "unix": 1794934563.511084
+}

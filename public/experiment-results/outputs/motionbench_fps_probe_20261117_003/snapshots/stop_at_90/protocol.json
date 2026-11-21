@@ -1,0 +1,52 @@
+{
+  "models": {
+    "q25": "[local-path]/models/cvpr2027-autoresearch/Qwen--Qwen2.5-VL-3B-Instruct",
+    "q3": "[local-path]/models/cvpr2027-autoresearch/Qwen--Qwen3-VL-4B-Instruct"
+  },
+  "workers": [
+    {
+      "model": "q25",
+      "partition": 0,
+      "partitions": 2
+    },
+    {
+      "model": "q25",
+      "partition": 1,
+      "partitions": 2
+    },
+    {
+      "model": "q3",
+      "partition": 0,
+      "partitions": 1
+    }
+  ],
+  "pairs": [
+    [
+      0
+    ],
+    [
+      3
+    ],
+    [
+      4,
+      5
+    ]
+  ],
+  "primary_methods": [
+    "native2",
+    "fixed6_released",
+    "flexi_released"
+  ],
+  "sensitivity_methods": [
+    "fixed6_tei"
+  ],
+  "prompt_suffix": "\nAnswer with ONLY the single uppercase letter of the best option.",
+  "process_cap_mib": 9728,
+  "whole_gpu_reserve_mib": 2560,
+  "deadline_unix": 1794915900.0,
+  "expected": 128,
+  "notes": "Recovery after30min checkpoint. Fix Qwen2.5 overloaded kernel-length metadata; GPU resize. Main comparison uses released PI resizing from original2-frame weights. TEI fixed6 is sensitivity. No inherited predictions; all queries and labels retained. Full fresh run using cached sequential decoding; attempts001 and002 kept separately.",
+  "decoder": "Frozen FFmpeg sequential source-frame selection; shared RGB cache across all conditions and models; no predictions inherited",
+  "preprocess": "Torchvision GPU bicubic antialias, same spatial token grid across models",
+  "resume_optimization": "Reuse validated ATS cache and skip resize for the other model; no inference math change; prior raw rows retained"
+}

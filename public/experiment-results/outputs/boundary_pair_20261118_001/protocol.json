@@ -1,0 +1,63 @@
+{
+  "created_unix": 1794940462.692125,
+  "deadline_unix": 1794962062.692126,
+  "model": "[local-path]/models/multimodal/model_reproduction/vtg/models/TimeLens2-4B",
+  "checkpoint_manifest_sha256": "3e2cf4c2cf72b3f833f13ae30da52aa68f3bb0c4cf495f1ed0eb79016857c68a",
+  "inputs_sha256": "898daebdac4bcb721be1e1ad774d57bd66a129af10469511c75ba5cb90886f78",
+  "seed": 20261118,
+  "methods": [
+    "A_reference128",
+    "B_uniform96",
+    "C_coarse32",
+    "D_global_zoom",
+    "E_boundary_pair"
+  ],
+  "dev_samples": 24,
+  "confirmation_samples": 24,
+  "expected_main_calls": 120,
+  "pilot_ids": [
+    "activitynet/v_YuuWL4EK7Q4/1",
+    "activitynet/v_lCIJJgxTs2U/2",
+    "activitynet/v_FnbVnRX6WxQ/3",
+    "activitynet/v_a2JBhm22-M4/0"
+  ],
+  "pool_frames": 128,
+  "max_pixels": 230400,
+  "max_new_tokens": 512,
+  "prompt": "Please find the visual event described by the sentence '{}', determining its starting and ending times. The format should be: 'The event happens in <start time> - <end time> seconds'.",
+  "dtype": "bfloat16",
+  "attention": "sdpa",
+  "pairs": [
+    [
+      0,
+      3
+    ],
+    [
+      4,
+      5
+    ]
+  ],
+  "torch_cap_mib": 8192,
+  "process_cap_mib": 8704,
+  "whole_gpu_reserve_mib": 2560,
+  "delta": "min(T/4,max(2*median(coarse_unit_spacing),.15*(e0-s0)))",
+  "invalid_coarse": "uniform64 fallback for D/E; keep failure flag; never use GT",
+  "costs": "D/E include C+second pass; cumulative visual tokens matched to B; two calls not FLOPs/latency matched",
+  "adaptation": "after first4 complete: if projected24 finish exceeds remaining80pct time, use preset first12. No score-based adaptation",
+  "oracle": "only six preselected dev videos after complete main; 36 calls; never added to main method results",
+  "strong_baseline_note": "Reference128 is a fixed-pool mechanism reference, not official full evaluation",
+  "parser": "TimeLens2 released evaluation/vlmeval/dataset/timelens.py extract_time, same natural-language protocol as previous single-interval run; first interval; no GT selection or clipping",
+  "baseline_source": "[local-path]/models/multimodal/model_reproduction/vtg/outputs/timelens2_charades_main_004/config.json",
+  "parser_sha256": "226e1bb617b66168a56a926dd5ed91d366d3b168356edd8004cb551dc269e2ca",
+  "code_sha256": {
+    "scripts/boundary_pair/worker.py": "6ef3493bad886c9031a7f4b68b60d289e0add88ad555b7bfa1cbd5fc3219662e",
+    "scripts/boundary_pair/prepare.py": "2d4840b9ba21f6de36002c0b74ad39e35885f192fa4189c2033ef960f53f2cec",
+    "scripts/boundary_pair/common.py": "ff3e6143d3fb872aaedb88a382672c9b4c9aa58676dce1cec1adf6f2bee5cf63",
+    "scripts/boundary_pair/check_inputs.py": "71ecd7b84aa0382a73ce024cedb293ccfa70c3484704d7385a6a59c573f97917",
+    "scripts/boundary_pair/analyze.py": "8d9064703e73cf815780b848657f7fee824096a4d90cab421dbe27073065bba6",
+    "scripts/boundary_pair/supervise.py": "d2c8285ffb61c40b5a7097beb0a0142d4a49eb0ba0fe2417025acfb27216debc",
+    "scripts/bounded_compute.py": "51f4d1bd9f48c02bd9abce54ef035a9cf445c0433d42c55da61bfd8037a38652",
+    "scripts/supervise_flexi_rapid_diagnostic.py": "fd5451458845bb5eb716bddb4a11861cc0e3bbcae1a4d90c893c6c95888e4419",
+    "repos/TimeLens2/evaluation/vlmeval/dataset/timelens.py": "226e1bb617b66168a56a926dd5ed91d366d3b168356edd8004cb551dc269e2ca"
+  }
+}

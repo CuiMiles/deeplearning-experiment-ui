@@ -1,0 +1,253 @@
+{
+  "id": "vtg-real-02-event-reward",
+  "title": "给找全事件加奖励，训练后有没有更准",
+  "date": "2026-11-15",
+  "status": "completed",
+  "task": "vtg",
+  "series": "多事件定位与遗漏",
+  "tags": [],
+  "tldr": "两组训练的留出集事件 F1 都是 81.01%，43 条逐条持平；额外奖励的模型收益尚未出现。",
+  "brief": {
+    "question": "总奖励偏向重叠时间，漏掉很短的一次会不会几乎不扣分？",
+    "change": "先构造长短事件验证奖励排序，再用同一 SFT 权重、训练视频和 200 步比较原奖励与事件 F1 奖励。",
+    "conclusion": "两组训练的留出集事件 F1 都是 81.01%，43 条逐条持平；额外奖励的模型收益尚未出现。",
+    "verdict": "negative",
+    "pipeline": [
+      {
+        "label": "构造漏检答案",
+        "changed": false
+      },
+      {
+        "label": "比较奖励排序",
+        "changed": false
+      },
+      {
+        "label": "训练同预算对照",
+        "changed": true
+      },
+      {
+        "label": "独立视频评分",
+        "changed": false
+      }
+    ]
+  },
+  "setup": {
+    "model": "TimeLens2-4B-SFT + LoRA GRPO",
+    "evalData": [
+      "reward-holdout"
+    ],
+    "notes": "训练 52 个源视频、240 条查询。留出 12 个不同源视频、43 条查询。"
+  },
+  "results": {
+    "methods": [
+      {
+        "id": "baseline",
+        "name": "原奖励",
+        "role": "baseline"
+      },
+      {
+        "id": "event_f1",
+        "name": "原奖励 + 0.25 事件 F1",
+        "role": "ours"
+      },
+      {
+        "id": "sft",
+        "name": "SFT 初始模型",
+        "role": "reference"
+      }
+    ],
+    "main": [
+      {
+        "method": "baseline",
+        "dataset": "reward-holdout",
+        "metrics": {
+          "Event-F1@0.5": 81.00775,
+          "Shortest-Recall@0.5": 79.06977,
+          "Set-tIoU": 76.33269
+        }
+      },
+      {
+        "method": "event_f1",
+        "dataset": "reward-holdout",
+        "metrics": {
+          "Event-F1@0.5": 81.00775,
+          "Shortest-Recall@0.5": 79.06977,
+          "Set-tIoU": 76.14863
+        }
+      },
+      {
+        "method": "sft",
+        "dataset": "reward-holdout",
+        "metrics": {
+          "Event-F1@0.5": 78.68217,
+          "Shortest-Recall@0.5": 76.74419,
+          "Set-tIoU": 76.02655
+        }
+      }
+    ],
+    "headline": [
+      {
+        "dataset": "reward-holdout",
+        "metric": "Event-F1@0.5"
+      },
+      {
+        "dataset": "reward-holdout",
+        "metric": "Set-tIoU"
+      }
+    ]
+  },
+  "charts": [
+    {
+      "id": "toy",
+      "title": "例子：只漏掉短事件仍获得很高的原奖励",
+      "type": "bar",
+      "categories": [
+        "完整定位",
+        "漏掉 2 秒事件"
+      ],
+      "yLabel": "原奖励，满分 2",
+      "series": [
+        {
+          "name": "原奖励总和",
+          "data": [
+            2.0,
+            1.9687
+          ]
+        }
+      ]
+    },
+    {
+      "id": "multi",
+      "title": "留出集事件 F1",
+      "type": "bar",
+      "categories": [
+        "35 条单区间",
+        "8 条多区间"
+      ],
+      "yLabel": "百分点 / %",
+      "series": [
+        {
+          "name": "原奖励",
+          "data": [
+            80.0,
+            85.4167
+          ]
+        },
+        {
+          "name": "加事件 F1",
+          "data": [
+            80.0,
+            85.4167
+          ]
+        }
+      ]
+    }
+  ],
+  "insights": {
+    "oneLiner": "我们查到了奖励排序的问题，简单加一项 F1 在这轮实际训练中没带来增益。",
+    "confidence": 0.55,
+    "phenomena": [
+      {
+        "id": "p1",
+        "title": "短段的漏检惩罚小",
+        "detail": "100 秒和 2 秒的两次动作中，完全漏掉短段时总奖励仍为 1.9687/2。",
+        "evidence": "chart:toy",
+        "symptoms": [
+          "metric-gaming"
+        ],
+        "surprise": 4
+      },
+      {
+        "id": "p2",
+        "title": "训练后逐条持平",
+        "detail": "两种奖励在留出集的 43 条事件 F1 全部持平。",
+        "evidence": "results",
+        "symptoms": [
+          "metric-disagreement"
+        ],
+        "surprise": 3
+      }
+    ],
+    "echoes": [
+      {
+        "id": "echo",
+        "phenomenon": "p1",
+        "lens": "goodhart",
+        "correspondences": [
+          [
+            "优化目标",
+            "时长重叠奖励"
+          ],
+          [
+            "任务目标",
+            "每次出现都找全"
+          ]
+        ],
+        "borrowedMove": "训练和评测同时追踪短事件召回、误报和时长重叠。",
+        "limit": "构造奖励例子使用标注，无法直接代替训练效果。"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "hyp",
+        "title": "用同预算对照检验",
+        "statement": "简单附加 F1 能改善多事件定位。",
+        "test": "相同训练 200 步，独立源视频验证。",
+        "falsifiedIf": "事件 F1 没有提高。",
+        "impact": 4,
+        "effort": 3,
+        "status": "refuted",
+        "from": [
+          "echo"
+        ]
+      }
+    ],
+    "paperAngles": [
+      {
+        "id": "direction",
+        "title": "可能的研究贡献",
+        "type": "analysis",
+        "claim": "研究短事件的有效训练信号及其对预测的影响。",
+        "novelty": "研究短事件的有效训练信号及其对预测的影响。",
+        "risk": "留出集只有 8 条多段，短事件占比和训练强度需另测。",
+        "readiness": 0.28,
+        "from": [
+          "hyp"
+        ]
+      }
+    ],
+    "provocations": [
+      {
+        "prompt": "reviewer2",
+        "answer": "离线按真实标签选候选得到的提升不计为模型增益。"
+      },
+      {
+        "prompt": "mechanism",
+        "answer": "构造奖励例子使用标注，无法直接代替训练效果。"
+      }
+    ]
+  },
+  "reproduce": {
+    "commands": [
+      {
+        "label": "在 VTG 工作目录查看原报告",
+        "cmd": "cat outputs/coverage_eval_20261115_001/scored.json"
+      }
+    ],
+    "artifacts": [
+      {
+        "label": "训练组评分",
+        "path": "evidence/vtg-real-02-event-reward/coverage_eval_20261115_001-scored.json"
+      },
+      {
+        "label": "129 次原始回答",
+        "path": "evidence/vtg-real-02-event-reward/coverage_eval_20261115_001-predictions.jsonl"
+      },
+      {
+        "label": "独立核验",
+        "path": "evidence/vtg-real-02-event-reward/coverage_eval_20261115_001-independent_verification.json"
+      }
+    ]
+  },
+  "parent": "vtg-real-01-short-misses"
+}

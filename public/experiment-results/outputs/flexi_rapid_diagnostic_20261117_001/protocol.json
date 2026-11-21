@@ -1,0 +1,65 @@
+{
+  "expected_queries": 95,
+  "expected_videos": 55,
+  "expected_predictions": 570,
+  "model": "Qwen2.5-VL-3B-Instruct BF16; official released FlexiVideo inference code; no additional training",
+  "methods": [
+    "native_time",
+    "flexi_time",
+    "oracle_split_same_tokens",
+    "uniform_same_tokens",
+    "sparse_same_tokens",
+    "flexi_center_time"
+  ],
+  "settings": {
+    "fps2": {
+      "fps": 2.0,
+      "min_tokens": 64,
+      "total_tokens": 14336,
+      "max_frames": 768,
+      "methods": [
+        "native_time",
+        "flexi_time",
+        "oracle_split_same_tokens",
+        "uniform_same_tokens",
+        "sparse_same_tokens",
+        "flexi_center_time"
+      ]
+    }
+  },
+  "input_hash": "2e9f69b6e14e76f465d3ed3e533a99aa91c0759362a95b98267e11fcdee9f5a8",
+  "label_hash": "7f648b887ac97254d77471c262c19b164ec27dbaaf67d717ea13b512a6952d85",
+  "source_sha256": {
+    "eval_flexi_oracle_subset.py": "0f1e185a436acf955796974a2c812191b5f282a7bdb3f50f02d0f513d508f4f5",
+    "prepare_flexi_rapid_diagnostic.py": "14a78e4d9c4f9aecc2d222125b413beb115c78c06fa1f1b688c415b28b54532a",
+    "supervise_flexi_rapid_diagnostic.py": "fd5451458845bb5eb716bddb4a11861cc0e3bbcae1a4d90c893c6c95888e4419",
+    "flexi_timelens_common.py": "47513ca2c8fc873c14b05f13da6762eda5392aca174d976804a22db78df4904a",
+    "flexi_bounded_pixels.py": "d8edf60c498513221da2c384ea2b88a73b8fb4a531f392fd8fc8bb16e0334e8b",
+    "audit_flexi_boundary_survival.py": "1a2c5a055f698c9760ef87cf2ad354d86217228e93778918b54cae09b4f2fffc"
+  },
+  "inference_seed": 20261117,
+  "gpus": [
+    0,
+    3,
+    4,
+    5
+  ],
+  "allocator_cap_mib": 9216,
+  "process_limit_mib": 9728,
+  "whole_gpu_reserve_mib": 2560,
+  "max_new_tokens": 512,
+  "do_sample": false,
+  "baseline_reuse": 311,
+  "reference_reruns": 4,
+  "unix": 1794889649.0602233,
+  "baseline_source_predictions_sha256": {
+    "outputs/flexi_oracle_subset_20261117_001/workers/shard-01/predictions.jsonl": "2658f60d7706c611ece981850e3e0f6e11d0cd6364f7ce50bf54d611c1d6c501",
+    "outputs/flexi_oracle_subset_20261117_001/workers/shard-03/predictions.jsonl": "fa6141edb40bc6f53e75d4d3d70e6cdfb3c99c4604d1725a33e041cd9130b2b1",
+    "outputs/flexi_oracle_subset_20261117_001/workers/shard-00/predictions.jsonl": "71bd510ec938da22bcde336089ef668fdacfb437e511679aa6ab77e1c5e9034e",
+    "outputs/flexi_oracle_subset_20261117_001/workers/shard-02/predictions.jsonl": "e460bf3f971a47a1bcc73d011650e5237e73b27ed8ccf6835da0c430850e79f5"
+  },
+  "analysis_source_sha256": {
+    "analyze_flexi_rapid_diagnostic.py": "5905d116e956e884b1c71971822b459d502542d6f6778c3a0b53070616162bd9",
+    "build_flexi_rapid_figures.py": "deb0eb9120bc9f2ebe36f08d33770a99b80a30c64c038108c083991c26e9c538"
+  }
+}

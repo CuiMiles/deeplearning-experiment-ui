@@ -1,0 +1,1 @@
+dataset,setting,method,n,expected_queries,miou,r1@0.3,r1@0.5,r1@0.7,parse_rate,mean_visual_tokens,prefill_seconds_median,generation_seconds_median,cold_pipeline_seconds_median,peak_reserved_mib

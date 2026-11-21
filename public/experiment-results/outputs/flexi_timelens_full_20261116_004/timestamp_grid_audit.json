@@ -1,0 +1,33 @@
+{
+  "checks": [
+    {
+      "video": "charades/HUWAZ",
+      "max_nominal_vs_pts_seconds": 3.4445873495769774e-06,
+      "mean_nominal_vs_pts_seconds": 7.916466534252375e-07,
+      "video_duration": 72.1061479346782,
+      "fps": 16.656
+    },
+    {
+      "video": "qvhighlights/-dB_W38mCRM_360.0_510.0",
+      "max_nominal_vs_pts_seconds": 7.527669282580973e-06,
+      "mean_nominal_vs_pts_seconds": 1.6210911010405837e-06,
+      "video_duration": 150.0,
+      "fps": 23.976023976023978
+    },
+    {
+      "video": "activitynet/v_BrgYIg6UXhU",
+      "max_nominal_vs_pts_seconds": 1.0172526060614473e-05,
+      "mean_nominal_vs_pts_seconds": 2.3984730511596273e-06,
+      "video_duration": 266.9583333333333,
+      "fps": 24.0
+    },
+    {
+      "video": "charades/WZZPC",
+      "max_nominal_vs_pts_seconds": 1.5894571969710114e-07,
+      "mean_nominal_vs_pts_seconds": 4.6264557589698844e-08,
+      "video_duration": 7.133333333333334,
+      "fps": 15.0
+    }
+  ],
+  "scope": "Nominal frame-index/average-FPS coordinates versus container PTS on the four implementation-check videos"
+}

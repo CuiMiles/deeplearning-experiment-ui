@@ -1,0 +1,14 @@
+{"event": "worker_started", "unix": 1794940851.359711, "worker": 0, "phase": "pilot", "pid": 13495, "gpus": [0, 3]}
+{"event": "worker_started", "unix": 1794940851.3870103, "worker": 1, "phase": "pilot", "pid": 13496, "gpus": [4, 5]}
+{"event": "worker_exit", "unix": 1794941042.6660867, "worker": 1, "phase": "pilot", "returncode": 0, "reason": null}
+{"event": "worker_exit", "unix": 1794941676.47484, "worker": 0, "phase": "pilot", "returncode": 0, "reason": null}
+{"event": "pilot_gate_passed", "unix": 1794941676.5058634, "target_samples": 24, "pilot_seconds": 827.2005879878998}
+{"event": "worker_started", "unix": 1794941676.5102072, "worker": 1, "phase": "main", "pid": 2726, "gpus": [4, 5]}
+{"event": "worker_started", "unix": 1794941678.5307074, "worker": 0, "phase": "main", "pid": 2761, "gpus": [0, 3]}
+{"event": "worker_exit", "unix": 1794942626.4823995, "worker": 0, "phase": "main", "returncode": 0, "reason": null}
+{"event": "worker_exit", "unix": 1794944013.6103745, "worker": 1, "phase": "main", "returncode": 0, "reason": null}
+{"event": "main_complete_start_optional_oracle", "unix": 1794944014.2429008, "remaining_seconds": 18048.449325561523}
+{"event": "worker_started", "unix": 1794944014.249204, "worker": 0, "phase": "oracle", "pid": 6325, "gpus": [0, 3]}
+{"event": "worker_started", "unix": 1794944014.2529235, "worker": 1, "phase": "oracle", "pid": 6326, "gpus": [4, 5]}
+{"event": "worker_exit", "unix": 1794944387.0300858, "worker": 1, "phase": "oracle", "returncode": 0, "reason": null}
+{"event": "worker_exit", "unix": 1794944994.4013662, "worker": 0, "phase": "oracle", "returncode": 0, "reason": null}

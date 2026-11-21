@@ -1,0 +1,49 @@
+TimeLens short-event coverage research: first executed batch
+
+Executed: saved model output analysis; 2400 official saved SFT candidate groups (19200 completions), 600 development and 600 video-disjoint confirmation queries per task.
+No new GPU inference or training steps have been completed in this batch. Reward selection uses ground truth and is a training-objective diagnostic, never an inference method. Confirmation here refers only to train-source video-disjoint diagnostic groups; it is not an unseen model benchmark.
+
+Actual OMTG model outputs (320 queries):
+  lt2s: event recall@0.5 7.5758% (66 events)
+  2to6s: event recall@0.5 21.8605% (430 events)
+  6to20s: event recall@0.5 29.4118% (493 events)
+  ge20s: event recall@0.5 51.0989% (182 events)
+  Adjacent/overlapping GT spans are merged: 1173 raw -> 1171 components. Diagnostic metrics intentionally differ from official OMTG scoring.
+  Short-vs-long differences remain descriptive: IoU threshold sensitivity, semantics and observability are alternative explanations.
+
+Multi-interval confirmation (600 queries, 427 videos):
+  add_count_acc_0.25: F1=0.316418, delta_F1_pp=-1.411, delta_tIoU_pp=-1.325, delta_shortest_recall_pp=0.500, delta_F1_CI=[-0.02586575729705677, -0.0029578174158178465]
+  add_event_f1_0.25: F1=0.370672, delta_F1_pp=4.014, delta_tIoU_pp=0.132, delta_shortest_recall_pp=2.667, delta_F1_CI=[0.02900135485859547, 0.05211527078040477]
+  balanced_alpha_0.25: F1=0.326339, delta_F1_pp=-0.419, delta_tIoU_pp=-0.194, delta_shortest_recall_pp=-0.167, delta_F1_CI=[-0.009905239703943254, 0.0010882295707460576]
+  balanced_alpha_0.5: F1=0.322269, delta_F1_pp=-0.826, delta_tIoU_pp=-0.414, delta_shortest_recall_pp=0.333, delta_F1_CI=[-0.017070910378220415, 0.0005031687565652909]
+  balanced_alpha_1.0: F1=0.319023, delta_F1_pp=-1.151, delta_tIoU_pp=-0.960, delta_shortest_recall_pp=1.000, delta_F1_CI=[-0.021912728478424695, -0.0011759363521463783]
+  first_candidate: F1=0.145353, delta_F1_pp=-18.518, delta_tIoU_pp=-22.445, delta_shortest_recall_pp=-5.000, delta_F1_CI=[-0.21205832604094052, -0.1580279528940138]
+  original: F1=0.330529, delta_F1_pp=0.000, delta_tIoU_pp=0.000, delta_shortest_recall_pp=0.000, delta_F1_CI=[0.0, 0.0]
+
+Decisions:
+  Do not advance event-balanced mass mixing to training: all tested alpha values failed to improve selected-answer event F1 on confirmation.
+  Keep original + 0.25 event F1 as the required simple baseline; it has positive target alignment, not established novelty or learned-model gains.
+  Do not advance count accuracy alone: it improves counts while hurting F1 and tIoU.
+  Next training comparison: identical SFT checkpoint/LoRA/data/sampling/steps for original reward versus original+0.25 event F1. Obtain actual gradients and reward variance before comparing learned checkpoints.
+  Begin with a tiny media/forward/backward checkpoint-save smoke. Only then build source-separated training and validation media subsets.
+  Single interval retention must be measured on actual learned checkpoints; offline candidate analysis is insufficient.
+
+Nearest works checked:
+  TimeLens2: https://arxiv.org/html/2607.17423v1 (uniform-support TW and alternate endpoint/Gaussian rewards)
+  DTP-OPSD: https://arxiv.org/abs/2611.00120 (zero-advantage difficult examples)
+  SAPO: https://arxiv.org/abs/2610.25923 (attention-derived temporal supervision)
+  TimePLE: https://arxiv.org/abs/2607.23951 (interval-native representation)
+  FinishStrong: https://arxiv.org/abs/2611.01765 (conditional endpoint credit)
+  OMTG: https://arxiv.org/abs/2606.06294 (event-count and temporal rewards; simple event F1 has prior art)
+
+Resource preparation:
+  SFT checkpoint pinned to f3349f640ff90ad6054d386a63ecbc9f8a599448; 8.89 GB; verify LFS SHA256 before GPU use.
+  TimeLens2-93K pinned to 024ba3311844c02154bcbd177dfaedc40b6ed9ae; media pilot <=8 videos, <=512 MiB transferred, <=64 tar members inspected.
+  Dedicated env/training-coverage uses official trl 0.19.1, peft 0.15.2, deepspeed 0.16.7; installation/import checks pending.
+  GPU snapshot: only GPU 3 idle; no training resource assigned. Recheck immediately before any future GPU use.
+  Download units: vtg-sft-download-20261115.service and vtg-media-pilot-20261115.service.
+  Initial media validation failed due to missing ffprobe; repaired to decord duration and first/last-frame decode; partial member reused.
+  Initial small-checkpoint requests with query parameters failed; fetched and verified small files without parameters, then relaunched downloader.
+  All downloads direct via mirror; normal proxy settings were not modified.
+
+Interpretation correction: adding the target F1 to a scalar reward guarantees nonnegative F1 change for exact maximum selection relative to the original reward maximizer (up to ties). The observed 41 wins / 0 losses measures available candidate reordering, not independent evidence of a useful new learning method. Compare actual training before advancing.

@@ -1,0 +1,60 @@
+{
+  "models": {
+    "q25": "[local-path]/models/cvpr2027-autoresearch/Qwen--Qwen2.5-VL-3B-Instruct",
+    "q3": "[local-path]/models/cvpr2027-autoresearch/Qwen--Qwen3-VL-4B-Instruct"
+  },
+  "workers": [
+    {
+      "model": "q25",
+      "partition": 0,
+      "partitions": 2
+    },
+    {
+      "model": "q25",
+      "partition": 1,
+      "partitions": 2
+    },
+    {
+      "model": "q3",
+      "partition": 0,
+      "partitions": 1
+    }
+  ],
+  "pairs": [
+    [
+      0
+    ],
+    [
+      3
+    ],
+    [
+      4,
+      5
+    ]
+  ],
+  "primary_methods": [
+    "native2",
+    "fixed6_released",
+    "flexi_released",
+    "sparse_same_tokens"
+  ],
+  "sensitivity_methods": [],
+  "prompt_suffix": "\nAnswer with ONLY the single uppercase letter of the best option.",
+  "process_cap_mib": 9728,
+  "whole_gpu_reserve_mib": 2560,
+  "deadline_unix": null,
+  "expected": 512,
+  "notes": "32 new source videos, 8 per pilot category, separate from pilot; primary 8 FPS and secondary 2 FPS. No training.",
+  "decoder": "Frozen FFmpeg sequential source-frame selection; shared RGB cache across all conditions and models; no predictions inherited",
+  "preprocess": "Torchvision GPU bicubic antialias, same spatial token grid across models",
+  "decoded_cache": "[local-path]/models/multimodal/model_reproduction/vtg/data/motionbench_expansion_20261118_001/decoded",
+  "selection_sha256": "fb0092733298d610494e66a98639d3f8132dd6aac5e1856097a89aca3349f8df",
+  "code_sha256": {
+    "eval_motionbench_fps_probe.py": "14780fc83e295ee2ef7b67d7209e2e9ec89e95ef150a7a4838083a629b8d8eca",
+    "prepare_motionbench_expansion.py": "59cd6d5837f8b4ef7633e1a6aebfedc9dc29b4a6b843f4a684338c7ef6d34aa3",
+    "supervise_motionbench_expansion.py": "aa9f486aa13bbd3b6d9b16a9546884f51e11ddb82e4e13edcacaa0239b739f65",
+    "score_motionbench_expansion.py": "74d2cc5d21ee8be5420d793c5ab96ff81cde3dc1fd8464967844ca2400537405"
+  },
+  "created_unix": 1794976744.4759426,
+  "formal_primary": "Sparse vs Flexi, 8 FPS, within each model"
+}

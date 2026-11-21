@@ -1,5 +1,7 @@
 # 实验看板 · Deep Learning Experiment UI
 
+[真实实验结果归档](public/experiment-results/) · [实验看板数据](data/experiments/)
+
 一个**纯前端**的多模态深度学习实验看板模板。实验跑完后，由智能体把结果按约定的 JSON 格式写进仓库；研究者打开页面，**不看代码和日志**就能知道：
 
 - 这个实验在干嘛、改了哪一环、结论是什么（30 秒看懂）

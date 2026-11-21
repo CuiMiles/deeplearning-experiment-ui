@@ -1,0 +1,42 @@
+{
+  "audit": "passed",
+  "rows": [
+    {
+      "eid": "omtg/omtg_110",
+      "tokens": {
+        "dense": 3840,
+        "flexi": 1920,
+        "transient32": 1920,
+        "transient16": 960
+      }
+    },
+    {
+      "eid": "hold_multi/FPZIRie33NU#1",
+      "tokens": {
+        "dense": 4096,
+        "flexi": 2048,
+        "transient32": 2048,
+        "transient16": 1024
+      }
+    },
+    {
+      "eid": "omtg/omtg_99",
+      "tokens": {
+        "dense": 3840,
+        "flexi": 1920,
+        "transient32": 1920,
+        "transient16": 960
+      }
+    },
+    {
+      "eid": "hold_multi/7BUaG3DWs_s#1",
+      "tokens": {
+        "dense": 3840,
+        "flexi": 1920,
+        "transient32": 1920,
+        "transient16": 960
+      }
+    }
+  ],
+  "scope": "CPU-only timestamps, frame packing, and processor-side counts. SemVID post-pruning count is enforced at GPU inference."
+}

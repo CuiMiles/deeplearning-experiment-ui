@@ -1,0 +1,869 @@
+{
+  "$schema": "../../schema/experiment.schema.json",
+  "id": "vtg-real-14-token-budget",
+  "title": "同 token 压缩｜抽帧、SemVID 和合帧",
+  "task": "vtg",
+  "status": "completed",
+  "date": "2026-11-21",
+  "series": "多次出现的动作如何找全",
+  "parent": "vtg-real-13-density",
+  "tags": [
+    "439 个视频",
+    "视觉 token"
+  ],
+  "tldr": "低预算 SemVID 对均匀抽帧在 OMTG +6.29 分、留出集 +11.28 分。挑短暂变化未稳定涨分。",
+  "brief": {
+    "question": "给语言模型同样的视觉 token，保留更多时刻还是保留整帧更有效？",
+    "change": "用同样的候选帧和模型，在两档预算比较不同取帧、SemVID 和合帧。",
+    "conclusion": "低预算 SemVID 对均匀抽帧在 OMTG +6.29 分、留出集 +11.28 分。挑短暂变化未稳定涨分。",
+    "verdict": "mixed",
+    "pipeline": [
+      {
+        "label": "冻结视频和标注"
+      },
+      {
+        "label": "选择或合并视觉 token",
+        "changed": true
+      },
+      {
+        "label": "逐段匹配并配对评分"
+      }
+    ]
+  },
+  "setup": {
+    "model": "TimeLens2-4B",
+    "evalData": [
+      "omtg",
+      "timelens2-93k-held-multi"
+    ],
+    "notes": "439 个不同源视频、573 条查询、5,730 条新增预测。SemVID 先编码全候选再剪枝。合帧采用固定预算分组，两个缩放条件分组相同。"
+  },
+  "reproduce": {
+    "commands": [
+      {
+        "label": "在 VTG 目录核对原始评分",
+        "cmd": "cd [local-path]/models/multimodal/model_reproduction/vtg && cat exh_20261121_budget_001/report.md"
+      }
+    ],
+    "artifacts": [
+      {
+        "label": "完整配对报告",
+        "path": "evidence/vtg-real-14-token-budget/report.md"
+      },
+      {
+        "label": "573 条查询的逐方法预测",
+        "path": "evidence/vtg-real-14-token-budget/per_query.csv"
+      },
+      {
+        "label": "分数与 95% 区间",
+        "path": "evidence/vtg-real-14-token-budget/summary.json"
+      }
+    ]
+  },
+  "results": {
+    "methods": [
+      {
+        "id": "uniform16",
+        "name": "均匀抽帧 · 低预算",
+        "role": "baseline"
+      },
+      {
+        "id": "semvid16",
+        "name": "SemVID · 低预算",
+        "role": "ours"
+      },
+      {
+        "id": "motion16",
+        "name": "运动取帧 · 低预算",
+        "role": "ablation"
+      },
+      {
+        "id": "transient16",
+        "name": "短暂变化 · 低预算",
+        "role": "ablation"
+      },
+      {
+        "id": "uniform32",
+        "name": "均匀抽帧 · 较高预算",
+        "role": "reference"
+      },
+      {
+        "id": "semvid32",
+        "name": "SemVID · 较高预算",
+        "role": "ablation"
+      },
+      {
+        "id": "motion32",
+        "name": "运动取帧 · 较高预算",
+        "role": "ablation"
+      },
+      {
+        "id": "transient32",
+        "name": "短暂变化 · 较高预算",
+        "role": "ablation"
+      },
+      {
+        "id": "flexi_scaled32",
+        "name": "合帧原缩放",
+        "role": "ablation"
+      },
+      {
+        "id": "flexi_unscaled32",
+        "name": "合帧去缩放",
+        "role": "ablation"
+      },
+      {
+        "id": "dense_reference",
+        "name": "全部候选帧",
+        "role": "reference"
+      }
+    ],
+    "main": [
+      {
+        "method": "uniform16",
+        "dataset": "omtg",
+        "metrics": {
+          "Event-F1@0.5": 20.95832,
+          "EtF1": 3.27684,
+          "Event-Recall@0.5": 16.44727
+        }
+      },
+      {
+        "method": "semvid16",
+        "dataset": "omtg",
+        "metrics": {
+          "Event-F1@0.5": 27.25298,
+          "EtF1": 8.22976,
+          "Event-Recall@0.5": 22.90732
+        }
+      },
+      {
+        "method": "motion16",
+        "dataset": "omtg",
+        "metrics": {
+          "Event-F1@0.5": 19.02421,
+          "EtF1": 3.35217,
+          "Event-Recall@0.5": 14.8636
+        }
+      },
+      {
+        "method": "transient16",
+        "dataset": "omtg",
+        "metrics": {
+          "Event-F1@0.5": 18.62304,
+          "EtF1": 3.38983,
+          "Event-Recall@0.5": 14.55342
+        }
+      },
+      {
+        "method": "uniform32",
+        "dataset": "omtg",
+        "metrics": {
+          "Event-F1@0.5": 28.31743,
+          "EtF1": 7.34087,
+          "Event-Recall@0.5": 23.09902
+        }
+      },
+      {
+        "method": "semvid32",
+        "dataset": "omtg",
+        "metrics": {
+          "Event-F1@0.5": 29.43887,
+          "EtF1": 9.80226,
+          "Event-Recall@0.5": 24.99839
+        }
+      },
+      {
+        "method": "motion32",
+        "dataset": "omtg",
+        "metrics": {
+          "Event-F1@0.5": 28.07,
+          "EtF1": 7.58945,
+          "Event-Recall@0.5": 22.94216
+        }
+      },
+      {
+        "method": "transient32",
+        "dataset": "omtg",
+        "metrics": {
+          "Event-F1@0.5": 28.0608,
+          "EtF1": 7.14689,
+          "Event-Recall@0.5": 23.08434
+        }
+      },
+      {
+        "method": "flexi_scaled32",
+        "dataset": "omtg",
+        "metrics": {
+          "Event-F1@0.5": 24.74873,
+          "EtF1": 4.83992,
+          "Event-Recall@0.5": 20.0776
+        }
+      },
+      {
+        "method": "flexi_unscaled32",
+        "dataset": "omtg",
+        "metrics": {
+          "Event-F1@0.5": 28.03198,
+          "EtF1": 7.07156,
+          "Event-Recall@0.5": 23.12201
+        }
+      },
+      {
+        "method": "dense_reference",
+        "dataset": "omtg",
+        "metrics": {
+          "Event-F1@0.5": 35.85236,
+          "EtF1": 13.93409,
+          "Event-Recall@0.5": 30.95467
+        }
+      },
+      {
+        "method": "uniform16",
+        "dataset": "timelens2-93k-held-multi",
+        "metrics": {
+          "Event-F1@0.5": 40.45564,
+          "EtF1": 15.40767,
+          "Event-Recall@0.5": 34.32254
+        }
+      },
+      {
+        "method": "semvid16",
+        "dataset": "timelens2-93k-held-multi",
+        "metrics": {
+          "Event-F1@0.5": 51.73643,
+          "EtF1": 25.65947,
+          "Event-Recall@0.5": 46.31295
+        }
+      },
+      {
+        "method": "motion16",
+        "dataset": "timelens2-93k-held-multi",
+        "metrics": {
+          "Event-F1@0.5": 36.88849,
+          "EtF1": 11.39089,
+          "Event-Recall@0.5": 30.7554
+        }
+      },
+      {
+        "method": "transient16",
+        "dataset": "timelens2-93k-held-multi",
+        "metrics": {
+          "Event-F1@0.5": 37.22907,
+          "EtF1": 12.41007,
+          "Event-Recall@0.5": 31.26499
+        }
+      },
+      {
+        "method": "uniform32",
+        "dataset": "timelens2-93k-held-multi",
+        "metrics": {
+          "Event-F1@0.5": 50.71143,
+          "EtF1": 25.77938,
+          "Event-Recall@0.5": 44.78417
+        }
+      },
+      {
+        "method": "semvid32",
+        "dataset": "timelens2-93k-held-multi",
+        "metrics": {
+          "Event-F1@0.5": 53.17616,
+          "EtF1": 28.53717,
+          "Event-Recall@0.5": 48.05156
+        }
+      },
+      {
+        "method": "motion32",
+        "dataset": "timelens2-93k-held-multi",
+        "metrics": {
+          "Event-F1@0.5": 52.31472,
+          "EtF1": 25.09992,
+          "Event-Recall@0.5": 46.22302
+        }
+      },
+      {
+        "method": "transient32",
+        "dataset": "timelens2-93k-held-multi",
+        "metrics": {
+          "Event-F1@0.5": 53.75699,
+          "EtF1": 28.4972,
+          "Event-Recall@0.5": 48.08153
+        }
+      },
+      {
+        "method": "flexi_scaled32",
+        "dataset": "timelens2-93k-held-multi",
+        "metrics": {
+          "Event-F1@0.5": 47.91624,
+          "EtF1": 21.04317,
+          "Event-Recall@0.5": 41.66667
+        }
+      },
+      {
+        "method": "flexi_unscaled32",
+        "dataset": "timelens2-93k-held-multi",
+        "metrics": {
+          "Event-F1@0.5": 51.05687,
+          "EtF1": 24.84013,
+          "Event-Recall@0.5": 44.8741
+        }
+      },
+      {
+        "method": "dense_reference",
+        "dataset": "timelens2-93k-held-multi",
+        "metrics": {
+          "Event-F1@0.5": 56.4932,
+          "EtF1": 29.71623,
+          "Event-Recall@0.5": 51.19904
+        }
+      }
+    ],
+    "headline": [
+      {
+        "dataset": "omtg",
+        "metric": "Event-F1@0.5"
+      },
+      {
+        "dataset": "timelens2-93k-held-multi",
+        "metric": "Event-F1@0.5"
+      },
+      {
+        "dataset": "omtg",
+        "metric": "EtF1"
+      }
+    ]
+  },
+  "charts": [
+    {
+      "id": "cost",
+      "title": "OMTG 实测推理耗时中位数",
+      "type": "bar",
+      "categories": [
+        "均匀低预算",
+        "SemVID 低预算",
+        "均匀较高预算",
+        "全候选帧"
+      ],
+      "yLabel": "秒",
+      "series": [
+        {
+          "name": "推理秒数",
+          "data": [
+            0.929,
+            1.817,
+            1.282,
+            2.052
+          ]
+        }
+      ],
+      "takeaway": "SemVID 的语言侧 token 较少，视觉编码和剪枝仍有成本。"
+    },
+    {
+      "id": "short",
+      "title": "不足 2 秒的动作命中数",
+      "type": "bar",
+      "categories": [
+        "OMTG（57 个）",
+        "多事件留出集（15 个）"
+      ],
+      "yLabel": "事件数",
+      "series": [
+        {
+          "name": "均匀低预算",
+          "data": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "SemVID 低预算",
+          "data": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "全候选帧",
+          "data": [
+            0,
+            2
+          ]
+        }
+      ],
+      "takeaway": "SemVID 的低预算优势来自较长事件。"
+    }
+  ],
+  "insights": {
+    "oneLiner": "极低预算下，保住更多时刻可能比保住少量完整帧更实用。",
+    "confidence": 0.64,
+    "phenomena": [
+      {
+        "id": "p1",
+        "title": "优势随压缩强度变化",
+        "detail": "SemVID 低预算明显领先同 token 抽帧。较高预算的比较区间跨零。",
+        "evidence": "results",
+        "symptoms": [
+          "sampling-miss"
+        ],
+        "surprise": 3
+      }
+    ],
+    "echoes": [
+      {
+        "id": "e1",
+        "phenomenon": "p1",
+        "lens": "nyquist",
+        "correspondences": [
+          [
+            "保留时间采样点",
+            "保留候选视频时刻"
+          ],
+          [
+            "压缩单点表示",
+            "减少每个位置的空间 token"
+          ]
+        ],
+        "borrowedMove": "比较同帧同预算的均匀空间剪枝，区分覆盖时刻与选对视觉区域的贡献。",
+        "limit": "真实视频的短事件和画面内容无法仅靠采样率描述。"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "h1",
+        "title": "下一次机制检验",
+        "statement": "极低预算下，保住更多时刻可能比保住少量完整帧更实用。",
+        "test": "同帧同 token 比较均匀空间剪枝和 SemVID，另看 2–6 秒事件召回。",
+        "falsifiedIf": "两者差值接近零时，优先考虑保持时刻覆盖的作用。",
+        "impact": 4,
+        "effort": 2,
+        "status": "todo",
+        "from": [
+          "e1"
+        ]
+      }
+    ],
+    "paperAngles": [
+      {
+        "id": "a1",
+        "title": "多事件漏报的机制分析",
+        "type": "analysis",
+        "claim": "极低预算下，保住更多时刻可能比保住少量完整帧更实用。",
+        "from": [
+          "h1"
+        ],
+        "risk": "真实视频的短事件和画面内容无法仅靠采样率描述。",
+        "readiness": 0.31
+      }
+    ],
+    "provocations": [
+      {
+        "prompt": "reviewer2",
+        "answer": "真实视频的短事件和画面内容无法仅靠采样率描述。"
+      },
+      {
+        "prompt": "simplest",
+        "answer": "比较同帧同预算的均匀空间剪枝，区分覆盖时刻与选对视觉区域的贡献。"
+      }
+    ],
+    "questionsForYou": [
+      "下一轮更重视把多次事件都找全，还是优先减少极短动作漏报？"
+    ]
+  },
+  "cases": [
+    {
+      "id": "omtg_8",
+      "title": "找回了漏掉的一次",
+      "type": "temporal",
+      "outcome": "success",
+      "note": "标注 2 段，两组分别报 1 和 2 段。事件 F1 0.0 → 100.0。点为 SemVID 剪枝前看过的候选帧。",
+      "video": {
+        "duration": 33.233200000000004,
+        "fps": 12
+      },
+      "query": "Find the video segment that corresponds to the given textual query 'the person takes a couple drinks from a cup.' and determine its start and end seconds.",
+      "gt": [
+        [
+          9.0,
+          12.0
+        ],
+        [
+          24.0,
+          27.0
+        ]
+      ],
+      "sampledFrames": [
+        0.23356666666666667,
+        0.7340666666666666,
+        1.2012,
+        1.7017,
+        2.2022,
+        2.7027,
+        3.1698333333333335,
+        3.6703333333333332,
+        4.137466666666667,
+        4.637966666666666,
+        5.138466666666667,
+        5.638966666666667,
+        6.1061000000000005,
+        6.6066,
+        7.073733333333333,
+        7.574233333333334,
+        8.074733333333333,
+        8.541866666666667,
+        9.042366666666666,
+        9.542866666666667,
+        10.01,
+        10.5105,
+        10.977633333333333,
+        11.478133333333334,
+        11.978633333333333,
+        12.479133333333333,
+        12.946266666666666,
+        13.446766666666667,
+        13.9139,
+        14.4144,
+        14.9149,
+        15.4154,
+        15.882533333333333,
+        16.383033333333334,
+        16.850166666666667,
+        17.350666666666665,
+        17.817800000000002,
+        18.3183,
+        18.8188,
+        19.319300000000002,
+        19.786433333333335,
+        20.286933333333334,
+        20.754066666666667,
+        21.254566666666665,
+        21.755066666666668,
+        22.255566666666667,
+        22.7227,
+        23.223200000000002,
+        23.690333333333335,
+        24.190833333333334,
+        24.691333333333333,
+        25.158466666666666,
+        25.658966666666668,
+        26.159466666666667,
+        26.6266,
+        27.127100000000002,
+        27.594233333333335,
+        28.094733333333334,
+        28.595233333333333,
+        29.095733333333335,
+        29.562866666666668,
+        30.063366666666667,
+        30.5305,
+        31.031,
+        31.5315,
+        32.032000000000004,
+        32.49913333333333,
+        32.999633333333335
+      ],
+      "predictions": [
+        {
+          "method": "uniform16",
+          "segments": [
+            {
+              "start": 8.0,
+              "end": 29.0
+            }
+          ]
+        },
+        {
+          "method": "semvid16",
+          "segments": [
+            {
+              "start": 8.0,
+              "end": 13.0
+            },
+            {
+              "start": 24.0,
+              "end": 28.0
+            }
+          ]
+        },
+        {
+          "method": "uniform32",
+          "segments": [
+            {
+              "start": 8.0,
+              "end": 28.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "omtg_307",
+      "title": "命中变少",
+      "type": "temporal",
+      "outcome": "failure",
+      "note": "标注 3 段，两组分别报 2 和 1 段。事件 F1 80.0 → 0.0。点为 SemVID 剪枝前看过的候选帧。",
+      "video": {
+        "duration": 42.32,
+        "fps": 12
+      },
+      "query": "Find the video segment that corresponds to the given textual query 'a person resting their chin or face on their hand' and determine its start and end seconds.",
+      "gt": [
+        [
+          7.0,
+          9.0
+        ],
+        [
+          23.0,
+          26.0
+        ],
+        [
+          36.0,
+          40.0
+        ]
+      ],
+      "sampledFrames": [
+        0.24,
+        0.76,
+        1.24,
+        1.72,
+        2.2,
+        2.72,
+        3.2,
+        3.68,
+        4.16,
+        4.68,
+        5.16,
+        5.68,
+        6.16,
+        6.64,
+        7.12,
+        7.64,
+        8.12,
+        8.6,
+        9.08,
+        9.6,
+        10.08,
+        10.6,
+        11.08,
+        11.56,
+        12.04,
+        12.56,
+        13.04,
+        13.52,
+        14.04,
+        14.52,
+        15.0,
+        15.52,
+        16.0,
+        16.48,
+        16.96,
+        17.48,
+        17.96,
+        18.44,
+        18.96,
+        19.44,
+        19.92,
+        20.44,
+        20.92,
+        21.4,
+        21.88,
+        22.4,
+        22.88,
+        23.36,
+        23.88,
+        24.36,
+        24.84,
+        25.36,
+        25.84,
+        26.32,
+        26.8,
+        27.32,
+        27.8,
+        28.28,
+        28.8,
+        29.28,
+        29.76,
+        30.28,
+        30.76,
+        31.24,
+        31.72,
+        32.24,
+        32.72,
+        33.24,
+        33.72,
+        34.2,
+        34.68,
+        35.2,
+        35.68,
+        36.16,
+        36.64,
+        37.16,
+        37.64,
+        38.16,
+        38.64,
+        39.12,
+        39.6,
+        40.12,
+        40.6,
+        41.08,
+        41.56,
+        42.08
+      ],
+      "predictions": [
+        {
+          "method": "uniform16",
+          "segments": [
+            {
+              "start": 22.0,
+              "end": 27.0
+            },
+            {
+              "start": 34.0,
+              "end": 39.0
+            }
+          ]
+        },
+        {
+          "method": "semvid16",
+          "segments": [
+            {
+              "start": 22.0,
+              "end": 32.0
+            }
+          ]
+        },
+        {
+          "method": "uniform32",
+          "segments": [
+            {
+              "start": 22.0,
+              "end": 26.0
+            },
+            {
+              "start": 35.0,
+              "end": 41.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "omtg_198",
+      "title": "仍有漏报",
+      "type": "temporal",
+      "outcome": "partial",
+      "note": "标注 2 段，两组分别报 1 和 1 段。事件 F1 66.7 → 66.7。点为 SemVID 剪枝前看过的候选帧。",
+      "video": {
+        "duration": 32.867,
+        "fps": 12
+      },
+      "query": "Find the video segment that corresponds to the given textual query 'a panda bears is shown' and determine its start and end seconds.",
+      "gt": [
+        [
+          7.0,
+          11.0
+        ],
+        [
+          12.0,
+          20.0
+        ]
+      ],
+      "sampledFrames": [
+        0.23333569979716023,
+        0.7333407707910751,
+        1.2333458417849898,
+        1.7333509127789046,
+        2.2333559837728196,
+        2.733361054766734,
+        3.233366125760649,
+        3.7333711967545637,
+        4.233376267748478,
+        4.733381338742394,
+        5.233386409736308,
+        5.733391480730223,
+        6.233396551724137,
+        6.733401622718053,
+        7.233406693711967,
+        7.733411764705882,
+        8.200083164300203,
+        8.700088235294118,
+        9.200093306288032,
+        9.700098377281947,
+        10.200103448275861,
+        10.700108519269776,
+        11.200113590263692,
+        11.700118661257607,
+        12.200123732251521,
+        12.700128803245436,
+        13.20013387423935,
+        13.700138945233265,
+        14.20014401622718,
+        14.700149087221094,
+        15.20015415821501,
+        15.700159229208925,
+        16.20016430020284,
+        16.66683569979716,
+        17.166840770791076,
+        17.66684584178499,
+        18.166850912778905,
+        18.66685598377282,
+        19.166861054766734,
+        19.66686612576065,
+        20.166871196754563,
+        20.666876267748478,
+        21.166881338742392,
+        21.666886409736307,
+        22.16689148073022,
+        22.666896551724136,
+        23.16690162271805,
+        23.666906693711965,
+        24.166911764705883,
+        24.666916835699798,
+        25.133588235294116,
+        25.63359330628803,
+        26.133598377281945,
+        26.63360344827586,
+        27.133608519269774,
+        27.633613590263693,
+        28.133618661257607,
+        28.63362373225152,
+        29.133628803245436,
+        29.63363387423935,
+        30.133638945233265,
+        30.63364401622718,
+        31.133649087221094,
+        31.63365415821501,
+        32.133659229208924,
+        32.63366430020284
+      ],
+      "predictions": [
+        {
+          "method": "uniform16",
+          "segments": [
+            {
+              "start": 6.0,
+              "end": 19.0
+            }
+          ]
+        },
+        {
+          "method": "semvid16",
+          "segments": [
+            {
+              "start": 7.0,
+              "end": 19.0
+            }
+          ]
+        },
+        {
+          "method": "uniform32",
+          "segments": [
+            {
+              "start": 7.0,
+              "end": 19.0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

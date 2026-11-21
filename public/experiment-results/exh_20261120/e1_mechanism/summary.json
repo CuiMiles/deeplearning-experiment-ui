@@ -1,0 +1,120 @@
+{
+  "source": "[local-path]/models/multimodal/model_reproduction/vtg/repos/TimeLens2/grpo/data/rollouts/timelens2-93k.jsonl",
+  "multi_queries": 12219,
+  "single_queries": 81497,
+  "multi_events": 27889,
+  "official_weight_share_multi": 0.22531303455171378,
+  "natural_share_multi": 0.13038328567160357,
+  "reachability_multi_events": {
+    "<2s": {
+      "events": 546,
+      "zero_of_8": 0.6794871794871795,
+      "pass@1": 0.11973443223443224,
+      "pass@2": 0.1860282574568289,
+      "pass@4": 0.2566195709052852,
+      "pass@8": 0.32051282051282054
+    },
+    "2-6s": {
+      "events": 6050,
+      "zero_of_8": 0.4494214876033058,
+      "pass@1": 0.26272727272727275,
+      "pass@2": 0.3681936245572609,
+      "pass@4": 0.4659716646989374,
+      "pass@8": 0.5505785123966942
+    },
+    "6-20s": {
+      "events": 9939,
+      "zero_of_8": 0.3609014991447832,
+      "pass@1": 0.3031240567461515,
+      "pass@2": 0.42511103445302056,
+      "pass@4": 0.5395282652753224,
+      "pass@8": 0.6390985008552168
+    },
+    ">=20s": {
+      "events": 11354,
+      "zero_of_8": 0.32464329751629384,
+      "pass@1": 0.3121036639069931,
+      "pass@2": 0.4393574322454012,
+      "pass@4": 0.5635836332066736,
+      "pass@8": 0.6753567024837062
+    },
+    "all": {
+      "events": 27889,
+      "zero_of_8": 0.371580192907598,
+      "pass@1": 0.2944261178242318,
+      "pass@2": 0.4138830977907316,
+      "pass@4": 0.5278261270444569,
+      "pass@8": 0.628419807092402
+    }
+  },
+  "reachability_single": {
+    ">=20s": {
+      "queries": 30724,
+      "zero_of_8": 0.07404634813175368,
+      "pass@1": 0.7221837976825934,
+      "pass@4": 0.8871710342775309,
+      "pass@8": 0.9259536518682463
+    },
+    "2-6s": {
+      "queries": 21215,
+      "zero_of_8": 0.1285882630214471,
+      "pass@1": 0.647943671930238,
+      "pass@4": 0.8297417595367159,
+      "pass@8": 0.8714117369785529
+    },
+    "6-20s": {
+      "queries": 28416,
+      "zero_of_8": 0.08759149774774774,
+      "pass@1": 0.7185256545608109,
+      "pass@4": 0.8753941441441442,
+      "pass@8": 0.9124085022522522
+    },
+    "<2s": {
+      "queries": 1142,
+      "zero_of_8": 0.2548161120840631,
+      "pass@1": 0.46311295971978983,
+      "pass@4": 0.6884038028521391,
+      "pass@8": 0.7451838879159369
+    }
+  },
+  "pass1_longest_minus_shortest": {
+    "mean": 0.162895036330211,
+    "ci95": [
+      0.15387013767279137,
+      0.1714509640893912
+    ],
+    "queries": 11423
+  },
+  "credit_for_covering_shortest": {
+    "official": {
+      "groups_with_mixed_coverage": 6301,
+      "mean_adv_gap_cover_shortest": 0.6072964976360025,
+      "ci95": [
+        0.5754420101998139,
+        0.6409840133803436
+      ],
+      "zero_variance_groups": 0.00883869383746624
+    },
+    "official+softEF1": {
+      "groups_with_mixed_coverage": 6301,
+      "mean_adv_gap_cover_shortest": 0.9798694867562584,
+      "ci95": [
+        0.9511740176691208,
+        1.0096406056447291
+      ],
+      "zero_variance_groups": 0.00883869383746624
+    },
+    "official+EF1@.5": {
+      "groups_with_mixed_coverage": 6301,
+      "mean_adv_gap_cover_shortest": 1.2716879921041258,
+      "ci95": [
+        1.2448528631040592,
+        1.2985443437101498
+      ],
+      "zero_variance_groups": 0.00883869383746624
+    }
+  },
+  "best_rollout_changes_with_softEF1": 0.16802906448683017,
+  "spearman_official_vs_softEF1": 0.9272502049630662,
+  "rollout_undercount_rate": 0.74611261150667
+}

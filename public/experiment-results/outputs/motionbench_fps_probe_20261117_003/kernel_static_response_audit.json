@@ -1,0 +1,32 @@
+{
+  "q25": {
+    "weight_key": "visual.patch_embed.proj.weight",
+    "shape": [
+      1280,
+      3,
+      2,
+      14,
+      14
+    ],
+    "pi_post_norm_scale": 2.9988508224487305,
+    "stationary_weight_sum_norm_ratio": 2.99884033203125,
+    "tei_stationary_ratio": 1.0,
+    "pi_without_post_norm_stationary_relative_error": 3.3932177956330634e-08,
+    "note": "FP32 CPU analysis of original BF16 kernel; sum over temporal axis corresponds to static-frame linear patch response. Full vision has nonlinearities; this is not accuracy or a proven cause."
+  },
+  "q3": {
+    "weight_key": "model.visual.patch_embed.proj.weight",
+    "shape": [
+      1024,
+      3,
+      2,
+      16,
+      16
+    ],
+    "pi_post_norm_scale": 2.9972729682922363,
+    "stationary_weight_sum_norm_ratio": 2.9972620010375977,
+    "tei_stationary_ratio": 1.0,
+    "pi_without_post_norm_stationary_relative_error": 3.4507031898556306e-08,
+    "note": "FP32 CPU analysis of original BF16 kernel; sum over temporal axis corresponds to static-frame linear patch response. Full vision has nonlinearities; this is not accuracy or a proven cause."
+  }
+}

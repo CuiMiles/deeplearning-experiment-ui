@@ -1,0 +1,84 @@
+{
+  "baseline_run_id": "autoresearch_omtg_001",
+  "baseline_path": "[local-path]/models/multimodal/model_reproduction/vtg/outputs/autoresearch_omtg_001/scored.json",
+  "sample_count": 40,
+  "sample_range": [
+    "omtg_60",
+    "omtg_99"
+  ],
+  "baseline_slice_metrics": {
+    "C-Acc": 0.275,
+    "tIoU": 0.6330934367546,
+    "tP@0.3": 0.7570833333333333,
+    "tR@0.3": 0.5131249999999998,
+    "tF1@0.3": 0.5897222222222223,
+    "tP@0.5": 0.5422619047619047,
+    "tR@0.5": 0.3966666666666666,
+    "tF1@0.5": 0.4445833333333333,
+    "tP@0.7": 0.4413690476190476,
+    "tR@0.7": 0.34875,
+    "tF1@0.7": 0.38166666666666665,
+    "EtF1": 0.22916666666666666,
+    "n": 40,
+    "parse_rate": 1.0,
+    "json_valid_rate": 1.0,
+    "mean_pred_segments": 1.775,
+    "mean_gt_segments": 2.85,
+    "multi_pred_count": 20
+  },
+  "runs": {
+    "fps2_fewshot_separate": {
+      "successful": 40,
+      "expected": 40,
+      "metrics": {
+        "C-Acc": 0.225,
+        "tIoU": 0.6445979485434599,
+        "tP@0.3": 0.8012499999999999,
+        "tR@0.3": 0.5724999999999999,
+        "tF1@0.3": 0.6422817460317461,
+        "tP@0.5": 0.6491666666666667,
+        "tR@0.5": 0.48729166666666657,
+        "tF1@0.5": 0.5378769841269841,
+        "tP@0.7": 0.5141666666666667,
+        "tR@0.7": 0.4029166666666667,
+        "tF1@0.7": 0.44009920634920635,
+        "EtF1": 0.21666666666666665,
+        "n": 40,
+        "parse_rate": 1.0,
+        "parsed_count": 40,
+        "json_valid_rate": 1.0,
+        "json_valid_count": 40,
+        "mean_pred_segments": 2.025,
+        "mean_gt_segments": 2.85,
+        "multi_pred_count": 22
+      },
+      "delta_vs_baseline_slice": {
+        "C-Acc": -0.05000000000000002,
+        "tIoU": 0.011504511788859917,
+        "tP@0.3": 0.044166666666666576,
+        "tR@0.3": 0.05937500000000007,
+        "tF1@0.3": 0.05255952380952389,
+        "tP@0.5": 0.10690476190476195,
+        "tR@0.5": 0.09062499999999996,
+        "tF1@0.5": 0.09329365079365087,
+        "tP@0.7": 0.07279761904761906,
+        "tR@0.7": 0.054166666666666696,
+        "tF1@0.7": 0.0584325396825397,
+        "EtF1": -0.012500000000000011,
+        "mean_pred_segments": 0.25,
+        "multi_pred_count": 2,
+        "parse_rate": 0.0,
+        "json_valid_rate": 0.0
+      },
+      "paired_tf1_05_vs_baseline_slice": {
+        "wins": 8,
+        "losses": 3,
+        "ties": 29
+      },
+      "elapsed_seconds": 467.99810456857085,
+      "max_peak_allocated_mib": 10436.44482421875,
+      "max_peak_reserved_mib": 10724.0,
+      "output_dir": "[local-path]/models/multimodal/model_reproduction/vtg/outputs/autoresearch_omtg_ablation_gpu5/fewshot_60_99"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "stage": "needs_inspection",
+  "completed": 20,
+  "expected": 160,
+  "workers": {},
+  "failures": {
+    "0": {
+      "exit_code": 1,
+      "log": "[local-path]/models/multimodal/model_reproduction/vtg/outputs/motionbench_fps_probe_20261117_001/workers/shard-00/worker-001.log"
+    }
+  },
+  "unix": 1794913077.6414847
+}

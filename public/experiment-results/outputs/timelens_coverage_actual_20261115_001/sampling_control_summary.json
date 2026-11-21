@@ -1,0 +1,154 @@
+{
+  "autoresearch_omtg_001": {
+    "both_events_at_least_0_sampled_frames": {
+      "n": 307,
+      "groups": 275,
+      "mean": 0.2247557003257329,
+      "source_group_bootstrap_95ci": [
+        0.16223826852883963,
+        0.28905585415917207
+      ]
+    },
+    "both_events_at_least_1_sampled_frames": {
+      "n": 278,
+      "groups": 252,
+      "mean": 0.2302158273381295,
+      "source_group_bootstrap_95ci": [
+        0.16185599907171036,
+        0.29562429320448236
+      ]
+    },
+    "both_events_at_least_2_sampled_frames": {
+      "n": 224,
+      "groups": 209,
+      "mean": 0.23214285714285715,
+      "source_group_bootstrap_95ci": [
+        0.1592796915948194,
+        0.30455513656746835
+      ]
+    },
+    "both_events_at_least_4_sampled_frames": {
+      "n": 155,
+      "groups": 148,
+      "mean": 0.1870967741935484,
+      "source_group_bootstrap_95ci": [
+        0.0915032679738562,
+        0.2830188679245283
+      ]
+    }
+  },
+  "autoresearch_omtg_001/fewshot_20_59": {
+    "both_events_at_least_0_sampled_frames": {
+      "n": 38,
+      "groups": 37,
+      "mean": 0.21052631578947367,
+      "source_group_bootstrap_95ci": [
+        0.023780487804878084,
+        0.41025641025641024
+      ]
+    },
+    "both_events_at_least_1_sampled_frames": {
+      "n": 37,
+      "groups": 36,
+      "mean": 0.1891891891891892,
+      "source_group_bootstrap_95ci": [
+        0.0,
+        0.3888888888888889
+      ]
+    },
+    "both_events_at_least_2_sampled_frames": {
+      "n": 37,
+      "groups": 36,
+      "mean": 0.1891891891891892,
+      "source_group_bootstrap_95ci": [
+        0.0,
+        0.3888888888888889
+      ]
+    },
+    "both_events_at_least_4_sampled_frames": {
+      "n": 29,
+      "groups": 29,
+      "mean": 0.10344827586206896,
+      "source_group_bootstrap_95ci": [
+        -0.13793103448275862,
+        0.3103448275862069
+      ]
+    }
+  },
+  "autoresearch_omtg_ablation_gpu5/fewshot_60_99": {
+    "both_events_at_least_0_sampled_frames": {
+      "n": 38,
+      "groups": 38,
+      "mean": 0.3684210526315789,
+      "source_group_bootstrap_95ci": [
+        0.18421052631578946,
+        0.5526315789473685
+      ]
+    },
+    "both_events_at_least_1_sampled_frames": {
+      "n": 38,
+      "groups": 38,
+      "mean": 0.3684210526315789,
+      "source_group_bootstrap_95ci": [
+        0.18421052631578946,
+        0.5526315789473685
+      ]
+    },
+    "both_events_at_least_2_sampled_frames": {
+      "n": 35,
+      "groups": 35,
+      "mean": 0.37142857142857144,
+      "source_group_bootstrap_95ci": [
+        0.2,
+        0.5714285714285714
+      ]
+    },
+    "both_events_at_least_4_sampled_frames": {
+      "n": 26,
+      "groups": 26,
+      "mean": 0.3076923076923077,
+      "source_group_bootstrap_95ci": [
+        0.11538461538461539,
+        0.5
+      ]
+    }
+  },
+  "autoresearch_omtg_ablation_gpu5/fps2_fewshot_separate": {
+    "both_events_at_least_0_sampled_frames": {
+      "n": 18,
+      "groups": 18,
+      "mean": 0.2777777777777778,
+      "source_group_bootstrap_95ci": [
+        -0.05555555555555555,
+        0.5555555555555556
+      ]
+    },
+    "both_events_at_least_1_sampled_frames": {
+      "n": 17,
+      "groups": 17,
+      "mean": 0.23529411764705882,
+      "source_group_bootstrap_95ci": [
+        -0.11764705882352941,
+        0.5294117647058824
+      ]
+    },
+    "both_events_at_least_2_sampled_frames": {
+      "n": 17,
+      "groups": 17,
+      "mean": 0.23529411764705882,
+      "source_group_bootstrap_95ci": [
+        -0.11764705882352941,
+        0.5294117647058824
+      ]
+    },
+    "both_events_at_least_4_sampled_frames": {
+      "n": 11,
+      "groups": 11,
+      "mean": 0.0,
+      "source_group_bootstrap_95ci": [
+        -0.36363636363636365,
+        0.36363636363636365
+      ]
+    }
+  }
+}

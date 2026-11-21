@@ -1,0 +1,9 @@
+{
+  "stage": "preparing_visual",
+  "completed": 0,
+  "expected": 44,
+  "unix": 1794839733.1301706,
+  "video": "charades/HUWAZ",
+  "setting": "fps2",
+  "method": "uniform_same_tokens"
+}

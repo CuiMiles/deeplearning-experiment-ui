@@ -1,0 +1,10 @@
+{
+  "stage": "stopped",
+  "stop_reason": "User cancelled full-stage audit; completed OMTG and subset summaries retained",
+  "cached_video_records": 2323,
+  "completed_reports": [
+    "omtg_report.md",
+    "subset_report.md"
+  ],
+  "unix": 1794889493.4656487
+}

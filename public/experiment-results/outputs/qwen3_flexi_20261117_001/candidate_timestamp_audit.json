@@ -1,0 +1,326 @@
+{
+  "videos": 32,
+  "max_error_seconds": 1.888020833007431e-06,
+  "checks": [
+    {
+      "sample_id": "charades/41F2M/0",
+      "native_fps": 29.871001031991746,
+      "count": 64,
+      "max_pts_error_seconds": 9.442182964392032e-07,
+      "actual_pts_first_last": [
+        0.0,
+        31.535602569580078
+      ]
+    },
+    {
+      "sample_id": "charades/EJY5V/0",
+      "native_fps": 16.642,
+      "count": 42,
+      "max_pts_error_seconds": 8.951083287911388e-07,
+      "actual_pts_first_last": [
+        0.0,
+        21.091215133666992
+      ]
+    },
+    {
+      "sample_id": "charades/9YOI8/1",
+      "native_fps": 29.937,
+      "count": 62,
+      "max_pts_error_seconds": 7.417997842651403e-07,
+      "actual_pts_first_last": [
+        0.0,
+        30.864816665649414
+      ]
+    },
+    {
+      "sample_id": "charades/ALJ7B/1",
+      "native_fps": 30.0,
+      "count": 60,
+      "max_pts_error_seconds": 8.900960288826809e-07,
+      "actual_pts_first_last": [
+        0.0,
+        30.399999618530273
+      ]
+    },
+    {
+      "sample_id": "charades/30I35/4",
+      "native_fps": 23.976023976023978,
+      "count": 48,
+      "max_pts_error_seconds": 9.358723964680848e-07,
+      "actual_pts_first_last": [
+        0.0,
+        23.77375030517578
+      ]
+    },
+    {
+      "sample_id": "charades/BL7OF/0",
+      "native_fps": 29.97002997002997,
+      "count": 72,
+      "max_pts_error_seconds": 1.1922200542358041e-06,
+      "actual_pts_first_last": [
+        0.0,
+        36.00263214111328
+      ]
+    },
+    {
+      "sample_id": "charades/7E2AJ/4",
+      "native_fps": 28.843,
+      "count": 32,
+      "max_pts_error_seconds": 4.6838922251879467e-07,
+      "actual_pts_first_last": [
+        0.0,
+        16.26044464111328
+      ]
+    },
+    {
+      "sample_id": "charades/VZE8E/6",
+      "native_fps": 15.029,
+      "count": 52,
+      "max_pts_error_seconds": 8.59569652789105e-07,
+      "actual_pts_first_last": [
+        0.0,
+        25.550601959228516
+      ]
+    },
+    {
+      "sample_id": "charades/AHBE8/0",
+      "native_fps": 29.895,
+      "count": 56,
+      "max_pts_error_seconds": 9.257611175428337e-07,
+      "actual_pts_first_last": [
+        0.0,
+        28.466299057006836
+      ]
+    },
+    {
+      "sample_id": "charades/BPT87/4",
+      "native_fps": 15.884,
+      "count": 66,
+      "max_pts_error_seconds": 9.289378617438615e-07,
+      "actual_pts_first_last": [
+        0.0,
+        32.67438888549805
+      ]
+    },
+    {
+      "sample_id": "charades/73ZXZ/2",
+      "native_fps": 29.97002997002997,
+      "count": 34,
+      "max_pts_error_seconds": 4.6030680422859405e-07,
+      "actual_pts_first_last": [
+        0.0,
+        16.983633041381836
+      ]
+    },
+    {
+      "sample_id": "charades/7O6FK/1",
+      "native_fps": 25.0,
+      "count": 38,
+      "max_pts_error_seconds": 9.155273446026513e-07,
+      "actual_pts_first_last": [
+        0.0,
+        19.0
+      ]
+    },
+    {
+      "sample_id": "charades/OU3XH/2",
+      "native_fps": 6.134,
+      "count": 68,
+      "max_pts_error_seconds": 1.659212962579204e-06,
+      "actual_pts_first_last": [
+        0.0,
+        34.235408782958984
+      ]
+    },
+    {
+      "sample_id": "charades/9J0RB/2",
+      "native_fps": 15.024,
+      "count": 32,
+      "max_pts_error_seconds": 4.519542819991784e-07,
+      "actual_pts_first_last": [
+        0.0,
+        15.641639709472656
+      ]
+    },
+    {
+      "sample_id": "charades/4KYZH/0",
+      "native_fps": 29.97002997002997,
+      "count": 74,
+      "max_pts_error_seconds": 1.888020833007431e-06,
+      "actual_pts_first_last": [
+        0.0,
+        36.603233337402344
+      ]
+    },
+    {
+      "sample_id": "charades/DR1ZU/0",
+      "native_fps": 24.0,
+      "count": 28,
+      "max_pts_error_seconds": 3.178914393942023e-07,
+      "actual_pts_first_last": [
+        0.0,
+        13.541666984558105
+      ]
+    },
+    {
+      "sample_id": "charades/FNBYE/4",
+      "native_fps": 6.114130434782608,
+      "count": 76,
+      "max_pts_error_seconds": 1.8649631030598357e-06,
+      "actual_pts_first_last": [
+        0.0,
+        38.27199935913086
+      ]
+    },
+    {
+      "sample_id": "charades/CUQYX/5",
+      "native_fps": 29.97002997002997,
+      "count": 62,
+      "max_pts_error_seconds": 9.480794282978877e-07,
+      "actual_pts_first_last": [
+        0.0,
+        30.563867568969727
+      ]
+    },
+    {
+      "sample_id": "charades/1B9DK/2",
+      "native_fps": 29.25,
+      "count": 64,
+      "max_pts_error_seconds": 9.455232543587044e-07,
+      "actual_pts_first_last": [
+        0.0,
+        32.341880798339844
+      ]
+    },
+    {
+      "sample_id": "charades/43CCM/1",
+      "native_fps": 16.941,
+      "count": 60,
+      "max_pts_error_seconds": 9.459620571306004e-07,
+      "actual_pts_first_last": [
+        0.0,
+        30.399621963500977
+      ]
+    },
+    {
+      "sample_id": "charades/75M1Z/2",
+      "native_fps": 30.0,
+      "count": 62,
+      "max_pts_error_seconds": 7.629394538355427e-07,
+      "actual_pts_first_last": [
+        0.0,
+        30.799999237060547
+      ]
+    },
+    {
+      "sample_id": "charades/BYP85/2",
+      "native_fps": 15.0,
+      "count": 68,
+      "max_pts_error_seconds": 1.7801920577653618e-06,
+      "actual_pts_first_last": [
+        0.0,
+        33.86666488647461
+      ]
+    },
+    {
+      "sample_id": "charades/KQDX6/2",
+      "native_fps": 16.642,
+      "count": 50,
+      "max_pts_error_seconds": 9.01984961387825e-07,
+      "actual_pts_first_last": [
+        0.0,
+        24.456195831298828
+      ]
+    },
+    {
+      "sample_id": "charades/1QP1S/3",
+      "native_fps": 29.666666666666668,
+      "count": 68,
+      "max_pts_error_seconds": 1.7573324484487785e-06,
+      "actual_pts_first_last": [
+        0.0,
+        33.64044952392578
+      ]
+    },
+    {
+      "sample_id": "charades/ATIAW/1",
+      "native_fps": 6.127,
+      "count": 64,
+      "max_pts_error_seconds": 9.19275422006649e-07,
+      "actual_pts_first_last": [
+        0.0,
+        31.82634162902832
+      ]
+    },
+    {
+      "sample_id": "charades/WK9HE/0",
+      "native_fps": 7.453,
+      "count": 68,
+      "max_pts_error_seconds": 1.8077969556884455e-06,
+      "actual_pts_first_last": [
+        0.0,
+        33.94606018066406
+      ]
+    },
+    {
+      "sample_id": "charades/W3SC3/1",
+      "native_fps": 25.0,
+      "count": 44,
+      "max_pts_error_seconds": 8.392333974427402e-07,
+      "actual_pts_first_last": [
+        0.0,
+        21.8799991607666
+      ]
+    },
+    {
+      "sample_id": "charades/BVDIM/1",
+      "native_fps": 30.0,
+      "count": 62,
+      "max_pts_error_seconds": 8.900960288826809e-07,
+      "actual_pts_first_last": [
+        0.0,
+        30.633333206176758
+      ]
+    },
+    {
+      "sample_id": "charades/1440M/0",
+      "native_fps": 6.129,
+      "count": 56,
+      "max_pts_error_seconds": 9.189754486271795e-07,
+      "actual_pts_first_last": [
+        0.0,
+        28.226465225219727
+      ]
+    },
+    {
+      "sample_id": "charades/6C0BK/0",
+      "native_fps": 29.867,
+      "count": 60,
+      "max_pts_error_seconds": 9.080453402532385e-07,
+      "actual_pts_first_last": [
+        0.0,
+        30.267518997192383
+      ]
+    },
+    {
+      "sample_id": "charades/E8JEJ/1",
+      "native_fps": 30.0,
+      "count": 44,
+      "max_pts_error_seconds": 8.900960288826809e-07,
+      "actual_pts_first_last": [
+        0.0,
+        22.100000381469727
+      ]
+    },
+    {
+      "sample_id": "charades/5VUT9/4",
+      "native_fps": 30.0,
+      "count": 52,
+      "max_pts_error_seconds": 8.900960288826809e-07,
+      "actual_pts_first_last": [
+        0.0,
+        26.0
+      ]
+    }
+  ]
+}

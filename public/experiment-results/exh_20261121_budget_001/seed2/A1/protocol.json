@@ -1,0 +1,32 @@
+{
+  "arm": "A1",
+  "reward": [
+    "twass1",
+    "softEF1"
+  ],
+  "seed": 2,
+  "steps": 200,
+  "lr": 1e-05,
+  "rank": 16,
+  "G": 8,
+  "B": 8,
+  "units": 32,
+  "max_pixels": 50176,
+  "max_new": 128,
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "beta": 0.0,
+  "scale_rewards": false,
+  "loss": "token-normalised over all B*G completions (bnpo-like)",
+  "lora": "r=16 alpha=32 all language-model linear (q,k,v,o,gate,up,down); vision frozen",
+  "optimizer": "AdamW betas(.9,.99) wd 0, 5-step linear warmup then constant, clip 1.0",
+  "base": "[local-path]/models/multimodal/model_reproduction/vtg/models/TimeLens2-4B-SFT",
+  "base_manifest_sha256": "e0434d7501ab2fadd98f7bce173f24e9d8ca5007ac39fa3964b6d1f424b0a797",
+  "data_sha256": "7610f38b120bdaf73760e78fb16ab0c908ecee15e425f8af7cde3fc9e006dd58",
+  "code_sha256": {
+    "scripts/exh/e3_train.py": "869478705ebfc4afbdeec202881381dc595de25afb336bd31f154abc4c23d6d4",
+    "scripts/exh/common.py": "3bf5cc8dfadd3b944eb21403a592c02c592ebfa183506529fa672add1154fe37"
+  },
+  "prompt": "TimeLens2 VUE-TR JSON prompt",
+  "sampling_seed": "sha256(seed/step/slot/chunk), shared across arms"
+}

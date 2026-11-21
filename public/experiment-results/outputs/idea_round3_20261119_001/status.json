@@ -1,0 +1,9 @@
+{
+  "stage": "completed",
+  "completed": 800,
+  "expected": 800,
+  "workers": {},
+  "failures": {},
+  "deadline_unix": 1795065573.2263672,
+  "unix": 1795060542.914211
+}

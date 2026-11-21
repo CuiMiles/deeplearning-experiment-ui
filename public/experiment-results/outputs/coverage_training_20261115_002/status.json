@@ -1,0 +1,30 @@
+{
+  "stage": "all_training_completed",
+  "workers": {},
+  "training_finished_unix": 1794688241.5583029,
+  "updated_unix": 1794726400.5589619,
+  "arms": {
+    "baseline": {
+      "step": 200,
+      "completed": true,
+      "finite_adapter": true,
+      "optimizer_saved": true,
+      "rng_saved": true,
+      "runtime_minutes": 76.55928166666666,
+      "saved_rollout_steps": 200
+    },
+    "event_f1": {
+      "step": 200,
+      "completed": true,
+      "finite_adapter": true,
+      "optimizer_saved": true,
+      "rng_saved": true,
+      "runtime_minutes": 80.618765,
+      "saved_rollout_steps": 200
+    },
+    "between_adapter_l2": 0.03052162041075722
+  },
+  "evaluation": "completed",
+  "evaluation_status": "[local-path]/vtg-fourworks-20261110/outputs/coverage_eval_20261115_001/status.json",
+  "evaluation_scored": "[local-path]/vtg-fourworks-20261110/outputs/coverage_eval_20261115_001/scored.json"
+}

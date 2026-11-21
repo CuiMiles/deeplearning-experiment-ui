@@ -1,0 +1,10 @@
+{
+  "stage": "completed",
+  "completed": 120,
+  "expected": 120,
+  "deadline_unix": 1794962062.692126,
+  "workers": {},
+  "failures": {},
+  "unix": 1794944995.1281035,
+  "oracle_completed": 36
+}

@@ -1,0 +1,144 @@
+{
+  "$schema": "../../schema/experiment.schema.json",
+  "id": "vtg-real-16-short-event-sampling",
+  "title": "短事件诊断｜八次回答有几次找到了",
+  "task": "vtg",
+  "status": "completed",
+  "date": "2026-11-20",
+  "series": "多次出现的动作如何找全",
+  "parent": "vtg-real-11-event-omtg",
+  "tags": [
+    "重复动作",
+    "漏报"
+  ],
+  "tldr": "12,219 条多事件查询里，不足 2 秒的动作有 67.9% 在 8 次回答中都没匹配上。",
+  "brief": {
+    "question": "短动作是在一份回答里漏掉，还是多试几次也找不到？",
+    "change": "从保存的 SFT 采样中逐动作核对 8 份回答，按动作时长统计。",
+    "conclusion": "12,219 条多事件查询里，不足 2 秒的动作有 67.9% 在 8 次回答中都没匹配上。",
+    "verdict": "mixed",
+    "pipeline": [
+      {
+        "label": "读取已保存回答",
+        "changed": false
+      },
+      {
+        "label": "逐段核对 8 份回答",
+        "changed": true
+      },
+      {
+        "label": "按动作时长汇总",
+        "changed": false
+      }
+    ]
+  },
+  "setup": {
+    "model": "TimeLens2-4B",
+    "evalData": [
+      "timelens2-93k-sft-audit"
+    ],
+    "notes": "12,219 条多事件查询含 27,889 个标注动作。此处比较同一批已保存回答的覆盖率。"
+  },
+  "reproduce": {
+    "commands": [
+      {
+        "label": "在 VTG 目录查看完整报告",
+        "cmd": "cat exh_20261120/e1_mechanism/report.md"
+      }
+    ],
+    "artifacts": [
+      {
+        "label": "完整诊断报告",
+        "path": "evidence/vtg-real-16-short-event-sampling/report.md"
+      },
+      {
+        "label": "按时长和奖励的汇总",
+        "path": "evidence/vtg-real-16-short-event-sampling/summary.json"
+      },
+      {
+        "label": "逐事件命中记录",
+        "path": "evidence/vtg-real-16-short-event-sampling/events.jsonl"
+      }
+    ]
+  },
+  "results": {
+    "methods": [
+      {
+        "id": "first",
+        "name": "前 1 次回答",
+        "role": "baseline"
+      },
+      {
+        "id": "all",
+        "name": "全部 8 次回答",
+        "role": "ours"
+      }
+    ],
+    "main": [
+      {
+        "method": "first",
+        "dataset": "timelens2-93k-sft-audit",
+        "metrics": {
+          "Event-Coverage@0.5": 29.442611782423178
+        }
+      },
+      {
+        "method": "all",
+        "dataset": "timelens2-93k-sft-audit",
+        "metrics": {
+          "Event-Coverage@0.5": 62.8419807092402
+        }
+      }
+    ],
+    "headline": [
+      {
+        "dataset": "timelens2-93k-sft-audit",
+        "metric": "Event-Coverage@0.5"
+      }
+    ]
+  },
+  "charts": [
+    {
+      "id": "detail",
+      "title": "不同时长的事件覆盖率",
+      "type": "bar",
+      "categories": [
+        "<2s（546 个）",
+        "2-6s（6050 个）",
+        "6-20s（9939 个）",
+        ">=20s（11354 个）"
+      ],
+      "yLabel": "百分比",
+      "takeaway": "不足 2 秒的动作最容易在全部八次里都漏掉。",
+      "series": [
+        {
+          "name": "1 次",
+          "data": [
+            11.9734,
+            26.2727,
+            30.3124,
+            31.2104
+          ]
+        },
+        {
+          "name": "4 次",
+          "data": [
+            25.662,
+            46.5972,
+            53.9528,
+            56.3584
+          ]
+        },
+        {
+          "name": "8 次",
+          "data": [
+            32.0513,
+            55.0579,
+            63.9099,
+            67.5357
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "stage": "completed",
+  "completed": 570,
+  "expected": 570,
+  "deadline_unix": 1794894040.0980654,
+  "workers": {},
+  "worker_states": {
+    "0": {
+      "stage": "completed",
+      "completed": 42,
+      "expected": 42,
+      "unix": 1794890050.469738
+    },
+    "1": {
+      "stage": "completed",
+      "completed": 114,
+      "expected": 114,
+      "unix": 1794889936.3435156
+    },
+    "2": {
+      "stage": "completed",
+      "completed": 204,
+      "expected": 204,
+      "unix": 1794890185.4580462
+    },
+    "3": {
+      "stage": "completed",
+      "completed": 210,
+      "expected": 210,
+      "unix": 1794889850.4925563
+    }
+  },
+  "failures": {},
+  "unix": 1794890190.1678898
+}

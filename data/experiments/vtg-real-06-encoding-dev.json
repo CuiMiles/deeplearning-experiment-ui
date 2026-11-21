@@ -1,0 +1,262 @@
+{
+  "id": "vtg-real-06-encoding-dev",
+  "title": "不换画面，只改合帧的放大系数",
+  "date": "2026-11-18",
+  "status": "completed",
+  "task": "vtg",
+  "series": "采样、编码与定位",
+  "tags": [],
+  "tldr": "48 条 Charades 的 mIoU 从 37.52 到 46.74，+9.21 点。修正后的表现与 Sparse 尚分不出差距。",
+  "brief": {
+    "question": "此前的损失可能来自选帧，也可能来自合并时放大了卷积输出。哪个因素值得优先查？",
+    "change": "同一视频用相同画面、分组、时间戳和 token，仅取消自适应长组卷积核的额外缩放。",
+    "conclusion": "48 条 Charades 的 mIoU 从 37.52 到 46.74，+9.21 点。修正后的表现与 Sparse 尚分不出差距。",
+    "verdict": "positive",
+    "pipeline": [
+      {
+        "label": "固定候选帧",
+        "changed": false
+      },
+      {
+        "label": "固定分组",
+        "changed": false
+      },
+      {
+        "label": "消融一个系数",
+        "changed": true
+      },
+      {
+        "label": "配对计算",
+        "changed": false
+      }
+    ]
+  },
+  "setup": {
+    "model": "Qwen3-VL-4B",
+    "evalData": [
+      "charades-timelens"
+    ],
+    "notes": "48 个另选的 Charades 源视频，短事件和 2–6 秒各 24 个。"
+  },
+  "results": {
+    "methods": [
+      {
+        "id": "flexi",
+        "name": "原缩放合帧",
+        "role": "baseline"
+      },
+      {
+        "id": "flexi_no_norm",
+        "name": "取消额外缩放",
+        "role": "ours"
+      },
+      {
+        "id": "sparse",
+        "name": "同预算 Sparse",
+        "role": "ablation"
+      },
+      {
+        "id": "native",
+        "name": "高预算原生",
+        "role": "reference"
+      },
+      {
+        "id": "semvid_matched",
+        "name": "SemVID 等语言视觉 token",
+        "role": "reference"
+      }
+    ],
+    "main": [
+      {
+        "method": "flexi",
+        "dataset": "charades-timelens",
+        "metrics": {
+          "mIoU": 37.5248,
+          "R1@0.5": 39.58333,
+          "R1@0.7": 20.83333
+        }
+      },
+      {
+        "method": "flexi_no_norm",
+        "dataset": "charades-timelens",
+        "metrics": {
+          "mIoU": 46.73573,
+          "R1@0.5": 52.08333,
+          "R1@0.7": 27.08333
+        }
+      },
+      {
+        "method": "sparse",
+        "dataset": "charades-timelens",
+        "metrics": {
+          "mIoU": 45.32783,
+          "R1@0.5": 52.08333,
+          "R1@0.7": 22.91667
+        }
+      },
+      {
+        "method": "native",
+        "dataset": "charades-timelens",
+        "metrics": {
+          "mIoU": 47.75794,
+          "R1@0.5": 58.33333,
+          "R1@0.7": 25.0
+        }
+      },
+      {
+        "method": "semvid_matched",
+        "dataset": "charades-timelens",
+        "metrics": {
+          "mIoU": 48.26475,
+          "R1@0.5": 64.58333,
+          "R1@0.7": 22.91667
+        }
+      }
+    ],
+    "headline": [
+      {
+        "dataset": "charades-timelens",
+        "metric": "mIoU"
+      },
+      {
+        "dataset": "charades-timelens",
+        "metric": "R1@0.5"
+      }
+    ]
+  },
+  "charts": [
+    {
+      "id": "token",
+      "title": "逐视频匹配的语言模型视觉 token",
+      "type": "bar",
+      "categories": [
+        "原缩放合帧",
+        "取消额外缩放",
+        "同预算 Sparse",
+        "高预算原生",
+        "SemVID 等语言视觉 token"
+      ],
+      "yLabel": "视觉 token",
+      "series": [
+        {
+          "name": "平均视觉 token",
+          "data": [
+            8123.0417,
+            8123.0417,
+            8123.0417,
+            11316.7083,
+            8123.0417
+          ]
+        }
+      ],
+      "takeaway": "SemVID 先编码全部候选帧，再在语言模型前裁剪；这里只匹配最终 token。"
+    }
+  ],
+  "insights": {
+    "oneLiner": "在这个 Qwen3 免训练适配里，只改一个编码系数就能显著改变定位。",
+    "confidence": 0.55,
+    "phenomena": [
+      {
+        "id": "p1",
+        "title": "固定输入后分数仍变",
+        "detail": "逐样本核验像素、分组、时间戳和输入 ID 完全相同。",
+        "evidence": "results",
+        "symptoms": [
+          "representation"
+        ],
+        "surprise": 5
+      },
+      {
+        "id": "p2",
+        "title": "修正追平抽帧",
+        "detail": "取消缩放相对 Sparse +1.41 点，95% 区间 −3.87 到 +7.01。",
+        "evidence": "results",
+        "symptoms": [
+          "simple-wins"
+        ],
+        "surprise": 3
+      }
+    ],
+    "echoes": [
+      {
+        "id": "echo",
+        "phenomenon": "p1",
+        "lens": "replication-crisis",
+        "correspondences": [
+          [
+            "初步现象",
+            "开发集上的 +9.21"
+          ],
+          [
+            "独立复验",
+            "另选源视频冻结协议"
+          ]
+        ],
+        "borrowedMove": "在另一批 Charades 和另一个数据集上做单变量复验。",
+        "limit": "一批样本的有效修正不保证所有模型和任务受益。"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "hyp",
+        "title": "用同预算对照检验",
+        "statement": "新 Charades 的 Qwen3 组依然受益。",
+        "test": "冻结候选池并同时在 Qwen2.5 和 ActivityNet 上检查。",
+        "falsifiedIf": "独立主比较区间包含零。",
+        "impact": 4,
+        "effort": 3,
+        "status": "confirmed",
+        "from": [
+          "echo"
+        ]
+      }
+    ],
+    "paperAngles": [
+      {
+        "id": "direction",
+        "title": "可能的研究贡献",
+        "type": "analysis",
+        "claim": "区分免训练时间编码适配的局部风险与跨数据集的规律。",
+        "novelty": "区分免训练时间编码适配的局部风险与跨数据集的规律。",
+        "risk": "+9.21 仅是这一版 Qwen3 适配，用新版数据验证泛化。",
+        "readiness": 0.28,
+        "from": [
+          "hyp"
+        ]
+      }
+    ],
+    "provocations": [
+      {
+        "prompt": "reviewer2",
+        "answer": "SemVID 的视觉编码成本不同，所以图表只说最终语言模型 token 匹配。"
+      },
+      {
+        "prompt": "mechanism",
+        "answer": "一批样本的有效修正不保证所有模型和任务受益。"
+      }
+    ]
+  },
+  "reproduce": {
+    "commands": [
+      {
+        "label": "在 VTG 工作目录查看原报告",
+        "cmd": "cat outputs/idea_round2_20261118_001/report.md"
+      }
+    ],
+    "artifacts": [
+      {
+        "label": "第二轮配对统计",
+        "path": "evidence/vtg-real-06-encoding-dev/idea_round2_20261118_001-report.md"
+      },
+      {
+        "label": "逐视频分数和回答",
+        "path": "evidence/vtg-real-06-encoding-dev/idea_round2_20261118_001-scored.json"
+      },
+      {
+        "label": "冻结协议",
+        "path": "evidence/vtg-real-06-encoding-dev/idea_round2_20261118_001-protocol.json"
+      }
+    ]
+  },
+  "parent": "vtg-real-04-sparse"
+}

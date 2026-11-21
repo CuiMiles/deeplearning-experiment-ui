@@ -1,0 +1,12 @@
+{"event": "worker_started", "unix": 1794889399.7580018, "shard": 0, "pid": 5237, "gpu": 0}
+{"event": "worker_started", "unix": 1794889399.7613678, "shard": 1, "pid": 5240, "gpu": 3}
+{"event": "worker_started", "unix": 1794889399.7647398, "shard": 2, "pid": 5241, "gpu": 4}
+{"event": "worker_started", "unix": 1794889399.7680788, "shard": 3, "pid": 5243, "gpu": 5}
+{"event": "owned_worker_stop_requested", "unix": 1794889851.1332695, "pid": 5243, "reason": "completed"}
+{"event": "worker_exit", "unix": 1794889853.150874, "shard": 3, "pid": 5243, "exit_code": -15, "reason": "completed"}
+{"event": "owned_worker_stop_requested", "unix": 1794889937.6587675, "pid": 5240, "reason": "completed"}
+{"event": "worker_exit", "unix": 1794889937.661251, "shard": 1, "pid": 5240, "exit_code": 0, "reason": "completed"}
+{"event": "owned_worker_stop_requested", "unix": 1794890052.0555038, "pid": 5237, "reason": "completed"}
+{"event": "worker_exit", "unix": 1794890054.0606644, "shard": 0, "pid": 5237, "exit_code": -15, "reason": "completed"}
+{"event": "owned_worker_stop_requested", "unix": 1794890186.2628381, "pid": 5241, "reason": "completed"}
+{"event": "worker_exit", "unix": 1794890188.2662234, "shard": 2, "pid": 5241, "exit_code": 0, "reason": "completed"}

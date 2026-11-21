@@ -1,0 +1,18 @@
+{
+  "stage": "completed",
+  "completed": {
+    "boundary": 96,
+    "compression": 192,
+    "semvid": 48
+  },
+  "expected": {
+    "boundary": 96,
+    "compression": 192,
+    "semvid": 48
+  },
+  "workers": {},
+  "failures": {},
+  "waiting": [],
+  "deadline_unix": 1795029177.0385108,
+  "unix": 1794998468.1028862
+}

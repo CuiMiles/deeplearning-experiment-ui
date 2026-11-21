@@ -1,0 +1,18 @@
+{
+  "stage": "training",
+  "pid": 24000,
+  "step": 200,
+  "max_steps": 200,
+  "logs": {
+    "train_runtime": 4837.1259,
+    "train_samples_per_second": 0.165,
+    "train_steps_per_second": 0.041,
+    "total_flos": 0.0,
+    "train_loss": 1.2782493996610187e-09,
+    "learning_rate": 1e-06,
+    "epoch": 0.8333333333333334
+  },
+  "peak_allocated_mib": 9646.8876953125,
+  "peak_reserved_mib": 9782.0,
+  "updated_unix": 1794688239.728404
+}

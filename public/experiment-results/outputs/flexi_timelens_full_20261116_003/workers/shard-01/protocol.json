@@ -1,0 +1,76 @@
+{
+  "model": "[local-path]/models/cvpr2027-autoresearch/Qwen--Qwen2.5-VL-3B-Instruct",
+  "weight_evidence_sha256": "74398236422ebf088f30f587560465bc45e5cb42d696acbb5eb6072331af060c",
+  "inputs_sha256": "73d9873c8903909043aecacae6dc6f5758b27456b7d311df41cc8ac157f39060",
+  "labels_sha256": "62088fca8bc0962cbcaef67f5565d57afe639b890c504733946a8e4a7d886d76",
+  "settings": {
+    "fps2": {
+      "fps": 2.0,
+      "min_tokens": 64,
+      "total_tokens": 14336,
+      "max_frames": 768,
+      "methods": [
+        "native_time",
+        "flexi_official",
+        "flexi_time",
+        "flexi_budget_time",
+        "uniform_same_tokens",
+        "sparse_same_tokens"
+      ]
+    },
+    "fps6": {
+      "fps": 6.0,
+      "min_tokens": 16,
+      "total_tokens": 14336,
+      "max_frames": 1792,
+      "methods": [
+        "native_time",
+        "flexi_time",
+        "flexi_budget_time",
+        "uniform_same_tokens",
+        "sparse_same_tokens"
+      ]
+    }
+  },
+  "methods": [
+    "native_time",
+    "flexi_official",
+    "flexi_time",
+    "flexi_budget_time",
+    "uniform_same_tokens",
+    "sparse_same_tokens"
+  ],
+  "queries": 9404,
+  "expected_predictions": 103444,
+  "expected_videos": 4279,
+  "max_new_tokens": 512,
+  "do_sample": false,
+  "seed": 20261116,
+  "dtype": "bfloat16",
+  "attention": "sdpa",
+  "quantization": false,
+  "ats_threshold": 0.2,
+  "ats_max_window": 6,
+  "prompt": "Please find the visual event described by the sentence '{}', determining its starting and ending times. The format should be: 'The event happens in <start time> - <end time> seconds'.",
+  "ats_input": "Original-resolution sampled frames; streamed normalization with the official split/merge rules.",
+  "spatial_budget": "flexi_official and flexi_budget_time use the original ATS-driven spatial reallocation; flexi_time isolates compression at the native resolution.",
+  "main": "Full official refined annotations on all three datasets; released training-free FlexiVideo mechanism, not the 140k-trained model.",
+  "timestamps": "Physical sampled timestamps for every arm except explicitly unmodified flexi_official.",
+  "dense": "fps6 uses a 16-token spatial floor to maintain the same total visual budget; fps2 uses the official 64-token floor.",
+  "timing": "Paired method order randomized per query; raw decode, grouping, visual processing, prefill, generation and peak VRAM recorded separately; shared-host timing is noisy.",
+  "preprocessing": "CPU raw-frame ATS with reusable float32 buffers; GPU torchvision bicubic antialias resize; released image processor applied groupwise to bound temporary allocations. Native implementation checks consume the exact cached candidate pixels.",
+  "sources": {
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/flexi_timelens_common.py": "3ac997d1491075681fde06fb8603ba55aed3a8ab45c98d4132cd9c3c613dc48e",
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/flexi_bounded_pixels.py": "f2176671d58c16a10e3029e2821c61c324b852a3752702d9921a6adc89261ba2",
+    "[local-path]/models/multimodal/model_reproduction/FlexiVideo/validation_20261018/scripts/validation_core.py": "0fe995f72ba4bbf0c515f0cc553125a01c7b9154d93ff37cba4bb8c956d53976",
+    "[local-path]/models/multimodal/model_reproduction/FlexiVideo/full_benchmark_20261018/scripts/memory_adapters.py": "f3ea92b7d2c706bd3faa35f14834d9d16ded29a134314f161484e5bc8cc0a850",
+    "[local-path]/models/multimodal/model_reproduction/FlexiVideo/source/qwen-vl-utils-flexi/src/qwen_vl_utils/vision_process.py": "cf195f08a6930ac8842c6913724382ff0313c48111e2fd3a00e9b28f49090d21",
+    "[local-path]/models/multimodal/model_reproduction/FlexiVideo/source/transformers-flexi/src/transformers/models/qwen2_5_vl/modeling_qwen2_5_vl.py": "6af93410a897cfb7cb16aa11abc69b89eb4a8e804e9b6abd62f295d36710dbae"
+  },
+  "worker_source_sha256": "3cd694cbf616e3bde7a606b51af4fed86a65b18b7a389fb6d5143cd563b9a36f",
+  "shard": 1,
+  "shards": 6,
+  "check_videos": 0,
+  "caps": "9216",
+  "reference": false
+}

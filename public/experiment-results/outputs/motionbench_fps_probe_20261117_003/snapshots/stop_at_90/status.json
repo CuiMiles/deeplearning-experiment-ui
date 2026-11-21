@@ -1,0 +1,8 @@
+{
+  "stage": "stopped",
+  "completed": 90,
+  "expected": 128,
+  "workers": {},
+  "failures": {},
+  "unix": 1794915740.3617697
+}

@@ -1,0 +1,14 @@
+{
+  "previous_experiment_artifacts_removed": [
+    "outputs",
+    "review.tar",
+    "models",
+    "sources",
+    "scripts",
+    "review",
+    "config",
+    "logs"
+  ],
+  "independent_video_count": 64,
+  "remaining_legacy_directory_is_shared_video_data_only": true
+}

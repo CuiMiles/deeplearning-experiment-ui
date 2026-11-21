@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "errors": [],
+  "rows": 570,
+  "token_comparisons": 380,
+  "identical_center_pixel_checks": 95,
+  "reference_reruns": 4,
+  "expected_reference_reruns": 4,
+  "reused_prediction_checks": 311,
+  "metric_sources_sha256": {
+    "[local-path]/models/multimodal/model_reproduction/vtg/repos/TimeLens/timelens/utils.py": "111592a41a2d90915b6adf3a0799764deb0af7523d28a740460b82eb490063d8",
+    "[local-path]/models/multimodal/model_reproduction/vtg/sources/vlmeval_omtgbench.py": "ca79b393df3b96f8b07ec4f5a0a1243cffac0ede93a50ac71595298e692e7468"
+  },
+  "frozen_inputs_and_labels_verified": true,
+  "unix": 1794890290.5445135
+}

@@ -1,0 +1,2121 @@
+{
+  "created_unix": 1794867198.1220498,
+  "elapsed_seconds": 12037.574047803879,
+  "verified_against_004_inputs": 49,
+  "ready_videos_by_dataset": {
+    "charades": 207,
+    "activitynet": 154,
+    "qvhighlights": 492,
+    "omtg": 287
+  },
+  "video_compression": {
+    "activitynet/fps2": {
+      "videos": 154,
+      "mean_frames": 285.4805194805195,
+      "mean_native_groups": 142.74025974025975,
+      "mean_adaptive_groups": 115.99350649350649,
+      "mean_compression_ratio": 0.8148693037219193,
+      "mean_frac_gt2_groups": 0.23825042902574392,
+      "mean_frac_len6_groups": 0.08588996639227912,
+      "mean_group_span_s": 0.8024676655798912
+    },
+    "activitynet/fps6": {
+      "videos": 154,
+      "mean_frames": 856.6493506493506,
+      "mean_native_groups": 428.3246753246753,
+      "mean_adaptive_groups": 306.97402597402595,
+      "mean_compression_ratio": 0.7201059477054724,
+      "mean_frac_gt2_groups": 0.36702199161255017,
+      "mean_frac_len6_groups": 0.16529745296020765,
+      "mean_group_span_s": 0.33229794465004964
+    },
+    "charades/fps2": {
+      "videos": 207,
+      "mean_frames": 61.111111111111114,
+      "mean_native_groups": 30.555555555555557,
+      "mean_adaptive_groups": 20.23671497584541,
+      "mean_compression_ratio": 0.6615230746202735,
+      "mean_frac_gt2_groups": 0.4831714286431836,
+      "mean_frac_len6_groups": 0.2462120596517049,
+      "mean_group_span_s": 1.2056068325363936
+    },
+    "charades/fps6": {
+      "videos": 207,
+      "mean_frames": 183.16908212560386,
+      "mean_native_groups": 91.58454106280193,
+      "mean_adaptive_groups": 51.01449275362319,
+      "mean_compression_ratio": 0.5577881713758124,
+      "mean_frac_gt2_groups": 0.6320787986388611,
+      "mean_frac_len6_groups": 0.3848683727027292,
+      "mean_group_span_s": 0.49436925976812557
+    },
+    "omtg/fps2": {
+      "videos": 287,
+      "mean_frames": 350.8292682926829,
+      "mean_native_groups": 175.41463414634146,
+      "mean_adaptive_groups": 135.41114982578398,
+      "mean_compression_ratio": 0.7665587531573419,
+      "mean_frac_gt2_groups": 0.30121869753812053,
+      "mean_frac_len6_groups": 0.11719882272921774,
+      "mean_group_span_s": 0.9828672343698283
+    },
+    "omtg/fps6": {
+      "videos": 287,
+      "mean_frames": 966.8641114982578,
+      "mean_native_groups": 483.4320557491289,
+      "mean_adaptive_groups": 330.7839721254355,
+      "mean_compression_ratio": 0.674785321089863,
+      "mean_frac_gt2_groups": 0.4215940821224661,
+      "mean_frac_len6_groups": 0.21315908855156632,
+      "mean_group_span_s": 0.42535602456680677
+    },
+    "qvhighlights/fps2": {
+      "videos": 492,
+      "mean_frames": 299.2845528455285,
+      "mean_native_groups": 149.64227642276424,
+      "mean_adaptive_groups": 127.4369918699187,
+      "mean_compression_ratio": 0.8513784973516499,
+      "mean_frac_gt2_groups": 0.1934084120099301,
+      "mean_frac_len6_groups": 0.0603061584640237,
+      "mean_group_span_s": 0.732403515792955
+    },
+    "qvhighlights/fps6": {
+      "videos": 492,
+      "mean_frames": 897.8617886178862,
+      "mean_native_groups": 448.9308943089431,
+      "mean_adaptive_groups": 344.4979674796748,
+      "mean_compression_ratio": 0.7671494206464037,
+      "mean_frac_gt2_groups": 0.30219765780268326,
+      "mean_frac_len6_groups": 0.12545561880231104,
+      "mean_group_span_s": 0.2983318918696469
+    }
+  },
+  "oracle_feasibility": {
+    "activitynet/fps2": {
+      "queries": 500,
+      "exact_k_rate": 1.0,
+      "all_len_valid_rate": 1.0,
+      "zero_dropped_wall_rate": 0.944,
+      "mean_realizable_cut_ratio": 0.899
+    },
+    "activitynet/fps6": {
+      "queries": 500,
+      "exact_k_rate": 1.0,
+      "all_len_valid_rate": 1.0,
+      "zero_dropped_wall_rate": 0.992,
+      "mean_realizable_cut_ratio": 0.902
+    },
+    "charades/fps2": {
+      "queries": 502,
+      "exact_k_rate": 1.0,
+      "all_len_valid_rate": 1.0,
+      "zero_dropped_wall_rate": 0.9362549800796812,
+      "mean_realizable_cut_ratio": 0.8844621513944223
+    },
+    "charades/fps6": {
+      "queries": 502,
+      "exact_k_rate": 1.0,
+      "all_len_valid_rate": 1.0,
+      "zero_dropped_wall_rate": 0.9940239043824701,
+      "mean_realizable_cut_ratio": 0.899402390438247
+    },
+    "omtg/fps2": {
+      "queries": 320,
+      "exact_k_rate": 1.0,
+      "all_len_valid_rate": 1.0,
+      "zero_dropped_wall_rate": 0.940625,
+      "mean_realizable_cut_ratio": 0.9553935620300752
+    },
+    "omtg/fps6": {
+      "queries": 320,
+      "exact_k_rate": 1.0,
+      "all_len_valid_rate": 1.0,
+      "zero_dropped_wall_rate": 0.990625,
+      "mean_realizable_cut_ratio": 0.9624479166666666
+    },
+    "qvhighlights/fps2": {
+      "queries": 503,
+      "exact_k_rate": 0.9940357852882704,
+      "all_len_valid_rate": 1.0,
+      "zero_dropped_wall_rate": 0.9502982107355865,
+      "mean_realizable_cut_ratio": 0.8240556660039762
+    },
+    "qvhighlights/fps6": {
+      "queries": 503,
+      "exact_k_rate": 1.0,
+      "all_len_valid_rate": 1.0,
+      "zero_dropped_wall_rate": 0.9920477137176938,
+      "mean_realizable_cut_ratio": 0.8240556660039762
+    }
+  },
+  "metrics": {
+    "activitynet/fps2/adaptive": {
+      "queries": 500,
+      "boundaries": {
+        "n": 1000,
+        "crossing_gt2_rate": 0.207,
+        "crossing_any_rate": 0.493,
+        "strict_interior_gt2_rate": 0.198,
+        "bin_width_mean_s": 1.371451192139087,
+        "bin_width_median_s": 1.0010000000000048,
+        "edge_dist_mean_s": 0.29670936102577466,
+        "mean_group_len": 2.798
+      },
+      "events": {
+        "n": 500,
+        "swallowed_one_group_rate": 0.018,
+        "swallowed_gt2_group_rate": 0.018,
+        "zero_pure_groups_rate": 0.088,
+        "mean_overlapping_groups": 19.91
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 139,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.02158273381294964,
+          "mean_overlapping_groups": 4.194244604316546
+        },
+        "6-20s": {
+          "n": 114,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 9.81578947368421
+        },
+        "<=2s": {
+          "n": 119,
+          "swallowed_one_group_rate": 0.07563025210084033,
+          "swallowed_gt2_group_rate": 0.07563025210084033,
+          "zero_pure_groups_rate": 0.3445378151260504,
+          "mean_overlapping_groups": 2.277310924369748
+        },
+        ">20s": {
+          "n": 128,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 62.359375
+        }
+      },
+      "gaps": {
+        "n": 0
+      },
+      "gaps_by_duration": {}
+    },
+    "activitynet/fps2/native": {
+      "queries": 500,
+      "boundaries": {
+        "n": 1000,
+        "crossing_gt2_rate": 0.0,
+        "crossing_any_rate": 0.17,
+        "strict_interior_gt2_rate": 0.0,
+        "bin_width_mean_s": 0.973458149520388,
+        "bin_width_median_s": 1.0009988118477224,
+        "edge_dist_mean_s": 0.16530007843033956,
+        "mean_group_len": 2
+      },
+      "events": {
+        "n": 500,
+        "swallowed_one_group_rate": 0.0,
+        "swallowed_gt2_group_rate": 0.0,
+        "zero_pure_groups_rate": 0.014,
+        "mean_overlapping_groups": 24.662
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 139,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 5.179856115107913
+        },
+        "6-20s": {
+          "n": 114,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 12.640350877192983
+        },
+        "<=2s": {
+          "n": 119,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.058823529411764705,
+          "mean_overlapping_groups": 2.436974789915966
+        },
+        ">20s": {
+          "n": 128,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 77.1875
+        }
+      },
+      "gaps": {
+        "n": 0
+      },
+      "gaps_by_duration": {}
+    },
+    "activitynet/fps2/oracle": {
+      "queries": 500,
+      "boundaries": {
+        "n": 1000,
+        "crossing_gt2_rate": 0.06,
+        "crossing_any_rate": 0.292,
+        "strict_interior_gt2_rate": 0.055,
+        "bin_width_mean_s": 1.1989758602472846,
+        "bin_width_median_s": 1.0009999999999994,
+        "edge_dist_mean_s": 0.20509416226495492,
+        "mean_group_len": 2.453
+      },
+      "events": {
+        "n": 500,
+        "swallowed_one_group_rate": 0.0,
+        "swallowed_gt2_group_rate": 0.0,
+        "zero_pure_groups_rate": 0.046,
+        "mean_overlapping_groups": 19.908
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 139,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 4.35251798561151
+        },
+        "6-20s": {
+          "n": 114,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 9.912280701754385
+        },
+        "<=2s": {
+          "n": 119,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.19327731092436976,
+          "mean_overlapping_groups": 2.310924369747899
+        },
+        ">20s": {
+          "n": 128,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 62.0625
+        }
+      },
+      "gaps": {
+        "n": 0
+      },
+      "gaps_by_duration": {}
+    },
+    "activitynet/fps2/uniform": {
+      "queries": 500,
+      "boundaries": {
+        "n": 1000,
+        "crossing_gt2_rate": 0.347,
+        "crossing_any_rate": 0.458,
+        "strict_interior_gt2_rate": 0.321,
+        "bin_width_mean_s": 1.3540213794091678,
+        "bin_width_median_s": 1.267762667648021,
+        "edge_dist_mean_s": 0.29091015666100994,
+        "mean_group_len": 2.766
+      },
+      "events": {
+        "n": 500,
+        "swallowed_one_group_rate": 0.036,
+        "swallowed_gt2_group_rate": 0.036,
+        "zero_pure_groups_rate": 0.088,
+        "mean_overlapping_groups": 19.748
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 139,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.007194244604316547,
+          "mean_overlapping_groups": 4.201438848920863
+        },
+        "6-20s": {
+          "n": 114,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 9.81578947368421
+        },
+        "<=2s": {
+          "n": 119,
+          "swallowed_one_group_rate": 0.15126050420168066,
+          "swallowed_gt2_group_rate": 0.15126050420168066,
+          "zero_pure_groups_rate": 0.36134453781512604,
+          "mean_overlapping_groups": 2.0672268907563027
+        },
+        ">20s": {
+          "n": 128,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 61.9140625
+        }
+      },
+      "gaps": {
+        "n": 0
+      },
+      "gaps_by_duration": {}
+    },
+    "activitynet/fps6/adaptive": {
+      "queries": 500,
+      "boundaries": {
+        "n": 1000,
+        "crossing_gt2_rate": 0.315,
+        "crossing_any_rate": 0.549,
+        "strict_interior_gt2_rate": 0.302,
+        "bin_width_mean_s": 0.538523072114333,
+        "bin_width_median_s": 0.3400000000000034,
+        "edge_dist_mean_s": 0.12183371823295601,
+        "mean_group_len": 3.277
+      },
+      "events": {
+        "n": 500,
+        "swallowed_one_group_rate": 0.0,
+        "swallowed_gt2_group_rate": 0.0,
+        "zero_pure_groups_rate": 0.01,
+        "mean_overlapping_groups": 51.254
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 139,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 9.654676258992806
+        },
+        "6-20s": {
+          "n": 114,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 24.42105263157895
+        },
+        "<=2s": {
+          "n": 119,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.04201680672268908,
+          "mean_overlapping_groups": 4.26890756302521
+        },
+        ">20s": {
+          "n": 128,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 164.0078125
+        }
+      },
+      "gaps": {
+        "n": 0
+      },
+      "gaps_by_duration": {}
+    },
+    "activitynet/fps6/native": {
+      "queries": 500,
+      "boundaries": {
+        "n": 1000,
+        "crossing_gt2_rate": 0.0,
+        "crossing_any_rate": 0.259,
+        "strict_interior_gt2_rate": 0.0,
+        "bin_width_mean_s": 0.32598015305791633,
+        "bin_width_median_s": 0.33366665401672435,
+        "edge_dist_mean_s": 0.06040795137181916,
+        "mean_group_len": 2
+      },
+      "events": {
+        "n": 500,
+        "swallowed_one_group_rate": 0.0,
+        "swallowed_gt2_group_rate": 0.0,
+        "zero_pure_groups_rate": 0.0,
+        "mean_overlapping_groups": 72.348
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 139,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 13.582733812949641
+        },
+        "6-20s": {
+          "n": 114,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 36.12280701754386
+        },
+        "<=2s": {
+          "n": 119,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 5.285714285714286
+        },
+        ">20s": {
+          "n": 128,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 230.7734375
+        }
+      },
+      "gaps": {
+        "n": 0
+      },
+      "gaps_by_duration": {}
+    },
+    "activitynet/fps6/oracle": {
+      "queries": 500,
+      "boundaries": {
+        "n": 1000,
+        "crossing_gt2_rate": 0.138,
+        "crossing_any_rate": 0.333,
+        "strict_interior_gt2_rate": 0.103,
+        "bin_width_mean_s": 0.4929531267603868,
+        "bin_width_median_s": 0.33702571551539506,
+        "edge_dist_mean_s": 0.06750103645394191,
+        "mean_group_len": 3.001
+      },
+      "events": {
+        "n": 500,
+        "swallowed_one_group_rate": 0.0,
+        "swallowed_gt2_group_rate": 0.0,
+        "zero_pure_groups_rate": 0.0,
+        "mean_overlapping_groups": 51.402
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 139,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 9.899280575539569
+        },
+        "6-20s": {
+          "n": 114,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 24.69298245614035
+        },
+        "<=2s": {
+          "n": 119,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 4.378151260504202
+        },
+        ">20s": {
+          "n": 128,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 163.9765625
+        }
+      },
+      "gaps": {
+        "n": 0
+      },
+      "gaps_by_duration": {}
+    },
+    "activitynet/fps6/uniform": {
+      "queries": 500,
+      "boundaries": {
+        "n": 1000,
+        "crossing_gt2_rate": 0.271,
+        "crossing_any_rate": 0.37,
+        "strict_interior_gt2_rate": 0.234,
+        "bin_width_mean_s": 0.5173255570964725,
+        "bin_width_median_s": 0.5004999999999882,
+        "edge_dist_mean_s": 0.09270814797258697,
+        "mean_group_len": 3.145
+      },
+      "events": {
+        "n": 500,
+        "swallowed_one_group_rate": 0.0,
+        "swallowed_gt2_group_rate": 0.0,
+        "zero_pure_groups_rate": 0.0,
+        "mean_overlapping_groups": 50.72
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 139,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 9.70503597122302
+        },
+        "6-20s": {
+          "n": 114,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 24.385964912280702
+        },
+        "<=2s": {
+          "n": 119,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 4.025210084033613
+        },
+        ">20s": {
+          "n": 128,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 162.125
+        }
+      },
+      "gaps": {
+        "n": 0
+      },
+      "gaps_by_duration": {}
+    },
+    "charades/fps2/adaptive": {
+      "queries": 502,
+      "boundaries": {
+        "n": 1004,
+        "crossing_gt2_rate": 0.3645418326693227,
+        "crossing_any_rate": 0.5328685258964143,
+        "strict_interior_gt2_rate": 0.3396414342629482,
+        "bin_width_mean_s": 1.6650600398501418,
+        "bin_width_median_s": 1.2679333333333334,
+        "edge_dist_mean_s": 0.3507031250826789,
+        "mean_group_len": 3.3695219123505975
+      },
+      "events": {
+        "n": 502,
+        "swallowed_one_group_rate": 0.05776892430278884,
+        "swallowed_gt2_group_rate": 0.05776892430278884,
+        "zero_pure_groups_rate": 0.20717131474103587,
+        "mean_overlapping_groups": 5.430278884462151
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 163,
+          "swallowed_one_group_rate": 0.006134969325153374,
+          "swallowed_gt2_group_rate": 0.006134969325153374,
+          "zero_pure_groups_rate": 0.12269938650306748,
+          "mean_overlapping_groups": 3.901840490797546
+        },
+        "6-20s": {
+          "n": 102,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 7.754901960784314
+        },
+        "<=2s": {
+          "n": 180,
+          "swallowed_one_group_rate": 0.15555555555555556,
+          "swallowed_gt2_group_rate": 0.15555555555555556,
+          "zero_pure_groups_rate": 0.4666666666666667,
+          "mean_overlapping_groups": 2.1444444444444444
+        },
+        ">20s": {
+          "n": 57,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 16.017543859649123
+        }
+      },
+      "gaps": {
+        "n": 0
+      },
+      "gaps_by_duration": {}
+    },
+    "charades/fps2/native": {
+      "queries": 502,
+      "boundaries": {
+        "n": 1004,
+        "crossing_gt2_rate": 0.0,
+        "crossing_any_rate": 0.2061752988047809,
+        "strict_interior_gt2_rate": 0.0,
+        "bin_width_mean_s": 0.9783717422824264,
+        "bin_width_median_s": 1.0022048506714782,
+        "edge_dist_mean_s": 0.1666068146958965,
+        "mean_group_len": 2
+      },
+      "events": {
+        "n": 502,
+        "swallowed_one_group_rate": 0.00398406374501992,
+        "swallowed_gt2_group_rate": 0.0,
+        "zero_pure_groups_rate": 0.021912350597609563,
+        "mean_overlapping_groups": 7.98605577689243
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 163,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 5.085889570552148
+        },
+        "6-20s": {
+          "n": 102,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 11.284313725490197
+        },
+        "<=2s": {
+          "n": 180,
+          "swallowed_one_group_rate": 0.011111111111111112,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.06111111111111111,
+          "mean_overlapping_groups": 2.5444444444444443
+        },
+        ">20s": {
+          "n": 57,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 27.56140350877193
+        }
+      },
+      "gaps": {
+        "n": 0
+      },
+      "gaps_by_duration": {}
+    },
+    "charades/fps2/oracle": {
+      "queries": 502,
+      "boundaries": {
+        "n": 1004,
+        "crossing_gt2_rate": 0.15239043824701196,
+        "crossing_any_rate": 0.3097609561752988,
+        "strict_interior_gt2_rate": 0.14143426294820718,
+        "bin_width_mean_s": 1.524485981388762,
+        "bin_width_median_s": 1.033333333333335,
+        "edge_dist_mean_s": 0.21277961927510705,
+        "mean_group_len": 3.0886454183266934
+      },
+      "events": {
+        "n": 502,
+        "swallowed_one_group_rate": 0.01195219123505976,
+        "swallowed_gt2_group_rate": 0.01195219123505976,
+        "zero_pure_groups_rate": 0.08565737051792828,
+        "mean_overlapping_groups": 5.567729083665339
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 163,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.04294478527607362,
+          "mean_overlapping_groups": 3.98159509202454
+        },
+        "6-20s": {
+          "n": 102,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 7.9411764705882355
+        },
+        "<=2s": {
+          "n": 180,
+          "swallowed_one_group_rate": 0.03333333333333333,
+          "swallowed_gt2_group_rate": 0.03333333333333333,
+          "zero_pure_groups_rate": 0.2,
+          "mean_overlapping_groups": 2.2888888888888888
+        },
+        ">20s": {
+          "n": 57,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 16.210526315789473
+        }
+      },
+      "gaps": {
+        "n": 0
+      },
+      "gaps_by_duration": {}
+    },
+    "charades/fps2/uniform": {
+      "queries": 502,
+      "boundaries": {
+        "n": 1004,
+        "crossing_gt2_rate": 0.46912350597609564,
+        "crossing_any_rate": 0.5408366533864541,
+        "strict_interior_gt2_rate": 0.4352589641434263,
+        "bin_width_mean_s": 1.6311865867621367,
+        "bin_width_median_s": 1.516666666666667,
+        "edge_dist_mean_s": 0.36695531222938554,
+        "mean_group_len": 3.3157370517928286
+      },
+      "events": {
+        "n": 502,
+        "swallowed_one_group_rate": 0.07171314741035857,
+        "swallowed_gt2_group_rate": 0.0697211155378486,
+        "zero_pure_groups_rate": 0.22709163346613545,
+        "mean_overlapping_groups": 5.5
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 163,
+          "swallowed_one_group_rate": 0.006134969325153374,
+          "swallowed_gt2_group_rate": 0.006134969325153374,
+          "zero_pure_groups_rate": 0.07975460122699386,
+          "mean_overlapping_groups": 3.8588957055214723
+        },
+        "6-20s": {
+          "n": 102,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 8.009803921568627
+        },
+        "<=2s": {
+          "n": 180,
+          "swallowed_one_group_rate": 0.19444444444444445,
+          "swallowed_gt2_group_rate": 0.18888888888888888,
+          "zero_pure_groups_rate": 0.5611111111111111,
+          "mean_overlapping_groups": 2.0555555555555554
+        },
+        ">20s": {
+          "n": 57,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 16.57894736842105
+        }
+      },
+      "gaps": {
+        "n": 0
+      },
+      "gaps_by_duration": {}
+    },
+    "charades/fps6/adaptive": {
+      "queries": 502,
+      "boundaries": {
+        "n": 1004,
+        "crossing_gt2_rate": 0.47908366533864544,
+        "crossing_any_rate": 0.6135458167330677,
+        "strict_interior_gt2_rate": 0.4581673306772908,
+        "bin_width_mean_s": 0.6727645007521117,
+        "bin_width_median_s": 0.6666666666666664,
+        "edge_dist_mean_s": 0.14808394999197025,
+        "mean_group_len": 4.069721115537849
+      },
+      "events": {
+        "n": 502,
+        "swallowed_one_group_rate": 0.0,
+        "swallowed_gt2_group_rate": 0.0,
+        "zero_pure_groups_rate": 0.04183266932270916,
+        "mean_overlapping_groups": 12.615537848605578
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 163,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 8.61963190184049
+        },
+        "6-20s": {
+          "n": 102,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 18.725490196078432
+        },
+        "<=2s": {
+          "n": 180,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.11666666666666667,
+          "mean_overlapping_groups": 3.8944444444444444
+        },
+        ">20s": {
+          "n": 57,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 40.64912280701754
+        }
+      },
+      "gaps": {
+        "n": 0
+      },
+      "gaps_by_duration": {}
+    },
+    "charades/fps6/native": {
+      "queries": 502,
+      "boundaries": {
+        "n": 1004,
+        "crossing_gt2_rate": 0.0,
+        "crossing_any_rate": 0.2778884462151394,
+        "strict_interior_gt2_rate": 0.0,
+        "bin_width_mean_s": 0.3277661445475585,
+        "bin_width_median_s": 0.33333333333333326,
+        "edge_dist_mean_s": 0.061455839962624555,
+        "mean_group_len": 2
+      },
+      "events": {
+        "n": 502,
+        "swallowed_one_group_rate": 0.0,
+        "swallowed_gt2_group_rate": 0.0,
+        "zero_pure_groups_rate": 0.0,
+        "mean_overlapping_groups": 22.264940239043824
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 163,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 13.337423312883436
+        },
+        "6-20s": {
+          "n": 102,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 32.3921568627451
+        },
+        "<=2s": {
+          "n": 180,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 5.661111111111111
+        },
+        ">20s": {
+          "n": 57,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 82.10526315789474
+        }
+      },
+      "gaps": {
+        "n": 0
+      },
+      "gaps_by_duration": {}
+    },
+    "charades/fps6/oracle": {
+      "queries": 502,
+      "boundaries": {
+        "n": 1004,
+        "crossing_gt2_rate": 0.22111553784860558,
+        "crossing_any_rate": 0.34063745019920316,
+        "strict_interior_gt2_rate": 0.18426294820717132,
+        "bin_width_mean_s": 0.6418335469369709,
+        "bin_width_median_s": 0.6349557088900518,
+        "edge_dist_mean_s": 0.06797472720209224,
+        "mean_group_len": 3.8904382470119523
+      },
+      "events": {
+        "n": 502,
+        "swallowed_one_group_rate": 0.0,
+        "swallowed_gt2_group_rate": 0.0,
+        "zero_pure_groups_rate": 0.0099601593625498,
+        "mean_overlapping_groups": 12.619521912350598
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 163,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 8.50920245398773
+        },
+        "6-20s": {
+          "n": 102,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 18.784313725490197
+        },
+        "<=2s": {
+          "n": 180,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.027777777777777776,
+          "mean_overlapping_groups": 3.9277777777777776
+        },
+        ">20s": {
+          "n": 57,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 40.78947368421053
+        }
+      },
+      "gaps": {
+        "n": 0
+      },
+      "gaps_by_duration": {}
+    },
+    "charades/fps6/uniform": {
+      "queries": 502,
+      "boundaries": {
+        "n": 1004,
+        "crossing_gt2_rate": 0.44621513944223107,
+        "crossing_any_rate": 0.4900398406374502,
+        "strict_interior_gt2_rate": 0.41434262948207173,
+        "bin_width_mean_s": 0.6466018989845614,
+        "bin_width_median_s": 0.6537015852263446,
+        "edge_dist_mean_s": 0.11685370262157004,
+        "mean_group_len": 3.9113545816733066
+      },
+      "events": {
+        "n": 502,
+        "swallowed_one_group_rate": 0.0,
+        "swallowed_gt2_group_rate": 0.0,
+        "zero_pure_groups_rate": 0.02390438247011952,
+        "mean_overlapping_groups": 12.607569721115539
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 163,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 8.257668711656441
+        },
+        "6-20s": {
+          "n": 102,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 19.098039215686274
+        },
+        "<=2s": {
+          "n": 180,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.06666666666666667,
+          "mean_overlapping_groups": 3.65
+        },
+        ">20s": {
+          "n": 57,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 41.719298245614034
+        }
+      },
+      "gaps": {
+        "n": 0
+      },
+      "gaps_by_duration": {}
+    },
+    "omtg/fps2/adaptive": {
+      "queries": 320,
+      "boundaries": {
+        "n": 2346,
+        "crossing_gt2_rate": 0.29241261722080136,
+        "crossing_any_rate": 0.5643648763853367,
+        "strict_interior_gt2_rate": 0.27195225916453536,
+        "bin_width_mean_s": 1.7917292502922109,
+        "bin_width_median_s": 1.5,
+        "edge_dist_mean_s": 0.41153232284949093,
+        "mean_group_len": 3.0366581415174765
+      },
+      "events": {
+        "n": 1173,
+        "swallowed_one_group_rate": 0.042625745950554135,
+        "swallowed_gt2_group_rate": 0.03836317135549872,
+        "zero_pure_groups_rate": 0.12276214833759591,
+        "mean_overlapping_groups": 8.537936913895994
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 401,
+          "swallowed_one_group_rate": 0.017456359102244388,
+          "swallowed_gt2_group_rate": 0.017456359102244388,
+          "zero_pure_groups_rate": 0.11970074812967581,
+          "mean_overlapping_groups": 3.855361596009975
+        },
+        "6-20s": {
+          "n": 416,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 8.694711538461538
+        },
+        "<=2s": {
+          "n": 188,
+          "swallowed_one_group_rate": 0.22872340425531915,
+          "swallowed_gt2_group_rate": 0.20212765957446807,
+          "zero_pure_groups_rate": 0.5106382978723404,
+          "mean_overlapping_groups": 2.0691489361702127
+        },
+        ">20s": {
+          "n": 168,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 26.56547619047619
+        }
+      },
+      "gaps": {
+        "n": 853,
+        "collapsed_voronoi_rate": 0.010550996483001172,
+        "collapsed_gt2_voronoi_rate": 0.010550996483001172,
+        "shared_frame_group_rate": 0.0035169988276670576
+      },
+      "gaps_by_duration": {
+        "2-6s": {
+          "n": 141,
+          "collapsed_voronoi_rate": 0.0070921985815602835,
+          "collapsed_gt2_voronoi_rate": 0.0070921985815602835,
+          "shared_frame_group_rate": 0.0
+        },
+        "6-20s": {
+          "n": 301,
+          "collapsed_voronoi_rate": 0.0,
+          "collapsed_gt2_voronoi_rate": 0.0,
+          "shared_frame_group_rate": 0.0
+        },
+        "<=2s": {
+          "n": 53,
+          "collapsed_voronoi_rate": 0.1509433962264151,
+          "collapsed_gt2_voronoi_rate": 0.1509433962264151,
+          "shared_frame_group_rate": 0.05660377358490566
+        },
+        ">20s": {
+          "n": 358,
+          "collapsed_voronoi_rate": 0.0,
+          "collapsed_gt2_voronoi_rate": 0.0,
+          "shared_frame_group_rate": 0.0
+        }
+      },
+      "query_any_gap_collapsed_voronoi_rate": 0.021875,
+      "query_any_shared_frame_group_rate": 0.009375
+    },
+    "omtg/fps2/native": {
+      "queries": 320,
+      "boundaries": {
+        "n": 2346,
+        "crossing_gt2_rate": 0.0,
+        "crossing_any_rate": 0.25021312872975277,
+        "strict_interior_gt2_rate": 0.0,
+        "bin_width_mean_s": 1.1904234833499676,
+        "bin_width_median_s": 1.0010000000000048,
+        "edge_dist_mean_s": 0.22792797410253599,
+        "mean_group_len": 2
+      },
+      "events": {
+        "n": 1173,
+        "swallowed_one_group_rate": 0.005967604433077579,
+        "swallowed_gt2_group_rate": 0.0,
+        "zero_pure_groups_rate": 0.023017902813299233,
+        "mean_overlapping_groups": 11.010230179028133
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 401,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0024937655860349127,
+          "mean_overlapping_groups": 4.940149625935162
+        },
+        "6-20s": {
+          "n": 416,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 11.338942307692308
+        },
+        "<=2s": {
+          "n": 188,
+          "swallowed_one_group_rate": 0.03723404255319149,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.13829787234042554,
+          "mean_overlapping_groups": 2.49468085106383
+        },
+        ">20s": {
+          "n": 168,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 34.214285714285715
+        }
+      },
+      "gaps": {
+        "n": 853,
+        "collapsed_voronoi_rate": 0.0011723329425556857,
+        "collapsed_gt2_voronoi_rate": 0.0,
+        "shared_frame_group_rate": 0.0011723329425556857
+      },
+      "gaps_by_duration": {
+        "2-6s": {
+          "n": 141,
+          "collapsed_voronoi_rate": 0.0,
+          "collapsed_gt2_voronoi_rate": 0.0,
+          "shared_frame_group_rate": 0.0
+        },
+        "6-20s": {
+          "n": 301,
+          "collapsed_voronoi_rate": 0.0,
+          "collapsed_gt2_voronoi_rate": 0.0,
+          "shared_frame_group_rate": 0.0
+        },
+        "<=2s": {
+          "n": 53,
+          "collapsed_voronoi_rate": 0.018867924528301886,
+          "collapsed_gt2_voronoi_rate": 0.0,
+          "shared_frame_group_rate": 0.018867924528301886
+        },
+        ">20s": {
+          "n": 358,
+          "collapsed_voronoi_rate": 0.0,
+          "collapsed_gt2_voronoi_rate": 0.0,
+          "shared_frame_group_rate": 0.0
+        }
+      },
+      "query_any_gap_collapsed_voronoi_rate": 0.003125,
+      "query_any_shared_frame_group_rate": 0.003125
+    },
+    "omtg/fps2/oracle": {
+      "queries": 320,
+      "boundaries": {
+        "n": 2346,
+        "crossing_gt2_rate": 0.12446717817561807,
+        "crossing_any_rate": 0.3857630008525149,
+        "strict_interior_gt2_rate": 0.11423699914748509,
+        "bin_width_mean_s": 1.6422046915673036,
+        "bin_width_median_s": 1.0343666666666422,
+        "edge_dist_mean_s": 0.27158444394900233,
+        "mean_group_len": 2.764279624893436
+      },
+      "events": {
+        "n": 1173,
+        "swallowed_one_group_rate": 0.01875532821824382,
+        "swallowed_gt2_group_rate": 0.011935208866155157,
+        "zero_pure_groups_rate": 0.08269394714407502,
+        "mean_overlapping_groups": 8.539641943734015
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 401,
+          "swallowed_one_group_rate": 0.02493765586034913,
+          "swallowed_gt2_group_rate": 0.02493765586034913,
+          "zero_pure_groups_rate": 0.09226932668329177,
+          "mean_overlapping_groups": 3.855361596009975
+        },
+        "6-20s": {
+          "n": 416,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.002403846153846154,
+          "mean_overlapping_groups": 8.658653846153847
+        },
+        "<=2s": {
+          "n": 188,
+          "swallowed_one_group_rate": 0.06382978723404255,
+          "swallowed_gt2_group_rate": 0.02127659574468085,
+          "zero_pure_groups_rate": 0.31382978723404253,
+          "mean_overlapping_groups": 2.223404255319149
+        },
+        ">20s": {
+          "n": 168,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 26.49404761904762
+        }
+      },
+      "gaps": {
+        "n": 853,
+        "collapsed_voronoi_rate": 0.0011723329425556857,
+        "collapsed_gt2_voronoi_rate": 0.0011723329425556857,
+        "shared_frame_group_rate": 0.0011723329425556857
+      },
+      "gaps_by_duration": {
+        "2-6s": {
+          "n": 141,
+          "collapsed_voronoi_rate": 0.0,
+          "collapsed_gt2_voronoi_rate": 0.0,
+          "shared_frame_group_rate": 0.0
+        },
+        "6-20s": {
+          "n": 301,
+          "collapsed_voronoi_rate": 0.0,
+          "collapsed_gt2_voronoi_rate": 0.0,
+          "shared_frame_group_rate": 0.0
+        },
+        "<=2s": {
+          "n": 53,
+          "collapsed_voronoi_rate": 0.018867924528301886,
+          "collapsed_gt2_voronoi_rate": 0.018867924528301886,
+          "shared_frame_group_rate": 0.018867924528301886
+        },
+        ">20s": {
+          "n": 358,
+          "collapsed_voronoi_rate": 0.0,
+          "collapsed_gt2_voronoi_rate": 0.0,
+          "shared_frame_group_rate": 0.0
+        }
+      },
+      "query_any_gap_collapsed_voronoi_rate": 0.003125,
+      "query_any_shared_frame_group_rate": 0.003125
+    },
+    "omtg/fps2/uniform": {
+      "queries": 320,
+      "boundaries": {
+        "n": 2346,
+        "crossing_gt2_rate": 0.4079283887468031,
+        "crossing_any_rate": 0.5208866155157715,
+        "strict_interior_gt2_rate": 0.3832054560954817,
+        "bin_width_mean_s": 1.744759041724037,
+        "bin_width_median_s": 1.5015,
+        "edge_dist_mean_s": 0.4078883590252221,
+        "mean_group_len": 2.9326513213981245
+      },
+      "events": {
+        "n": 1173,
+        "swallowed_one_group_rate": 0.029838022165387893,
+        "swallowed_gt2_group_rate": 0.029838022165387893,
+        "zero_pure_groups_rate": 0.11764705882352941,
+        "mean_overlapping_groups": 8.649616368286445
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 401,
+          "swallowed_one_group_rate": 0.007481296758104738,
+          "swallowed_gt2_group_rate": 0.007481296758104738,
+          "zero_pure_groups_rate": 0.10224438902743142,
+          "mean_overlapping_groups": 3.8453865336658355
+        },
+        "6-20s": {
+          "n": 416,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 8.829326923076923
+        },
+        "<=2s": {
+          "n": 188,
+          "swallowed_one_group_rate": 0.1702127659574468,
+          "swallowed_gt2_group_rate": 0.1702127659574468,
+          "zero_pure_groups_rate": 0.5159574468085106,
+          "mean_overlapping_groups": 2.0904255319148937
+        },
+        ">20s": {
+          "n": 168,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 27.011904761904763
+        }
+      },
+      "gaps": {
+        "n": 853,
+        "collapsed_voronoi_rate": 0.009378663540445486,
+        "collapsed_gt2_voronoi_rate": 0.009378663540445486,
+        "shared_frame_group_rate": 0.0035169988276670576
+      },
+      "gaps_by_duration": {
+        "2-6s": {
+          "n": 141,
+          "collapsed_voronoi_rate": 0.0,
+          "collapsed_gt2_voronoi_rate": 0.0,
+          "shared_frame_group_rate": 0.0
+        },
+        "6-20s": {
+          "n": 301,
+          "collapsed_voronoi_rate": 0.0,
+          "collapsed_gt2_voronoi_rate": 0.0,
+          "shared_frame_group_rate": 0.0
+        },
+        "<=2s": {
+          "n": 53,
+          "collapsed_voronoi_rate": 0.1509433962264151,
+          "collapsed_gt2_voronoi_rate": 0.1509433962264151,
+          "shared_frame_group_rate": 0.05660377358490566
+        },
+        ">20s": {
+          "n": 358,
+          "collapsed_voronoi_rate": 0.0,
+          "collapsed_gt2_voronoi_rate": 0.0,
+          "shared_frame_group_rate": 0.0
+        }
+      },
+      "query_any_gap_collapsed_voronoi_rate": 0.01875,
+      "query_any_shared_frame_group_rate": 0.009375
+    },
+    "omtg/fps6/adaptive": {
+      "queries": 320,
+      "boundaries": {
+        "n": 2346,
+        "crossing_gt2_rate": 0.3955669224211424,
+        "crossing_any_rate": 0.6227621483375959,
+        "strict_interior_gt2_rate": 0.3776641091219096,
+        "bin_width_mean_s": 0.7683720584802112,
+        "bin_width_median_s": 0.667333333333346,
+        "edge_dist_mean_s": 0.187652827584465,
+        "mean_group_len": 3.5387894288150044
+      },
+      "events": {
+        "n": 1173,
+        "swallowed_one_group_rate": 0.004262574595055414,
+        "swallowed_gt2_group_rate": 0.004262574595055414,
+        "zero_pure_groups_rate": 0.030690537084398978,
+        "mean_overlapping_groups": 19.964194373401533
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 401,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0199501246882793,
+          "mean_overlapping_groups": 8.192019950124688
+        },
+        "6-20s": {
+          "n": 416,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 20.473557692307693
+        },
+        "<=2s": {
+          "n": 188,
+          "swallowed_one_group_rate": 0.026595744680851064,
+          "swallowed_gt2_group_rate": 0.026595744680851064,
+          "zero_pure_groups_rate": 0.14893617021276595,
+          "mean_overlapping_groups": 3.877659574468085
+        },
+        ">20s": {
+          "n": 168,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 64.80357142857143
+        }
+      },
+      "gaps": {
+        "n": 853,
+        "collapsed_voronoi_rate": 0.0011723329425556857,
+        "collapsed_gt2_voronoi_rate": 0.0011723329425556857,
+        "shared_frame_group_rate": 0.0023446658851113715
+      },
+      "gaps_by_duration": {
+        "2-6s": {
+          "n": 141,
+          "collapsed_voronoi_rate": 0.0,
+          "collapsed_gt2_voronoi_rate": 0.0,
+          "shared_frame_group_rate": 0.0
+        },
+        "6-20s": {
+          "n": 301,
+          "collapsed_voronoi_rate": 0.0,
+          "collapsed_gt2_voronoi_rate": 0.0,
+          "shared_frame_group_rate": 0.0
+        },
+        "<=2s": {
+          "n": 53,
+          "collapsed_voronoi_rate": 0.018867924528301886,
+          "collapsed_gt2_voronoi_rate": 0.018867924528301886,
+          "shared_frame_group_rate": 0.03773584905660377
+        },
+        ">20s": {
+          "n": 358,
+          "collapsed_voronoi_rate": 0.0,
+          "collapsed_gt2_voronoi_rate": 0.0,
+          "shared_frame_group_rate": 0.0
+        }
+      },
+      "query_any_gap_collapsed_voronoi_rate": 0.003125,
+      "query_any_shared_frame_group_rate": 0.00625
+    },
+    "omtg/fps6/native": {
+      "queries": 320,
+      "boundaries": {
+        "n": 2346,
+        "crossing_gt2_rate": 0.0,
+        "crossing_any_rate": 0.3209718670076726,
+        "strict_interior_gt2_rate": 0.0,
+        "bin_width_mean_s": 0.4435394178749026,
+        "bin_width_median_s": 0.3336666666666659,
+        "edge_dist_mean_s": 0.09140695128679852,
+        "mean_group_len": 2
+      },
+      "events": {
+        "n": 1173,
+        "swallowed_one_group_rate": 0.0,
+        "swallowed_gt2_group_rate": 0.0,
+        "zero_pure_groups_rate": 0.0034100596760443308,
+        "mean_overlapping_groups": 29.654731457800512
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 401,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 12.24438902743142
+        },
+        "6-20s": {
+          "n": 416,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 30.8125
+        },
+        "<=2s": {
+          "n": 188,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.02127659574468085,
+          "mean_overlapping_groups": 5.361702127659575
+        },
+        ">20s": {
+          "n": 168,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 95.5297619047619
+        }
+      },
+      "gaps": {
+        "n": 853,
+        "collapsed_voronoi_rate": 0.0011723329425556857,
+        "collapsed_gt2_voronoi_rate": 0.0,
+        "shared_frame_group_rate": 0.0011723329425556857
+      },
+      "gaps_by_duration": {
+        "2-6s": {
+          "n": 141,
+          "collapsed_voronoi_rate": 0.0,
+          "collapsed_gt2_voronoi_rate": 0.0,
+          "shared_frame_group_rate": 0.0
+        },
+        "6-20s": {
+          "n": 301,
+          "collapsed_voronoi_rate": 0.0,
+          "collapsed_gt2_voronoi_rate": 0.0,
+          "shared_frame_group_rate": 0.0
+        },
+        "<=2s": {
+          "n": 53,
+          "collapsed_voronoi_rate": 0.018867924528301886,
+          "collapsed_gt2_voronoi_rate": 0.0,
+          "shared_frame_group_rate": 0.018867924528301886
+        },
+        ">20s": {
+          "n": 358,
+          "collapsed_voronoi_rate": 0.0,
+          "collapsed_gt2_voronoi_rate": 0.0,
+          "shared_frame_group_rate": 0.0
+        }
+      },
+      "query_any_gap_collapsed_voronoi_rate": 0.003125,
+      "query_any_shared_frame_group_rate": 0.003125
+    },
+    "omtg/fps6/oracle": {
+      "queries": 320,
+      "boundaries": {
+        "n": 2346,
+        "crossing_gt2_rate": 0.1773231031543052,
+        "crossing_any_rate": 0.3955669224211424,
+        "strict_interior_gt2_rate": 0.13895993179880647,
+        "bin_width_mean_s": 0.7186153539001975,
+        "bin_width_median_s": 0.5833333333333286,
+        "edge_dist_mean_s": 0.10097288167206224,
+        "mean_group_len": 3.290281329923274
+      },
+      "events": {
+        "n": 1173,
+        "swallowed_one_group_rate": 0.0,
+        "swallowed_gt2_group_rate": 0.0,
+        "zero_pure_groups_rate": 0.011935208866155157,
+        "mean_overlapping_groups": 20.011935208866156
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 401,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0024937655860349127,
+          "mean_overlapping_groups": 8.209476309226932
+        },
+        "6-20s": {
+          "n": 416,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 20.50721153846154
+        },
+        "<=2s": {
+          "n": 188,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.06914893617021277,
+          "mean_overlapping_groups": 3.872340425531915
+        },
+        ">20s": {
+          "n": 168,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 65.01785714285714
+        }
+      },
+      "gaps": {
+        "n": 853,
+        "collapsed_voronoi_rate": 0.0011723329425556857,
+        "collapsed_gt2_voronoi_rate": 0.0011723329425556857,
+        "shared_frame_group_rate": 0.0011723329425556857
+      },
+      "gaps_by_duration": {
+        "2-6s": {
+          "n": 141,
+          "collapsed_voronoi_rate": 0.0,
+          "collapsed_gt2_voronoi_rate": 0.0,
+          "shared_frame_group_rate": 0.0
+        },
+        "6-20s": {
+          "n": 301,
+          "collapsed_voronoi_rate": 0.0,
+          "collapsed_gt2_voronoi_rate": 0.0,
+          "shared_frame_group_rate": 0.0
+        },
+        "<=2s": {
+          "n": 53,
+          "collapsed_voronoi_rate": 0.018867924528301886,
+          "collapsed_gt2_voronoi_rate": 0.018867924528301886,
+          "shared_frame_group_rate": 0.018867924528301886
+        },
+        ">20s": {
+          "n": 358,
+          "collapsed_voronoi_rate": 0.0,
+          "collapsed_gt2_voronoi_rate": 0.0,
+          "shared_frame_group_rate": 0.0
+        }
+      },
+      "query_any_gap_collapsed_voronoi_rate": 0.003125,
+      "query_any_shared_frame_group_rate": 0.003125
+    },
+    "omtg/fps6/uniform": {
+      "queries": 320,
+      "boundaries": {
+        "n": 2346,
+        "crossing_gt2_rate": 0.41687979539641945,
+        "crossing_any_rate": 0.48891730605285594,
+        "strict_interior_gt2_rate": 0.36615515771526,
+        "bin_width_mean_s": 0.7468890566790114,
+        "bin_width_median_s": 0.6666666666666572,
+        "edge_dist_mean_s": 0.15866317948381028,
+        "mean_group_len": 3.3823529411764706
+      },
+      "events": {
+        "n": 1173,
+        "swallowed_one_group_rate": 0.0034100596760443308,
+        "swallowed_gt2_group_rate": 0.0034100596760443308,
+        "zero_pure_groups_rate": 0.02557544757033248,
+        "mean_overlapping_groups": 20.08610400682012
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 401,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.007481296758104738,
+          "mean_overlapping_groups": 8.034912718204488
+        },
+        "6-20s": {
+          "n": 416,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 20.71875
+        },
+        "<=2s": {
+          "n": 188,
+          "swallowed_one_group_rate": 0.02127659574468085,
+          "swallowed_gt2_group_rate": 0.02127659574468085,
+          "zero_pure_groups_rate": 0.14361702127659576,
+          "mean_overlapping_groups": 3.797872340425532
+        },
+        ">20s": {
+          "n": 168,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 65.51190476190476
+        }
+      },
+      "gaps": {
+        "n": 853,
+        "collapsed_voronoi_rate": 0.0011723329425556857,
+        "collapsed_gt2_voronoi_rate": 0.0011723329425556857,
+        "shared_frame_group_rate": 0.0011723329425556857
+      },
+      "gaps_by_duration": {
+        "2-6s": {
+          "n": 141,
+          "collapsed_voronoi_rate": 0.0,
+          "collapsed_gt2_voronoi_rate": 0.0,
+          "shared_frame_group_rate": 0.0
+        },
+        "6-20s": {
+          "n": 301,
+          "collapsed_voronoi_rate": 0.0,
+          "collapsed_gt2_voronoi_rate": 0.0,
+          "shared_frame_group_rate": 0.0
+        },
+        "<=2s": {
+          "n": 53,
+          "collapsed_voronoi_rate": 0.018867924528301886,
+          "collapsed_gt2_voronoi_rate": 0.018867924528301886,
+          "shared_frame_group_rate": 0.018867924528301886
+        },
+        ">20s": {
+          "n": 358,
+          "collapsed_voronoi_rate": 0.0,
+          "collapsed_gt2_voronoi_rate": 0.0,
+          "shared_frame_group_rate": 0.0
+        }
+      },
+      "query_any_gap_collapsed_voronoi_rate": 0.003125,
+      "query_any_shared_frame_group_rate": 0.003125
+    },
+    "qvhighlights/fps2/adaptive": {
+      "queries": 503,
+      "boundaries": {
+        "n": 1006,
+        "crossing_gt2_rate": 0.14612326043737575,
+        "crossing_any_rate": 0.3797216699801193,
+        "strict_interior_gt2_rate": 0.13220675944333996,
+        "bin_width_mean_s": 1.2339605818369985,
+        "bin_width_median_s": 1.0010000000000012,
+        "edge_dist_mean_s": 0.2279432625242929,
+        "mean_group_len": 2.5497017892644136
+      },
+      "events": {
+        "n": 503,
+        "swallowed_one_group_rate": 0.02385685884691849,
+        "swallowed_gt2_group_rate": 0.02385685884691849,
+        "zero_pure_groups_rate": 0.04970178926441352,
+        "mean_overlapping_groups": 25.117296222664017
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 83,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.012048192771084338,
+          "mean_overlapping_groups": 4.481927710843373
+        },
+        "6-20s": {
+          "n": 144,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 11.930555555555555
+        },
+        "<=2s": {
+          "n": 77,
+          "swallowed_one_group_rate": 0.15584415584415584,
+          "swallowed_gt2_group_rate": 0.15584415584415584,
+          "zero_pure_groups_rate": 0.3116883116883117,
+          "mean_overlapping_groups": 2.155844155844156
+        },
+        ">20s": {
+          "n": 199,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 52.15075376884422
+        }
+      },
+      "gaps": {
+        "n": 0
+      },
+      "gaps_by_duration": {}
+    },
+    "qvhighlights/fps2/native": {
+      "queries": 503,
+      "boundaries": {
+        "n": 1006,
+        "crossing_gt2_rate": 0.0,
+        "crossing_any_rate": 0.011928429423459244,
+        "strict_interior_gt2_rate": 0.0,
+        "bin_width_mean_s": 0.9614695911690019,
+        "bin_width_median_s": 1.0009999999999764,
+        "edge_dist_mean_s": 0.10472195836270648,
+        "mean_group_len": 2
+      },
+      "events": {
+        "n": 503,
+        "swallowed_one_group_rate": 0.0,
+        "swallowed_gt2_group_rate": 0.0,
+        "zero_pure_groups_rate": 0.0,
+        "mean_overlapping_groups": 30.630218687872762
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 83,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 5.024096385542169
+        },
+        "6-20s": {
+          "n": 144,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 13.694444444444445
+        },
+        "<=2s": {
+          "n": 77,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 2.4285714285714284
+        },
+        ">20s": {
+          "n": 199,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 64.47738693467336
+        }
+      },
+      "gaps": {
+        "n": 0
+      },
+      "gaps_by_duration": {}
+    },
+    "qvhighlights/fps2/oracle": {
+      "queries": 503,
+      "boundaries": {
+        "n": 1006,
+        "crossing_gt2_rate": 0.05467196819085487,
+        "crossing_any_rate": 0.31411530815109345,
+        "strict_interior_gt2_rate": 0.05168986083499006,
+        "bin_width_mean_s": 1.1522249222143264,
+        "bin_width_median_s": 1.0009999999999994,
+        "edge_dist_mean_s": 0.1841432356655218,
+        "mean_group_len": 2.3846918489065607
+      },
+      "events": {
+        "n": 503,
+        "swallowed_one_group_rate": 0.0019880715705765406,
+        "swallowed_gt2_group_rate": 0.0019880715705765406,
+        "zero_pure_groups_rate": 0.03578528827037773,
+        "mean_overlapping_groups": 25.123260437375745
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 83,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.024096385542168676,
+          "mean_overlapping_groups": 4.506024096385542
+        },
+        "6-20s": {
+          "n": 144,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 11.95138888888889
+        },
+        "<=2s": {
+          "n": 77,
+          "swallowed_one_group_rate": 0.012987012987012988,
+          "swallowed_gt2_group_rate": 0.012987012987012988,
+          "zero_pure_groups_rate": 0.2077922077922078,
+          "mean_overlapping_groups": 2.2857142857142856
+        },
+        ">20s": {
+          "n": 199,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 52.09045226130653
+        }
+      },
+      "gaps": {
+        "n": 0
+      },
+      "gaps_by_duration": {}
+    },
+    "qvhighlights/fps2/uniform": {
+      "queries": 503,
+      "boundaries": {
+        "n": 1006,
+        "crossing_gt2_rate": 0.2216699801192843,
+        "crossing_any_rate": 0.22465208747514911,
+        "strict_interior_gt2_rate": 0.2117296222664016,
+        "bin_width_mean_s": 1.2381566761172216,
+        "bin_width_median_s": 1.0010010010010006,
+        "edge_dist_mean_s": 0.19440693169045659,
+        "mean_group_len": 2.555666003976143
+      },
+      "events": {
+        "n": 503,
+        "swallowed_one_group_rate": 0.015904572564612324,
+        "swallowed_gt2_group_rate": 0.015904572564612324,
+        "zero_pure_groups_rate": 0.041749502982107355,
+        "mean_overlapping_groups": 25.04771371769384
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 83,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 4.265060240963855
+        },
+        "6-20s": {
+          "n": 144,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 11.88888888888889
+        },
+        "<=2s": {
+          "n": 77,
+          "swallowed_one_group_rate": 0.1038961038961039,
+          "swallowed_gt2_group_rate": 0.1038961038961039,
+          "zero_pure_groups_rate": 0.2727272727272727,
+          "mean_overlapping_groups": 2.155844155844156
+        },
+        ">20s": {
+          "n": 199,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 52.095477386934675
+        }
+      },
+      "gaps": {
+        "n": 0
+      },
+      "gaps_by_duration": {}
+    },
+    "qvhighlights/fps6/adaptive": {
+      "queries": 503,
+      "boundaries": {
+        "n": 1006,
+        "crossing_gt2_rate": 0.22365805168986083,
+        "crossing_any_rate": 0.4900596421471173,
+        "strict_interior_gt2_rate": 0.2147117296222664,
+        "bin_width_mean_s": 0.4858498821912167,
+        "bin_width_median_s": 0.333666666666673,
+        "edge_dist_mean_s": 0.09819478789897354,
+        "mean_group_len": 2.9840954274353875
+      },
+      "events": {
+        "n": 503,
+        "swallowed_one_group_rate": 0.0,
+        "swallowed_gt2_group_rate": 0.0,
+        "zero_pure_groups_rate": 0.003976143141153081,
+        "mean_overlapping_groups": 65.31411530815109
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 83,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 10.481927710843374
+        },
+        "6-20s": {
+          "n": 144,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 30.95138888888889
+        },
+        "<=2s": {
+          "n": 77,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.025974025974025976,
+          "mean_overlapping_groups": 4.376623376623376
+        },
+        ">20s": {
+          "n": 199,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 136.6281407035176
+        }
+      },
+      "gaps": {
+        "n": 0
+      },
+      "gaps_by_duration": {}
+    },
+    "qvhighlights/fps6/native": {
+      "queries": 503,
+      "boundaries": {
+        "n": 1006,
+        "crossing_gt2_rate": 0.0,
+        "crossing_any_rate": 0.042743538767395624,
+        "strict_interior_gt2_rate": 0.0,
+        "bin_width_mean_s": 0.32148236529560437,
+        "bin_width_median_s": 0.3336666666666588,
+        "edge_dist_mean_s": 0.033629343744921054,
+        "mean_group_len": 2
+      },
+      "events": {
+        "n": 503,
+        "swallowed_one_group_rate": 0.0,
+        "swallowed_gt2_group_rate": 0.0,
+        "zero_pure_groups_rate": 0.0,
+        "mean_overlapping_groups": 90.2465208747515
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 83,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 13.096385542168674
+        },
+        "6-20s": {
+          "n": 144,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 39.173611111111114
+        },
+        "<=2s": {
+          "n": 77,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 5.311688311688312
+        },
+        ">20s": {
+          "n": 199,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 192.2462311557789
+        }
+      },
+      "gaps": {
+        "n": 0
+      },
+      "gaps_by_duration": {}
+    },
+    "qvhighlights/fps6/oracle": {
+      "queries": 503,
+      "boundaries": {
+        "n": 1006,
+        "crossing_gt2_rate": 0.09741550695825049,
+        "crossing_any_rate": 0.31809145129224653,
+        "strict_interior_gt2_rate": 0.08449304174950298,
+        "bin_width_mean_s": 0.45072013718210063,
+        "bin_width_median_s": 0.333666666666673,
+        "edge_dist_mean_s": 0.062312600507087916,
+        "mean_group_len": 2.7733598409542743
+      },
+      "events": {
+        "n": 503,
+        "swallowed_one_group_rate": 0.0,
+        "swallowed_gt2_group_rate": 0.0,
+        "zero_pure_groups_rate": 0.0019880715705765406,
+        "mean_overlapping_groups": 65.30616302186878
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 83,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 10.44578313253012
+        },
+        "6-20s": {
+          "n": 144,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 30.84722222222222
+        },
+        "<=2s": {
+          "n": 77,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.012987012987012988,
+          "mean_overlapping_groups": 4.324675324675325
+        },
+        ">20s": {
+          "n": 199,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 136.71859296482413
+        }
+      },
+      "gaps": {
+        "n": 0
+      },
+      "gaps_by_duration": {}
+    },
+    "qvhighlights/fps6/uniform": {
+      "queries": 503,
+      "boundaries": {
+        "n": 1006,
+        "crossing_gt2_rate": 0.11829025844930417,
+        "crossing_any_rate": 0.12226640159045726,
+        "strict_interior_gt2_rate": 0.08648111332007952,
+        "bin_width_mean_s": 0.4692677769206608,
+        "bin_width_median_s": 0.5,
+        "edge_dist_mean_s": 0.05410362219832462,
+        "mean_group_len": 2.881709741550696
+      },
+      "events": {
+        "n": 503,
+        "swallowed_one_group_rate": 0.0,
+        "swallowed_gt2_group_rate": 0.0,
+        "zero_pure_groups_rate": 0.0019880715705765406,
+        "mean_overlapping_groups": 65.4910536779324
+      },
+      "events_by_duration": {
+        "2-6s": {
+          "n": 83,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 9.795180722891565
+        },
+        "6-20s": {
+          "n": 144,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 30.993055555555557
+        },
+        "<=2s": {
+          "n": 77,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.012987012987012988,
+          "mean_overlapping_groups": 4.220779220779221
+        },
+        ">20s": {
+          "n": 199,
+          "swallowed_one_group_rate": 0.0,
+          "swallowed_gt2_group_rate": 0.0,
+          "zero_pure_groups_rate": 0.0,
+          "mean_overlapping_groups": 137.39195979899498
+        }
+      },
+      "gaps": {
+        "n": 0
+      },
+      "gaps_by_duration": {}
+    }
+  }
+}

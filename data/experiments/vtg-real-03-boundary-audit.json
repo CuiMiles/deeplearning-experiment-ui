@@ -1,0 +1,249 @@
+{
+  "id": "vtg-real-03-boundary-audit",
+  "title": "合帧影响的是短事件边界，还是重复动作间隔",
+  "date": "2026-11-17",
+  "status": "completed",
+  "task": "vtg",
+  "series": "采样、编码与定位",
+  "tags": [],
+  "tldr": "OMTG 的 853 个相邻间隔中，2 FPS 下合到同组的只有 1.1%；188 个短事件中 22.9% 落在单组。",
+  "brief": {
+    "question": "重复动作之间的间隔是否经常被合到同一组？",
+    "change": "把帧组与真实区间叠在一起，分开统计跨边界、短事件单组吞并和相邻事件间隔。",
+    "conclusion": "OMTG 的 853 个相邻间隔中，2 FPS 下合到同组的只有 1.1%；188 个短事件中 22.9% 落在单组。",
+    "verdict": "mixed",
+    "pipeline": [
+      {
+        "label": "按帧率抽样",
+        "changed": false
+      },
+      {
+        "label": "生成各类分组",
+        "changed": false
+      },
+      {
+        "label": "对齐标注窗口",
+        "changed": true
+      },
+      {
+        "label": "分别统计",
+        "changed": false
+      }
+    ]
+  },
+  "setup": {
+    "model": "分组结构审计",
+    "evalData": [
+      "omtg"
+    ],
+    "notes": "OMTG 的 287 个视频，320 条查询。覆盖 Charades、ActivityNet、QVHighlights 的 1,140 视频子集另附。"
+  },
+  "results": {
+    "methods": [
+      {
+        "id": "native",
+        "name": "原生两帧",
+        "role": "baseline"
+      },
+      {
+        "id": "adaptive",
+        "name": "自适应合帧",
+        "role": "ours"
+      },
+      {
+        "id": "oracle",
+        "name": "真实边界辅助分组",
+        "role": "reference"
+      },
+      {
+        "id": "uniform",
+        "name": "等预算均匀分组",
+        "role": "ablation"
+      }
+    ],
+    "main": [
+      {
+        "method": "native",
+        "dataset": "omtg",
+        "metrics": {
+          "Boundary-cross": 0.0,
+          "Short-swallow": 3.7234
+        }
+      },
+      {
+        "method": "adaptive",
+        "dataset": "omtg",
+        "metrics": {
+          "Boundary-cross": 29.24126,
+          "Short-swallow": 22.87234
+        }
+      },
+      {
+        "method": "oracle",
+        "dataset": "omtg",
+        "metrics": {
+          "Boundary-cross": 12.44672,
+          "Short-swallow": 6.38298
+        }
+      },
+      {
+        "method": "uniform",
+        "dataset": "omtg",
+        "metrics": {
+          "Boundary-cross": 40.79284,
+          "Short-swallow": 17.02128
+        }
+      }
+    ],
+    "headline": [
+      {
+        "dataset": "omtg",
+        "metric": "Boundary-cross"
+      },
+      {
+        "dataset": "omtg",
+        "metric": "Short-swallow"
+      }
+    ]
+  },
+  "charts": [
+    {
+      "id": "rates",
+      "title": "同样视频在 2 FPS 下的分组结构",
+      "type": "bar",
+      "categories": [
+        "原生两帧",
+        "自适应合帧",
+        "真实边界辅助分组",
+        "等预算均匀分组"
+      ],
+      "yLabel": "百分点 / %",
+      "series": [
+        {
+          "name": "跨边界",
+          "data": [
+            0.0,
+            29.2413,
+            12.4467,
+            40.7928
+          ]
+        },
+        {
+          "name": "短事件完全落入单组",
+          "data": [
+            3.7234,
+            22.8723,
+            6.383,
+            17.0213
+          ]
+        }
+      ]
+    }
+  ],
+  "insights": {
+    "oneLiner": "间隔经常被合掉的原猜想被压低，值得进一步问跨界结构与定位准确率是否存在因果关系。",
+    "confidence": 0.55,
+    "phenomena": [
+      {
+        "id": "p1",
+        "title": "相邻动作很少同组",
+        "detail": "组长最大 6 帧，且许多动作间隔更长。",
+        "evidence": "results",
+        "symptoms": [
+          "boundary-ambiguity"
+        ],
+        "surprise": 3
+      },
+      {
+        "id": "p2",
+        "title": "短事件落入单组",
+        "detail": "2 FPS 下的 188 个短事件中，自适应分组有 43 个。",
+        "evidence": "chart:rates",
+        "symptoms": [
+          "sampling-miss"
+        ],
+        "surprise": 4
+      }
+    ],
+    "echoes": [
+      {
+        "id": "echo",
+        "phenomenon": "p1",
+        "lens": "event-segmentation",
+        "correspondences": [
+          [
+            "认知中的事件切分",
+            "视频的区间边界"
+          ],
+          [
+            "单一事件单元",
+            "把邻帧编码为一组"
+          ]
+        ],
+        "borrowedMove": "保持 token 数，改变跨边界的分组后重测模型。",
+        "limit": "这里统计的是输入结构，模型还可能使用邻组的画面。"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "hyp",
+        "title": "用同预算对照检验",
+        "statement": "固定预算下减少跨界能大幅追回定位表现。",
+        "test": "在新 Charades 样本上比较原合帧和真实边界辅助。",
+        "falsifiedIf": "降了跨界，定位仍无稳定改善。",
+        "impact": 4,
+        "effort": 3,
+        "status": "refuted",
+        "from": [
+          "echo"
+        ]
+      }
+    ],
+    "paperAngles": [
+      {
+        "id": "direction",
+        "title": "可能的研究贡献",
+        "type": "analysis",
+        "claim": "在同预算下区分分组结构变化和定位性能变化。",
+        "novelty": "在同预算下区分分组结构变化和定位性能变化。",
+        "risk": "边界辅助分组依赖标注，属于机制对照。",
+        "readiness": 0.28,
+        "from": [
+          "hyp"
+        ]
+      }
+    ],
+    "provocations": [
+      {
+        "prompt": "reviewer2",
+        "answer": "应画分组率和定位分数两张图，两者的数值单位不同。"
+      },
+      {
+        "prompt": "mechanism",
+        "answer": "这里统计的是输入结构，模型还可能使用邻组的画面。"
+      }
+    ]
+  },
+  "reproduce": {
+    "commands": [
+      {
+        "label": "在 VTG 工作目录查看原报告",
+        "cmd": "cat outputs/flexi_boundary_audit_20261117/omtg_report.md"
+      }
+    ],
+    "artifacts": [
+      {
+        "label": "OMTG 结构原表",
+        "path": "evidence/vtg-real-03-boundary-audit/flexi_boundary_audit_20261117-omtg_report.md"
+      },
+      {
+        "label": "1,140 视频结构子集",
+        "path": "evidence/vtg-real-03-boundary-audit/flexi_boundary_audit_20261117-subset_report.md"
+      },
+      {
+        "label": "多数据集结构统计",
+        "path": "evidence/vtg-real-03-boundary-audit/flexi_boundary_audit_20261117-subset_summary.json"
+      }
+    ]
+  }
+}

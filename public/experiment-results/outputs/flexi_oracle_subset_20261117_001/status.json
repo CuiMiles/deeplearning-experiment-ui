@@ -1,0 +1,40 @@
+{
+  "stage": "stopped",
+  "completed": 1054,
+  "workers": {},
+  "failures": {},
+  "unix": 1794889493.2684648,
+  "stopped_worker_states": {
+    "0": {
+      "stage": "generating",
+      "completed": 52,
+      "expected": 2784,
+      "unix": 1794889031.909375,
+      "job_id": "fps2:activitynet/v_-DzTAnE1t3w/3:flexi_time"
+    },
+    "1": {
+      "stage": "decoding",
+      "completed": 173,
+      "expected": 3037,
+      "unix": 1794886077.6072555,
+      "video": "activitynet/v_173d8EtsIpE",
+      "setting": "fps2"
+    },
+    "2": {
+      "stage": "generating",
+      "completed": 419,
+      "expected": 2918,
+      "unix": 1794889014.62857,
+      "job_id": "fps2:activitynet/v_ChPzol03Hqs/2:oracle_split_same_tokens"
+    },
+    "3": {
+      "stage": "generating",
+      "completed": 408,
+      "expected": 2626,
+      "unix": 1794889037.7041068,
+      "job_id": "fps2:charades/99B6U/1:oracle_split_same_tokens"
+    }
+  },
+  "expected": 11365,
+  "stop_reason": "User requested a 1-2 hour diagnostic instead of the large subset"
+}

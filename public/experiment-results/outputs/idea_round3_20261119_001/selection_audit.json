@@ -1,0 +1,18 @@
+{
+  "seed": 20261119,
+  "excluded_sources": 1110,
+  "overlap": 0,
+  "prior_manifests": [
+    "config/charades_inputs.json",
+    "outputs/flexi_rapid_diagnostic_20261117_001/inputs.json",
+    "outputs/qwen3_flexi_20261117_001/inputs.json",
+    "outputs/flexi_oracle_subset_20261117_001/inputs.json",
+    "outputs/idea_round2_20261118_001/charades_inputs.json",
+    "outputs/boundary_pair_20261118_001/inputs.json",
+    "outputs/boundary_pair_20261118_001/confirmation_inputs_DO_NOT_RUN.json"
+  ],
+  "historical_prediction_files": "all pre-existing outputs/**/predictions.jsonl",
+  "charades": "24 <=2s and 24 (2,6]s; videos <=40s",
+  "activitynet": "videos 40-90s; 16 event fractions <=15%, 16 >15%",
+  "reused_predictions": 0
+}

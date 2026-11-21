@@ -1,0 +1,757 @@
+{
+  "$schema": "../../schema/experiment.schema.json",
+  "id": "vtg-real-12-reward-and-mixture",
+  "title": "多事件定位｜训练配比和逐段奖励",
+  "task": "vtg",
+  "status": "completed",
+  "date": "2026-11-20",
+  "series": "多次出现的动作如何找全",
+  "parent": "vtg-real-11-event-omtg",
+  "tags": [
+    "奖励学习",
+    "样本配比"
+  ],
+  "tldr": "OMTG 上，提高多事件配比约 +7.57 分。在同样训练设置下逐段给分，再提高 2.61 分。",
+  "brief": {
+    "question": "模型是练得不够，还是训练时没有逐段给分？",
+    "change": "用同一训练池比较 11.8% 和 50.6% 的多事件抽样，并在高配比下只换奖励。",
+    "conclusion": "OMTG 上，提高多事件配比约 +7.57 分。在同样训练设置下逐段给分，再提高 2.61 分。",
+    "verdict": "positive",
+    "pipeline": [
+      {
+        "label": "冻结视频和标注"
+      },
+      {
+        "label": "调数据配比或奖励",
+        "changed": true
+      },
+      {
+        "label": "逐段匹配并配对评分"
+      }
+    ]
+  },
+  "setup": {
+    "model": "TimeLens2-4B",
+    "evalData": [
+      "omtg",
+      "timelens2-93k-held-multi",
+      "timelens2-93k-held-single",
+      "charades-timelens"
+    ],
+    "notes": "种子 1 第 200 步。320 条 OMTG、301 条多事件留出、150 条单事件留出、300 条 Charades。A0 采用 TimeLens2 奖励项的本地 LoRA 设置。"
+  },
+  "reproduce": {
+    "commands": [
+      {
+        "label": "在 VTG 目录核对原始评分",
+        "cmd": "cd [local-path]/models/multimodal/model_reproduction/vtg && cat exh_20261120/e3_eval/report.md"
+      }
+    ],
+    "artifacts": [
+      {
+        "label": "评分和配对区间",
+        "path": "evidence/vtg-real-12-reward-and-mixture/report.md"
+      },
+      {
+        "label": "评测汇总",
+        "path": "evidence/vtg-real-12-reward-and-mixture/summary.json"
+      },
+      {
+        "label": "逐查询预测、标注和得分",
+        "path": "evidence/vtg-real-12-reward-and-mixture/per_query.csv"
+      }
+    ]
+  },
+  "results": {
+    "methods": [
+      {
+        "id": "A0_s1@200",
+        "name": "A0 集合重叠",
+        "role": "baseline"
+      },
+      {
+        "id": "A1_s1@200",
+        "name": "A1 逐段匹配",
+        "role": "ours"
+      },
+      {
+        "id": "A0mix13_s1@200",
+        "name": "A0 低多事件占比",
+        "role": "ablation"
+      },
+      {
+        "id": "sft",
+        "name": "SFT",
+        "role": "reference"
+      },
+      {
+        "id": "tl2_4b",
+        "name": "冻结 TimeLens2-4B",
+        "role": "reference"
+      }
+    ],
+    "main": [
+      {
+        "method": "A0_s1@200",
+        "dataset": "omtg",
+        "metrics": {
+          "Event-F1@0.5": 42.13252,
+          "Event-Recall@0.5": 37.04439,
+          "EtF1": 16.2314,
+          "Count-Accuracy": 24.0625
+        }
+      },
+      {
+        "method": "A1_s1@200",
+        "dataset": "omtg",
+        "metrics": {
+          "Event-F1@0.5": 44.74284,
+          "Event-Recall@0.5": 39.66915,
+          "EtF1": 18.37674,
+          "Count-Accuracy": 26.5625
+        }
+      },
+      {
+        "method": "A0mix13_s1@200",
+        "dataset": "omtg",
+        "metrics": {
+          "Event-F1@0.5": 34.56446,
+          "Event-Recall@0.5": 27.01401,
+          "EtF1": 5.15625,
+          "Count-Accuracy": 6.875
+        }
+      },
+      {
+        "method": "sft",
+        "dataset": "omtg",
+        "metrics": {
+          "Event-F1@0.5": 32.56893,
+          "Event-Recall@0.5": 27.06597,
+          "EtF1": 8.59375,
+          "Count-Accuracy": 13.125
+        }
+      },
+      {
+        "method": "tl2_4b",
+        "dataset": "omtg",
+        "metrics": {
+          "Event-F1@0.5": 29.35513,
+          "Event-Recall@0.5": 24.31524,
+          "EtF1": 8.69444,
+          "Count-Accuracy": 12.1875
+        }
+      },
+      {
+        "method": "A0_s1@200",
+        "dataset": "timelens2-93k-held-multi",
+        "metrics": {
+          "Event-F1@0.5": 61.21974,
+          "Event-Recall@0.5": 56.94906,
+          "EtF1": 38.64895,
+          "Count-Accuracy": 49.83389
+        }
+      },
+      {
+        "method": "A1_s1@200",
+        "dataset": "timelens2-93k-held-multi",
+        "metrics": {
+          "Event-F1@0.5": 63.21679,
+          "Event-Recall@0.5": 59.21927,
+          "EtF1": 40.66076,
+          "Count-Accuracy": 52.49169
+        }
+      },
+      {
+        "method": "A0mix13_s1@200",
+        "dataset": "timelens2-93k-held-multi",
+        "metrics": {
+          "Event-F1@0.5": 55.63677,
+          "Event-Recall@0.5": 48.22813,
+          "EtF1": 24.06792,
+          "Count-Accuracy": 28.2392
+        }
+      },
+      {
+        "method": "sft",
+        "dataset": "timelens2-93k-held-multi",
+        "metrics": {
+          "Event-F1@0.5": 54.25987,
+          "Event-Recall@0.5": 49.6124,
+          "EtF1": 30.93392,
+          "Count-Accuracy": 38.20598
+        }
+      },
+      {
+        "method": "tl2_4b",
+        "dataset": "timelens2-93k-held-multi",
+        "metrics": {
+          "Event-F1@0.5": 50.43559,
+          "Event-Recall@0.5": 44.35216,
+          "EtF1": 25.02769,
+          "Count-Accuracy": 30.56478
+        }
+      },
+      {
+        "method": "A0_s1@200",
+        "dataset": "timelens2-93k-held-single",
+        "metrics": {
+          "Set-tIoU": 67.81762
+        }
+      },
+      {
+        "method": "A1_s1@200",
+        "dataset": "timelens2-93k-held-single",
+        "metrics": {
+          "Set-tIoU": 68.11519
+        }
+      },
+      {
+        "method": "A0mix13_s1@200",
+        "dataset": "timelens2-93k-held-single",
+        "metrics": {
+          "Set-tIoU": 66.96127
+        }
+      },
+      {
+        "method": "sft",
+        "dataset": "timelens2-93k-held-single",
+        "metrics": {
+          "Set-tIoU": 63.06274
+        }
+      },
+      {
+        "method": "tl2_4b",
+        "dataset": "timelens2-93k-held-single",
+        "metrics": {
+          "Set-tIoU": 67.27855
+        }
+      },
+      {
+        "method": "A0_s1@200",
+        "dataset": "charades-timelens",
+        "metrics": {
+          "Set-tIoU": 50.18369
+        }
+      },
+      {
+        "method": "A1_s1@200",
+        "dataset": "charades-timelens",
+        "metrics": {
+          "Set-tIoU": 50.66991
+        }
+      },
+      {
+        "method": "A0mix13_s1@200",
+        "dataset": "charades-timelens",
+        "metrics": {
+          "Set-tIoU": 50.80769
+        }
+      },
+      {
+        "method": "sft",
+        "dataset": "charades-timelens",
+        "metrics": {
+          "Set-tIoU": 48.48083
+        }
+      },
+      {
+        "method": "tl2_4b",
+        "dataset": "charades-timelens",
+        "metrics": {
+          "Set-tIoU": 52.18642
+        }
+      }
+    ],
+    "headline": [
+      {
+        "dataset": "omtg",
+        "metric": "Event-F1@0.5"
+      },
+      {
+        "dataset": "timelens2-93k-held-multi",
+        "metric": "Event-F1@0.5"
+      },
+      {
+        "dataset": "charades-timelens",
+        "metric": "Set-tIoU"
+      }
+    ]
+  },
+  "charts": [
+    {
+      "id": "mixture",
+      "title": "多事件训练配比与奖励",
+      "type": "bar",
+      "categories": [
+        "多事件占 11.8% · A0",
+        "多事件占 50.6% · A0",
+        "多事件占 50.6% · A1"
+      ],
+      "yLabel": "分",
+      "series": [
+        {
+          "name": "OMTG",
+          "data": [
+            34.564,
+            42.133,
+            44.743
+          ]
+        },
+        {
+          "name": "多事件留出",
+          "data": [
+            55.637,
+            61.22,
+            63.217
+          ]
+        }
+      ],
+      "takeaway": "提高配比时召回和预测段数都上升。只换奖励时，段数接近，精度和召回都提高。"
+    }
+  ],
+  "insights": {
+    "oneLiner": "训练配比影响报多少段，逐段奖励可能改善每段命中。",
+    "confidence": 0.64,
+    "phenomena": [
+      {
+        "id": "p1",
+        "title": "配比影响报出几段",
+        "detail": "同用 A0，50.6% 条件每题多报约 0.68 段，OMTG 召回提高 10.03 点。",
+        "evidence": "results",
+        "symptoms": [
+          "curriculum"
+        ],
+        "surprise": 3
+      }
+    ],
+    "echoes": [
+      {
+        "id": "e1",
+        "phenomenon": "p1",
+        "lens": "literary-digest",
+        "correspondences": [
+          [
+            "样本结构",
+            "训练问题分布"
+          ],
+          [
+            "覆盖到的群体",
+            "见过的多事件问题"
+          ]
+        ],
+        "borrowedMove": "用同一训练池、同训练量分开改配比和奖励。",
+        "limit": "现有 13% 只有 A0，只能观察这一组配比差异。"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "h1",
+        "title": "下一次机制检验",
+        "statement": "训练配比影响报多少段，逐段奖励可能改善每段命中。",
+        "test": "补训练低配比 A1，与现有两组高配比组成四组。",
+        "falsifiedIf": "低配比和高配比的 A1 增益接近，则弱化两者交互假设。",
+        "impact": 4,
+        "effort": 2,
+        "status": "todo",
+        "from": [
+          "e1"
+        ]
+      }
+    ],
+    "paperAngles": [
+      {
+        "id": "a1",
+        "title": "多事件漏报的机制分析",
+        "type": "analysis",
+        "claim": "训练配比影响报多少段，逐段奖励可能改善每段命中。",
+        "from": [
+          "h1"
+        ],
+        "risk": "现有 13% 只有 A0，只能观察这一组配比差异。",
+        "readiness": 0.31
+      }
+    ],
+    "provocations": [
+      {
+        "prompt": "reviewer2",
+        "answer": "现有 13% 只有 A0，只能观察这一组配比差异。"
+      },
+      {
+        "prompt": "simplest",
+        "answer": "用同一训练池、同训练量分开改配比和奖励。"
+      }
+    ],
+    "questionsForYou": [
+      "下一轮更重视把多次事件都找全，还是优先减少极短动作漏报？"
+    ]
+  },
+  "cases": [
+    {
+      "id": "omtg_36",
+      "title": "找回了漏掉的一次",
+      "type": "temporal",
+      "outcome": "success",
+      "note": "标注 2 段，两组分别报 1 和 2 段。事件 F1 0.0 → 100.0。点为三组共用的 64 帧。",
+      "video": {
+        "duration": 29.733333333333334,
+        "fps": 12
+      },
+      "query": "Find the video segment that corresponds to the given textual query 'person holding a towel.' and determine its start and end seconds.",
+      "gt": [
+        [
+          11.0,
+          16.0
+        ],
+        [
+          25.0,
+          29.0
+        ]
+      ],
+      "sampledFrames": [
+        0.2,
+        0.7,
+        1.1333333333333333,
+        1.6333333333333333,
+        2.066666666666667,
+        2.566666666666667,
+        3.0,
+        3.5,
+        3.933333333333333,
+        4.433333333333334,
+        4.866666666666666,
+        5.366666666666666,
+        5.8,
+        6.3,
+        6.733333333333333,
+        7.233333333333333,
+        7.633333333333334,
+        8.133333333333333,
+        8.566666666666666,
+        9.066666666666666,
+        9.5,
+        10.0,
+        10.433333333333334,
+        10.933333333333334,
+        11.366666666666667,
+        11.866666666666667,
+        12.3,
+        12.8,
+        13.233333333333333,
+        13.733333333333333,
+        14.166666666666666,
+        14.666666666666666,
+        15.066666666666666,
+        15.566666666666666,
+        16.0,
+        16.5,
+        16.933333333333334,
+        17.433333333333334,
+        17.866666666666667,
+        18.366666666666667,
+        18.8,
+        19.3,
+        19.733333333333334,
+        20.233333333333334,
+        20.666666666666668,
+        21.166666666666668,
+        21.6,
+        22.1,
+        22.5,
+        23.0,
+        23.433333333333334,
+        23.933333333333334,
+        24.366666666666667,
+        24.866666666666667,
+        25.3,
+        25.8,
+        26.233333333333334,
+        26.733333333333334,
+        27.166666666666668,
+        27.666666666666668,
+        28.1,
+        28.6,
+        29.033333333333335,
+        29.533333333333335
+      ],
+      "predictions": [
+        {
+          "method": "A0mix13_s1@200",
+          "segments": [
+            {
+              "start": 9.0,
+              "end": 29.0
+            }
+          ]
+        },
+        {
+          "method": "A0_s1@200",
+          "segments": [
+            {
+              "start": 9.0,
+              "end": 29.0
+            }
+          ]
+        },
+        {
+          "method": "A1_s1@200",
+          "segments": [
+            {
+              "start": 9.0,
+              "end": 16.0
+            },
+            {
+              "start": 24.0,
+              "end": 29.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "omtg_300",
+      "title": "命中变少",
+      "type": "temporal",
+      "outcome": "failure",
+      "note": "标注 3 段，两组分别报 2 和 2 段。事件 F1 40.0 → 0.0。点为三组共用的 64 帧。",
+      "video": {
+        "duration": 79.72413793103448,
+        "fps": 12
+      },
+      "query": "Find the video segment that corresponds to the given textual query 'a person lifting a steam iron' and determine its start and end seconds.",
+      "gt": [
+        [
+          5.0,
+          7.0
+        ],
+        [
+          34.0,
+          43.0
+        ],
+        [
+          62.0,
+          77.0
+        ]
+      ],
+      "sampledFrames": [
+        1.2413793103448276,
+        1.7586206896551724,
+        3.2413793103448274,
+        3.7241379310344827,
+        6.241379310344827,
+        6.724137931034483,
+        8.206896551724139,
+        8.724137931034482,
+        11.206896551724139,
+        11.724137931034482,
+        13.206896551724139,
+        13.689655172413794,
+        16.20689655172414,
+        16.689655172413794,
+        18.17241379310345,
+        18.689655172413794,
+        21.17241379310345,
+        21.689655172413794,
+        23.17241379310345,
+        23.655172413793103,
+        26.17241379310345,
+        26.655172413793103,
+        28.137931034482758,
+        28.655172413793103,
+        31.137931034482758,
+        31.655172413793103,
+        33.13793103448276,
+        33.62068965517241,
+        36.13793103448276,
+        36.62068965517241,
+        38.10344827586207,
+        38.62068965517241,
+        41.10344827586207,
+        41.62068965517241,
+        43.10344827586207,
+        43.58620689655172,
+        46.10344827586207,
+        46.58620689655172,
+        48.06896551724138,
+        48.58620689655172,
+        51.06896551724138,
+        51.58620689655172,
+        53.06896551724138,
+        53.55172413793103,
+        56.06896551724138,
+        56.55172413793103,
+        58.03448275862069,
+        58.55172413793103,
+        61.03448275862069,
+        61.55172413793103,
+        63.03448275862069,
+        63.51724137931034,
+        66.03448275862068,
+        66.51724137931035,
+        68.0,
+        68.51724137931035,
+        71.0,
+        71.51724137931035,
+        73.0,
+        73.48275862068965,
+        76.0,
+        76.48275862068965,
+        77.96551724137932,
+        78.48275862068965
+      ],
+      "predictions": [
+        {
+          "method": "A0mix13_s1@200",
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0
+            }
+          ]
+        },
+        {
+          "method": "A0_s1@200",
+          "segments": [
+            {
+              "start": 5.0,
+              "end": 8.0
+            },
+            {
+              "start": 62.0,
+              "end": 65.0
+            }
+          ]
+        },
+        {
+          "method": "A1_s1@200",
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0
+            },
+            {
+              "start": 62.0,
+              "end": 65.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "omtg_23",
+      "title": "仍有漏报",
+      "type": "temporal",
+      "outcome": "partial",
+      "note": "标注 2 段，两组分别报 1 和 1 段。事件 F1 66.7 → 66.7。点为三组共用的 64 帧。",
+      "video": {
+        "duration": 28.866666666666667,
+        "fps": 12
+      },
+      "query": "Find the video segment that corresponds to the given textual query 'a person sits in a chair at the desk.' and determine its start and end seconds.",
+      "gt": [
+        [
+          0.0,
+          12.0
+        ],
+        [
+          18.0,
+          25.0
+        ]
+      ],
+      "sampledFrames": [
+        0.2,
+        0.7,
+        1.1,
+        1.6,
+        2.0,
+        2.5,
+        2.9,
+        3.4,
+        3.8,
+        4.3,
+        4.7,
+        5.2,
+        5.6,
+        6.1,
+        6.5,
+        7.0,
+        7.433333333333334,
+        7.933333333333334,
+        8.333333333333334,
+        8.833333333333334,
+        9.233333333333333,
+        9.733333333333333,
+        10.133333333333333,
+        10.633333333333333,
+        11.033333333333333,
+        11.533333333333333,
+        11.933333333333334,
+        12.433333333333334,
+        12.833333333333334,
+        13.333333333333334,
+        13.733333333333333,
+        14.233333333333333,
+        14.633333333333333,
+        15.133333333333333,
+        15.533333333333333,
+        16.033333333333335,
+        16.433333333333334,
+        16.933333333333334,
+        17.333333333333332,
+        17.833333333333332,
+        18.233333333333334,
+        18.733333333333334,
+        19.133333333333333,
+        19.633333333333333,
+        20.033333333333335,
+        20.533333333333335,
+        20.933333333333334,
+        21.433333333333334,
+        21.866666666666667,
+        22.366666666666667,
+        22.766666666666666,
+        23.266666666666666,
+        23.666666666666668,
+        24.166666666666668,
+        24.566666666666666,
+        25.066666666666666,
+        25.466666666666665,
+        25.966666666666665,
+        26.366666666666667,
+        26.866666666666667,
+        27.266666666666666,
+        27.766666666666666,
+        28.166666666666668,
+        28.666666666666668
+      ],
+      "predictions": [
+        {
+          "method": "A0mix13_s1@200",
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 12.0
+            }
+          ]
+        },
+        {
+          "method": "A0_s1@200",
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 12.0
+            }
+          ]
+        },
+        {
+          "method": "A1_s1@200",
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 12.0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,609 @@
+{
+  "n_videos": 16,
+  "jointly_missed_events": 46,
+  "zero_input_frames": 9,
+  "one_input_frame": 7,
+  "at_least_two_input_frames": 30,
+  "frame_count_distribution": {
+    "4": 6,
+    "7": 2,
+    "1": 7,
+    "2": 10,
+    "3": 6,
+    "8": 1,
+    "0": 9,
+    "6": 2,
+    "5": 2,
+    "23": 1
+  },
+  "cases": [
+    {
+      "sample_id": "omtg_245",
+      "span": [
+        52.0,
+        57.0
+      ],
+      "input_frames_inside": 4,
+      "input_frames_in_event": [
+        53.64,
+        54.28,
+        56.24,
+        56.92
+      ]
+    },
+    {
+      "sample_id": "omtg_245",
+      "span": [
+        72.0,
+        82.0
+      ],
+      "input_frames_inside": 7,
+      "input_frames_in_event": [
+        72.6,
+        74.56,
+        75.24,
+        77.2,
+        77.84,
+        79.8,
+        80.48
+      ]
+    },
+    {
+      "sample_id": "omtg_270",
+      "span": [
+        84.0,
+        85.0
+      ],
+      "input_frames_inside": 1,
+      "input_frames_in_event": [
+        84.292
+      ]
+    },
+    {
+      "sample_id": "omtg_127",
+      "span": [
+        4.0,
+        10.0
+      ],
+      "input_frames_inside": 2,
+      "input_frames_in_event": [
+        5.333,
+        6.667
+      ]
+    },
+    {
+      "sample_id": "omtg_127",
+      "span": [
+        26.0,
+        32.0
+      ],
+      "input_frames_inside": 2,
+      "input_frames_in_event": [
+        26.8,
+        28.133
+      ]
+    },
+    {
+      "sample_id": "omtg_127",
+      "span": [
+        40.0,
+        49.0
+      ],
+      "input_frames_inside": 3,
+      "input_frames_in_event": [
+        42.867,
+        44.2,
+        48.2
+      ]
+    },
+    {
+      "sample_id": "omtg_127",
+      "span": [
+        75.0,
+        83.0
+      ],
+      "input_frames_inside": 4,
+      "input_frames_in_event": [
+        75.0,
+        76.333,
+        80.4,
+        81.733
+      ]
+    },
+    {
+      "sample_id": "omtg_127",
+      "span": [
+        121.0,
+        123.0
+      ],
+      "input_frames_inside": 1,
+      "input_frames_in_event": [
+        121.933
+      ]
+    },
+    {
+      "sample_id": "omtg_127",
+      "span": [
+        131.0,
+        134.0
+      ],
+      "input_frames_inside": 2,
+      "input_frames_in_event": [
+        131.267,
+        132.6
+      ]
+    },
+    {
+      "sample_id": "omtg_298",
+      "span": [
+        2.0,
+        7.0
+      ],
+      "input_frames_inside": 8,
+      "input_frames_in_event": [
+        2.567,
+        2.9,
+        3.867,
+        4.167,
+        5.133,
+        5.467,
+        6.433,
+        6.733
+      ]
+    },
+    {
+      "sample_id": "omtg_298",
+      "span": [
+        39.0,
+        40.0
+      ],
+      "input_frames_inside": 2,
+      "input_frames_in_event": [
+        39.2,
+        39.5
+      ]
+    },
+    {
+      "sample_id": "omtg_155",
+      "span": [
+        18.0,
+        26.0
+      ],
+      "input_frames_inside": 4,
+      "input_frames_in_event": [
+        20.6,
+        21.6,
+        24.733,
+        25.733
+      ]
+    },
+    {
+      "sample_id": "omtg_224",
+      "span": [
+        165.0,
+        170.0
+      ],
+      "input_frames_inside": 0,
+      "input_frames_in_event": []
+    },
+    {
+      "sample_id": "omtg_224",
+      "span": [
+        297.0,
+        301.0
+      ],
+      "input_frames_inside": 0,
+      "input_frames_in_event": []
+    },
+    {
+      "sample_id": "omtg_224",
+      "span": [
+        393.0,
+        398.0
+      ],
+      "input_frames_inside": 0,
+      "input_frames_in_event": []
+    },
+    {
+      "sample_id": "omtg_224",
+      "span": [
+        449.0,
+        457.0
+      ],
+      "input_frames_inside": 1,
+      "input_frames_in_event": [
+        452.719
+      ]
+    },
+    {
+      "sample_id": "omtg_224",
+      "span": [
+        593.0,
+        597.0
+      ],
+      "input_frames_inside": 0,
+      "input_frames_in_event": []
+    },
+    {
+      "sample_id": "omtg_148",
+      "span": [
+        4.0,
+        11.0
+      ],
+      "input_frames_inside": 3,
+      "input_frames_in_event": [
+        5.2,
+        6.467,
+        10.4
+      ]
+    },
+    {
+      "sample_id": "omtg_148",
+      "span": [
+        20.0,
+        34.0
+      ],
+      "input_frames_inside": 6,
+      "input_frames_in_event": [
+        20.733,
+        22.067,
+        25.933,
+        27.2,
+        31.133,
+        32.4
+      ]
+    },
+    {
+      "sample_id": "omtg_148",
+      "span": [
+        37.0,
+        54.0
+      ],
+      "input_frames_inside": 7,
+      "input_frames_in_event": [
+        37.6,
+        41.467,
+        42.8,
+        46.667,
+        48.0,
+        51.867,
+        53.133
+      ]
+    },
+    {
+      "sample_id": "omtg_148",
+      "span": [
+        107.0,
+        112.0
+      ],
+      "input_frames_inside": 2,
+      "input_frames_in_event": [
+        107.6,
+        111.533
+      ]
+    },
+    {
+      "sample_id": "omtg_148",
+      "span": [
+        147.0,
+        159.0
+      ],
+      "input_frames_inside": 5,
+      "input_frames_in_event": [
+        147.8,
+        149.133,
+        153.0,
+        154.267,
+        158.2
+      ]
+    },
+    {
+      "sample_id": "omtg_172",
+      "span": [
+        25.0,
+        34.0
+      ],
+      "input_frames_inside": 2,
+      "input_frames_in_event": [
+        30.03,
+        32.532
+      ]
+    },
+    {
+      "sample_id": "omtg_172",
+      "span": [
+        36.0,
+        38.0
+      ],
+      "input_frames_inside": 0,
+      "input_frames_in_event": []
+    },
+    {
+      "sample_id": "omtg_172",
+      "span": [
+        40.0,
+        55.0
+      ],
+      "input_frames_inside": 4,
+      "input_frames_in_event": [
+        40.04,
+        42.542,
+        50.05,
+        52.552
+      ]
+    },
+    {
+      "sample_id": "omtg_172",
+      "span": [
+        57.0,
+        81.0
+      ],
+      "input_frames_inside": 5,
+      "input_frames_in_event": [
+        60.06,
+        62.562,
+        70.07,
+        72.572,
+        80.08
+      ]
+    },
+    {
+      "sample_id": "omtg_172",
+      "span": [
+        83.0,
+        103.0
+      ],
+      "input_frames_inside": 4,
+      "input_frames_in_event": [
+        90.09,
+        92.592,
+        100.1,
+        102.602
+      ]
+    },
+    {
+      "sample_id": "omtg_172",
+      "span": [
+        110.0,
+        140.0
+      ],
+      "input_frames_inside": 6,
+      "input_frames_in_event": [
+        110.11,
+        112.612,
+        120.12,
+        122.622,
+        130.13,
+        132.632
+      ]
+    },
+    {
+      "sample_id": "omtg_172",
+      "span": [
+        150.0,
+        158.0
+      ],
+      "input_frames_inside": 2,
+      "input_frames_in_event": [
+        150.15,
+        152.652
+      ]
+    },
+    {
+      "sample_id": "omtg_286",
+      "span": [
+        87.0,
+        91.0
+      ],
+      "input_frames_inside": 1,
+      "input_frames_in_event": [
+        87.48
+      ]
+    },
+    {
+      "sample_id": "omtg_286",
+      "span": [
+        187.0,
+        196.0
+      ],
+      "input_frames_inside": 1,
+      "input_frames_in_event": [
+        188.16
+      ]
+    },
+    {
+      "sample_id": "omtg_280",
+      "span": [
+        15.0,
+        19.0
+      ],
+      "input_frames_inside": 2,
+      "input_frames_in_event": [
+        16.04,
+        17.04
+      ]
+    },
+    {
+      "sample_id": "omtg_280",
+      "span": [
+        40.0,
+        42.0
+      ],
+      "input_frames_inside": 2,
+      "input_frames_in_event": [
+        40.08,
+        41.08
+      ]
+    },
+    {
+      "sample_id": "omtg_280",
+      "span": [
+        47.0,
+        51.0
+      ],
+      "input_frames_inside": 2,
+      "input_frames_in_event": [
+        48.08,
+        49.08
+      ]
+    },
+    {
+      "sample_id": "omtg_168",
+      "span": [
+        34.0,
+        40.0
+      ],
+      "input_frames_inside": 3,
+      "input_frames_in_event": [
+        34.234,
+        37.804,
+        38.972
+      ]
+    },
+    {
+      "sample_id": "omtg_203",
+      "span": [
+        82.0,
+        89.0
+      ],
+      "input_frames_inside": 0,
+      "input_frames_in_event": []
+    },
+    {
+      "sample_id": "omtg_203",
+      "span": [
+        139.0,
+        149.0
+      ],
+      "input_frames_inside": 1,
+      "input_frames_in_event": [
+        143.667
+      ]
+    },
+    {
+      "sample_id": "omtg_203",
+      "span": [
+        343.0,
+        350.0
+      ],
+      "input_frames_inside": 0,
+      "input_frames_in_event": []
+    },
+    {
+      "sample_id": "omtg_203",
+      "span": [
+        481.0,
+        485.0
+      ],
+      "input_frames_inside": 0,
+      "input_frames_in_event": []
+    },
+    {
+      "sample_id": "omtg_203",
+      "span": [
+        506.0,
+        512.0
+      ],
+      "input_frames_inside": 0,
+      "input_frames_in_event": []
+    },
+    {
+      "sample_id": "omtg_314",
+      "span": [
+        9.0,
+        13.0
+      ],
+      "input_frames_inside": 3,
+      "input_frames_in_event": [
+        9.476,
+        10.277,
+        12.646
+      ]
+    },
+    {
+      "sample_id": "omtg_314",
+      "span": [
+        29.0,
+        35.0
+      ],
+      "input_frames_inside": 4,
+      "input_frames_in_event": [
+        29.229,
+        31.598,
+        32.399,
+        34.768
+      ]
+    },
+    {
+      "sample_id": "omtg_314",
+      "span": [
+        68.0,
+        73.0
+      ],
+      "input_frames_inside": 3,
+      "input_frames_in_event": [
+        68.769,
+        71.138,
+        71.905
+      ]
+    },
+    {
+      "sample_id": "omtg_314",
+      "span": [
+        82.0,
+        87.0
+      ],
+      "input_frames_inside": 3,
+      "input_frames_in_event": [
+        83.784,
+        84.551,
+        86.92
+      ]
+    },
+    {
+      "sample_id": "omtg_131",
+      "span": [
+        139.0,
+        143.0
+      ],
+      "input_frames_inside": 1,
+      "input_frames_in_event": [
+        142.133
+      ]
+    },
+    {
+      "sample_id": "omtg_128",
+      "span": [
+        72.0,
+        114.0
+      ],
+      "input_frames_inside": 23,
+      "input_frames_in_event": [
+        73.8,
+        74.667,
+        77.4,
+        78.267,
+        81.0,
+        81.867,
+        84.6,
+        85.467,
+        88.2,
+        89.067,
+        91.8,
+        92.667,
+        95.4,
+        96.267,
+        99.0,
+        99.867,
+        102.6,
+        103.467,
+        106.2,
+        107.067,
+        109.8,
+        110.667,
+        113.4
+      ]
+    }
+  ],
+  "scope": "post hoc; source frame indices reconstructed under executed uniform 64-frame protocol and checked against logged timestamps. In-interval frames are a coverage measure."
+}

@@ -1,0 +1,87 @@
+{
+  "stage": "superseded_before_first_full_prediction",
+  "completed": 0,
+  "expected": 103444,
+  "reserve_mib": 2560,
+  "workers": {},
+  "worker_states": {
+    "1": {
+      "stage": "decoding",
+      "completed": 0,
+      "expected": 18766,
+      "unix": 1794837295.5798373,
+      "video": "activitynet/v_BrgYIg6UXhU",
+      "setting": "fps2"
+    },
+    "2": {
+      "stage": "decoding",
+      "completed": 0,
+      "expected": 17017,
+      "unix": 1794837295.5799787,
+      "video": "activitynet/v_5dXi-tAGqbs",
+      "setting": "fps2"
+    },
+    "3": {
+      "stage": "decoding",
+      "completed": 0,
+      "expected": 16500,
+      "unix": 1794837381.9508474,
+      "video": "activitynet/v_MtFX7uTHwFQ",
+      "setting": "fps2"
+    },
+    "4": {
+      "stage": "decoding",
+      "completed": 0,
+      "expected": 16467,
+      "unix": 1794837713.2368684,
+      "video": "activitynet/v_BSdXxBOJ12A",
+      "setting": "fps2"
+    },
+    "5": {
+      "stage": "decoding",
+      "completed": 0,
+      "expected": 17347,
+      "unix": 1794837637.9755595,
+      "video": "activitynet/v_Zt8zZhMs4Es",
+      "setting": "fps2"
+    }
+  },
+  "gpus": {
+    "0": {
+      "uuid": "GPU-488f5643-5e0c-67e1-c2ca-249778463552",
+      "free_mib": 4340
+    },
+    "1": {
+      "uuid": "GPU-886f5208-280c-9b1a-b35a-8547bbc4dd08",
+      "free_mib": 3898
+    },
+    "2": {
+      "uuid": "GPU-f1289656-94c0-299c-18dd-1a72dcf15ccd",
+      "free_mib": 3562
+    },
+    "3": {
+      "uuid": "GPU-7db38f3c-673e-c2d6-decc-ddc80d9249fa",
+      "free_mib": 5094
+    },
+    "4": {
+      "uuid": "GPU-a5c3d501-21c5-b2cc-4226-6e003d66f9ff",
+      "free_mib": 5161
+    },
+    "5": {
+      "uuid": "GPU-87f4d80f-26e0-be85-8410-c117f0306973",
+      "free_mib": 12653
+    },
+    "6": {
+      "uuid": "GPU-32d99607-6952-5beb-e578-f597ec3fb749",
+      "free_mib": 3928
+    },
+    "7": {
+      "uuid": "GPU-31d3cf27-dd2f-88b2-2154-349a943b8161",
+      "free_mib": 5119
+    }
+  },
+  "failures": {},
+  "telemetry_age_seconds": 3.8374591041356325,
+  "unix": 1794838926.772322,
+  "successor_run": "[local-path]/vtg-fourworks-20261110/outputs/flexi_timelens_full_20261116_003"
+}

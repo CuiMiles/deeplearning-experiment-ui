@@ -1,0 +1,687 @@
+{
+  "id": "vtg-real-11-event-omtg",
+  "title": "在 OMTG 重新看实片，补漏法 16 条全部打平",
+  "date": "2026-11-19",
+  "status": "completed",
+  "task": "vtg",
+  "series": "多事件定位与遗漏",
+  "tags": [],
+  "tldr": "144 次推理完成。补漏与整份投票都是 23.36 F1，16 条逐条持平；51 个漏检中有 46 个在八份回答里都没定位对。",
+  "brief": {
+    "question": "脱离已保存的训练来源回答，直接做 OMTG 实片定位还能补漏吗？",
+    "change": "同一模型用 64 帧对每条新生成 8 次随机回答及 1 次确定性回答，预先冻结补段规则。",
+    "conclusion": "144 次推理完成。补漏与整份投票都是 23.36 F1，16 条逐条持平；51 个漏检中有 46 个在八份回答里都没定位对。",
+    "verdict": "negative",
+    "pipeline": [
+      {
+        "label": "从实片取 64 帧",
+        "changed": false
+      },
+      {
+        "label": "生成八份答案",
+        "changed": false
+      },
+      {
+        "label": "按事件补漏",
+        "changed": true
+      },
+      {
+        "label": "用标注评分",
+        "changed": false
+      }
+    ]
+  },
+  "setup": {
+    "model": "TimeLens2-4B",
+    "evalData": [
+      "omtg"
+    ],
+    "notes": "16 个独立源视频，预先固定选样，输入像素和时间戳逐视频相同。跨语料结果分别解读。"
+  },
+  "results": {
+    "methods": [
+      {
+        "id": "medoid",
+        "name": "整份答案投票",
+        "role": "baseline"
+      },
+      {
+        "id": "rescue",
+        "name": "按事件补漏",
+        "role": "ours"
+      },
+      {
+        "id": "majority",
+        "name": "按时间多数票",
+        "role": "ablation"
+      },
+      {
+        "id": "placebo",
+        "name": "同数量随机补段",
+        "role": "ablation"
+      },
+      {
+        "id": "first",
+        "name": "第一份回答",
+        "role": "reference"
+      },
+      {
+        "id": "greedy",
+        "name": "单次确定性解码",
+        "role": "reference"
+      }
+    ],
+    "main": [
+      {
+        "method": "first",
+        "dataset": "omtg",
+        "metrics": {
+          "Event-F1@0.5": 23.3631,
+          "Event-Recall@0.5": 18.75,
+          "Shortest-Recall@0.5": 6.25,
+          "Set-tIoU": 35.56589
+        }
+      },
+      {
+        "method": "medoid",
+        "dataset": "omtg",
+        "metrics": {
+          "Event-F1@0.5": 23.3631,
+          "Event-Recall@0.5": 18.75,
+          "Shortest-Recall@0.5": 6.25,
+          "Set-tIoU": 33.75807
+        }
+      },
+      {
+        "method": "majority",
+        "dataset": "omtg",
+        "metrics": {
+          "Event-F1@0.5": 24.75198,
+          "Event-Recall@0.5": 19.79167,
+          "Shortest-Recall@0.5": 6.25,
+          "Set-tIoU": 34.24448
+        }
+      },
+      {
+        "method": "rescue",
+        "dataset": "omtg",
+        "metrics": {
+          "Event-F1@0.5": 23.3631,
+          "Event-Recall@0.5": 18.75,
+          "Shortest-Recall@0.5": 6.25,
+          "Set-tIoU": 33.75807
+        }
+      },
+      {
+        "method": "placebo",
+        "dataset": "omtg",
+        "metrics": {
+          "Event-F1@0.5": 23.3631,
+          "Event-Recall@0.5": 18.75,
+          "Shortest-Recall@0.5": 6.25,
+          "Set-tIoU": 33.75807
+        }
+      },
+      {
+        "method": "greedy",
+        "dataset": "omtg",
+        "metrics": {
+          "Event-F1@0.5": 23.3631,
+          "Event-Recall@0.5": 18.75,
+          "Shortest-Recall@0.5": 6.25,
+          "Set-tIoU": 35.07469
+        }
+      }
+    ],
+    "headline": [
+      {
+        "dataset": "omtg",
+        "metric": "Event-F1@0.5"
+      },
+      {
+        "dataset": "omtg",
+        "metric": "Shortest-Recall@0.5"
+      },
+      {
+        "dataset": "omtg",
+        "metric": "Set-tIoU"
+      }
+    ]
+  },
+  "charts": [
+    {
+      "id": "missing-votes",
+      "title": "51 个漏检在八份回答中的支持数",
+      "type": "bar",
+      "categories": [
+        "0 份正确",
+        "1–2 份正确",
+        "≥3 份正确"
+      ],
+      "yLabel": "事件数",
+      "series": [
+        {
+          "name": "事件数",
+          "data": [
+            46,
+            3,
+            2
+          ]
+        }
+      ],
+      "takeaway": "46 个漏检缺乏可复用的正确区间，说明同帧重复解码的边际收益有限。"
+    }
+  ],
+  "insights": {
+    "oneLiner": "离线有小幅收益，实片没有触发补段。下一步应优先增加与现有答案互补的视觉证据。",
+    "confidence": 0.54,
+    "phenomena": [
+      {
+        "id": "p1",
+        "title": "补段规则零触发",
+        "detail": "16 个视频生成了 144 份答案，补漏没有新增任何区间。",
+        "evidence": "results",
+        "symptoms": [
+          "diminishing-returns"
+        ],
+        "surprise": 4
+      },
+      {
+        "id": "p2",
+        "title": "共同漏检占多数",
+        "detail": "51 个漏检的真实事件中，46 个在八份回答里都没有找到。",
+        "evidence": "chart:missing-votes",
+        "symptoms": [
+          "sampling-miss"
+        ],
+        "surprise": 4
+      }
+    ],
+    "echoes": [
+      {
+        "id": "echo",
+        "phenomenon": "p1",
+        "lens": "bayesian-search",
+        "correspondences": [
+          [
+            "同区域重复搜索",
+            "相同的 64 帧反复解码"
+          ],
+          [
+            "重新安排搜索位置",
+            "改变第二遍实际看到的片段"
+          ]
+        ],
+        "borrowedMove": "从模型还没解释的时间段挑窗口，用第二遍画面寻找漏掉的短事件。",
+        "limit": "目前能区分候选缺失与汇总失败，尚不能区分采帧不足、视觉理解与区间输出。"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "hyp",
+        "title": "用同预算对照检验",
+        "statement": "改变第二次看的画面能减少共同漏检。",
+        "test": "用相同累计帧数比较重复解码、均匀补帧、按未覆盖区间补帧。",
+        "falsifiedIf": "候选阶段漏检比例没有降，或效益被误报抵消。",
+        "impact": 4,
+        "effort": 3,
+        "status": "todo",
+        "from": [
+          "echo"
+        ]
+      }
+    ],
+    "paperAngles": [
+      {
+        "id": "direction",
+        "title": "可能的研究贡献",
+        "type": "analysis",
+        "claim": "把新增视觉证据与纯输出汇总做成等预算因果对照。",
+        "novelty": "把新增视觉证据与纯输出汇总做成等预算因果对照。",
+        "risk": "实片只有 16 个视频，固定 64 帧。0/16 触发是观察样本内的结果。",
+        "readiness": 0.28,
+        "from": [
+          "hyp"
+        ]
+      }
+    ],
+    "provocations": [
+      {
+        "prompt": "reviewer2",
+        "answer": "每组用相同八份答案，另报单次确定性解码，方便看绝对成本。"
+      },
+      {
+        "prompt": "mechanism",
+        "answer": "目前能区分候选缺失与汇总失败，尚不能区分采帧不足、视觉理解与区间输出。"
+      }
+    ]
+  },
+  "reproduce": {
+    "commands": [
+      {
+        "label": "复算或查看原始结果",
+        "cmd": "PYTHONPATH=scripts env/runtime/bin/python outputs/event_consensus_20261119_001/code/evaluate.py outputs/event_consensus_20261119_001 gpu"
+      }
+    ],
+    "artifacts": [
+      {
+        "label": "最终报告",
+        "path": "evidence/vtg-real-11-event-omtg/event_consensus_20261119_001-gpu_report.md"
+      },
+      {
+        "label": "16 条逐视频",
+        "path": "evidence/vtg-real-11-event-omtg/event_consensus_20261119_001-gpu_per_video.csv"
+      },
+      {
+        "label": "独立核验",
+        "path": "evidence/vtg-real-11-event-omtg/event_consensus_20261119_001-gpu_audit.json"
+      },
+      {
+        "label": "区间与八次预测",
+        "path": "evidence/vtg-real-11-event-omtg/event_consensus_20261119_001-gpu_cases.json"
+      }
+    ]
+  },
+  "parent": "vtg-real-10-event-consensus",
+  "cases": [
+    {
+      "id": "omtg_127",
+      "type": "temporal",
+      "title": "共同漏检",
+      "outcome": "failure",
+      "video": {
+        "duration": 170.2,
+        "fps": 15.0
+      },
+      "query": "Find the video segment that corresponds to the given textual query 'A table is covered in an array of food items in plates and bowls.' and determine its start and end seconds.",
+      "gt": [
+        [
+          4.0,
+          10.0
+        ],
+        [
+          26.0,
+          32.0
+        ],
+        [
+          40.0,
+          49.0
+        ],
+        [
+          75.0,
+          83.0
+        ],
+        [
+          121.0,
+          123.0
+        ],
+        [
+          131.0,
+          134.0
+        ]
+      ],
+      "predictions": [
+        {
+          "method": "medoid",
+          "segments": [
+            {
+              "start": 4.0,
+              "end": 51.0
+            }
+          ]
+        },
+        {
+          "method": "rescue",
+          "segments": [
+            {
+              "start": 4.0,
+              "end": 51.0
+            }
+          ]
+        },
+        {
+          "method": "greedy",
+          "segments": [
+            {
+              "start": 4.0,
+              "end": 48.0
+            }
+          ]
+        }
+      ],
+      "note": "整份投票和补漏都为 0.0 分。时间轴上的点为实际取用的 64 帧。",
+      "sampledFrames": [
+        0.0,
+        1.3333333333333333,
+        5.333333333333333,
+        6.666666666666667,
+        10.733333333333333,
+        12.066666666666666,
+        16.066666666666666,
+        17.4,
+        21.466666666666665,
+        22.8,
+        26.8,
+        28.133333333333333,
+        32.13333333333333,
+        33.46666666666667,
+        37.53333333333333,
+        38.86666666666667,
+        42.86666666666667,
+        44.2,
+        48.2,
+        49.53333333333333,
+        53.6,
+        54.93333333333333,
+        58.93333333333333,
+        60.266666666666666,
+        64.33333333333333,
+        65.66666666666667,
+        69.66666666666667,
+        71.0,
+        75.0,
+        76.33333333333333,
+        80.4,
+        81.73333333333333,
+        88.4,
+        89.73333333333333,
+        93.8,
+        95.13333333333334,
+        99.13333333333334,
+        100.46666666666667,
+        104.46666666666667,
+        105.8,
+        109.86666666666666,
+        111.2,
+        115.2,
+        116.53333333333333,
+        120.6,
+        121.93333333333334,
+        125.93333333333334,
+        127.26666666666667,
+        131.26666666666668,
+        132.6,
+        136.66666666666666,
+        138.0,
+        142.0,
+        143.33333333333334,
+        147.33333333333334,
+        148.66666666666666,
+        152.73333333333332,
+        154.06666666666666,
+        158.06666666666666,
+        159.4,
+        163.46666666666667,
+        164.8,
+        168.8,
+        170.13333333333333
+      ]
+    },
+    {
+      "id": "omtg_155",
+      "type": "temporal",
+      "title": "命中的事件",
+      "outcome": "success",
+      "video": {
+        "duration": 130.8,
+        "fps": 15.0
+      },
+      "query": "Find the video segment that corresponds to the given textual query 'A large truck cake is shown, a smaller one next to it, and the toy truck is also there.' and determine its start and end seconds.",
+      "gt": [
+        [
+          18.0,
+          26.0
+        ],
+        [
+          95.0,
+          108.0
+        ]
+      ],
+      "predictions": [
+        {
+          "method": "medoid",
+          "segments": [
+            {
+              "start": 98.0,
+              "end": 108.0
+            }
+          ]
+        },
+        {
+          "method": "rescue",
+          "segments": [
+            {
+              "start": 98.0,
+              "end": 108.0
+            }
+          ]
+        },
+        {
+          "method": "greedy",
+          "segments": [
+            {
+              "start": 95.0,
+              "end": 108.0
+            }
+          ]
+        }
+      ],
+      "note": "整份投票和补漏都为 66.7 分。时间轴上的点为实际取用的 64 帧。",
+      "sampledFrames": [
+        0.0,
+        1.0,
+        4.133333333333334,
+        5.133333333333334,
+        8.266666666666667,
+        9.266666666666667,
+        12.333333333333334,
+        13.4,
+        16.466666666666665,
+        17.466666666666665,
+        20.6,
+        21.6,
+        24.733333333333334,
+        25.733333333333334,
+        28.8,
+        29.866666666666667,
+        32.93333333333333,
+        34.0,
+        37.06666666666667,
+        38.06666666666667,
+        41.2,
+        42.2,
+        45.266666666666666,
+        46.333333333333336,
+        49.4,
+        50.46666666666667,
+        53.53333333333333,
+        54.53333333333333,
+        57.666666666666664,
+        58.666666666666664,
+        61.733333333333334,
+        62.8,
+        67.93333333333334,
+        69.0,
+        72.06666666666666,
+        73.06666666666666,
+        76.2,
+        77.2,
+        80.26666666666667,
+        81.33333333333333,
+        84.4,
+        85.46666666666667,
+        88.53333333333333,
+        89.53333333333333,
+        92.66666666666667,
+        93.66666666666667,
+        96.73333333333333,
+        97.8,
+        100.86666666666666,
+        101.93333333333334,
+        105.0,
+        106.0,
+        109.13333333333334,
+        110.13333333333334,
+        113.26666666666667,
+        114.26666666666667,
+        117.33333333333333,
+        118.4,
+        121.46666666666667,
+        122.46666666666667,
+        125.6,
+        126.6,
+        129.73333333333332,
+        130.73333333333332
+      ]
+    },
+    {
+      "id": "omtg_245",
+      "type": "temporal",
+      "title": "第一次核验案例",
+      "outcome": "partial",
+      "video": {
+        "duration": 83.12,
+        "fps": 25.0
+      },
+      "query": "Find the video segment that corresponds to the given textual query 'a man and a woman giving an interview' and determine its start and end seconds.",
+      "gt": [
+        [
+          18.0,
+          25.0
+        ],
+        [
+          30.0,
+          40.0
+        ],
+        [
+          52.0,
+          57.0
+        ],
+        [
+          72.0,
+          82.0
+        ]
+      ],
+      "predictions": [
+        {
+          "method": "medoid",
+          "segments": [
+            {
+              "start": 17.0,
+              "end": 25.0
+            },
+            {
+              "start": 29.0,
+              "end": 41.0
+            },
+            {
+              "start": 50.0,
+              "end": 82.0
+            }
+          ]
+        },
+        {
+          "method": "rescue",
+          "segments": [
+            {
+              "start": 17.0,
+              "end": 25.0
+            },
+            {
+              "start": 29.0,
+              "end": 41.0
+            },
+            {
+              "start": 50.0,
+              "end": 82.0
+            }
+          ]
+        },
+        {
+          "method": "greedy",
+          "segments": [
+            {
+              "start": 17.0,
+              "end": 25.0
+            },
+            {
+              "start": 29.0,
+              "end": 38.0
+            },
+            {
+              "start": 50.0,
+              "end": 82.0
+            }
+          ]
+        }
+      ],
+      "note": "整份投票和补漏都为 57.1 分。时间轴上的点为实际取用的 64 帧。",
+      "sampledFrames": [
+        0.0,
+        0.64,
+        2.6,
+        3.28,
+        5.24,
+        5.88,
+        7.84,
+        8.52,
+        10.48,
+        11.12,
+        13.08,
+        13.72,
+        15.72,
+        16.36,
+        18.32,
+        18.96,
+        20.92,
+        21.6,
+        23.56,
+        24.2,
+        26.16,
+        26.84,
+        28.8,
+        29.44,
+        31.4,
+        32.04,
+        34.0,
+        34.68,
+        36.64,
+        37.28,
+        39.24,
+        39.92,
+        43.16,
+        43.84,
+        45.8,
+        46.44,
+        48.4,
+        49.08,
+        51.04,
+        51.68,
+        53.64,
+        54.28,
+        56.24,
+        56.92,
+        58.88,
+        59.52,
+        61.48,
+        62.16,
+        64.12,
+        64.76,
+        66.72,
+        67.36,
+        69.36,
+        70.0,
+        71.96,
+        72.6,
+        74.56,
+        75.24,
+        77.2,
+        77.84,
+        79.8,
+        80.48,
+        82.44,
+        83.08
+      ]
+    }
+  ]
+}

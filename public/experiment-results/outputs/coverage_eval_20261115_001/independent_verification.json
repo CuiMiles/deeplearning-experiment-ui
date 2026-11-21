@@ -1,0 +1,299 @@
+{
+  "independent_rescore_passed": true,
+  "records": 129,
+  "per_arm": {
+    "sft": 43,
+    "baseline": 43,
+    "event_f1": 43
+  },
+  "label_input_alignment_passed": true,
+  "paired_model_input_hashes_match": true,
+  "train_validation_video_overlap": 0,
+  "per_sample_metric_discrepancies": [],
+  "aggregates": {
+    "sft": {
+      "tiou": 0.760265516485437,
+      "f1": 0.7868217054263564,
+      "recall": 0.7790697674418605,
+      "shortest_recall": 0.7674418604651163,
+      "count_acc": 0.9302325581395349
+    },
+    "baseline": {
+      "tiou": 0.7633268930933254,
+      "f1": 0.8100775193798448,
+      "recall": 0.8023255813953488,
+      "shortest_recall": 0.7906976744186046,
+      "count_acc": 0.9302325581395349
+    },
+    "event_f1": {
+      "tiou": 0.7614862687001563,
+      "f1": 0.8100775193798448,
+      "recall": 0.8023255813953488,
+      "shortest_recall": 0.7906976744186046,
+      "count_acc": 0.9302325581395349
+    }
+  },
+  "comparisons": {
+    "baseline_vs_sft": {
+      "changed_prediction_count": 4,
+      "changes": [
+        {
+          "index": 1,
+          "video": "03ai0J3kkJM",
+          "query": "Major stellar spectral types and temperatures",
+          "left": [
+            [
+              11.0,
+              15.0
+            ]
+          ],
+          "right": [
+            [
+              11.0,
+              16.0
+            ]
+          ],
+          "delta_tiou": 0.0,
+          "delta_f1": 0.0
+        },
+        {
+          "index": 3,
+          "video": "03ai0J3kkJM",
+          "query": "A white vertical line intersects the main sequence at 6200 Kelvin.",
+          "left": [
+            [
+              143.0,
+              157.0
+            ]
+          ],
+          "right": [
+            [
+              142.0,
+              158.0
+            ]
+          ],
+          "delta_tiou": 0.0803571428571429,
+          "delta_f1": 0.0
+        },
+        {
+          "index": 4,
+          "video": "03ai0J3kkJM",
+          "query": "A table listing major stellar spectral types and temperatures overlays the screen.",
+          "left": [
+            [
+              132.0,
+              144.0
+            ]
+          ],
+          "right": [
+            [
+              132.0,
+              145.0
+            ]
+          ],
+          "delta_tiou": 0.038461538461538436,
+          "delta_f1": 1.0
+        },
+        {
+          "index": 40,
+          "video": "01sOdSFtPcA",
+          "query": "wearable gaming system",
+          "left": [
+            [
+              5.0,
+              77.0
+            ]
+          ],
+          "right": [
+            [
+              5.0,
+              76.0
+            ]
+          ],
+          "delta_tiou": 0.01282051282051283,
+          "delta_f1": 0.0
+        }
+      ],
+      "win_loss_tie": {
+        "tiou": {
+          "wins": 3,
+          "losses": 0,
+          "ties": 40
+        },
+        "f1": {
+          "wins": 1,
+          "losses": 0,
+          "ties": 42
+        }
+      }
+    },
+    "event_f1_vs_sft": {
+      "changed_prediction_count": 3,
+      "changes": [
+        {
+          "index": 1,
+          "video": "03ai0J3kkJM",
+          "query": "Major stellar spectral types and temperatures",
+          "left": [
+            [
+              11.0,
+              15.0
+            ]
+          ],
+          "right": [
+            [
+              11.0,
+              16.0
+            ]
+          ],
+          "delta_tiou": 0.0,
+          "delta_f1": 0.0
+        },
+        {
+          "index": 4,
+          "video": "03ai0J3kkJM",
+          "query": "A table listing major stellar spectral types and temperatures overlays the screen.",
+          "left": [
+            [
+              132.0,
+              144.0
+            ]
+          ],
+          "right": [
+            [
+              132.0,
+              145.0
+            ]
+          ],
+          "delta_tiou": 0.038461538461538436,
+          "delta_f1": 1.0
+        },
+        {
+          "index": 41,
+          "video": "01sOdSFtPcA",
+          "query": "A man wearing a green shirt demonstrates the SuperSuit at a tech expo.",
+          "left": [
+            [
+              0.0,
+              79.0
+            ]
+          ],
+          "right": [
+            [
+              5.0,
+              76.0
+            ]
+          ],
+          "delta_tiou": 0.014030806771389348,
+          "delta_f1": 0.0
+        }
+      ],
+      "win_loss_tie": {
+        "tiou": {
+          "wins": 2,
+          "losses": 0,
+          "ties": 41
+        },
+        "f1": {
+          "wins": 1,
+          "losses": 0,
+          "ties": 42
+        }
+      }
+    },
+    "event_f1_vs_baseline": {
+      "changed_prediction_count": 3,
+      "changes": [
+        {
+          "index": 3,
+          "video": "03ai0J3kkJM",
+          "query": "A white vertical line intersects the main sequence at 6200 Kelvin.",
+          "left": [
+            [
+              142.0,
+              158.0
+            ]
+          ],
+          "right": [
+            [
+              143.0,
+              157.0
+            ]
+          ],
+          "delta_tiou": -0.0803571428571429,
+          "delta_f1": 0.0
+        },
+        {
+          "index": 40,
+          "video": "01sOdSFtPcA",
+          "query": "wearable gaming system",
+          "left": [
+            [
+              5.0,
+              76.0
+            ]
+          ],
+          "right": [
+            [
+              5.0,
+              77.0
+            ]
+          ],
+          "delta_tiou": -0.01282051282051283,
+          "delta_f1": 0.0
+        },
+        {
+          "index": 41,
+          "video": "01sOdSFtPcA",
+          "query": "A man wearing a green shirt demonstrates the SuperSuit at a tech expo.",
+          "left": [
+            [
+              0.0,
+              79.0
+            ]
+          ],
+          "right": [
+            [
+              5.0,
+              76.0
+            ]
+          ],
+          "delta_tiou": 0.014030806771389348,
+          "delta_f1": 0.0
+        }
+      ],
+      "win_loss_tie": {
+        "tiou": {
+          "wins": 1,
+          "losses": 2,
+          "ties": 40
+        },
+        "f1": {
+          "wins": 0,
+          "losses": 0,
+          "ties": 43
+        }
+      }
+    }
+  },
+  "data_distribution": {
+    "train": {
+      "queries": 240,
+      "videos": 52,
+      "multi_queries": 30,
+      "gt_covers_at_least_80pct_video": 82,
+      "median_gt_time_coverage": 0.30158950186291267
+    },
+    "validation": {
+      "queries": 43,
+      "videos": 12,
+      "multi_queries": 8,
+      "gt_covers_at_least_80pct_video": 18,
+      "median_gt_time_coverage": 0.5745125348189415
+    }
+  },
+  "predictions_sha256": "ebde53b2ae5da0fc89922ecc3717a3cac479ad9ffed4f10f3f4eb8d6c0777ce2",
+  "verifier_sha256": "cffca83feb675d20308e14cd7034e82f289e10fec244c7f657d228f5471e5c0a",
+  "implementation": "Independent interval-union arithmetic and SciPy binary-assignment matching; no import of evaluation scoring code",
+  "conclusion": "Event-F1 reward does not improve event F1 over original reward on this small validation set; overall tIoU is 0.184 pp lower. Eight multi-span queries are insufficient for a broad conclusion."
+}

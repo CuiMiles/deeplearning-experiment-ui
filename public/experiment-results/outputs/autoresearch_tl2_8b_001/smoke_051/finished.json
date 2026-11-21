@@ -1,0 +1,15 @@
+{
+  "run_id": "autoresearch_tl2_8b_001/smoke_051",
+  "samples": 1,
+  "load_seconds": 380.651,
+  "inference_wall_seconds": 326.014,
+  "max_peak_allocated_mib": [
+    12070.95,
+    11447.53
+  ],
+  "max_peak_reserved_mib": [
+    12508.0,
+    11624.0
+  ],
+  "finished_at_utc": "2026-11-14T06:01:25.408903+00:00"
+}

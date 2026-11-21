@@ -1,0 +1,29 @@
+{
+  "seed": 2026111902,
+  "deadline_unix": 1795063980,
+  "offline_selection_sha": "40095dfdc918a8c10674d41fbc112abc5324869c549aeb7d02224d5dca997da5",
+  "gpu_selection_sha": "394a789b02aa1cc08ec412cab78f7abfbaadcd36dba6d6a3cef934cc657dece4",
+  "datasets": {
+    "multi": "6c49ed93dd661cc1c1ace62eb4b8955548ac8d9454ab03b57bfd4e7f9c56c8f9",
+    "single": "57eefda0a63283c6011a89fb297ad986512f7ad08ece6b88a24d721fc1ff0181"
+  },
+  "excludes_previous_reward_diagnostic_sources": 1103,
+  "offline_counts": {
+    "multi": 400,
+    "single": 400
+  },
+  "model": "[local-path]/models/multimodal/model_reproduction/vtg/models/TimeLens2-4B",
+  "model_manifest": "3e2cf4c2cf72b3f833f13ae30da52aa68f3bb0c4cf495f1ed0eb79016857c68a",
+  "samples_per_input": 8,
+  "greedy_per_gpu_input": 1,
+  "frames": 64,
+  "max_pixels": 65536,
+  "temperature": 0.7,
+  "top_p": 0.9,
+  "max_new_tokens": 128,
+  "primary": "Per-query one-to-one event F1 at IoU .5: event rescue minus whole-answer medoid on multi. Single events are a harm check. Offline and new OMTG inference stay separate.",
+  "controls": "First draw, whole-answer event-F1 medoid, timeline majority >=4/8, same number of extra disjoint events without using support, greedy on OMTG.",
+  "rule": "From the medoid add at most two disjoint events; median endpoints of spans with IoU >=.5; at least 3 different answers must support final span. Prefer higher support then mean matched IoU.",
+  "decision": "Advance if offline multi gains >=2 pp, paired 95% lower bound >0, single loss <=1 pp and fresh OMTG points in same direction. Otherwise identify bottleneck; no tuning.",
+  "resource": "GPU 2+7; per device NVML process limit 6144 MiB, torch 5632 MiB, minimum free 2560 MiB."
+}

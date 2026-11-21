@@ -1,0 +1,150 @@
+{
+  "passed": true,
+  "videos": 24,
+  "checks": [
+    {
+      "sample_id": "activitynet/v_YuuWL4EK7Q4/1",
+      "max_pts_vs_index_seconds": 7.397460933589173e-06,
+      "pass_tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "sample_id": "activitynet/v_lCIJJgxTs2U/2",
+      "max_pts_vs_index_seconds": 0.000940222879236785,
+      "pass_tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "sample_id": "activitynet/v_FnbVnRX6WxQ/3",
+      "max_pts_vs_index_seconds": 3.7882487049500924e-06,
+      "pass_tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "sample_id": "activitynet/v_a2JBhm22-M4/0",
+      "max_pts_vs_index_seconds": 3.763834627079632e-06,
+      "pass_tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "sample_id": "activitynet/v_YAhHfaXnpKg/0",
+      "max_pts_vs_index_seconds": 3.662109378410605e-06,
+      "pass_tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "sample_id": "activitynet/v_sSVG3g2iKL8/2",
+      "max_pts_vs_index_seconds": 0.004407439196551621,
+      "pass_tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "sample_id": "activitynet/v_86iCOCtA4Ww/0",
+      "max_pts_vs_index_seconds": 6.79524740121451e-06,
+      "pass_tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "sample_id": "activitynet/v_j5M9l0qxwnU/2",
+      "max_pts_vs_index_seconds": 3.5603841155307236e-06,
+      "pass_tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "sample_id": "activitynet/v_TMGG5x-UQ2s/1",
+      "max_pts_vs_index_seconds": 3.7882487049500924e-06,
+      "pass_tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "sample_id": "activitynet/v_iZk3PH8ghlI/2",
+      "max_pts_vs_index_seconds": 6.933593738267518e-06,
+      "pass_tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "sample_id": "activitynet/v_9KPRS9y8Fvo/2",
+      "max_pts_vs_index_seconds": 3.8126627543988434e-06,
+      "pass_tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "sample_id": "activitynet/v_a8dUtKcAunw/1",
+      "max_pts_vs_index_seconds": 0.03315865663101647,
+      "pass_tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "sample_id": "activitynet/v_-ZDCHvzbnoU/0",
+      "max_pts_vs_index_seconds": 7.137044264027281e-06,
+      "pass_tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "sample_id": "activitynet/v_JGuVc7z_YOQ/1",
+      "max_pts_vs_index_seconds": 3.5603841155307236e-06,
+      "pass_tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "sample_id": "activitynet/v_X9AnhFjdiXA/1",
+      "max_pts_vs_index_seconds": 7.32421875682121e-06,
+      "pass_tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "sample_id": "activitynet/v_j8lH0saRXl4/2",
+      "max_pts_vs_index_seconds": 0.00036995037446274637,
+      "pass_tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "sample_id": "activitynet/v_IK9kE9IrcOM/2",
+      "max_pts_vs_index_seconds": 3.5603841155307236e-06,
+      "pass_tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "sample_id": "activitynet/v_hDPLy21Yyuk/0",
+      "max_pts_vs_index_seconds": 3.5603841155307236e-06,
+      "pass_tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "sample_id": "activitynet/v_ssktVpcv9WI/1",
+      "max_pts_vs_index_seconds": 3.8126627543988434e-06,
+      "pass_tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "sample_id": "activitynet/v_Sx3NHkPp3Jo/0",
+      "max_pts_vs_index_seconds": 3.662109378410605e-06,
+      "pass_tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "sample_id": "activitynet/v_oD0RWEO8D1g/2",
+      "max_pts_vs_index_seconds": 7.120768231061447e-06,
+      "pass_tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "sample_id": "activitynet/v_CArYinl5tFo/0",
+      "max_pts_vs_index_seconds": 0.000371658257222407,
+      "pass_tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "sample_id": "activitynet/v_MdrK2uQ-GvA/0",
+      "max_pts_vs_index_seconds": 3.3040364542102907e-06,
+      "pass_tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "sample_id": "activitynet/v__8Zk9dfBgPg/1",
+      "max_pts_vs_index_seconds": 3.747558594113798e-06,
+      "pass_tolerance": 0.05,
+      "passed": true
+    }
+  ]
+}

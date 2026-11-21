@@ -1,0 +1,473 @@
+{"event": "worker_started", "unix": 1794853970.1069188, "shard": 0, "pid": 22906, "gpu": 0}
+{"event": "worker_started", "unix": 1794853970.2519457, "shard": 1, "pid": 22913, "gpu": 3}
+{"event": "worker_started", "unix": 1794853970.3630323, "shard": 2, "pid": 22930, "gpu": 4}
+{"event": "worker_started", "unix": 1794853970.4620223, "shard": 3, "pid": 22943, "gpu": 5}
+{"event": "owned_worker_stop_requested", "unix": 1794854694.6834457, "pid": 22906, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794854694.6916142, "pid": 22913, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794854694.6927097, "pid": 22930, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794854694.6934276, "pid": 22943, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794854707.120577, "shard": 1, "pid": 22913, "exit_code": 0, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794854707.134338, "shard": 3, "pid": 22943, "exit_code": 0, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794854711.269043, "shard": 0, "pid": 22906, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794854721.5621727, "shard": 2, "pid": 22930, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794854768.878954, "shard": 1, "pid": 20606, "gpu": 3}
+{"event": "worker_started", "unix": 1794854768.986629, "shard": 3, "pid": 20610, "gpu": 5}
+{"event": "worker_started", "unix": 1794854773.2391691, "shard": 0, "pid": 20895, "gpu": 0}
+{"event": "worker_started", "unix": 1794854783.751903, "shard": 2, "pid": 21379, "gpu": 4}
+{"event": "owned_worker_stop_requested", "unix": 1794855012.510148, "pid": 20606, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794855012.5483706, "pid": 20610, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794855012.557591, "pid": 20895, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794855012.5806978, "pid": 21379, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794855022.8550699, "shard": 1, "pid": 20606, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794855022.879407, "shard": 0, "pid": 20895, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794855022.8885062, "shard": 2, "pid": 21379, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794855026.9776604, "shard": 3, "pid": 20610, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794855084.4410565, "shard": 0, "pid": 32482, "gpu": 0}
+{"event": "worker_started", "unix": 1794855084.4733067, "shard": 1, "pid": 32483, "gpu": 3}
+{"event": "worker_started", "unix": 1794855084.5009193, "shard": 2, "pid": 32485, "gpu": 4}
+{"event": "worker_started", "unix": 1794855088.5919905, "shard": 3, "pid": 32646, "gpu": 5}
+{"event": "owned_worker_stop_requested", "unix": 1794855131.6547472, "pid": 32485, "reason": "headroom or cap exceeded"}
+{"event": "worker_exit", "unix": 1794855135.7195013, "shard": 2, "pid": 32485, "exit_code": -15, "reason": "headroom or cap exceeded"}
+{"event": "worker_started", "unix": 1794855196.074679, "shard": 2, "pid": 4360, "gpu": 4}
+{"event": "owned_worker_stop_requested", "unix": 1794855313.0963705, "pid": 32482, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794855313.113718, "pid": 32483, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794855313.118865, "pid": 32646, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794855313.1214807, "pid": 4360, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794855319.3077316, "shard": 2, "pid": 4360, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794855329.7238574, "shard": 0, "pid": 32482, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794855329.7685318, "shard": 3, "pid": 32646, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794855331.826981, "shard": 1, "pid": 32483, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794855379.4792855, "shard": 2, "pid": 10034, "gpu": 4}
+{"event": "worker_started", "unix": 1794855393.9622376, "shard": 1, "pid": 10475, "gpu": 3}
+{"event": "owned_worker_stop_requested", "unix": 1794855610.4151607, "pid": 10034, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794855610.4388685, "pid": 10475, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794855620.8197894, "shard": 1, "pid": 10475, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794855626.9602761, "shard": 2, "pid": 10034, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794855682.5637383, "shard": 1, "pid": 17549, "gpu": 3}
+{"event": "worker_started", "unix": 1794855688.8132257, "shard": 2, "pid": 17704, "gpu": 4}
+{"event": "worker_started", "unix": 1794855752.4233294, "shard": 0, "pid": 19252, "gpu": 0}
+{"event": "worker_started", "unix": 1794855752.4743352, "shard": 3, "pid": 19254, "gpu": 5}
+{"event": "owned_worker_stop_requested", "unix": 1794856071.9661534, "pid": 19254, "reason": "headroom or cap exceeded"}
+{"event": "worker_exit", "unix": 1794856092.867689, "shard": 3, "pid": 19254, "exit_code": -15, "reason": "headroom or cap exceeded"}
+{"event": "worker_started", "unix": 1794856154.0754693, "shard": 3, "pid": 28941, "gpu": 5}
+{"event": "owned_worker_stop_requested", "unix": 1794857116.017193, "pid": 17549, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794857116.1057918, "pid": 17704, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794857116.1243525, "pid": 19252, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794857116.1597223, "pid": 28941, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794857137.386773, "shard": 0, "pid": 19252, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794857145.6870284, "shard": 3, "pid": 28941, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794857147.7761614, "shard": 1, "pid": 17549, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794857149.8022788, "shard": 2, "pid": 17704, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794857199.2404306, "shard": 0, "pid": 28980, "gpu": 0}
+{"event": "worker_started", "unix": 1794857207.630834, "shard": 3, "pid": 29182, "gpu": 5}
+{"event": "worker_started", "unix": 1794857209.745865, "shard": 1, "pid": 29228, "gpu": 3}
+{"event": "worker_started", "unix": 1794857212.0004766, "shard": 2, "pid": 29327, "gpu": 4}
+{"event": "owned_worker_stop_requested", "unix": 1794857477.9362144, "pid": 29327, "reason": "headroom or cap exceeded"}
+{"event": "worker_exit", "unix": 1794857489.0399823, "shard": 2, "pid": 29327, "exit_code": -15, "reason": "headroom or cap exceeded"}
+{"event": "worker_started", "unix": 1794857550.6690397, "shard": 2, "pid": 13757, "gpu": 4}
+{"event": "owned_worker_stop_requested", "unix": 1794857697.846521, "pid": 28980, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794857697.8810542, "pid": 29182, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794857697.8850102, "pid": 29228, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794857697.8863184, "pid": 13757, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794857702.1672184, "shard": 2, "pid": 13757, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794857712.850403, "shard": 1, "pid": 29228, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794857719.095453, "shard": 3, "pid": 29182, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794857727.2963707, "shard": 0, "pid": 28980, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794857762.6331472, "shard": 2, "pid": 21902, "gpu": 4}
+{"event": "worker_started", "unix": 1794857772.9906526, "shard": 1, "pid": 22258, "gpu": 3}
+{"event": "worker_started", "unix": 1794857779.1882427, "shard": 3, "pid": 22383, "gpu": 5}
+{"event": "worker_started", "unix": 1794857787.50299, "shard": 0, "pid": 22535, "gpu": 0}
+{"event": "owned_worker_stop_requested", "unix": 1794859092.0180976, "pid": 21902, "reason": "headroom or cap exceeded"}
+{"event": "worker_exit", "unix": 1794859123.9724016, "shard": 2, "pid": 21902, "exit_code": -9, "reason": "headroom or cap exceeded"}
+{"event": "worker_started", "unix": 1794859184.8859615, "shard": 2, "pid": 30806, "gpu": 4}
+{"event": "owned_worker_stop_requested", "unix": 1794859634.9838574, "pid": 30806, "reason": "headroom or cap exceeded"}
+{"event": "worker_exit", "unix": 1794859653.7865295, "shard": 2, "pid": 30806, "exit_code": -9, "reason": "headroom or cap exceeded"}
+{"event": "worker_started", "unix": 1794859714.7410655, "shard": 2, "pid": 19992, "gpu": 4}
+{"event": "owned_worker_stop_requested", "unix": 1794860120.617862, "pid": 22258, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794860120.675756, "pid": 22383, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794860120.7418694, "pid": 22535, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794860120.7538054, "pid": 19992, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794860139.3063395, "shard": 1, "pid": 22258, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794860143.3909137, "shard": 3, "pid": 22383, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794860143.3978624, "shard": 2, "pid": 19992, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794860145.4326072, "shard": 0, "pid": 22535, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794860200.3876295, "shard": 1, "pid": 15278, "gpu": 3}
+{"event": "worker_started", "unix": 1794860204.6874146, "shard": 2, "pid": 15444, "gpu": 4}
+{"event": "worker_started", "unix": 1794860204.7191525, "shard": 3, "pid": 15445, "gpu": 5}
+{"event": "worker_started", "unix": 1794860206.7627842, "shard": 0, "pid": 15501, "gpu": 0}
+{"event": "owned_worker_stop_requested", "unix": 1794861955.8200533, "pid": 15278, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794861955.8935823, "pid": 15444, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794861955.9512768, "pid": 15445, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794861955.998114, "pid": 15501, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794861968.6662672, "shard": 2, "pid": 15444, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794861974.8931255, "shard": 3, "pid": 15445, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794861979.016305, "shard": 0, "pid": 15501, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794861995.7222624, "shard": 1, "pid": 15278, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794862029.1358857, "shard": 2, "pid": 14319, "gpu": 4}
+{"event": "worker_started", "unix": 1794862035.495362, "shard": 3, "pid": 14557, "gpu": 5}
+{"event": "worker_started", "unix": 1794862039.8491213, "shard": 0, "pid": 14759, "gpu": 0}
+{"event": "worker_started", "unix": 1794862057.0776854, "shard": 1, "pid": 15310, "gpu": 3}
+{"event": "owned_worker_stop_requested", "unix": 1794862239.6624124, "pid": 14319, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794862239.7144186, "pid": 14557, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794862239.726161, "pid": 14759, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794862239.7309327, "pid": 15310, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794862244.016152, "shard": 1, "pid": 15310, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794862246.1239033, "shard": 0, "pid": 14759, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794862248.2513645, "shard": 2, "pid": 14319, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794862254.5640469, "shard": 3, "pid": 14557, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794862304.2910411, "shard": 1, "pid": 23185, "gpu": 3}
+{"event": "worker_started", "unix": 1794862306.4126916, "shard": 0, "pid": 23242, "gpu": 0}
+{"event": "worker_started", "unix": 1794862308.6840568, "shard": 2, "pid": 23286, "gpu": 4}
+{"event": "worker_started", "unix": 1794862315.004669, "shard": 3, "pid": 23620, "gpu": 5}
+{"event": "owned_worker_stop_requested", "unix": 1794862535.167124, "pid": 23185, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794862535.1868234, "pid": 23242, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794862535.2198453, "pid": 23286, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794862535.2266302, "pid": 23620, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794862541.4540992, "shard": 1, "pid": 23185, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794862541.4788296, "shard": 3, "pid": 23620, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794862545.620866, "shard": 2, "pid": 23286, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794862549.727759, "shard": 0, "pid": 23242, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794862603.448161, "shard": 1, "pid": 12895, "gpu": 3}
+{"event": "worker_started", "unix": 1794862603.5415902, "shard": 3, "pid": 12898, "gpu": 5}
+{"event": "worker_started", "unix": 1794862607.7457104, "shard": 2, "pid": 13155, "gpu": 4}
+{"event": "worker_started", "unix": 1794862609.929592, "shard": 0, "pid": 13326, "gpu": 0}
+{"event": "owned_worker_stop_requested", "unix": 1794863165.2451298, "pid": 12895, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794863165.273003, "pid": 12898, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794863165.3084595, "pid": 13155, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794863165.3333488, "pid": 13326, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794863188.3918943, "shard": 3, "pid": 12898, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794863188.4087155, "shard": 2, "pid": 13155, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794863192.4676983, "shard": 1, "pid": 12895, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794863192.4955602, "shard": 0, "pid": 13326, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794863250.1052392, "shard": 2, "pid": 30205, "gpu": 4}
+{"event": "worker_started", "unix": 1794863250.1601548, "shard": 3, "pid": 30208, "gpu": 5}
+{"event": "worker_started", "unix": 1794863254.2777958, "shard": 0, "pid": 30316, "gpu": 0}
+{"event": "worker_started", "unix": 1794863254.3236644, "shard": 1, "pid": 30317, "gpu": 3}
+{"event": "owned_worker_stop_requested", "unix": 1794864954.3765192, "pid": 30205, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794864954.3923578, "pid": 30208, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794864954.3938391, "pid": 30316, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794864954.3947406, "pid": 30317, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794864977.3218892, "shard": 2, "pid": 30205, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794864981.485336, "shard": 0, "pid": 30316, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794864983.6081905, "shard": 3, "pid": 30208, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794864989.7757082, "shard": 1, "pid": 30317, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794865037.9411526, "shard": 2, "pid": 10438, "gpu": 4}
+{"event": "worker_started", "unix": 1794865042.2373521, "shard": 0, "pid": 10537, "gpu": 0}
+{"event": "worker_started", "unix": 1794865044.3283458, "shard": 3, "pid": 10595, "gpu": 5}
+{"event": "worker_started", "unix": 1794865050.7734375, "shard": 1, "pid": 10958, "gpu": 3}
+{"event": "owned_worker_stop_requested", "unix": 1794865879.7687423, "pid": 10438, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794865879.8361456, "pid": 10537, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794865879.8433561, "pid": 10595, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794865879.8445432, "pid": 10958, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794865911.6204638, "shard": 3, "pid": 10595, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794865913.6735368, "shard": 2, "pid": 10438, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794865917.8273156, "shard": 0, "pid": 10537, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794865924.0518222, "shard": 1, "pid": 10958, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794865973.678513, "shard": 3, "pid": 401, "gpu": 5}
+{"event": "worker_started", "unix": 1794865975.7470598, "shard": 2, "pid": 427, "gpu": 4}
+{"event": "worker_started", "unix": 1794865979.9680672, "shard": 0, "pid": 539, "gpu": 0}
+{"event": "worker_started", "unix": 1794865984.25148, "shard": 1, "pid": 695, "gpu": 3}
+{"event": "owned_worker_stop_requested", "unix": 1794866169.7661607, "pid": 401, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794866169.7765877, "pid": 427, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794866169.778437, "pid": 539, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794866169.779954, "pid": 695, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794866173.9430096, "shard": 3, "pid": 401, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794866173.9984436, "shard": 2, "pid": 427, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794866190.6016824, "shard": 0, "pid": 539, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794866190.622847, "shard": 1, "pid": 695, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794866235.9291756, "shard": 2, "pid": 6895, "gpu": 4}
+{"event": "worker_started", "unix": 1794866235.9689648, "shard": 3, "pid": 6897, "gpu": 5}
+{"event": "worker_started", "unix": 1794866252.5937645, "shard": 0, "pid": 7213, "gpu": 0}
+{"event": "worker_started", "unix": 1794866252.630183, "shard": 1, "pid": 7216, "gpu": 3}
+{"event": "owned_worker_stop_requested", "unix": 1794867950.9961913, "pid": 6895, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794867951.013892, "pid": 6897, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794867951.0156436, "pid": 7213, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794867951.0163074, "pid": 7216, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794867976.1710382, "shard": 2, "pid": 6895, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794867980.4512317, "shard": 3, "pid": 6897, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794867988.6571035, "shard": 0, "pid": 7213, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794867998.854462, "shard": 1, "pid": 7216, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794868037.9171357, "shard": 2, "pid": 16552, "gpu": 4}
+{"event": "worker_started", "unix": 1794868042.0874085, "shard": 3, "pid": 16626, "gpu": 5}
+{"event": "worker_started", "unix": 1794868050.4021919, "shard": 0, "pid": 16900, "gpu": 0}
+{"event": "worker_started", "unix": 1794868060.7317693, "shard": 1, "pid": 17145, "gpu": 3}
+{"event": "owned_worker_stop_requested", "unix": 1794868877.5499866, "pid": 16552, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794868877.583766, "pid": 16626, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794868877.602331, "pid": 16900, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794868877.6087806, "pid": 17145, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794868892.2667475, "shard": 2, "pid": 16552, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794868902.5739474, "shard": 1, "pid": 17145, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794868904.641218, "shard": 0, "pid": 16900, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794868906.6908927, "shard": 3, "pid": 16626, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794868954.055475, "shard": 2, "pid": 6115, "gpu": 4}
+{"event": "worker_started", "unix": 1794868964.354212, "shard": 1, "pid": 6369, "gpu": 3}
+{"event": "worker_started", "unix": 1794868966.5784967, "shard": 0, "pid": 6426, "gpu": 0}
+{"event": "worker_started", "unix": 1794868968.7311888, "shard": 3, "pid": 6451, "gpu": 5}
+{"event": "owned_worker_stop_requested", "unix": 1794869748.213131, "pid": 6115, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794869748.24656, "pid": 6369, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794869748.2686691, "pid": 6426, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794869748.2876875, "pid": 6451, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794869762.868102, "shard": 1, "pid": 6369, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794869773.1418052, "shard": 0, "pid": 6426, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794869773.1620169, "shard": 3, "pid": 6451, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794869775.1917906, "shard": 2, "pid": 6115, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794869824.0964184, "shard": 1, "pid": 25440, "gpu": 3}
+{"event": "worker_started", "unix": 1794869834.4420736, "shard": 0, "pid": 25669, "gpu": 0}
+{"event": "worker_started", "unix": 1794869834.5103557, "shard": 3, "pid": 25674, "gpu": 5}
+{"event": "worker_started", "unix": 1794869836.6001782, "shard": 2, "pid": 25722, "gpu": 4}
+{"event": "owned_worker_stop_requested", "unix": 1794871858.4980533, "pid": 25440, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794871858.5048494, "pid": 25669, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794871858.506107, "pid": 25674, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794871858.506838, "pid": 25722, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794871868.7119539, "shard": 2, "pid": 25722, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794871878.8228078, "shard": 3, "pid": 25674, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794871882.8765774, "shard": 1, "pid": 25440, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794871882.8824604, "shard": 0, "pid": 25669, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794871929.6544771, "shard": 2, "pid": 10847, "gpu": 4}
+{"event": "worker_started", "unix": 1794871939.8651154, "shard": 3, "pid": 11203, "gpu": 5}
+{"event": "worker_started", "unix": 1794871943.9533296, "shard": 0, "pid": 11303, "gpu": 0}
+{"event": "worker_started", "unix": 1794871943.9847572, "shard": 1, "pid": 11304, "gpu": 3}
+{"event": "owned_worker_stop_requested", "unix": 1794872164.7413929, "pid": 10847, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794872164.7585635, "pid": 11203, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794872164.7652445, "pid": 11303, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794872164.7702386, "pid": 11304, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794872168.8407269, "shard": 3, "pid": 11203, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794872170.9053013, "shard": 1, "pid": 11304, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794872175.0188653, "shard": 0, "pid": 11303, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794872177.0646634, "shard": 2, "pid": 10847, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794872229.9932868, "shard": 3, "pid": 17874, "gpu": 5}
+{"event": "worker_started", "unix": 1794872232.097002, "shard": 1, "pid": 17930, "gpu": 3}
+{"event": "worker_started", "unix": 1794872236.4017503, "shard": 0, "pid": 18056, "gpu": 0}
+{"event": "worker_started", "unix": 1794872238.489268, "shard": 2, "pid": 18099, "gpu": 4}
+{"event": "owned_worker_stop_requested", "unix": 1794873075.5456376, "pid": 17874, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794873075.5613194, "pid": 17930, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794873075.5636945, "pid": 18056, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794873075.5647562, "pid": 18099, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794873087.9607162, "shard": 3, "pid": 17874, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794873092.0348794, "shard": 1, "pid": 17930, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794873094.0905182, "shard": 2, "pid": 18099, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794873100.248345, "shard": 0, "pid": 18056, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794873149.2478418, "shard": 3, "pid": 6967, "gpu": 5}
+{"event": "worker_started", "unix": 1794873153.409217, "shard": 1, "pid": 7045, "gpu": 3}
+{"event": "worker_started", "unix": 1794873155.4895747, "shard": 2, "pid": 7078, "gpu": 4}
+{"event": "worker_started", "unix": 1794873161.7081695, "shard": 0, "pid": 7220, "gpu": 0}
+{"event": "owned_worker_stop_requested", "unix": 1794873388.680936, "pid": 6967, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794873388.7121124, "pid": 7045, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794873388.7262, "pid": 7078, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794873388.7300386, "pid": 7220, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794873398.9638095, "shard": 2, "pid": 7078, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794873400.9966269, "shard": 0, "pid": 7220, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794873403.0197315, "shard": 3, "pid": 6967, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794873403.0258045, "shard": 1, "pid": 7045, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794873460.0532515, "shard": 2, "pid": 14902, "gpu": 4}
+{"event": "worker_started", "unix": 1794873462.119662, "shard": 0, "pid": 14928, "gpu": 0}
+{"event": "worker_started", "unix": 1794873464.186841, "shard": 1, "pid": 14973, "gpu": 3}
+{"event": "worker_started", "unix": 1794873464.2153578, "shard": 3, "pid": 14975, "gpu": 5}
+{"event": "owned_worker_stop_requested", "unix": 1794873683.3973835, "pid": 14902, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794873683.421277, "pid": 14928, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794873683.4398642, "pid": 14973, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794873683.4449117, "pid": 14975, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794873689.738099, "shard": 1, "pid": 14973, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794873691.7929852, "shard": 2, "pid": 14902, "exit_code": 0, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794873693.8385353, "shard": 0, "pid": 14928, "exit_code": 0, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794873693.8617043, "shard": 3, "pid": 14975, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794873750.7691453, "shard": 1, "pid": 22717, "gpu": 3}
+{"event": "worker_started", "unix": 1794873752.8512435, "shard": 2, "pid": 22799, "gpu": 4}
+{"event": "worker_started", "unix": 1794873754.9150817, "shard": 0, "pid": 22863, "gpu": 0}
+{"event": "worker_started", "unix": 1794873754.943218, "shard": 3, "pid": 22864, "gpu": 5}
+{"event": "owned_worker_stop_requested", "unix": 1794873989.8381941, "pid": 22717, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794873989.8845391, "pid": 22799, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794873989.9184635, "pid": 22863, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794873989.9229221, "pid": 22864, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794874000.089309, "shard": 2, "pid": 22799, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794874000.0985606, "shard": 0, "pid": 22863, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794874002.1258328, "shard": 1, "pid": 22717, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794874004.1626198, "shard": 3, "pid": 22864, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794874060.9811492, "shard": 0, "pid": 29838, "gpu": 0}
+{"event": "worker_started", "unix": 1794874061.0039444, "shard": 2, "pid": 29839, "gpu": 4}
+{"event": "worker_started", "unix": 1794874063.131988, "shard": 1, "pid": 29895, "gpu": 3}
+{"event": "worker_started", "unix": 1794874065.2585082, "shard": 3, "pid": 29947, "gpu": 5}
+{"event": "owned_worker_stop_requested", "unix": 1794874581.371602, "pid": 29838, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794874581.3800516, "pid": 29839, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794874581.3811848, "pid": 29895, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794874581.4020524, "pid": 29947, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794874599.8966572, "shard": 2, "pid": 29839, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794874603.9894, "shard": 3, "pid": 29947, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794874606.0362957, "shard": 1, "pid": 29895, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794874608.0645425, "shard": 0, "pid": 29838, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794874660.897619, "shard": 2, "pid": 12547, "gpu": 4}
+{"event": "worker_started", "unix": 1794874664.9653807, "shard": 3, "pid": 12609, "gpu": 5}
+{"event": "worker_started", "unix": 1794874666.9931772, "shard": 1, "pid": 12663, "gpu": 3}
+{"event": "worker_started", "unix": 1794874669.0293586, "shard": 0, "pid": 12704, "gpu": 0}
+{"event": "owned_worker_stop_requested", "unix": 1794874882.525669, "pid": 12547, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794874882.6046672, "pid": 12609, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794874882.6264012, "pid": 12663, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794874882.6428573, "pid": 12704, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794874892.9053872, "shard": 3, "pid": 12609, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794874892.9085143, "shard": 1, "pid": 12663, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794874894.9225435, "shard": 2, "pid": 12547, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794874894.929468, "shard": 0, "pid": 12704, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794874954.029627, "shard": 1, "pid": 20685, "gpu": 3}
+{"event": "worker_started", "unix": 1794874954.0582223, "shard": 3, "pid": 20686, "gpu": 5}
+{"event": "worker_started", "unix": 1794874956.0872838, "shard": 0, "pid": 20744, "gpu": 0}
+{"event": "worker_started", "unix": 1794874956.1053236, "shard": 2, "pid": 20745, "gpu": 4}
+{"event": "owned_worker_stop_requested", "unix": 1794875781.9905016, "pid": 20685, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794875781.9986155, "pid": 20686, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794875781.9996486, "pid": 20744, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794875782.000281, "pid": 20745, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794875802.7794142, "shard": 1, "pid": 20685, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794875808.888483, "shard": 0, "pid": 20744, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794875812.9414904, "shard": 3, "pid": 20686, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794875812.9476461, "shard": 2, "pid": 20745, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794875863.826375, "shard": 1, "pid": 11379, "gpu": 3}
+{"event": "worker_started", "unix": 1794875869.9535172, "shard": 0, "pid": 11529, "gpu": 0}
+{"event": "worker_started", "unix": 1794875874.0673168, "shard": 2, "pid": 11622, "gpu": 4}
+{"event": "worker_started", "unix": 1794875874.1167107, "shard": 3, "pid": 11623, "gpu": 5}
+{"event": "owned_worker_stop_requested", "unix": 1794876386.4434998, "pid": 11379, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794876386.4559624, "pid": 11529, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794876386.4703681, "pid": 11622, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794876386.4774685, "pid": 11623, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794876400.9852195, "shard": 0, "pid": 11529, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794876407.1218383, "shard": 1, "pid": 11379, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794876407.1294124, "shard": 2, "pid": 11622, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794876407.1347468, "shard": 3, "pid": 11623, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794876462.119817, "shard": 0, "pid": 25773, "gpu": 0}
+{"event": "worker_started", "unix": 1794876468.269505, "shard": 1, "pid": 25885, "gpu": 3}
+{"event": "worker_started", "unix": 1794876468.3242328, "shard": 2, "pid": 25887, "gpu": 4}
+{"event": "worker_started", "unix": 1794876468.352261, "shard": 3, "pid": 25889, "gpu": 5}
+{"event": "owned_worker_stop_requested", "unix": 1794877296.3497608, "pid": 25773, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794877296.3619843, "pid": 25885, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794877296.363236, "pid": 25887, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794877296.363849, "pid": 25889, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794877312.8166075, "shard": 3, "pid": 25889, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794877335.3122137, "shard": 2, "pid": 25887, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794877339.405251, "shard": 1, "pid": 25885, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794877341.4378402, "shard": 0, "pid": 25773, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794877374.0617602, "shard": 3, "pid": 15148, "gpu": 5}
+{"event": "worker_started", "unix": 1794877396.553371, "shard": 2, "pid": 15917, "gpu": 4}
+{"event": "worker_started", "unix": 1794877400.6521904, "shard": 1, "pid": 15972, "gpu": 3}
+{"event": "worker_started", "unix": 1794877402.732067, "shard": 0, "pid": 15995, "gpu": 0}
+{"event": "owned_worker_stop_requested", "unix": 1794878773.8961515, "pid": 15148, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794878773.9226687, "pid": 15917, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794878773.9420054, "pid": 15972, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794878773.953088, "pid": 15995, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794878790.4486227, "shard": 0, "pid": 15995, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794878794.5525565, "shard": 1, "pid": 15972, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794878798.62439, "shard": 3, "pid": 15148, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794878802.6900384, "shard": 2, "pid": 15917, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794878851.5313375, "shard": 0, "pid": 18436, "gpu": 0}
+{"event": "worker_started", "unix": 1794878855.6351879, "shard": 1, "pid": 18650, "gpu": 3}
+{"event": "worker_started", "unix": 1794878859.7090054, "shard": 3, "pid": 18727, "gpu": 5}
+{"event": "worker_started", "unix": 1794878863.79247, "shard": 2, "pid": 18811, "gpu": 4}
+{"event": "owned_worker_stop_requested", "unix": 1794879106.5382707, "pid": 18436, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794879106.5703058, "pid": 18650, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794879106.582376, "pid": 18727, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794879106.594168, "pid": 18811, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794879115.1070473, "shard": 2, "pid": 18811, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794879123.5125995, "shard": 1, "pid": 18650, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794879123.525174, "shard": 3, "pid": 18727, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794879125.5688329, "shard": 0, "pid": 18436, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794879176.4546986, "shard": 2, "pid": 27497, "gpu": 4}
+{"event": "worker_started", "unix": 1794879184.635064, "shard": 1, "pid": 27676, "gpu": 3}
+{"event": "worker_started", "unix": 1794879184.6608045, "shard": 3, "pid": 27679, "gpu": 5}
+{"event": "worker_started", "unix": 1794879186.7913468, "shard": 0, "pid": 27743, "gpu": 0}
+{"event": "owned_worker_stop_requested", "unix": 1794879691.9426606, "pid": 27497, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794879691.9526002, "pid": 27676, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794879691.9742932, "pid": 27679, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794879691.9761758, "pid": 27743, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794879706.4814405, "shard": 2, "pid": 27497, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794879708.5277374, "shard": 3, "pid": 27679, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794879708.535862, "shard": 0, "pid": 27743, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794879712.589263, "shard": 1, "pid": 27676, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794879767.5015974, "shard": 2, "pid": 11076, "gpu": 4}
+{"event": "worker_started", "unix": 1794879769.5628586, "shard": 0, "pid": 11174, "gpu": 0}
+{"event": "worker_started", "unix": 1794879769.598156, "shard": 3, "pid": 11175, "gpu": 5}
+{"event": "worker_started", "unix": 1794879773.6985953, "shard": 1, "pid": 11283, "gpu": 3}
+{"event": "owned_worker_stop_requested", "unix": 1794880617.2507453, "pid": 11076, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794880617.276817, "pid": 11174, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794880617.2790833, "pid": 11175, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794880617.279711, "pid": 11283, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794880629.815322, "shard": 2, "pid": 11076, "exit_code": 0, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794880638.0681753, "shard": 3, "pid": 11175, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794880650.4375722, "shard": 1, "pid": 11283, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794880654.5091476, "shard": 0, "pid": 11174, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794880691.2721422, "shard": 2, "pid": 774, "gpu": 4}
+{"event": "worker_started", "unix": 1794880699.4802535, "shard": 3, "pid": 940, "gpu": 5}
+{"event": "worker_started", "unix": 1794880711.6988, "shard": 1, "pid": 1216, "gpu": 3}
+{"event": "worker_started", "unix": 1794880715.846904, "shard": 0, "pid": 1338, "gpu": 0}
+{"event": "owned_worker_stop_requested", "unix": 1794880897.4560285, "pid": 774, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794880897.5106153, "pid": 940, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794880897.5562053, "pid": 1216, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794880897.5632856, "pid": 1338, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794880905.7152636, "shard": 2, "pid": 774, "exit_code": 0, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794880905.7258086, "shard": 1, "pid": 1216, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794880905.7297614, "shard": 0, "pid": 1338, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794880907.7564533, "shard": 3, "pid": 940, "exit_code": 0, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794880966.8453796, "shard": 0, "pid": 7548, "gpu": 0}
+{"event": "worker_started", "unix": 1794880966.9142087, "shard": 1, "pid": 7555, "gpu": 3}
+{"event": "worker_started", "unix": 1794880966.9589775, "shard": 2, "pid": 7557, "gpu": 4}
+{"event": "worker_started", "unix": 1794880969.0176053, "shard": 3, "pid": 7611, "gpu": 5}
+{"event": "owned_worker_stop_requested", "unix": 1794882426.1008835, "pid": 7548, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794882426.11353, "pid": 7555, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794882426.11522, "pid": 7557, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794882426.11608, "pid": 7611, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794882438.5333242, "shard": 3, "pid": 7611, "exit_code": 0, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794882452.7849221, "shard": 2, "pid": 7557, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794882460.9249675, "shard": 1, "pid": 7555, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794882467.0500898, "shard": 0, "pid": 7548, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794882499.5834572, "shard": 3, "pid": 12874, "gpu": 5}
+{"event": "worker_started", "unix": 1794882513.896813, "shard": 2, "pid": 13182, "gpu": 4}
+{"event": "worker_started", "unix": 1794882522.0989513, "shard": 1, "pid": 13341, "gpu": 3}
+{"event": "worker_started", "unix": 1794882528.488628, "shard": 0, "pid": 13516, "gpu": 0}
+{"event": "owned_worker_stop_requested", "unix": 1794883940.4088528, "pid": 12874, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794883940.419452, "pid": 13182, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794883940.4213662, "pid": 13341, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794883940.4221067, "pid": 13516, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794883952.9100654, "shard": 2, "pid": 13182, "exit_code": 0, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794883963.1813364, "shard": 1, "pid": 13341, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794883969.280277, "shard": 3, "pid": 12874, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794883971.3338122, "shard": 0, "pid": 13516, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794884014.3164234, "shard": 2, "pid": 26481, "gpu": 4}
+{"event": "worker_started", "unix": 1794884024.5807362, "shard": 1, "pid": 26695, "gpu": 3}
+{"event": "worker_started", "unix": 1794884030.7961478, "shard": 3, "pid": 26803, "gpu": 5}
+{"event": "worker_started", "unix": 1794884032.9072576, "shard": 0, "pid": 26831, "gpu": 0}
+{"event": "owned_worker_stop_requested", "unix": 1794884227.0614326, "pid": 26481, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794884227.0881174, "pid": 26695, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794884227.0954404, "pid": 26803, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794884227.1015065, "pid": 26831, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794884233.231908, "shard": 0, "pid": 26831, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794884235.2858567, "shard": 2, "pid": 26481, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794884235.3008327, "shard": 1, "pid": 26695, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794884237.3427181, "shard": 3, "pid": 26803, "exit_code": -15, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794884294.3002694, "shard": 0, "pid": 32481, "gpu": 0}
+{"event": "worker_started", "unix": 1794884296.3654013, "shard": 1, "pid": 32531, "gpu": 3}
+{"event": "worker_started", "unix": 1794884296.3953395, "shard": 2, "pid": 32534, "gpu": 4}
+{"event": "worker_started", "unix": 1794884298.4727666, "shard": 3, "pid": 32610, "gpu": 5}
+{"event": "owned_worker_stop_requested", "unix": 1794884835.0216153, "pid": 32481, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794884835.0683494, "pid": 32531, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794884835.0776792, "pid": 32534, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794884835.0801718, "pid": 32610, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794884849.6001375, "shard": 0, "pid": 32481, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794884855.7150707, "shard": 3, "pid": 32610, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794884861.8541415, "shard": 2, "pid": 32534, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794884863.9112725, "shard": 1, "pid": 32531, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794884910.7812254, "shard": 0, "pid": 14566, "gpu": 0}
+{"event": "worker_started", "unix": 1794884917.0010526, "shard": 3, "pid": 14695, "gpu": 5}
+{"event": "worker_started", "unix": 1794884923.3100698, "shard": 2, "pid": 14834, "gpu": 4}
+{"event": "worker_started", "unix": 1794884925.405674, "shard": 1, "pid": 14867, "gpu": 3}
+{"event": "owned_worker_stop_requested", "unix": 1794885460.256989, "pid": 14566, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794885460.3068652, "pid": 14695, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794885460.313749, "pid": 14834, "reason": "telemetry stale"}
+{"event": "owned_worker_stop_requested", "unix": 1794885460.3173912, "pid": 14867, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794885489.4596548, "shard": 2, "pid": 14834, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794885491.5559785, "shard": 3, "pid": 14695, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794885493.6459758, "shard": 1, "pid": 14867, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_exit", "unix": 1794885497.7423236, "shard": 0, "pid": 14566, "exit_code": -9, "reason": "telemetry stale"}
+{"event": "worker_started", "unix": 1794885607.619238, "shard": 0, "pid": 642, "gpu": 0}
+{"event": "worker_started", "unix": 1794885607.6563487, "shard": 1, "pid": 646, "gpu": 3}
+{"event": "worker_started", "unix": 1794885607.6991808, "shard": 2, "pid": 649, "gpu": 4}
+{"event": "worker_started", "unix": 1794885607.752701, "shard": 3, "pid": 650, "gpu": 5}
+{"event": "owned_worker_stop_requested", "unix": 1794889042.0039225, "pid": 642, "reason": "supervisor exit"}
+{"event": "owned_worker_stop_requested", "unix": 1794889042.009277, "pid": 646, "reason": "supervisor exit"}
+{"event": "owned_worker_stop_requested", "unix": 1794889042.0102158, "pid": 649, "reason": "supervisor exit"}
+{"event": "owned_worker_stop_requested", "unix": 1794889042.010863, "pid": 650, "reason": "supervisor exit"}

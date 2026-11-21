@@ -1,0 +1,337 @@
+{
+  "id": "videoqa-real-07-motion-pilot",
+  "title": "MotionBench 先导：同一视频换帧率，结果会变吗",
+  "date": "2026-11-18",
+  "status": "completed",
+  "task": "videoqa",
+  "series": "采样、编码与定位",
+  "tags": [],
+  "tldr": "原 128 次推理加 32 次 Sparse 补测。Qwen2.5 的 Sparse 与 Flexi 在两种帧率均打平。",
+  "brief": {
+    "question": "定位实验里的结论是否也适用于运动选择题？改变帧率是否会改变输赢？",
+    "change": "固定 8 个原始视频，在 2/8 FPS 下比较原生两帧、固定六帧、动态合帧，追加同预算 Sparse。",
+    "conclusion": "原 128 次推理加 32 次 Sparse 补测。Qwen2.5 的 Sparse 与 Flexi 在两种帧率均打平。",
+    "verdict": "inconclusive",
+    "pipeline": [
+      {
+        "label": "冻结 8 条题目",
+        "changed": false
+      },
+      {
+        "label": "2 与 8 FPS",
+        "changed": false
+      },
+      {
+        "label": "比较编码条件",
+        "changed": true
+      },
+      {
+        "label": "统计选项正确数",
+        "changed": false
+      }
+    ]
+  },
+  "setup": {
+    "model": "Qwen2.5-VL-3B / Qwen3-VL-4B",
+    "evalData": [
+      "motion-q25-2",
+      "motion-q25-8",
+      "motion-q3-2",
+      "motion-q3-8"
+    ],
+    "notes": "全为实际免训练推理，单位为选项准确率。"
+  },
+  "results": {
+    "methods": [
+      {
+        "id": "flexi_released",
+        "name": "动态合帧",
+        "role": "baseline"
+      },
+      {
+        "id": "sparse_same_tokens",
+        "name": "Sparse",
+        "role": "ours"
+      },
+      {
+        "id": "native2",
+        "name": "原生两帧",
+        "role": "reference"
+      },
+      {
+        "id": "fixed6_released",
+        "name": "固定六帧",
+        "role": "ablation"
+      }
+    ],
+    "main": [
+      {
+        "method": "flexi_released",
+        "dataset": "motion-q25-2",
+        "metrics": {
+          "Acc": 75.0
+        }
+      },
+      {
+        "method": "sparse_same_tokens",
+        "dataset": "motion-q25-2",
+        "metrics": {
+          "Acc": 75.0
+        }
+      },
+      {
+        "method": "native2",
+        "dataset": "motion-q25-2",
+        "metrics": {
+          "Acc": 62.5
+        }
+      },
+      {
+        "method": "fixed6_released",
+        "dataset": "motion-q25-2",
+        "metrics": {
+          "Acc": 75.0
+        }
+      },
+      {
+        "method": "flexi_released",
+        "dataset": "motion-q25-8",
+        "metrics": {
+          "Acc": 62.5
+        }
+      },
+      {
+        "method": "sparse_same_tokens",
+        "dataset": "motion-q25-8",
+        "metrics": {
+          "Acc": 62.5
+        }
+      },
+      {
+        "method": "native2",
+        "dataset": "motion-q25-8",
+        "metrics": {
+          "Acc": 50.0
+        }
+      },
+      {
+        "method": "fixed6_released",
+        "dataset": "motion-q25-8",
+        "metrics": {
+          "Acc": 50.0
+        }
+      },
+      {
+        "method": "flexi_released",
+        "dataset": "motion-q3-2",
+        "metrics": {
+          "Acc": 37.5
+        }
+      },
+      {
+        "method": "sparse_same_tokens",
+        "dataset": "motion-q3-2",
+        "metrics": {
+          "Acc": 37.5
+        }
+      },
+      {
+        "method": "native2",
+        "dataset": "motion-q3-2",
+        "metrics": {
+          "Acc": 37.5
+        }
+      },
+      {
+        "method": "fixed6_released",
+        "dataset": "motion-q3-2",
+        "metrics": {
+          "Acc": 50.0
+        }
+      },
+      {
+        "method": "flexi_released",
+        "dataset": "motion-q3-8",
+        "metrics": {
+          "Acc": 37.5
+        }
+      },
+      {
+        "method": "sparse_same_tokens",
+        "dataset": "motion-q3-8",
+        "metrics": {
+          "Acc": 37.5
+        }
+      },
+      {
+        "method": "native2",
+        "dataset": "motion-q3-8",
+        "metrics": {
+          "Acc": 37.5
+        }
+      },
+      {
+        "method": "fixed6_released",
+        "dataset": "motion-q3-8",
+        "metrics": {
+          "Acc": 37.5
+        }
+      }
+    ],
+    "headline": [
+      {
+        "dataset": "motion-q25-8",
+        "metric": "Acc"
+      },
+      {
+        "dataset": "motion-q3-8",
+        "metric": "Acc"
+      }
+    ]
+  },
+  "charts": [
+    {
+      "id": "counts",
+      "title": "同视频的四组方法",
+      "type": "bar",
+      "categories": [
+        "2.5 2 FPS",
+        "2.5 8 FPS",
+        "3 2 FPS",
+        "3 8 FPS"
+      ],
+      "yLabel": "百分点 / %",
+      "series": [
+        {
+          "name": "动态合帧",
+          "data": [
+            75.0,
+            62.5,
+            37.5,
+            37.5
+          ]
+        },
+        {
+          "name": "Sparse",
+          "data": [
+            75.0,
+            62.5,
+            37.5,
+            37.5
+          ]
+        },
+        {
+          "name": "原生两帧",
+          "data": [
+            62.5,
+            50.0,
+            37.5,
+            37.5
+          ]
+        },
+        {
+          "name": "固定六帧",
+          "data": [
+            75.0,
+            50.0,
+            50.0,
+            37.5
+          ]
+        }
+      ]
+    }
+  ],
+  "insights": {
+    "oneLiner": "8 条只能提示差异可能随帧率和模型变化，需要另抽样本检查。",
+    "confidence": 0.55,
+    "phenomena": [
+      {
+        "id": "p1",
+        "title": "小样本难区分",
+        "detail": "一条答对就改变 12.5 个百分点。",
+        "evidence": "chart:counts",
+        "symptoms": [
+          "seed-variance"
+        ],
+        "surprise": 2
+      }
+    ],
+    "echoes": [
+      {
+        "id": "echo",
+        "phenomenon": "p1",
+        "lens": "student-t",
+        "correspondences": [
+          [
+            "少量观测",
+            "8 个视频"
+          ],
+          [
+            "不确定性",
+            "一条就能改变排名"
+          ]
+        ],
+        "borrowedMove": "扩大到 32 条新独立视频，并按题型分层。",
+        "limit": "视频问答的准确率无法与定位 mIoU 直接比较。"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "hyp",
+        "title": "用同预算对照检验",
+        "statement": "扩样后不同模型的结果仍存在交互。",
+        "test": "冻结新视频组，2/8 FPS 与四方法逐一配对。",
+        "falsifiedIf": "两个模型两种帧率同方向。",
+        "impact": 4,
+        "effort": 3,
+        "status": "confirmed",
+        "from": [
+          "echo"
+        ]
+      }
+    ],
+    "paperAngles": [
+      {
+        "id": "direction",
+        "title": "可能的研究贡献",
+        "type": "analysis",
+        "claim": "建立相同视频上的帧率与编码交互证据。",
+        "novelty": "建立相同视频上的帧率与编码交互证据。",
+        "risk": "8 条是先导且样本结构有限。",
+        "readiness": 0.28,
+        "from": [
+          "hyp"
+        ]
+      }
+    ],
+    "provocations": [
+      {
+        "prompt": "reviewer2",
+        "answer": "保持同一个视频和问题，使用同视频配对。"
+      },
+      {
+        "prompt": "mechanism",
+        "answer": "视频问答的准确率无法与定位 mIoU 直接比较。"
+      }
+    ]
+  },
+  "reproduce": {
+    "commands": [
+      {
+        "label": "在 VTG 工作目录查看原报告",
+        "cmd": "cat outputs/motionbench_fps_probe_20261117_003/report.md"
+      }
+    ],
+    "artifacts": [
+      {
+        "label": "8 条先导结果",
+        "path": "evidence/videoqa-real-07-motion-pilot/motionbench_fps_probe_20261117_003-report.md"
+      },
+      {
+        "label": "32 次 Sparse 评分",
+        "path": "evidence/videoqa-real-07-motion-pilot/motionbench_sparse_20261118_001-summary.json"
+      }
+    ]
+  },
+  "parent": "vtg-real-04-sparse"
+}

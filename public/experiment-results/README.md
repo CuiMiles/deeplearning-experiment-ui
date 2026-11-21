@@ -1,0 +1,80 @@
+# VTG 实验结果归档
+
+[实验看板数据](../../data/experiments) · [看板证据与逐条预测](../evidence)
+
+归档包含历史报告、评分、预测、运行状态与训练指标。原始预测按运行打包，部分大文件使用 gzip。
+
+| 运行 | 归档文件数 |
+|---|---:|
+| [outputs/autoresearch_omtg_001](outputs/autoresearch_omtg_001) | 13 |
+| [outputs/autoresearch_omtg_ablation_gpu5](outputs/autoresearch_omtg_ablation_gpu5) | 11 |
+| [outputs/autoresearch_sampling_001](outputs/autoresearch_sampling_001) | 21 |
+| [outputs/autoresearch_tl2_8b_001](outputs/autoresearch_tl2_8b_001) | 11 |
+| [outputs/boundary_pair_20261118_001](outputs/boundary_pair_20261118_001) | 12 |
+| [outputs/cleanup_verification.json](outputs/cleanup_verification.json) | 1 |
+| [outputs/coverage_eval_20261115_001](outputs/coverage_eval_20261115_001) | 6 |
+| [outputs/coverage_training_20261115_001](outputs/coverage_training_20261115_001) | 4 |
+| [outputs/coverage_training_20261115_002](outputs/coverage_training_20261115_002) | 12 |
+| [outputs/ego4d_nlq_samples_validation](outputs/ego4d_nlq_samples_validation) | 1 |
+| [outputs/event_consensus_20261119_001](outputs/event_consensus_20261119_001) | 10 |
+| [outputs/flexi_boundary_audit_20261117](outputs/flexi_boundary_audit_20261117) | 8 |
+| [outputs/flexi_oracle_subset_20261117_001](outputs/flexi_oracle_subset_20261117_001) | 14 |
+| [outputs/flexi_rapid_diagnostic_20261117_001](outputs/flexi_rapid_diagnostic_20261117_001) | 20 |
+| [outputs/flexi_timelens_full_20261116_001](outputs/flexi_timelens_full_20261116_001) | 29 |
+| [outputs/flexi_timelens_full_20261116_002](outputs/flexi_timelens_full_20261116_002) | 24 |
+| [outputs/flexi_timelens_full_20261116_003](outputs/flexi_timelens_full_20261116_003) | 21 |
+| [outputs/flexi_timelens_full_20261116_004](outputs/flexi_timelens_full_20261116_004) | 30 |
+| [outputs/idea_round2_20261118_001](outputs/idea_round2_20261118_001) | 7 |
+| [outputs/idea_round3_20261119_001](outputs/idea_round3_20261119_001) | 14 |
+| [outputs/motionbench_expansion_20261118_001](outputs/motionbench_expansion_20261118_001) | 15 |
+| [outputs/motionbench_fps_probe_20261117_001](outputs/motionbench_fps_probe_20261117_001) | 11 |
+| [outputs/motionbench_fps_probe_20261117_002](outputs/motionbench_fps_probe_20261117_002) | 11 |
+| [outputs/motionbench_fps_probe_20261117_003](outputs/motionbench_fps_probe_20261117_003) | 24 |
+| [outputs/motionbench_sparse_20261118_001](outputs/motionbench_sparse_20261118_001) | 20 |
+| [outputs/qwen3_flexi_20261117_001](outputs/qwen3_flexi_20261117_001) | 16 |
+| [outputs/rereview_20261111_001](outputs/rereview_20261111_001) | 7 |
+| [outputs/rereview_20261112_shared_001](outputs/rereview_20261112_shared_001) | 11 |
+| [outputs/timelens1_charades_main_001](outputs/timelens1_charades_main_001) | 1 |
+| [outputs/timelens1_charades_main_002](outputs/timelens1_charades_main_002) | 1 |
+| [outputs/timelens1_charades_main_003](outputs/timelens1_charades_main_003) | 3 |
+| [outputs/timelens1_memory_smoke_003](outputs/timelens1_memory_smoke_003) | 2 |
+| [outputs/timelens2_8b_memory_smoke_spread_001](outputs/timelens2_8b_memory_smoke_spread_001) | 1 |
+| [outputs/timelens2_8b_trace_001](outputs/timelens2_8b_trace_001) | 1 |
+| [outputs/timelens2_charades_main_001](outputs/timelens2_charades_main_001) | 1 |
+| [outputs/timelens2_charades_main_002](outputs/timelens2_charades_main_002) | 1 |
+| [outputs/timelens2_charades_main_003](outputs/timelens2_charades_main_003) | 1 |
+| [outputs/timelens2_charades_main_004](outputs/timelens2_charades_main_004) | 3 |
+| [outputs/timelens2_charades_smoke_001](outputs/timelens2_charades_smoke_001) | 3 |
+| [outputs/timelens2_omtg_main_001](outputs/timelens2_omtg_main_001) | 1 |
+| [outputs/timelens2_omtg_main_002](outputs/timelens2_omtg_main_002) | 3 |
+| [outputs/timelens8b_charades_main_002](outputs/timelens8b_charades_main_002) | 1 |
+| [outputs/timelens8b_charades_main_003](outputs/timelens8b_charades_main_003) | 3 |
+| [outputs/timelens8b_memory_smoke_001](outputs/timelens8b_memory_smoke_001) | 2 |
+| [outputs/timelens8b_memory_smoke_spread_001](outputs/timelens8b_memory_smoke_spread_001) | 2 |
+| [outputs/timelens8b_trace_001](outputs/timelens8b_trace_001) | 1 |
+| [outputs/timelens8b_trace_002](outputs/timelens8b_trace_002) | 1 |
+| [outputs/timelens_coverage_actual_20261115_001](outputs/timelens_coverage_actual_20261115_001) | 7 |
+| [exh_20261120/e1_mechanism](exh_20261120/e1_mechanism) | 3 |
+| [exh_20261120/e2_elim](exh_20261120/e2_elim) | 6 |
+| [exh_20261120/e2b_dense](exh_20261120/e2b_dense) | 5 |
+| [exh_20261120/e3_eval](exh_20261120/e3_eval) | 4 |
+| [exh_20261120/e3_rl](exh_20261120/e3_rl) | 15 |
+| [exh_20261120/smoke_e2](exh_20261120/smoke_e2) | 2 |
+| [exh_20261120/smoke_e3](exh_20261120/smoke_e3) | 2 |
+| [exh_20261121_budget_001/finished.json](exh_20261121_budget_001/finished.json) | 1 |
+| [exh_20261121_budget_001/per_query.csv](exh_20261121_budget_001/per_query.csv) | 1 |
+| [exh_20261121_budget_001/processor_cpu_audit.json](exh_20261121_budget_001/processor_cpu_audit.json) | 1 |
+| [exh_20261121_budget_001/protocol.json](exh_20261121_budget_001/protocol.json) | 1 |
+| [exh_20261121_budget_001/raw-records.jsonl.gz](exh_20261121_budget_001/raw-records.jsonl.gz) | 1 |
+| [exh_20261121_budget_001/report.md](exh_20261121_budget_001/report.md) | 1 |
+| [exh_20261121_budget_001/seed2](exh_20261121_budget_001/seed2) | 3 |
+| [exh_20261121_budget_001/seed2_recovery](exh_20261121_budget_001/seed2_recovery) | 11 |
+| [exh_20261121_budget_001/status.json](exh_20261121_budget_001/status.json) | 1 |
+| [exh_20261121_budget_001/summary.json](exh_20261121_budget_001/summary.json) | 1 |
+| [exh_20261121_density_001/finished.json](exh_20261121_density_001/finished.json) | 1 |
+| [exh_20261121_density_001/per_event.csv](exh_20261121_density_001/per_event.csv) | 1 |
+| [exh_20261121_density_001/per_query.csv](exh_20261121_density_001/per_query.csv) | 1 |
+| [exh_20261121_density_001/protocol.json](exh_20261121_density_001/protocol.json) | 1 |
+| [exh_20261121_density_001/raw-records.jsonl.gz](exh_20261121_density_001/raw-records.jsonl.gz) | 1 |
+| [exh_20261121_density_001/report.md](exh_20261121_density_001/report.md) | 1 |
+| [exh_20261121_density_001/summary.json](exh_20261121_density_001/summary.json) | 1 |

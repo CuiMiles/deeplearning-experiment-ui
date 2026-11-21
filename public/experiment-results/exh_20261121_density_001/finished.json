@@ -1,0 +1,15 @@
+{
+  "queries": 621,
+  "videos": 480,
+  "total_queries": 621,
+  "total_videos": 480,
+  "gpu_completed": {
+    "tl2_4b": 573,
+    "A0_s1@200": 573,
+    "A1_s1@200": 573
+  },
+  "gpu_expected": 1719,
+  "complete": true,
+  "unix": 1795202512.9283168,
+  "audit": "passed"
+}

@@ -1,0 +1,48 @@
+{
+  "created_unix": 1795200407.2140791,
+  "deadline_unix": 1795243607.2140791,
+  "queries": 573,
+  "videos": 439,
+  "methods": {
+    "frames32": [
+      "uniform32",
+      "motion32",
+      "transient32"
+    ],
+    "semvid32": [
+      "semvid32"
+    ],
+    "flexi": [
+      "flexi_scaled32",
+      "flexi_unscaled32"
+    ],
+    "frames16": [
+      "uniform16",
+      "motion16",
+      "transient16"
+    ],
+    "semvid16": [
+      "semvid16"
+    ]
+  },
+  "source": "[local-path]/models/multimodal/model_reproduction/vtg/exh_20261121_density_001",
+  "inputs_sha": "70d9317b3f3ab2563b78601f3b61452003326b79c0a6bbb74c61bf22e6b2e743",
+  "labels_sha": "8762ee769f79088dfdd7317c8c689face086f65b33a1fd75313a781c72d75d84",
+  "base_manifest_sha": "3e2cf4c2cf72b3f833f13ae30da52aa68f3bb0c4cf495f1ed0eb79016857c68a",
+  "code_sha": {
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/exh/e5_budget.py": "feea18be055dadc9b02eea5e4352bfcd1446045db0c2119b21acc75878729b61",
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/exh/e3_eval_worker.py": "5b422f628f060ace432341122976ab706d58e2f43eb5ca104ac4a0b90f9aa569",
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/exh/e2_worker.py": "67201972cb0532807ec531aaec2eed3e2432da1defe066e99114c19fcf3c1b1c",
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/exh/common.py": "3bf5cc8dfadd3b944eb21403a592c02c592ebfa183506529fa672add1154fe37",
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/idea_round2/worker.py": "26ccae4a18d7e2856024c4a6a5ebe31631cb780af16c83723dc6432de8f240c3",
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/eval_qwen3_flexi.py": "d89b9f8325d6e8c6783a3ec13b8e18d6522613cc14446713fd3e38df009b1f9c",
+    "[local-path]/models/multimodal/model_reproduction/vtg/repos/SemVID/src/models/models/modeling_qwen3_vl_semvid.py": "9fe95b323e0e5375a6af44ed737667c6f714864815992a50c2865e51d2b71ff6",
+    "[local-path]/models/multimodal/model_reproduction/vtg/repos/SemVID/configs/_base_/methods/semvid_qwen3.py": "c5964ba431c4b0450d8cbdd68a90ab622eddbd17f1f7c9e3fbb4b50304e6123b"
+  },
+  "candidate_pool": "E4 128-frame input, up to 64 original two-frame units at original positions and fixed resolution",
+  "selection": "Uniform; max between the two frames; or brief change from both temporal neighbours. One unit per temporal bin.",
+  "flexi": "Same released-kernel port as earlier. Both scale arms use the same fixed-budget contiguous min-cost groups, lengths 2/4/6. Grouping is adapted to the 32-unit budget and is not official ATS.",
+  "semvid": "Released pruning code with TimeLens2-4B weights; all candidate units encoded, retained visual tokens checked.",
+  "primary": "transient32 minus uniform32 and transient32 minus motion32, on OMTG and multi-event holdout separately. Secondary 16-unit replication, SemVID and Flexi; exact visual-token comparisons, cluster bootstrap by source.",
+  "screening": "Promising if OMTG tF1 gains at least 2 points over uniform with CI lower bound above zero, beats motion in point estimate, and is positive on holdout. Explore mechanisms even when the gate is missed."
+}

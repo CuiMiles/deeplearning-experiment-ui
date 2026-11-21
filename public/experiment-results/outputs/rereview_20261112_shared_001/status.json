@@ -1,0 +1,14 @@
+{
+  "stage": "completed",
+  "counts": {
+    "done": 64
+  },
+  "completed_variants": {
+    "A": 64,
+    "B": 64,
+    "C": 64,
+    "D": 64
+  },
+  "expected_variants": 256,
+  "updated_unix": 1794452511.4631782
+}

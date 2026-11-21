@@ -1,0 +1,6 @@
+{"event": "worker_started", "unix": 1794913422.5065506, "shard": 0, "pid": 32213, "gpus": [0]}
+{"event": "worker_started", "unix": 1794913422.5165, "shard": 1, "pid": 32214, "gpus": [3]}
+{"event": "worker_started", "unix": 1794913422.5318956, "shard": 2, "pid": 32245, "gpus": [4, 5]}
+{"event": "owned_stop", "unix": 1794913827.2552261, "pid": 32213, "reason": "supervisor exit"}
+{"event": "owned_stop", "unix": 1794913827.2605228, "pid": 32214, "reason": "supervisor exit"}
+{"event": "owned_stop", "unix": 1794913827.2607884, "pid": 32245, "reason": "supervisor exit"}

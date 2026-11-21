@@ -1,232 +1,1026 @@
 {
   "metrics": {
-    "R1@0.3": { "name": "R1@0.3", "full": "Recall@1, IoU≥0.3", "desc": "Top-1 预测片段与 GT 的时序 IoU ≥ 0.3 的查询占比（宽松定位）", "unit": "%", "higherIsBetter": true, "range": [0, 100] },
-    "R1@0.5": { "name": "R1@0.5", "full": "Recall@1, IoU≥0.5", "desc": "Top-1 预测片段与 GT 的时序 IoU ≥ 0.5 的查询占比（最常用）", "unit": "%", "higherIsBetter": true, "range": [0, 100] },
-    "R1@0.7": { "name": "R1@0.7", "full": "Recall@1, IoU≥0.7", "desc": "Top-1 预测片段与 GT 的时序 IoU ≥ 0.7 的查询占比（精细定位）", "unit": "%", "higherIsBetter": true, "range": [0, 100] },
-    "R5@0.5": { "name": "R5@0.5", "full": "Recall@5, IoU≥0.5", "desc": "Top-5 预测中至少一个与 GT 的 IoU ≥ 0.5 的查询占比", "unit": "%", "higherIsBetter": true, "range": [0, 100] },
-    "R5@0.7": { "name": "R5@0.7", "full": "Recall@5, IoU≥0.7", "desc": "Top-5 预测中至少一个与 GT 的 IoU ≥ 0.7 的查询占比", "unit": "%", "higherIsBetter": true, "range": [0, 100] },
-    "mIoU": { "name": "mIoU", "full": "mean temporal IoU", "desc": "所有查询 Top-1 预测与 GT 时序 IoU 的平均值", "unit": "%", "higherIsBetter": true, "range": [0, 100] },
-
-    "MR-mAP@0.5": { "name": "MR mAP@0.5", "desc": "片段检索在 IoU=0.5 下的平均精度（QVHighlights）", "unit": "%", "higherIsBetter": true, "range": [0, 100] },
-    "MR-mAP@0.75": { "name": "MR mAP@0.75", "desc": "片段检索在 IoU=0.75 下的平均精度", "unit": "%", "higherIsBetter": true, "range": [0, 100] },
-    "MR-mAP": { "name": "MR mAP", "full": "mAP@[0.5:0.05:0.95]", "desc": "片段检索在 IoU 0.5–0.95（步长 0.05）上的平均 mAP", "unit": "%", "higherIsBetter": true, "range": [0, 100] },
-    "HD-mAP": { "name": "HD mAP", "desc": "高光检测：按 clip 显著性排序的平均精度（Very Good 阈值）", "unit": "%", "higherIsBetter": true, "range": [0, 100] },
-    "HIT@1": { "name": "HIT@1", "desc": "高光检测：得分最高的 clip 是否为高光", "unit": "%", "higherIsBetter": true, "range": [0, 100] },
-
-    "tmAP@0.3": { "name": "mAP@0.3", "desc": "时序动作定位在 tIoU=0.3 下的 mAP", "unit": "%", "higherIsBetter": true, "range": [0, 100] },
-    "tmAP@0.5": { "name": "mAP@0.5", "desc": "时序动作定位在 tIoU=0.5 下的 mAP", "unit": "%", "higherIsBetter": true, "range": [0, 100] },
-    "tmAP@0.7": { "name": "mAP@0.7", "desc": "时序动作定位在 tIoU=0.7 下的 mAP", "unit": "%", "higherIsBetter": true, "range": [0, 100] },
-    "tmAP-avg": { "name": "Avg mAP", "desc": "THUMOS14 惯例：tIoU 0.3–0.7 平均 mAP", "unit": "%", "higherIsBetter": true, "range": [0, 100] },
-
-    "Acc": { "name": "Acc", "full": "Accuracy", "desc": "答对的比例", "unit": "%", "higherIsBetter": true, "range": [0, 100] },
-    "VQA-Acc": { "name": "VQA Acc", "desc": "VQA 软准确率：min(#人类给出相同答案 / 3, 1)", "unit": "%", "higherIsBetter": true, "range": [0, 100] },
-
-    "CIDEr": { "name": "CIDEr", "desc": "基于 TF-IDF 加权 n-gram 的共识相似度，描述任务最常用指标", "unit": "", "higherIsBetter": true },
-    "METEOR": { "name": "METEOR", "desc": "考虑同义词与词形的对齐 F 值", "unit": "", "higherIsBetter": true },
-    "BLEU-4": { "name": "BLEU-4", "desc": "4-gram 精确率的几何平均（含长度惩罚）", "unit": "", "higherIsBetter": true },
-    "SPICE": { "name": "SPICE", "desc": "基于场景图（对象/属性/关系）的语义 F 值", "unit": "", "higherIsBetter": true },
-    "SODA_c": { "name": "SODA_c", "desc": "密集描述的故事级评价：先按时序最优匹配，再计算描述质量", "unit": "", "higherIsBetter": true },
-    "Loc-F1": { "name": "Loc F1", "desc": "密集描述中事件定位的 F1（多 IoU 阈值平均）", "unit": "%", "higherIsBetter": true, "range": [0, 100] },
-
-    "R@1": { "name": "R@1", "desc": "检索：正确结果排在第 1 位的比例", "unit": "%", "higherIsBetter": true, "range": [0, 100] },
-    "R@5": { "name": "R@5", "desc": "检索：正确结果出现在前 5 位的比例", "unit": "%", "higherIsBetter": true, "range": [0, 100] },
-    "R@10": { "name": "R@10", "desc": "检索：正确结果出现在前 10 位的比例", "unit": "%", "higherIsBetter": true, "range": [0, 100] },
-    "MdR": { "name": "MdR", "full": "Median Rank", "desc": "正确结果排名的中位数，越小越好", "unit": "", "higherIsBetter": false },
-    "MnR": { "name": "MnR", "full": "Mean Rank", "desc": "正确结果排名的平均值，越小越好", "unit": "", "higherIsBetter": false },
-
-    "Acc@0.5": { "name": "Acc@0.5", "desc": "预测框与 GT 框 IoU ≥ 0.5 的比例（指代表达理解）", "unit": "%", "higherIsBetter": true, "range": [0, 100] },
-
-    "Seg-Acc": { "name": "Seg Acc", "desc": "按 1 秒片段计算的事件类别准确率（音视频事件定位）", "unit": "%", "higherIsBetter": true, "range": [0, 100] }
+    "Event-F1@0.5": {
+      "name": "事件 F1@0.5",
+      "desc": "预测和标注一对一匹配，IoU 至少 0.5，逐查询计算 F1 后取平均。",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "Event-Recall@0.5": {
+      "name": "事件召回@0.5",
+      "desc": "IoU 至少 0.5 的正确匹配数除以标注事件数，逐查询平均。",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "Shortest-Recall@0.5": {
+      "name": "最短事件召回",
+      "desc": "逐查询判断最短标注事件是否被成功匹配。",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "Set-tIoU": {
+      "name": "区间集合 tIoU",
+      "desc": "合并区间后计算预测与标注的时间交集 / 并集，再按查询平均。",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "Boundary-cross": {
+      "name": "跨边界比例",
+      "desc": "真实边界落在超过两帧且跨边界的合并组中。",
+      "unit": "%",
+      "higherIsBetter": false,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "Short-swallow": {
+      "name": "短事件单组占比",
+      "desc": "不超过 2 秒的动作完全落在一个组中的比例。",
+      "unit": "%",
+      "higherIsBetter": false,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "Reward-sum": {
+      "name": "时序总奖励",
+      "desc": "代码中的 tIoU 与时间 Wasserstein 奖励之和。",
+      "unit": "",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        2
+      ]
+    },
+    "R1@0.3": {
+      "name": "R1@0.3",
+      "full": "Recall@1, IoU≥0.3",
+      "desc": "Top-1 预测片段与 GT 的时序 IoU ≥ 0.3 的查询占比（宽松定位）",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "R1@0.5": {
+      "name": "R1@0.5",
+      "full": "Recall@1, IoU≥0.5",
+      "desc": "Top-1 预测片段与 GT 的时序 IoU ≥ 0.5 的查询占比（最常用）",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "R1@0.7": {
+      "name": "R1@0.7",
+      "full": "Recall@1, IoU≥0.7",
+      "desc": "Top-1 预测片段与 GT 的时序 IoU ≥ 0.7 的查询占比（精细定位）",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "R5@0.5": {
+      "name": "R5@0.5",
+      "full": "Recall@5, IoU≥0.5",
+      "desc": "Top-5 预测中至少一个与 GT 的 IoU ≥ 0.5 的查询占比",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "R5@0.7": {
+      "name": "R5@0.7",
+      "full": "Recall@5, IoU≥0.7",
+      "desc": "Top-5 预测中至少一个与 GT 的 IoU ≥ 0.7 的查询占比",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "mIoU": {
+      "name": "mIoU",
+      "full": "mean temporal IoU",
+      "desc": "所有查询 Top-1 预测与 GT 时序 IoU 的平均值",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "MR-mAP@0.5": {
+      "name": "MR mAP@0.5",
+      "desc": "片段检索在 IoU=0.5 下的平均精度（QVHighlights）",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "MR-mAP@0.75": {
+      "name": "MR mAP@0.75",
+      "desc": "片段检索在 IoU=0.75 下的平均精度",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "MR-mAP": {
+      "name": "MR mAP",
+      "full": "mAP@[0.5:0.05:0.95]",
+      "desc": "片段检索在 IoU 0.5–0.95（步长 0.05）上的平均 mAP",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "HD-mAP": {
+      "name": "HD mAP",
+      "desc": "高光检测：按 clip 显著性排序的平均精度（Very Good 阈值）",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "HIT@1": {
+      "name": "HIT@1",
+      "desc": "高光检测：得分最高的 clip 是否为高光",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "tmAP@0.3": {
+      "name": "mAP@0.3",
+      "desc": "时序动作定位在 tIoU=0.3 下的 mAP",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "tmAP@0.5": {
+      "name": "mAP@0.5",
+      "desc": "时序动作定位在 tIoU=0.5 下的 mAP",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "tmAP@0.7": {
+      "name": "mAP@0.7",
+      "desc": "时序动作定位在 tIoU=0.7 下的 mAP",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "tmAP-avg": {
+      "name": "Avg mAP",
+      "desc": "THUMOS14 惯例：tIoU 0.3–0.7 平均 mAP",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "Acc": {
+      "name": "Acc",
+      "full": "Accuracy",
+      "desc": "答对的比例",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "VQA-Acc": {
+      "name": "VQA Acc",
+      "desc": "VQA 软准确率：min(#人类给出相同答案 / 3, 1)",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "CIDEr": {
+      "name": "CIDEr",
+      "desc": "基于 TF-IDF 加权 n-gram 的共识相似度，描述任务最常用指标",
+      "unit": "",
+      "higherIsBetter": true
+    },
+    "METEOR": {
+      "name": "METEOR",
+      "desc": "考虑同义词与词形的对齐 F 值",
+      "unit": "",
+      "higherIsBetter": true
+    },
+    "BLEU-4": {
+      "name": "BLEU-4",
+      "desc": "4-gram 精确率的几何平均（含长度惩罚）",
+      "unit": "",
+      "higherIsBetter": true
+    },
+    "SPICE": {
+      "name": "SPICE",
+      "desc": "基于场景图（对象/属性/关系）的语义 F 值",
+      "unit": "",
+      "higherIsBetter": true
+    },
+    "SODA_c": {
+      "name": "SODA_c",
+      "desc": "密集描述的故事级评价：先按时序最优匹配，再计算描述质量",
+      "unit": "",
+      "higherIsBetter": true
+    },
+    "Loc-F1": {
+      "name": "Loc F1",
+      "desc": "密集描述中事件定位的 F1（多 IoU 阈值平均）",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "R@1": {
+      "name": "R@1",
+      "desc": "检索：正确结果排在第 1 位的比例",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "R@5": {
+      "name": "R@5",
+      "desc": "检索：正确结果出现在前 5 位的比例",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "R@10": {
+      "name": "R@10",
+      "desc": "检索：正确结果出现在前 10 位的比例",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "MdR": {
+      "name": "MdR",
+      "full": "Median Rank",
+      "desc": "正确结果排名的中位数，越小越好",
+      "unit": "",
+      "higherIsBetter": false
+    },
+    "MnR": {
+      "name": "MnR",
+      "full": "Mean Rank",
+      "desc": "正确结果排名的平均值，越小越好",
+      "unit": "",
+      "higherIsBetter": false
+    },
+    "Acc@0.5": {
+      "name": "Acc@0.5",
+      "desc": "预测框与 GT 框 IoU ≥ 0.5 的比例（指代表达理解）",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "Seg-Acc": {
+      "name": "Seg Acc",
+      "desc": "按 1 秒片段计算的事件类别准确率（音视频事件定位）",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    },
+    "EtF1": {
+      "name": "有效时间 F1",
+      "desc": "段数预测正确时计算多个 IoU 门槛的平均事件 F1，段数错误计零。",
+      "unit": "%",
+      "range": [
+        0,
+        100
+      ],
+      "higherIsBetter": true
+    },
+    "Count-Accuracy": {
+      "name": "段数准确率",
+      "desc": "预测片段数与标注完全一致的查询比例。",
+      "unit": "%",
+      "range": [
+        0,
+        100
+      ],
+      "higherIsBetter": true
+    },
+    "Event-Coverage@0.5": {
+      "name": "事件覆盖率@0.5",
+      "desc": "至少一次回答命中的标注事件比例。",
+      "unit": "%",
+      "higherIsBetter": true,
+      "range": [
+        0,
+        100
+      ]
+    }
   },
-
   "datasets": {
-    "charades-sta": { "name": "Charades-STA", "domain": "室内日常活动", "year": 2017, "source": "Gao et al., ICCV 2017", "stats": "约 1.6 万查询 · 平均约 30 秒", "desc": "在 Charades 室内活动视频上标注句子-片段对，最经典的 VTG 基准；已知存在较多标注问题和时序位置偏置。" },
-    "activitynet-captions": { "name": "ActivityNet Captions", "domain": "开放域", "year": 2017, "source": "Krishna et al., ICCV 2017", "stats": "约 2 万视频 · 约 10 万描述 · 平均约 2 分钟", "desc": "源自 ActivityNet 的密集描述标注，常用于 VTG 和密集描述；视频更长、事件更多样。" },
-    "tacos": { "name": "TACoS", "domain": "烹饪", "year": 2013, "source": "Regneri et al., TACL 2013", "stats": "127 个长视频 · 平均约 4.8 分钟", "desc": "厨房烹饪场景，镜头固定、动作细粒度，片段相对视频极短，难度高。" },
-    "qvhighlights": { "name": "QVHighlights", "domain": "vlog / 新闻", "year": 2021, "source": "Lei et al., NeurIPS 2021", "stats": "约 1 万个 150 秒视频 · 1 万+ 查询", "desc": "同时标注片段检索（可多段）和逐 2 秒 clip 的显著性分数，是 MR+HD 联合任务的标准基准。" },
-    "charades-timelens": { "name": "Charades-TimeLens", "domain": "室内日常活动", "year": 2026, "source": "TimeLens, CVPR 2026", "stats": "Charades-STA 测试集的严格重标注", "desc": "按事件唯一性、事件存在性、查询清晰度、标注准确性重新标注 Charades-STA，修正旧基准中的大量错误。" },
-    "activitynet-timelens": { "name": "ActivityNet-TimeLens", "domain": "开放域", "year": 2026, "source": "TimeLens, CVPR 2026", "stats": "ActivityNet Captions 测试集的严格重标注", "desc": "ActivityNet Captions 的高质量重标注版本，模型排名与旧基准存在差异。" },
-    "qvhighlights-timelens": { "name": "QVHighlights-TimeLens", "domain": "vlog / 新闻", "year": 2026, "source": "TimeLens, CVPR 2026", "stats": "QVHighlights 验证集的严格重标注", "desc": "因 QVHighlights 测试集标注未公开，基于验证集重标注。" },
-    "timelens-100k": { "name": "TimeLens-100K", "domain": "混合", "year": 2026, "source": "TimeLens, CVPR 2026", "stats": "约 10 万条训练标注", "desc": "用自动化流水线对多个噪声训练集重标注得到的高质量 VTG 训练数据。" },
-
-    "thumos14": { "name": "THUMOS14", "domain": "体育", "year": 2014, "source": "Jiang et al., 2014", "stats": "20 个动作类 · 约 400 个带时序标注的未剪辑视频", "desc": "时序动作定位经典基准，动作实例密集且短，常报告 tIoU 0.3–0.7 的 mAP。" },
-    "activitynet-1.3": { "name": "ActivityNet-1.3", "domain": "开放域", "year": 2016, "source": "Caba Heilbron et al., CVPR 2015", "stats": "200 个类别 · 约 2 万视频", "desc": "大规模动作定位基准，常报告 tIoU 0.5:0.05:0.95 平均 mAP。" },
-
-    "video-mme": { "name": "Video-MME", "domain": "开放域", "year": 2024, "source": "Fu et al., 2024", "stats": "900 个视频 · 2,700 道选择题 · 短/中/长三档", "desc": "覆盖多领域和多时长的视频理解综合基准，常按视频时长分档报告准确率。" },
-    "mvbench": { "name": "MVBench", "domain": "开放域", "year": 2024, "source": "Li et al., CVPR 2024", "stats": "20 个时序能力子任务 · 4,000 道选择题", "desc": "专门考察时序理解能力（动作顺序、计数、状态变化等）。" },
-    "nextqa": { "name": "NExT-QA", "domain": "日常生活", "year": 2021, "source": "Xiao et al., CVPR 2021", "stats": "约 5,400 视频 · 约 5.2 万问答", "desc": "聚焦因果与时序推理的视频问答，问题分为因果 / 时序 / 描述三类。" },
-    "egoschema": { "name": "EgoSchema", "domain": "第一人称", "year": 2023, "source": "Mangalam et al., NeurIPS 2023", "stats": "5,000+ 道选择题 · 3 分钟第一人称片段", "desc": "源自 Ego4D 的长时第一人称视频理解，需要整合长程信息。" },
-
-    "youcook2": { "name": "YouCook2", "domain": "烹饪", "year": 2018, "source": "Zhou et al., AAAI 2018", "stats": "约 2,000 视频 · 89 种菜谱", "desc": "带步骤级时间标注和描述的烹饪教学视频，密集描述常用基准。" },
-
-    "msrvtt": { "name": "MSR-VTT", "domain": "开放域", "year": 2016, "source": "Xu et al., CVPR 2016", "stats": "1 万个片段 · 20 万描述 · 常用 1k-A 测试划分", "desc": "文本-视频检索最常用基准。" },
-    "didemo": { "name": "DiDeMo", "domain": "开放域", "year": 2017, "source": "Hendricks et al., ICCV 2017", "stats": "约 1 万个 Flickr 视频", "desc": "段落-视频检索与片段定位基准。" },
-    "coco": { "name": "MSCOCO", "domain": "日常场景", "year": 2014, "source": "Lin et al., ECCV 2014", "stats": "5K 测试划分（Karpathy split）", "desc": "图文检索与图像描述最常用基准，每图 5 条描述。" },
-    "flickr30k": { "name": "Flickr30K", "domain": "日常场景", "year": 2014, "source": "Young et al., TACL 2014", "stats": "约 3.2 万图像 · 每图 5 条描述", "desc": "图文检索经典基准。" },
-    "nocaps": { "name": "NoCaps", "domain": "开放域", "year": 2019, "source": "Agrawal et al., ICCV 2019", "stats": "含域内 / 近域 / 域外三档", "desc": "考察描述模型对新物体的泛化能力。" },
-
-    "refcoco": { "name": "RefCOCO", "domain": "日常场景", "year": 2016, "source": "Yu et al., ECCV 2016", "stats": "val / testA（人）/ testB（物）", "desc": "指代表达理解基准，表达较短，常含方位词。" },
-    "refcoco+": { "name": "RefCOCO+", "domain": "日常场景", "year": 2016, "source": "Yu et al., ECCV 2016", "stats": "val / testA / testB", "desc": "禁止使用绝对方位词，更依赖外观属性。" },
-    "refcocog": { "name": "RefCOCOg", "domain": "日常场景", "year": 2016, "source": "Mao et al., CVPR 2016", "stats": "val / test", "desc": "表达更长、描述更丰富。" },
-
-    "vqav2": { "name": "VQAv2", "domain": "日常场景", "year": 2017, "source": "Goyal et al., CVPR 2017", "stats": "成对互补图像以削弱语言先验", "desc": "最常用的开放式视觉问答基准。" },
-    "gqa": { "name": "GQA", "domain": "日常场景", "year": 2019, "source": "Hudson & Manning, CVPR 2019", "stats": "基于场景图生成的组合式问题", "desc": "考察组合推理与空间关系。" },
-    "textvqa": { "name": "TextVQA", "domain": "场景文字", "year": 2019, "source": "Singh et al., CVPR 2019", "stats": "需要读图中文字作答", "desc": "考察 OCR 与视觉推理的结合。" },
-
-    "ave": { "name": "AVE", "domain": "音视频事件", "year": 2018, "source": "Tian et al., ECCV 2018", "stats": "约 4,100 个 10 秒视频 · 28 类事件", "desc": "音视频事件定位：判断每一秒是否发生了既可见又可听的事件及其类别。" }
+    "omtg": {
+      "name": "OMTG-Bench",
+      "domain": "视频时序定位",
+      "desc": "具体样本数、评测划分与对照条件见对应实验。"
+    },
+    "rollout-multi": {
+      "name": "TimeLens2-93K · 400 个多事件训练来源视频",
+      "domain": "视频时序定位",
+      "desc": "具体样本数、评测划分与对照条件见对应实验。"
+    },
+    "rollout-single": {
+      "name": "TimeLens-100K · 400 个单事件训练来源视频",
+      "domain": "视频时序定位",
+      "desc": "具体样本数、评测划分与对照条件见对应实验。"
+    },
+    "reward-holdout": {
+      "name": "43 条视频互斥留出查询",
+      "domain": "视频时序定位",
+      "desc": "具体样本数、评测划分与对照条件见对应实验。"
+    },
+    "reward-diagnostic": {
+      "name": "构造的时序奖励例子",
+      "domain": "视频时序定位",
+      "desc": "具体样本数、评测划分与对照条件见对应实验。"
+    },
+    "charades-q25": {
+      "name": "Charades-TimeLens · Qwen2.5-VL-3B",
+      "domain": "视频时序定位",
+      "desc": "具体样本数、评测划分与对照条件见对应实验。"
+    },
+    "charades-q3": {
+      "name": "Charades-TimeLens · Qwen3-VL-4B",
+      "domain": "视频时序定位",
+      "desc": "具体样本数、评测划分与对照条件见对应实验。"
+    },
+    "act-q25": {
+      "name": "ActivityNet-TimeLens · Qwen2.5-VL-3B",
+      "domain": "视频时序定位",
+      "desc": "具体样本数、评测划分与对照条件见对应实验。"
+    },
+    "act-q3": {
+      "name": "ActivityNet-TimeLens · Qwen3-VL-4B",
+      "domain": "视频时序定位",
+      "desc": "具体样本数、评测划分与对照条件见对应实验。"
+    },
+    "motion-q25-2": {
+      "name": "MotionBench · Qwen2.5-VL-3B · 2 FPS",
+      "domain": "视频问答",
+      "desc": "具体样本数、评测划分与对照条件见对应实验。"
+    },
+    "motion-q25-8": {
+      "name": "MotionBench · Qwen2.5-VL-3B · 8 FPS",
+      "domain": "视频问答",
+      "desc": "具体样本数、评测划分与对照条件见对应实验。"
+    },
+    "motion-q3-2": {
+      "name": "MotionBench · Qwen3-VL-4B · 2 FPS",
+      "domain": "视频问答",
+      "desc": "具体样本数、评测划分与对照条件见对应实验。"
+    },
+    "motion-q3-8": {
+      "name": "MotionBench · Qwen3-VL-4B · 8 FPS",
+      "domain": "视频问答",
+      "desc": "具体样本数、评测划分与对照条件见对应实验。"
+    },
+    "charades-sta": {
+      "name": "Charades-STA",
+      "domain": "室内日常活动",
+      "year": 2017,
+      "source": "Gao et al., ICCV 2017",
+      "stats": "约 1.6 万查询 · 平均约 30 秒",
+      "desc": "在 Charades 室内活动视频上标注句子-片段对，最经典的 VTG 基准；已知存在较多标注问题和时序位置偏置。"
+    },
+    "activitynet-captions": {
+      "name": "ActivityNet Captions",
+      "domain": "开放域",
+      "year": 2017,
+      "source": "Krishna et al., ICCV 2017",
+      "stats": "约 2 万视频 · 约 10 万描述 · 平均约 2 分钟",
+      "desc": "源自 ActivityNet 的密集描述标注，常用于 VTG 和密集描述；视频更长、事件更多样。"
+    },
+    "tacos": {
+      "name": "TACoS",
+      "domain": "烹饪",
+      "year": 2013,
+      "source": "Regneri et al., TACL 2013",
+      "stats": "127 个长视频 · 平均约 4.8 分钟",
+      "desc": "厨房烹饪场景，镜头固定、动作细粒度，片段相对视频极短，难度高。"
+    },
+    "qvhighlights": {
+      "name": "QVHighlights",
+      "domain": "vlog / 新闻",
+      "year": 2021,
+      "source": "Lei et al., NeurIPS 2021",
+      "stats": "约 1 万个 150 秒视频 · 1 万+ 查询",
+      "desc": "同时标注片段检索（可多段）和逐 2 秒 clip 的显著性分数，是 MR+HD 联合任务的标准基准。"
+    },
+    "charades-timelens": {
+      "name": "Charades-TimeLens",
+      "domain": "室内日常活动",
+      "year": 2026,
+      "source": "TimeLens, CVPR 2026",
+      "stats": "Charades-STA 测试集的严格重标注",
+      "desc": "按事件唯一性、事件存在性、查询清晰度、标注准确性重新标注 Charades-STA，修正旧基准中的大量错误。"
+    },
+    "activitynet-timelens": {
+      "name": "ActivityNet-TimeLens",
+      "domain": "开放域",
+      "year": 2026,
+      "source": "TimeLens, CVPR 2026",
+      "stats": "ActivityNet Captions 测试集的严格重标注",
+      "desc": "ActivityNet Captions 的高质量重标注版本，模型排名与旧基准存在差异。"
+    },
+    "qvhighlights-timelens": {
+      "name": "QVHighlights-TimeLens",
+      "domain": "vlog / 新闻",
+      "year": 2026,
+      "source": "TimeLens, CVPR 2026",
+      "stats": "QVHighlights 验证集的严格重标注",
+      "desc": "因 QVHighlights 测试集标注未公开，基于验证集重标注。"
+    },
+    "timelens-100k": {
+      "name": "TimeLens-100K",
+      "domain": "混合",
+      "year": 2026,
+      "source": "TimeLens, CVPR 2026",
+      "stats": "约 10 万条训练标注",
+      "desc": "用自动化流水线对多个噪声训练集重标注得到的高质量 VTG 训练数据。"
+    },
+    "thumos14": {
+      "name": "THUMOS14",
+      "domain": "体育",
+      "year": 2014,
+      "source": "Jiang et al., 2014",
+      "stats": "20 个动作类 · 约 400 个带时序标注的未剪辑视频",
+      "desc": "时序动作定位经典基准，动作实例密集且短，常报告 tIoU 0.3–0.7 的 mAP。"
+    },
+    "activitynet-1.3": {
+      "name": "ActivityNet-1.3",
+      "domain": "开放域",
+      "year": 2016,
+      "source": "Caba Heilbron et al., CVPR 2015",
+      "stats": "200 个类别 · 约 2 万视频",
+      "desc": "大规模动作定位基准，常报告 tIoU 0.5:0.05:0.95 平均 mAP。"
+    },
+    "video-mme": {
+      "name": "Video-MME",
+      "domain": "开放域",
+      "year": 2024,
+      "source": "Fu et al., 2024",
+      "stats": "900 个视频 · 2,700 道选择题 · 短/中/长三档",
+      "desc": "覆盖多领域和多时长的视频理解综合基准，常按视频时长分档报告准确率。"
+    },
+    "mvbench": {
+      "name": "MVBench",
+      "domain": "开放域",
+      "year": 2024,
+      "source": "Li et al., CVPR 2024",
+      "stats": "20 个时序能力子任务 · 4,000 道选择题",
+      "desc": "专门考察时序理解能力（动作顺序、计数、状态变化等）。"
+    },
+    "nextqa": {
+      "name": "NExT-QA",
+      "domain": "日常生活",
+      "year": 2021,
+      "source": "Xiao et al., CVPR 2021",
+      "stats": "约 5,400 视频 · 约 5.2 万问答",
+      "desc": "聚焦因果与时序推理的视频问答，问题分为因果 / 时序 / 描述三类。"
+    },
+    "egoschema": {
+      "name": "EgoSchema",
+      "domain": "第一人称",
+      "year": 2023,
+      "source": "Mangalam et al., NeurIPS 2023",
+      "stats": "5,000+ 道选择题 · 3 分钟第一人称片段",
+      "desc": "源自 Ego4D 的长时第一人称视频理解，需要整合长程信息。"
+    },
+    "youcook2": {
+      "name": "YouCook2",
+      "domain": "烹饪",
+      "year": 2018,
+      "source": "Zhou et al., AAAI 2018",
+      "stats": "约 2,000 视频 · 89 种菜谱",
+      "desc": "带步骤级时间标注和描述的烹饪教学视频，密集描述常用基准。"
+    },
+    "msrvtt": {
+      "name": "MSR-VTT",
+      "domain": "开放域",
+      "year": 2016,
+      "source": "Xu et al., CVPR 2016",
+      "stats": "1 万个片段 · 20 万描述 · 常用 1k-A 测试划分",
+      "desc": "文本-视频检索最常用基准。"
+    },
+    "didemo": {
+      "name": "DiDeMo",
+      "domain": "开放域",
+      "year": 2017,
+      "source": "Hendricks et al., ICCV 2017",
+      "stats": "约 1 万个 Flickr 视频",
+      "desc": "段落-视频检索与片段定位基准。"
+    },
+    "coco": {
+      "name": "MSCOCO",
+      "domain": "日常场景",
+      "year": 2014,
+      "source": "Lin et al., ECCV 2014",
+      "stats": "5K 测试划分（Karpathy split）",
+      "desc": "图文检索与图像描述最常用基准，每图 5 条描述。"
+    },
+    "flickr30k": {
+      "name": "Flickr30K",
+      "domain": "日常场景",
+      "year": 2014,
+      "source": "Young et al., TACL 2014",
+      "stats": "约 3.2 万图像 · 每图 5 条描述",
+      "desc": "图文检索经典基准。"
+    },
+    "nocaps": {
+      "name": "NoCaps",
+      "domain": "开放域",
+      "year": 2019,
+      "source": "Agrawal et al., ICCV 2019",
+      "stats": "含域内 / 近域 / 域外三档",
+      "desc": "考察描述模型对新物体的泛化能力。"
+    },
+    "refcoco": {
+      "name": "RefCOCO",
+      "domain": "日常场景",
+      "year": 2016,
+      "source": "Yu et al., ECCV 2016",
+      "stats": "val / testA（人）/ testB（物）",
+      "desc": "指代表达理解基准，表达较短，常含方位词。"
+    },
+    "refcoco+": {
+      "name": "RefCOCO+",
+      "domain": "日常场景",
+      "year": 2016,
+      "source": "Yu et al., ECCV 2016",
+      "stats": "val / testA / testB",
+      "desc": "禁止使用绝对方位词，更依赖外观属性。"
+    },
+    "refcocog": {
+      "name": "RefCOCOg",
+      "domain": "日常场景",
+      "year": 2016,
+      "source": "Mao et al., CVPR 2016",
+      "stats": "val / test",
+      "desc": "表达更长、描述更丰富。"
+    },
+    "vqav2": {
+      "name": "VQAv2",
+      "domain": "日常场景",
+      "year": 2017,
+      "source": "Goyal et al., CVPR 2017",
+      "stats": "成对互补图像以削弱语言先验",
+      "desc": "最常用的开放式视觉问答基准。"
+    },
+    "gqa": {
+      "name": "GQA",
+      "domain": "日常场景",
+      "year": 2019,
+      "source": "Hudson & Manning, CVPR 2019",
+      "stats": "基于场景图生成的组合式问题",
+      "desc": "考察组合推理与空间关系。"
+    },
+    "textvqa": {
+      "name": "TextVQA",
+      "domain": "场景文字",
+      "year": 2019,
+      "source": "Singh et al., CVPR 2019",
+      "stats": "需要读图中文字作答",
+      "desc": "考察 OCR 与视觉推理的结合。"
+    },
+    "ave": {
+      "name": "AVE",
+      "domain": "音视频事件",
+      "year": 2018,
+      "source": "Tian et al., ECCV 2018",
+      "stats": "约 4,100 个 10 秒视频 · 28 类事件",
+      "desc": "音视频事件定位：判断每一秒是否发生了既可见又可听的事件及其类别。"
+    },
+    "timelens2-93k-held-multi": {
+      "name": "TimeLens2-93K 多事件留出集",
+      "domain": "视频时序定位",
+      "desc": "按源视频与本地训练子集拆分，查询规模见各实验。"
+    },
+    "timelens2-93k-held-single": {
+      "name": "TimeLens2-93K 单事件留出集",
+      "domain": "视频时序定位",
+      "desc": "按源视频与本地训练子集拆分，查询规模见各实验。"
+    },
+    "timelens2-93k-sft-audit": {
+      "name": "TimeLens2-93K SFT 多事件采样记录",
+      "domain": "视频时序定位",
+      "desc": "已保存的 SFT 采样，用于离线漏报诊断。"
+    }
   },
-
   "tasks": [
     {
       "id": "vtg",
       "name": "视频时序定位",
       "nameEn": "Video Temporal Grounding",
-      "modality": ["视频", "文本"],
+      "modality": [
+        "视频",
+        "文本"
+      ],
       "icon": "Crosshair",
       "summary": "给一段视频和一句自然语言查询，找出查询所描述事件的起止时间。",
       "input": "视频 + 查询句子",
       "output": "[开始秒, 结束秒]",
-      "metrics": ["R1@0.3", "R1@0.5", "R1@0.7", "mIoU", "R5@0.5", "R5@0.7"],
-      "primaryMetrics": ["R1@0.5", "R1@0.7", "mIoU"],
-      "datasets": ["charades-timelens", "activitynet-timelens", "qvhighlights-timelens", "charades-sta", "activitynet-captions", "tacos", "timelens-100k"],
+      "metrics": [
+        "R1@0.3",
+        "R1@0.5",
+        "R1@0.7",
+        "mIoU",
+        "R5@0.5",
+        "R5@0.7"
+      ],
+      "primaryMetrics": [
+        "R1@0.5",
+        "R1@0.7",
+        "mIoU"
+      ],
+      "datasets": [
+        "charades-timelens",
+        "activitynet-timelens",
+        "qvhighlights-timelens",
+        "charades-sta",
+        "activitynet-captions",
+        "tacos",
+        "timelens-100k"
+      ],
       "caseType": "temporal",
-      "charts": ["各数据集主结果", "IoU 阈值-召回曲线", "按视频时长/片段长度/相对位置的细分", "预测中心 vs GT 中心散点（位置偏置）", "帧数/时间编码消融", "RL 奖励与验证曲线"],
-      "pitfalls": ["旧基准（Charades-STA 等）标注错误较多，结论最好在重标注基准上复核", "R1@0.3 高而 R1@0.7 低，可能只是预测片段偏长", "注意时序位置偏置：先做'不看视频'的盲测基线"]
+      "charts": [
+        "各数据集主结果",
+        "IoU 阈值-召回曲线",
+        "按视频时长/片段长度/相对位置的细分",
+        "预测中心 vs GT 中心散点（位置偏置）",
+        "帧数/时间编码消融",
+        "RL 奖励与验证曲线"
+      ],
+      "pitfalls": [
+        "旧基准（Charades-STA 等）标注错误较多，结论最好在重标注基准上复核",
+        "R1@0.3 高而 R1@0.7 低，可能只是预测片段偏长",
+        "注意时序位置偏置：先做'不看视频'的盲测基线"
+      ]
     },
     {
       "id": "mr-hd",
       "name": "片段检索 + 高光检测",
       "nameEn": "Moment Retrieval & Highlight Detection",
-      "modality": ["视频", "文本"],
+      "modality": [
+        "视频",
+        "文本"
+      ],
       "icon": "Sparkles",
       "summary": "根据查询同时找出相关片段（可能多段），并给每个 clip 打显著性分数。",
       "input": "视频 + 查询句子",
       "output": "若干片段 + 逐 clip 显著性分数",
-      "metrics": ["R1@0.5", "R1@0.7", "MR-mAP@0.5", "MR-mAP@0.75", "MR-mAP", "HD-mAP", "HIT@1"],
-      "primaryMetrics": ["R1@0.7", "MR-mAP", "HIT@1"],
-      "datasets": ["qvhighlights", "qvhighlights-timelens"],
+      "metrics": [
+        "R1@0.5",
+        "R1@0.7",
+        "MR-mAP@0.5",
+        "MR-mAP@0.75",
+        "MR-mAP",
+        "HD-mAP",
+        "HIT@1"
+      ],
+      "primaryMetrics": [
+        "R1@0.7",
+        "MR-mAP",
+        "HIT@1"
+      ],
+      "datasets": [
+        "qvhighlights",
+        "qvhighlights-timelens"
+      ],
       "caseType": "temporal",
-      "charts": ["MR 与 HD 指标对比", "显著性曲线 vs GT", "多片段命中情况"]
+      "charts": [
+        "MR 与 HD 指标对比",
+        "显著性曲线 vs GT",
+        "多片段命中情况"
+      ]
     },
     {
       "id": "tal",
       "name": "时序动作定位",
       "nameEn": "Temporal Action Localization",
-      "modality": ["视频"],
+      "modality": [
+        "视频"
+      ],
       "icon": "Activity",
       "summary": "在未剪辑视频中找出所有预定义动作类别的实例及其起止时间。",
       "input": "未剪辑视频",
       "output": "{类别, 开始, 结束, 置信度} 列表",
-      "metrics": ["tmAP@0.3", "tmAP@0.5", "tmAP@0.7", "tmAP-avg"],
-      "primaryMetrics": ["tmAP@0.5", "tmAP-avg"],
-      "datasets": ["thumos14", "activitynet-1.3"],
+      "metrics": [
+        "tmAP@0.3",
+        "tmAP@0.5",
+        "tmAP@0.7",
+        "tmAP-avg"
+      ],
+      "primaryMetrics": [
+        "tmAP@0.5",
+        "tmAP-avg"
+      ],
+      "datasets": [
+        "thumos14",
+        "activitynet-1.3"
+      ],
       "caseType": "temporal",
-      "charts": ["mAP-tIoU 曲线", "按动作类别 AP", "按实例长度细分"]
+      "charts": [
+        "mAP-tIoU 曲线",
+        "按动作类别 AP",
+        "按实例长度细分"
+      ]
     },
     {
       "id": "videoqa",
       "name": "视频问答",
       "nameEn": "Video Question Answering",
-      "modality": ["视频", "文本"],
+      "modality": [
+        "视频",
+        "文本"
+      ],
       "icon": "MessageSquareText",
       "summary": "看视频回答问题（多为选择题），考察时序、因果与长程理解。",
       "input": "视频 + 问题（+ 选项）",
       "output": "答案",
-      "metrics": ["Acc"],
-      "primaryMetrics": ["Acc"],
-      "datasets": ["video-mme", "mvbench", "nextqa", "egoschema"],
+      "metrics": [
+        "Acc"
+      ],
+      "primaryMetrics": [
+        "Acc"
+      ],
+      "datasets": [
+        "video-mme",
+        "mvbench",
+        "nextqa",
+        "egoschema"
+      ],
       "caseType": "videoqa",
-      "charts": ["按视频时长分档准确率", "按问题类型准确率", "帧数-准确率曲线"]
+      "charts": [
+        "按视频时长分档准确率",
+        "按问题类型准确率",
+        "帧数-准确率曲线"
+      ]
     },
     {
       "id": "dense-cap",
       "name": "密集视频描述",
       "nameEn": "Dense Video Captioning",
-      "modality": ["视频", "文本"],
+      "modality": [
+        "视频",
+        "文本"
+      ],
       "icon": "Captions",
       "summary": "找出视频中的所有事件，并为每个事件生成一句描述。",
       "input": "视频",
       "output": "{开始, 结束, 描述} 列表",
-      "metrics": ["CIDEr", "METEOR", "SODA_c", "Loc-F1"],
-      "primaryMetrics": ["CIDEr", "SODA_c", "Loc-F1"],
-      "datasets": ["youcook2", "activitynet-captions"],
+      "metrics": [
+        "CIDEr",
+        "METEOR",
+        "SODA_c",
+        "Loc-F1"
+      ],
+      "primaryMetrics": [
+        "CIDEr",
+        "SODA_c",
+        "Loc-F1"
+      ],
+      "datasets": [
+        "youcook2",
+        "activitynet-captions"
+      ],
       "caseType": "dense-caption",
-      "charts": ["定位与描述质量对比", "事件数量分布", "时间轴对齐"]
+      "charts": [
+        "定位与描述质量对比",
+        "事件数量分布",
+        "时间轴对齐"
+      ]
     },
     {
       "id": "retrieval",
       "name": "跨模态检索",
       "nameEn": "Cross-modal Retrieval",
-      "modality": ["视频/图像", "文本"],
+      "modality": [
+        "视频/图像",
+        "文本"
+      ],
       "icon": "Search",
       "summary": "用文本找视频/图像（或反过来），按相似度排序。",
       "input": "查询（文本或视觉）+ 候选库",
       "output": "排序后的候选列表",
-      "metrics": ["R@1", "R@5", "R@10", "MdR", "MnR"],
-      "primaryMetrics": ["R@1", "R@5"],
-      "datasets": ["msrvtt", "didemo", "coco", "flickr30k"],
+      "metrics": [
+        "R@1",
+        "R@5",
+        "R@10",
+        "MdR",
+        "MnR"
+      ],
+      "primaryMetrics": [
+        "R@1",
+        "R@5"
+      ],
+      "datasets": [
+        "msrvtt",
+        "didemo",
+        "coco",
+        "flickr30k"
+      ],
       "caseType": "retrieval",
-      "charts": ["文搜视 / 视搜文双向对比", "R@K 曲线", "难负例分析"]
+      "charts": [
+        "文搜视 / 视搜文双向对比",
+        "R@K 曲线",
+        "难负例分析"
+      ]
     },
     {
       "id": "rec",
       "name": "指代表达理解",
       "nameEn": "Referring Expression Comprehension",
-      "modality": ["图像", "文本"],
+      "modality": [
+        "图像",
+        "文本"
+      ],
       "icon": "ScanSearch",
       "summary": "给一张图和一句指代描述，框出被描述的那个物体。",
       "input": "图像 + 指代表达",
       "output": "边界框",
-      "metrics": ["Acc@0.5"],
-      "primaryMetrics": ["Acc@0.5"],
-      "datasets": ["refcoco", "refcoco+", "refcocog"],
+      "metrics": [
+        "Acc@0.5"
+      ],
+      "primaryMetrics": [
+        "Acc@0.5"
+      ],
+      "datasets": [
+        "refcoco",
+        "refcoco+",
+        "refcocog"
+      ],
       "caseType": "image-grounding",
-      "charts": ["val/testA/testB 对比", "按表达长度细分", "IoU 分布"]
+      "charts": [
+        "val/testA/testB 对比",
+        "按表达长度细分",
+        "IoU 分布"
+      ]
     },
     {
       "id": "vqa",
       "name": "视觉问答",
       "nameEn": "Visual Question Answering",
-      "modality": ["图像", "文本"],
+      "modality": [
+        "图像",
+        "文本"
+      ],
       "icon": "CircleHelp",
       "summary": "看图回答开放式问题。",
       "input": "图像 + 问题",
       "output": "答案",
-      "metrics": ["VQA-Acc", "Acc"],
-      "primaryMetrics": ["VQA-Acc"],
-      "datasets": ["vqav2", "gqa", "textvqa"],
+      "metrics": [
+        "VQA-Acc",
+        "Acc"
+      ],
+      "primaryMetrics": [
+        "VQA-Acc"
+      ],
+      "datasets": [
+        "vqav2",
+        "gqa",
+        "textvqa"
+      ],
       "caseType": "image-qa",
-      "charts": ["按问题类型准确率", "语言先验盲测"]
+      "charts": [
+        "按问题类型准确率",
+        "语言先验盲测"
+      ]
     },
     {
       "id": "caption",
       "name": "图像描述",
       "nameEn": "Image Captioning",
-      "modality": ["图像", "文本"],
+      "modality": [
+        "图像",
+        "文本"
+      ],
       "icon": "Image",
       "summary": "为图像生成一句自然语言描述。",
       "input": "图像",
       "output": "描述句子",
-      "metrics": ["CIDEr", "BLEU-4", "METEOR", "SPICE"],
-      "primaryMetrics": ["CIDEr", "SPICE"],
-      "datasets": ["coco", "nocaps"],
+      "metrics": [
+        "CIDEr",
+        "BLEU-4",
+        "METEOR",
+        "SPICE"
+      ],
+      "primaryMetrics": [
+        "CIDEr",
+        "SPICE"
+      ],
+      "datasets": [
+        "coco",
+        "nocaps"
+      ],
       "caseType": "image-caption",
-      "charts": ["多指标雷达", "域内/域外对比", "描述长度分布"]
+      "charts": [
+        "多指标雷达",
+        "域内/域外对比",
+        "描述长度分布"
+      ]
     },
     {
       "id": "av-event",
       "name": "音视频事件定位",
       "nameEn": "Audio-Visual Event Localization",
-      "modality": ["视频", "音频"],
+      "modality": [
+        "视频",
+        "音频"
+      ],
       "icon": "AudioLines",
       "summary": "判断视频每一秒是否发生了既能看到又能听到的事件，以及事件类别。",
       "input": "视频 + 音频",
       "output": "逐秒事件标签",
-      "metrics": ["Seg-Acc"],
-      "primaryMetrics": ["Seg-Acc"],
-      "datasets": ["ave"],
+      "metrics": [
+        "Seg-Acc"
+      ],
+      "primaryMetrics": [
+        "Seg-Acc"
+      ],
+      "datasets": [
+        "ave"
+      ],
       "caseType": "temporal",
-      "charts": ["单模态 vs 融合对比", "模态冲突样本", "逐秒预测时间轴"]
+      "charts": [
+        "单模态 vs 融合对比",
+        "模态冲突样本",
+        "逐秒预测时间轴"
+      ]
     }
   ]
 }

@@ -1,0 +1,24 @@
+{
+  "multi": {
+    "n": 400,
+    "f1_verified": true,
+    "missed_events_by_support": {
+      "0": 304,
+      "1-2": 218,
+      "3+": 56
+    },
+    "missed": 578,
+    "newly_matched": 19
+  },
+  "single": {
+    "n": 400,
+    "f1_verified": true,
+    "missed_events_by_support": {
+      "1-2": 49,
+      "3+": 28,
+      "0": 75
+    },
+    "missed": 152,
+    "newly_matched": 1
+  }
+}

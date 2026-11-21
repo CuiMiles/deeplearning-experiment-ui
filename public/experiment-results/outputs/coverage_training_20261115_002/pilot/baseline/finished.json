@@ -1,0 +1,13 @@
+{
+  "step": 2,
+  "interrupted": false,
+  "metrics": {
+    "train_runtime": 183.8925,
+    "train_samples_per_second": 0.044,
+    "train_steps_per_second": 0.011,
+    "total_flos": 0.0,
+    "train_loss": 3.725290298461914e-08
+  },
+  "new_training_steps": 2,
+  "updated_unix": 1794682583.7572207
+}

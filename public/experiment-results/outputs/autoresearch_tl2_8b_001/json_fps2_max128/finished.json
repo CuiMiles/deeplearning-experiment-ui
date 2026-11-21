@@ -1,0 +1,19 @@
+{
+  "run_id": "autoresearch_tl2_8b_001/json_fps2_max128",
+  "prompt_mode": "json",
+  "fps": 2.0,
+  "max_frames": 128,
+  "total_tokens": 128000,
+  "samples": 64,
+  "load_seconds": 297.849,
+  "inference_wall_seconds": 1468.206,
+  "max_peak_allocated_mib": [
+    12983.9,
+    9989.7
+  ],
+  "max_peak_reserved_mib": [
+    13008.0,
+    10202.0
+  ],
+  "finished_at_utc": "2026-11-14T07:52:20.822230+00:00"
+}
