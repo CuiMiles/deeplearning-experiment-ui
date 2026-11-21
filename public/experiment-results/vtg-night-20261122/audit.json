@@ -1,0 +1,168 @@
+{
+  "width": {
+    "omtg/tl2_4b/64": {
+      "queries": 320,
+      "short_events": 66,
+      "causes": {
+        "covered_partial_other": 19,
+        "hit": 3,
+        "no_frame": 40,
+        "covered_no_overlap": 4
+      },
+      "oracle_query_tF1_gain_pp": 0.15625,
+      "extra_query_matches": 1
+    },
+    "omtg/tl2_4b/128": {
+      "queries": 320,
+      "short_events": 66,
+      "causes": {
+        "covered_partial_other": 30,
+        "hit": 3,
+        "no_frame": 28,
+        "covered_no_overlap": 5
+      },
+      "oracle_query_tF1_gain_pp": 0.15625,
+      "extra_query_matches": 1
+    },
+    "omtg/A0_s1@200/64": {
+      "queries": 320,
+      "short_events": 66,
+      "causes": {
+        "covered_partial_other": 13,
+        "hit": 3,
+        "no_frame": 40,
+        "covered_width_recoverable": 1,
+        "covered_no_overlap": 9
+      },
+      "oracle_query_tF1_gain_pp": 0.3125,
+      "extra_query_matches": 2
+    },
+    "omtg/A0_s1@200/128": {
+      "queries": 320,
+      "short_events": 66,
+      "causes": {
+        "covered_no_overlap": 8,
+        "hit": 5,
+        "covered_partial_other": 24,
+        "no_frame": 28,
+        "covered_width_recoverable": 1
+      },
+      "oracle_query_tF1_gain_pp": 0.15625,
+      "extra_query_matches": 1
+    },
+    "omtg/A1_s1@200/64": {
+      "queries": 320,
+      "short_events": 66,
+      "causes": {
+        "covered_partial_other": 15,
+        "hit": 3,
+        "no_frame": 40,
+        "covered_no_overlap": 8
+      },
+      "oracle_query_tF1_gain_pp": 0.2604166666666667,
+      "extra_query_matches": 2
+    },
+    "omtg/A1_s1@200/128": {
+      "queries": 320,
+      "short_events": 66,
+      "causes": {
+        "covered_no_overlap": 10,
+        "hit": 6,
+        "covered_partial_other": 22,
+        "no_frame": 28
+      },
+      "oracle_query_tF1_gain_pp": 0.0,
+      "extra_query_matches": 0
+    },
+    "hold_multi/tl2_4b/64": {
+      "queries": 301,
+      "short_events": 20,
+      "causes": {
+        "covered_no_overlap": 8,
+        "no_frame": 7,
+        "covered_width_recoverable": 1,
+        "covered_partial_other": 2,
+        "hit": 2
+      },
+      "oracle_query_tF1_gain_pp": 0.33222591362126247,
+      "extra_query_matches": 2
+    },
+    "hold_multi/tl2_4b/128": {
+      "queries": 301,
+      "short_events": 20,
+      "causes": {
+        "covered_no_overlap": 12,
+        "hit": 3,
+        "no_frame": 2,
+        "covered_partial_other": 2,
+        "covered_width_recoverable": 1
+      },
+      "oracle_query_tF1_gain_pp": 0.16611295681063123,
+      "extra_query_matches": 1
+    },
+    "hold_multi/A0_s1@200/64": {
+      "queries": 301,
+      "short_events": 20,
+      "causes": {
+        "covered_no_overlap": 6,
+        "no_frame": 7,
+        "covered_width_recoverable": 2,
+        "covered_partial_other": 3,
+        "hit": 2
+      },
+      "oracle_query_tF1_gain_pp": 0.33222591362126247,
+      "extra_query_matches": 2
+    },
+    "hold_multi/A0_s1@200/128": {
+      "queries": 301,
+      "short_events": 20,
+      "causes": {
+        "covered_no_overlap": 7,
+        "covered_partial_other": 3,
+        "hit": 5,
+        "no_frame": 2,
+        "covered_width_recoverable": 3
+      },
+      "oracle_query_tF1_gain_pp": 0.4983388704318937,
+      "extra_query_matches": 3
+    },
+    "hold_multi/A1_s1@200/64": {
+      "queries": 301,
+      "short_events": 20,
+      "causes": {
+        "covered_no_overlap": 6,
+        "no_frame": 7,
+        "covered_width_recoverable": 2,
+        "covered_partial_other": 2,
+        "hit": 3
+      },
+      "oracle_query_tF1_gain_pp": 0.4983388704318937,
+      "extra_query_matches": 3
+    },
+    "hold_multi/A1_s1@200/128": {
+      "queries": 301,
+      "short_events": 20,
+      "causes": {
+        "covered_no_overlap": 9,
+        "hit": 5,
+        "no_frame": 2,
+        "covered_partial_other": 2,
+        "covered_width_recoverable": 2
+      },
+      "oracle_query_tF1_gain_pp": 0.33222591362126247,
+      "extra_query_matches": 2
+    }
+  },
+  "zero_of_eight": {
+    "events": 90,
+    "queries": 81,
+    "covered64": 85,
+    "covered128": 90,
+    "nonflat": 90,
+    "other_event_reached": 82,
+    "events_in_groups_with_reward_sd_gt_0p01": 88,
+    "covered64_nonflat": 85
+  },
+  "width_definition": "Keep every predicted centre and the original prediction count. Allow shrink to a short GT width if the original predicted interval overlaps that GT. Enumerate optional repairs, rescore with E3 one-to-one Hungarian matching and retain best query tF1. Mean over all queries. This bounds this specified width operation only.",
+  "variance_definition": "Population variance of eight official twass1+tiou+parse_penalty rewards > 1e-12. Frame coverage is at least one original selected frame inside the inclusive GT."
+}

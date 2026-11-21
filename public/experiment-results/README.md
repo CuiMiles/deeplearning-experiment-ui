@@ -78,3 +78,6 @@
 | [exh_20261121_density_001/raw-records.jsonl.gz](exh_20261121_density_001/raw-records.jsonl.gz) | 1 |
 | [exh_20261121_density_001/report.md](exh_20261121_density_001/report.md) | 1 |
 | [exh_20261121_density_001/summary.json](exh_20261121_density_001/summary.json) | 1 |
+| [vtg-night-20261122/audit.json](vtg-night-20261122/audit.json) | 1 |
+| [vtg-night-20261122/high-records.jsonl.gz](vtg-night-20261122/high-records.jsonl.gz) | 1 |
+| [vtg-night-20261122/probe-records.jsonl.gz](vtg-night-20261122/probe-records.jsonl.gz) | 1 |
