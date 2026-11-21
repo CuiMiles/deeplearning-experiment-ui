@@ -87,4 +87,5 @@
 | [vtg-night-20261122/short_events.json](vtg-night-20261122/short_events.json) | 1 |
 | [vtg-night-20261122/summary.json](vtg-night-20261122/summary.json) | 1 |
 | [vtg-night-20261122/unreached.json](vtg-night-20261122/unreached.json) | 1 |
+| [vtg-night-20261122/verify-records.jsonl.gz](vtg-night-20261122/verify-records.jsonl.gz) | 1 |
 | [vtg-night-20261122/verify_plan.json](vtg-night-20261122/verify_plan.json) | 1 |

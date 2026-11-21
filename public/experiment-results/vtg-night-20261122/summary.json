@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22 03:30:15 CST",
+  "updated": "2026-11-22 03:40:16 CST",
   "complete": false,
   "audit": {
     "width": {
@@ -170,96 +170,96 @@
     "variance_definition": "Population variance of eight official twass1+tiou+parse_penalty rewards > 1e-12. Frame coverage is at least one original selected frame inside the inclusive GT."
   },
   "high": {
-    "total_records": 55,
-    "paired": 26,
+    "total_records": 70,
+    "paired": 32,
     "expected_pairs": 320,
-    "official": 42.94871794871795,
-    "A1": 52.11538461538461,
+    "official": 42.038690476190474,
+    "A1": 50.632440476190474,
     "difference": {
-      "n": 26,
-      "source_count": 24,
-      "mean_pp": 9.166666666666668,
+      "n": 32,
+      "source_count": 29,
+      "mean_pp": 8.593750000000002,
       "ci95_pp": [
-        -1.7859432234432238,
-        20.321180555555557
+        -0.6666666666666657,
+        17.86458333333334
       ]
     },
-    "low_budget_same_queries_pp": 5.021367521367522,
+    "low_budget_same_queries_pp": 6.907242063492064,
     "difference_in_advantage": {
-      "n": 26,
-      "source_count": 24,
-      "mean_pp": 4.145299145299145,
+      "n": 32,
+      "source_count": 29,
+      "mean_pp": 1.6865079365079367,
       "ci95_pp": [
-        -11.620370370370367,
-        20.771825396825406
+        -12.109078114004221,
+        15.579282977558846
       ]
     }
   },
   "probe": {
-    "completions": 2496,
+    "completions": 2552,
     "expected_completions": 2552,
     "eligible": 85,
     "by_arm": {
       "plain": {
-        "events": 84,
+        "events": 85,
         "found": 16,
-        "pass8": 0.19047619047619047,
-        "pass1": 0.049107142857142856,
-        "pass8_one_to_one": 0.19047619047619047,
-        "mean_output_spans": 1.2291666666666667
+        "pass8": 0.18823529411764706,
+        "pass1": 0.04852941176470588,
+        "pass8_one_to_one": 0.18823529411764706,
+        "mean_output_spans": 1.2264705882352942
       },
       "exclude": {
-        "events": 83,
+        "events": 85,
         "found": 25,
-        "pass8": 0.30120481927710846,
-        "pass1": 0.13102409638554216,
-        "pass8_one_to_one": 0.30120481927710846,
-        "mean_output_spans": 0.6867469879518072,
+        "pass8": 0.29411764705882354,
+        "pass1": 0.12794117647058822,
+        "pass8_one_to_one": 0.29411764705882354,
+        "mean_output_spans": 0.6838235294117647,
         "vs_plain": {
-          "n": 83,
-          "source_count": 69,
-          "mean_pp": 10.843373493975903,
+          "n": 85,
+          "source_count": 71,
+          "mean_pp": 10.588235294117647,
           "ci95_pp": [
-            -1.1114232209737827,
-            21.951219512195124
+            -1.1363636363636365,
+            22.078299607369377
           ]
         },
         "only_arm": 18,
         "only_plain": 9
       },
       "count": {
-        "events": 83,
-        "found": 31,
-        "pass8": 0.37349397590361444,
-        "pass1": 0.12951807228915663,
-        "pass8_one_to_one": 0.37349397590361444,
-        "mean_output_spans": 1.6039156626506024,
+        "events": 85,
+        "found": 32,
+        "pass8": 0.3764705882352941,
+        "pass1": 0.12794117647058822,
+        "pass8_one_to_one": 0.3764705882352941,
+        "mean_output_spans": 1.6044117647058824,
         "vs_plain": {
-          "n": 83,
-          "source_count": 69,
-          "mean_pp": 18.072289156626507,
+          "n": 85,
+          "source_count": 71,
+          "mean_pp": 18.823529411764707,
           "ci95_pp": [
-            8.75,
-            27.63157894736842
+            9.523809523809524,
+            28.205128205128204
           ]
         },
-        "only_arm": 17,
+        "only_arm": 18,
         "only_plain": 2
       },
       "local": {
-        "events": 83,
+        "events": 85,
         "found": 26,
-        "pass8": 0.3132530120481928,
-        "pass1": 0.09186746987951808,
-        "pass8_one_to_one": 0.3132530120481928,
-        "mean_output_spans": 1.319277108433735,
+        "pass8": 0.3058823529411765,
+        "pass1": 0.08970588235294118,
+        "pass8_one_to_one": 0.3058823529411765,
+        "mean_output_spans": 1.313235294117647,
         "vs_plain": {
-          "n": 83,
-          "source_count": 69,
-          "mean_pp": 12.048192771084338,
+          "n": 85,
+          "source_count": 71,
+          "mean_pp": 11.764705882352942,
           "ci95_pp": [
-            2.5,
-            21.25
+            2.4691358024691357,
+            20.88039867109635
           ]
         },
         "only_arm": 13,
@@ -268,21 +268,24 @@
     }
   },
   "verify": {
-    "records": 0,
+    "records": 551,
     "expected": 551,
     "unfiltered_hits": 111,
     "unfiltered_precision": 0.2014519056261343,
-    "answers": {},
-    "kept_true": 0,
-    "kept_precision": null,
-    "retained_fraction_of_true_additions": 0.0,
+    "answers": {
+      "no": 177,
+      "yes": 374
+    },
+    "kept_true": 110,
+    "kept_precision": 0.29411764705882354,
+    "retained_fraction_of_true_additions": 0.990990990990991,
     "filtered_minus_E2_dense": {
-      "n": 85,
-      "source_count": 85,
-      "mean_pp": -11.005678531994322,
+      "n": 320,
+      "source_count": 281,
+      "mean_pp": -2.4029976731215124,
       "ci95_pp": [
-        -17.82039322906196,
-        -4.273694829422382
+        -6.070587228412417,
+        1.2311454749150403
       ]
     }
   }
