@@ -1,0 +1,7742 @@
+[
+  {
+    "eid": "omtg/omtg_5",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.037037037037037035,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_5",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 3,
+    "best_iou": 0.03571428571428571,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_5",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.25,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_5",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 3,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_5",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.25,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_5",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 3,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_9",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "omtg/omtg_9",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "omtg/omtg_9",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "omtg/omtg_9",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "omtg/omtg_9",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "omtg/omtg_9",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "omtg/omtg_20",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      19.0,
+      20.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.1111111111111111,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_20",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      19.0,
+      20.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.1111111111111111,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_20",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      19.0,
+      20.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.1111111111111111,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_20",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      19.0,
+      20.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.1111111111111111,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_20",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      19.0,
+      20.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.1,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_20",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      19.0,
+      20.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.1,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_32",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      13.0,
+      14.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_32",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      13.0,
+      14.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_32",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      13.0,
+      14.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_32",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      13.0,
+      14.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_32",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      13.0,
+      14.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_32",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      13.0,
+      14.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_44",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 3,
+    "best_iou": 1.0,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "omtg/omtg_44",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 3,
+    "best_iou": 1.0,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "omtg/omtg_44",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 3,
+    "best_iou": 1.0,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "omtg/omtg_44",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 3,
+    "best_iou": 1.0,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "omtg/omtg_44",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 3,
+    "best_iou": 1.0,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "omtg/omtg_44",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 3,
+    "best_iou": 1.0,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "omtg/omtg_49",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "omtg/omtg_49",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "omtg/omtg_49",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "omtg/omtg_49",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "omtg/omtg_49",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "omtg/omtg_49",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "omtg/omtg_52",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      21.0,
+      22.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_52",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      21.0,
+      22.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_52",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      21.0,
+      22.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_52",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      21.0,
+      22.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_52",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      21.0,
+      22.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_52",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      21.0,
+      22.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_55",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      7.0,
+      8.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.25,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_55",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      7.0,
+      8.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.25,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_55",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      7.0,
+      8.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": true,
+    "cause": "covered_width_recoverable"
+  },
+  {
+    "eid": "omtg/omtg_55",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      7.0,
+      8.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": true,
+    "cause": "covered_width_recoverable"
+  },
+  {
+    "eid": "omtg/omtg_55",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      7.0,
+      8.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.25,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_55",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      7.0,
+      8.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.25,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_60",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      19.0,
+      20.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0625,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_60",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      19.0,
+      20.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0625,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_60",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      19.0,
+      20.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_60",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      19.0,
+      20.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_60",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      19.0,
+      20.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_60",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      19.0,
+      20.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_73",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      120.0,
+      121.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.01282051282051282,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_73",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      120.0,
+      121.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_73",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      120.0,
+      121.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_73",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      120.0,
+      121.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_73",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      120.0,
+      121.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.03333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_73",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      120.0,
+      121.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_83",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      0.0,
+      1.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_83",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      0.0,
+      1.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_83",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      0.0,
+      1.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_83",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      0.0,
+      1.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_83",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      0.0,
+      1.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_83",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      0.0,
+      1.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_97",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      0.0,
+      1.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.017241379310344827,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_97",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      0.0,
+      1.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.017241379310344827,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_97",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      0.0,
+      1.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.06666666666666667,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_97",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      0.0,
+      1.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.06666666666666667,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_97",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      0.0,
+      1.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.06666666666666667,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_97",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      0.0,
+      1.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "omtg/omtg_106",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 5,
+    "gt": [
+      48.0,
+      49.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.015151515151515152,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_106",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 5,
+    "gt": [
+      48.0,
+      49.0
+    ],
+    "nframes": 3,
+    "best_iou": 0.015151515151515152,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_106",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 5,
+    "gt": [
+      48.0,
+      49.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_106",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 5,
+    "gt": [
+      48.0,
+      49.0
+    ],
+    "nframes": 3,
+    "best_iou": 0.015151515151515152,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_106",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 5,
+    "gt": [
+      48.0,
+      49.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_106",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 5,
+    "gt": [
+      48.0,
+      49.0
+    ],
+    "nframes": 3,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_136",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      20.0,
+      21.0
+    ],
+    "nframes": 4,
+    "best_iou": 0.047619047619047616,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_136",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      20.0,
+      21.0
+    ],
+    "nframes": 4,
+    "best_iou": 0.047619047619047616,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_136",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      20.0,
+      21.0
+    ],
+    "nframes": 4,
+    "best_iou": 0.047619047619047616,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_136",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      20.0,
+      21.0
+    ],
+    "nframes": 4,
+    "best_iou": 0.047619047619047616,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_136",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      20.0,
+      21.0
+    ],
+    "nframes": 4,
+    "best_iou": 0.047619047619047616,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_136",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      20.0,
+      21.0
+    ],
+    "nframes": 4,
+    "best_iou": 0.047619047619047616,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_147",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      40.0,
+      41.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.030303030303030304,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_147",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      40.0,
+      41.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.03125,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_147",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      40.0,
+      41.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.03125,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_147",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      40.0,
+      41.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.2,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_147",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      40.0,
+      41.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.03125,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_147",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      40.0,
+      41.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.2,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_150",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      6.0,
+      7.0
+    ],
+    "nframes": 3,
+    "best_iou": 0.06666666666666667,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_150",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      11.0,
+      12.0
+    ],
+    "nframes": 4,
+    "best_iou": 0.06666666666666667,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_150",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      6.0,
+      7.0
+    ],
+    "nframes": 3,
+    "best_iou": 0.06666666666666667,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_150",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      11.0,
+      12.0
+    ],
+    "nframes": 4,
+    "best_iou": 0.06666666666666667,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_150",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      6.0,
+      7.0
+    ],
+    "nframes": 3,
+    "best_iou": 0.16666666666666666,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_150",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      11.0,
+      12.0
+    ],
+    "nframes": 4,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_150",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      6.0,
+      7.0
+    ],
+    "nframes": 3,
+    "best_iou": 0.16666666666666666,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_150",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      11.0,
+      12.0
+    ],
+    "nframes": 4,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_150",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      6.0,
+      7.0
+    ],
+    "nframes": 3,
+    "best_iou": 0.16666666666666666,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_150",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      11.0,
+      12.0
+    ],
+    "nframes": 4,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_150",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      6.0,
+      7.0
+    ],
+    "nframes": 3,
+    "best_iou": 0.16666666666666666,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_150",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      11.0,
+      12.0
+    ],
+    "nframes": 4,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_151",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      16.0,
+      17.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.020833333333333332,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_151",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 3,
+    "gt": [
+      54.0,
+      55.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.020833333333333332,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_151",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      16.0,
+      17.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.08333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_151",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 3,
+    "gt": [
+      54.0,
+      55.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.047619047619047616,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_151",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      16.0,
+      17.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.25,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_151",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 3,
+    "gt": [
+      54.0,
+      55.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_151",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      16.0,
+      17.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.08333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_151",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 3,
+    "gt": [
+      54.0,
+      55.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_151",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      16.0,
+      17.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.09090909090909091,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_151",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 3,
+    "gt": [
+      54.0,
+      55.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_151",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      16.0,
+      17.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.08333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_151",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 3,
+    "gt": [
+      54.0,
+      55.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.1111111111111111,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_165",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      0.0,
+      1.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_165",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      0.0,
+      1.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_165",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      0.0,
+      1.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_165",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      0.0,
+      1.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_165",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      0.0,
+      1.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_165",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      0.0,
+      1.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_170",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 8,
+    "gt": [
+      80.0,
+      81.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.011904761904761904,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_170",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 8,
+    "gt": [
+      80.0,
+      81.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.011111111111111112,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_170",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 8,
+    "gt": [
+      80.0,
+      81.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.02857142857142857,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_170",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 8,
+    "gt": [
+      80.0,
+      81.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.029411764705882353,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_170",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 8,
+    "gt": [
+      80.0,
+      81.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.02857142857142857,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_170",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 8,
+    "gt": [
+      80.0,
+      81.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.029411764705882353,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_171",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 4,
+    "gt": [
+      115.0,
+      116.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_171",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 4,
+    "gt": [
+      115.0,
+      116.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.25,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_171",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 4,
+    "gt": [
+      115.0,
+      116.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_171",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 4,
+    "gt": [
+      115.0,
+      116.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_171",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 4,
+    "gt": [
+      115.0,
+      116.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_171",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 4,
+    "gt": [
+      115.0,
+      116.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.25,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_177",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 5,
+    "gt": [
+      226.0,
+      227.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_177",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 5,
+    "gt": [
+      226.0,
+      227.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_177",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 5,
+    "gt": [
+      226.0,
+      227.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.09090909090909091,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_177",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 5,
+    "gt": [
+      226.0,
+      227.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_177",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 5,
+    "gt": [
+      226.0,
+      227.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_177",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 5,
+    "gt": [
+      226.0,
+      227.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_183",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      19.0,
+      20.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.006896551724137931,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_183",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.006896551724137931,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_183",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      19.0,
+      20.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.006666666666666667,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_183",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.006666666666666667,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_183",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      19.0,
+      20.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.006756756756756757,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_183",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.006756756756756757,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_183",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      19.0,
+      20.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.00909090909090909,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_183",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.00909090909090909,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_183",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      19.0,
+      20.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.006802721088435374,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_183",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.006802721088435374,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_183",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      19.0,
+      20.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.00909090909090909,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_183",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.00909090909090909,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_190",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      102.0,
+      103.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_190",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      102.0,
+      103.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.16666666666666666,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_190",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      102.0,
+      103.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_190",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      102.0,
+      103.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.16666666666666666,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_190",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      102.0,
+      103.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_190",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      102.0,
+      103.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.16666666666666666,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_191",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      31.0,
+      32.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.013157894736842105,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_191",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 3,
+    "gt": [
+      70.0,
+      71.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.013157894736842105,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_191",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 6,
+    "gt": [
+      111.0,
+      112.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_191",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 7,
+    "gt": [
+      119.0,
+      120.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_191",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      31.0,
+      32.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_191",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 3,
+    "gt": [
+      70.0,
+      71.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.030303030303030304,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_191",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 6,
+    "gt": [
+      111.0,
+      112.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.05,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_191",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 7,
+    "gt": [
+      119.0,
+      120.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.05,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_191",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      31.0,
+      32.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.013157894736842105,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_191",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 3,
+    "gt": [
+      70.0,
+      71.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.013157894736842105,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_191",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 6,
+    "gt": [
+      111.0,
+      112.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_191",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 7,
+    "gt": [
+      119.0,
+      120.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_191",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      31.0,
+      32.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_191",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 3,
+    "gt": [
+      70.0,
+      71.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.030303030303030304,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_191",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 6,
+    "gt": [
+      111.0,
+      112.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "omtg/omtg_191",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 7,
+    "gt": [
+      119.0,
+      120.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_191",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      31.0,
+      32.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.03333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_191",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 3,
+    "gt": [
+      70.0,
+      71.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.04,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_191",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 6,
+    "gt": [
+      111.0,
+      112.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_191",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 7,
+    "gt": [
+      119.0,
+      120.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_191",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      31.0,
+      32.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_191",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 3,
+    "gt": [
+      70.0,
+      71.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.030303030303030304,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_191",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 6,
+    "gt": [
+      111.0,
+      112.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "omtg/omtg_191",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 7,
+    "gt": [
+      119.0,
+      120.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      23.0,
+      24.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.00909090909090909,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      27.0,
+      28.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.00909090909090909,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 3,
+    "gt": [
+      33.0,
+      34.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.00909090909090909,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 4,
+    "gt": [
+      35.0,
+      36.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.00909090909090909,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 6,
+    "gt": [
+      106.0,
+      107.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.00909090909090909,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 7,
+    "gt": [
+      113.0,
+      114.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.00909090909090909,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 8,
+    "gt": [
+      123.0,
+      124.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.00909090909090909,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      23.0,
+      24.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.008695652173913044,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      27.0,
+      28.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.008695652173913044,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 3,
+    "gt": [
+      33.0,
+      34.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.008695652173913044,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 4,
+    "gt": [
+      35.0,
+      36.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.008695652173913044,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 6,
+    "gt": [
+      106.0,
+      107.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.008695652173913044,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 7,
+    "gt": [
+      113.0,
+      114.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.008695652173913044,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 8,
+    "gt": [
+      123.0,
+      124.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.008695652173913044,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      23.0,
+      24.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.125,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      27.0,
+      28.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.125,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 3,
+    "gt": [
+      33.0,
+      34.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.14285714285714285,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 4,
+    "gt": [
+      35.0,
+      36.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.14285714285714285,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 6,
+    "gt": [
+      106.0,
+      107.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 7,
+    "gt": [
+      113.0,
+      114.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 8,
+    "gt": [
+      123.0,
+      124.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.125,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      23.0,
+      24.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.05,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      27.0,
+      28.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.05,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 3,
+    "gt": [
+      33.0,
+      34.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.05,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 4,
+    "gt": [
+      35.0,
+      36.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.05,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 6,
+    "gt": [
+      106.0,
+      107.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.037037037037037035,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 7,
+    "gt": [
+      113.0,
+      114.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.037037037037037035,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 8,
+    "gt": [
+      123.0,
+      124.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.037037037037037035,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      23.0,
+      24.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.1111111111111111,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      27.0,
+      28.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.1111111111111111,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 3,
+    "gt": [
+      33.0,
+      34.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.037037037037037035,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 4,
+    "gt": [
+      35.0,
+      36.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.037037037037037035,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 6,
+    "gt": [
+      106.0,
+      107.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 7,
+    "gt": [
+      113.0,
+      114.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 8,
+    "gt": [
+      123.0,
+      124.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.07692307692307693,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      23.0,
+      24.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.047619047619047616,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      27.0,
+      28.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.047619047619047616,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 3,
+    "gt": [
+      33.0,
+      34.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.047619047619047616,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 4,
+    "gt": [
+      35.0,
+      36.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.047619047619047616,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 6,
+    "gt": [
+      106.0,
+      107.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.037037037037037035,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 7,
+    "gt": [
+      113.0,
+      114.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.037037037037037035,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_192",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 8,
+    "gt": [
+      123.0,
+      124.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.037037037037037035,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_204",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 3,
+    "gt": [
+      215.0,
+      216.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.005405405405405406,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_204",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 3,
+    "gt": [
+      215.0,
+      216.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.005376344086021506,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_204",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 3,
+    "gt": [
+      215.0,
+      216.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.01098901098901099,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_204",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 3,
+    "gt": [
+      215.0,
+      216.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.019230769230769232,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_204",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 3,
+    "gt": [
+      215.0,
+      216.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.01098901098901099,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_204",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 3,
+    "gt": [
+      215.0,
+      216.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_217",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      146.0,
+      147.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_217",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      146.0,
+      147.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_217",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      146.0,
+      147.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_217",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      146.0,
+      147.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.09090909090909091,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_217",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      146.0,
+      147.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_217",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      146.0,
+      147.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_218",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      123.0,
+      124.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.008064516129032258,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_218",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      123.0,
+      124.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.008130081300813009,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_218",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      123.0,
+      124.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.009708737864077669,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_218",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      123.0,
+      124.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_218",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      123.0,
+      124.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.008064516129032258,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_218",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      123.0,
+      124.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_221",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      224.0,
+      225.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.015625,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_221",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      224.0,
+      225.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_221",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      224.0,
+      225.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_221",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      224.0,
+      225.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_221",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      224.0,
+      225.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_221",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      224.0,
+      225.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_246",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      44.0,
+      45.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_246",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      44.0,
+      45.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_246",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      44.0,
+      45.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_246",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      44.0,
+      45.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_246",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      44.0,
+      45.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_246",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      44.0,
+      45.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_247",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 8,
+    "gt": [
+      344.0,
+      345.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.00980392156862745,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_247",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 8,
+    "gt": [
+      344.0,
+      345.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.010416666666666666,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_247",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 8,
+    "gt": [
+      344.0,
+      345.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.00980392156862745,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_247",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 8,
+    "gt": [
+      344.0,
+      345.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.010309278350515464,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_247",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 8,
+    "gt": [
+      344.0,
+      345.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.00980392156862745,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_247",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 8,
+    "gt": [
+      344.0,
+      345.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.010309278350515464,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_250",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      8.0,
+      9.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_250",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      8.0,
+      9.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_250",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      8.0,
+      9.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_250",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      8.0,
+      9.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_250",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      8.0,
+      9.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_250",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      8.0,
+      9.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_255",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      96.0,
+      97.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.1,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_255",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      96.0,
+      97.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.125,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_255",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      96.0,
+      97.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.1,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_255",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      96.0,
+      97.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.125,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_255",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      96.0,
+      97.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.1111111111111111,
+    "assigned_hit": false,
+    "width_recoverable": true,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_255",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      96.0,
+      97.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_258",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 3,
+    "gt": [
+      114.0,
+      115.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.045454545454545456,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_258",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 3,
+    "gt": [
+      114.0,
+      115.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_258",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 3,
+    "gt": [
+      114.0,
+      115.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_258",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 3,
+    "gt": [
+      114.0,
+      115.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_258",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 3,
+    "gt": [
+      114.0,
+      115.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_258",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 3,
+    "gt": [
+      114.0,
+      115.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_259",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      63.0,
+      64.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.01,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_259",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      63.0,
+      64.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.010638297872340425,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_259",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      63.0,
+      64.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.01694915254237288,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_259",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      63.0,
+      64.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.010526315789473684,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_259",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      63.0,
+      64.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.01694915254237288,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_259",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      63.0,
+      64.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.010526315789473684,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_270",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      84.0,
+      85.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.2,
+    "assigned_hit": false,
+    "width_recoverable": true,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_270",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      84.0,
+      85.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.2,
+    "assigned_hit": false,
+    "width_recoverable": true,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_270",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      84.0,
+      85.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.2,
+    "assigned_hit": false,
+    "width_recoverable": true,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_270",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      84.0,
+      85.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.16666666666666666,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_270",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      84.0,
+      85.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.2,
+    "assigned_hit": false,
+    "width_recoverable": true,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_270",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      84.0,
+      85.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.16666666666666666,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_275",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      169.0,
+      170.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_275",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      178.0,
+      179.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_275",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      169.0,
+      170.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_275",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      178.0,
+      179.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_275",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      169.0,
+      170.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_275",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      178.0,
+      179.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_275",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      169.0,
+      170.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_275",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      178.0,
+      179.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_275",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      169.0,
+      170.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_275",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      178.0,
+      179.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_275",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      169.0,
+      170.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_275",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      178.0,
+      179.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_277",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      46.0,
+      47.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.05263157894736842,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_277",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 3,
+    "gt": [
+      58.0,
+      59.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.05263157894736842,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_277",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 5,
+    "gt": [
+      113.0,
+      114.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_277",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 11,
+    "gt": [
+      326.0,
+      327.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_277",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      46.0,
+      47.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_277",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 3,
+    "gt": [
+      58.0,
+      59.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_277",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 5,
+    "gt": [
+      113.0,
+      114.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_277",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 11,
+    "gt": [
+      326.0,
+      327.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_277",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      46.0,
+      47.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.05263157894736842,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_277",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 3,
+    "gt": [
+      58.0,
+      59.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.05263157894736842,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_277",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 5,
+    "gt": [
+      113.0,
+      114.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_277",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 11,
+    "gt": [
+      326.0,
+      327.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_277",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      46.0,
+      47.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_277",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 3,
+    "gt": [
+      58.0,
+      59.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_277",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 5,
+    "gt": [
+      113.0,
+      114.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_277",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 11,
+    "gt": [
+      326.0,
+      327.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_277",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      46.0,
+      47.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.05263157894736842,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_277",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 3,
+    "gt": [
+      58.0,
+      59.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.05263157894736842,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_277",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 5,
+    "gt": [
+      113.0,
+      114.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_277",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 11,
+    "gt": [
+      326.0,
+      327.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_277",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      46.0,
+      47.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_277",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 3,
+    "gt": [
+      58.0,
+      59.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_277",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 5,
+    "gt": [
+      113.0,
+      114.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_277",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 11,
+    "gt": [
+      326.0,
+      327.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_278",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      353.0,
+      354.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.047619047619047616,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_278",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      353.0,
+      354.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.05,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_278",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      353.0,
+      354.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.047619047619047616,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_278",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      353.0,
+      354.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.05,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_278",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      353.0,
+      354.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.047619047619047616,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_278",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      353.0,
+      354.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.05,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_279",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 3,
+    "gt": [
+      432.0,
+      433.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_279",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 3,
+    "gt": [
+      432.0,
+      433.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_279",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 3,
+    "gt": [
+      432.0,
+      433.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_279",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 3,
+    "gt": [
+      432.0,
+      433.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_279",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 3,
+    "gt": [
+      432.0,
+      433.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_279",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 3,
+    "gt": [
+      432.0,
+      433.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_287",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      34.0,
+      35.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0136986301369863,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_287",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0136986301369863,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_287",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      34.0,
+      35.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.013513513513513514,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_287",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.013513513513513514,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_287",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      34.0,
+      35.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0136986301369863,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_287",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0136986301369863,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_287",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      34.0,
+      35.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.013513513513513514,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_287",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.013513513513513514,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_287",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      34.0,
+      35.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0136986301369863,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_287",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0136986301369863,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_287",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      34.0,
+      35.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.013513513513513514,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_287",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.013513513513513514,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_290",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      49.0,
+      50.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_290",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      49.0,
+      50.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_290",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      49.0,
+      50.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.03125,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_290",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      49.0,
+      50.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_290",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      49.0,
+      50.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.03333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_290",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      49.0,
+      50.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_292",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      209.0,
+      210.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_292",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      209.0,
+      210.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_292",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      209.0,
+      210.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_292",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      209.0,
+      210.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_292",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      209.0,
+      210.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_292",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      209.0,
+      210.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_293",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 3,
+    "gt": [
+      299.0,
+      300.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.010101010101010102,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_293",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 3,
+    "gt": [
+      299.0,
+      300.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_293",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 3,
+    "gt": [
+      299.0,
+      300.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_293",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 3,
+    "gt": [
+      299.0,
+      300.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_293",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 3,
+    "gt": [
+      299.0,
+      300.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_293",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 3,
+    "gt": [
+      299.0,
+      300.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_297",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_297",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_297",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_297",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_297",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_297",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_298",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_298",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_298",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_298",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.25,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_298",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.2,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "omtg/omtg_298",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_304",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      51.0,
+      52.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_304",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      51.0,
+      52.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_304",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      51.0,
+      52.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_304",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      51.0,
+      52.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "omtg/omtg_304",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      51.0,
+      52.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_304",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      51.0,
+      52.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "omtg/omtg_312",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_312",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      40.0,
+      41.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_312",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_312",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      40.0,
+      41.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_312",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_312",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      40.0,
+      41.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_312",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_312",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      40.0,
+      41.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_312",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_312",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      40.0,
+      41.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "omtg/omtg_312",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      29.0,
+      30.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "omtg/omtg_312",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      40.0,
+      41.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/6KxUll8Q6E0#3",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      52.0,
+      53.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/6KxUll8Q6E0#3",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      52.0,
+      53.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/6KxUll8Q6E0#3",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      52.0,
+      53.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/6KxUll8Q6E0#3",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      52.0,
+      53.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/6KxUll8Q6E0#3",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      52.0,
+      53.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/6KxUll8Q6E0#3",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      52.0,
+      53.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/FcwEni9wzXw#1",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/FcwEni9wzXw#1",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/FcwEni9wzXw#1",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/FcwEni9wzXw#1",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "hold_multi/FcwEni9wzXw#1",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/FcwEni9wzXw#1",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      39.0,
+      40.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/makCyucO33w#1",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      3.0,
+      4.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/makCyucO33w#1",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      3.0,
+      4.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "hold_multi/makCyucO33w#1",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      3.0,
+      4.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/makCyucO33w#1",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      3.0,
+      4.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "hold_multi/makCyucO33w#1",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      3.0,
+      4.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/makCyucO33w#1",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      3.0,
+      4.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "hold_multi/9Gy1H_oyDuc#1",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      78.0,
+      79.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": true,
+    "cause": "covered_width_recoverable"
+  },
+  {
+    "eid": "hold_multi/9Gy1H_oyDuc#1",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      78.0,
+      79.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/9Gy1H_oyDuc#1",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      78.0,
+      79.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": true,
+    "cause": "covered_width_recoverable"
+  },
+  {
+    "eid": "hold_multi/9Gy1H_oyDuc#1",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      78.0,
+      79.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/9Gy1H_oyDuc#1",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 2,
+    "gt": [
+      78.0,
+      79.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": true,
+    "cause": "covered_width_recoverable"
+  },
+  {
+    "eid": "hold_multi/9Gy1H_oyDuc#1",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 2,
+    "gt": [
+      78.0,
+      79.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/9Gy1H_oyDuc#4",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      61.0,
+      62.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/9Gy1H_oyDuc#4",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      61.0,
+      62.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/9Gy1H_oyDuc#4",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      61.0,
+      62.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/9Gy1H_oyDuc#4",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      61.0,
+      62.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "hold_multi/9Gy1H_oyDuc#4",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      61.0,
+      62.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/9Gy1H_oyDuc#4",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      61.0,
+      62.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "hold_multi/9NvNMBbufkE#5",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      20.0,
+      21.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/9NvNMBbufkE#5",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      20.0,
+      21.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/9NvNMBbufkE#5",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      20.0,
+      21.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/9NvNMBbufkE#5",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      20.0,
+      21.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/9NvNMBbufkE#5",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      20.0,
+      21.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/9NvNMBbufkE#5",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      20.0,
+      21.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/NqnkZjuyY_A#5",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      94.0,
+      95.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/NqnkZjuyY_A#5",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      94.0,
+      95.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/NqnkZjuyY_A#5",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      94.0,
+      95.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/NqnkZjuyY_A#5",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      94.0,
+      95.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/NqnkZjuyY_A#5",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      94.0,
+      95.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/NqnkZjuyY_A#5",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      94.0,
+      95.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/C9HsvELE0zU#0",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      7.0,
+      8.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.2,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "hold_multi/C9HsvELE0zU#0",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      7.0,
+      8.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.2,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "hold_multi/C9HsvELE0zU#0",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      7.0,
+      8.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "hold_multi/C9HsvELE0zU#0",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      7.0,
+      8.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "hold_multi/C9HsvELE0zU#0",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      7.0,
+      8.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.25,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "hold_multi/C9HsvELE0zU#0",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      7.0,
+      8.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.25,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "hold_multi/GdIRGLFJoE0#0",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      9.0,
+      10.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/GdIRGLFJoE0#0",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      9.0,
+      10.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/GdIRGLFJoE0#0",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      9.0,
+      10.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/GdIRGLFJoE0#0",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      9.0,
+      10.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/GdIRGLFJoE0#0",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      9.0,
+      10.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/GdIRGLFJoE0#0",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      9.0,
+      10.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/JbE4IabW-bk#4",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      28.0,
+      29.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/JbE4IabW-bk#4",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      28.0,
+      29.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/JbE4IabW-bk#4",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      28.0,
+      29.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": true,
+    "cause": "covered_width_recoverable"
+  },
+  {
+    "eid": "hold_multi/JbE4IabW-bk#4",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      28.0,
+      29.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": true,
+    "cause": "covered_width_recoverable"
+  },
+  {
+    "eid": "hold_multi/JbE4IabW-bk#4",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      28.0,
+      29.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": true,
+    "cause": "covered_width_recoverable"
+  },
+  {
+    "eid": "hold_multi/JbE4IabW-bk#4",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      28.0,
+      29.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": true,
+    "cause": "covered_width_recoverable"
+  },
+  {
+    "eid": "hold_multi/8k1MilOxDwQ#1",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      1.0,
+      2.0
+    ],
+    "nframes": 3,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/8k1MilOxDwQ#1",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      16.0,
+      17.0
+    ],
+    "nframes": 4,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "hold_multi/8k1MilOxDwQ#1",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      1.0,
+      2.0
+    ],
+    "nframes": 3,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/8k1MilOxDwQ#1",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      16.0,
+      17.0
+    ],
+    "nframes": 4,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "hold_multi/8k1MilOxDwQ#1",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      1.0,
+      2.0
+    ],
+    "nframes": 3,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/8k1MilOxDwQ#1",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      16.0,
+      17.0
+    ],
+    "nframes": 4,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "hold_multi/8k1MilOxDwQ#1",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      1.0,
+      2.0
+    ],
+    "nframes": 3,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/8k1MilOxDwQ#1",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      16.0,
+      17.0
+    ],
+    "nframes": 4,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "hold_multi/8k1MilOxDwQ#1",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      1.0,
+      2.0
+    ],
+    "nframes": 3,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/8k1MilOxDwQ#1",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      16.0,
+      17.0
+    ],
+    "nframes": 4,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "hold_multi/8k1MilOxDwQ#1",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      1.0,
+      2.0
+    ],
+    "nframes": 3,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/8k1MilOxDwQ#1",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      16.0,
+      17.0
+    ],
+    "nframes": 4,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "hold_multi/A56wS5MhWPY#2",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      15.0,
+      16.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/A56wS5MhWPY#2",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      15.0,
+      16.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/A56wS5MhWPY#2",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      15.0,
+      16.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/A56wS5MhWPY#2",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      15.0,
+      16.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/A56wS5MhWPY#2",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      15.0,
+      16.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/A56wS5MhWPY#2",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      15.0,
+      16.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/AUqA1FAQJno#1",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      0.0,
+      1.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.03333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "hold_multi/AUqA1FAQJno#1",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      0.0,
+      1.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.03333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "hold_multi/AUqA1FAQJno#1",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      0.0,
+      1.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.03333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "hold_multi/AUqA1FAQJno#1",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      0.0,
+      1.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.03333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "hold_multi/AUqA1FAQJno#1",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      0.0,
+      1.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.03333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "hold_multi/AUqA1FAQJno#1",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      0.0,
+      1.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.03333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "hold_multi/BDSymX3vrfk#1",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      7.0,
+      8.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": true,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/BDSymX3vrfk#1",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      7.0,
+      8.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": true,
+    "cause": "covered_width_recoverable"
+  },
+  {
+    "eid": "hold_multi/BDSymX3vrfk#1",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      7.0,
+      8.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/BDSymX3vrfk#1",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      7.0,
+      8.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": true,
+    "cause": "covered_width_recoverable"
+  },
+  {
+    "eid": "hold_multi/BDSymX3vrfk#1",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 0,
+    "gt": [
+      7.0,
+      8.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": true,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/BDSymX3vrfk#1",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 0,
+    "gt": [
+      7.0,
+      8.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": true,
+    "cause": "covered_width_recoverable"
+  },
+  {
+    "eid": "hold_multi/M22uSweVoe0#3",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      14.0,
+      15.0
+    ],
+    "nframes": 3,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/M22uSweVoe0#3",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      14.0,
+      15.0
+    ],
+    "nframes": 3,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/M22uSweVoe0#3",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      14.0,
+      15.0
+    ],
+    "nframes": 3,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/M22uSweVoe0#3",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      14.0,
+      15.0
+    ],
+    "nframes": 3,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/M22uSweVoe0#3",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      14.0,
+      15.0
+    ],
+    "nframes": 3,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/M22uSweVoe0#3",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      14.0,
+      15.0
+    ],
+    "nframes": 3,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/5RJuoPpOUV0#0",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      31.0,
+      32.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/5RJuoPpOUV0#0",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      31.0,
+      32.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/5RJuoPpOUV0#0",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      31.0,
+      32.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/5RJuoPpOUV0#0",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      31.0,
+      32.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.047619047619047616,
+    "assigned_hit": false,
+    "width_recoverable": true,
+    "cause": "covered_width_recoverable"
+  },
+  {
+    "eid": "hold_multi/5RJuoPpOUV0#0",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      31.0,
+      32.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/5RJuoPpOUV0#0",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      31.0,
+      32.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/Dcgi88g1HlY#0",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      22.0,
+      23.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "hold_multi/Dcgi88g1HlY#0",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      22.0,
+      23.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "hold_multi/Dcgi88g1HlY#0",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      22.0,
+      23.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.3333333333333333,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_partial_other"
+  },
+  {
+    "eid": "hold_multi/Dcgi88g1HlY#0",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      22.0,
+      23.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "hold_multi/Dcgi88g1HlY#0",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      22.0,
+      23.0
+    ],
+    "nframes": 1,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "hold_multi/Dcgi88g1HlY#0",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      22.0,
+      23.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "hold_multi/8fb1wGh-aI8#3",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      31.0,
+      32.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/8fb1wGh-aI8#3",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      31.0,
+      32.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/8fb1wGh-aI8#3",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      31.0,
+      32.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "hold_multi/8fb1wGh-aI8#3",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      31.0,
+      32.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "hold_multi/8fb1wGh-aI8#3",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      31.0,
+      32.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "hold_multi/8fb1wGh-aI8#3",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      31.0,
+      32.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.5,
+    "assigned_hit": true,
+    "width_recoverable": false,
+    "cause": "hit"
+  },
+  {
+    "eid": "hold_multi/FODi51qy5As#0",
+    "model": "tl2_4b",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      34.0,
+      35.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/FODi51qy5As#0",
+    "model": "tl2_4b",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      34.0,
+      35.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/FODi51qy5As#0",
+    "model": "A0_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      34.0,
+      35.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/FODi51qy5As#0",
+    "model": "A0_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      34.0,
+      35.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  },
+  {
+    "eid": "hold_multi/FODi51qy5As#0",
+    "model": "A1_s1@200",
+    "budget": 64,
+    "j": 1,
+    "gt": [
+      34.0,
+      35.0
+    ],
+    "nframes": 0,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "no_frame"
+  },
+  {
+    "eid": "hold_multi/FODi51qy5As#0",
+    "model": "A1_s1@200",
+    "budget": 128,
+    "j": 1,
+    "gt": [
+      34.0,
+      35.0
+    ],
+    "nframes": 2,
+    "best_iou": 0.0,
+    "assigned_hit": false,
+    "width_recoverable": false,
+    "cause": "covered_no_overlap"
+  }
+]

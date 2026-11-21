@@ -1,0 +1,99 @@
+{
+  "registered_local": "2026-11-22 Asia/Shanghai",
+  "model_card": "https://huggingface.co/MCG-NJU/TimeLens2-4B/blob/main/README.md",
+  "models": {
+    "tl2_4b": {
+      "base": "[local-path]/models/multimodal/model_reproduction/vtg/models/TimeLens2-4B",
+      "adapter": null,
+      "added_unix": 1795114409.0739746,
+      "base_manifest_sha256": "3e2cf4c2cf72b3f833f13ae30da52aa68f3bb0c4cf495f1ed0eb79016857c68a"
+    },
+    "A0_s1@200": {
+      "base": "[local-path]/models/multimodal/model_reproduction/vtg/models/TimeLens2-4B-SFT",
+      "adapter": "[local-path]/models/multimodal/model_reproduction/vtg/exh_20261120/e3_rl/A0_s1/ckpt-200",
+      "added_unix": 1795159092.3047361,
+      "base_manifest_sha256": "e0434d7501ab2fadd98f7bce173f24e9d8ca5007ac39fa3964b6d1f424b0a797",
+      "adapter_sha256": {
+        "adapter_config.json": "7e157912229917d4e33a991a75009f95bb0b56740504d9ac8272236e0093d852",
+        "adapter_model.safetensors": "d3af2334f26a490fe6693ea6c8012e0294c2b5b0f51c94e81b4a9d5b10cfbcd8"
+      }
+    },
+    "A1_s1@200": {
+      "base": "[local-path]/models/multimodal/model_reproduction/vtg/models/TimeLens2-4B-SFT",
+      "adapter": "[local-path]/models/multimodal/model_reproduction/vtg/exh_20261120/e3_rl/A1_s1/ckpt-200",
+      "added_unix": 1795159092.3177204,
+      "base_manifest_sha256": "e0434d7501ab2fadd98f7bce173f24e9d8ca5007ac39fa3964b6d1f424b0a797",
+      "adapter_sha256": {
+        "adapter_config.json": "cd9d2ef8095fd00cc37293ad2979513920a41547c431e01798a5de83461afa12",
+        "adapter_model.safetensors": "031ef6a2da379ae081bdadedbfd195cd5da567a0a0b3b95449a3260bebc9051b"
+      }
+    }
+  },
+  "training": false,
+  "high": {
+    "queries": 320,
+    "clips": 287,
+    "passes": 640,
+    "fps": 2,
+    "min_pixels": 1024,
+    "max_pixels": 230400,
+    "total_pixels": 131072000,
+    "max_new_tokens": 4096,
+    "decode": "Top-1 equivalent; contiguous temporal patch groups, timestamps from installed qwen-vl-utils; same prompt, pixel and token digests verified across models. Compare streamed SDPA with standard generation on one OMTG clip per model.",
+    "metric": "Macro OMTG tF1@0.5; paired resampling of source videos. Low-to-high contrasts include prompt change."
+  },
+  "probe": {
+    "events": 85,
+    "queries": 78,
+    "prompt_groups": 319,
+    "draws": 8,
+    "draw_count": 2552,
+    "arms": [
+      "plain",
+      "count (GT count)",
+      "exclude (old greedy SFT predictions, no GT location)",
+      "local (GT-centred allocation of up to 32 extra two-frame units)"
+    ],
+    "decode": "E2 sample=True, temperature .7, top_p .9, top_k 0, max_new_tokens 256. Eight common seeds across arms per query. Report single-draw and eight-draw reachability and paired delta to fresh ordinary prompt.",
+    "thresholds": "Strong reachability >=30%; weak <15%; before committing to training compare with plain. Local and count use privileged information."
+  },
+  "verify": {
+    "segments": 551,
+    "original_TP": 111,
+    "model": "A1_s1@200",
+    "source": "E2 elim accepted round 1..3",
+    "frames": "Up to 32 original frames within the candidate only, relative clip clock; pair padding only if odd. A candidate with no real frame or no positive answer is dropped.",
+    "gate": "retained precision >=45% AND all-query macro tF1 higher than E2 single dense; also report retention of 111 true additions."
+  },
+  "cpu": {
+    "width": "Only shrink overlapping predictions with original centres held fixed; search best possible combination, original answer allowed",
+    "primary_models": [
+      "A1_s1@200"
+    ],
+    "datasets": [
+      "omtg",
+      "hold_multi"
+    ],
+    "width_cutoff_pp": 2,
+    "zero8": "8 original released SFT rollouts per query; match E1 event hits and E3 cohort; source frame coverage derived from E4 actual indices"
+  },
+  "gpu": {
+    "primary": [
+      0,
+      3
+    ],
+    "probe_then_verify_then_high": [
+      4,
+      5
+    ],
+    "minimum_free_MiB": 2560
+  },
+  "scoring": "Periodic; all decision gates require complete denominators.",
+  "source_hashes": {
+    "[local-path]/models/multimodal/model_reproduction/vtg/exh_20261121_density_001/inputs.json": "acb1410eed03aca7eea769e6daa3eaf1d6262c98d6f578e325c8f36d994b1a24",
+    "[local-path]/models/multimodal/model_reproduction/vtg/exh_20261121_density_001/labels.json": "44eda2c8ef5a18914e63ebb9f63454d5be3a1846d567635ecfcddc217c1fed1f",
+    "[local-path]/models/multimodal/model_reproduction/vtg/exh_20261120/e3_eval/protocol.json": "12e0647cc634aceab4346cbe3747d8f05c3a7565aa2f3a8a31708dc848ce23aa",
+    "[local-path]/tmp/vtg-night-20261122/probe_plan.json": "06a5c6fbb879040020f53981116a4f7f0c74fc04932ca804eea7fab9d1ccffe9",
+    "[local-path]/tmp/vtg-night-20261122/verify_plan.json": "bb130c36f3c892e110ac169d54a0fb5615d233a72b5b13453b0980a925afc100"
+  }
+}

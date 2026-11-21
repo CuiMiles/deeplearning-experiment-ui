@@ -1,0 +1,289 @@
+{
+  "updated": "2026-11-22 02:30:12 CST",
+  "complete": false,
+  "audit": {
+    "width": {
+      "omtg/tl2_4b/64": {
+        "queries": 320,
+        "short_events": 66,
+        "causes": {
+          "covered_partial_other": 19,
+          "hit": 3,
+          "no_frame": 40,
+          "covered_no_overlap": 4
+        },
+        "oracle_query_tF1_gain_pp": 0.15625,
+        "extra_query_matches": 1
+      },
+      "omtg/tl2_4b/128": {
+        "queries": 320,
+        "short_events": 66,
+        "causes": {
+          "covered_partial_other": 30,
+          "hit": 3,
+          "no_frame": 28,
+          "covered_no_overlap": 5
+        },
+        "oracle_query_tF1_gain_pp": 0.15625,
+        "extra_query_matches": 1
+      },
+      "omtg/A0_s1@200/64": {
+        "queries": 320,
+        "short_events": 66,
+        "causes": {
+          "covered_partial_other": 13,
+          "hit": 3,
+          "no_frame": 40,
+          "covered_width_recoverable": 1,
+          "covered_no_overlap": 9
+        },
+        "oracle_query_tF1_gain_pp": 0.3125,
+        "extra_query_matches": 2
+      },
+      "omtg/A0_s1@200/128": {
+        "queries": 320,
+        "short_events": 66,
+        "causes": {
+          "covered_no_overlap": 8,
+          "hit": 5,
+          "covered_partial_other": 24,
+          "no_frame": 28,
+          "covered_width_recoverable": 1
+        },
+        "oracle_query_tF1_gain_pp": 0.15625,
+        "extra_query_matches": 1
+      },
+      "omtg/A1_s1@200/64": {
+        "queries": 320,
+        "short_events": 66,
+        "causes": {
+          "covered_partial_other": 15,
+          "hit": 3,
+          "no_frame": 40,
+          "covered_no_overlap": 8
+        },
+        "oracle_query_tF1_gain_pp": 0.2604166666666667,
+        "extra_query_matches": 2
+      },
+      "omtg/A1_s1@200/128": {
+        "queries": 320,
+        "short_events": 66,
+        "causes": {
+          "covered_no_overlap": 10,
+          "hit": 6,
+          "covered_partial_other": 22,
+          "no_frame": 28
+        },
+        "oracle_query_tF1_gain_pp": 0.0,
+        "extra_query_matches": 0
+      },
+      "hold_multi/tl2_4b/64": {
+        "queries": 301,
+        "short_events": 20,
+        "causes": {
+          "covered_no_overlap": 8,
+          "no_frame": 7,
+          "covered_width_recoverable": 1,
+          "covered_partial_other": 2,
+          "hit": 2
+        },
+        "oracle_query_tF1_gain_pp": 0.33222591362126247,
+        "extra_query_matches": 2
+      },
+      "hold_multi/tl2_4b/128": {
+        "queries": 301,
+        "short_events": 20,
+        "causes": {
+          "covered_no_overlap": 12,
+          "hit": 3,
+          "no_frame": 2,
+          "covered_partial_other": 2,
+          "covered_width_recoverable": 1
+        },
+        "oracle_query_tF1_gain_pp": 0.16611295681063123,
+        "extra_query_matches": 1
+      },
+      "hold_multi/A0_s1@200/64": {
+        "queries": 301,
+        "short_events": 20,
+        "causes": {
+          "covered_no_overlap": 6,
+          "no_frame": 7,
+          "covered_width_recoverable": 2,
+          "covered_partial_other": 3,
+          "hit": 2
+        },
+        "oracle_query_tF1_gain_pp": 0.33222591362126247,
+        "extra_query_matches": 2
+      },
+      "hold_multi/A0_s1@200/128": {
+        "queries": 301,
+        "short_events": 20,
+        "causes": {
+          "covered_no_overlap": 7,
+          "covered_partial_other": 3,
+          "hit": 5,
+          "no_frame": 2,
+          "covered_width_recoverable": 3
+        },
+        "oracle_query_tF1_gain_pp": 0.4983388704318937,
+        "extra_query_matches": 3
+      },
+      "hold_multi/A1_s1@200/64": {
+        "queries": 301,
+        "short_events": 20,
+        "causes": {
+          "covered_no_overlap": 6,
+          "no_frame": 7,
+          "covered_width_recoverable": 2,
+          "covered_partial_other": 2,
+          "hit": 3
+        },
+        "oracle_query_tF1_gain_pp": 0.4983388704318937,
+        "extra_query_matches": 3
+      },
+      "hold_multi/A1_s1@200/128": {
+        "queries": 301,
+        "short_events": 20,
+        "causes": {
+          "covered_no_overlap": 9,
+          "hit": 5,
+          "no_frame": 2,
+          "covered_partial_other": 2,
+          "covered_width_recoverable": 2
+        },
+        "oracle_query_tF1_gain_pp": 0.33222591362126247,
+        "extra_query_matches": 2
+      }
+    },
+    "zero_of_eight": {
+      "events": 90,
+      "queries": 81,
+      "covered64": 85,
+      "covered128": 90,
+      "nonflat": 90,
+      "other_event_reached": 82,
+      "events_in_groups_with_reward_sd_gt_0p01": 88,
+      "covered64_nonflat": 85
+    },
+    "width_definition": "Keep every predicted centre and the original prediction count. Allow shrink to a short GT width if the original predicted interval overlaps that GT. Enumerate optional repairs, rescore with E3 one-to-one Hungarian matching and retain best query tF1. Mean over all queries. This bounds this specified width operation only.",
+    "variance_definition": "Population variance of eight official twass1+tiou+parse_penalty rewards > 1e-12. Frame coverage is at least one original selected frame inside the inclusive GT."
+  },
+  "high": {
+    "total_records": 6,
+    "paired": 2,
+    "expected_pairs": 320,
+    "official": 33.33333333333333,
+    "A1": 50.0,
+    "difference": {
+      "n": 2,
+      "source_count": 2,
+      "mean_pp": 16.66666666666667,
+      "ci95_pp": [
+        0.0,
+        33.33333333333334
+      ]
+    },
+    "low_budget_same_queries_pp": 0.0,
+    "difference_in_advantage": {
+      "n": 2,
+      "source_count": 2,
+      "mean_pp": 16.66666666666667,
+      "ci95_pp": [
+        0.0,
+        33.33333333333334
+      ]
+    }
+  },
+  "probe": {
+    "completions": 568,
+    "expected_completions": 2552,
+    "eligible": 85,
+    "by_arm": {
+      "exclude": {
+        "events": 18,
+        "found": 7,
+        "pass8": 0.3888888888888889,
+        "pass1": 0.2222222222222222,
+        "pass8_one_to_one": 0.3888888888888889,
+        "mean_output_spans": 0.8541666666666666,
+        "vs_plain": {
+          "n": 18,
+          "source_count": 15,
+          "mean_pp": 22.22222222222222,
+          "ci95_pp": [
+            5.0,
+            46.666666666666664
+          ]
+        },
+        "only_arm": 4,
+        "only_plain": 0
+      },
+      "count": {
+        "events": 19,
+        "found": 8,
+        "pass8": 0.42105263157894735,
+        "pass1": 0.16447368421052633,
+        "pass8_one_to_one": 0.42105263157894735,
+        "mean_output_spans": 1.5394736842105263,
+        "vs_plain": {
+          "n": 19,
+          "source_count": 16,
+          "mean_pp": 26.31578947368421,
+          "ci95_pp": [
+            9.523809523809524,
+            45.45454545454545
+          ]
+        },
+        "only_arm": 5,
+        "only_plain": 0
+      },
+      "local": {
+        "events": 18,
+        "found": 9,
+        "pass8": 0.5,
+        "pass1": 0.13194444444444445,
+        "pass8_one_to_one": 0.5,
+        "mean_output_spans": 1.375,
+        "vs_plain": {
+          "n": 18,
+          "source_count": 15,
+          "mean_pp": 33.333333333333336,
+          "ci95_pp": [
+            11.764705882352942,
+            53.333333333333336
+          ]
+        },
+        "only_arm": 6,
+        "only_plain": 0
+      },
+      "plain": {
+        "events": 19,
+        "found": 3,
+        "pass8": 0.15789473684210525,
+        "pass1": 0.05921052631578947,
+        "pass8_one_to_one": 0.15789473684210525,
+        "mean_output_spans": 1.1907894736842106
+      }
+    }
+  },
+  "verify": {
+    "records": 0,
+    "expected": 551,
+    "unfiltered_hits": 111,
+    "unfiltered_precision": 0.2014519056261343,
+    "answers": {},
+    "kept_true": 0,
+    "kept_precision": null,
+    "retained_fraction_of_true_additions": 0.0,
+    "filtered_minus_E2_dense": {
+      "n": 85,
+      "source_count": 85,
+      "mean_pp": -11.005678531994322,
+      "ci95_pp": [
+        -17.82039322906196,
+        -4.273694829422382
+      ]
+    }
+  }
+}
