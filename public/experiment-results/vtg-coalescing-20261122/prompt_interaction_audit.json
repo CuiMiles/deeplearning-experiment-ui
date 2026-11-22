@@ -1,0 +1,33 @@
+{
+  "models": [
+    "tl2_4b",
+    "A1_s1@200"
+  ],
+  "metric": "tF1@0.5",
+  "contrast": "(balanced - plain) for A1 minus (balanced - plain) for released official model",
+  "paired_on": "same input timestamps, preprocessed pixels, prompts and queries across both models. Within each model only the prompt changes.",
+  "inference": "Both models use RL checkpoints. The contrast estimates a difference in prompt response between two weights.",
+  "sampling": "10,000 paired source-video bootstrap draws, seed 0, percentiles 2.5 and 97.5.",
+  "results": {
+    "omtg": {
+      "n": 320,
+      "official_prompt_gain_pp": 1.9011862589165218,
+      "A1_prompt_gain_pp": 0.5561999884076497,
+      "gain_difference_pp": -1.344986270508872,
+      "ci95_pp": [
+        -4.329103250960964,
+        1.626027012843718
+      ]
+    },
+    "hold_multi": {
+      "n": 301,
+      "official_prompt_gain_pp": 5.692137320044297,
+      "A1_prompt_gain_pp": 0.43491392328601636,
+      "gain_difference_pp": -5.257223396758281,
+      "ci95_pp": [
+        -9.296664998681129,
+        -1.2006156002696413
+      ]
+    }
+  }
+}

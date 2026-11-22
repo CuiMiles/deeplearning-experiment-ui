@@ -111,6 +111,7 @@
 | [vtg-coalescing-20261122/decision.json](vtg-coalescing-20261122/decision.json) | 1 |
 | [vtg-coalescing-20261122/finished.json](vtg-coalescing-20261122/finished.json) | 1 |
 | [vtg-coalescing-20261122/prompt](vtg-coalescing-20261122/prompt) | 1 |
+| [vtg-coalescing-20261122/prompt_interaction_audit.json](vtg-coalescing-20261122/prompt_interaction_audit.json) | 1 |
 | [vtg-coalescing-20261122/protocol.json](vtg-coalescing-20261122/protocol.json) | 1 |
 | [vtg-coalescing-20261122/raw-records.jsonl.gz](vtg-coalescing-20261122/raw-records.jsonl.gz) | 1 |
 | [vtg-coalescing-20261122/report.md](vtg-coalescing-20261122/report.md) | 1 |
