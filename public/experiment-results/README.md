@@ -94,3 +94,4 @@
 | [vtg-count-exploration-20261122/eval](vtg-count-exploration-20261122/eval) | 1 |
 | [vtg-count-exploration-20261122/plain](vtg-count-exploration-20261122/plain) | 1 |
 | [vtg-count-exploration-20261122/protocol.json](vtg-count-exploration-20261122/protocol.json) | 1 |
+| [vtg-count-exploration-20261122/report.md](vtg-count-exploration-20261122/report.md) | 1 |
