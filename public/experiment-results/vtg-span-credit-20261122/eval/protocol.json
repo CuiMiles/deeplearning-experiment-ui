@@ -1,0 +1,20 @@
+{
+  "models": {
+    "whole": {
+      "base": "[local-path]/models/multimodal/model_reproduction/vtg/models/TimeLens2-4B-SFT",
+      "adapter": "[local-path]/vtg-span-credit-20261122/whole/ckpt-200"
+    },
+    "rescued": {
+      "base": "[local-path]/models/multimodal/model_reproduction/vtg/models/TimeLens2-4B-SFT",
+      "adapter": "[local-path]/vtg-span-credit-20261122/rescued/ckpt-200"
+    }
+  },
+  "inputs_sha256": "84486b97e33201ecfa659155f0be48df0e96caef84c5b443c464e4effa34c7b7",
+  "labels_sha256": "e187fd60d855bfa3067ccf5a1b0d42656881a096bacfbc9d0e05be954003dffd",
+  "code_sha256": {
+    "scripts/exh/e3_eval_worker.py": "5b422f628f060ace432341122976ab706d58e2f43eb5ca104ac4a0b90f9aa569",
+    "scripts/exh/e2_worker.py": "67201972cb0532807ec531aaec2eed3e2432da1defe066e99114c19fcf3c1b1c",
+    "scripts/exh/common.py": "3bf5cc8dfadd3b944eb21403a592c02c592ebfa183506529fa672add1154fe37",
+    "scripts/exh/pool_cache.py": "328dfc52ebfea9f217cf939e426eb8feaab227389a8bf7439cdb7b89ce9fc0e9"
+  }
+}
