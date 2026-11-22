@@ -108,6 +108,7 @@
 | [vtg-coalescing-20261122/audit.json](vtg-coalescing-20261122/audit.json) | 1 |
 | [vtg-coalescing-20261122/audit_per_query.json](vtg-coalescing-20261122/audit_per_query.json) | 1 |
 | [vtg-coalescing-20261122/audit_report.md](vtg-coalescing-20261122/audit_report.md) | 1 |
+| [vtg-coalescing-20261122/decision.json](vtg-coalescing-20261122/decision.json) | 1 |
 | [vtg-coalescing-20261122/protocol.json](vtg-coalescing-20261122/protocol.json) | 1 |
 | [vtg-coalescing-20261122/raw-records.jsonl.gz](vtg-coalescing-20261122/raw-records.jsonl.gz) | 1 |
 | [vtg-coalescing-20261122/report.md](vtg-coalescing-20261122/report.md) | 1 |
