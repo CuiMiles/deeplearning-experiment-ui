@@ -90,3 +90,7 @@
 | [vtg-night-20261122/unreached.json](vtg-night-20261122/unreached.json) | 1 |
 | [vtg-night-20261122/verify-records.jsonl.gz](vtg-night-20261122/verify-records.jsonl.gz) | 1 |
 | [vtg-night-20261122/verify_plan.json](vtg-night-20261122/verify_plan.json) | 1 |
+| [vtg-count-exploration-20261122/count](vtg-count-exploration-20261122/count) | 1 |
+| [vtg-count-exploration-20261122/eval](vtg-count-exploration-20261122/eval) | 1 |
+| [vtg-count-exploration-20261122/plain](vtg-count-exploration-20261122/plain) | 1 |
+| [vtg-count-exploration-20261122/protocol.json](vtg-count-exploration-20261122/protocol.json) | 1 |

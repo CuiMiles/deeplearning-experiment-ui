@@ -1,0 +1,58 @@
+{
+  "start": "A1 seed 1 step 100 including optimizer and scheduler",
+  "finish_step": 200,
+  "new_steps_per_arm": 100,
+  "data_sha256": "7610f38b120bdaf73760e78fb16ab0c908ecee15e425f8af7cde3fc9e006dd58",
+  "initial_adapter": "902ef6d563e165730853c93ed5cbadaf68b7e5d2d8c147b4b8c47ba74d4fcb50",
+  "initial_optimizer": "8f42a342a4cc9e5f14b6f936b6048a7b354c06321809b168290f521ec6c546f1",
+  "sampler_sha256": "ae6e4b7a5249f5fe91e6a144a934122e8ccff6edb0c21b87edb9f5f3910631ea",
+  "trainer_sha256": "7949e2c0311c67536ce74c47e20a2792ffacfc3ca1b29439cd7e48384ba5b64f",
+  "eval_questions": {
+    "omtg": 320,
+    "hold_multi": 301,
+    "hold_single": 150,
+    "charades": 300
+  },
+  "drawn_train_queries": 800,
+  "distinct_train_questions": 636,
+  "distinct_train_videos": 449,
+  "holdout_overlap": 0,
+  "omtg_source_overlap": 0,
+  "control": "In both new arms, for multi-event queries sample 4 plain completions. If they collectively miss a GT at IoU .5, generate 4 more and reinforce only successful, above-mean-reward rescue examples by positive imitation under the original prompt. Only the count arm gets the true number of intervals in that second sampling prompt. Other groups get ordinary centred A1 updates. All evaluation is plain.",
+  "budget": "Identical training examples, 8 completions, A1 reward, seed, model, resolution, optimizer and step count. Teacher count tokens slightly increase prompt length.",
+  "primary": "count minus plain on OMTG macro tF1@.5 and hold_multi replication at final checkpoint; no hints at evaluation; paired source-video bootstrap.",
+  "secondary": "Compare both against already evaluated ordinary A1 @200; inspect precision, predicted count, single-event union IoU and hard-event recall. Single seed exploratory.",
+  "gpus": {
+    "plain": [
+      0,
+      3
+    ],
+    "count": [
+      4,
+      5
+    ]
+  },
+  "train_command": [
+    "[local-path]/models/multimodal/model_reproduction/vtg/env/training-coverage/bin/python",
+    "-u",
+    "[local-path]/vtg-count-exploration-20261122/code/train.py",
+    "--arm",
+    "A1",
+    "--exploration",
+    "plain",
+    "--initial",
+    "[local-path]/models/multimodal/model_reproduction/vtg/exh_20261120/e3_rl/A1_s1/ckpt-100",
+    "--data",
+    "[local-path]/models/multimodal/model_reproduction/vtg/exh_20261120/e3_rl/data.json",
+    "--run",
+    "[local-path]/vtg-count-exploration-20261122/plain",
+    "--seed",
+    "1",
+    "--steps",
+    "200",
+    "--micro",
+    "1",
+    "--save-every",
+    "5"
+  ]
+}
