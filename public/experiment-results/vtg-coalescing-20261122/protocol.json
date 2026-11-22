@@ -1,0 +1,49 @@
+{
+  "inputs_sha256": "d620d9dac047d288609b52628d17ef93a2fa2c1c897347c65d0892b25b4a7293",
+  "labels_sha256": "e187fd60d855bfa3067ccf5a1b0d42656881a096bacfbc9d0e05be954003dffd",
+  "models": {
+    "A1_s1@200": {
+      "base": "[local-path]/models/multimodal/model_reproduction/vtg/models/TimeLens2-4B-SFT",
+      "adapter": "[local-path]/models/multimodal/model_reproduction/vtg/exh_20261120/e3_rl/A1_s1/ckpt-200",
+      "added_unix": 1795159092.3177204
+    },
+    "tl2_4b": {
+      "base": "[local-path]/models/multimodal/model_reproduction/vtg/models/TimeLens2-4B",
+      "adapter": null,
+      "added_unix": 1795114409.0739746
+    }
+  },
+  "weights": {
+    "[local-path]/models/multimodal/model_reproduction/vtg/models/TimeLens2-4B-SFT/verified_manifest.json": "e0434d7501ab2fadd98f7bce173f24e9d8ca5007ac39fa3964b6d1f424b0a797",
+    "[local-path]/models/multimodal/model_reproduction/vtg/exh_20261120/e3_rl/A1_s1/ckpt-200/adapter_model.safetensors": "031ef6a2da379ae081bdadedbfd195cd5da567a0a0b3b95449a3260bebc9051b",
+    "[local-path]/models/multimodal/model_reproduction/vtg/exh_20261120/e3_rl/A1_s1/ckpt-200/adapter_config.json": "cd9d2ef8095fd00cc37293ad2979513920a41547c431e01798a5de83461afa12",
+    "[local-path]/models/multimodal/model_reproduction/vtg/models/TimeLens2-4B/verified_manifest.json": "3e2cf4c2cf72b3f833f13ae30da52aa68f3bb0c4cf495f1ed0eb79016857c68a"
+  },
+  "code_sha256": {
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/exh/coalescing_run.py": "77a7ca0b00bae1a3a62013cf1a0963d0b199e279d84f64d2f6d08459b1c0c862",
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/exh/coalescing_audit.py": "68fbd4ba9c1348ce4c2bdacf7f4a9e3593c92f2d0bff8392844266c406bfdb23",
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/exh/e3_eval_worker.py": "5b422f628f060ace432341122976ab706d58e2f43eb5ca104ac4a0b90f9aa569",
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/exh/e2_worker.py": "67201972cb0532807ec531aaec2eed3e2432da1defe066e99114c19fcf3c1b1c",
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/exh/common.py": "3bf5cc8dfadd3b944eb21403a592c02c592ebfa183506529fa672add1154fe37",
+    "[local-path]/models/multimodal/model_reproduction/vtg/scripts/exh/gpu_supervisor.py": "56fdb4c13d483b3888cdb8d2488523d58e7df806cc2d16d3e434b29c76b8605d"
+  },
+  "sets": {
+    "omtg": 320,
+    "hold_multi": 301,
+    "hold_single": 150,
+    "charades": 300
+  },
+  "queries": 1071,
+  "video_paths": 784,
+  "sources": 776,
+  "prompt": "If the action stops and later starts again, list the occurrences separately. If the action continues, keep it in a single interval.\nInvented examples, unrelated to this video. Use only evidence in the supplied video for your answer.\n- A dog barks, is silent for a while, then barks again: [[4, 8], [18, 22]].\n- A chef chops onions continuously from 10 to 24 seconds: [[10, 24]].\n",
+  "examples_control": "On A1, also replace only the continuous chopping example with the same chef stopping and restarting: A chef chops onions from 10 to 16 seconds, pauses, then chops again from 20 to 24 seconds: [[10, 16], [20, 24]].",
+  "baseline": "Frozen E3 same query, pooled frames, timestamps, pixels, decoding, weights; compare both official 4B and A1@200.",
+  "primary": "A1 balanced prompt vs plain, all 320 OMTG. Report strict original-pair splits with an additional event hit; replicate on 301 hold_multi. Official model evaluated with identical design.",
+  "singles": "Each of hold_single 150 and Charades 300: original count=1 to new count>=2, paired tF1 and union IoU. Both metrics and both sets must lose at most 1 pp on A1 before launching a revisit.",
+  "trigger": "Balanced 32-unit A1 predicts exactly one span longer than 15s, max timestamp gap including span edges >2s, >=32 unused distinct two-frame units fully inside (both frame times), U>=64. No GT used to trigger.",
+  "revisit": "All queries one pass uniformly sampling up to 64 two-frame units with identical balanced prompt. Eligible queries additionally get two 32+32 policies: identical follow-up prompt with original predicted interval, either 32 local unused units or 32 unused global units. Only accept 2+ disjoint clipped intervals. Noneligible keep first answer. Separately compare full policies and trigger-only sets; record calls, model seconds and visual tokens.",
+  "second_stage_gate": "Both single-set harm checks above and residual A1 OMTG coalescence after balanced prompt. Stage 2 uses frozen gate and trigger.",
+  "strict_resolution": "At least one formerly enclosed adjacent pair now has two separate overlapping predictions, the number of hits in this pair increases and total one-to-one IoU>=0.5 hits in the query increases. Other merged pairs may remain.",
+  "historical": "The earlier 100 examples used a different visual/prompt protocol; never use it as the cached baseline for this experiment."
+}
