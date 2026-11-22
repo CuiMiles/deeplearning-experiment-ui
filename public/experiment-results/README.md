@@ -101,5 +101,5 @@
 | [vtg-span-credit-20261122/eval](vtg-span-credit-20261122/eval) | 1 |
 | [vtg-span-credit-20261122/protocol.json](vtg-span-credit-20261122/protocol.json) | 1 |
 | [vtg-span-credit-20261122/report.md](vtg-span-credit-20261122/report.md) | 1 |
-| [vtg-span-credit-20261122/rescued](vtg-span-credit-20261122/rescued) | 1 |
+| [vtg-span-credit-20261122/rescued](vtg-span-credit-20261122/rescued) | 2 |
 | [vtg-span-credit-20261122/whole](vtg-span-credit-20261122/whole) | 2 |
