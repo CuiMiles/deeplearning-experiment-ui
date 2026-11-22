@@ -1,0 +1,133 @@
+{
+  "previous_count": {
+    "answers": 64,
+    "spans": 127,
+    "new": 66,
+    "known": 25,
+    "unmatched": 36
+  },
+  "previous_unique_queries": 35,
+  "previous_unique_videos": 34,
+  "audited_examples": [
+    {
+      "qid": "GlWVbu-9Mys#3",
+      "query": "Demi Lovato poses at the TIME 100 event in a sparkly outfit",
+      "gt": [
+        [
+          0.0,
+          4.0
+        ],
+        [
+          18.0,
+          22.0
+        ],
+        [
+          91.0,
+          95.0
+        ],
+        [
+          109.0,
+          113.0
+        ]
+      ],
+      "response": [
+        [
+          15.0,
+          25.0
+        ],
+        [
+          90.0,
+          97.0
+        ]
+      ],
+      "new_indices": [
+        1
+      ],
+      "unmatched_indices": [
+        0
+      ]
+    },
+    {
+      "qid": "Ci748KD8J9U#0",
+      "query": "Manga-style poster",
+      "gt": [
+        [
+          66.0,
+          111.0
+        ],
+        [
+          113.0,
+          126.0
+        ]
+      ],
+      "response": [
+        [
+          10.0,
+          50.0
+        ],
+        [
+          72.0,
+          111.0
+        ]
+      ],
+      "new_indices": [
+        1
+      ],
+      "unmatched_indices": [
+        0
+      ]
+    },
+    {
+      "qid": "AGr-hWH8Hr4#0",
+      "query": "A close-up shows a man with a beard smiling",
+      "gt": [
+        [
+          66.0,
+          70.0
+        ],
+        [
+          72.0,
+          74.0
+        ]
+      ],
+      "response": [
+        [
+          47.0,
+          49.0
+        ],
+        [
+          66.0,
+          69.0
+        ]
+      ],
+      "new_indices": [
+        1
+      ],
+      "unmatched_indices": [
+        0
+      ]
+    }
+  ],
+  "bank_examples": 235,
+  "bank_queries": 166,
+  "bank_videos": 156,
+  "sources": {
+    "released_sft": 181,
+    "previous_count": 54
+  },
+  "avg_digits_all": 13.76595744680851,
+  "avg_digits_rescue": 6.297872340425532,
+  "released_sha256": "6c49ed93dd661cc1c1ace62eb4b8955548ac8d9454ab03b57bfd4e7f9c56c8f9",
+  "donor_sha256": "11c7b5a59ac9a1adf547cfa1db90e5fe641a5f6d3eaafb6091d3dd2ad8d77abd",
+  "prior_update_diagnostic": {
+    "plain": {
+      "total_draws": 6400,
+      "rescue_share_positive_sequence_coefficients": 0.034378234685683816
+    },
+    "count": {
+      "total_draws": 6400,
+      "rescue_share_positive_sequence_coefficients": 0.0778393333354799
+    }
+  },
+  "coefficient_definition": "Sum of positive per-answer coefficients after per-step token denominator; excludes completion length and parameter gradients. Not a gradient share."
+}
