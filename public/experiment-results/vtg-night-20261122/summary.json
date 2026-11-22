@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-22 08:40:52 CST",
-  "complete": false,
+  "updated": "2026-11-22 08:50:53 CST",
+  "complete": true,
   "audit": {
     "width": {
       "omtg/tl2_4b/64": {
@@ -170,28 +170,28 @@
     "variance_definition": "Population variance of eight official twass1+tiou+parse_penalty rewards > 1e-12. Frame coverage is at least one original selected frame inside the inclusive GT."
   },
   "high": {
-    "total_records": 638,
-    "paired": 318,
+    "total_records": 640,
+    "paired": 320,
     "expected_pairs": 320,
-    "official": 46.977131007918054,
-    "A1": 56.30672191299674,
+    "official": 47.09217778527241,
+    "A1": 56.37147156770718,
     "difference": {
-      "n": 318,
-      "source_count": 280,
-      "mean_pp": 9.329590905078687,
+      "n": 320,
+      "source_count": 281,
+      "mean_pp": 9.279293782434767,
       "ci95_pp": [
-        5.867057096335079,
-        12.75563417890686
+        5.967251268189114,
+        12.676055484859745
       ]
     },
-    "low_budget_same_queries_pp": 15.494969510610026,
+    "low_budget_same_queries_pp": 15.387709284502048,
     "difference_in_advantage": {
-      "n": 318,
-      "source_count": 280,
-      "mean_pp": -6.165378605531338,
+      "n": 320,
+      "source_count": 281,
+      "mean_pp": -6.10841550206728,
       "ci95_pp": [
-        -11.063650675756335,
-        -1.4809950536272867
+        -10.757722071325547,
+        -1.4102142017810668
       ]
     }
   },
