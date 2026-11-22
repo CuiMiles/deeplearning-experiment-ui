@@ -1,4 +1,4 @@
 {
-  "stage": "waiting_for_previous",
-  "previous": "[local-path]/vtg-span-credit-20261122/finished.json"
+  "stage": "prompt",
+  "started": 1795350004.5654123
 }
