@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22 08:20:49 CST",
+  "updated": "2026-11-22 08:30:50 CST",
   "complete": false,
   "audit": {
     "width": {
@@ -170,28 +170,28 @@
     "variance_definition": "Population variance of eight official twass1+tiou+parse_penalty rewards > 1e-12. Frame coverage is at least one original selected frame inside the inclusive GT."
   },
   "high": {
-    "total_records": 621,
-    "paired": 307,
+    "total_records": 635,
+    "paired": 315,
     "expected_pairs": 320,
-    "official": 47.1666326773502,
-    "A1": 56.60378816012496,
+    "official": 47.0118338429141,
+    "A1": 56.502840352984464,
     "difference": {
-      "n": 307,
-      "source_count": 271,
-      "mean_pp": 9.43715548277475,
+      "n": 315,
+      "source_count": 278,
+      "mean_pp": 9.491006510070367,
       "ci95_pp": [
-        6.0491219558181335,
-        13.07775158726498
+        6.0476044202604315,
+        13.001748442737176
       ]
     },
-    "low_budget_same_queries_pp": 15.898155171685087,
+    "low_budget_same_queries_pp": 15.557884564150228,
     "difference_in_advantage": {
-      "n": 307,
-      "source_count": 271,
-      "mean_pp": -6.460999688910337,
+      "n": 315,
+      "source_count": 278,
+      "mean_pp": -6.06687805407986,
       "ci95_pp": [
-        -11.199452333148695,
-        -1.9350413125833434
+        -10.860582571172877,
+        -1.4550333010973726
       ]
     }
   },
