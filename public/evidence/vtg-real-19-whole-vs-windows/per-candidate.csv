@@ -1,0 +1,315 @@
+题目ID,原问题,候选时段,标注是否匹配,看整片回答,看时段回答
+route/v_a2JBhm22-M4/query_2,A full-screen graphic slide displaying at least three lines of centered text with at least one decimal scoring value.,"[2.8, 5.9]",0,yes,no
+route/v_a2JBhm22-M4/query_2,A full-screen graphic slide displaying at least three lines of centered text with at least one decimal scoring value.,"[8.9, 15.0]",0,yes,no
+route/v_a2JBhm22-M4/query_2,A full-screen graphic slide displaying at least three lines of centered text with at least one decimal scoring value.,"[18.1, 49.6]",0,no,no
+route/v_a2JBhm22-M4/query_2,A full-screen graphic slide displaying at least three lines of centered text with at least one decimal scoring value.,"[50.7, 55.7]",1,yes,yes
+route/v_a2JBhm22-M4/query_2,A full-screen graphic slide displaying at least three lines of centered text with at least one decimal scoring value.,"[59.8, 66.0]",1,yes,yes
+route/v_a2JBhm22-M4/query_2,A full-screen graphic slide displaying at least three lines of centered text with at least one decimal scoring value.,"[71.0, 74.8]",0,no,no
+route/T9ptpjvuIP8_660.0_810.0/query_2,Both the man and the woman appear together talking to the camera in a public cruise ship lounge or hallway.,"[0.0, 28.8]",1,yes,yes
+route/T9ptpjvuIP8_660.0_810.0/query_2,Both the man and the woman appear together talking to the camera in a public cruise ship lounge or hallway.,"[29.8, 53.8]",0,no,no
+route/T9ptpjvuIP8_660.0_810.0/query_2,Both the man and the woman appear together talking to the camera in a public cruise ship lounge or hallway.,"[57.2, 71.8]",0,no,yes
+route/T9ptpjvuIP8_660.0_810.0/query_2,Both the man and the woman appear together talking to the camera in a public cruise ship lounge or hallway.,"[73.0, 77.6]",0,no,no
+route/T9ptpjvuIP8_660.0_810.0/query_2,Both the man and the woman appear together talking to the camera in a public cruise ship lounge or hallway.,"[78.6, 83.8]",0,no,no
+route/T9ptpjvuIP8_660.0_810.0/query_2,Both the man and the woman appear together talking to the camera in a public cruise ship lounge or hallway.,"[87.2, 90.8]",0,no,no
+route/T9ptpjvuIP8_660.0_810.0/query_2,Both the man and the woman appear together talking to the camera in a public cruise ship lounge or hallway.,"[101.2, 110.4]",0,no,no
+route/T9ptpjvuIP8_660.0_810.0/query_2,Both the man and the woman appear together talking to the camera in a public cruise ship lounge or hallway.,"[111.5, 132.0]",1,yes,yes
+route/T9ptpjvuIP8_660.0_810.0/query_2,Both the man and the woman appear together talking to the camera in a public cruise ship lounge or hallway.,"[137.3, 141.8]",0,no,no
+route/T9ptpjvuIP8_660.0_810.0/query_2,Both the man and the woman appear together talking to the camera in a public cruise ship lounge or hallway.,"[142.8, 147.8]",0,no,yes
+route/wk2CeU_DcBo_210.0_360.0/query_1,A person speaks to the camera outdoors in front of a brown wooden door.,"[0.0, 17.5]",1,yes,yes
+route/wk2CeU_DcBo_210.0_360.0/query_1,A person speaks to the camera outdoors in front of a brown wooden door.,"[21.0, 56.5]",1,yes,yes
+route/wk2CeU_DcBo_210.0_360.0/query_1,A person speaks to the camera outdoors in front of a brown wooden door.,"[65.5, 68.5]",0,no,no
+route/wk2CeU_DcBo_210.0_360.0/query_1,A person speaks to the camera outdoors in front of a brown wooden door.,"[74.5, 78.5]",0,no,no
+route/wk2CeU_DcBo_210.0_360.0/query_1,A person speaks to the camera outdoors in front of a brown wooden door.,"[93.5, 96.5]",0,no,no
+route/wk2CeU_DcBo_210.0_360.0/query_1,A person speaks to the camera outdoors in front of a brown wooden door.,"[104.5, 121.0]",0,no,no
+route/wk2CeU_DcBo_210.0_360.0/query_1,A person speaks to the camera outdoors in front of a brown wooden door.,"[122.5, 134.5]",0,no,no
+route/wk2CeU_DcBo_210.0_360.0/query_1,A person speaks to the camera outdoors in front of a brown wooden door.,"[139.0, 149.7]",0,no,no
+route/lnlwkeOq25k_60.0_210.0/query_1,A man speaking on camera outdoors during the daytime,"[33.9, 36.9]",0,no,no
+route/lnlwkeOq25k_60.0_210.0/query_1,A man speaking on camera outdoors during the daytime,"[44.9, 47.9]",1,no,yes
+route/lnlwkeOq25k_60.0_210.0/query_1,A man speaking on camera outdoors during the daytime,"[56.9, 59.9]",0,no,no
+route/lnlwkeOq25k_60.0_210.0/query_1,A man speaking on camera outdoors during the daytime,"[69.0, 75.0]",0,no,no
+route/lnlwkeOq25k_60.0_210.0/query_1,A man speaking on camera outdoors during the daytime,"[86.0, 89.0]",0,no,no
+route/lnlwkeOq25k_60.0_210.0/query_1,A man speaking on camera outdoors during the daytime,"[101.1, 106.1]",1,yes,yes
+route/lnlwkeOq25k_60.0_210.0/query_1,A man speaking on camera outdoors during the daytime,"[111.1, 114.1]",0,no,no
+route/lnlwkeOq25k_60.0_210.0/query_1,A man speaking on camera outdoors during the daytime,"[124.1, 135.2]",0,no,no
+route/8ghB2QPRORg_210.0_360.0/query_1,The white fluffy dog wearing a yellow collar is clearly shown indoors.,"[0.0, 23.8]",0,no,no
+route/8ghB2QPRORg_210.0_360.0/query_1,The white fluffy dog wearing a yellow collar is clearly shown indoors.,"[29.0, 39.0]",0,no,no
+route/8ghB2QPRORg_210.0_360.0/query_1,The white fluffy dog wearing a yellow collar is clearly shown indoors.,"[40.2, 57.5]",1,yes,yes
+route/8ghB2QPRORg_210.0_360.0/query_1,The white fluffy dog wearing a yellow collar is clearly shown indoors.,"[58.5, 71.8]",0,no,no
+route/8ghB2QPRORg_210.0_360.0/query_1,The white fluffy dog wearing a yellow collar is clearly shown indoors.,"[73.2, 102.3]",0,no,no
+route/8ghB2QPRORg_210.0_360.0/query_1,The white fluffy dog wearing a yellow collar is clearly shown indoors.,"[103.5, 112.9]",1,yes,yes
+route/8ghB2QPRORg_210.0_360.0/query_1,The white fluffy dog wearing a yellow collar is clearly shown indoors.,"[114.0, 131.8]",0,no,no
+route/8ghB2QPRORg_210.0_360.0/query_1,The white fluffy dog wearing a yellow collar is clearly shown indoors.,"[136.5, 149.8]",0,no,no
+route/YcHW8Yj5HBc_210.0_360.0/query_1,A brunette woman wearing an olive-green patterned sports bra working out in the gym.,"[0.3, 13.5]",0,no,no
+route/YcHW8Yj5HBc_210.0_360.0/query_1,A brunette woman wearing an olive-green patterned sports bra working out in the gym.,"[41.0, 45.8]",1,yes,yes
+route/YcHW8Yj5HBc_210.0_360.0/query_1,A brunette woman wearing an olive-green patterned sports bra working out in the gym.,"[58.0, 62.9]",0,yes,no
+route/YcHW8Yj5HBc_210.0_360.0/query_1,A brunette woman wearing an olive-green patterned sports bra working out in the gym.,"[74.0, 77.0]",1,yes,yes
+route/8xJSEwLPhN8_360.0_510.0/query_1,The blonde woman is clearly visible standing on rocky coastal cliffs by the sea in daylight.,"[0.0, 14.8]",1,yes,yes
+route/8xJSEwLPhN8_360.0_510.0/query_1,The blonde woman is clearly visible standing on rocky coastal cliffs by the sea in daylight.,"[43.0, 46.8]",0,no,no
+route/8xJSEwLPhN8_360.0_510.0/query_1,The blonde woman is clearly visible standing on rocky coastal cliffs by the sea in daylight.,"[54.0, 73.8]",1,yes,yes
+route/8xJSEwLPhN8_360.0_510.0/query_1,The blonde woman is clearly visible standing on rocky coastal cliffs by the sea in daylight.,"[78.0, 111.0]",0,yes,no
+route/8xJSEwLPhN8_360.0_510.0/query_1,The blonde woman is clearly visible standing on rocky coastal cliffs by the sea in daylight.,"[114.0, 121.0]",0,yes,no
+route/8xJSEwLPhN8_360.0_510.0/query_1,The blonde woman is clearly visible standing on rocky coastal cliffs by the sea in daylight.,"[125.2, 130.2]",0,no,no
+route/8xJSEwLPhN8_360.0_510.0/query_1,The blonde woman is clearly visible standing on rocky coastal cliffs by the sea in daylight.,"[134.2, 142.2]",0,yes,no
+route/U4tUPpmv1qo_210.0_360.0/query_2,A woman in a floral top and reflective sunglasses speaks to the camera in a close-up selfie shot without wearing a hat.,"[8.8, 14.8]",0,no,no
+route/U4tUPpmv1qo_210.0_360.0/query_2,A woman in a floral top and reflective sunglasses speaks to the camera in a close-up selfie shot without wearing a hat.,"[35.0, 47.0]",0,no,no
+route/U4tUPpmv1qo_210.0_360.0/query_2,A woman in a floral top and reflective sunglasses speaks to the camera in a close-up selfie shot without wearing a hat.,"[55.0, 70.0]",0,no,no
+route/U4tUPpmv1qo_210.0_360.0/query_2,A woman in a floral top and reflective sunglasses speaks to the camera in a close-up selfie shot without wearing a hat.,"[81.0, 85.0]",1,yes,yes
+route/U4tUPpmv1qo_210.0_360.0/query_2,A woman in a floral top and reflective sunglasses speaks to the camera in a close-up selfie shot without wearing a hat.,"[88.0, 101.0]",0,no,no
+route/U4tUPpmv1qo_210.0_360.0/query_2,A woman in a floral top and reflective sunglasses speaks to the camera in a close-up selfie shot without wearing a hat.,"[142.2, 148.2]",1,yes,yes
+route/v_C03QJbrKzaw/query_2,A close-up shot of the hedge trimmer's metal blade against green foliage.,"[12.9, 19.0]",1,yes,yes
+route/v_C03QJbrKzaw/query_2,A close-up shot of the hedge trimmer's metal blade against green foliage.,"[42.2, 47.3]",0,yes,no
+route/v_C03QJbrKzaw/query_2,A close-up shot of the hedge trimmer's metal blade against green foliage.,"[53.4, 57.4]",1,yes,yes
+route/v_C03QJbrKzaw/query_2,A close-up shot of the hedge trimmer's metal blade against green foliage.,"[72.6, 83.7]",0,no,yes
+route/0lbehz52PFU_210.0_360.0/query_2,Motorized snow-removal equipment clears snow during the daytime,"[2.7, 8.8]",0,no,no
+route/0lbehz52PFU_210.0_360.0/query_2,Motorized snow-removal equipment clears snow during the daytime,"[42.9, 46.9]",0,no,no
+route/0lbehz52PFU_210.0_360.0/query_2,Motorized snow-removal equipment clears snow during the daytime,"[76.0, 83.9]",1,yes,yes
+route/0lbehz52PFU_210.0_360.0/query_2,Motorized snow-removal equipment clears snow during the daytime,"[85.1, 94.0]",1,yes,yes
+route/0lbehz52PFU_210.0_360.0/query_2,Motorized snow-removal equipment clears snow during the daytime,"[115.1, 119.1]",0,no,no
+route/0lbehz52PFU_210.0_360.0/query_2,Motorized snow-removal equipment clears snow during the daytime,"[132.2, 138.2]",0,no,no
+route/YcHW8Yj5HBc_210.0_360.0/query_2,A woman performing dumbbell lateral raises in the gym.,"[0.3, 13.5]",0,no,no
+route/YcHW8Yj5HBc_210.0_360.0/query_2,A woman performing dumbbell lateral raises in the gym.,"[41.0, 45.8]",0,yes,no
+route/YcHW8Yj5HBc_210.0_360.0/query_2,A woman performing dumbbell lateral raises in the gym.,"[58.0, 62.9]",1,yes,yes
+route/YcHW8Yj5HBc_210.0_360.0/query_2,A woman performing dumbbell lateral raises in the gym.,"[74.0, 77.0]",1,yes,yes
+route/v_yHaTlDD-qHA/query_1,Shots showing a group of Indian cricket players in light blue jerseys gathered together on the field in a waist-up medium close-up.,"[2.8, 4.8]",0,yes,no
+route/v_yHaTlDD-qHA/query_1,Shots showing a group of Indian cricket players in light blue jerseys gathered together on the field in a waist-up medium close-up.,"[8.9, 10.9]",0,yes,no
+route/v_yHaTlDD-qHA/query_1,Shots showing a group of Indian cricket players in light blue jerseys gathered together on the field in a waist-up medium close-up.,"[13.9, 17.0]",1,yes,yes
+route/v_yHaTlDD-qHA/query_1,Shots showing a group of Indian cricket players in light blue jerseys gathered together on the field in a waist-up medium close-up.,"[21.0, 24.1]",1,yes,yes
+route/v_yHaTlDD-qHA/query_1,Shots showing a group of Indian cricket players in light blue jerseys gathered together on the field in a waist-up medium close-up.,"[26.1, 31.2]",0,yes,no
+route/v_yHaTlDD-qHA/query_1,Shots showing a group of Indian cricket players in light blue jerseys gathered together on the field in a waist-up medium close-up.,"[32.2, 35.2]",0,no,no
+route/v_yHaTlDD-qHA/query_1,Shots showing a group of Indian cricket players in light blue jerseys gathered together on the field in a waist-up medium close-up.,"[41.3, 46.4]",0,no,no
+route/v_yHaTlDD-qHA/query_1,Shots showing a group of Indian cricket players in light blue jerseys gathered together on the field in a waist-up medium close-up.,"[54.5, 60.6]",0,yes,yes
+route/ZxHh_2YdmT4_60.0_210.0/query_1,The blond man and the woman wearing glasses appearing together,"[65.5, 70.5]",0,yes,yes
+route/ZxHh_2YdmT4_60.0_210.0/query_1,The blond man and the woman wearing glasses appearing together,"[71.5, 77.5]",1,yes,yes
+route/ZxHh_2YdmT4_60.0_210.0/query_1,The blond man and the woman wearing glasses appearing together,"[78.5, 84.5]",0,yes,no
+route/ZxHh_2YdmT4_60.0_210.0/query_1,The blond man and the woman wearing glasses appearing together,"[85.5, 88.5]",0,yes,no
+route/ZxHh_2YdmT4_60.0_210.0/query_1,The blond man and the woman wearing glasses appearing together,"[89.5, 95.5]",1,yes,yes
+route/ZxHh_2YdmT4_60.0_210.0/query_1,The blond man and the woman wearing glasses appearing together,"[142.5, 150.0]",0,yes,no
+route/v9bV5ERmcCk_60.0_210.0/query_1,A man is shown wearing dark sunglasses over his eyes.,"[0.0, 50.9]",1,yes,yes
+route/v9bV5ERmcCk_60.0_210.0/query_1,A man is shown wearing dark sunglasses over his eyes.,"[104.1, 112.1]",1,yes,yes
+route/v9bV5ERmcCk_60.0_210.0/query_1,A man is shown wearing dark sunglasses over his eyes.,"[115.5, 120.1]",1,yes,yes
+route/v9bV5ERmcCk_60.0_210.0/query_1,A man is shown wearing dark sunglasses over his eyes.,"[127.2, 131.1]",0,yes,no
+route/v9bV5ERmcCk_60.0_210.0/query_1,A man is shown wearing dark sunglasses over his eyes.,"[132.2, 137.2]",0,no,no
+route/v9bV5ERmcCk_60.0_210.0/query_1,A man is shown wearing dark sunglasses over his eyes.,"[138.3, 146.6]",0,no,no
+route/v9bV5ERmcCk_60.0_210.0/query_1,A man is shown wearing dark sunglasses over his eyes.,"[147.7, 150.0]",0,no,no
+route/wk2CeU_DcBo_210.0_360.0/query_2,A tattooed man wearing a white sleeveless tank top speaks to the camera outdoors.,"[0.0, 17.5]",0,no,no
+route/wk2CeU_DcBo_210.0_360.0/query_2,A tattooed man wearing a white sleeveless tank top speaks to the camera outdoors.,"[21.0, 56.5]",1,yes,yes
+route/wk2CeU_DcBo_210.0_360.0/query_2,A tattooed man wearing a white sleeveless tank top speaks to the camera outdoors.,"[65.5, 68.5]",0,no,no
+route/wk2CeU_DcBo_210.0_360.0/query_2,A tattooed man wearing a white sleeveless tank top speaks to the camera outdoors.,"[74.5, 78.5]",0,no,no
+route/wk2CeU_DcBo_210.0_360.0/query_2,A tattooed man wearing a white sleeveless tank top speaks to the camera outdoors.,"[93.5, 96.5]",0,no,no
+route/wk2CeU_DcBo_210.0_360.0/query_2,A tattooed man wearing a white sleeveless tank top speaks to the camera outdoors.,"[104.5, 121.0]",1,yes,yes
+route/wk2CeU_DcBo_210.0_360.0/query_2,A tattooed man wearing a white sleeveless tank top speaks to the camera outdoors.,"[122.5, 134.5]",0,no,no
+route/wk2CeU_DcBo_210.0_360.0/query_2,A tattooed man wearing a white sleeveless tank top speaks to the camera outdoors.,"[139.0, 149.7]",0,no,no
+route/Upou7XP_KoM_60.0_210.0/query_1,A trainer in a dark shirt handles or tends to a player's legs,"[21.5, 36.5]",0,no,no
+route/Upou7XP_KoM_60.0_210.0/query_1,A trainer in a dark shirt handles or tends to a player's legs,"[53.4, 57.4]",1,yes,yes
+route/Upou7XP_KoM_60.0_210.0/query_1,A trainer in a dark shirt handles or tends to a player's legs,"[58.5, 63.4]",1,yes,yes
+route/Upou7XP_KoM_60.0_210.0/query_1,A trainer in a dark shirt handles or tends to a player's legs,"[64.5, 73.5]",0,yes,no
+route/Upou7XP_KoM_60.0_210.0/query_1,A trainer in a dark shirt handles or tends to a player's legs,"[81.5, 86.5]",0,yes,no
+route/Upou7XP_KoM_60.0_210.0/query_1,A trainer in a dark shirt handles or tends to a player's legs,"[98.8, 114.6]",0,no,no
+route/v_yHaTlDD-qHA/query_2,Shots showing a group of Indian cricket players in light blue jerseys gathered together on the field while hugging or celebrating with teammates.,"[2.8, 4.8]",0,no,no
+route/v_yHaTlDD-qHA/query_2,Shots showing a group of Indian cricket players in light blue jerseys gathered together on the field while hugging or celebrating with teammates.,"[8.9, 10.9]",0,yes,yes
+route/v_yHaTlDD-qHA/query_2,Shots showing a group of Indian cricket players in light blue jerseys gathered together on the field while hugging or celebrating with teammates.,"[13.9, 17.0]",1,yes,yes
+route/v_yHaTlDD-qHA/query_2,Shots showing a group of Indian cricket players in light blue jerseys gathered together on the field while hugging or celebrating with teammates.,"[21.0, 24.1]",0,yes,yes
+route/v_yHaTlDD-qHA/query_2,Shots showing a group of Indian cricket players in light blue jerseys gathered together on the field while hugging or celebrating with teammates.,"[26.1, 31.2]",0,no,no
+route/v_yHaTlDD-qHA/query_2,Shots showing a group of Indian cricket players in light blue jerseys gathered together on the field while hugging or celebrating with teammates.,"[32.2, 35.2]",0,no,no
+route/v_yHaTlDD-qHA/query_2,Shots showing a group of Indian cricket players in light blue jerseys gathered together on the field while hugging or celebrating with teammates.,"[41.3, 46.4]",0,no,no
+route/v_yHaTlDD-qHA/query_2,Shots showing a group of Indian cricket players in light blue jerseys gathered together on the field while hugging or celebrating with teammates.,"[54.5, 60.6]",1,yes,yes
+route/ZxHh_2YdmT4_60.0_210.0/query_2,The blond man wearing a light blue 'KOH TAO' sleeveless tank top,"[65.5, 70.5]",0,yes,yes
+route/ZxHh_2YdmT4_60.0_210.0/query_2,The blond man wearing a light blue 'KOH TAO' sleeveless tank top,"[71.5, 77.5]",0,yes,no
+route/ZxHh_2YdmT4_60.0_210.0/query_2,The blond man wearing a light blue 'KOH TAO' sleeveless tank top,"[78.5, 84.5]",1,yes,yes
+route/ZxHh_2YdmT4_60.0_210.0/query_2,The blond man wearing a light blue 'KOH TAO' sleeveless tank top,"[85.5, 88.5]",0,yes,yes
+route/ZxHh_2YdmT4_60.0_210.0/query_2,The blond man wearing a light blue 'KOH TAO' sleeveless tank top,"[89.5, 95.5]",1,yes,yes
+route/ZxHh_2YdmT4_60.0_210.0/query_2,The blond man wearing a light blue 'KOH TAO' sleeveless tank top,"[142.5, 150.0]",0,yes,no
+route/NzyjaMWxNrU_210.0_360.0/query_1,A solo speaker wearing eyeglasses talks directly to the camera indoors.,"[8.8, 28.8]",0,no,no
+route/NzyjaMWxNrU_210.0_360.0/query_1,A solo speaker wearing eyeglasses talks directly to the camera indoors.,"[43.9, 69.0]",0,no,no
+route/NzyjaMWxNrU_210.0_360.0/query_1,A solo speaker wearing eyeglasses talks directly to the camera indoors.,"[79.0, 83.0]",0,no,no
+route/NzyjaMWxNrU_210.0_360.0/query_1,A solo speaker wearing eyeglasses talks directly to the camera indoors.,"[91.0, 102.1]",1,yes,yes
+route/NzyjaMWxNrU_210.0_360.0/query_1,A solo speaker wearing eyeglasses talks directly to the camera indoors.,"[110.1, 121.1]",1,yes,yes
+route/NzyjaMWxNrU_210.0_360.0/query_1,A solo speaker wearing eyeglasses talks directly to the camera indoors.,"[130.2, 137.2]",0,yes,no
+route/NzyjaMWxNrU_210.0_360.0/query_1,A solo speaker wearing eyeglasses talks directly to the camera indoors.,"[146.2, 150.0]",0,yes,no
+route/_e8_yuedv6w_60.0_210.0/query_2,The person lifts and holds up a clear plastic bag containing multiple round produce items toward the camera.,"[65.0, 69.0]",0,yes,no
+route/_e8_yuedv6w_60.0_210.0/query_2,The person lifts and holds up a clear plastic bag containing multiple round produce items toward the camera.,"[70.0, 74.0]",0,yes,no
+route/_e8_yuedv6w_60.0_210.0/query_2,The person lifts and holds up a clear plastic bag containing multiple round produce items toward the camera.,"[81.0, 92.0]",1,yes,yes
+route/_e8_yuedv6w_60.0_210.0/query_2,The person lifts and holds up a clear plastic bag containing multiple round produce items toward the camera.,"[98.0, 106.0]",0,yes,no
+route/_e8_yuedv6w_60.0_210.0/query_2,The person lifts and holds up a clear plastic bag containing multiple round produce items toward the camera.,"[110.1, 115.1]",0,no,no
+route/_e8_yuedv6w_60.0_210.0/query_2,The person lifts and holds up a clear plastic bag containing multiple round produce items toward the camera.,"[120.1, 122.1]",1,yes,yes
+route/_e8_yuedv6w_60.0_210.0/query_2,The person lifts and holds up a clear plastic bag containing multiple round produce items toward the camera.,"[124.2, 126.2]",1,yes,yes
+route/_e8_yuedv6w_60.0_210.0/query_2,The person lifts and holds up a clear plastic bag containing multiple round produce items toward the camera.,"[127.2, 129.2]",0,yes,yes
+route/_e8_yuedv6w_60.0_210.0/query_2,The person lifts and holds up a clear plastic bag containing multiple round produce items toward the camera.,"[133.2, 136.2]",0,yes,no
+route/_e8_yuedv6w_60.0_210.0/query_2,The person lifts and holds up a clear plastic bag containing multiple round produce items toward the camera.,"[146.2, 149.2]",0,no,no
+route/xRClGm0DmzU_660.0_810.0/query_2,Focused camera views of holiday market booths displaying merchandise arranged in rows on shelves or in cubbies.,"[38.0, 46.0]",0,yes,yes
+route/xRClGm0DmzU_660.0_810.0/query_2,Focused camera views of holiday market booths displaying merchandise arranged in rows on shelves or in cubbies.,"[50.0, 59.0]",0,no,no
+route/xRClGm0DmzU_660.0_810.0/query_2,Focused camera views of holiday market booths displaying merchandise arranged in rows on shelves or in cubbies.,"[75.0, 94.0]",1,yes,yes
+route/xRClGm0DmzU_660.0_810.0/query_2,Focused camera views of holiday market booths displaying merchandise arranged in rows on shelves or in cubbies.,"[95.0, 104.0]",1,yes,yes
+route/xRClGm0DmzU_660.0_810.0/query_2,Focused camera views of holiday market booths displaying merchandise arranged in rows on shelves or in cubbies.,"[124.0, 141.0]",0,no,no
+route/ssopBo-qfso_210.0_360.0/query_2,An outdoor cafe with large red umbrellas,"[34.0, 36.7]",0,yes,no
+route/ssopBo-qfso_210.0_360.0/query_2,An outdoor cafe with large red umbrellas,"[46.2, 48.4]",1,yes,yes
+route/ssopBo-qfso_210.0_360.0/query_2,An outdoor cafe with large red umbrellas,"[49.4, 51.6]",1,yes,yes
+route/ssopBo-qfso_210.0_360.0/query_2,An outdoor cafe with large red umbrellas,"[118.4, 120.8]",0,no,no
+route/kY4Jm68gg38_60.0_210.0/query_2,A baguette sandwich is clearly displayed resting on a white plate.,"[3.8, 7.8]",1,yes,yes
+route/kY4Jm68gg38_60.0_210.0/query_2,A baguette sandwich is clearly displayed resting on a white plate.,"[14.8, 46.0]",0,yes,no
+route/kY4Jm68gg38_60.0_210.0/query_2,A baguette sandwich is clearly displayed resting on a white plate.,"[49.0, 75.0]",0,no,no
+route/kY4Jm68gg38_60.0_210.0/query_2,A baguette sandwich is clearly displayed resting on a white plate.,"[87.0, 92.0]",1,yes,yes
+route/kY4Jm68gg38_60.0_210.0/query_2,A baguette sandwich is clearly displayed resting on a white plate.,"[95.0, 107.0]",0,no,no
+route/kY4Jm68gg38_60.0_210.0/query_2,A baguette sandwich is clearly displayed resting on a white plate.,"[115.5, 149.9]",0,no,no
+route/ssopBo-qfso_210.0_360.0/query_1,People walking through a covered stone arcade lined with multiple arches and pillars,"[34.0, 36.7]",1,yes,yes
+route/ssopBo-qfso_210.0_360.0/query_1,People walking through a covered stone arcade lined with multiple arches and pillars,"[46.2, 48.4]",1,yes,yes
+route/ssopBo-qfso_210.0_360.0/query_1,People walking through a covered stone arcade lined with multiple arches and pillars,"[49.4, 51.6]",0,yes,yes
+route/ssopBo-qfso_210.0_360.0/query_1,People walking through a covered stone arcade lined with multiple arches and pillars,"[118.4, 120.8]",0,no,no
+route/kY4Jm68gg38_60.0_210.0/query_1,The woman holds or presents a baguette sandwich in front of the camera.,"[3.8, 7.8]",0,yes,yes
+route/kY4Jm68gg38_60.0_210.0/query_1,The woman holds or presents a baguette sandwich in front of the camera.,"[14.8, 46.0]",1,yes,yes
+route/kY4Jm68gg38_60.0_210.0/query_1,The woman holds or presents a baguette sandwich in front of the camera.,"[49.0, 75.0]",0,no,no
+route/kY4Jm68gg38_60.0_210.0/query_1,The woman holds or presents a baguette sandwich in front of the camera.,"[87.0, 92.0]",1,yes,yes
+route/kY4Jm68gg38_60.0_210.0/query_1,The woman holds or presents a baguette sandwich in front of the camera.,"[95.0, 107.0]",0,no,no
+route/kY4Jm68gg38_60.0_210.0/query_1,The woman holds or presents a baguette sandwich in front of the camera.,"[115.5, 149.9]",0,no,yes
+route/P1iT-STRbYo_360.0_510.0/query_1,Close-up shots of the woman speaking to the camera outdoors,"[63.9, 80.0]",1,yes,yes
+route/P1iT-STRbYo_360.0_510.0/query_1,Close-up shots of the woman speaking to the camera outdoors,"[88.0, 99.1]",0,no,no
+route/P1iT-STRbYo_360.0_510.0/query_1,Close-up shots of the woman speaking to the camera outdoors,"[103.1, 116.1]",1,yes,yes
+route/P1iT-STRbYo_360.0_510.0/query_1,Close-up shots of the woman speaking to the camera outdoors,"[133.2, 136.2]",0,yes,yes
+route/v_ssktVpcv9WI/query_1,Wide shots of the restaurant dining table in which the man in the blue suit walks beside the table.,"[0.8, 5.8]",1,yes,yes
+route/v_ssktVpcv9WI/query_1,Wide shots of the restaurant dining table in which the man in the blue suit walks beside the table.,"[13.0, 19.1]",0,no,no
+route/v_ssktVpcv9WI/query_1,Wide shots of the restaurant dining table in which the man in the blue suit walks beside the table.,"[28.2, 38.4]",1,yes,yes
+route/v_ssktVpcv9WI/query_1,Wide shots of the restaurant dining table in which the man in the blue suit walks beside the table.,"[41.4, 44.5]",0,no,no
+route/v_ssktVpcv9WI/query_1,Wide shots of the restaurant dining table in which the man in the blue suit walks beside the table.,"[47.5, 49.5]",0,no,no
+route/v_ssktVpcv9WI/query_1,Wide shots of the restaurant dining table in which the man in the blue suit walks beside the table.,"[51.6, 55.6]",0,yes,no
+route/v_ssktVpcv9WI/query_1,Wide shots of the restaurant dining table in which the man in the blue suit walks beside the table.,"[59.7, 63.8]",0,no,no
+route/v_ssktVpcv9WI/query_1,Wide shots of the restaurant dining table in which the man in the blue suit walks beside the table.,"[66.8, 69.9]",0,no,no
+route/v__QTQEw1b_-U/query_1,A man wearing a yellow t-shirt swings across the overhead monkey bars.,"[7.8, 57.2]",0,no,no
+route/v__QTQEw1b_-U/query_1,A man wearing a yellow t-shirt swings across the overhead monkey bars.,"[58.3, 85.8]",1,yes,yes
+route/v__QTQEw1b_-U/query_1,A man wearing a yellow t-shirt swings across the overhead monkey bars.,"[87.3, 102.7]",0,no,no
+route/v__QTQEw1b_-U/query_1,A man wearing a yellow t-shirt swings across the overhead monkey bars.,"[103.8, 123.5]",0,no,no
+route/v__QTQEw1b_-U/query_1,A man wearing a yellow t-shirt swings across the overhead monkey bars.,"[127.5, 146.6]",1,yes,yes
+route/xRClGm0DmzU_660.0_810.0/query_1,Focused camera views of holiday market booths displaying wearable apparel or hats for sale.,"[38.0, 46.0]",1,yes,yes
+route/xRClGm0DmzU_660.0_810.0/query_1,Focused camera views of holiday market booths displaying wearable apparel or hats for sale.,"[50.0, 59.0]",0,no,no
+route/xRClGm0DmzU_660.0_810.0/query_1,Focused camera views of holiday market booths displaying wearable apparel or hats for sale.,"[75.0, 94.0]",0,no,no
+route/xRClGm0DmzU_660.0_810.0/query_1,Focused camera views of holiday market booths displaying wearable apparel or hats for sale.,"[95.0, 104.0]",1,yes,yes
+route/xRClGm0DmzU_660.0_810.0/query_1,Focused camera views of holiday market booths displaying wearable apparel or hats for sale.,"[124.0, 141.0]",0,no,no
+route/E9drfsoiGb4_360.0_510.0/query_1,A close-up view looking directly into a silver metal pot or wok containing bright yellow oil,"[0.7, 3.7]",1,yes,yes
+route/E9drfsoiGb4_360.0_510.0/query_1,A close-up view looking directly into a silver metal pot or wok containing bright yellow oil,"[12.8, 15.8]",0,no,no
+route/E9drfsoiGb4_360.0_510.0/query_1,A close-up view looking directly into a silver metal pot or wok containing bright yellow oil,"[17.8, 30.9]",0,no,no
+route/E9drfsoiGb4_360.0_510.0/query_1,A close-up view looking directly into a silver metal pot or wok containing bright yellow oil,"[35.9, 46.9]",1,yes,yes
+route/E9drfsoiGb4_360.0_510.0/query_1,A close-up view looking directly into a silver metal pot or wok containing bright yellow oil,"[58.0, 80.0]",0,no,no
+route/E9drfsoiGb4_360.0_510.0/query_1,A close-up view looking directly into a silver metal pot or wok containing bright yellow oil,"[107.1, 112.1]",0,no,no
+route/E9drfsoiGb4_360.0_510.0/query_1,A close-up view looking directly into a silver metal pot or wok containing bright yellow oil,"[140.2, 150.0]",0,no,no
+route/NzyjaMWxNrU_210.0_360.0/query_2,A solo woman talks directly to the camera indoors.,"[8.8, 28.8]",0,no,no
+route/NzyjaMWxNrU_210.0_360.0/query_2,A solo woman talks directly to the camera indoors.,"[43.9, 69.0]",0,no,no
+route/NzyjaMWxNrU_210.0_360.0/query_2,A solo woman talks directly to the camera indoors.,"[79.0, 83.0]",0,no,no
+route/NzyjaMWxNrU_210.0_360.0/query_2,A solo woman talks directly to the camera indoors.,"[91.0, 102.1]",1,yes,yes
+route/NzyjaMWxNrU_210.0_360.0/query_2,A solo woman talks directly to the camera indoors.,"[110.1, 121.1]",0,yes,no
+route/NzyjaMWxNrU_210.0_360.0/query_2,A solo woman talks directly to the camera indoors.,"[130.2, 137.2]",1,yes,yes
+route/NzyjaMWxNrU_210.0_360.0/query_2,A solo woman talks directly to the camera indoors.,"[146.2, 150.0]",0,no,no
+route/0lbehz52PFU_210.0_360.0/query_1,A snow plow truck clears snow along a road,"[2.7, 8.8]",0,no,no
+route/0lbehz52PFU_210.0_360.0/query_1,A snow plow truck clears snow along a road,"[42.9, 46.9]",1,yes,yes
+route/0lbehz52PFU_210.0_360.0/query_1,A snow plow truck clears snow along a road,"[76.0, 83.9]",0,yes,no
+route/0lbehz52PFU_210.0_360.0/query_1,A snow plow truck clears snow along a road,"[85.1, 94.0]",1,yes,yes
+route/0lbehz52PFU_210.0_360.0/query_1,A snow plow truck clears snow along a road,"[115.1, 119.1]",0,no,no
+route/0lbehz52PFU_210.0_360.0/query_1,A snow plow truck clears snow along a road,"[132.2, 138.2]",0,no,no
+route/8xJSEwLPhN8_360.0_510.0/query_2,The blonde woman wears a wide-brimmed beige sun hat outdoors.,"[0.0, 14.8]",0,no,no
+route/8xJSEwLPhN8_360.0_510.0/query_2,The blonde woman wears a wide-brimmed beige sun hat outdoors.,"[43.0, 46.8]",0,yes,no
+route/8xJSEwLPhN8_360.0_510.0/query_2,The blonde woman wears a wide-brimmed beige sun hat outdoors.,"[54.0, 73.8]",1,yes,yes
+route/8xJSEwLPhN8_360.0_510.0/query_2,The blonde woman wears a wide-brimmed beige sun hat outdoors.,"[78.0, 111.0]",0,yes,no
+route/8xJSEwLPhN8_360.0_510.0/query_2,The blonde woman wears a wide-brimmed beige sun hat outdoors.,"[114.0, 121.0]",1,yes,yes
+route/8xJSEwLPhN8_360.0_510.0/query_2,The blonde woman wears a wide-brimmed beige sun hat outdoors.,"[125.2, 130.2]",0,yes,no
+route/8xJSEwLPhN8_360.0_510.0/query_2,The blonde woman wears a wide-brimmed beige sun hat outdoors.,"[134.2, 142.2]",0,yes,no
+route/E9drfsoiGb4_360.0_510.0/query_2,A close-up view looking directly into a silver metal pot or wok containing marinated chicken pieces,"[0.7, 3.7]",0,no,no
+route/E9drfsoiGb4_360.0_510.0/query_2,A close-up view looking directly into a silver metal pot or wok containing marinated chicken pieces,"[12.8, 15.8]",1,yes,yes
+route/E9drfsoiGb4_360.0_510.0/query_2,A close-up view looking directly into a silver metal pot or wok containing marinated chicken pieces,"[17.8, 30.9]",0,no,no
+route/E9drfsoiGb4_360.0_510.0/query_2,A close-up view looking directly into a silver metal pot or wok containing marinated chicken pieces,"[35.9, 46.9]",1,no,yes
+route/E9drfsoiGb4_360.0_510.0/query_2,A close-up view looking directly into a silver metal pot or wok containing marinated chicken pieces,"[58.0, 80.0]",0,no,no
+route/E9drfsoiGb4_360.0_510.0/query_2,A close-up view looking directly into a silver metal pot or wok containing marinated chicken pieces,"[107.1, 112.1]",0,no,no
+route/E9drfsoiGb4_360.0_510.0/query_2,A close-up view looking directly into a silver metal pot or wok containing marinated chicken pieces,"[140.2, 150.0]",0,no,no
+route/lnlwkeOq25k_60.0_210.0/query_2,A person speaking on camera outdoors on or beside a paved road during the daytime,"[33.9, 36.9]",0,yes,yes
+route/lnlwkeOq25k_60.0_210.0/query_2,A person speaking on camera outdoors on or beside a paved road during the daytime,"[44.9, 47.9]",0,yes,yes
+route/lnlwkeOq25k_60.0_210.0/query_2,A person speaking on camera outdoors on or beside a paved road during the daytime,"[56.9, 59.9]",0,no,no
+route/lnlwkeOq25k_60.0_210.0/query_2,A person speaking on camera outdoors on or beside a paved road during the daytime,"[69.0, 75.0]",1,yes,yes
+route/lnlwkeOq25k_60.0_210.0/query_2,A person speaking on camera outdoors on or beside a paved road during the daytime,"[86.0, 89.0]",0,yes,no
+route/lnlwkeOq25k_60.0_210.0/query_2,A person speaking on camera outdoors on or beside a paved road during the daytime,"[101.1, 106.1]",1,yes,yes
+route/lnlwkeOq25k_60.0_210.0/query_2,A person speaking on camera outdoors on or beside a paved road during the daytime,"[111.1, 114.1]",0,yes,no
+route/lnlwkeOq25k_60.0_210.0/query_2,A person speaking on camera outdoors on or beside a paved road during the daytime,"[124.1, 135.2]",0,yes,no
+route/8ghB2QPRORg_210.0_360.0/query_2,Someone or the dog is actively eating food or a snack indoors.,"[0.0, 23.8]",1,yes,yes
+route/8ghB2QPRORg_210.0_360.0/query_2,Someone or the dog is actively eating food or a snack indoors.,"[29.0, 39.0]",0,no,no
+route/8ghB2QPRORg_210.0_360.0/query_2,Someone or the dog is actively eating food or a snack indoors.,"[40.2, 57.5]",0,no,no
+route/8ghB2QPRORg_210.0_360.0/query_2,Someone or the dog is actively eating food or a snack indoors.,"[58.5, 71.8]",0,no,no
+route/8ghB2QPRORg_210.0_360.0/query_2,Someone or the dog is actively eating food or a snack indoors.,"[73.2, 102.3]",0,yes,no
+route/8ghB2QPRORg_210.0_360.0/query_2,Someone or the dog is actively eating food or a snack indoors.,"[103.5, 112.9]",1,yes,yes
+route/8ghB2QPRORg_210.0_360.0/query_2,Someone or the dog is actively eating food or a snack indoors.,"[114.0, 131.8]",0,no,no
+route/8ghB2QPRORg_210.0_360.0/query_2,Someone or the dog is actively eating food or a snack indoors.,"[136.5, 149.8]",0,yes,no
+route/v_C03QJbrKzaw/query_1,A close-up shot of the hedge trimmer against green foliage with white caption text at the bottom.,"[12.9, 19.0]",1,yes,yes
+route/v_C03QJbrKzaw/query_1,A close-up shot of the hedge trimmer against green foliage with white caption text at the bottom.,"[42.2, 47.3]",1,yes,yes
+route/v_C03QJbrKzaw/query_1,A close-up shot of the hedge trimmer against green foliage with white caption text at the bottom.,"[53.4, 57.4]",0,yes,no
+route/v_C03QJbrKzaw/query_1,A close-up shot of the hedge trimmer against green foliage with white caption text at the bottom.,"[72.6, 83.7]",0,no,no
+route/Upou7XP_KoM_60.0_210.0/query_2,A player exercises on a leg extension machine,"[21.5, 36.5]",0,no,no
+route/Upou7XP_KoM_60.0_210.0/query_2,A player exercises on a leg extension machine,"[53.4, 57.4]",1,yes,yes
+route/Upou7XP_KoM_60.0_210.0/query_2,A player exercises on a leg extension machine,"[58.5, 63.4]",0,no,no
+route/Upou7XP_KoM_60.0_210.0/query_2,A player exercises on a leg extension machine,"[64.5, 73.5]",1,yes,yes
+route/Upou7XP_KoM_60.0_210.0/query_2,A player exercises on a leg extension machine,"[81.5, 86.5]",0,yes,yes
+route/Upou7XP_KoM_60.0_210.0/query_2,A player exercises on a leg extension machine,"[98.8, 114.6]",0,no,no
+route/v_a2JBhm22-M4/query_1,A full-screen graphic slide displaying at least three lines of centered text on a white background.,"[2.8, 5.9]",0,yes,no
+route/v_a2JBhm22-M4/query_1,A full-screen graphic slide displaying at least three lines of centered text on a white background.,"[8.9, 15.0]",1,yes,yes
+route/v_a2JBhm22-M4/query_1,A full-screen graphic slide displaying at least three lines of centered text on a white background.,"[18.1, 49.6]",0,no,no
+route/v_a2JBhm22-M4/query_1,A full-screen graphic slide displaying at least three lines of centered text on a white background.,"[50.7, 55.7]",0,no,no
+route/v_a2JBhm22-M4/query_1,A full-screen graphic slide displaying at least three lines of centered text on a white background.,"[59.8, 66.0]",1,yes,yes
+route/v_a2JBhm22-M4/query_1,A full-screen graphic slide displaying at least three lines of centered text on a white background.,"[71.0, 74.8]",0,no,no
+route/T9ptpjvuIP8_660.0_810.0/query_1,The bearded man wearing a navy blue zip-up jacket with an orange collar speaks to the camera indoors.,"[0.0, 28.8]",1,yes,yes
+route/T9ptpjvuIP8_660.0_810.0/query_1,The bearded man wearing a navy blue zip-up jacket with an orange collar speaks to the camera indoors.,"[29.8, 53.8]",0,no,no
+route/T9ptpjvuIP8_660.0_810.0/query_1,The bearded man wearing a navy blue zip-up jacket with an orange collar speaks to the camera indoors.,"[57.2, 71.8]",1,yes,yes
+route/T9ptpjvuIP8_660.0_810.0/query_1,The bearded man wearing a navy blue zip-up jacket with an orange collar speaks to the camera indoors.,"[73.0, 77.6]",0,yes,no
+route/T9ptpjvuIP8_660.0_810.0/query_1,The bearded man wearing a navy blue zip-up jacket with an orange collar speaks to the camera indoors.,"[78.6, 83.8]",0,no,no
+route/T9ptpjvuIP8_660.0_810.0/query_1,The bearded man wearing a navy blue zip-up jacket with an orange collar speaks to the camera indoors.,"[87.2, 90.8]",0,no,no
+route/T9ptpjvuIP8_660.0_810.0/query_1,The bearded man wearing a navy blue zip-up jacket with an orange collar speaks to the camera indoors.,"[101.2, 110.4]",0,no,no
+route/T9ptpjvuIP8_660.0_810.0/query_1,The bearded man wearing a navy blue zip-up jacket with an orange collar speaks to the camera indoors.,"[111.5, 132.0]",0,no,no
+route/T9ptpjvuIP8_660.0_810.0/query_1,The bearded man wearing a navy blue zip-up jacket with an orange collar speaks to the camera indoors.,"[137.3, 141.8]",0,no,no
+route/T9ptpjvuIP8_660.0_810.0/query_1,The bearded man wearing a navy blue zip-up jacket with an orange collar speaks to the camera indoors.,"[142.8, 147.8]",0,no,no
+route/U4tUPpmv1qo_210.0_360.0/query_1,A woman in a floral top and reflective sunglasses speaks to the camera in a close-up selfie shot outdoors surrounded by forest trees.,"[8.8, 14.8]",0,no,no
+route/U4tUPpmv1qo_210.0_360.0/query_1,A woman in a floral top and reflective sunglasses speaks to the camera in a close-up selfie shot outdoors surrounded by forest trees.,"[35.0, 47.0]",0,no,no
+route/U4tUPpmv1qo_210.0_360.0/query_1,A woman in a floral top and reflective sunglasses speaks to the camera in a close-up selfie shot outdoors surrounded by forest trees.,"[55.0, 70.0]",1,yes,yes
+route/U4tUPpmv1qo_210.0_360.0/query_1,A woman in a floral top and reflective sunglasses speaks to the camera in a close-up selfie shot outdoors surrounded by forest trees.,"[81.0, 85.0]",1,yes,yes
+route/U4tUPpmv1qo_210.0_360.0/query_1,A woman in a floral top and reflective sunglasses speaks to the camera in a close-up selfie shot outdoors surrounded by forest trees.,"[88.0, 101.0]",0,no,no
+route/U4tUPpmv1qo_210.0_360.0/query_1,A woman in a floral top and reflective sunglasses speaks to the camera in a close-up selfie shot outdoors surrounded by forest trees.,"[142.2, 148.2]",0,yes,no
+route/_e8_yuedv6w_60.0_210.0/query_1,The person lifts and holds up a clear plastic bag containing multiple green produce items toward the camera.,"[65.0, 69.0]",0,yes,yes
+route/_e8_yuedv6w_60.0_210.0/query_1,The person lifts and holds up a clear plastic bag containing multiple green produce items toward the camera.,"[70.0, 74.0]",0,yes,no
+route/_e8_yuedv6w_60.0_210.0/query_1,The person lifts and holds up a clear plastic bag containing multiple green produce items toward the camera.,"[81.0, 92.0]",1,yes,yes
+route/_e8_yuedv6w_60.0_210.0/query_1,The person lifts and holds up a clear plastic bag containing multiple green produce items toward the camera.,"[98.0, 106.0]",0,yes,no
+route/_e8_yuedv6w_60.0_210.0/query_1,The person lifts and holds up a clear plastic bag containing multiple green produce items toward the camera.,"[110.1, 115.1]",0,yes,no
+route/_e8_yuedv6w_60.0_210.0/query_1,The person lifts and holds up a clear plastic bag containing multiple green produce items toward the camera.,"[120.1, 122.1]",1,yes,yes
+route/_e8_yuedv6w_60.0_210.0/query_1,The person lifts and holds up a clear plastic bag containing multiple green produce items toward the camera.,"[124.2, 126.2]",0,yes,no
+route/_e8_yuedv6w_60.0_210.0/query_1,The person lifts and holds up a clear plastic bag containing multiple green produce items toward the camera.,"[127.2, 129.2]",1,yes,yes
+route/_e8_yuedv6w_60.0_210.0/query_1,The person lifts and holds up a clear plastic bag containing multiple green produce items toward the camera.,"[133.2, 136.2]",0,yes,no
+route/_e8_yuedv6w_60.0_210.0/query_1,The person lifts and holds up a clear plastic bag containing multiple green produce items toward the camera.,"[146.2, 149.2]",0,yes,no
+route/P1iT-STRbYo_360.0_510.0/query_2,Close-up shots of the woman speaking to the camera without wearing a helmet,"[63.9, 80.0]",1,yes,yes
+route/P1iT-STRbYo_360.0_510.0/query_2,Close-up shots of the woman speaking to the camera without wearing a helmet,"[88.0, 99.1]",0,no,no
+route/P1iT-STRbYo_360.0_510.0/query_2,Close-up shots of the woman speaking to the camera without wearing a helmet,"[103.1, 116.1]",0,no,no
+route/P1iT-STRbYo_360.0_510.0/query_2,Close-up shots of the woman speaking to the camera without wearing a helmet,"[133.2, 136.2]",1,yes,yes
+route/v__QTQEw1b_-U/query_2,A man swings across the overhead monkey bars toward the other man waiting at the far end.,"[7.8, 57.2]",0,no,no
+route/v__QTQEw1b_-U/query_2,A man swings across the overhead monkey bars toward the other man waiting at the far end.,"[58.3, 85.8]",0,yes,yes
+route/v__QTQEw1b_-U/query_2,A man swings across the overhead monkey bars toward the other man waiting at the far end.,"[87.3, 102.7]",0,yes,no
+route/v__QTQEw1b_-U/query_2,A man swings across the overhead monkey bars toward the other man waiting at the far end.,"[103.8, 123.5]",1,yes,yes
+route/v__QTQEw1b_-U/query_2,A man swings across the overhead monkey bars toward the other man waiting at the far end.,"[127.5, 146.6]",1,yes,yes
+route/v_ssktVpcv9WI/query_2,Wide shots of the restaurant dining table in which the man in the blue suit is seated at the table by the end of the shot.,"[0.8, 5.8]",0,yes,no
+route/v_ssktVpcv9WI/query_2,Wide shots of the restaurant dining table in which the man in the blue suit is seated at the table by the end of the shot.,"[13.0, 19.1]",0,no,no
+route/v_ssktVpcv9WI/query_2,Wide shots of the restaurant dining table in which the man in the blue suit is seated at the table by the end of the shot.,"[28.2, 38.4]",1,yes,yes
+route/v_ssktVpcv9WI/query_2,Wide shots of the restaurant dining table in which the man in the blue suit is seated at the table by the end of the shot.,"[41.4, 44.5]",0,yes,no
+route/v_ssktVpcv9WI/query_2,Wide shots of the restaurant dining table in which the man in the blue suit is seated at the table by the end of the shot.,"[47.5, 49.5]",0,no,no
+route/v_ssktVpcv9WI/query_2,Wide shots of the restaurant dining table in which the man in the blue suit is seated at the table by the end of the shot.,"[51.6, 55.6]",1,yes,yes
+route/v_ssktVpcv9WI/query_2,Wide shots of the restaurant dining table in which the man in the blue suit is seated at the table by the end of the shot.,"[59.7, 63.8]",0,no,no
+route/v_ssktVpcv9WI/query_2,Wide shots of the restaurant dining table in which the man in the blue suit is seated at the table by the end of the shot.,"[66.8, 69.9]",0,no,no
+route/_i9qWLsZToY_210.0_360.0/query_2,The woman faces the camera without wearing sunglasses.,"[0.0, 3.7]",0,no,no
+route/_i9qWLsZToY_210.0_360.0/query_2,The woman faces the camera without wearing sunglasses.,"[9.8, 12.8]",1,no,yes
+route/_i9qWLsZToY_210.0_360.0/query_2,The woman faces the camera without wearing sunglasses.,"[15.8, 36.9]",0,no,no
+route/_i9qWLsZToY_210.0_360.0/query_2,The woman faces the camera without wearing sunglasses.,"[50.9, 54.9]",0,no,no
+route/_i9qWLsZToY_210.0_360.0/query_2,The woman faces the camera without wearing sunglasses.,"[58.9, 74.0]",0,no,no
+route/_i9qWLsZToY_210.0_360.0/query_2,The woman faces the camera without wearing sunglasses.,"[117.1, 121.1]",0,no,no
+route/_i9qWLsZToY_210.0_360.0/query_2,The woman faces the camera without wearing sunglasses.,"[137.2, 147.2]",1,yes,yes
+route/v9bV5ERmcCk_60.0_210.0/query_2,A man is shown wearing a white face mask.,"[0.0, 50.9]",0,no,no
+route/v9bV5ERmcCk_60.0_210.0/query_2,A man is shown wearing a white face mask.,"[104.1, 112.1]",1,yes,yes
+route/v9bV5ERmcCk_60.0_210.0/query_2,A man is shown wearing a white face mask.,"[115.5, 120.1]",1,yes,yes
+route/v9bV5ERmcCk_60.0_210.0/query_2,A man is shown wearing a white face mask.,"[127.2, 131.1]",0,yes,no
+route/v9bV5ERmcCk_60.0_210.0/query_2,A man is shown wearing a white face mask.,"[132.2, 137.2]",1,yes,yes
+route/v9bV5ERmcCk_60.0_210.0/query_2,A man is shown wearing a white face mask.,"[138.3, 146.6]",0,yes,no
+route/v9bV5ERmcCk_60.0_210.0/query_2,A man is shown wearing a white face mask.,"[147.7, 150.0]",0,yes,no
+route/_i9qWLsZToY_210.0_360.0/query_1,The woman faces the camera without her male companion in the frame.,"[0.0, 3.7]",0,no,no
+route/_i9qWLsZToY_210.0_360.0/query_1,The woman faces the camera without her male companion in the frame.,"[9.8, 12.8]",1,yes,yes
+route/_i9qWLsZToY_210.0_360.0/query_1,The woman faces the camera without her male companion in the frame.,"[15.8, 36.9]",0,no,no
+route/_i9qWLsZToY_210.0_360.0/query_1,The woman faces the camera without her male companion in the frame.,"[50.9, 54.9]",0,no,no
+route/_i9qWLsZToY_210.0_360.0/query_1,The woman faces the camera without her male companion in the frame.,"[58.9, 74.0]",0,no,no
+route/_i9qWLsZToY_210.0_360.0/query_1,The woman faces the camera without her male companion in the frame.,"[117.1, 121.1]",1,yes,yes
+route/_i9qWLsZToY_210.0_360.0/query_1,The woman faces the camera without her male companion in the frame.,"[137.2, 147.2]",0,yes,no

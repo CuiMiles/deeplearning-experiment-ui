@@ -1,0 +1,290 @@
+{
+  "updated": "2026-11-25 17:08 CST",
+  "complete": true,
+  "n": 841,
+  "total": 841,
+  "errors": 0,
+  "gpu": {
+    "0": {
+      "stage": "空闲或切换任务",
+      "model": "",
+      "count": "",
+      "eta": "—"
+    },
+    "1": {
+      "stage": "空闲或切换任务",
+      "model": "",
+      "count": "",
+      "eta": "—"
+    },
+    "2": {
+      "stage": "空闲或切换任务",
+      "model": "",
+      "count": "",
+      "eta": "—"
+    },
+    "3": {
+      "stage": "空闲或切换任务",
+      "model": "",
+      "count": "",
+      "eta": "—"
+    },
+    "4": {
+      "stage": "其他进程",
+      "model": "",
+      "count": "",
+      "eta": "—"
+    },
+    "5": {
+      "stage": "其他进程",
+      "model": "",
+      "count": "",
+      "eta": "—"
+    },
+    "6": {
+      "stage": "其他进程",
+      "model": "",
+      "count": "",
+      "eta": "—"
+    },
+    "7": {
+      "stage": "其他进程",
+      "model": "",
+      "count": "",
+      "eta": "—"
+    }
+  },
+  "localization": {
+    "route": {
+      "n": 72,
+      "expected": 72,
+      "delta": [
+        -9.18,
+        -17.08,
+        -1.25
+      ],
+      "delta_vs_standard": [
+        -8.72,
+        -16.33,
+        -0.88
+      ],
+      "standard_n": 72,
+      "whole": 71.43518518518518,
+      "local": 62.255291005291,
+      "unjoined": 58.43253968253968,
+      "whole_seconds": 10.495319444444444,
+      "local_seconds": 9.769180555555556,
+      "tokens": 22531.833333333332,
+      "precision_whole": 96.29629629629629,
+      "precision_local": 50.763888888888886,
+      "recall_whole": 60.18518518518518,
+      "recall_local": 83.56481481481481,
+      "count_whole": 1.3194444444444444,
+      "count_local": 3.513888888888889,
+      "hit_generation_limit": 0,
+      "out_of_window_predictions": 9,
+      "gt_empty_windows": 131,
+      "false_positive_windows": 109,
+      "seam": {
+        "False": {
+          "n": 37,
+          "delta": -7.503217503217501
+        },
+        "True": {
+          "n": 35,
+          "delta": -10.952380952380949
+        }
+      }
+    },
+    "hold_multi": {
+      "n": 301,
+      "expected": 301,
+      "delta": [
+        -10.78,
+        -13.89,
+        -7.52
+      ],
+      "delta_vs_standard": [
+        -11.95,
+        -15.12,
+        -8.77
+      ],
+      "standard_n": 301,
+      "whole": 70.2824159967017,
+      "local": 59.497706059167854,
+      "unjoined": 51.2922533354427,
+      "whole_seconds": 9.473923588039867,
+      "local_seconds": 9.091009966777408,
+      "tokens": 17753.05980066445,
+      "precision_whole": 78.43656067077994,
+      "precision_local": 52.54864736592311,
+      "recall_whole": 67.74640088593577,
+      "recall_local": 72.95127353266888,
+      "count_whole": 2.0166112956810633,
+      "count_local": 3.2093023255813953,
+      "hit_generation_limit": 0,
+      "out_of_window_predictions": 25,
+      "gt_empty_windows": 354,
+      "false_positive_windows": 276,
+      "seam": {
+        "False": {
+          "n": 104,
+          "delta": -10.22893772893773
+        },
+        "True": {
+          "n": 197,
+          "delta": -11.078112524813031
+        }
+      }
+    },
+    "omtg": {
+      "n": 320,
+      "expected": 320,
+      "delta": [
+        -2.43,
+        -5.55,
+        0.52
+      ],
+      "delta_vs_standard": [
+        -3.06,
+        -6.12,
+        -0.1
+      ],
+      "standard_n": 320,
+      "whole": 56.789190070223036,
+      "local": 54.35878618669499,
+      "unjoined": 51.92298314277469,
+      "whole_seconds": 81.537140625,
+      "local_seconds": 17.691165625,
+      "tokens": 32809.31875,
+      "precision_whole": 66.54875202922078,
+      "precision_local": 50.70609210781908,
+      "recall_whole": 53.43579944361194,
+      "recall_local": 62.85436438561438,
+      "count_whole": 3.084375,
+      "count_local": 4.475,
+      "hit_generation_limit": 2,
+      "out_of_window_predictions": 20,
+      "gt_empty_windows": 361,
+      "false_positive_windows": 281,
+      "seam": {
+        "False": {
+          "n": 153,
+          "delta": -3.9638734845198726
+        },
+        "True": {
+          "n": 167,
+          "delta": -1.0254886203439086
+        }
+      }
+    },
+    "charades": {
+      "n": 50,
+      "expected": 50,
+      "delta": [
+        -21.92,
+        -31.78,
+        -12.15
+      ],
+      "delta_vs_standard": [
+        -20.63,
+        -30.64,
+        -11.05
+      ],
+      "standard_n": 50,
+      "whole": 52.691140598915574,
+      "local": 30.767338485101643,
+      "unjoined": 24.360294117647058,
+      "whole_seconds": 2.5132,
+      "local_seconds": 3.61358,
+      "tokens": 5844.7,
+      "precision_whole": 58.0,
+      "precision_local": 29.666666666666664,
+      "recall_whole": 58.0,
+      "recall_local": 58.0,
+      "count_whole": 1,
+      "count_local": 2.36,
+      "hit_generation_limit": 0,
+      "out_of_window_predictions": 6,
+      "gt_empty_windows": 114,
+      "false_positive_windows": 91,
+      "seam": {
+        "False": {
+          "n": 23,
+          "delta": -19.108005521048998
+        },
+        "True": {
+          "n": 27,
+          "delta": -24.32244365579888
+        }
+      }
+    },
+    "activitynet": {
+      "n": 50,
+      "expected": 50,
+      "delta": [
+        -34.88,
+        -46.02,
+        -23.86
+      ],
+      "delta_vs_standard": [
+        -34.57,
+        -45.63,
+        -23.57
+      ],
+      "standard_n": 50,
+      "whole": 62.25628049332624,
+      "local": 27.374577233319272,
+      "unjoined": 20.044954117776047,
+      "whole_seconds": 13.78074,
+      "local_seconds": 11.63752,
+      "tokens": 27163.4,
+      "precision_whole": 67.0,
+      "precision_local": 31.833333333333332,
+      "recall_whole": 70.0,
+      "recall_local": 70.0,
+      "count_whole": 1.06,
+      "count_local": 2.84,
+      "hit_generation_limit": 0,
+      "out_of_window_predictions": 1,
+      "gt_empty_windows": 107,
+      "false_positive_windows": 92,
+      "seam": {
+        "False": {
+          "n": 30,
+          "delta": -28.06666219591916
+        },
+        "True": {
+          "n": 20,
+          "delta": -45.10426485613868
+        }
+      }
+    }
+  },
+  "diagnostic": {
+    "available": 314,
+    "missing": 0,
+    "whole": 76.11464968152866,
+    "crop": 93.63057324840764,
+    "by_label": {
+      "True": {
+        "whole": 97.0,
+        "crop": 100
+      },
+      "False": {
+        "whole": 66.35514018691589,
+        "crop": 90.65420560747664
+      }
+    },
+    "delta": [
+      17.52,
+      11.11,
+      24.55
+    ]
+  },
+  "route_pairs": {
+    "whole": 1,
+    "local": 0
+  },
+  "n_route_pairs": 24
+}
