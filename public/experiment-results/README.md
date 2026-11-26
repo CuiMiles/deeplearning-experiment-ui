@@ -35,6 +35,7 @@
 | [outputs/reject_rl_20261126](outputs/reject_rl_20261126) | 1 |
 | [outputs/rereview_20261111_001](outputs/rereview_20261111_001) | 7 |
 | [outputs/rereview_20261112_shared_001](outputs/rereview_20261112_shared_001) | 11 |
+| [outputs/shift_cuts_20261126](outputs/shift_cuts_20261126) | 3 |
 | [outputs/timelens1_charades_main_001](outputs/timelens1_charades_main_001) | 1 |
 | [outputs/timelens1_charades_main_002](outputs/timelens1_charades_main_002) | 1 |
 | [outputs/timelens1_charades_main_003](outputs/timelens1_charades_main_003) | 3 |

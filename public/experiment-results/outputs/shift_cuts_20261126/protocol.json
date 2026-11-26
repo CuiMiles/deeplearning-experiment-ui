@@ -1,0 +1,14 @@
+{
+  "n": 301,
+  "sources": 193,
+  "arm": "abstention@100",
+  "input_sha": "cf37be8ed74712ef9345c8c8a558b15156e6bd52db4e6d67f5e745cd9f6bbbbd",
+  "adapter_sha": "35c738d7cda6e7331f219e9622de4560b358ca3b23be80d30c9ddbc9d6e0b39a",
+  "eligible": 177,
+  "algorithm_sha": "91a767a6b2700a9e609bca03bbed8c0d73a767e1d77225dc7b47cc688fdcde59",
+  "worker_sha": "6873bbc0894c344bb09339bbdaea0b18684aaca11a978baa3a477359d0b0b4bc",
+  "rule": "Move each fixed seam inside a whole-video predicted action to the closest frame-pair seam strictly outside all predicted intervals. Search up to floor((shortest original window in pairs - 1)/2) pairs in either direction; tie earlier, no permissible seam keeps original. No labels used. Whole and 4 local forwards charged for both two-pass arms, cache identical calls only.",
+  "primary": "All 301 macro tF1@0.5, moved four stitched minus fixed four stitched then minus single-pass abstention and stronger positive-only control. Per-source paired bootstrap 5000, physical GT seams and timings. Secondary apply identical whole-prediction window gate to fixed and moved.",
+  "fixed": "reject_window_retest_20261126/pred/abstention",
+  "stage": "exploratory previously inspected set; no new training"
+}
