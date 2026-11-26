@@ -32,6 +32,7 @@
 | [outputs/motionbench_fps_probe_20261117_003](outputs/motionbench_fps_probe_20261117_003) | 24 |
 | [outputs/motionbench_sparse_20261118_001](outputs/motionbench_sparse_20261118_001) | 20 |
 | [outputs/qwen3_flexi_20261117_001](outputs/qwen3_flexi_20261117_001) | 16 |
+| [outputs/reject_rl_20261126](outputs/reject_rl_20261126) | 1 |
 | [outputs/rereview_20261111_001](outputs/rereview_20261111_001) | 7 |
 | [outputs/rereview_20261112_shared_001](outputs/rereview_20261112_shared_001) | 11 |
 | [outputs/timelens1_charades_main_001](outputs/timelens1_charades_main_001) | 1 |
